@@ -1,0 +1,9 @@
+{
+  "_doc": "EXAMPLE people map. Every name here is synthetic. In a document pipeline you would build this per record from fields you already hold (the patient and contacts on the record header) and pass it as opts.peopleMap.",
+  "people": [
+    { "name": "Avery Sample", "role": "patient", "aliases": ["Avery", "Ms. Sample"] },
+    { "name": "Jordan Sample", "role": "family", "aliases": ["Jordan"] },
+    { "name": "Riley Testwell", "role": "clinician", "aliases": ["Dr. Testwell"] }
+  ],
+  "safe": ["Acme", "Northwind"]
+}

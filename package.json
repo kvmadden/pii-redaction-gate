@@ -1,0 +1,33 @@
+{
+  "name": "layered-pii-redaction",
+  "version": "1.0.0",
+  "description": "A fail-closed, three-tier PII redaction engine for free text bound for a model prompt or a datastore: deterministic pattern rules, known- and unknown-name redaction, and sensitive-topic sentence removal, selected per source profile. Pattern-based; not certified de-identification.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test 'test/**/*.test.js'",
+    "eval": "node eval/run.js"
+  },
+  "keywords": [
+    "pii",
+    "redaction",
+    "privacy",
+    "llm",
+    "free-text",
+    "clinical-notes"
+  ],
+  "exports": {
+    ".": "./src/index.js",
+    "./engine": "./src/engine.js",
+    "./profiles": "./src/profiles.js",
+    "./patterns": "./src/patterns.js",
+    "./names": "./src/names.js",
+    "./topics": "./src/topics.js",
+    "./gate": "./src/gate.js",
+    "./quarantine": "./src/quarantine.js"
+  },
+  "author": "Kevin Madden <kevin@kvmadden.com>"
+}

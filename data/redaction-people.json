@@ -1,0 +1,5 @@
+{
+  "_doc": "Default people map for the NAME tier (src/names.js). Shipped EMPTY on purpose. `people` entries become role tokens: every listed name or alias is replaced with [<role>]. `safe` entries are name-shaped words that must never be tokenized (brand or product names). Keep real names out of committed files: point env REDACTION_PEOPLE_PATH at a local-only map instead. See data/people-map.example.json for the shape.",
+  "people": [],
+  "safe": []
+}

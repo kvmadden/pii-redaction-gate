@@ -1,0 +1,4564 @@
+{
+  "date": "2026-10-30",
+  "env": {
+    "node": "v24.14.1",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "rounds": 200,
+  "warmup": 20,
+  "snippets": 182,
+  "kinds": {
+    "clinical": 85,
+    "message": 35,
+    "general": 22,
+    "negative": 40
+  },
+  "profiles": {
+    "identifiers": {
+      "overall": {
+        "entities": 207,
+        "entityRecall": 0.7053140096618358,
+        "entityPartial": 7,
+        "spansEmitted": 190,
+        "spanPrecision": 0.8263157894736842,
+        "charPrecision": 0.8520657485561972,
+        "charRecall": 0.8386532575426323,
+        "hardNegatives": 227,
+        "hardNegativesKept": 0.8810572687224669,
+        "snippetsWithPii": 118,
+        "snippetsNoLeak": 63,
+        "negativeSnippets": 40,
+        "negativeIntact": 27
+      },
+      "byType": {
+        "NAME": {
+          "n": 51,
+          "full": 43,
+          "partial": 4,
+          "missed": 4,
+          "recall": 0.8431372549019608
+        },
+        "DOB": {
+          "n": 11,
+          "full": 10,
+          "partial": 0,
+          "missed": 1,
+          "recall": 0.9090909090909091
+        },
+        "ID": {
+          "n": 19,
+          "full": 13,
+          "partial": 0,
+          "missed": 6,
+          "recall": 0.6842105263157895
+        },
+        "FACILITY": {
+          "n": 21,
+          "full": 20,
+          "partial": 1,
+          "missed": 0,
+          "recall": 0.9523809523809523
+        },
+        "DATE": {
+          "n": 25,
+          "full": 0,
+          "partial": 0,
+          "missed": 25,
+          "recall": 0
+        },
+        "AGE": {
+          "n": 14,
+          "full": 0,
+          "partial": 0,
+          "missed": 14,
+          "recall": 0
+        },
+        "RELATIVE": {
+          "n": 26,
+          "full": 21,
+          "partial": 1,
+          "missed": 4,
+          "recall": 0.8076923076923077
+        },
+        "PHONE": {
+          "n": 19,
+          "full": 19,
+          "partial": 0,
+          "missed": 0,
+          "recall": 1
+        },
+        "ADDRESS": {
+          "n": 13,
+          "full": 12,
+          "partial": 1,
+          "missed": 0,
+          "recall": 0.9230769230769231
+        },
+        "EMAIL": {
+          "n": 8,
+          "full": 8,
+          "partial": 0,
+          "missed": 0,
+          "recall": 1
+        }
+      },
+      "byToken": {
+        "name": {
+          "emitted": 128,
+          "tp": 95,
+          "fp": 33,
+          "precision": 0.7421875
+        },
+        "dob": {
+          "emitted": 10,
+          "tp": 10,
+          "fp": 0,
+          "precision": 1
+        },
+        "account": {
+          "emitted": 9,
+          "tp": 9,
+          "fp": 0,
+          "precision": 1
+        },
+        "phone": {
+          "emitted": 19,
+          "tp": 19,
+          "fp": 0,
+          "precision": 1
+        },
+        "address": {
+          "emitted": 11,
+          "tp": 11,
+          "fp": 0,
+          "precision": 1
+        },
+        "email": {
+          "emitted": 8,
+          "tp": 8,
+          "fp": 0,
+          "precision": 1
+        },
+        "ssn": {
+          "emitted": 3,
+          "tp": 3,
+          "fp": 0,
+          "precision": 1
+        },
+        "card": {
+          "emitted": 1,
+          "tp": 1,
+          "fp": 0,
+          "precision": 1
+        },
+        "coords": {
+          "emitted": 1,
+          "tp": 1,
+          "fp": 0,
+          "precision": 1
+        }
+      },
+      "byCategory": {
+        "CLINICAL": {
+          "n": 47,
+          "kept": 44,
+          "damaged": 3,
+          "keptRate": 0.9361702127659575
+        },
+        "DRUG": {
+          "n": 63,
+          "kept": 49,
+          "damaged": 14,
+          "keptRate": 0.7777777777777778
+        },
+        "DOSE": {
+          "n": 39,
+          "kept": 39,
+          "damaged": 0,
+          "keptRate": 1
+        },
+        "LAB": {
+          "n": 50,
+          "kept": 49,
+          "damaged": 1,
+          "keptRate": 0.98
+        },
+        "VITAL": {
+          "n": 9,
+          "kept": 9,
+          "damaged": 0,
+          "keptRate": 1
+        },
+        "OTHER": {
+          "n": 19,
+          "kept": 10,
+          "damaged": 9,
+          "keptRate": 0.5263157894736842
+        }
+      },
+      "misses": [
+        {
+          "id": "c001",
+          "type": "NAME",
+          "value": "John Q. Sample",
+          "status": "partial"
+        },
+        {
+          "id": "c001",
+          "type": "DATE",
+          "value": "05/14/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c002",
+          "type": "AGE",
+          "value": "72",
+          "status": "missed"
+        },
+        {
+          "id": "c003",
+          "type": "DATE",
+          "value": "02/11/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c004",
+          "type": "RELATIVE",
+          "value": "Rosa",
+          "status": "missed"
+        },
+        {
+          "id": "c006",
+          "type": "DATE",
+          "value": "06/02/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c009",
+          "type": "AGE",
+          "value": "54",
+          "status": "missed"
+        },
+        {
+          "id": "c010",
+          "type": "ID",
+          "value": "W123456789",
+          "status": "missed"
+        },
+        {
+          "id": "c012",
+          "type": "DATE",
+          "value": "03/22/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c014",
+          "type": "AGE",
+          "value": "81",
+          "status": "missed"
+        },
+        {
+          "id": "c014",
+          "type": "DATE",
+          "value": "1/9/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c018",
+          "type": "FACILITY",
+          "value": "St. Brendan Medical Center",
+          "status": "partial"
+        },
+        {
+          "id": "c018",
+          "type": "DATE",
+          "value": "7/4/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c026",
+          "type": "AGE",
+          "value": "93",
+          "status": "missed"
+        },
+        {
+          "id": "c028",
+          "type": "DATE",
+          "value": "04/18/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c033",
+          "type": "AGE",
+          "value": "67",
+          "status": "missed"
+        },
+        {
+          "id": "c035",
+          "type": "DATE",
+          "value": "08/19/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c040",
+          "type": "ID",
+          "value": "7782194",
+          "status": "missed"
+        },
+        {
+          "id": "c043",
+          "type": "DATE",
+          "value": "10/02/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c045",
+          "type": "DATE",
+          "value": "05/05/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c047",
+          "type": "AGE",
+          "value": "82",
+          "status": "missed"
+        },
+        {
+          "id": "c052",
+          "type": "RELATIVE",
+          "value": "Dev",
+          "status": "missed"
+        },
+        {
+          "id": "c053",
+          "type": "DATE",
+          "value": "12/01/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c054",
+          "type": "DATE",
+          "value": "03/03/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c056",
+          "type": "AGE",
+          "value": "45",
+          "status": "missed"
+        },
+        {
+          "id": "c058",
+          "type": "RELATIVE",
+          "value": "Alexei",
+          "status": "missed"
+        },
+        {
+          "id": "c060",
+          "type": "NAME",
+          "value": "Ramona Iturbe-Klein",
+          "status": "partial"
+        },
+        {
+          "id": "c061",
+          "type": "DATE",
+          "value": "11/12/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c063",
+          "type": "RELATIVE",
+          "value": "Linda Okonkwo-Baptiste",
+          "status": "partial"
+        },
+        {
+          "id": "c065",
+          "type": "AGE",
+          "value": "3",
+          "status": "missed"
+        },
+        {
+          "id": "c067",
+          "type": "ID",
+          "value": "30019487",
+          "status": "missed"
+        },
+        {
+          "id": "c072",
+          "type": "AGE",
+          "value": "88",
+          "status": "missed"
+        },
+        {
+          "id": "c072",
+          "type": "DATE",
+          "value": "9/14/2023",
+          "status": "missed"
+        },
+        {
+          "id": "c075",
+          "type": "DATE",
+          "value": "07/30/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c076",
+          "type": "DATE",
+          "value": "2/20/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c077",
+          "type": "AGE",
+          "value": "86",
+          "status": "missed"
+        },
+        {
+          "id": "c082",
+          "type": "AGE",
+          "value": "47",
+          "status": "missed"
+        },
+        {
+          "id": "c083",
+          "type": "NAME",
+          "value": "Elena Vasquez-Moore",
+          "status": "partial"
+        },
+        {
+          "id": "c084",
+          "type": "NAME",
+          "value": "Harriet Nakamura-Boyd",
+          "status": "partial"
+        },
+        {
+          "id": "c085",
+          "type": "DATE",
+          "value": "4/30/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m002",
+          "type": "NAME",
+          "value": "Omar",
+          "status": "missed"
+        },
+        {
+          "id": "m007",
+          "type": "DATE",
+          "value": "09/08/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m012",
+          "type": "AGE",
+          "value": "68",
+          "status": "missed"
+        },
+        {
+          "id": "m013",
+          "type": "ID",
+          "value": "4500 1123 9987",
+          "status": "missed"
+        },
+        {
+          "id": "m013",
+          "type": "ID",
+          "value": "77821",
+          "status": "missed"
+        },
+        {
+          "id": "m017",
+          "type": "DATE",
+          "value": "3/18/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m024",
+          "type": "AGE",
+          "value": "101",
+          "status": "missed"
+        },
+        {
+          "id": "m025",
+          "type": "DATE",
+          "value": "12/5/1988",
+          "status": "missed"
+        },
+        {
+          "id": "m026",
+          "type": "DATE",
+          "value": "6/1/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m026",
+          "type": "DATE",
+          "value": "6/9/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m028",
+          "type": "NAME",
+          "value": "tanya",
+          "status": "missed"
+        },
+        {
+          "id": "m030",
+          "type": "AGE",
+          "value": "79",
+          "status": "missed"
+        },
+        {
+          "id": "m031",
+          "type": "ADDRESS",
+          "value": "PO Box 4471, Springfield, MO 65801",
+          "status": "partial"
+        },
+        {
+          "id": "m032",
+          "type": "DATE",
+          "value": "8/31/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m034",
+          "type": "DOB",
+          "value": "2/14/1970",
+          "status": "missed"
+        },
+        {
+          "id": "g010",
+          "type": "DATE",
+          "value": "01/15/2025",
+          "status": "missed"
+        },
+        {
+          "id": "g013",
+          "type": "ID",
+          "value": "D123-4567-8901",
+          "status": "missed"
+        },
+        {
+          "id": "g014",
+          "type": "RELATIVE",
+          "value": "Kwame",
+          "status": "missed"
+        },
+        {
+          "id": "g017",
+          "type": "NAME",
+          "value": "Carlos",
+          "status": "missed"
+        },
+        {
+          "id": "g018",
+          "type": "NAME",
+          "value": "Fatima",
+          "status": "missed"
+        },
+        {
+          "id": "g021",
+          "type": "DATE",
+          "value": "09/02/2025",
+          "status": "missed"
+        }
+      ],
+      "damaged": [
+        {
+          "id": "c009",
+          "category": "CLINICAL",
+          "value": "Crohn disease"
+        },
+        {
+          "id": "c010",
+          "category": "DRUG",
+          "value": "Ozempic"
+        },
+        {
+          "id": "c030",
+          "category": "DRUG",
+          "value": "Eliquis"
+        },
+        {
+          "id": "c031",
+          "category": "OTHER",
+          "value": "Assessment and Plan"
+        },
+        {
+          "id": "c032",
+          "category": "OTHER",
+          "value": "Chief Complaint"
+        },
+        {
+          "id": "c033",
+          "category": "OTHER",
+          "value": "History of Present Illness"
+        },
+        {
+          "id": "c038",
+          "category": "DRUG",
+          "value": "Lexapro"
+        },
+        {
+          "id": "c071",
+          "category": "CLINICAL",
+          "value": "abnormal Pap"
+        },
+        {
+          "id": "c074",
+          "category": "DRUG",
+          "value": "Tylenol"
+        },
+        {
+          "id": "m022",
+          "category": "DRUG",
+          "value": "Benadryl"
+        },
+        {
+          "id": "m029",
+          "category": "DRUG",
+          "value": "Zoloft"
+        },
+        {
+          "id": "m032",
+          "category": "DRUG",
+          "value": "Humira"
+        },
+        {
+          "id": "g022",
+          "category": "OTHER",
+          "value": "Finance Reports"
+        },
+        {
+          "id": "n007",
+          "category": "LAB",
+          "value": "Glasgow Coma Scale 14"
+        },
+        {
+          "id": "n012",
+          "category": "DRUG",
+          "value": "Zofran"
+        },
+        {
+          "id": "n014",
+          "category": "DRUG",
+          "value": "Keytruda"
+        },
+        {
+          "id": "n016",
+          "category": "DRUG",
+          "value": "Humalog"
+        },
+        {
+          "id": "n018",
+          "category": "CLINICAL",
+          "value": "Graves disease"
+        },
+        {
+          "id": "n019",
+          "category": "OTHER",
+          "value": "Cardiology"
+        },
+        {
+          "id": "n027",
+          "category": "OTHER",
+          "value": "Hospital Course"
+        },
+        {
+          "id": "n029",
+          "category": "DRUG",
+          "value": "Keflex"
+        },
+        {
+          "id": "n030",
+          "category": "OTHER",
+          "value": "Social History"
+        },
+        {
+          "id": "n032",
+          "category": "DRUG",
+          "value": "Pfizer COVID-19 vaccine"
+        },
+        {
+          "id": "n036",
+          "category": "DRUG",
+          "value": "Xarelto"
+        },
+        {
+          "id": "n036",
+          "category": "DRUG",
+          "value": "Entresto"
+        },
+        {
+          "id": "n037",
+          "category": "OTHER",
+          "value": "Review of Systems"
+        },
+        {
+          "id": "n040",
+          "category": "OTHER",
+          "value": "Physical Exam"
+        }
+      ],
+      "falsePositives": [
+        {
+          "id": "c009",
+          "token": "name",
+          "text": "Crohn",
+          "hitsKeep": true
+        },
+        {
+          "id": "c010",
+          "token": "name",
+          "text": "Ozempic",
+          "hitsKeep": true
+        },
+        {
+          "id": "c020",
+          "token": "name",
+          "text": "Patient",
+          "hitsKeep": false
+        },
+        {
+          "id": "c030",
+          "token": "name",
+          "text": "Started Eliquis",
+          "hitsKeep": true
+        },
+        {
+          "id": "c031",
+          "token": "name",
+          "text": "Plan",
+          "hitsKeep": true
+        },
+        {
+          "id": "c032",
+          "token": "name",
+          "text": "Chief Complaint",
+          "hitsKeep": true
+        },
+        {
+          "id": "c033",
+          "token": "name",
+          "text": "Present Illness",
+          "hitsKeep": true
+        },
+        {
+          "id": "c038",
+          "token": "name",
+          "text": "Prescribed Lexapro",
+          "hitsKeep": true
+        },
+        {
+          "id": "c053",
+          "token": "name",
+          "text": "West",
+          "hitsKeep": false
+        },
+        {
+          "id": "c067",
+          "token": "name",
+          "text": "Sex",
+          "hitsKeep": false
+        },
+        {
+          "id": "c071",
+          "token": "name",
+          "text": "Pap",
+          "hitsKeep": true
+        },
+        {
+          "id": "c074",
+          "token": "name",
+          "text": "Tylenol",
+          "hitsKeep": true
+        },
+        {
+          "id": "c077",
+          "token": "name",
+          "text": "Age",
+          "hitsKeep": false
+        },
+        {
+          "id": "c077",
+          "token": "name",
+          "text": "Phone",
+          "hitsKeep": false
+        },
+        {
+          "id": "c080",
+          "token": "name",
+          "text": "Twin",
+          "hitsKeep": false
+        },
+        {
+          "id": "m022",
+          "token": "name",
+          "text": "Benadryl",
+          "hitsKeep": true
+        },
+        {
+          "id": "m029",
+          "token": "name",
+          "text": "Zoloft",
+          "hitsKeep": true
+        },
+        {
+          "id": "m032",
+          "token": "name",
+          "text": "Humira",
+          "hitsKeep": true
+        },
+        {
+          "id": "g022",
+          "token": "name",
+          "text": "Finance Reports",
+          "hitsKeep": true
+        },
+        {
+          "id": "n007",
+          "token": "name",
+          "text": "Glasgow Coma Scale",
+          "hitsKeep": true
+        },
+        {
+          "id": "n012",
+          "token": "name",
+          "text": "Zofran",
+          "hitsKeep": true
+        },
+        {
+          "id": "n014",
+          "token": "name",
+          "text": "Keytruda",
+          "hitsKeep": true
+        },
+        {
+          "id": "n016",
+          "token": "name",
+          "text": "Humalog",
+          "hitsKeep": true
+        },
+        {
+          "id": "n018",
+          "token": "name",
+          "text": "Graves",
+          "hitsKeep": true
+        },
+        {
+          "id": "n019",
+          "token": "name",
+          "text": "Cardiology",
+          "hitsKeep": true
+        },
+        {
+          "id": "n027",
+          "token": "name",
+          "text": "Hospital Course",
+          "hitsKeep": true
+        },
+        {
+          "id": "n029",
+          "token": "name",
+          "text": "Keflex",
+          "hitsKeep": true
+        },
+        {
+          "id": "n030",
+          "token": "name",
+          "text": "Social History",
+          "hitsKeep": true
+        },
+        {
+          "id": "n032",
+          "token": "name",
+          "text": "Pfizer",
+          "hitsKeep": true
+        },
+        {
+          "id": "n036",
+          "token": "name",
+          "text": "Xarelto",
+          "hitsKeep": true
+        },
+        {
+          "id": "n036",
+          "token": "name",
+          "text": "Entresto",
+          "hitsKeep": true
+        },
+        {
+          "id": "n037",
+          "token": "name",
+          "text": "Systems",
+          "hitsKeep": true
+        },
+        {
+          "id": "n040",
+          "token": "name",
+          "text": "Physical Exam",
+          "hitsKeep": true
+        }
+      ],
+      "latency": {
+        "calls": 36400,
+        "p50_us": 3.125,
+        "p95_us": 4.958,
+        "p99_us": 8.333,
+        "max_us": 763.417
+      }
+    },
+    "strict": {
+      "overall": {
+        "entities": 207,
+        "entityRecall": 0.7439613526570048,
+        "entityPartial": 6,
+        "spansEmitted": 213,
+        "spanPrecision": 0.7323943661971831,
+        "charPrecision": 0.45035380050216844,
+        "charRecall": 0.8627022299956275,
+        "hardNegatives": 227,
+        "hardNegativesKept": 0.43171806167400884,
+        "snippetsWithPii": 118,
+        "snippetsNoLeak": 70,
+        "negativeSnippets": 40,
+        "negativeIntact": 16
+      },
+      "byType": {
+        "NAME": {
+          "n": 51,
+          "full": 44,
+          "partial": 3,
+          "missed": 4,
+          "recall": 0.8627450980392157
+        },
+        "DOB": {
+          "n": 11,
+          "full": 10,
+          "partial": 0,
+          "missed": 1,
+          "recall": 0.9090909090909091
+        },
+        "ID": {
+          "n": 19,
+          "full": 14,
+          "partial": 0,
+          "missed": 5,
+          "recall": 0.7368421052631579
+        },
+        "FACILITY": {
+          "n": 21,
+          "full": 20,
+          "partial": 1,
+          "missed": 0,
+          "recall": 0.9523809523809523
+        },
+        "DATE": {
+          "n": 25,
+          "full": 4,
+          "partial": 0,
+          "missed": 21,
+          "recall": 0.16
+        },
+        "AGE": {
+          "n": 14,
+          "full": 1,
+          "partial": 0,
+          "missed": 13,
+          "recall": 0.07142857142857142
+        },
+        "RELATIVE": {
+          "n": 26,
+          "full": 22,
+          "partial": 1,
+          "missed": 3,
+          "recall": 0.8461538461538461
+        },
+        "PHONE": {
+          "n": 19,
+          "full": 19,
+          "partial": 0,
+          "missed": 0,
+          "recall": 1
+        },
+        "ADDRESS": {
+          "n": 13,
+          "full": 12,
+          "partial": 1,
+          "missed": 0,
+          "recall": 0.9230769230769231
+        },
+        "EMAIL": {
+          "n": 8,
+          "full": 8,
+          "partial": 0,
+          "missed": 0,
+          "recall": 1
+        }
+      },
+      "byToken": {
+        "medical": {
+          "emitted": 47,
+          "tp": 15,
+          "fp": 32,
+          "precision": 0.3191489361702128
+        },
+        "name": {
+          "emitted": 107,
+          "tp": 82,
+          "fp": 25,
+          "precision": 0.7663551401869159
+        },
+        "account": {
+          "emitted": 8,
+          "tp": 8,
+          "fp": 0,
+          "precision": 1
+        },
+        "address": {
+          "emitted": 11,
+          "tp": 11,
+          "fp": 0,
+          "precision": 1
+        },
+        "email": {
+          "emitted": 7,
+          "tp": 7,
+          "fp": 0,
+          "precision": 1
+        },
+        "phone": {
+          "emitted": 17,
+          "tp": 17,
+          "fp": 0,
+          "precision": 1
+        },
+        "ssn": {
+          "emitted": 3,
+          "tp": 3,
+          "fp": 0,
+          "precision": 1
+        },
+        "dob": {
+          "emitted": 9,
+          "tp": 9,
+          "fp": 0,
+          "precision": 1
+        },
+        "kid-detail": {
+          "emitted": 1,
+          "tp": 1,
+          "fp": 0,
+          "precision": 1
+        },
+        "legal": {
+          "emitted": 1,
+          "tp": 1,
+          "fp": 0,
+          "precision": 1
+        },
+        "card": {
+          "emitted": 1,
+          "tp": 1,
+          "fp": 0,
+          "precision": 1
+        },
+        "coords": {
+          "emitted": 1,
+          "tp": 1,
+          "fp": 0,
+          "precision": 1
+        }
+      },
+      "byCategory": {
+        "CLINICAL": {
+          "n": 47,
+          "kept": 29,
+          "damaged": 18,
+          "keptRate": 0.6170212765957447
+        },
+        "DRUG": {
+          "n": 63,
+          "kept": 16,
+          "damaged": 47,
+          "keptRate": 0.25396825396825395
+        },
+        "DOSE": {
+          "n": 39,
+          "kept": 6,
+          "damaged": 33,
+          "keptRate": 0.15384615384615385
+        },
+        "LAB": {
+          "n": 50,
+          "kept": 31,
+          "damaged": 19,
+          "keptRate": 0.62
+        },
+        "VITAL": {
+          "n": 9,
+          "kept": 8,
+          "damaged": 1,
+          "keptRate": 0.8888888888888888
+        },
+        "OTHER": {
+          "n": 19,
+          "kept": 8,
+          "damaged": 11,
+          "keptRate": 0.42105263157894735
+        }
+      },
+      "misses": [
+        {
+          "id": "c002",
+          "type": "AGE",
+          "value": "72",
+          "status": "missed"
+        },
+        {
+          "id": "c003",
+          "type": "DATE",
+          "value": "02/11/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c012",
+          "type": "DATE",
+          "value": "03/22/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c014",
+          "type": "AGE",
+          "value": "81",
+          "status": "missed"
+        },
+        {
+          "id": "c014",
+          "type": "DATE",
+          "value": "1/9/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c018",
+          "type": "FACILITY",
+          "value": "St. Brendan Medical Center",
+          "status": "partial"
+        },
+        {
+          "id": "c018",
+          "type": "DATE",
+          "value": "7/4/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c026",
+          "type": "AGE",
+          "value": "93",
+          "status": "missed"
+        },
+        {
+          "id": "c028",
+          "type": "DATE",
+          "value": "04/18/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c033",
+          "type": "AGE",
+          "value": "67",
+          "status": "missed"
+        },
+        {
+          "id": "c040",
+          "type": "ID",
+          "value": "7782194",
+          "status": "missed"
+        },
+        {
+          "id": "c043",
+          "type": "DATE",
+          "value": "10/02/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c045",
+          "type": "DATE",
+          "value": "05/05/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c047",
+          "type": "AGE",
+          "value": "82",
+          "status": "missed"
+        },
+        {
+          "id": "c052",
+          "type": "RELATIVE",
+          "value": "Dev",
+          "status": "missed"
+        },
+        {
+          "id": "c053",
+          "type": "DATE",
+          "value": "12/01/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c056",
+          "type": "AGE",
+          "value": "45",
+          "status": "missed"
+        },
+        {
+          "id": "c058",
+          "type": "RELATIVE",
+          "value": "Alexei",
+          "status": "missed"
+        },
+        {
+          "id": "c060",
+          "type": "NAME",
+          "value": "Ramona Iturbe-Klein",
+          "status": "partial"
+        },
+        {
+          "id": "c061",
+          "type": "DATE",
+          "value": "11/12/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c063",
+          "type": "RELATIVE",
+          "value": "Linda Okonkwo-Baptiste",
+          "status": "partial"
+        },
+        {
+          "id": "c065",
+          "type": "AGE",
+          "value": "3",
+          "status": "missed"
+        },
+        {
+          "id": "c067",
+          "type": "ID",
+          "value": "30019487",
+          "status": "missed"
+        },
+        {
+          "id": "c072",
+          "type": "AGE",
+          "value": "88",
+          "status": "missed"
+        },
+        {
+          "id": "c072",
+          "type": "DATE",
+          "value": "9/14/2023",
+          "status": "missed"
+        },
+        {
+          "id": "c075",
+          "type": "DATE",
+          "value": "07/30/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c076",
+          "type": "DATE",
+          "value": "2/20/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c077",
+          "type": "AGE",
+          "value": "86",
+          "status": "missed"
+        },
+        {
+          "id": "c082",
+          "type": "AGE",
+          "value": "47",
+          "status": "missed"
+        },
+        {
+          "id": "c083",
+          "type": "NAME",
+          "value": "Elena Vasquez-Moore",
+          "status": "partial"
+        },
+        {
+          "id": "c084",
+          "type": "NAME",
+          "value": "Harriet Nakamura-Boyd",
+          "status": "partial"
+        },
+        {
+          "id": "c085",
+          "type": "DATE",
+          "value": "4/30/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m002",
+          "type": "NAME",
+          "value": "Omar",
+          "status": "missed"
+        },
+        {
+          "id": "m007",
+          "type": "DATE",
+          "value": "09/08/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m012",
+          "type": "AGE",
+          "value": "68",
+          "status": "missed"
+        },
+        {
+          "id": "m013",
+          "type": "ID",
+          "value": "4500 1123 9987",
+          "status": "missed"
+        },
+        {
+          "id": "m013",
+          "type": "ID",
+          "value": "77821",
+          "status": "missed"
+        },
+        {
+          "id": "m017",
+          "type": "DATE",
+          "value": "3/18/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m024",
+          "type": "AGE",
+          "value": "101",
+          "status": "missed"
+        },
+        {
+          "id": "m025",
+          "type": "DATE",
+          "value": "12/5/1988",
+          "status": "missed"
+        },
+        {
+          "id": "m026",
+          "type": "DATE",
+          "value": "6/1/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m026",
+          "type": "DATE",
+          "value": "6/9/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m028",
+          "type": "NAME",
+          "value": "tanya",
+          "status": "missed"
+        },
+        {
+          "id": "m030",
+          "type": "AGE",
+          "value": "79",
+          "status": "missed"
+        },
+        {
+          "id": "m031",
+          "type": "ADDRESS",
+          "value": "PO Box 4471, Springfield, MO 65801",
+          "status": "partial"
+        },
+        {
+          "id": "m032",
+          "type": "DATE",
+          "value": "8/31/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m034",
+          "type": "DOB",
+          "value": "2/14/1970",
+          "status": "missed"
+        },
+        {
+          "id": "g010",
+          "type": "DATE",
+          "value": "01/15/2025",
+          "status": "missed"
+        },
+        {
+          "id": "g013",
+          "type": "ID",
+          "value": "D123-4567-8901",
+          "status": "missed"
+        },
+        {
+          "id": "g014",
+          "type": "RELATIVE",
+          "value": "Kwame",
+          "status": "missed"
+        },
+        {
+          "id": "g017",
+          "type": "NAME",
+          "value": "Carlos",
+          "status": "missed"
+        },
+        {
+          "id": "g018",
+          "type": "NAME",
+          "value": "Fatima",
+          "status": "missed"
+        },
+        {
+          "id": "g021",
+          "type": "DATE",
+          "value": "09/02/2025",
+          "status": "missed"
+        }
+      ],
+      "damaged": [
+        {
+          "id": "c001",
+          "category": "CLINICAL",
+          "value": "type 2 diabetes"
+        },
+        {
+          "id": "c002",
+          "category": "DRUG",
+          "value": "nitrofurantoin"
+        },
+        {
+          "id": "c002",
+          "category": "DOSE",
+          "value": "100 mg BID"
+        },
+        {
+          "id": "c005",
+          "category": "DRUG",
+          "value": "trazodone"
+        },
+        {
+          "id": "c005",
+          "category": "DOSE",
+          "value": "50 mg qHS"
+        },
+        {
+          "id": "c006",
+          "category": "LAB",
+          "value": "A1c 8.1%"
+        },
+        {
+          "id": "c006",
+          "category": "LAB",
+          "value": "LDL 142 mg/dL"
+        },
+        {
+          "id": "c006",
+          "category": "LAB",
+          "value": "eGFR 61"
+        },
+        {
+          "id": "c006",
+          "category": "LAB",
+          "value": "potassium 4.3"
+        },
+        {
+          "id": "c009",
+          "category": "CLINICAL",
+          "value": "Crohn disease"
+        },
+        {
+          "id": "c009",
+          "category": "DRUG",
+          "value": "adalimumab"
+        },
+        {
+          "id": "c009",
+          "category": "DOSE",
+          "value": "40 mg every 2 weeks"
+        },
+        {
+          "id": "c010",
+          "category": "DRUG",
+          "value": "Ozempic"
+        },
+        {
+          "id": "c010",
+          "category": "DOSE",
+          "value": "0.5 mg weekly"
+        },
+        {
+          "id": "c015",
+          "category": "LAB",
+          "value": "Hgb 9.8"
+        },
+        {
+          "id": "c015",
+          "category": "LAB",
+          "value": "MCV 72"
+        },
+        {
+          "id": "c015",
+          "category": "LAB",
+          "value": "ferritin 8"
+        },
+        {
+          "id": "c015",
+          "category": "DRUG",
+          "value": "ferrous sulfate"
+        },
+        {
+          "id": "c015",
+          "category": "DOSE",
+          "value": "325 mg daily"
+        },
+        {
+          "id": "c017",
+          "category": "DRUG",
+          "value": "lisinopril"
+        },
+        {
+          "id": "c017",
+          "category": "DOSE",
+          "value": "20 mg daily"
+        },
+        {
+          "id": "c017",
+          "category": "DRUG",
+          "value": "atorvastatin"
+        },
+        {
+          "id": "c017",
+          "category": "DOSE",
+          "value": "40 mg nightly"
+        },
+        {
+          "id": "c019",
+          "category": "DRUG",
+          "value": "penicillin"
+        },
+        {
+          "id": "c019",
+          "category": "DRUG",
+          "value": "sulfa"
+        },
+        {
+          "id": "c025",
+          "category": "LAB",
+          "value": "INR 2.6"
+        },
+        {
+          "id": "c025",
+          "category": "DRUG",
+          "value": "warfarin"
+        },
+        {
+          "id": "c025",
+          "category": "DOSE",
+          "value": "5 mg daily"
+        },
+        {
+          "id": "c030",
+          "category": "DRUG",
+          "value": "Eliquis"
+        },
+        {
+          "id": "c030",
+          "category": "DOSE",
+          "value": "5 mg BID"
+        },
+        {
+          "id": "c030",
+          "category": "CLINICAL",
+          "value": "DVT"
+        },
+        {
+          "id": "c030",
+          "category": "DRUG",
+          "value": "aspirin"
+        },
+        {
+          "id": "c031",
+          "category": "OTHER",
+          "value": "Assessment and Plan"
+        },
+        {
+          "id": "c031",
+          "category": "DRUG",
+          "value": "amlodipine"
+        },
+        {
+          "id": "c031",
+          "category": "DOSE",
+          "value": "10 mg daily"
+        },
+        {
+          "id": "c032",
+          "category": "OTHER",
+          "value": "Chief Complaint"
+        },
+        {
+          "id": "c033",
+          "category": "OTHER",
+          "value": "History of Present Illness"
+        },
+        {
+          "id": "c035",
+          "category": "CLINICAL",
+          "value": "colonoscopy"
+        },
+        {
+          "id": "c036",
+          "category": "CLINICAL",
+          "value": "breast cancer"
+        },
+        {
+          "id": "c038",
+          "category": "DRUG",
+          "value": "Lexapro"
+        },
+        {
+          "id": "c038",
+          "category": "DOSE",
+          "value": "10 mg daily"
+        },
+        {
+          "id": "c038",
+          "category": "LAB",
+          "value": "PHQ-9 score 14"
+        },
+        {
+          "id": "c042",
+          "category": "LAB",
+          "value": "Creatinine rose from 1.1 to 1.9"
+        },
+        {
+          "id": "c042",
+          "category": "DRUG",
+          "value": "ibuprofen"
+        },
+        {
+          "id": "c042",
+          "category": "DOSE",
+          "value": "800 mg TID"
+        },
+        {
+          "id": "c046",
+          "category": "DRUG",
+          "value": "Metformin"
+        },
+        {
+          "id": "c046",
+          "category": "DOSE",
+          "value": "1000 mg BID"
+        },
+        {
+          "id": "c046",
+          "category": "DRUG",
+          "value": "glipizide"
+        },
+        {
+          "id": "c046",
+          "category": "DOSE",
+          "value": "5 mg daily"
+        },
+        {
+          "id": "c046",
+          "category": "DRUG",
+          "value": "Januvia"
+        },
+        {
+          "id": "c046",
+          "category": "DOSE",
+          "value": "100 mg daily"
+        },
+        {
+          "id": "c049",
+          "category": "CLINICAL",
+          "value": "MRI"
+        },
+        {
+          "id": "c054",
+          "category": "CLINICAL",
+          "value": "basal cell carcinoma"
+        },
+        {
+          "id": "c062",
+          "category": "DRUG",
+          "value": "Sertraline"
+        },
+        {
+          "id": "c062",
+          "category": "DOSE",
+          "value": "50 mg daily"
+        },
+        {
+          "id": "c062",
+          "category": "DOSE",
+          "value": "100 mg"
+        },
+        {
+          "id": "c066",
+          "category": "LAB",
+          "value": "Hepatitis B surface antigen negative"
+        },
+        {
+          "id": "c066",
+          "category": "LAB",
+          "value": "HIV screen nonreactive"
+        },
+        {
+          "id": "c069",
+          "category": "DRUG",
+          "value": "Vancomycin"
+        },
+        {
+          "id": "c069",
+          "category": "LAB",
+          "value": "trough 15.2 mcg/mL"
+        },
+        {
+          "id": "c069",
+          "category": "DOSE",
+          "value": "1250 mg IV q12h"
+        },
+        {
+          "id": "c071",
+          "category": "CLINICAL",
+          "value": "abnormal Pap"
+        },
+        {
+          "id": "c073",
+          "category": "LAB",
+          "value": "Wound culture grew MRSA"
+        },
+        {
+          "id": "c073",
+          "category": "DRUG",
+          "value": "doxycycline"
+        },
+        {
+          "id": "c073",
+          "category": "DOSE",
+          "value": "100 mg BID x 10 days"
+        },
+        {
+          "id": "c074",
+          "category": "DRUG",
+          "value": "Tylenol"
+        },
+        {
+          "id": "c082",
+          "category": "CLINICAL",
+          "value": "migraine with aura"
+        },
+        {
+          "id": "m001",
+          "category": "VITAL",
+          "value": "150/95"
+        },
+        {
+          "id": "m006",
+          "category": "DRUG",
+          "value": "insulin"
+        },
+        {
+          "id": "m016",
+          "category": "DOSE",
+          "value": "200 mg"
+        },
+        {
+          "id": "m016",
+          "category": "DRUG",
+          "value": "ibuprofen"
+        },
+        {
+          "id": "m016",
+          "category": "CLINICAL",
+          "value": "headache"
+        },
+        {
+          "id": "m022",
+          "category": "DRUG",
+          "value": "Benadryl"
+        },
+        {
+          "id": "m029",
+          "category": "DRUG",
+          "value": "Zoloft"
+        },
+        {
+          "id": "m032",
+          "category": "DRUG",
+          "value": "Humira"
+        },
+        {
+          "id": "m035",
+          "category": "DRUG",
+          "value": "methotrexate"
+        },
+        {
+          "id": "m035",
+          "category": "DOSE",
+          "value": "15 mg weekly"
+        },
+        {
+          "id": "g022",
+          "category": "OTHER",
+          "value": "Finance Reports"
+        },
+        {
+          "id": "n001",
+          "category": "DRUG",
+          "value": "furosemide"
+        },
+        {
+          "id": "n001",
+          "category": "DOSE",
+          "value": "40 mg PO daily"
+        },
+        {
+          "id": "n001",
+          "category": "LAB",
+          "value": "BMP"
+        },
+        {
+          "id": "n003",
+          "category": "DRUG",
+          "value": "Lipitor"
+        },
+        {
+          "id": "n003",
+          "category": "DOSE",
+          "value": "20 mg"
+        },
+        {
+          "id": "n003",
+          "category": "DRUG",
+          "value": "rosuvastatin"
+        },
+        {
+          "id": "n003",
+          "category": "DOSE",
+          "value": "10 mg"
+        },
+        {
+          "id": "n003",
+          "category": "CLINICAL",
+          "value": "myalgias"
+        },
+        {
+          "id": "n005",
+          "category": "LAB",
+          "value": "Gleason 3+4"
+        },
+        {
+          "id": "n005",
+          "category": "CLINICAL",
+          "value": "adenocarcinoma"
+        },
+        {
+          "id": "n005",
+          "category": "CLINICAL",
+          "value": "prostate biopsy"
+        },
+        {
+          "id": "n007",
+          "category": "LAB",
+          "value": "Glasgow Coma Scale 14"
+        },
+        {
+          "id": "n009",
+          "category": "CLINICAL",
+          "value": "Bell palsy"
+        },
+        {
+          "id": "n009",
+          "category": "DRUG",
+          "value": "prednisone"
+        },
+        {
+          "id": "n009",
+          "category": "DOSE",
+          "value": "60 mg daily for 7 days"
+        },
+        {
+          "id": "n012",
+          "category": "DRUG",
+          "value": "Tylenol"
+        },
+        {
+          "id": "n012",
+          "category": "DOSE",
+          "value": "650 mg q6h PRN"
+        },
+        {
+          "id": "n012",
+          "category": "DRUG",
+          "value": "Zofran"
+        },
+        {
+          "id": "n012",
+          "category": "DOSE",
+          "value": "4 mg ODT PRN"
+        },
+        {
+          "id": "n014",
+          "category": "DRUG",
+          "value": "Keytruda"
+        },
+        {
+          "id": "n015",
+          "category": "LAB",
+          "value": "Hemoglobin A1c 5.6%"
+        },
+        {
+          "id": "n015",
+          "category": "LAB",
+          "value": "fasting glucose 98 mg/dL"
+        },
+        {
+          "id": "n016",
+          "category": "DRUG",
+          "value": "Humalog"
+        },
+        {
+          "id": "n018",
+          "category": "CLINICAL",
+          "value": "Graves disease"
+        },
+        {
+          "id": "n018",
+          "category": "DRUG",
+          "value": "methimazole"
+        },
+        {
+          "id": "n018",
+          "category": "DOSE",
+          "value": "10 mg daily"
+        },
+        {
+          "id": "n019",
+          "category": "OTHER",
+          "value": "Cardiology"
+        },
+        {
+          "id": "n020",
+          "category": "DRUG",
+          "value": "Morphine"
+        },
+        {
+          "id": "n020",
+          "category": "DOSE",
+          "value": "2 mg IV q2h PRN"
+        },
+        {
+          "id": "n020",
+          "category": "DRUG",
+          "value": "Narcan"
+        },
+        {
+          "id": "n026",
+          "category": "DRUG",
+          "value": "Dilaudid"
+        },
+        {
+          "id": "n026",
+          "category": "DOSE",
+          "value": "0.5 mg IV"
+        },
+        {
+          "id": "n027",
+          "category": "OTHER",
+          "value": "Hospital Course"
+        },
+        {
+          "id": "n028",
+          "category": "DRUG",
+          "value": "amoxicillin"
+        },
+        {
+          "id": "n028",
+          "category": "DOSE",
+          "value": "875 mg BID x 10 days"
+        },
+        {
+          "id": "n028",
+          "category": "OTHER",
+          "value": "dispense 20 tablets"
+        },
+        {
+          "id": "n029",
+          "category": "DRUG",
+          "value": "Keflex"
+        },
+        {
+          "id": "n029",
+          "category": "OTHER",
+          "value": "latex"
+        },
+        {
+          "id": "n030",
+          "category": "OTHER",
+          "value": "Social History"
+        },
+        {
+          "id": "n031",
+          "category": "CLINICAL",
+          "value": "Wilms tumor"
+        },
+        {
+          "id": "n031",
+          "category": "CLINICAL",
+          "value": "nephrectomy"
+        },
+        {
+          "id": "n032",
+          "category": "DRUG",
+          "value": "Pfizer COVID-19 vaccine"
+        },
+        {
+          "id": "n033",
+          "category": "DRUG",
+          "value": "Lasix"
+        },
+        {
+          "id": "n033",
+          "category": "DOSE",
+          "value": "20 mg IV x1"
+        },
+        {
+          "id": "n034",
+          "category": "DRUG",
+          "value": "Prolia"
+        },
+        {
+          "id": "n034",
+          "category": "DOSE",
+          "value": "60 mg subcut every 6 months"
+        },
+        {
+          "id": "n034",
+          "category": "CLINICAL",
+          "value": "osteoporosis"
+        },
+        {
+          "id": "n036",
+          "category": "DRUG",
+          "value": "Xarelto"
+        },
+        {
+          "id": "n036",
+          "category": "DRUG",
+          "value": "Entresto"
+        },
+        {
+          "id": "n037",
+          "category": "OTHER",
+          "value": "Review of Systems"
+        },
+        {
+          "id": "n040",
+          "category": "OTHER",
+          "value": "Physical Exam"
+        }
+      ],
+      "falsePositives": [
+        {
+          "id": "c002",
+          "token": "medical",
+          "text": "Started nitrofurantoin 100 mg BID",
+          "hitsKeep": true
+        },
+        {
+          "id": "c015",
+          "token": "medical",
+          "text": "Hgb 9.8, MCV 72, ferritin 8; start ferrous sulfate 325 mg daily",
+          "hitsKeep": true
+        },
+        {
+          "id": "c019",
+          "token": "medical",
+          "text": "Allergies: penicillin (rash), sulfa",
+          "hitsKeep": true
+        },
+        {
+          "id": "c020",
+          "token": "name",
+          "text": "Patient",
+          "hitsKeep": false
+        },
+        {
+          "id": "c025",
+          "token": "medical",
+          "text": "INR 2.6 on warfarin 5 mg daily; no bleeding",
+          "hitsKeep": true
+        },
+        {
+          "id": "c030",
+          "token": "medical",
+          "text": "Started Eliquis 5 mg BID for new DVT; stop aspirin",
+          "hitsKeep": true
+        },
+        {
+          "id": "c031",
+          "token": "name",
+          "text": "Plan",
+          "hitsKeep": true
+        },
+        {
+          "id": "c031",
+          "token": "medical",
+          "text": "Increase amlodipine to 10 mg daily",
+          "hitsKeep": true
+        },
+        {
+          "id": "c032",
+          "token": "name",
+          "text": "Chief Complaint",
+          "hitsKeep": true
+        },
+        {
+          "id": "c033",
+          "token": "name",
+          "text": "Present Illness",
+          "hitsKeep": true
+        },
+        {
+          "id": "c038",
+          "token": "medical",
+          "text": "Prescribed Lexapro 10 mg daily; PHQ-9 score 14",
+          "hitsKeep": true
+        },
+        {
+          "id": "c042",
+          "token": "medical",
+          "text": "Creatinine rose from 1.1 to 1.9 after starting ibuprofen 800 mg TID",
+          "hitsKeep": true
+        },
+        {
+          "id": "c046",
+          "token": "medical",
+          "text": "Metformin 1000 mg BID, glipizide 5 mg daily, Januvia 100 mg daily",
+          "hitsKeep": true
+        },
+        {
+          "id": "c053",
+          "token": "name",
+          "text": "West",
+          "hitsKeep": false
+        },
+        {
+          "id": "c062",
+          "token": "medical",
+          "text": "Sertraline 50 mg daily was increased to 100 mg; patient tolerating well",
+          "hitsKeep": true
+        },
+        {
+          "id": "c066",
+          "token": "medical",
+          "text": "Hepatitis B surface antigen negative; HIV screen nonreactive",
+          "hitsKeep": true
+        },
+        {
+          "id": "c067",
+          "token": "name",
+          "text": "Sex",
+          "hitsKeep": false
+        },
+        {
+          "id": "c069",
+          "token": "medical",
+          "text": "Vancomycin trough 15.2 mcg/mL; continue 1250 mg IV q12h",
+          "hitsKeep": true
+        },
+        {
+          "id": "c071",
+          "token": "name",
+          "text": "Pap",
+          "hitsKeep": true
+        },
+        {
+          "id": "c073",
+          "token": "medical",
+          "text": "Wound culture grew MRSA; switch to doxycycline 100 mg BID x 10 days",
+          "hitsKeep": true
+        },
+        {
+          "id": "c074",
+          "token": "name",
+          "text": "Tylenol",
+          "hitsKeep": true
+        },
+        {
+          "id": "c077",
+          "token": "name",
+          "text": "Age",
+          "hitsKeep": false
+        },
+        {
+          "id": "c077",
+          "token": "name",
+          "text": "Phone",
+          "hitsKeep": false
+        },
+        {
+          "id": "c080",
+          "token": "name",
+          "text": "Twin",
+          "hitsKeep": false
+        },
+        {
+          "id": "c082",
+          "token": "medical",
+          "text": "right-handed woman with migraine with aura",
+          "hitsKeep": true
+        },
+        {
+          "id": "m001",
+          "token": "medical",
+          "text": "My blood pressure was 150/95 this morning, should I take an extra dose",
+          "hitsKeep": true
+        },
+        {
+          "id": "m016",
+          "token": "medical",
+          "text": "I took two 200 mg ibuprofen and the headache is still there",
+          "hitsKeep": true
+        },
+        {
+          "id": "m022",
+          "token": "name",
+          "text": "Benadryl",
+          "hitsKeep": true
+        },
+        {
+          "id": "m029",
+          "token": "name",
+          "text": "Zoloft",
+          "hitsKeep": true
+        },
+        {
+          "id": "m032",
+          "token": "name",
+          "text": "Humira",
+          "hitsKeep": true
+        },
+        {
+          "id": "m035",
+          "token": "medical",
+          "text": "Can I get the shingles shot if I'm on methotrexate 15 mg weekly",
+          "hitsKeep": true
+        },
+        {
+          "id": "g022",
+          "token": "name",
+          "text": "Finance Reports",
+          "hitsKeep": true
+        },
+        {
+          "id": "n001",
+          "token": "medical",
+          "text": "Continue furosemide 40 mg PO daily; monitor weight and BMP",
+          "hitsKeep": true
+        },
+        {
+          "id": "n003",
+          "token": "medical",
+          "text": "Lipitor 20 mg was switched to rosuvastatin 10 mg due to myalgias",
+          "hitsKeep": true
+        },
+        {
+          "id": "n005",
+          "token": "medical",
+          "text": "Gleason 3+4 adenocarcinoma on prostate biopsy",
+          "hitsKeep": true
+        },
+        {
+          "id": "n007",
+          "token": "name",
+          "text": "Glasgow Coma Scale",
+          "hitsKeep": true
+        },
+        {
+          "id": "n009",
+          "token": "medical",
+          "text": "Bell palsy on the right; started prednisone 60 mg daily for 7 days",
+          "hitsKeep": true
+        },
+        {
+          "id": "n012",
+          "token": "medical",
+          "text": "Tylenol 650 mg q6h PRN and Zofran 4 mg ODT PRN nausea",
+          "hitsKeep": true
+        },
+        {
+          "id": "n014",
+          "token": "name",
+          "text": "Keytruda",
+          "hitsKeep": true
+        },
+        {
+          "id": "n015",
+          "token": "medical",
+          "text": "Hemoglobin A1c 5.6% and fasting glucose 98 mg/dL",
+          "hitsKeep": true
+        },
+        {
+          "id": "n016",
+          "token": "name",
+          "text": "Humalog",
+          "hitsKeep": true
+        },
+        {
+          "id": "n018",
+          "token": "medical",
+          "text": "Diagnosed with Graves disease; methimazole 10 mg daily",
+          "hitsKeep": true
+        },
+        {
+          "id": "n019",
+          "token": "name",
+          "text": "Cardiology",
+          "hitsKeep": true
+        },
+        {
+          "id": "n020",
+          "token": "medical",
+          "text": "Morphine 2 mg IV q2h PRN pain; Narcan at bedside",
+          "hitsKeep": true
+        },
+        {
+          "id": "n026",
+          "token": "medical",
+          "text": "Dilaudid 0.5 mg IV given at 0300 for breakthrough pain",
+          "hitsKeep": true
+        },
+        {
+          "id": "n027",
+          "token": "name",
+          "text": "Hospital Course",
+          "hitsKeep": true
+        },
+        {
+          "id": "n028",
+          "token": "medical",
+          "text": "Rx: amoxicillin 875 mg BID x 10 days, dispense 20 tablets, refills 0",
+          "hitsKeep": true
+        },
+        {
+          "id": "n029",
+          "token": "medical",
+          "text": "Allergic to Keflex and latex",
+          "hitsKeep": true
+        },
+        {
+          "id": "n030",
+          "token": "name",
+          "text": "Social History",
+          "hitsKeep": true
+        },
+        {
+          "id": "n031",
+          "token": "medical",
+          "text": "Wilms tumor survivor, status post nephrectomy",
+          "hitsKeep": true
+        },
+        {
+          "id": "n032",
+          "token": "medical",
+          "text": "Third dose of the Pfizer COVID-19 vaccine administered in the left arm",
+          "hitsKeep": true
+        },
+        {
+          "id": "n033",
+          "token": "medical",
+          "text": "Lasix 20 mg IV x1 with good urine output",
+          "hitsKeep": true
+        },
+        {
+          "id": "n034",
+          "token": "medical",
+          "text": "Prolia 60 mg subcut every 6 months for osteoporosis",
+          "hitsKeep": true
+        },
+        {
+          "id": "n036",
+          "token": "name",
+          "text": "Xarelto",
+          "hitsKeep": true
+        },
+        {
+          "id": "n036",
+          "token": "name",
+          "text": "Entresto",
+          "hitsKeep": true
+        },
+        {
+          "id": "n037",
+          "token": "name",
+          "text": "Systems",
+          "hitsKeep": true
+        },
+        {
+          "id": "n040",
+          "token": "name",
+          "text": "Physical Exam",
+          "hitsKeep": true
+        }
+      ],
+      "latency": {
+        "calls": 36400,
+        "p50_us": 4.375,
+        "p95_us": 6.459,
+        "p99_us": 9.75,
+        "max_us": 963.958
+      }
+    },
+    "standard": {
+      "overall": {
+        "entities": 207,
+        "entityRecall": 0.3333333333333333,
+        "entityPartial": 0,
+        "spansEmitted": 69,
+        "spanPrecision": 0.9710144927536232,
+        "charPrecision": 0.7145122918318795,
+        "charRecall": 0.3939658941845212,
+        "hardNegatives": 227,
+        "hardNegativesKept": 0.9779735682819384,
+        "snippetsWithPii": 118,
+        "snippetsNoLeak": 27,
+        "negativeSnippets": 40,
+        "negativeIntact": 40
+      },
+      "byType": {
+        "NAME": {
+          "n": 51,
+          "full": 1,
+          "partial": 0,
+          "missed": 50,
+          "recall": 0.0196078431372549
+        },
+        "DOB": {
+          "n": 11,
+          "full": 10,
+          "partial": 0,
+          "missed": 1,
+          "recall": 0.9090909090909091
+        },
+        "ID": {
+          "n": 19,
+          "full": 13,
+          "partial": 0,
+          "missed": 6,
+          "recall": 0.6842105263157895
+        },
+        "FACILITY": {
+          "n": 21,
+          "full": 0,
+          "partial": 0,
+          "missed": 21,
+          "recall": 0
+        },
+        "DATE": {
+          "n": 25,
+          "full": 0,
+          "partial": 0,
+          "missed": 25,
+          "recall": 0
+        },
+        "AGE": {
+          "n": 14,
+          "full": 0,
+          "partial": 0,
+          "missed": 14,
+          "recall": 0
+        },
+        "RELATIVE": {
+          "n": 26,
+          "full": 6,
+          "partial": 0,
+          "missed": 20,
+          "recall": 0.23076923076923078
+        },
+        "PHONE": {
+          "n": 19,
+          "full": 19,
+          "partial": 0,
+          "missed": 0,
+          "recall": 1
+        },
+        "ADDRESS": {
+          "n": 13,
+          "full": 12,
+          "partial": 0,
+          "missed": 1,
+          "recall": 0.9230769230769231
+        },
+        "EMAIL": {
+          "n": 8,
+          "full": 8,
+          "partial": 0,
+          "missed": 0,
+          "recall": 1
+        }
+      },
+      "byToken": {
+        "dob": {
+          "emitted": 10,
+          "tp": 10,
+          "fp": 0,
+          "precision": 1
+        },
+        "account": {
+          "emitted": 9,
+          "tp": 9,
+          "fp": 0,
+          "precision": 1
+        },
+        "medical": {
+          "emitted": 6,
+          "tp": 4,
+          "fp": 2,
+          "precision": 0.6666666666666666
+        },
+        "address": {
+          "emitted": 11,
+          "tp": 11,
+          "fp": 0,
+          "precision": 1
+        },
+        "email": {
+          "emitted": 8,
+          "tp": 8,
+          "fp": 0,
+          "precision": 1
+        },
+        "phone": {
+          "emitted": 18,
+          "tp": 18,
+          "fp": 0,
+          "precision": 1
+        },
+        "ssn": {
+          "emitted": 3,
+          "tp": 3,
+          "fp": 0,
+          "precision": 1
+        },
+        "kid-detail": {
+          "emitted": 1,
+          "tp": 1,
+          "fp": 0,
+          "precision": 1
+        },
+        "legal": {
+          "emitted": 1,
+          "tp": 1,
+          "fp": 0,
+          "precision": 1
+        },
+        "card": {
+          "emitted": 1,
+          "tp": 1,
+          "fp": 0,
+          "precision": 1
+        },
+        "coords": {
+          "emitted": 1,
+          "tp": 1,
+          "fp": 0,
+          "precision": 1
+        }
+      },
+      "byCategory": {
+        "CLINICAL": {
+          "n": 47,
+          "kept": 46,
+          "damaged": 1,
+          "keptRate": 0.9787234042553191
+        },
+        "DRUG": {
+          "n": 63,
+          "kept": 61,
+          "damaged": 2,
+          "keptRate": 0.9682539682539683
+        },
+        "DOSE": {
+          "n": 39,
+          "kept": 38,
+          "damaged": 1,
+          "keptRate": 0.9743589743589743
+        },
+        "LAB": {
+          "n": 50,
+          "kept": 50,
+          "damaged": 0,
+          "keptRate": 1
+        },
+        "VITAL": {
+          "n": 9,
+          "kept": 8,
+          "damaged": 1,
+          "keptRate": 0.8888888888888888
+        },
+        "OTHER": {
+          "n": 19,
+          "kept": 19,
+          "damaged": 0,
+          "keptRate": 1
+        }
+      },
+      "misses": [
+        {
+          "id": "c001",
+          "type": "NAME",
+          "value": "John Q. Sample",
+          "status": "missed"
+        },
+        {
+          "id": "c001",
+          "type": "FACILITY",
+          "value": "Lakeside Clinic",
+          "status": "missed"
+        },
+        {
+          "id": "c001",
+          "type": "DATE",
+          "value": "05/14/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c002",
+          "type": "AGE",
+          "value": "72",
+          "status": "missed"
+        },
+        {
+          "id": "c003",
+          "type": "NAME",
+          "value": "Maria Delgado",
+          "status": "missed"
+        },
+        {
+          "id": "c003",
+          "type": "DATE",
+          "value": "02/11/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c003",
+          "type": "FACILITY",
+          "value": "Riverside General Hospital",
+          "status": "missed"
+        },
+        {
+          "id": "c005",
+          "type": "NAME",
+          "value": "Okafor",
+          "status": "missed"
+        },
+        {
+          "id": "c006",
+          "type": "DATE",
+          "value": "06/02/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c007",
+          "type": "NAME",
+          "value": "Hannah Lindqvist",
+          "status": "missed"
+        },
+        {
+          "id": "c007",
+          "type": "FACILITY",
+          "value": "Northgate Cardiology",
+          "status": "missed"
+        },
+        {
+          "id": "c008",
+          "type": "RELATIVE",
+          "value": "Tom",
+          "status": "missed"
+        },
+        {
+          "id": "c009",
+          "type": "AGE",
+          "value": "54",
+          "status": "missed"
+        },
+        {
+          "id": "c010",
+          "type": "ID",
+          "value": "W123456789",
+          "status": "missed"
+        },
+        {
+          "id": "c012",
+          "type": "DATE",
+          "value": "03/22/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c012",
+          "type": "FACILITY",
+          "value": "Brightpath Home Care",
+          "status": "missed"
+        },
+        {
+          "id": "c014",
+          "type": "NAME",
+          "value": "Chen",
+          "status": "missed"
+        },
+        {
+          "id": "c014",
+          "type": "AGE",
+          "value": "81",
+          "status": "missed"
+        },
+        {
+          "id": "c014",
+          "type": "DATE",
+          "value": "1/9/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c016",
+          "type": "RELATIVE",
+          "value": "Aisha Rahman",
+          "status": "missed"
+        },
+        {
+          "id": "c017",
+          "type": "NAME",
+          "value": "Patel",
+          "status": "missed"
+        },
+        {
+          "id": "c018",
+          "type": "FACILITY",
+          "value": "St. Brendan Medical Center",
+          "status": "missed"
+        },
+        {
+          "id": "c018",
+          "type": "DATE",
+          "value": "7/4/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c020",
+          "type": "NAME",
+          "value": "Luis Ortega Ramirez",
+          "status": "missed"
+        },
+        {
+          "id": "c021",
+          "type": "RELATIVE",
+          "value": "Gloria",
+          "status": "missed"
+        },
+        {
+          "id": "c024",
+          "type": "RELATIVE",
+          "value": "Marcus",
+          "status": "missed"
+        },
+        {
+          "id": "c024",
+          "type": "FACILITY",
+          "value": "Eastside Kidney Center",
+          "status": "missed"
+        },
+        {
+          "id": "c026",
+          "type": "AGE",
+          "value": "93",
+          "status": "missed"
+        },
+        {
+          "id": "c026",
+          "type": "FACILITY",
+          "value": "Willow Creek Assisted Living",
+          "status": "missed"
+        },
+        {
+          "id": "c028",
+          "type": "NAME",
+          "value": "Samuel Achebe",
+          "status": "missed"
+        },
+        {
+          "id": "c028",
+          "type": "DATE",
+          "value": "04/18/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c033",
+          "type": "NAME",
+          "value": "Ivanova",
+          "status": "missed"
+        },
+        {
+          "id": "c033",
+          "type": "AGE",
+          "value": "67",
+          "status": "missed"
+        },
+        {
+          "id": "c034",
+          "type": "NAME",
+          "value": "Frank Delacroix",
+          "status": "missed"
+        },
+        {
+          "id": "c035",
+          "type": "DATE",
+          "value": "08/19/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c035",
+          "type": "FACILITY",
+          "value": "Bayview Endoscopy Suite",
+          "status": "missed"
+        },
+        {
+          "id": "c039",
+          "type": "FACILITY",
+          "value": "Summit Orthopedics",
+          "status": "missed"
+        },
+        {
+          "id": "c039",
+          "type": "NAME",
+          "value": "Kowalski",
+          "status": "missed"
+        },
+        {
+          "id": "c040",
+          "type": "ID",
+          "value": "7782194",
+          "status": "missed"
+        },
+        {
+          "id": "c041",
+          "type": "NAME",
+          "value": "Abernathy",
+          "status": "missed"
+        },
+        {
+          "id": "c041",
+          "type": "RELATIVE",
+          "value": "Lily",
+          "status": "missed"
+        },
+        {
+          "id": "c043",
+          "type": "DATE",
+          "value": "10/02/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c043",
+          "type": "FACILITY",
+          "value": "Clearwater Family Practice",
+          "status": "missed"
+        },
+        {
+          "id": "c043",
+          "type": "NAME",
+          "value": "Noor Haddad",
+          "status": "missed"
+        },
+        {
+          "id": "c044",
+          "type": "RELATIVE",
+          "value": "Dmitri Volkov",
+          "status": "missed"
+        },
+        {
+          "id": "c045",
+          "type": "DATE",
+          "value": "05/05/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c047",
+          "type": "AGE",
+          "value": "82",
+          "status": "missed"
+        },
+        {
+          "id": "c047",
+          "type": "FACILITY",
+          "value": "Pine Ridge Nursing Home",
+          "status": "missed"
+        },
+        {
+          "id": "c048",
+          "type": "NAME",
+          "value": "Evelyn Marsh",
+          "status": "missed"
+        },
+        {
+          "id": "c051",
+          "type": "NAME",
+          "value": "Abara",
+          "status": "missed"
+        },
+        {
+          "id": "c052",
+          "type": "RELATIVE",
+          "value": "Dev",
+          "status": "missed"
+        },
+        {
+          "id": "c053",
+          "type": "FACILITY",
+          "value": "Mercy Ridge Hospital",
+          "status": "missed"
+        },
+        {
+          "id": "c053",
+          "type": "DATE",
+          "value": "12/01/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c054",
+          "type": "DATE",
+          "value": "03/03/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c056",
+          "type": "NAME",
+          "value": "Gabriel Ferreira",
+          "status": "missed"
+        },
+        {
+          "id": "c056",
+          "type": "AGE",
+          "value": "45",
+          "status": "missed"
+        },
+        {
+          "id": "c058",
+          "type": "RELATIVE",
+          "value": "Alexei",
+          "status": "missed"
+        },
+        {
+          "id": "c060",
+          "type": "NAME",
+          "value": "Ramona Iturbe-Klein",
+          "status": "missed"
+        },
+        {
+          "id": "c060",
+          "type": "FACILITY",
+          "value": "Lakeside Clinic Pulmonology",
+          "status": "missed"
+        },
+        {
+          "id": "c061",
+          "type": "DATE",
+          "value": "11/12/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c063",
+          "type": "RELATIVE",
+          "value": "Linda Okonkwo-Baptiste",
+          "status": "missed"
+        },
+        {
+          "id": "c064",
+          "type": "FACILITY",
+          "value": "Hillcrest Pediatrics",
+          "status": "missed"
+        },
+        {
+          "id": "c065",
+          "type": "AGE",
+          "value": "3",
+          "status": "missed"
+        },
+        {
+          "id": "c067",
+          "type": "ID",
+          "value": "30019487",
+          "status": "missed"
+        },
+        {
+          "id": "c070",
+          "type": "FACILITY",
+          "value": "Granite Peak Urgent Care",
+          "status": "missed"
+        },
+        {
+          "id": "c072",
+          "type": "NAME",
+          "value": "Benjamin Shapiro",
+          "status": "missed"
+        },
+        {
+          "id": "c072",
+          "type": "AGE",
+          "value": "88",
+          "status": "missed"
+        },
+        {
+          "id": "c072",
+          "type": "DATE",
+          "value": "9/14/2023",
+          "status": "missed"
+        },
+        {
+          "id": "c074",
+          "type": "RELATIVE",
+          "value": "Sunita",
+          "status": "missed"
+        },
+        {
+          "id": "c075",
+          "type": "DATE",
+          "value": "07/30/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c076",
+          "type": "NAME",
+          "value": "Delgado",
+          "status": "missed"
+        },
+        {
+          "id": "c076",
+          "type": "NAME",
+          "value": "Yusuf Bello",
+          "status": "missed"
+        },
+        {
+          "id": "c076",
+          "type": "FACILITY",
+          "value": "Eastgate Primary Care",
+          "status": "missed"
+        },
+        {
+          "id": "c076",
+          "type": "DATE",
+          "value": "2/20/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c077",
+          "type": "NAME",
+          "value": "Olga Petrova",
+          "status": "missed"
+        },
+        {
+          "id": "c077",
+          "type": "AGE",
+          "value": "86",
+          "status": "missed"
+        },
+        {
+          "id": "c078",
+          "type": "RELATIVE",
+          "value": "Craig Mullins",
+          "status": "missed"
+        },
+        {
+          "id": "c080",
+          "type": "FACILITY",
+          "value": "Valley Birth Center",
+          "status": "missed"
+        },
+        {
+          "id": "c081",
+          "type": "RELATIVE",
+          "value": "Andre",
+          "status": "missed"
+        },
+        {
+          "id": "c081",
+          "type": "RELATIVE",
+          "value": "Talia",
+          "status": "missed"
+        },
+        {
+          "id": "c082",
+          "type": "AGE",
+          "value": "47",
+          "status": "missed"
+        },
+        {
+          "id": "c083",
+          "type": "NAME",
+          "value": "Elena Vasquez-Moore",
+          "status": "missed"
+        },
+        {
+          "id": "c084",
+          "type": "NAME",
+          "value": "Harriet Nakamura-Boyd",
+          "status": "missed"
+        },
+        {
+          "id": "c084",
+          "type": "RELATIVE",
+          "value": "Joan",
+          "status": "missed"
+        },
+        {
+          "id": "c085",
+          "type": "FACILITY",
+          "value": "Oak Hollow Rehabilitation Center",
+          "status": "missed"
+        },
+        {
+          "id": "c085",
+          "type": "DATE",
+          "value": "4/30/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m001",
+          "type": "NAME",
+          "value": "Morales",
+          "status": "missed"
+        },
+        {
+          "id": "m001",
+          "type": "NAME",
+          "value": "Teresa Lin",
+          "status": "missed"
+        },
+        {
+          "id": "m002",
+          "type": "NAME",
+          "value": "Omar",
+          "status": "missed"
+        },
+        {
+          "id": "m005",
+          "type": "RELATIVE",
+          "value": "Jayden",
+          "status": "missed"
+        },
+        {
+          "id": "m007",
+          "type": "NAME",
+          "value": "Silva",
+          "status": "missed"
+        },
+        {
+          "id": "m007",
+          "type": "DATE",
+          "value": "09/08/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m007",
+          "type": "FACILITY",
+          "value": "Harborview Family Medicine",
+          "status": "missed"
+        },
+        {
+          "id": "m010",
+          "type": "RELATIVE",
+          "value": "Raj",
+          "status": "missed"
+        },
+        {
+          "id": "m012",
+          "type": "AGE",
+          "value": "68",
+          "status": "missed"
+        },
+        {
+          "id": "m013",
+          "type": "ID",
+          "value": "4500 1123 9987",
+          "status": "missed"
+        },
+        {
+          "id": "m013",
+          "type": "ID",
+          "value": "77821",
+          "status": "missed"
+        },
+        {
+          "id": "m014",
+          "type": "NAME",
+          "value": "Kelly",
+          "status": "missed"
+        },
+        {
+          "id": "m017",
+          "type": "DATE",
+          "value": "3/18/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m017",
+          "type": "RELATIVE",
+          "value": "Carmen",
+          "status": "missed"
+        },
+        {
+          "id": "m018",
+          "type": "NAME",
+          "value": "Beatriz Montoya",
+          "status": "missed"
+        },
+        {
+          "id": "m020",
+          "type": "NAME",
+          "value": "Harold Jensen",
+          "status": "missed"
+        },
+        {
+          "id": "m023",
+          "type": "NAME",
+          "value": "Lucia Fernandez",
+          "status": "missed"
+        },
+        {
+          "id": "m024",
+          "type": "AGE",
+          "value": "101",
+          "status": "missed"
+        },
+        {
+          "id": "m025",
+          "type": "DATE",
+          "value": "12/5/1988",
+          "status": "missed"
+        },
+        {
+          "id": "m026",
+          "type": "FACILITY",
+          "value": "Lakeview Behavioral Health",
+          "status": "missed"
+        },
+        {
+          "id": "m026",
+          "type": "DATE",
+          "value": "6/1/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m026",
+          "type": "DATE",
+          "value": "6/9/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m027",
+          "type": "NAME",
+          "value": "Anika Sorensen",
+          "status": "missed"
+        },
+        {
+          "id": "m028",
+          "type": "NAME",
+          "value": "tanya",
+          "status": "missed"
+        },
+        {
+          "id": "m029",
+          "type": "NAME",
+          "value": "Fitzgerald",
+          "status": "missed"
+        },
+        {
+          "id": "m030",
+          "type": "RELATIVE",
+          "value": "Hiroshi",
+          "status": "missed"
+        },
+        {
+          "id": "m030",
+          "type": "AGE",
+          "value": "79",
+          "status": "missed"
+        },
+        {
+          "id": "m031",
+          "type": "ADDRESS",
+          "value": "PO Box 4471, Springfield, MO 65801",
+          "status": "missed"
+        },
+        {
+          "id": "m032",
+          "type": "DATE",
+          "value": "8/31/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m033",
+          "type": "NAME",
+          "value": "Nadia",
+          "status": "missed"
+        },
+        {
+          "id": "m033",
+          "type": "FACILITY",
+          "value": "Cedar Point Dialysis",
+          "status": "missed"
+        },
+        {
+          "id": "m034",
+          "type": "RELATIVE",
+          "value": "Ingrid Solberg",
+          "status": "missed"
+        },
+        {
+          "id": "m034",
+          "type": "DOB",
+          "value": "2/14/1970",
+          "status": "missed"
+        },
+        {
+          "id": "g001",
+          "type": "NAME",
+          "value": "Priya Raman",
+          "status": "missed"
+        },
+        {
+          "id": "g003",
+          "type": "NAME",
+          "value": "Marcus Webb",
+          "status": "missed"
+        },
+        {
+          "id": "g005",
+          "type": "NAME",
+          "value": "Dana Whitfield",
+          "status": "missed"
+        },
+        {
+          "id": "g007",
+          "type": "NAME",
+          "value": "Hector Alvarez",
+          "status": "missed"
+        },
+        {
+          "id": "g007",
+          "type": "NAME",
+          "value": "June Park",
+          "status": "missed"
+        },
+        {
+          "id": "g007",
+          "type": "NAME",
+          "value": "Tobias Grant",
+          "status": "missed"
+        },
+        {
+          "id": "g009",
+          "type": "NAME",
+          "value": "Lorraine Mbeki",
+          "status": "missed"
+        },
+        {
+          "id": "g010",
+          "type": "NAME",
+          "value": "Takahashi",
+          "status": "missed"
+        },
+        {
+          "id": "g010",
+          "type": "DATE",
+          "value": "01/15/2025",
+          "status": "missed"
+        },
+        {
+          "id": "g012",
+          "type": "NAME",
+          "value": "Ingrid Solberg",
+          "status": "missed"
+        },
+        {
+          "id": "g013",
+          "type": "ID",
+          "value": "D123-4567-8901",
+          "status": "missed"
+        },
+        {
+          "id": "g014",
+          "type": "RELATIVE",
+          "value": "Kwame",
+          "status": "missed"
+        },
+        {
+          "id": "g017",
+          "type": "NAME",
+          "value": "Carlos",
+          "status": "missed"
+        },
+        {
+          "id": "g017",
+          "type": "NAME",
+          "value": "Mei",
+          "status": "missed"
+        },
+        {
+          "id": "g017",
+          "type": "NAME",
+          "value": "Anders",
+          "status": "missed"
+        },
+        {
+          "id": "g018",
+          "type": "NAME",
+          "value": "Fatima",
+          "status": "missed"
+        },
+        {
+          "id": "g019",
+          "type": "NAME",
+          "value": "Brian Oduya",
+          "status": "missed"
+        },
+        {
+          "id": "g021",
+          "type": "NAME",
+          "value": "Rafael Mendes",
+          "status": "missed"
+        },
+        {
+          "id": "g021",
+          "type": "DATE",
+          "value": "09/02/2025",
+          "status": "missed"
+        }
+      ],
+      "damaged": [
+        {
+          "id": "c036",
+          "category": "CLINICAL",
+          "value": "breast cancer"
+        },
+        {
+          "id": "m001",
+          "category": "VITAL",
+          "value": "150/95"
+        },
+        {
+          "id": "m006",
+          "category": "DRUG",
+          "value": "insulin"
+        },
+        {
+          "id": "m035",
+          "category": "DRUG",
+          "value": "methotrexate"
+        },
+        {
+          "id": "m035",
+          "category": "DOSE",
+          "value": "15 mg weekly"
+        }
+      ],
+      "falsePositives": [
+        {
+          "id": "m001",
+          "token": "medical",
+          "text": "My blood pressure was 150/95 this morning, should I take an extra dose",
+          "hitsKeep": true
+        },
+        {
+          "id": "m035",
+          "token": "medical",
+          "text": "Can I get the shingles shot if I'm on methotrexate 15 mg weekly",
+          "hitsKeep": true
+        }
+      ],
+      "latency": {
+        "calls": 36400,
+        "p50_us": 3.416,
+        "p95_us": 5,
+        "p99_us": 7.584,
+        "max_us": 1980.042
+      }
+    },
+    "light": {
+      "overall": {
+        "entities": 207,
+        "entityRecall": 0.2995169082125604,
+        "entityPartial": 0,
+        "spansEmitted": 62,
+        "spanPrecision": 1,
+        "charPrecision": 1,
+        "charRecall": 0.36816790555312634,
+        "hardNegatives": 227,
+        "hardNegativesKept": 1,
+        "snippetsWithPii": 118,
+        "snippetsNoLeak": 21,
+        "negativeSnippets": 40,
+        "negativeIntact": 40
+      },
+      "byType": {
+        "NAME": {
+          "n": 51,
+          "full": 0,
+          "partial": 0,
+          "missed": 51,
+          "recall": 0
+        },
+        "DOB": {
+          "n": 11,
+          "full": 10,
+          "partial": 0,
+          "missed": 1,
+          "recall": 0.9090909090909091
+        },
+        "ID": {
+          "n": 19,
+          "full": 13,
+          "partial": 0,
+          "missed": 6,
+          "recall": 0.6842105263157895
+        },
+        "FACILITY": {
+          "n": 21,
+          "full": 0,
+          "partial": 0,
+          "missed": 21,
+          "recall": 0
+        },
+        "DATE": {
+          "n": 25,
+          "full": 0,
+          "partial": 0,
+          "missed": 25,
+          "recall": 0
+        },
+        "AGE": {
+          "n": 14,
+          "full": 0,
+          "partial": 0,
+          "missed": 14,
+          "recall": 0
+        },
+        "RELATIVE": {
+          "n": 26,
+          "full": 0,
+          "partial": 0,
+          "missed": 26,
+          "recall": 0
+        },
+        "PHONE": {
+          "n": 19,
+          "full": 19,
+          "partial": 0,
+          "missed": 0,
+          "recall": 1
+        },
+        "ADDRESS": {
+          "n": 13,
+          "full": 12,
+          "partial": 0,
+          "missed": 1,
+          "recall": 0.9230769230769231
+        },
+        "EMAIL": {
+          "n": 8,
+          "full": 8,
+          "partial": 0,
+          "missed": 0,
+          "recall": 1
+        }
+      },
+      "byToken": {
+        "dob": {
+          "emitted": 10,
+          "tp": 10,
+          "fp": 0,
+          "precision": 1
+        },
+        "account": {
+          "emitted": 9,
+          "tp": 9,
+          "fp": 0,
+          "precision": 1
+        },
+        "phone": {
+          "emitted": 19,
+          "tp": 19,
+          "fp": 0,
+          "precision": 1
+        },
+        "address": {
+          "emitted": 11,
+          "tp": 11,
+          "fp": 0,
+          "precision": 1
+        },
+        "email": {
+          "emitted": 8,
+          "tp": 8,
+          "fp": 0,
+          "precision": 1
+        },
+        "ssn": {
+          "emitted": 3,
+          "tp": 3,
+          "fp": 0,
+          "precision": 1
+        },
+        "card": {
+          "emitted": 1,
+          "tp": 1,
+          "fp": 0,
+          "precision": 1
+        },
+        "coords": {
+          "emitted": 1,
+          "tp": 1,
+          "fp": 0,
+          "precision": 1
+        }
+      },
+      "byCategory": {
+        "CLINICAL": {
+          "n": 47,
+          "kept": 47,
+          "damaged": 0,
+          "keptRate": 1
+        },
+        "DRUG": {
+          "n": 63,
+          "kept": 63,
+          "damaged": 0,
+          "keptRate": 1
+        },
+        "DOSE": {
+          "n": 39,
+          "kept": 39,
+          "damaged": 0,
+          "keptRate": 1
+        },
+        "LAB": {
+          "n": 50,
+          "kept": 50,
+          "damaged": 0,
+          "keptRate": 1
+        },
+        "VITAL": {
+          "n": 9,
+          "kept": 9,
+          "damaged": 0,
+          "keptRate": 1
+        },
+        "OTHER": {
+          "n": 19,
+          "kept": 19,
+          "damaged": 0,
+          "keptRate": 1
+        }
+      },
+      "misses": [
+        {
+          "id": "c001",
+          "type": "NAME",
+          "value": "John Q. Sample",
+          "status": "missed"
+        },
+        {
+          "id": "c001",
+          "type": "FACILITY",
+          "value": "Lakeside Clinic",
+          "status": "missed"
+        },
+        {
+          "id": "c001",
+          "type": "DATE",
+          "value": "05/14/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c002",
+          "type": "AGE",
+          "value": "72",
+          "status": "missed"
+        },
+        {
+          "id": "c003",
+          "type": "NAME",
+          "value": "Maria Delgado",
+          "status": "missed"
+        },
+        {
+          "id": "c003",
+          "type": "DATE",
+          "value": "02/11/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c003",
+          "type": "FACILITY",
+          "value": "Riverside General Hospital",
+          "status": "missed"
+        },
+        {
+          "id": "c004",
+          "type": "RELATIVE",
+          "value": "Rosa",
+          "status": "missed"
+        },
+        {
+          "id": "c005",
+          "type": "NAME",
+          "value": "Okafor",
+          "status": "missed"
+        },
+        {
+          "id": "c006",
+          "type": "DATE",
+          "value": "06/02/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c007",
+          "type": "NAME",
+          "value": "Hannah Lindqvist",
+          "status": "missed"
+        },
+        {
+          "id": "c007",
+          "type": "FACILITY",
+          "value": "Northgate Cardiology",
+          "status": "missed"
+        },
+        {
+          "id": "c008",
+          "type": "RELATIVE",
+          "value": "Tom",
+          "status": "missed"
+        },
+        {
+          "id": "c009",
+          "type": "AGE",
+          "value": "54",
+          "status": "missed"
+        },
+        {
+          "id": "c010",
+          "type": "ID",
+          "value": "W123456789",
+          "status": "missed"
+        },
+        {
+          "id": "c012",
+          "type": "DATE",
+          "value": "03/22/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c012",
+          "type": "FACILITY",
+          "value": "Brightpath Home Care",
+          "status": "missed"
+        },
+        {
+          "id": "c014",
+          "type": "NAME",
+          "value": "Chen",
+          "status": "missed"
+        },
+        {
+          "id": "c014",
+          "type": "AGE",
+          "value": "81",
+          "status": "missed"
+        },
+        {
+          "id": "c014",
+          "type": "DATE",
+          "value": "1/9/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c016",
+          "type": "RELATIVE",
+          "value": "Aisha Rahman",
+          "status": "missed"
+        },
+        {
+          "id": "c017",
+          "type": "NAME",
+          "value": "Patel",
+          "status": "missed"
+        },
+        {
+          "id": "c018",
+          "type": "FACILITY",
+          "value": "St. Brendan Medical Center",
+          "status": "missed"
+        },
+        {
+          "id": "c018",
+          "type": "DATE",
+          "value": "7/4/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c020",
+          "type": "NAME",
+          "value": "Luis Ortega Ramirez",
+          "status": "missed"
+        },
+        {
+          "id": "c021",
+          "type": "RELATIVE",
+          "value": "Gloria",
+          "status": "missed"
+        },
+        {
+          "id": "c024",
+          "type": "RELATIVE",
+          "value": "Marcus",
+          "status": "missed"
+        },
+        {
+          "id": "c024",
+          "type": "FACILITY",
+          "value": "Eastside Kidney Center",
+          "status": "missed"
+        },
+        {
+          "id": "c026",
+          "type": "AGE",
+          "value": "93",
+          "status": "missed"
+        },
+        {
+          "id": "c026",
+          "type": "FACILITY",
+          "value": "Willow Creek Assisted Living",
+          "status": "missed"
+        },
+        {
+          "id": "c028",
+          "type": "NAME",
+          "value": "Samuel Achebe",
+          "status": "missed"
+        },
+        {
+          "id": "c028",
+          "type": "DATE",
+          "value": "04/18/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c033",
+          "type": "NAME",
+          "value": "Ivanova",
+          "status": "missed"
+        },
+        {
+          "id": "c033",
+          "type": "AGE",
+          "value": "67",
+          "status": "missed"
+        },
+        {
+          "id": "c034",
+          "type": "NAME",
+          "value": "Frank Delacroix",
+          "status": "missed"
+        },
+        {
+          "id": "c035",
+          "type": "DATE",
+          "value": "08/19/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c035",
+          "type": "FACILITY",
+          "value": "Bayview Endoscopy Suite",
+          "status": "missed"
+        },
+        {
+          "id": "c036",
+          "type": "RELATIVE",
+          "value": "Ruth",
+          "status": "missed"
+        },
+        {
+          "id": "c039",
+          "type": "FACILITY",
+          "value": "Summit Orthopedics",
+          "status": "missed"
+        },
+        {
+          "id": "c039",
+          "type": "NAME",
+          "value": "Kowalski",
+          "status": "missed"
+        },
+        {
+          "id": "c040",
+          "type": "ID",
+          "value": "7782194",
+          "status": "missed"
+        },
+        {
+          "id": "c041",
+          "type": "NAME",
+          "value": "Abernathy",
+          "status": "missed"
+        },
+        {
+          "id": "c041",
+          "type": "RELATIVE",
+          "value": "Lily",
+          "status": "missed"
+        },
+        {
+          "id": "c043",
+          "type": "DATE",
+          "value": "10/02/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c043",
+          "type": "FACILITY",
+          "value": "Clearwater Family Practice",
+          "status": "missed"
+        },
+        {
+          "id": "c043",
+          "type": "NAME",
+          "value": "Noor Haddad",
+          "status": "missed"
+        },
+        {
+          "id": "c044",
+          "type": "RELATIVE",
+          "value": "Dmitri Volkov",
+          "status": "missed"
+        },
+        {
+          "id": "c045",
+          "type": "DATE",
+          "value": "05/05/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c047",
+          "type": "AGE",
+          "value": "82",
+          "status": "missed"
+        },
+        {
+          "id": "c047",
+          "type": "FACILITY",
+          "value": "Pine Ridge Nursing Home",
+          "status": "missed"
+        },
+        {
+          "id": "c048",
+          "type": "NAME",
+          "value": "Evelyn Marsh",
+          "status": "missed"
+        },
+        {
+          "id": "c051",
+          "type": "NAME",
+          "value": "Abara",
+          "status": "missed"
+        },
+        {
+          "id": "c052",
+          "type": "RELATIVE",
+          "value": "Dev",
+          "status": "missed"
+        },
+        {
+          "id": "c053",
+          "type": "FACILITY",
+          "value": "Mercy Ridge Hospital",
+          "status": "missed"
+        },
+        {
+          "id": "c053",
+          "type": "DATE",
+          "value": "12/01/2024",
+          "status": "missed"
+        },
+        {
+          "id": "c054",
+          "type": "DATE",
+          "value": "03/03/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c056",
+          "type": "NAME",
+          "value": "Gabriel Ferreira",
+          "status": "missed"
+        },
+        {
+          "id": "c056",
+          "type": "AGE",
+          "value": "45",
+          "status": "missed"
+        },
+        {
+          "id": "c058",
+          "type": "RELATIVE",
+          "value": "Alexei",
+          "status": "missed"
+        },
+        {
+          "id": "c060",
+          "type": "NAME",
+          "value": "Ramona Iturbe-Klein",
+          "status": "missed"
+        },
+        {
+          "id": "c060",
+          "type": "FACILITY",
+          "value": "Lakeside Clinic Pulmonology",
+          "status": "missed"
+        },
+        {
+          "id": "c061",
+          "type": "DATE",
+          "value": "11/12/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c063",
+          "type": "RELATIVE",
+          "value": "Linda Okonkwo-Baptiste",
+          "status": "missed"
+        },
+        {
+          "id": "c064",
+          "type": "FACILITY",
+          "value": "Hillcrest Pediatrics",
+          "status": "missed"
+        },
+        {
+          "id": "c065",
+          "type": "AGE",
+          "value": "3",
+          "status": "missed"
+        },
+        {
+          "id": "c067",
+          "type": "ID",
+          "value": "30019487",
+          "status": "missed"
+        },
+        {
+          "id": "c068",
+          "type": "RELATIVE",
+          "value": "Keiko Tanaka",
+          "status": "missed"
+        },
+        {
+          "id": "c070",
+          "type": "FACILITY",
+          "value": "Granite Peak Urgent Care",
+          "status": "missed"
+        },
+        {
+          "id": "c072",
+          "type": "NAME",
+          "value": "Benjamin Shapiro",
+          "status": "missed"
+        },
+        {
+          "id": "c072",
+          "type": "AGE",
+          "value": "88",
+          "status": "missed"
+        },
+        {
+          "id": "c072",
+          "type": "DATE",
+          "value": "9/14/2023",
+          "status": "missed"
+        },
+        {
+          "id": "c074",
+          "type": "RELATIVE",
+          "value": "Sunita",
+          "status": "missed"
+        },
+        {
+          "id": "c075",
+          "type": "DATE",
+          "value": "07/30/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c076",
+          "type": "NAME",
+          "value": "Delgado",
+          "status": "missed"
+        },
+        {
+          "id": "c076",
+          "type": "NAME",
+          "value": "Yusuf Bello",
+          "status": "missed"
+        },
+        {
+          "id": "c076",
+          "type": "FACILITY",
+          "value": "Eastgate Primary Care",
+          "status": "missed"
+        },
+        {
+          "id": "c076",
+          "type": "DATE",
+          "value": "2/20/2025",
+          "status": "missed"
+        },
+        {
+          "id": "c077",
+          "type": "NAME",
+          "value": "Olga Petrova",
+          "status": "missed"
+        },
+        {
+          "id": "c077",
+          "type": "AGE",
+          "value": "86",
+          "status": "missed"
+        },
+        {
+          "id": "c078",
+          "type": "RELATIVE",
+          "value": "Craig Mullins",
+          "status": "missed"
+        },
+        {
+          "id": "c080",
+          "type": "FACILITY",
+          "value": "Valley Birth Center",
+          "status": "missed"
+        },
+        {
+          "id": "c081",
+          "type": "RELATIVE",
+          "value": "Andre",
+          "status": "missed"
+        },
+        {
+          "id": "c081",
+          "type": "RELATIVE",
+          "value": "Talia",
+          "status": "missed"
+        },
+        {
+          "id": "c082",
+          "type": "AGE",
+          "value": "47",
+          "status": "missed"
+        },
+        {
+          "id": "c083",
+          "type": "NAME",
+          "value": "Elena Vasquez-Moore",
+          "status": "missed"
+        },
+        {
+          "id": "c084",
+          "type": "NAME",
+          "value": "Harriet Nakamura-Boyd",
+          "status": "missed"
+        },
+        {
+          "id": "c084",
+          "type": "RELATIVE",
+          "value": "Joan",
+          "status": "missed"
+        },
+        {
+          "id": "c085",
+          "type": "FACILITY",
+          "value": "Oak Hollow Rehabilitation Center",
+          "status": "missed"
+        },
+        {
+          "id": "c085",
+          "type": "DATE",
+          "value": "4/30/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m001",
+          "type": "NAME",
+          "value": "Morales",
+          "status": "missed"
+        },
+        {
+          "id": "m001",
+          "type": "NAME",
+          "value": "Teresa Lin",
+          "status": "missed"
+        },
+        {
+          "id": "m002",
+          "type": "NAME",
+          "value": "Omar",
+          "status": "missed"
+        },
+        {
+          "id": "m005",
+          "type": "RELATIVE",
+          "value": "Jayden",
+          "status": "missed"
+        },
+        {
+          "id": "m006",
+          "type": "NAME",
+          "value": "Grace Holloway",
+          "status": "missed"
+        },
+        {
+          "id": "m006",
+          "type": "RELATIVE",
+          "value": "Arthur Holloway",
+          "status": "missed"
+        },
+        {
+          "id": "m007",
+          "type": "NAME",
+          "value": "Silva",
+          "status": "missed"
+        },
+        {
+          "id": "m007",
+          "type": "DATE",
+          "value": "09/08/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m007",
+          "type": "FACILITY",
+          "value": "Harborview Family Medicine",
+          "status": "missed"
+        },
+        {
+          "id": "m010",
+          "type": "RELATIVE",
+          "value": "Raj",
+          "status": "missed"
+        },
+        {
+          "id": "m012",
+          "type": "AGE",
+          "value": "68",
+          "status": "missed"
+        },
+        {
+          "id": "m013",
+          "type": "ID",
+          "value": "4500 1123 9987",
+          "status": "missed"
+        },
+        {
+          "id": "m013",
+          "type": "ID",
+          "value": "77821",
+          "status": "missed"
+        },
+        {
+          "id": "m014",
+          "type": "NAME",
+          "value": "Kelly",
+          "status": "missed"
+        },
+        {
+          "id": "m015",
+          "type": "RELATIVE",
+          "value": "Imani",
+          "status": "missed"
+        },
+        {
+          "id": "m017",
+          "type": "DATE",
+          "value": "3/18/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m017",
+          "type": "RELATIVE",
+          "value": "Carmen",
+          "status": "missed"
+        },
+        {
+          "id": "m018",
+          "type": "NAME",
+          "value": "Beatriz Montoya",
+          "status": "missed"
+        },
+        {
+          "id": "m020",
+          "type": "NAME",
+          "value": "Harold Jensen",
+          "status": "missed"
+        },
+        {
+          "id": "m021",
+          "type": "RELATIVE",
+          "value": "Wei Zhang",
+          "status": "missed"
+        },
+        {
+          "id": "m023",
+          "type": "NAME",
+          "value": "Lucia Fernandez",
+          "status": "missed"
+        },
+        {
+          "id": "m024",
+          "type": "AGE",
+          "value": "101",
+          "status": "missed"
+        },
+        {
+          "id": "m025",
+          "type": "DATE",
+          "value": "12/5/1988",
+          "status": "missed"
+        },
+        {
+          "id": "m026",
+          "type": "FACILITY",
+          "value": "Lakeview Behavioral Health",
+          "status": "missed"
+        },
+        {
+          "id": "m026",
+          "type": "DATE",
+          "value": "6/1/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m026",
+          "type": "DATE",
+          "value": "6/9/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m027",
+          "type": "NAME",
+          "value": "Anika Sorensen",
+          "status": "missed"
+        },
+        {
+          "id": "m028",
+          "type": "NAME",
+          "value": "tanya",
+          "status": "missed"
+        },
+        {
+          "id": "m029",
+          "type": "NAME",
+          "value": "Fitzgerald",
+          "status": "missed"
+        },
+        {
+          "id": "m030",
+          "type": "RELATIVE",
+          "value": "Hiroshi",
+          "status": "missed"
+        },
+        {
+          "id": "m030",
+          "type": "AGE",
+          "value": "79",
+          "status": "missed"
+        },
+        {
+          "id": "m031",
+          "type": "ADDRESS",
+          "value": "PO Box 4471, Springfield, MO 65801",
+          "status": "missed"
+        },
+        {
+          "id": "m032",
+          "type": "DATE",
+          "value": "8/31/2025",
+          "status": "missed"
+        },
+        {
+          "id": "m033",
+          "type": "NAME",
+          "value": "Nadia",
+          "status": "missed"
+        },
+        {
+          "id": "m033",
+          "type": "FACILITY",
+          "value": "Cedar Point Dialysis",
+          "status": "missed"
+        },
+        {
+          "id": "m034",
+          "type": "RELATIVE",
+          "value": "Ingrid Solberg",
+          "status": "missed"
+        },
+        {
+          "id": "m034",
+          "type": "DOB",
+          "value": "2/14/1970",
+          "status": "missed"
+        },
+        {
+          "id": "g001",
+          "type": "NAME",
+          "value": "Priya Raman",
+          "status": "missed"
+        },
+        {
+          "id": "g003",
+          "type": "NAME",
+          "value": "Marcus Webb",
+          "status": "missed"
+        },
+        {
+          "id": "g005",
+          "type": "NAME",
+          "value": "Dana Whitfield",
+          "status": "missed"
+        },
+        {
+          "id": "g007",
+          "type": "NAME",
+          "value": "Hector Alvarez",
+          "status": "missed"
+        },
+        {
+          "id": "g007",
+          "type": "NAME",
+          "value": "June Park",
+          "status": "missed"
+        },
+        {
+          "id": "g007",
+          "type": "NAME",
+          "value": "Tobias Grant",
+          "status": "missed"
+        },
+        {
+          "id": "g009",
+          "type": "NAME",
+          "value": "Lorraine Mbeki",
+          "status": "missed"
+        },
+        {
+          "id": "g010",
+          "type": "NAME",
+          "value": "Takahashi",
+          "status": "missed"
+        },
+        {
+          "id": "g010",
+          "type": "DATE",
+          "value": "01/15/2025",
+          "status": "missed"
+        },
+        {
+          "id": "g012",
+          "type": "NAME",
+          "value": "Ingrid Solberg",
+          "status": "missed"
+        },
+        {
+          "id": "g013",
+          "type": "ID",
+          "value": "D123-4567-8901",
+          "status": "missed"
+        },
+        {
+          "id": "g014",
+          "type": "RELATIVE",
+          "value": "Kwame",
+          "status": "missed"
+        },
+        {
+          "id": "g017",
+          "type": "NAME",
+          "value": "Carlos",
+          "status": "missed"
+        },
+        {
+          "id": "g017",
+          "type": "NAME",
+          "value": "Mei",
+          "status": "missed"
+        },
+        {
+          "id": "g017",
+          "type": "NAME",
+          "value": "Anders",
+          "status": "missed"
+        },
+        {
+          "id": "g018",
+          "type": "NAME",
+          "value": "Fatima",
+          "status": "missed"
+        },
+        {
+          "id": "g019",
+          "type": "NAME",
+          "value": "Brian Oduya",
+          "status": "missed"
+        },
+        {
+          "id": "g021",
+          "type": "NAME",
+          "value": "Rafael Mendes",
+          "status": "missed"
+        },
+        {
+          "id": "g021",
+          "type": "DATE",
+          "value": "09/02/2025",
+          "status": "missed"
+        }
+      ],
+      "damaged": [],
+      "falsePositives": [],
+      "latency": {
+        "calls": 36400,
+        "p50_us": 2.208,
+        "p95_us": 3.291,
+        "p99_us": 4.875,
+        "max_us": 395.792
+      }
+    }
+  }
+}

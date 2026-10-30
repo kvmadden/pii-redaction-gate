@@ -1,0 +1,6 @@
+node_modules/
+# The redaction quarantine is the ONE place original PII lives on disk.
+# It must never be committed and never synced offsite.
+_redaction-quarantine/
+*.log
+.DS_Store
