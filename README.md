@@ -170,6 +170,10 @@ eval/
   run.js                runs every profile, writes results.md / results.json
 ```
 
+## Development history
+
+Built in June 2026 as the privacy gate in front of every ingest path of my private personal-knowledge system, covering my own notes and transcripts, and maintained there through October 2026 over 24 changes. This repository is a cleaned standalone snapshot. The evaluation and the fail-closed fixes described above were added for this release in October 2026.
+
 ## License
 
 MIT, Copyright (c) 2026 Kevin Madden. See `LICENSE`. All names, numbers, addresses, facilities and dates in this repository are fictional or synthetic.
