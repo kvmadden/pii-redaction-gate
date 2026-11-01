@@ -73,7 +73,7 @@ BASELINE_ENGINE=/path/to/baseline/src/engine.js node eval/compare.js
 
 Originally built in June 2026 as a privacy gate for a private knowledge system, maintained through October and published as a standalone snapshot. The original release evidence and technical background are preserved in the [published README](docs/published-readme.md). This upgrade adds clinical identifier coverage, a frozen synthetic evaluation and an inspectable demo.
 
-MIT. Copyright 2026 Kevin Madden. All fixtures are fictional or synthetic.
+Code is MIT. Copyright 2026 Kevin Madden. Evaluation fixtures are fictional or synthetic. The public text excerpts in `data/public/text` are not covered by the MIT license. Each keeps its own license and notice, listed in [data/public/SOURCES.md](data/public/SOURCES.md).
 
 
 ## Public text acquisition status
