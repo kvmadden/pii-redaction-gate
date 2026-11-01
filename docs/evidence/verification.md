@@ -34,7 +34,7 @@ No existing product screens or imported tokens existed in this repository. The d
 
 Server command: `python3 -m http.server 8769 --bind 127.0.0.1`.
 
-Browser command: `PLAYWRIGHT_MODULE=/Users/kevin/dev/repos/ascent-alert-origin-build/node_modules/playwright node scripts/check-demo.cjs`. Uses the already installed Playwright and Chrome, with no download or account. Exit 0.
+Browser command: `PLAYWRIGHT_MODULE=<path-to-playwright> node scripts/check-demo.cjs`. Uses the already installed Playwright and Chrome, with no download or account. Exit 0.
 
 At 1440×900, 430×932 and 390×844, checked normal and injected-failure flows, rendered removal explanations, normal simulated send, blocked send, stale-input blocking, HTML-safe output and keyboard focus from example selector to note. No page errors or horizontal overflow. Form buttons and select have minimum 46 CSS pixel height, the checkbox label has a 44 pixel click target. Screenshots were rendered at those viewport sizes and captured full page. Desktop, mobile and blocked screenshots were visually inspected. JSON results are in ui.json. Synthetic screenshots are under docs/media.
 

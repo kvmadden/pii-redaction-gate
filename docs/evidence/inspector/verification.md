@@ -4,7 +4,7 @@ Node v24.14.1, macOS arm64. No application dependencies were added. This is the 
 
 ## Routing and scope
 
-Worktree belongs to `/Users/kevin/dev/repos/pii-redaction-gate`. Fetched origin before building and before publication. Untouched main is `91c4e16`. The open upgrade PR is #1 at `c51bb57`. This branch fast-forwards from that upgrade because it already supplies the canonical static demo. The PR targets main under the global dispatcher rule and names #1 as a dependency.
+Worktree belongs to `<repo>`. Fetched origin before building and before publication. Untouched main is `91c4e16`. The open upgrade PR is #1 at `c51bb57`. This branch fast-forwards from that upgrade because it already supplies the canonical static demo. The PR targets main under the global dispatcher rule and names #1 as a dependency.
 
 Checked open and recent PRs, source trees and function and synonym searches for demo, inspector, showcase and redaction. Checked available state, briefs and run directories. The existing upgrade owns detector improvements and the basic demo. No separate inspector implementation or PR was found. State evidence dated October 31 distinguishes the upgrade job from this showcase job. No work ledger rows were edited.
 
@@ -21,7 +21,7 @@ The new inspector model first failed to import, then a minimal empty implementat
 | `npm test` final candidate | exit 0, 109 passed | candidate-full.txt |
 | `python3 docs/evidence/inspector/check-isolated.py` | exit 0 | control-full.txt, dependency-full.txt, fresh-candidate-full.txt |
 | `node scripts/build-demo.js` | exit 0 | generated runtime parity checked in full suite |
-| `PLAYWRIGHT_MODULE=/Users/kevin/dev/repos/ascent-alert-origin-build/node_modules/playwright node scripts/check-demo.cjs` | exit 0 | ui.json and docs/media |
+| `PLAYWRIGHT_MODULE=<path-to-playwright> node scripts/check-demo.cjs` | exit 0 | ui.json and docs/media |
 | `git diff --check` | exit 0 | final publication check |
 
 The isolation harness is preserved beside this record. It creates a system temporary clone outside the estate with `git clone --no-local`, checks out untouched origin/main, then the upgrade dependency, then overlays candidate files. Each runs the same `npm test` gate with identical Node, no dependencies, the original synthetic fixtures and both root variables unset. The main control passes 79 tests. The dependency passes 105. The final candidate passes 109. There are no baseline full-gate failures and no candidate-only final failures. The temporary directory is removed by TemporaryDirectory on success or failure.

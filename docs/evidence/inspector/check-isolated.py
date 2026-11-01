@@ -7,7 +7,7 @@ import tempfile
 
 current = pathlib.Path(__file__).resolve().parents[3]
 evidence = current / 'docs/evidence/inspector'
-repo = '/Users/kevin/dev/repos/pii-redaction-gate'
+repo = '<repo>'
 env = os.environ.copy()
 env.pop('MFW_UMBRELLA_ROOT', None)
 env.pop('OPERATOR_ECOSYSTEM_ROOT', None)
