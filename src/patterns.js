@@ -1,3 +1,4 @@
+import { CLINICAL_RULES } from './clinical-patterns.js'
 // patterns.js — PATTERN tier: deterministic PII shapes, no model call.
 //
 // One of three tiers in the layered redaction (see ./engine.js):
@@ -92,7 +93,7 @@ export const PATTERN_RULES = [
   // Separator form: (212) 555-0123 · 212-555-0123 · +1 212.555.0123
   {
     type: "phone",
-    re: /(?<!\d)(?:\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}(?!\d)/g,
+    re: /(?<!\d)(?:\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}(?!\d)(?:\s*(?:ext\.?|x|extension)\s*\d{1,6})?/gi,
   },
   // Bare 10-digit NANP run (area code + exchange both [2-9]xx). Lookarounds
   // exclude decimals, longer ids, and epoch-ms timestamps.
@@ -135,6 +136,10 @@ export const PATTERN_TOKEN_TYPES = Object.freeze([
   "phone",
   "coords",
   "address",
+  "date",
+  "age",
+  "url",
+  "ip",
 ]);
 
 /**
@@ -142,11 +147,12 @@ export const PATTERN_TOKEN_TYPES = Object.freeze([
  * @param {string} text
  * @returns {{ text: string, hits: Array<{tier:"pattern", type:string, count:number}> }}
  */
-export function applyPatterns(text) {
+export function applyPatterns(text, { clinical = false } = {}) {
   if (typeof text !== "string" || !text) return { text, hits: [] };
   let out = text;
   const counts = new Map();
-  for (const rule of PATTERN_RULES) {
+  const rules = clinical ? [...PATTERN_RULES.slice(0, 4), ...CLINICAL_RULES, ...PATTERN_RULES.slice(4)] : PATTERN_RULES
+  for (const rule of rules) {
     out = out.replace(rule.re, (...args) => {
       const m = args[0];
       if (rule.validate && !rule.validate(m)) return m;

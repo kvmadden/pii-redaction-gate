@@ -25,6 +25,100 @@
 // Compact by design — strict-profile over-redaction is acceptable; eating
 // "Monday" is not.
 const COMMON_CAPITALIZED = new Set([
+  "Patient",
+  "Pt",
+  "Daughter",
+  "Son",
+  "Mother",
+  "Father",
+  "Wife",
+  "Husband",
+  "Brother",
+  "Sister",
+  "Partner",
+  "Neighbor",
+  "Continue",
+  "Started",
+  "Prescribed",
+  "Increase",
+  "Decrease",
+  "Stop",
+  "Start",
+  "Chief",
+  "Complaint",
+  "History",
+  "Present",
+  "Illness",
+  "Hospital",
+  "Course",
+  "Physical",
+  "Exam",
+  "Assessment",
+  "Plan",
+  "Sex",
+  "Age",
+  "Phone",
+  "Cardiology",
+  "Pulmonology",
+  "Glucose",
+  "Sodium",
+  "Potassium",
+  "Creatinine",
+  "Metformin",
+  "Sertraline",
+  "Vancomycin",
+  "Ozempic",
+  "Eliquis",
+  "Lexapro",
+  "Tylenol",
+  "Benadryl",
+  "Zoloft",
+  "Humira",
+  "Zofran",
+  "Keytruda",
+  "Humalog",
+  "Keflex",
+  "Pfizer",
+  "Xarelto",
+  "Entresto",
+  "Januvia",
+  "Jardiance",
+  "Crohn",
+  "Graves",
+  "Hashimoto",
+  "Parkinson",
+  "Bell",
+  "Wilms",
+  "Barrett",
+  "Glasgow",
+  "Coma",
+  "Scale",
+  "Pap",
+  "Hepatitis",
+  "Hypertension",
+  "Rheumatoid",
+  "Arthritis",
+  "Allergies",
+  "Vitals",
+  "Labs",
+  "Follow",
+  "Signed",
+  "Medical",
+  "Record",
+  "Member",
+  "Insurance",
+  "Device",
+  "License",
+  "Vehicle",
+  "Portal",
+  "Telephone",
+  "Fax",
+  "Email",
+  "Home",
+  "City",
+  "ZIP",
+  "Born",
+
   "I", "A", "An", "The", "This", "That", "These", "Those", "There", "Here",
   "It", "Its", "We", "You", "He", "She", "They", "Me", "Him", "Her", "Them",
   "My", "Mine", "Our", "Ours", "Your", "Yours", "His", "Hers", "Their", "Theirs",
@@ -115,8 +209,14 @@ export function applyNames(text, { map, unknownNames = false } = {}) {
   if (unknownNames) {
     const isSafe = (word) => safe.has(word) || COMMON_CAPITALIZED.has(word);
 
+    // Facility-shaped phrases must be handled before vocabulary protection.
+    out = out.replace(/\b(?:St\.\s+)?(?:[A-Z][a-z]+\s+){1,4}(?:Clinic|Hospital|Center|Care|Suite|Practice|Home|Cardiology|Pulmonology)\b/g, () => {
+      bump('name')
+      return '[name]'
+    })
+
     // Pass 2a — honorific + Name ("Dr. Alvarez", "Mrs Tran").
-    out = out.replace(/\b(Mr|Mrs|Ms|Mx|Dr|Prof|Rev|Coach|Aunt|Uncle|Grandma|Grandpa)\.?\s+([A-Z][a-z]{1,20}(?:\s+[A-Z][a-z]{1,20})?)\b/g, (m, hon, nm) => {
+    out = out.replace(/\b(Mr|Mrs|Ms|Mx|Dr|Prof|Rev|Coach|Aunt|Uncle|Grandma|Grandpa)\.?\s+([A-Z][a-z]{1,20}(?:[-'][A-Z][a-z]{1,20})?(?:\s+(?:[A-Z]\.\s+)?[A-Z][a-z]{1,20}(?:[-'][A-Z][a-z]{1,20})?){0,2})\b/g, (m, hon, nm) => {
       if (nm.split(/\s+/).every(isSafe)) return m;
       bump("name");
       return "[name]";
@@ -124,12 +224,24 @@ export function applyNames(text, { map, unknownNames = false } = {}) {
 
     // Pass 2b — First Last (2–3 capitalized words). Skips when every word is
     // safe/common ("Thank You", a multi-word brand name on the safe list).
-    out = out.replace(/\b[A-Z][a-z]{1,20}(?:\s+[A-Z][a-z]{1,20}){1,2}\b/g, (m) => {
+    out = out.replace(/\b[A-Z][a-z]{1,20}(?:[-'][A-Z][a-z]{1,20})?(?:\s+(?:[A-Z]\.\s+)?[A-Z][a-z]{1,20}(?:[-'][A-Z][a-z]{1,20})?){1,2}\b/g, (m) => {
       const words = m.split(/\s+/);
-      if (words.every(isSafe)) return m;
+      if (words.some(isSafe)) {
+        return words.map(word => {
+          if (isSafe(word)) return word
+          bump('name')
+          return '[name]'
+        }).join(' ')
+      }
       bump("name");
       return "[name]";
     });
+
+    out = out.replace(/\b((?:[Dd]aughter|[Ss]on|[Hh]usband|[Ww]ife|[Pp]artner|[Bb]rother|[Ss]ister|[Mm]other|[Ff]ather|[Pp]atient|[Pp]t)\s*[:,(]?\s+)([A-Z][a-z]{1,24})\b/g, (m, prefix, name) => {
+      if (isSafe(name) || ['is','was','has','reports','called'].includes(name.toLowerCase())) return m
+      bump('name')
+      return prefix + '[name]'
+    })
 
     // Pass 2c — mid-sentence single capitalized token. Sentence-start capitals
     // survive (ordinary prose); safe/common words survive.
