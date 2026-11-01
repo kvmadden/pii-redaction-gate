@@ -6,7 +6,11 @@
 //   C  the same real public text, untouched, with draft keep and extraction labels
 //
 // Every set is also run through two controls on identical inputs: a do-nothing gate and a
-// redact-everything gate. Results are written to eval/public-results.json and .md.
+// redact-everything gate. Results are written to eval/public-results-v2.json and .md.
+//
+// Version 1 (gate 63ac3ab, the untuned gate) is frozen in eval/public-results.json and .md and is
+// never rewritten. Version 2 is the gate after rule changes made with the dev split only. The
+// held-out split was scored once with version 2 after it was committed.
 //
 //   node eval/public-run.js           run and write results
 //   node eval/public-run.js --check   run and fail if results differ from the committed files
@@ -30,6 +34,9 @@ const labels = json('data/public/labels.json')
 const heldout = json('eval/heldout.json')
 const EMPTY_MAP = { people: [], safe: [] }
 const DRAFT = 'draft, pending pharmacist review'
+const VERSION = 2
+const OUT = 'eval/public-results-v2'
+const V1 = json('eval/public-results.json')
 
 // ---------- gates ----------
 export const GATES = {
@@ -137,6 +144,7 @@ const isMain = process.argv[1] && import.meta.url === pathToFileURL(process.argv
 if (isMain) {
 const keyDocs = manifest.documents.map(d => key.documents.find(k => k.id === d.id))
 const results = {
+ version: VERSION,
  benchmark: 'Fixed public benchmark. The generator, seed and answer key are public, so this is not a blind test.',
  provenance: {
   gateCommit: git(['log', '-1', '--format=%H', '--', 'src']),
@@ -144,7 +152,9 @@ const results = {
   answerKeyCommit: git(['log', '-1', '--format=%H', '--', 'data/public/planted.json']),
   labelsCommit: git(['log', '-1', '--format=%H', '--', 'data/public/labels.json']),
   seed: SEED,
-  frozenNote: 'The gate in src/ was not changed after the generator and key were committed. Any later gate change is a regression check, not a new result.',
+  frozenNote: 'Version 2 gate rules were changed using the dev split only and committed before the held-out split was scored. The held-out split was then scored once with this version. Any later gate change is a regression check, not a new result.',
+  testSplitSeen: 'The held-out split was seen once after dev tuning. Version 1 held-out results, including its failure list, were already public when version 2 tuning began, so version 2 held-out numbers are a second look at a fixed public benchmark, not a blind result.',
+  previousVersion: { version: 1, file: 'eval/public-results.json', gateCommit: V1.provenance.gateCommit },
  },
  setA: {}, planted: {}, untouched: {},
 }
@@ -205,7 +215,8 @@ const iv = v => (v ? `${pct(v[0])} to ${pct(v[1])}` : 'N/A')
 const cell = row => (row.n < 10 ? frac(row.full, row.n) : `${frac(row.full, row.n)} (${pct(row.recall)})`)
 const md = []
 const A = results.setA, B = results.planted, C = results.untouched
-md.push('# Real-text evaluation results', '')
+md.push(`# Real-text evaluation results, version ${VERSION}`, '')
+md.push(`Version 1 results are frozen in [public-results.md](public-results.md) and are not overwritten. ${results.provenance.testSplitSeen}`, '')
 md.push(`${results.benchmark} Gate commit \`${results.provenance.gateCommit.slice(0, 7)}\`, generator \`${results.provenance.generatorCommit.slice(0, 7)}\`, answer key \`${results.provenance.answerKeyCommit.slice(0, 7)}\`, labels \`${results.provenance.labelsCommit.slice(0, 7)}\`. Seed ${SEED}. Produced by \`node eval/public-run.js\`, offline. Three separate panels. There is no pooled score.`, '')
 md.push('## Panel A. Synthetic held-out notes', '', 'Question: does it catch identifiers? Limit: synthetic text is cleaner than real notes.', '')
 md.push('| Gate | Identifiers fully removed | Partial | Span precision | Clinical negatives kept |', '|---|---|---|---|---|')
@@ -231,7 +242,21 @@ for (const s of ['heldout', 'dev']) {
  for (const [t, row] of Object.entries(C.gate[s].extractionByType).sort()) md.push(`| ${t} | ${row.labeled} | ${row.before} | ${row.after} |`)
 }
 md.push('', 'Extraction before and after are each scored against the labels. Agreement between the two runs is not a quality score.')
-md.push('', '## Failure gallery', '', `${results.failures.rule} The first 10 of each list are shown. Full lists are in \`eval/public-results.json\` under \`failures\`.`, '')
+md.push('', '## Version 1 against version 2', '', 'Same documents, same key, same scoring. Version 1 is the untuned gate. Version 2 was tuned on dev only.', '')
+md.push('| Measure | Split | Version 1 | Version 2 |', '|---|---|---|---|')
+md.push(`| A synthetic identifiers fully removed | held out | ${frac(V1.setA.gate.fullyRemoved, V1.setA.gate.identifiers)} | ${frac(A.gate.fullyRemoved, A.gate.identifiers)} |`)
+md.push(`| A clinical negatives kept | held out | ${frac(V1.setA.gate.clinicalNegativesKept, V1.setA.gate.clinicalNegatives)} | ${frac(A.gate.clinicalNegativesKept, A.gate.clinicalNegatives)} |`)
+for (const s of ['heldout', 'dev']) md.push(`| B planted spans fully removed | ${s} | ${frac(V1.planted.gate[s].fullyRemoved, V1.planted.gate[s].spans)} | ${frac(B.gate[s].fullyRemoved, B.gate[s].spans)} |`)
+for (const s of ['heldout', 'dev']) md.push(`| B planted docs with any identifier left | ${s} | ${frac(V1.planted.gate[s].documentsWithAnyIdentifierLeft, V1.planted.gate[s].plantedDocuments)} | ${frac(B.gate[s].documentsWithAnyIdentifierLeft, B.gate[s].plantedDocuments)} |`)
+for (const s of ['heldout', 'dev']) md.push(`| C keep tokens removed | ${s} | ${frac(V1.untouched.gate[s].keepTokensRemoved, V1.untouched.gate[s].keepTokens)} | ${frac(C.gate[s].keepTokensRemoved, C.gate[s].keepTokens)} |`)
+for (const s of ['heldout', 'dev']) md.push(`| C labeled facts extracted after | ${s} | ${frac(V1.untouched.gate[s].extractedAfter, V1.untouched.gate[s].extractionLabels)} | ${frac(C.gate[s].extractedAfter, C.gate[s].extractionLabels)} |`)
+for (const s of ['heldout', 'dev']) md.push(`| C source-left-in dates removed | ${s} | ${frac(V1.untouched.gate[s].sourceLeftInIdentifiers.fullyRemoved, V1.untouched.gate[s].sourceLeftInIdentifiers.n)} | ${frac(C.gate[s].sourceLeftInIdentifiers.fullyRemoved, C.gate[s].sourceLeftInIdentifiers.n)} |`)
+for (const s of ['heldout', 'dev']) {
+ md.push('', `### Set B, ${s}, by type`, '', '| Type | Version 1 | Version 2 |', '|---|---|---|')
+ const types = [...new Set([...Object.keys(V1.planted.gate[s].byType), ...Object.keys(B.gate[s].byType)])].sort()
+ for (const t of types) { const a = V1.planted.gate[s].byType[t], b = B.gate[s].byType[t]; md.push(`| ${t} | ${a ? frac(a.full, a.n) : 'N/A'} | ${b ? frac(b.full, b.n) : 'N/A'} |`) }
+}
+md.push('', '## Failure gallery', '', `${results.failures.rule} The first 10 of each list are shown. Full lists are in \`${OUT}.json\` under \`failures\`.`, '')
 md.push(`### Missed or partly removed planted identifiers (${results.failures.missedPlanted.length})`, '', '| Split | Document | Type | Family | Challenge | Value | Result |', '|---|---|---|---|---|---|---|')
 for (const f of results.failures.missedPlanted.slice(0, 10)) md.push(`| ${f.split} | ${f.id} | ${f.type} | ${f.family} | ${f.challenge.join(', ')} | ${f.value.replace(/\n/g, '↵')} | ${f.status} |`)
 md.push('', `### Clinical keep tokens removed (${results.failures.overRedaction.length})`, '', '| Split | Document | Token |', '|---|---|---|')
@@ -243,11 +268,11 @@ md.push('')
 const jsonText = JSON.stringify(results, null, 1) + '\n'
 const mdText = md.join('\n')
 if (process.argv.includes('--check')) {
- if (read('eval/public-results.json') !== jsonText || read('eval/public-results.md') !== mdText) { console.error('Public results differ from the committed files. Run node eval/public-run.js and review the diff.'); process.exit(1) }
+ if (read(`${OUT}.json`) !== jsonText || read(`${OUT}.md`) !== mdText) { console.error('Public results differ from the committed files. Run node eval/public-run.js and review the diff.'); process.exit(1) }
  console.log('Public results reproduce the committed files.')
 } else {
- writeFileSync(new URL('eval/public-results.json', root), jsonText)
- writeFileSync(new URL('eval/public-results.md', root), mdText)
+ writeFileSync(new URL(`${OUT}.json`, root), jsonText)
+ writeFileSync(new URL(`${OUT}.md`, root), mdText)
  process.stdout.write(mdText)
 }
 }

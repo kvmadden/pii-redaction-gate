@@ -117,6 +117,10 @@ test('inspector exposes source attribution, original link and visible planted ma
  assert.match(code, /planted/)
 })
 
+test('version 1 public results stay frozen as first committed', () => {
+ for (const path of ['eval/public-results.json', 'eval/public-results.md']) assert.equal(read(path), execFileSync('git', ['show', `4313491:${path}`], {cwd: root, encoding: 'utf8'}), `${path} was rewritten`)
+})
+
 test('offline public evaluation reproduces committed results without modifying frozen synthetic files', () => {
  required('eval/public-run.js')
  const paths = ['eval/heldout.json', 'eval/results.json', 'eval/results.md', 'eval/comparison.json', 'eval/comparison.md']
@@ -124,7 +128,9 @@ test('offline public evaluation reproduces committed results without modifying f
  const result = spawnSync(process.execPath, ['eval/public-run.js', '--check'], {cwd: root, encoding: 'utf8', env: {...process.env, HTTP_PROXY: 'http://127.0.0.1:1', HTTPS_PROXY: 'http://127.0.0.1:1', ALL_PROXY: 'http://127.0.0.1:1'}})
  assert.equal(result.status, 0, result.stderr || result.stdout)
  assert.deepEqual(paths.map(read), before)
- const results = json('eval/public-results.json')
+ const results = json('eval/public-results-v2.json')
+ assert.equal(results.version, 2)
+ assert.match(results.provenance.testSplitSeen, /seen once after dev tuning/)
  assert.ok(results.planted.heldout.byType)
  assert.ok(results.planted.heldout.byFamily)
  assert.ok(results.untouched)

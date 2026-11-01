@@ -7,7 +7,8 @@ import { scorePlanted, redactedMask } from '../eval/public-score.js'
 const root = new URL('../', import.meta.url)
 const json = path => JSON.parse(readFileSync(new URL(path, root), 'utf8'))
 const key = json('data/public/planted.json')
-const results = json('eval/public-results.json')
+const versions = [json('eval/public-results.json'), json('eval/public-results-v2.json')]
+const results = versions[1]
 
 test('changing planted markers, gold spans, source labels or partition IDs does not change predictions', () => {
  const texts = key.documents.map(d => d.text)
@@ -20,7 +21,7 @@ test('changing planted markers, gold spans, source labels or partition IDs does 
 })
 
 test('controls move the metrics in opposite directions on identical inputs', () => {
- for (const split of ['dev', 'heldout']) {
+ for (const results of versions) for (const split of ['dev', 'heldout']) {
   assert.equal(results.planted.doNothing[split].fullyRemoved, 0)
   assert.equal(results.planted.redactEverything[split].fullyRemoved, results.planted.redactEverything[split].spans)
   assert.equal(results.untouched.doNothing[split].keepTokensRemoved, 0)
