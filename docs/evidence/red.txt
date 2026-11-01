@@ -1,0 +1,325 @@
+✖ clinical date: Admitted 10/22/2025 (9.963ms)
+✖ clinical date: Discharged 22 October 2025 (0.416ms)
+✖ clinical age: Age: 97 (0.174166ms)
+✖ clinical id: MRN#: Z9900188 (0.143375ms)
+✖ clinical plan: Health plan number SYN77881 (0.156083ms)
+✖ clinical device: Device serial: DEMO-90188 (0.141375ms)
+✖ clinical license: License number: DEMO9981 (0.127375ms)
+✖ clinical vehicle: VIN: 1FICTIONAL0000001 (0.146291ms)
+✖ clinical url: See https://example.com/chart/88 (0.156583ms)
+✖ clinical ip: IP: 198.51.100.42 (0.244125ms)
+✔ clinical name: Patient Inez Q. Thorn-Smith (0.231291ms)
+✖ clinical relative: husband, Ravi, called (0.132666ms)
+✖ preserve Continue Ozempic 0.5 mg weekly. (99.063292ms)
+✖ preserve Chief Complaint: Crohn disease. (107.191ms)
+✔ preserve BP 138/84, A1c 7.4%, sodium 140. (1.481041ms)
+✔ preserve Age: 89. Born in 1937. (1.06775ms)
+✖ preserve Continue Eliquis 5 mg BID. (1.063958ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 3
+ℹ fail 14
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1333.403041
+
+✖ failing tests:
+
+test at test/clinical.test.js:18:4
+✖ clinical date: Admitted 10/22/2025 (9.963ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(!redact(text).includes(value))
+
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.start (node:internal/test_runner/test:1015:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical date: Discharged 22 October 2025 (0.416ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(!redact(text).includes(value))
+
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical age: Age: 97 (0.174166ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(!redact(text).includes(value))
+
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical id: MRN#: Z9900188 (0.143375ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(!redact(text).includes(value))
+
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical plan: Health plan number SYN77881 (0.156083ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(!redact(text).includes(value))
+
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical device: Device serial: DEMO-90188 (0.141375ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(!redact(text).includes(value))
+
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical license: License number: DEMO9981 (0.127375ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(!redact(text).includes(value))
+
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical vehicle: VIN: 1FICTIONAL0000001 (0.146291ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(!redact(text).includes(value))
+
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical url: See https://example.com/chart/88 (0.156583ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(!redact(text).includes(value))
+
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical ip: IP: 198.51.100.42 (0.244125ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(!redact(text).includes(value))
+
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical relative: husband, Ravi, called (0.132666ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(!redact(text).includes(value))
+
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:19:180
+✖ preserve Continue Ozempic 0.5 mg weekly. (99.063292ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + '[name] 0.5 mg weekly.'
+  - 'Continue Ozempic 0.5 mg weekly.'
+
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:19:215)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '[name] 0.5 mg weekly.',
+    expected: 'Continue Ozempic 0.5 mg weekly.',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:19:180
+✖ preserve Chief Complaint: Crohn disease. (107.191ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + '[name]: Crohn disease.'
+  - 'Chief Complaint: Crohn disease.'
+
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:19:215)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '[name]: Crohn disease.',
+    expected: 'Chief Complaint: Crohn disease.',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:19:180
+✖ preserve Continue Eliquis 5 mg BID. (1.063958ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + '[name] 5 mg BID.'
+  - 'Continue Eliquis 5 mg BID.'
+
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:19:215)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '[name] 5 mg BID.',
+    expected: 'Continue Eliquis 5 mg BID.',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

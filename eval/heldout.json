@@ -1,0 +1,1914 @@
+{
+  "seed": 20261031,
+  "limitation": "Single-author grammar corpus with repeated templates. Not independently authored or real-world validation.",
+  "entries": [
+    {
+      "id": "h1",
+      "kind": "clinical",
+      "text": "Patient Zora Fenwick. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "NAME",
+          "Zora Fenwick"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h2",
+      "kind": "clinical",
+      "text": "Dr. Emrys Calder. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "NAME",
+          "Dr. Emrys Calder"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h3",
+      "kind": "clinical",
+      "text": "daughter, Nola, called. A1c 7.2%, sodium 138, creatinine 1.2.",
+      "pii": [
+        [
+          "NAME",
+          "Nola"
+        ]
+      ],
+      "keep": [
+        [
+          "LAB",
+          "A1c 7.2%, sodium 138, creatinine 1.2"
+        ]
+      ]
+    },
+    {
+      "id": "h4",
+      "kind": "clinical",
+      "text": "Admitted 2026-08-17. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "DATE",
+          "2026-08-17"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h5",
+      "kind": "clinical",
+      "text": "Follow up September 19, 2026. A1c 7.2%, sodium 138, creatinine 1.2.",
+      "pii": [
+        [
+          "DATE",
+          "September 19, 2026"
+        ]
+      ],
+      "keep": [
+        [
+          "LAB",
+          "A1c 7.2%, sodium 138, creatinine 1.2"
+        ]
+      ]
+    },
+    {
+      "id": "h6",
+      "kind": "clinical",
+      "text": "Procedure on 17 August 2026. Continue Jardiance 10 mg daily.",
+      "pii": [
+        [
+          "DATE",
+          "17 August 2026"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h7",
+      "kind": "clinical",
+      "text": "Review on 08/17. A1c 7.2%, sodium 138, creatinine 1.2.",
+      "pii": [
+        [
+          "DATE",
+          "08/17"
+        ]
+      ],
+      "keep": [
+        [
+          "LAB",
+          "A1c 7.2%, sodium 138, creatinine 1.2"
+        ]
+      ]
+    },
+    {
+      "id": "h8",
+      "kind": "clinical",
+      "text": "DOB: 07/21/1930. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "DOB",
+          "07/21/1930"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h9",
+      "kind": "clinical",
+      "text": "Age: 96. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "AGE_OVER_89",
+          "96"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h10",
+      "kind": "clinical",
+      "text": "104-year-old patient. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "AGE_OVER_89",
+          "104"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h11",
+      "kind": "clinical",
+      "text": "Telephone +1 (202) 555-0186 ext 42. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "PHONE",
+          "+1 (202) 555-0186 ext 42"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h12",
+      "kind": "clinical",
+      "text": "Fax: 202-555-0196. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "FAX",
+          "202-555-0196"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h13",
+      "kind": "clinical",
+      "text": "Email zora@example.org. A1c 7.2%, sodium 138, creatinine 1.2.",
+      "pii": [
+        [
+          "EMAIL",
+          "zora@example.org"
+        ]
+      ],
+      "keep": [
+        [
+          "LAB",
+          "A1c 7.2%, sodium 138, creatinine 1.2"
+        ]
+      ]
+    },
+    {
+      "id": "h14",
+      "kind": "clinical",
+      "text": "MRN#: R8137042. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "MRN",
+          "R8137042"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h15",
+      "kind": "clinical",
+      "text": "Account: AX-402781. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "ACCOUNT",
+          "AX-402781"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h16",
+      "kind": "clinical",
+      "text": "Health plan number HP908174. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "PLAN",
+          "HP908174"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h17",
+      "kind": "clinical",
+      "text": "Home: 812 Fictional Avenue, Imaginary, CA 90000. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "ADDRESS",
+          "812 Fictional Avenue, Imaginary, CA 90000"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h18",
+      "kind": "clinical",
+      "text": "PO Box 871, Imaginary, CA 90000. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "ADDRESS",
+          "PO Box 871, Imaginary, CA 90000"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h19",
+      "kind": "clinical",
+      "text": "City: Imaginary, ZIP: 90000. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "ADDRESS",
+          "Imaginary"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h20",
+      "kind": "clinical",
+      "text": "ZIP: 90000. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "ADDRESS",
+          "90000"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h21",
+      "kind": "clinical",
+      "text": "SSN: 000-12-3456. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "SSN",
+          "000-12-3456"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h22",
+      "kind": "clinical",
+      "text": "Device serial: SYN-810427. Continue Jardiance 10 mg daily.",
+      "pii": [
+        [
+          "DEVICE",
+          "SYN-810427"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h23",
+      "kind": "clinical",
+      "text": "License number: SYN-610284. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "LICENSE",
+          "SYN-610284"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h24",
+      "kind": "clinical",
+      "text": "VIN: 1SYNTHETIC00000001. Continue Jardiance 10 mg daily.",
+      "pii": [
+        [
+          "VEHICLE",
+          "1SYNTHETIC00000001"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h25",
+      "kind": "clinical",
+      "text": "Portal https://example.org/patient/871. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "URL",
+          "https://example.org/patient/871"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h26",
+      "kind": "clinical",
+      "text": "IP: 192.0.2.87. Continue Jardiance 10 mg daily.",
+      "pii": [
+        [
+          "IP",
+          "192.0.2.87"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h27",
+      "kind": "clinical",
+      "text": "IP: 2001:db8::87. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "IP",
+          "2001:db8::87"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h28",
+      "kind": "clinical",
+      "text": "Patient Zora Fenwick. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "NAME",
+          "Zora Fenwick"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h29",
+      "kind": "clinical",
+      "text": "Dr. Emrys Calder. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "NAME",
+          "Dr. Emrys Calder"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h30",
+      "kind": "clinical",
+      "text": "daughter, Nola, called. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "NAME",
+          "Nola"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h31",
+      "kind": "clinical",
+      "text": "Admitted 2026-08-17. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "DATE",
+          "2026-08-17"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h32",
+      "kind": "clinical",
+      "text": "Follow up September 19, 2026. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "DATE",
+          "September 19, 2026"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h33",
+      "kind": "clinical",
+      "text": "Procedure on 17 August 2026. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "DATE",
+          "17 August 2026"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h34",
+      "kind": "clinical",
+      "text": "Review on 08/17. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "DATE",
+          "08/17"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h35",
+      "kind": "clinical",
+      "text": "DOB: 07/21/1930. A1c 7.2%, sodium 138, creatinine 1.2.",
+      "pii": [
+        [
+          "DOB",
+          "07/21/1930"
+        ]
+      ],
+      "keep": [
+        [
+          "LAB",
+          "A1c 7.2%, sodium 138, creatinine 1.2"
+        ]
+      ]
+    },
+    {
+      "id": "h36",
+      "kind": "clinical",
+      "text": "Age: 96. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "AGE_OVER_89",
+          "96"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h37",
+      "kind": "clinical",
+      "text": "104-year-old patient. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "AGE_OVER_89",
+          "104"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h38",
+      "kind": "clinical",
+      "text": "Telephone +1 (202) 555-0186 ext 42. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "PHONE",
+          "+1 (202) 555-0186 ext 42"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h39",
+      "kind": "clinical",
+      "text": "Fax: 202-555-0196. A1c 7.2%, sodium 138, creatinine 1.2.",
+      "pii": [
+        [
+          "FAX",
+          "202-555-0196"
+        ]
+      ],
+      "keep": [
+        [
+          "LAB",
+          "A1c 7.2%, sodium 138, creatinine 1.2"
+        ]
+      ]
+    },
+    {
+      "id": "h40",
+      "kind": "clinical",
+      "text": "Email zora@example.org. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "EMAIL",
+          "zora@example.org"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h41",
+      "kind": "clinical",
+      "text": "MRN#: R8137042. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "MRN",
+          "R8137042"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h42",
+      "kind": "clinical",
+      "text": "Account: AX-402781. Continue Jardiance 10 mg daily.",
+      "pii": [
+        [
+          "ACCOUNT",
+          "AX-402781"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h43",
+      "kind": "clinical",
+      "text": "Health plan number HP908174. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "PLAN",
+          "HP908174"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h44",
+      "kind": "clinical",
+      "text": "Home: 812 Fictional Avenue, Imaginary, CA 90000. Continue Jardiance 10 mg daily.",
+      "pii": [
+        [
+          "ADDRESS",
+          "812 Fictional Avenue, Imaginary, CA 90000"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h45",
+      "kind": "clinical",
+      "text": "PO Box 871, Imaginary, CA 90000. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "ADDRESS",
+          "PO Box 871, Imaginary, CA 90000"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h46",
+      "kind": "clinical",
+      "text": "City: Imaginary, ZIP: 90000. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "ADDRESS",
+          "Imaginary"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h47",
+      "kind": "clinical",
+      "text": "ZIP: 90000. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "ADDRESS",
+          "90000"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h48",
+      "kind": "clinical",
+      "text": "SSN: 000-12-3456. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "SSN",
+          "000-12-3456"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h49",
+      "kind": "clinical",
+      "text": "Device serial: SYN-810427. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "DEVICE",
+          "SYN-810427"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h50",
+      "kind": "clinical",
+      "text": "License number: SYN-610284. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "LICENSE",
+          "SYN-610284"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h51",
+      "kind": "clinical",
+      "text": "VIN: 1SYNTHETIC00000001. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "VEHICLE",
+          "1SYNTHETIC00000001"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h52",
+      "kind": "clinical",
+      "text": "Portal https://example.org/patient/871. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "URL",
+          "https://example.org/patient/871"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h53",
+      "kind": "clinical",
+      "text": "IP: 192.0.2.87. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "IP",
+          "192.0.2.87"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h54",
+      "kind": "clinical",
+      "text": "IP: 2001:db8::87. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "IP",
+          "2001:db8::87"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h55",
+      "kind": "clinical",
+      "text": "Patient Zora Fenwick. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "NAME",
+          "Zora Fenwick"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h56",
+      "kind": "clinical",
+      "text": "Dr. Emrys Calder. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "NAME",
+          "Dr. Emrys Calder"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h57",
+      "kind": "clinical",
+      "text": "daughter, Nola, called. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "NAME",
+          "Nola"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h58",
+      "kind": "clinical",
+      "text": "Admitted 2026-08-17. Continue Jardiance 10 mg daily.",
+      "pii": [
+        [
+          "DATE",
+          "2026-08-17"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h59",
+      "kind": "clinical",
+      "text": "Follow up September 19, 2026. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "DATE",
+          "September 19, 2026"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h60",
+      "kind": "clinical",
+      "text": "Procedure on 17 August 2026. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "DATE",
+          "17 August 2026"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h61",
+      "kind": "clinical",
+      "text": "Review on 08/17. A1c 7.2%, sodium 138, creatinine 1.2.",
+      "pii": [
+        [
+          "DATE",
+          "08/17"
+        ]
+      ],
+      "keep": [
+        [
+          "LAB",
+          "A1c 7.2%, sodium 138, creatinine 1.2"
+        ]
+      ]
+    },
+    {
+      "id": "h62",
+      "kind": "clinical",
+      "text": "DOB: 07/21/1930. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "DOB",
+          "07/21/1930"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h63",
+      "kind": "clinical",
+      "text": "Age: 96. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "AGE_OVER_89",
+          "96"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h64",
+      "kind": "clinical",
+      "text": "104-year-old patient. Continue Jardiance 10 mg daily.",
+      "pii": [
+        [
+          "AGE_OVER_89",
+          "104"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h65",
+      "kind": "clinical",
+      "text": "Telephone +1 (202) 555-0186 ext 42. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "PHONE",
+          "+1 (202) 555-0186 ext 42"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h66",
+      "kind": "clinical",
+      "text": "Fax: 202-555-0196. Continue Jardiance 10 mg daily.",
+      "pii": [
+        [
+          "FAX",
+          "202-555-0196"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h67",
+      "kind": "clinical",
+      "text": "Email zora@example.org. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "EMAIL",
+          "zora@example.org"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h68",
+      "kind": "clinical",
+      "text": "MRN#: R8137042. Continue Jardiance 10 mg daily.",
+      "pii": [
+        [
+          "MRN",
+          "R8137042"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h69",
+      "kind": "clinical",
+      "text": "Account: AX-402781. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "ACCOUNT",
+          "AX-402781"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h70",
+      "kind": "clinical",
+      "text": "Health plan number HP908174. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "PLAN",
+          "HP908174"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h71",
+      "kind": "clinical",
+      "text": "Home: 812 Fictional Avenue, Imaginary, CA 90000. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "ADDRESS",
+          "812 Fictional Avenue, Imaginary, CA 90000"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h72",
+      "kind": "clinical",
+      "text": "PO Box 871, Imaginary, CA 90000. Continue Jardiance 10 mg daily.",
+      "pii": [
+        [
+          "ADDRESS",
+          "PO Box 871, Imaginary, CA 90000"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h73",
+      "kind": "clinical",
+      "text": "City: Imaginary, ZIP: 90000. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "ADDRESS",
+          "Imaginary"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h74",
+      "kind": "clinical",
+      "text": "ZIP: 90000. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "ADDRESS",
+          "90000"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h75",
+      "kind": "clinical",
+      "text": "SSN: 000-12-3456. A1c 7.2%, sodium 138, creatinine 1.2.",
+      "pii": [
+        [
+          "SSN",
+          "000-12-3456"
+        ]
+      ],
+      "keep": [
+        [
+          "LAB",
+          "A1c 7.2%, sodium 138, creatinine 1.2"
+        ]
+      ]
+    },
+    {
+      "id": "h76",
+      "kind": "clinical",
+      "text": "Device serial: SYN-810427. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "DEVICE",
+          "SYN-810427"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h77",
+      "kind": "clinical",
+      "text": "License number: SYN-610284. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "LICENSE",
+          "SYN-610284"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h78",
+      "kind": "clinical",
+      "text": "VIN: 1SYNTHETIC00000001. Continue Jardiance 10 mg daily.",
+      "pii": [
+        [
+          "VEHICLE",
+          "1SYNTHETIC00000001"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h79",
+      "kind": "clinical",
+      "text": "Portal https://example.org/patient/871. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "URL",
+          "https://example.org/patient/871"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h80",
+      "kind": "clinical",
+      "text": "IP: 192.0.2.87. Continue Jardiance 10 mg daily.",
+      "pii": [
+        [
+          "IP",
+          "192.0.2.87"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h81",
+      "kind": "clinical",
+      "text": "IP: 2001:db8::87. A1c 7.2%, sodium 138, creatinine 1.2.",
+      "pii": [
+        [
+          "IP",
+          "2001:db8::87"
+        ]
+      ],
+      "keep": [
+        [
+          "LAB",
+          "A1c 7.2%, sodium 138, creatinine 1.2"
+        ]
+      ]
+    },
+    {
+      "id": "h82",
+      "kind": "clinical",
+      "text": "Patient Zora Fenwick. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "NAME",
+          "Zora Fenwick"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h83",
+      "kind": "clinical",
+      "text": "Dr. Emrys Calder. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "NAME",
+          "Dr. Emrys Calder"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h84",
+      "kind": "clinical",
+      "text": "daughter, Nola, called. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "NAME",
+          "Nola"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h85",
+      "kind": "clinical",
+      "text": "Admitted 2026-08-17. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "DATE",
+          "2026-08-17"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h86",
+      "kind": "clinical",
+      "text": "Follow up September 19, 2026. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "DATE",
+          "September 19, 2026"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h87",
+      "kind": "clinical",
+      "text": "Procedure on 17 August 2026. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "DATE",
+          "17 August 2026"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h88",
+      "kind": "clinical",
+      "text": "Review on 08/17. Continue Jardiance 10 mg daily.",
+      "pii": [
+        [
+          "DATE",
+          "08/17"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h89",
+      "kind": "clinical",
+      "text": "DOB: 07/21/1930. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "DOB",
+          "07/21/1930"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h90",
+      "kind": "clinical",
+      "text": "Age: 96. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "AGE_OVER_89",
+          "96"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h91",
+      "kind": "clinical",
+      "text": "104-year-old patient. A1c 7.2%, sodium 138, creatinine 1.2.",
+      "pii": [
+        [
+          "AGE_OVER_89",
+          "104"
+        ]
+      ],
+      "keep": [
+        [
+          "LAB",
+          "A1c 7.2%, sodium 138, creatinine 1.2"
+        ]
+      ]
+    },
+    {
+      "id": "h92",
+      "kind": "clinical",
+      "text": "Telephone +1 (202) 555-0186 ext 42. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "PHONE",
+          "+1 (202) 555-0186 ext 42"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h93",
+      "kind": "clinical",
+      "text": "Fax: 202-555-0196. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "FAX",
+          "202-555-0196"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h94",
+      "kind": "clinical",
+      "text": "Email zora@example.org. Continue Jardiance 10 mg daily.",
+      "pii": [
+        [
+          "EMAIL",
+          "zora@example.org"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h95",
+      "kind": "clinical",
+      "text": "MRN#: R8137042. A1c 7.2%, sodium 138, creatinine 1.2.",
+      "pii": [
+        [
+          "MRN",
+          "R8137042"
+        ]
+      ],
+      "keep": [
+        [
+          "LAB",
+          "A1c 7.2%, sodium 138, creatinine 1.2"
+        ]
+      ]
+    },
+    {
+      "id": "h96",
+      "kind": "clinical",
+      "text": "Account: AX-402781. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "ACCOUNT",
+          "AX-402781"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h97",
+      "kind": "clinical",
+      "text": "Health plan number HP908174. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "PLAN",
+          "HP908174"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h98",
+      "kind": "clinical",
+      "text": "Home: 812 Fictional Avenue, Imaginary, CA 90000. Continue Jardiance 10 mg daily.",
+      "pii": [
+        [
+          "ADDRESS",
+          "812 Fictional Avenue, Imaginary, CA 90000"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h99",
+      "kind": "clinical",
+      "text": "PO Box 871, Imaginary, CA 90000. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "ADDRESS",
+          "PO Box 871, Imaginary, CA 90000"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h100",
+      "kind": "clinical",
+      "text": "City: Imaginary, ZIP: 90000. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "ADDRESS",
+          "Imaginary"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h101",
+      "kind": "clinical",
+      "text": "ZIP: 90000. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "ADDRESS",
+          "90000"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h102",
+      "kind": "clinical",
+      "text": "SSN: 000-12-3456. BP 124/78, HR 72.",
+      "pii": [
+        [
+          "SSN",
+          "000-12-3456"
+        ]
+      ],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h103",
+      "kind": "clinical",
+      "text": "Device serial: SYN-810427. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "DEVICE",
+          "SYN-810427"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h104",
+      "kind": "clinical",
+      "text": "License number: SYN-610284. Continue Jardiance 10 mg daily.",
+      "pii": [
+        [
+          "LICENSE",
+          "SYN-610284"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h105",
+      "kind": "clinical",
+      "text": "VIN: 1SYNTHETIC00000001. Continue metformin 500 mg BID.",
+      "pii": [
+        [
+          "VEHICLE",
+          "1SYNTHETIC00000001"
+        ]
+      ],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h106",
+      "kind": "clinical",
+      "text": "Portal https://example.org/patient/871. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "URL",
+          "https://example.org/patient/871"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h107",
+      "kind": "clinical",
+      "text": "IP: 192.0.2.87. Rheumatoid arthritis is stable.",
+      "pii": [
+        [
+          "IP",
+          "192.0.2.87"
+        ]
+      ],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h108",
+      "kind": "clinical",
+      "text": "IP: 2001:db8::87. Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [
+        [
+          "IP",
+          "2001:db8::87"
+        ]
+      ],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    },
+    {
+      "id": "h109",
+      "kind": "negative",
+      "text": "Continue metformin 500 mg BID.",
+      "pii": [],
+      "keep": [
+        [
+          "DRUG",
+          "Continue metformin 500 mg BID"
+        ]
+      ]
+    },
+    {
+      "id": "h110",
+      "kind": "negative",
+      "text": "Continue Jardiance 10 mg daily.",
+      "pii": [],
+      "keep": [
+        [
+          "DRUG",
+          "Continue Jardiance 10 mg daily"
+        ]
+      ]
+    },
+    {
+      "id": "h111",
+      "kind": "negative",
+      "text": "A1c 7.2%, sodium 138, creatinine 1.2.",
+      "pii": [],
+      "keep": [
+        [
+          "LAB",
+          "A1c 7.2%, sodium 138, creatinine 1.2"
+        ]
+      ]
+    },
+    {
+      "id": "h112",
+      "kind": "negative",
+      "text": "BP 124/78, HR 72.",
+      "pii": [],
+      "keep": [
+        [
+          "VITAL",
+          "BP 124/78, HR 72"
+        ]
+      ]
+    },
+    {
+      "id": "h113",
+      "kind": "negative",
+      "text": "Rheumatoid arthritis is stable.",
+      "pii": [],
+      "keep": [
+        [
+          "CLINICAL",
+          "Rheumatoid arthritis is stable"
+        ]
+      ]
+    },
+    {
+      "id": "h114",
+      "kind": "negative",
+      "text": "Age: 89, year 2026, 3 days of symptoms.",
+      "pii": [],
+      "keep": [
+        [
+          "OTHER",
+          "Age: 89, year 2026, 3 days of symptoms"
+        ]
+      ]
+    }
+  ]
+}

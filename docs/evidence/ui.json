@@ -1,0 +1,35 @@
+[
+  {
+    "width": 1440,
+    "height": 900,
+    "overflow": false,
+    "errors": [],
+    "keyboardFocus": "note",
+    "normalSend": true,
+    "blockedSend": true,
+    "staleSendBlocked": true,
+    "htmlSafe": true
+  },
+  {
+    "width": 430,
+    "height": 932,
+    "overflow": false,
+    "errors": [],
+    "keyboardFocus": "note",
+    "normalSend": true,
+    "blockedSend": true,
+    "staleSendBlocked": true,
+    "htmlSafe": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "errors": [],
+    "keyboardFocus": "note",
+    "normalSend": true,
+    "blockedSend": true,
+    "staleSendBlocked": true,
+    "htmlSafe": true
+  }
+]

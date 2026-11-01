@@ -129,7 +129,7 @@ export function redactText(text, opts = {}) {
         let t = seg.text;
         if (tiers.has("pattern")) {
           stage = "pattern";
-          const r = applyPatterns(t);
+          const r = applyPatterns(t, { clinical: profile.unknownNames });
           t = r.text;
           mergeHits(counts, r.hits);
         }

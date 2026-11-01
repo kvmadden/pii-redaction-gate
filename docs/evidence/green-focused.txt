@@ -1,0 +1,25 @@
+✔ clinical date: Admitted 10/22/2025 (3.488333ms)
+✔ clinical date: Discharged 22 October 2025 (0.151542ms)
+✔ clinical age: Age: 97 (0.10425ms)
+✔ clinical id: MRN#: Z9900188 (0.147125ms)
+✔ clinical plan: Health plan number SYN77881 (0.12775ms)
+✔ clinical device: Device serial: DEMO-90188 (0.06975ms)
+✔ clinical license: License number: DEMO9981 (0.061334ms)
+✔ clinical vehicle: VIN: 1FICTIONAL0000001 (0.057875ms)
+✔ clinical url: See https://example.com/chart/88 (0.886708ms)
+✔ clinical ip: IP: 198.51.100.42 (0.20075ms)
+✔ clinical name: Patient Inez Q. Thorn-Smith (0.343625ms)
+✔ clinical relative: husband, Ravi, called (0.142833ms)
+✔ preserve Continue Ozempic 0.5 mg weekly. (0.147792ms)
+✔ preserve Chief Complaint: Crohn disease. (0.083875ms)
+✔ preserve BP 138/84, A1c 7.4%, sodium 140. (0.073917ms)
+✔ preserve Age: 89. Born in 1937. (0.072917ms)
+✔ preserve Continue Eliquis 5 mg BID. (0.085292ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 755.433083

@@ -1,0 +1,47 @@
+[
+  {
+    "width": 1440,
+    "height": 900,
+    "normalSend": true,
+    "blockedSend": true,
+    "profileChangeBlocks": true,
+    "staleInputBlocks": true,
+    "empty": true,
+    "htmlSafe": true,
+    "keyboard": true,
+    "bothThemes": true,
+    "noOverflow": true,
+    "targets44": true,
+    "errors": []
+  },
+  {
+    "width": 430,
+    "height": 932,
+    "normalSend": true,
+    "blockedSend": true,
+    "profileChangeBlocks": true,
+    "staleInputBlocks": true,
+    "empty": true,
+    "htmlSafe": true,
+    "keyboard": true,
+    "bothThemes": true,
+    "noOverflow": true,
+    "targets44": true,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "normalSend": true,
+    "blockedSend": true,
+    "profileChangeBlocks": true,
+    "staleInputBlocks": true,
+    "empty": true,
+    "htmlSafe": true,
+    "keyboard": true,
+    "bothThemes": true,
+    "noOverflow": true,
+    "targets44": true,
+    "errors": []
+  }
+]
