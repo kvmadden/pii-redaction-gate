@@ -8,11 +8,21 @@ For teams exploring how to protect free text before a model prompt or a record w
 
 ## Try it
 
-Run `npm run demo` in this repository, then open [the redaction inspector](http://127.0.0.1:8769). No install step is needed with Node 22 or later. Pick a fictional note or paste synthetic text, choose one of the four real profiles, review labeled original spans beside redacted text and per-type counts, and try the simulated send. Switch between light and dark themes with the header button. Choose Blank note to see the empty state. Green marks identify a finite set of clinical phrases preserved verbatim, not every clinical term. Toggle a pattern failure to see the same engine return a blocked placeholder and the shared send guard refuse it. Editing a note invalidates the previous result. No note text is transmitted or persisted by the demo.
+Run `npm run demo` in this repository, then open [the redaction inspector](http://127.0.0.1:8769). No install step is needed with Node 22 or later. Pick a fictional note or paste synthetic text, choose one of the four real profiles, review labeled original spans beside redacted text and per-type counts, and try the simulated send. Switch between light and dark themes with the header button. Choose Blank note to see the empty state. Green marks identify a finite set of clinical phrases preserved verbatim, not every clinical term. Toggle a pattern failure to see the same engine return a blocked placeholder and the shared send guard refuse it. Editing a note invalidates the previous result. No note text is transmitted or persisted by the demo. The faxed prior authorization request, discharge summary and pharmacy refill call are curated transcriptions with synthetic source IDs and dates. They are separate from the frozen evaluation corpus. Review actions save action metadata in browser local storage until cleared. They never authorize a send or certify output. The inspector includes original and held-out identifier recall with grouped precision from `eval/comparison.json`.
 
 Screenshot assets at 1440×900 and 390×844, full mobile views, dark and blocked states, and the short [core flow GIF](docs/media/inspector-flow.gif) are in `docs/media/`.
 
 The static demo also works when the `docs` directory is served on its own. Its runtime modules are exact generated copies of the production modules, checked by a test. No build service, API key or paid model is involved. The send action is a local simulation, not a clinical workflow integration.
+
+## Reviewer workflow and product boundary
+
+A clinical intake reviewer compares a synthetic transcription with redacted output before handing a draft to a downstream application. A missed identifier is flagged locally, then the reviewer corrects the draft and inspects again. Marking reviewed is an acknowledgment only. The simulated send still exercises the existing engine gate independently. No OCR, EDI parsing, clinical decision, coverage determination or refill authorization is implemented.
+
+This reusable engine and send guard are the shared capability. Source-specific intake, identity verification and clinical decisions belong to consuming applications. Rules are the baseline because their behavior is inspectable and has no model-call cost. This prototype adds no generative model. Detection misses remain visible rather than hidden by a model novelty claim. A future model or OCR integration would need a new frozen evaluation and accountable review before use.
+
+The local log has no authentication, reviewer identity, tamper protection or cross-user isolation. It stores fixture category or custom-draft label, page revision, profile, action and timestamp, without note text or identifier values. Page revisions restart on reload and cannot reconstruct an input. It is a usability demonstration, not a durable clinical audit system. Clear it on a shared browser.
+
+Workflow value is unmeasured. Before expanding scope, measure reviewer time, missed-identifier flags, correction cycles and acceptance on independently labeled synthetic cases. Do not infer clinical benefit from engine latency or browser clicks. The [15-check assessment](docs/evidence/polish/assessment.md) distinguishes implemented evidence from remaining limits. This change was implemented and tested with Codex assistance, building on the existing engine and evaluation.
 
 ## What changed and how it was tested
 

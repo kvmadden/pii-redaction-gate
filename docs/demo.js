@@ -1,3 +1,4 @@
+import { examples as clinicalExamples, metricRows, recordReview, reviewKey } from './workspace.js'
 import { inspectNote } from './inspector.js'
 import { PROFILES } from './runtime/profiles.js'
 import { assertSendable } from './runtime/send-guard.js'
@@ -6,6 +7,7 @@ const examples = {
  visit: 'Patient Inez Q. Thorn-Smith, DOB 03/04/1961, MRN#: Z9900188.\nAdmitted 10/22/2025. Phone 202-555-0143.\n\nContinue Ozempic 0.5 mg weekly.\nA1c 7.4%, BP 138/84.\nContinue metformin 500 mg BID.',
  contact: 'Dr. Adira Linden. Age: 97. Phone 202-555-0143. Device serial: DEMO-90188. Portal https://example.org/chart/88. Continue metformin 500 mg BID.',
  limits: 'tanya called. IP: 192.0.2.87. Continue metformin 500 mg BID. Year 2026.',
+ ...Object.fromEntries(Object.entries(clinicalExamples).map(([key, value]) => [key, value.text])),
  blank: ''
 }
 let current = null
@@ -26,6 +28,9 @@ function keptText(container, text, terms) {
 function invalidate(message = 'Note changed. Inspect again before sending.') {
  version++
  current = null
+ $('reviewed').disabled = true
+ $('flagged').disabled = true
+ $('review-status').textContent = 'Inspect the current note before recording a review.'
  $('status').textContent = message
  document.querySelector('.statusbar .small').textContent = PROFILES[$('profile').value].tiers.join(' → ').toUpperCase()
  $('result-badge').textContent = 'AWAITING INSPECTION'
@@ -50,6 +55,9 @@ async function run() {
   if (ticket !== version) return
   current = inspectNote(input, $('profile').value, $('failure').checked)
   const blocked = current.blocked
+  $('reviewed').disabled = blocked
+  $('flagged').disabled = blocked
+  $('review-status').textContent = blocked ? 'Review unavailable because the engine failed.' : 'Compare source and output, then record your review or flag a missed identifier.'
   document.querySelector('.workspace').dataset.state = blocked ? 'blocked' : 'ready'
   $('status').textContent = blocked ? 'BLOCKED / Engine failure. No payload can pass.' : 'Inspection complete / Review required before use'
   $('result-badge').textContent = blocked ? 'BLOCKED' : 'REVIEW REQUIRED'
@@ -122,5 +130,51 @@ $('theme').addEventListener('click', () => {
  $('theme').setAttribute('aria-label', `Switch to ${dark ? 'light' : 'dark'} theme`)
  $('theme').querySelector('span').textContent = dark ? 'Light mode' : 'Dark mode'
 })
+function provenance() {
+ const fixture = clinicalExamples[$('example').value]
+ $('provenance').textContent = fixture ? `${fixture.source}. Curated demonstration, not an evaluation case. Editing makes this a custom synthetic draft.` : 'Curated synthetic demonstration. Editing makes this a custom synthetic draft.'
+}
+$('example').addEventListener('change', provenance)
+$('note').addEventListener('input', () => { $('provenance').textContent = 'Custom synthetic draft. Source text and dates are not verified.' })
+for (const action of ['reviewed','flagged']) $(action).addEventListener('click', () => {
+ try {
+  recordReview(localStorage, action, {ready:!!current, blocked:current?.blocked, document:$('note').value === examples[$('example').value] ? $('example').value : 'custom-synthetic-draft', profile:$('profile').value, revision:version})
+  $('review-status').textContent = action === 'flagged' ? 'Missed identifier flagged locally. Correct the draft and inspect again. No escalation was sent.' : 'Review recorded locally. This does not certify the output or release a payload.'
+  showLog()
+ } catch { $('review-status').textContent = 'Review was not saved. Inspect again or check browser storage availability.' }
+})
+function showLog() {
+ try {
+  const entries = JSON.parse(localStorage.getItem(reviewKey) || '[]')
+  if (!Array.isArray(entries)) throw Error('Invalid log')
+  $('review-log').textContent = entries.map(e => `${e.at} / ${e.action} / ${e.document} / ${e.profile} / revision ${e.revision}`).join('\n') || 'No local reviews yet.'
+ } catch { $('review-log').textContent = 'Local log unavailable. Clear it to start again.' }
+}
+$('clear-reviews').addEventListener('click', () => {
+ try { localStorage.removeItem(reviewKey)
+ showLog()
+ $('review-status').textContent = 'Local review log cleared.' } catch { $('review-status').textContent = 'Unable to clear browser storage.' }
+})
+let evaluation
+function renderMetrics() {
+ const percent = value => value === undefined ? 'Not measured' : `${(value * 100).toFixed(1)}%`
+ $('metrics').replaceChildren()
+ for (const row of metricRows(evaluation, $('corpus').value)) {
+  const tr = document.createElement('tr')
+  for (const value of [row.type, `${percent(row.recall)} (${row.full}/${row.n})`, row.family, row.precision === undefined ? 'Not measured' : `${percent(row.precision)} (${row.tp}/${row.tp + row.fp})`]) {
+   const td = document.createElement('td')
+   td.textContent = value
+   tr.append(td)
+  }
+  $('metrics').append(tr)
+ }
+ $('metric-status').textContent = 'Frozen identifiers-profile evaluation. These are identifier types, not document-type scores. Other profiles and the curated examples are not scored here.'
+}
+fetch('./comparison.json').then(response => { if (!response.ok) throw Error('Unavailable')
+ return response.json() }).then(data => { evaluation = data
+ renderMetrics() }).catch(() => { $('metric-status').textContent = 'Evaluation unavailable. Open the source report for measured limits.' })
+$('corpus').addEventListener('change', () => { if (evaluation) renderMetrics() })
 $('note').value = examples.visit
+provenance()
+showLog()
 run()
