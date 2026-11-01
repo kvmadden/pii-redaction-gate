@@ -1,0 +1,409 @@
+
+> layered-pii-redaction@1.0.0 test
+> node --test 'test/**/*.test.js'
+
+✖ clinical date: Admitted 10/22/2025 (145.450042ms)
+✖ clinical date: Discharged 22 October 2025 (0.333958ms)
+✖ clinical age: Age: 97 (0.154708ms)
+✖ clinical id: MRN#: Z9900188 (0.134958ms)
+✖ clinical plan: Health plan number SYN77881 (0.137125ms)
+✖ clinical device: Device serial: DEMO-90188 (0.120709ms)
+✖ clinical license: License number: DEMO9981 (0.349042ms)
+✖ clinical vehicle: VIN: 1FICTIONAL0000001 (0.152166ms)
+✖ clinical url: See https://example.com/chart/88 (0.1625ms)
+✖ clinical ip: IP: 198.51.100.42 (3.202584ms)
+✔ clinical name: Patient Inez Q. Thorn-Smith (3.889875ms)
+✖ clinical relative: husband, Ravi, called (0.260417ms)
+✖ preserve Continue Ozempic 0.5 mg weekly. (0.406291ms)
+✖ preserve Chief Complaint: Crohn disease. (0.113708ms)
+✔ preserve BP 138/84, A1c 7.4%, sodium 140. (0.0495ms)
+✔ preserve Age: 89. Born in 1937. (0.041792ms)
+✖ preserve Continue Eliquis 5 mg BID. (0.086917ms)
+✔ eval set: at least 150 snippets, unique ids, known labels, every value locatable (253.516708ms)
+✔ eval set: synthetic shapes only (555-01xx phones, example.* emails) (0.354375ms)
+✔ scorer: align recovers redacted spans and verifies the rebuild (0.316041ms)
+✔ scorer: full / partial / missed and damaged hard negatives (0.373292ms)
+✔ scorer: every profile's output aligns for every snippet (610.7715ms)
+✔ fail-closed: a throwing PATTERN rule blocks the text (every profile) (363.287417ms)
+✔ fail-closed: a broken people map blocks at normalization (0.131792ms)
+✔ fail-closed: a throwing NAME tier blocks the text (0.14575ms)
+✔ fail-closed: a throwing TOPIC category blocks, and its error message (built from input) is not echoed (0.673959ms)
+✔ fail-closed: a misspelled explicit profile blocks instead of falling back to a weaker one (0.141833ms)
+✔ fail-closed: non-string input is blocked, not returned as-is (0.1325ms)
+✔ fail-closed: one failing field blocks that field and flags the whole record (2.047125ms)
+✔ fail-closed: a non-string field inside a record is blocked, not copied through (0.104417ms)
+✔ fail-closed: model-output summary with a failing field is blocked (0.170833ms)
+✔ fail-closed: at the writer surfaces nothing leaks and assertSendable refuses the record (0.672ms)
+✔ fail-closed: a healthy gate is sendable (127.750917ms)
+redaction: PEOPLE MAP UNREADABLE (/nope/missing.json: ENOENT: no such file or directory, open '/nope/missing.json') — NAME tier running on empty map
+✔ pattern: emails become [email] (1.757916ms)
+✔ pattern: phone shapes — parens, dashes, dots, +1, bare NANP (0.121125ms)
+✔ pattern: phone does NOT eat versions, dates, epochs, or row ids (0.132833ms)
+✔ pattern: SSN dashed + labelled (0.096708ms)
+✔ pattern: DOB requires birth context; bare dates survive (0.104625ms)
+✔ pattern: credit cards are Luhn-gated (0.079334ms)
+✔ pattern: labelled account/routing numbers (0.072708ms)
+✔ pattern: street addresses with and without city/state tail (0.078125ms)
+✔ pattern: coordinates — decimal pair and degree notation (0.074583ms)
+✔ pattern: hits carry tier/type/count, never raw text (138.539334ms)
+✔ names: known people become role tokens, case-insensitive, possessive-safe (8.183375ms)
+✔ names: unknown-name pass is OFF by default (standard posture) (0.134ms)
+✔ names: strict unknown-name pass — pairs, honorifics, mid-sentence singles (0.381667ms)
+✔ names: strict pass keeps safe names, common words, and sentence starts (0.13675ms)
+✔ topics: medical sentence with personal marker dies under standard gating (2.09175ms)
+✔ topics: professional vocabulary WITHOUT personal marker survives standard (0.552584ms)
+✔ topics: strict drops the personal-marker gate (0.079333ms)
+✔ topics: finances need amount + institution co-occurrence (107.507417ms)
+✔ topics: legal sentence with personal marker (0.201ms)
+✔ topics: kid details require kid context; honorific periods don't split the sentence (23.845667ms)
+✔ profiles: source mapping — dev light, free text standard, clinical identifiers, correspondence strict, unknown standard (0.6085ms)
+✔ profiles: resolveProfile — explicit profile beats source (0.415667ms)
+✔ profiles: resolveProfile degrades to default on null/undefined/non-object (never crashes) (1.126833ms)
+✔ engine: light profile = patterns only — names and topics survive (4.97275ms)
+✔ engine: standard profile runs all three tiers (147.155666ms)
+✔ engine: code spans are exempt under light, NOT under standard (0.312375ms)
+✔ engine: splitCodeSegments handles fenced + inline + unfenced text (0.120834ms)
+✔ engine: non-string and empty inputs pass through (0.06525ms)
+✔ engine: redactParsedTranscript covers all four text surfaces, input untouched (0.910917ms)
+✔ engine: redactSummaryFields gates summary/topics/quotes (0.243208ms)
+✔ engine: redactionMeta carries version/profile/hits, no text (95.740125ms)
+✔ quarantine: sidecar lands under <dir>/<day>/ with originals, mode 0600 (3.067292ms)
+✔ quarantine: no changes → no file; fs failure → error, never throw (0.654958ms)
+✔ quarantine: default dir is <home>/_redaction-quarantine, env-overridable (0.129667ms)
+✔ people map: committed default is empty; the example map is synthetic and loads (1.586125ms)
+✔ people map: unreadable path → empty map, no throw (0.571833ms)
+✔ gate: gateParsedTranscript redacts under the per-source profile and reports changes (1.852291ms)
+✔ gate: body text is gated and merged into the same sidecar payload (0.18375ms)
+✔ gate: gateSummary re-gates model output and accumulates into the gate (0.22825ms)
+✔ gate: redactionMetaForRow stamps provenance only when something was redacted (0.189708ms)
+✔ gate: quarantineGate writes one sidecar per gated session (23.6025ms)
+✔ tripwire: NO fixture survives redactText under the light profile (2.510833ms)
+✔ tripwire: NO fixture survives redactText under the standard profile (398.413208ms)
+✔ tripwire: NO fixture survives redactText under the identifiers profile (37.561458ms)
+✔ tripwire: NO fixture survives redactText under the strict profile (5.785583ms)
+✔ tripwire: NO fixture survives to writer outputs (source=source-code → light) (81.587ms)
+✔ tripwire: NO fixture survives to writer outputs (source=build-log → light) (0.7125ms)
+✔ tripwire: NO fixture survives to writer outputs (source=commit-message → light) (0.543208ms)
+✔ tripwire: NO fixture survives to writer outputs (source=free-text → standard) (1.095042ms)
+✔ tripwire: NO fixture survives to writer outputs (source=support-ticket → standard) (70.702583ms)
+✔ tripwire: NO fixture survives to writer outputs (source=clinical-note → identifiers) (0.751917ms)
+✔ tripwire: NO fixture survives to writer outputs (source=sms → strict) (35.712792ms)
+✔ tripwire: every source in SOURCE_PROFILES maps to a profile a WRITER_CASE exercises (0.137875ms)
+✔ tripwire: every declared sensitive source resolves to identifiers/strict + has a WRITER_CASE (0.124375ms)
+✔ tripwire: idempotent under the light profile (0.193375ms)
+✔ tripwire: idempotent under the standard profile (0.407791ms)
+✔ tripwire: idempotent under the identifiers profile (0.167458ms)
+✔ tripwire: idempotent under the strict profile (0.234417ms)
+✔ tripwire: redaction tokens themselves are never re-eaten (0.109125ms)
+✔ tripwire: identifiers profile keeps clinical content and removes identifiers (0.155334ms)
+✔ tripwire: dev-profile code blocks with PII-shaped strings survive intact (0.104292ms)
+✔ tripwire: code-safety does NOT extend to standard/identifiers/strict profiles (0.080458ms)
+✔ tripwire: corpus covers every tier the profiles can activate (0.717416ms)
+ℹ tests 96
+ℹ suites 0
+ℹ pass 82
+ℹ fail 14
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1700.144917
+
+✖ failing tests:
+
+test at test/clinical.test.js:18:4
+✖ clinical date: Admitted 10/22/2025 (145.450042ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!redact(text).includes(value))
+  
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.start (node:internal/test_runner/test:1015:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical date: Discharged 22 October 2025 (0.333958ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!redact(text).includes(value))
+  
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical age: Age: 97 (0.154708ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!redact(text).includes(value))
+  
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical id: MRN#: Z9900188 (0.134958ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!redact(text).includes(value))
+  
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical plan: Health plan number SYN77881 (0.137125ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!redact(text).includes(value))
+  
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical device: Device serial: DEMO-90188 (0.120709ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!redact(text).includes(value))
+  
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical license: License number: DEMO9981 (0.349042ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!redact(text).includes(value))
+  
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical vehicle: VIN: 1FICTIONAL0000001 (0.152166ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!redact(text).includes(value))
+  
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical url: See https://example.com/chart/88 (0.1625ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!redact(text).includes(value))
+  
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical ip: IP: 198.51.100.42 (3.202584ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!redact(text).includes(value))
+  
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:18:4
+✖ clinical relative: husband, Ravi, called (0.260417ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!redact(text).includes(value))
+  
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:19:180
+✖ preserve Continue Ozempic 0.5 mg weekly. (0.406291ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + '[name] 0.5 mg weekly.'
+  - 'Continue Ozempic 0.5 mg weekly.'
+  
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:19:215)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '[name] 0.5 mg weekly.',
+    expected: 'Continue Ozempic 0.5 mg weekly.',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:19:180
+✖ preserve Chief Complaint: Crohn disease. (0.113708ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + '[name]: Crohn disease.'
+  - 'Chief Complaint: Crohn disease.'
+  
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:19:215)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '[name]: Crohn disease.',
+    expected: 'Chief Complaint: Crohn disease.',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/clinical.test.js:19:180
+✖ preserve Continue Eliquis 5 mg BID. (0.086917ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + '[name] 5 mg BID.'
+  - 'Continue Eliquis 5 mg BID.'
+  
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:19:215)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '[name] 5 mg BID.',
+    expected: 'Continue Eliquis 5 mg BID.',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

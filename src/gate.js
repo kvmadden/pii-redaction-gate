@@ -1,3 +1,5 @@
+import { assertSendable } from './send-guard.js'
+export { assertSendable } from './send-guard.js'
 // gate.js — the ONE redaction gate for a record-ingest pipeline. Every writer
 // that sends text across the trust boundary (a model call, a record write)
 // calls it the same way, so there is a single chokepoint to audit.
@@ -130,14 +132,6 @@ export function gateBodyText(body, gate, source, peopleMap) {
  * Throw if the gate blocked anything. Writers call this before egress so a
  * blocked record is never sent, even in redacted-placeholder form.
  */
-export function assertSendable(gate) {
-  if (!gate || gate.blocked) {
-    const err = new Error("redaction gate blocked this record; refusing to send");
-    err.name = "RedactionBlockedError";
-    throw err;
-  }
-  return gate;
-}
 
 /**
  * Provenance stamp for the row meta. Hit types + counts only — the original

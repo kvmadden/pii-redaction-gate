@@ -1,0 +1,43 @@
+const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright')
+const fs = require('node:fs')
+async function main() {
+ const browser = await chromium.launch({headless:true,channel:'chrome'})
+ const results = []
+ for (const [width,height] of [[1440,900],[430,932],[390,844]]) {
+  const page = await browser.newPage({viewport:{width,height}})
+  const errors = []
+  page.on('pageerror',e=>errors.push(e.message))
+  await page.goto('http://127.0.0.1:8769/docs/')
+  await page.waitForFunction(()=>document.querySelector('#status').textContent.length>0)
+  if (!(await page.locator('#removed li').count())) throw Error('No removal explanations rendered')
+  await page.locator('#send').click()
+  if (!(await page.locator('#send-status').textContent()).includes('allowed')) throw Error('Normal send failed')
+  await page.screenshot({path:`docs/media/demo-${width}.png`,fullPage:true})
+  await page.locator('#failure').check()
+  await page.locator('#send').click()
+  if (!(await page.locator('#send-status').textContent()).includes('blocked')) throw Error('Fail closed send failed')
+  if ((await page.locator('#output').textContent()) !== '[redaction-blocked]') throw Error('Blocked output leaked')
+  await page.screenshot({path:`docs/media/blocked-${width}.png`,fullPage:true})
+  await page.locator('#failure').uncheck()
+  await page.locator('#note').fill('<img src=x onerror=alert(1)> Patient Inez Thorn. Continue metformin 500 mg BID.')
+  await page.locator('#run').click()
+  if (await page.locator('#output img').count()) throw Error('HTML injection')
+  await page.locator('#note').fill('changed')
+  await page.locator('#send').click()
+  if (!(await page.locator('#send-status').textContent()).includes('blocked')) throw Error('Stale send allowed')
+  const overflow = await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)
+  if (overflow || errors.length) throw Error(JSON.stringify({overflow,errors}))
+  await page.locator('#example').focus()
+  await page.keyboard.press('Tab')
+  const focus = await page.evaluate(()=>document.activeElement.id)
+  if (focus !== 'note') throw Error('Keyboard order')
+  results.push({width,height,overflow,errors,keyboardFocus:focus,normalSend:true,blockedSend:true,staleSendBlocked:true,htmlSafe:true})
+  await page.close()
+ }
+ fs.writeFileSync('docs/evidence/ui.json',JSON.stringify(results,null,2)+'\n')
+ await browser.close()
+}
+main().catch(e=>{
+ console.error(e)
+ process.exit(1)
+})
