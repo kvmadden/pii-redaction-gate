@@ -1,0 +1,1205 @@
+{
+ "status": "Fixed public benchmark. The generator, seed and this answer key are public, so this is not a blind test.",
+ "seed": 60417233,
+ "generator": "eval/public-plant.js",
+ "serializer": "NFC, LF line ends, runs of spaces or tabs collapsed, lines trimmed, one trailing newline",
+ "documents": [
+  {
+   "id": "pmc-13720331",
+   "split": "dev",
+   "planted": false,
+   "text": "Hemodynamically stable on admission with an unremarkable cardiac exam, the patient presented with lateral ST‐segment changes and elevated troponin‐T. Serial ECGs demonstrated persistent subtle lateral ST‐segment depression (< 0.5 mm in V5–V6; Figure 1). Initial labs were notable for HbA1c 5.7% and LDL‐C 142 mg/dL. Despite treatment with standard cardiovascular medications at the referring hospital, refractory angina accompanied by a rise in troponin T (8160 ng/L) led to the patient being classified as a very high‐risk NSTEMI profile. Furthermore, he was identified as a candidate for an immediate invasive strategy with CAG within 2 h (Table 1). The angiogram showed acute thrombotic occlusion at the ostium of the left PDA in the setting of a left‐dominant coronary circulation, resulting in extensive IPMI (Figure 2A,B). The hyperdominant‐LCx, which was widely patent and free of significant stenosis, supplied myocardial territories that are typically perfused by the right coronary artery (RCA) (Figure 2C). Additionally, the left anterior descending artery (LAD) showed two moderate atherosclerotic plaques (~50% stenosis) at the proximal and middle segments, which could potentially contribute to the subtle, non‐dynamic, STD observed in the lateral precordial leads (Figure 2C). The RCA revealed multiple proximal concentric stenoses; however, as it was not the infarct‐related artery, no emergent percutaneous coronary intervention (PCI) was performed (Figure 2D).\n",
+   "edits": [],
+   "spans": []
+  },
+  {
+   "id": "pmc-13720340",
+   "split": "dev",
+   "planted": true,
+   "text": "Hospital no. UJ-906320\nOn admission, Mr. Albuquerque appeared acutely ill and clinically dehydrated. He remained conscious but had cognitive slowing, impaired orientation, and dysarthria. Vital signs revealed a blood pressure of 119/88 mmHg, pulse rate of 126 beats/min, respiratory rate of 19 breaths/min, and oxygen saturation of 93% on room air. His height was 185 cm and weight was 84 kg, corresponding to a body mass index of 24.5 kg/m2. Physical examination demonstrated non‐pitting edema of the left lower extremity with reduced muscle strength (2/5), primarily attributable to pain. Peripheral pulses were preserved.\n",
+   "edits": [
+    {
+     "start": 0,
+     "end": 23,
+     "originalStart": 0,
+     "originalEnd": 0,
+     "replaced": ""
+    },
+    {
+     "start": 37,
+     "end": 52,
+     "originalStart": 14,
+     "originalEnd": 25,
+     "replaced": "the patient"
+    }
+   ],
+   "spans": [
+    {
+     "start": 13,
+     "end": 22,
+     "value": "UJ-906320",
+     "type": "MRN",
+     "family": "mrn:alpha-prefix",
+     "split": "dev",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 41,
+     "end": 52,
+     "value": "Albuquerque",
+     "type": "NAME",
+     "family": "name:title-surname",
+     "split": "dev",
+     "challenge": [
+      "narrative",
+      "surname-only"
+     ],
+     "replaced": "the patient"
+    }
+   ]
+  },
+  {
+   "id": "pmc-13719627",
+   "split": "dev",
+   "planted": false,
+   "text": "A 36-year-old woman presented with a 5-day history of low-grade fever and severe stabbing headaches. Her past medical history was unremarkable. Neurological examination was unremarkable except for marked meningeal signs. A computed tomography (CT) scan of the head revealed no abnormalities. CSF analysis demonstrated inflammatory findings with lymphocytic pleocytosis (183 cells/µL; 97.8% lymphocytes) and elevated protein concentration (83.3 mg/dL). CSF polymerase chain reaction (PCR) testing did not identify an infectious etiology. Serological testing for tick-borne infections, including Borrelia burgdorferi, was negative. Based on the clinical presentation and initial laboratory findings, the patient was initially diagnosed with lymphocytic meningitis syndrome. She received intravenous dexamethasone (Dexaven) for 9 days, starting at 8 mg/day for 2 days, followed by 12 mg/day for 3 days, then tapered to 8 mg/day for 3 days and 4 mg/day on the final day, together with symptomatic treatment. A follow-up lumbar puncture showed partial improvement, with a WBC count of 130 cells/µL and protein concentration of 46.1 mg/dL. After 12 days of hospitalization, she was discharged in good condition on 11 March 2026.\n",
+   "edits": [],
+   "spans": []
+  },
+  {
+   "id": "pmc-13719403",
+   "split": "dev",
+   "planted": true,
+   "text": "Plan ID: PUN 4154 9263 · Date of birth: 02/03/1990 · Hospital no. 528972951\nAt a follow-up visit on September 30, 2020, Ms. Hunter reported progressive enlargement of the visual obscuration in her left eye since the day following her initial presentation. BCVA remained 0.8 in the right eye but had deteriorated to hand motions at 60 cm in the left eye. Blood pressure (BP) was markedly elevated at 187/104 mmHg, although she denied symptoms suggestive of hypertensive emergency, including headache, dizziness, nausea, or chest pain. Slit-lamp biomicroscopic examination with a fundus lens disclosed mild vitreous hemorrhage and expansion of the subretinal hemorrhage, while repeat OCT demonstrated progressive worsening of the neurosensory retinal elevation with accumulating subretinal blood components in the left eye (Figure 2). Given Ms. Hunter's refusal of intravitreal anti-VEGF therapy, systemic antihypertensive treatment was initiated with oral nifedipine controlled-release tablets (30 mg twice daily) and metoprolol succinate sustained-release tablets (47.5 mg once daily), and she was instructed to maintain strict bed rest to minimize the risk of further hemorrhage.\nPharmacy callback (231) 555-0163\n",
+   "edits": [
+    {
+     "start": 0,
+     "end": 76,
+     "originalStart": 0,
+     "originalEnd": 0,
+     "replaced": ""
+    },
+    {
+     "start": 120,
+     "end": 130,
+     "originalStart": 44,
+     "originalEnd": 55,
+     "replaced": "the patient"
+    },
+    {
+     "start": 839,
+     "end": 849,
+     "originalStart": 764,
+     "originalEnd": 775,
+     "replaced": "the patient"
+    },
+    {
+     "start": 1180,
+     "end": 1213,
+     "originalStart": 1106,
+     "originalEnd": 1106,
+     "replaced": ""
+    }
+   ],
+   "spans": [
+    {
+     "start": 9,
+     "end": 22,
+     "value": "PUN 4154 9263",
+     "type": "HEALTH_PLAN",
+     "family": "plan:alpha-digits",
+     "split": "dev",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 40,
+     "end": 50,
+     "value": "02/03/1990",
+     "type": "DATE",
+     "family": "date:numeric-slash",
+     "split": "dev",
+     "challenge": [
+      "header",
+      "birth-date"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 66,
+     "end": 75,
+     "value": "528972951",
+     "type": "MRN",
+     "family": "mrn:digits",
+     "split": "dev",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 124,
+     "end": 130,
+     "value": "Hunter",
+     "type": "NAME",
+     "family": "name:title-surname",
+     "split": "dev",
+     "challenge": [
+      "narrative",
+      "surname-only"
+     ],
+     "replaced": "the patient"
+    },
+    {
+     "start": 843,
+     "end": 849,
+     "value": "Hunter",
+     "type": "NAME",
+     "family": "name:title-surname",
+     "split": "dev",
+     "challenge": [
+      "possessive",
+      "surname-only"
+     ],
+     "replaced": "the patient"
+    },
+    {
+     "start": 1199,
+     "end": 1213,
+     "value": "(231) 555-0163",
+     "type": "PHONE",
+     "family": "phone:paren",
+     "split": "dev",
+     "challenge": [
+      "footer"
+     ],
+     "replaced": ""
+    }
+   ]
+  },
+  {
+   "id": "pmc-13719311",
+   "split": "dev",
+   "planted": true,
+   "text": "Insurance ID NKM 4531 4136 / Pt: Mr. Nwachukwu / Summary prepared 04/15/2026\nA 74-year-old gentleman, Mr. Nwachukwu, presented to the emergency department with an acute onset of weakness involving both upper and lower limbs, accompanied by exertional chest pain and discomfort. He had a history of a fall at home due to dizziness. ECG showed anterolateral ischemia, and the troponin T level was 313. Echocardiography showed global hypokinesia of the left ventricle and regional wall motion abnormalities, with an ejection fraction of 45%. Coronary angiography demonstrated severe triple-vessel coronary artery disease (Figures 1, 2), and a diagnosis of ACS with NSTEMI was established. Clifford Nwachukwu was managed medically with heparin 5000 units (injection), a diuretic, and aspirin (tablet). Revascularization was not beneficial as the coronary arteries were thin and completely occluded.\nMailing address: 1443 Briarwood Avenue, Sedalia\n",
+   "edits": [
+    {
+     "start": 0,
+     "end": 77,
+     "originalStart": 0,
+     "originalEnd": 0,
+     "replaced": ""
+    },
+    {
+     "start": 100,
+     "end": 116,
+     "originalStart": 23,
+     "originalEnd": 23,
+     "replaced": ""
+    },
+    {
+     "start": 686,
+     "end": 704,
+     "originalStart": 593,
+     "originalEnd": 604,
+     "replaced": "The patient"
+    },
+    {
+     "start": 894,
+     "end": 942,
+     "originalStart": 794,
+     "originalEnd": 794,
+     "replaced": ""
+    }
+   ],
+   "spans": [
+    {
+     "start": 13,
+     "end": 26,
+     "value": "NKM 4531 4136",
+     "type": "HEALTH_PLAN",
+     "family": "plan:alpha-digits",
+     "split": "dev",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 37,
+     "end": 46,
+     "value": "Nwachukwu",
+     "type": "NAME",
+     "family": "name:title-surname",
+     "split": "dev",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 66,
+     "end": 76,
+     "value": "04/15/2026",
+     "type": "DATE",
+     "family": "date:numeric-slash",
+     "split": "dev",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 106,
+     "end": 115,
+     "value": "Nwachukwu",
+     "type": "NAME",
+     "family": "name:title-surname",
+     "split": "dev",
+     "challenge": [
+      "narrative"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 686,
+     "end": 704,
+     "value": "Clifford Nwachukwu",
+     "type": "NAME",
+     "family": "name:first-last",
+     "split": "dev",
+     "challenge": [
+      "narrative"
+     ],
+     "replaced": "The patient"
+    },
+    {
+     "start": 912,
+     "end": 942,
+     "value": "1443 Briarwood Avenue, Sedalia",
+     "type": "ADDRESS",
+     "family": "address:street-city",
+     "split": "dev",
+     "challenge": [
+      "footer"
+     ],
+     "replaced": ""
+    }
+   ]
+  },
+  {
+   "id": "pmc-13721425",
+   "split": "dev",
+   "planted": true,
+   "text": "Hospital no. UR-069488, Name: Kavya Kostova, Member ID TRY 9559 3979\nUrine toxicology screening was positive for benzoylecgonine, a metabolite of cocaine. The benzoylecgonine is the primary, pharmacologically inactive metabolite of cocaine, formed in the liver and excreted in urine (Table 1). On further questioning, Kavya Kostova admitted to cocaine use disclosed a history of intermittent recreational use.\nAccompanied by Chayton\nBeridze (son)\nAddress: 6381 Dunmore Trail, Bangor\n",
+   "edits": [
+    {
+     "start": 0,
+     "end": 69,
+     "originalStart": 0,
+     "originalEnd": 0,
+     "replaced": ""
+    },
+    {
+     "start": 318,
+     "end": 331,
+     "originalStart": 249,
+     "originalEnd": 260,
+     "replaced": "the patient"
+    },
+    {
+     "start": 409,
+     "end": 446,
+     "originalStart": 338,
+     "originalEnd": 338,
+     "replaced": ""
+    },
+    {
+     "start": 446,
+     "end": 482,
+     "originalStart": 338,
+     "originalEnd": 338,
+     "replaced": ""
+    }
+   ],
+   "spans": [
+    {
+     "start": 13,
+     "end": 22,
+     "value": "UR-069488",
+     "type": "MRN",
+     "family": "mrn:alpha-prefix",
+     "split": "dev",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 30,
+     "end": 43,
+     "value": "Kavya Kostova",
+     "type": "NAME",
+     "family": "name:first-last",
+     "split": "dev",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 55,
+     "end": 68,
+     "value": "TRY 9559 3979",
+     "type": "HEALTH_PLAN",
+     "family": "plan:alpha-digits",
+     "split": "dev",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 318,
+     "end": 331,
+     "value": "Kavya Kostova",
+     "type": "NAME",
+     "family": "name:first-last",
+     "split": "dev",
+     "challenge": [
+      "narrative"
+     ],
+     "replaced": "the patient"
+    },
+    {
+     "start": 425,
+     "end": 440,
+     "value": "Chayton\nBeridze",
+     "type": "NAME",
+     "family": "name:first-last",
+     "split": "dev",
+     "challenge": [
+      "footer",
+      "relative",
+      "line-break"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 456,
+     "end": 482,
+     "value": "6381 Dunmore Trail, Bangor",
+     "type": "ADDRESS",
+     "family": "address:street-city",
+     "split": "dev",
+     "challenge": [
+      "footer"
+     ],
+     "replaced": ""
+    }
+   ]
+  },
+  {
+   "id": "pmc-13721315",
+   "split": "heldout",
+   "planted": false,
+   "text": "A 44-year-old Han woman with an Eastern Cooperative Oncology Group performance status (ECOG PS) score of 1 was admitted to our hospital in August 2022. The patient was initially considered with localized epithelioid low-grade spindle cell tumors and underwent systemic chemotherapy with IA at another hospital in May 2022. Unfortunately, chemotherapy was discontinued due to severe myelosuppression (grade 4 leukopenia, grade 4 neutropenia, grade 2 anemia) after one cycle. Subsequent CT imaging in August 2022 indicated disease progression. The patient then received anlotinib (12 mg orally once daily) until September 2022, discontinued due to vaginal hemorrhage.\n",
+   "edits": [],
+   "spans": []
+  },
+  {
+   "id": "pmc-13721448",
+   "split": "heldout",
+   "planted": true,
+   "text": "Patient name: Nurlanovna | Summary prepared 19-4-26 | Subscriber ID: Z77-456-7168\nA 5-month-old female infant, Bríd W. Nurlanovna, presented with right eye photophobia and epiphora, which had developed 20 days prior. Nurlanovna had a history of miosis and inferior pupil displacement in her right eye at birth which was found by her parents but wasn’t given treatment.\nEmergency contact: Oskar X. Ashworth (father)\n",
+   "edits": [
+    {
+     "start": 0,
+     "end": 82,
+     "originalStart": 0,
+     "originalEnd": 0,
+     "replaced": ""
+    },
+    {
+     "start": 109,
+     "end": 130,
+     "originalStart": 27,
+     "originalEnd": 27,
+     "replaced": ""
+    },
+    {
+     "start": 217,
+     "end": 227,
+     "originalStart": 114,
+     "originalEnd": 125,
+     "replaced": "The patient"
+    },
+    {
+     "start": 368,
+     "end": 414,
+     "originalStart": 266,
+     "originalEnd": 266,
+     "replaced": ""
+    }
+   ],
+   "spans": [
+    {
+     "start": 14,
+     "end": 24,
+     "value": "Nurlanovna",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "split": "heldout",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 44,
+     "end": 51,
+     "value": "19-4-26",
+     "type": "DATE",
+     "family": "date:dashed-short-year",
+     "split": "heldout",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 69,
+     "end": 81,
+     "value": "Z77-456-7168",
+     "type": "HEALTH_PLAN",
+     "family": "plan:alnum-dash",
+     "split": "heldout",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 111,
+     "end": 129,
+     "value": "Bríd W. Nurlanovna",
+     "type": "NAME",
+     "family": "name:first-initial-last",
+     "split": "heldout",
+     "challenge": [
+      "narrative"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 217,
+     "end": 227,
+     "value": "Nurlanovna",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "split": "heldout",
+     "challenge": [
+      "narrative",
+      "surname-only"
+     ],
+     "replaced": "The patient"
+    },
+    {
+     "start": 388,
+     "end": 405,
+     "value": "Oskar X. Ashworth",
+     "type": "NAME",
+     "family": "name:first-initial-last",
+     "split": "heldout",
+     "challenge": [
+      "footer",
+      "relative"
+     ],
+     "replaced": ""
+    }
+   ]
+  },
+  {
+   "id": "pmc-13721443",
+   "split": "heldout",
+   "planted": true,
+   "text": "Subscriber ID: H66-680-3905 / Hospital no. 9638-8601-1 / Report date: January 14th, 2021\nPresent Illness and Physical Examination: On December 29, 2020, Zeynep L. Short developed cough and wheezing without obvious inducement, accompanied by expectoration and diarrhea (more than 10 episodes of yellow-green watery stool per day), without fever, chest pain or hemoptysis. Physical examination on admission: body temperature 36.4℃, pulse 135 beats/min, respiratory rate 32 breaths/min, blood pressure 121/95 mmHg; acute facies, clear consciousness, positive inspiratory three-depressions sign; coarse bilateral breath sounds with numerous wheezes and fine crackles; abdominal distension, liver palpable 6 cm below the costal margin with soft consistency; digital clubbing of extremities, no other abnormal findings.\nEmail on file: zshort83@kazenzen.us\n",
+   "edits": [
+    {
+     "start": 0,
+     "end": 89,
+     "originalStart": 0,
+     "originalEnd": 0,
+     "replaced": ""
+    },
+    {
+     "start": 153,
+     "end": 168,
+     "originalStart": 64,
+     "originalEnd": 75,
+     "replaced": "the patient"
+    },
+    {
+     "start": 813,
+     "end": 849,
+     "originalStart": 720,
+     "originalEnd": 720,
+     "replaced": ""
+    }
+   ],
+   "spans": [
+    {
+     "start": 15,
+     "end": 27,
+     "value": "H66-680-3905",
+     "type": "HEALTH_PLAN",
+     "family": "plan:alnum-dash",
+     "split": "heldout",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 43,
+     "end": 54,
+     "value": "9638-8601-1",
+     "type": "MRN",
+     "family": "mrn:dashed",
+     "split": "heldout",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 70,
+     "end": 88,
+     "value": "January 14th, 2021",
+     "type": "DATE",
+     "family": "date:month-ordinal",
+     "split": "heldout",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 153,
+     "end": 168,
+     "value": "Zeynep L. Short",
+     "type": "NAME",
+     "family": "name:first-initial-last",
+     "split": "heldout",
+     "challenge": [
+      "narrative"
+     ],
+     "replaced": "the patient"
+    },
+    {
+     "start": 829,
+     "end": 849,
+     "value": "zshort83@kazenzen.us",
+     "type": "EMAIL",
+     "family": "email:initial-digits",
+     "split": "heldout",
+     "challenge": [
+      "footer"
+     ],
+     "replaced": ""
+    }
+   ]
+  },
+  {
+   "id": "pmc-13722120",
+   "split": "heldout",
+   "planted": false,
+   "text": "Because bowel necrosis or perforation was considered unlikely, endoscopic reduction was performed. The volvulus was easily reduced without endoscopic evidence of mucosal ischemia. After reduction, abdominal pain and distension promptly improved. Until surgery, nutritional support consisted of parenteral nutrition and an oral liquid nutritional formula. Elective laparoscopic ileocecal resection was performed on hospital day 9, and the patient was discharged on postoperative day 14.\n",
+   "edits": [],
+   "spans": []
+  },
+  {
+   "id": "pmc-13722112",
+   "split": "heldout",
+   "planted": true,
+   "text": "Subscriber ID: W36-356-9377 · D.O.B. 23rd April 1980 · Patient: Ngata\nCT imaging demonstrated a comminuted displaced fracture of the proximal humerus associated with posterior dislocation of a large osseous fragment measuring ~4 cm, consistent with an acute posterior fracture-dislocation (Fig. 2). Clinical examination revealed an alert and cooperative patient with adequate pain control.\nReply to rngata94@quizen.com\nMobile: 906.888.4335 ext. 195\nNext of kin: COOK,\nMei (daughter)\n",
+   "edits": [
+    {
+     "start": 0,
+     "end": 70,
+     "originalStart": 0,
+     "originalEnd": 0,
+     "replaced": ""
+    },
+    {
+     "start": 389,
+     "end": 418,
+     "originalStart": 319,
+     "originalEnd": 319,
+     "replaced": ""
+    },
+    {
+     "start": 418,
+     "end": 448,
+     "originalStart": 319,
+     "originalEnd": 319,
+     "replaced": ""
+    },
+    {
+     "start": 448,
+     "end": 482,
+     "originalStart": 319,
+     "originalEnd": 319,
+     "replaced": ""
+    }
+   ],
+   "spans": [
+    {
+     "start": 15,
+     "end": 27,
+     "value": "W36-356-9377",
+     "type": "HEALTH_PLAN",
+     "family": "plan:alnum-dash",
+     "split": "heldout",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 37,
+     "end": 52,
+     "value": "23rd April 1980",
+     "type": "DATE",
+     "family": "date:month-ordinal",
+     "split": "heldout",
+     "challenge": [
+      "header",
+      "birth-date"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 64,
+     "end": 69,
+     "value": "Ngata",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "split": "heldout",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 399,
+     "end": 418,
+     "value": "rngata94@quizen.com",
+     "type": "EMAIL",
+     "family": "email:initial-digits",
+     "split": "heldout",
+     "challenge": [
+      "footer"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 427,
+     "end": 448,
+     "value": "906.888.4335 ext. 195",
+     "type": "PHONE",
+     "family": "phone:dot-ext",
+     "split": "heldout",
+     "challenge": [
+      "footer"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 462,
+     "end": 471,
+     "value": "COOK,\nMei",
+     "type": "NAME",
+     "family": "name:upper-last-comma-first",
+     "split": "heldout",
+     "challenge": [
+      "footer",
+      "relative",
+      "line-break"
+     ],
+     "replaced": ""
+    }
+   ]
+  },
+  {
+   "id": "pmc-13722088",
+   "split": "heldout",
+   "planted": true,
+   "text": "Seen April 24th, 2026 · DOB 6-7-92\nCalloway reported initiating prenatal care at 7 weeks of gestation and adherence to folic acid and iron supplementation. At 12 weeks, ultrasonography detected a congenital malformation consistent with acrania, characterized by complete absence of cranial ossification and exposed brain tissue without clear evidence of degeneration (Figure 1).\n",
+   "edits": [
+    {
+     "start": 0,
+     "end": 35,
+     "originalStart": 0,
+     "originalEnd": 0,
+     "replaced": ""
+    },
+    {
+     "start": 35,
+     "end": 43,
+     "originalStart": 0,
+     "originalEnd": 11,
+     "replaced": "The patient"
+    }
+   ],
+   "spans": [
+    {
+     "start": 5,
+     "end": 21,
+     "value": "April 24th, 2026",
+     "type": "DATE",
+     "family": "date:month-ordinal",
+     "split": "heldout",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 28,
+     "end": 34,
+     "value": "6-7-92",
+     "type": "DATE",
+     "family": "date:dashed-short-year",
+     "split": "heldout",
+     "challenge": [
+      "header",
+      "birth-date"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 35,
+     "end": 43,
+     "value": "Calloway",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "split": "heldout",
+     "challenge": [
+      "narrative",
+      "surname-only"
+     ],
+     "replaced": "The patient"
+    }
+   ]
+  },
+  {
+   "id": "pmc-13720603",
+   "split": "heldout",
+   "planted": false,
+   "text": "Laboratory investigations revealed persistently increased erythrocytosis with microcytosis. On 21st January 2026, Hb was 18.3 g/dL, Hct 55%, RBC count 7.19 × 106/μL, MCV 76.5 fL. Hemoglobin remained elevated in repeated tests, with a value of 18.9 g/dL on 4th March 2026. Given the context of renal cell carcinoma, the patient's erythrocytosis was believed to be paraneoplastic, but the erythropoietin levels and workup for primary erythrocytosis was not done (Table 2).Table 2Selected hematologic laboratory results.ParameterReference range21 Jan 202623 Jan 202622 Feb 20264 Mar 2026WBC (×103/μL)4.52–10.9311.049.0110.619.99RBC (×106/μL)4.54–5.597.196.937.427.64Hemoglobin (g/dL)13.2–16.718.317.518.418.9Hematocrit (%)40.1–49.055.053.655.857.5MCV (fL)77.8–96.276.577.375.275.3RDW-CV (%)11.9–15.218.017.418.718.8Platelets (×103/μL)150–450278219204251\n",
+   "edits": [],
+   "spans": []
+  },
+  {
+   "id": "pmc-13720511",
+   "split": "heldout",
+   "planted": true,
+   "text": "Plan ID: P08-665-0382\nAlthough the hemorrhage spared the fovea—making conservative observation a viable alternative—the patient (P.H.) experienced severe anxiety regarding the dense inferior visual field defect. Being in her third trimester of pregnancy, she felt the scotoma was disorienting and significantly increased her risk of falls, particularly when navigating stairs. Following comprehensive counseling on the risks and benefits of both observation and laser intervention, Hrytsenko opted for Nd:YAG laser hyaloidotomy to achieve rapid visual rehabilitation and alleviate her safety concerns.\n",
+   "edits": [
+    {
+     "start": 0,
+     "end": 22,
+     "originalStart": 0,
+     "originalEnd": 0,
+     "replaced": ""
+    },
+    {
+     "start": 127,
+     "end": 134,
+     "originalStart": 105,
+     "originalEnd": 105,
+     "replaced": ""
+    },
+    {
+     "start": 482,
+     "end": 491,
+     "originalStart": 453,
+     "originalEnd": 464,
+     "replaced": "the patient"
+    }
+   ],
+   "spans": [
+    {
+     "start": 9,
+     "end": 21,
+     "value": "P08-665-0382",
+     "type": "HEALTH_PLAN",
+     "family": "plan:alnum-dash",
+     "split": "heldout",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 129,
+     "end": 133,
+     "value": "P.H.",
+     "type": "NAME",
+     "family": "name:initials",
+     "split": "heldout",
+     "challenge": [
+      "initials"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 482,
+     "end": 491,
+     "value": "Hrytsenko",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "split": "heldout",
+     "challenge": [
+      "narrative",
+      "surname-only"
+     ],
+     "replaced": "the patient"
+    }
+   ]
+  },
+  {
+   "id": "pmc-13720756",
+   "split": "heldout",
+   "planted": true,
+   "text": "MRN: 4711-3210-2 / Seen 17th April 2026 / Patient: Trinh\nIn March 2026, a 56‐year‐old Moroccan man, who had been living in Italy for several years, presented to the Emergency Department with persistent diffuse abdominal pain, predominantly localized to the mesogastric region, associated with constipation and clinical features suggestive of subacute intestinal obstruction. Eamon I. Trinh was afebrile and denied urinary symptoms, recent travel abroad, ingestion of raw or poorly preserved food, or episodes of vomiting.\nLives at 9643 Foxglove Drive\n",
+   "edits": [
+    {
+     "start": 0,
+     "end": 57,
+     "originalStart": 0,
+     "originalEnd": 0,
+     "replaced": ""
+    },
+    {
+     "start": 375,
+     "end": 389,
+     "originalStart": 318,
+     "originalEnd": 329,
+     "replaced": "The patient"
+    },
+    {
+     "start": 521,
+     "end": 550,
+     "originalStart": 461,
+     "originalEnd": 461,
+     "replaced": ""
+    }
+   ],
+   "spans": [
+    {
+     "start": 5,
+     "end": 16,
+     "value": "4711-3210-2",
+     "type": "MRN",
+     "family": "mrn:dashed",
+     "split": "heldout",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 24,
+     "end": 39,
+     "value": "17th April 2026",
+     "type": "DATE",
+     "family": "date:month-ordinal",
+     "split": "heldout",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 51,
+     "end": 56,
+     "value": "Trinh",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "split": "heldout",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 375,
+     "end": 389,
+     "value": "Eamon I. Trinh",
+     "type": "NAME",
+     "family": "name:first-initial-last",
+     "split": "heldout",
+     "challenge": [
+      "narrative"
+     ],
+     "replaced": "The patient"
+    },
+    {
+     "start": 531,
+     "end": 550,
+     "value": "9643 Foxglove Drive",
+     "type": "ADDRESS",
+     "family": "address:street-only",
+     "split": "heldout",
+     "challenge": [
+      "footer"
+     ],
+     "replaced": ""
+    }
+   ]
+  },
+  {
+   "id": "pmc-13720755",
+   "split": "heldout",
+   "planted": true,
+   "text": "A 47‐year‐old female, Thandiwe C. Gold, with a history of recent dental extractions of sixteen decayed teeth presented with one week of left facial numbness and swelling. She noted that the onset of her left facial numbness preceded her dental extractions by five days. Vital signs included a temperature of 98.2°F, blood pressure of 157/78 mmHg, heart rate of 78 bpm, and respiratory rate of 18 breaths/minute. On examination, she was in no acute distress and appeared nontoxic. Oral examination revealed left mandibular swelling, abnormal dentition with dental tenderness, and gingival swelling. Neurological examination was notable for reduced sensation to light touch in the left V1‐V2 region. Computed tomography (CT) of the head without contrast demonstrated hypodensities in the right parietal and occipital lobes. Brain magnetic resonance imaging (MRI) with and without contrast demonstrated an 11 × 18 mm enhancing lesion in the right parieto‐occipital region with mild diffusion restriction and vasogenic edema, as well as small enhancing lesions in the right frontal and parietal lobes (Figures 1A–D). There were no paramagnetic rim lesions or central vein signs. Given Gold’s history of extensive dental caries, there was a high concern for odontogenic brain abscesses due to spread from her dental infections, for which she received empiric antibiotic treatment with IV vancomycin, ceftriaxone, and metronidazole. Infectious workup was unrevealing, with negative blood cultures, serum QuantiFERON‐TB Gold test, nonreactive rapid plasma reagin (RPR), HIV screen, and cryptococcal antigen. CT of the chest, abdomen, and pelvis showed no signs of occult malignancy, and the patient (T.G.) was up to date with her cancer screenings. A timeline of Gold’s clinical course is depicted in Table 1.\n",
+   "edits": [
+    {
+     "start": 20,
+     "end": 39,
+     "originalStart": 20,
+     "originalEnd": 20,
+     "replaced": ""
+    },
+    {
+     "start": 1181,
+     "end": 1185,
+     "originalStart": 1162,
+     "originalEnd": 1173,
+     "replaced": "the patient"
+    },
+    {
+     "start": 1691,
+     "end": 1698,
+     "originalStart": 1679,
+     "originalEnd": 1679,
+     "replaced": ""
+    },
+    {
+     "start": 1756,
+     "end": 1760,
+     "originalStart": 1737,
+     "originalEnd": 1748,
+     "replaced": "the patient"
+    }
+   ],
+   "spans": [
+    {
+     "start": 22,
+     "end": 38,
+     "value": "Thandiwe C. Gold",
+     "type": "NAME",
+     "family": "name:first-initial-last",
+     "split": "heldout",
+     "challenge": [
+      "narrative",
+      "common-word"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 1181,
+     "end": 1185,
+     "value": "Gold",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "split": "heldout",
+     "challenge": [
+      "possessive",
+      "surname-only",
+      "common-word"
+     ],
+     "replaced": "the patient"
+    },
+    {
+     "start": 1693,
+     "end": 1697,
+     "value": "T.G.",
+     "type": "NAME",
+     "family": "name:initials",
+     "split": "heldout",
+     "challenge": [
+      "initials"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 1756,
+     "end": 1760,
+     "value": "Gold",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "split": "heldout",
+     "challenge": [
+      "possessive",
+      "surname-only",
+      "common-word"
+     ],
+     "replaced": "the patient"
+    }
+   ]
+  },
+  {
+   "id": "pmc-13720758",
+   "split": "heldout",
+   "planted": true,
+   "text": "A 48‐year‐old healthy male, Dariush H. Iyer, presented to the accident and emergency (AE) department with a 10‐day history of right flank pain radiating to the groin. The patient (D.I.) was slightly hypotensive but otherwise vitally stable. There was mild epigastric and right hypochondriac tenderness without any peritoneal signs. Lab workup revealed a white blood count (WBC) of 20 × 109/L (ref: 3.4 – 9.6 × 109/L). Multiple views of abdominal radiographs were done, showcasing a radiopaque needlelike structure in the right side of the abdomen and paravertebral planes, suspicious for a foreign body (Figure 1). Iyer denied any recent procedures or ingestion of bones or other objects.\n",
+   "edits": [
+    {
+     "start": 26,
+     "end": 44,
+     "originalStart": 26,
+     "originalEnd": 26,
+     "replaced": ""
+    },
+    {
+     "start": 178,
+     "end": 185,
+     "originalStart": 160,
+     "originalEnd": 160,
+     "replaced": ""
+    },
+    {
+     "start": 615,
+     "end": 619,
+     "originalStart": 590,
+     "originalEnd": 601,
+     "replaced": "The patient"
+    }
+   ],
+   "spans": [
+    {
+     "start": 28,
+     "end": 43,
+     "value": "Dariush H. Iyer",
+     "type": "NAME",
+     "family": "name:first-initial-last",
+     "split": "heldout",
+     "challenge": [
+      "narrative"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 180,
+     "end": 184,
+     "value": "D.I.",
+     "type": "NAME",
+     "family": "name:initials",
+     "split": "heldout",
+     "challenge": [
+      "initials"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 615,
+     "end": 619,
+     "value": "Iyer",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "split": "heldout",
+     "challenge": [
+      "narrative",
+      "surname-only"
+     ],
+     "replaced": "The patient"
+    }
+   ]
+  },
+  {
+   "id": "pmc-13720761",
+   "split": "heldout",
+   "planted": true,
+   "text": "Date of birth: 26th September 1976, Plan ID: T39-157-0524\nERCP was repeated several times as described in Table 1, as the oozing continued until the patient (B.J.) underwent another open surgery to repair the bilio‐cutaneous fistula in 2020. In this procedure, the fistula tract was sutured, and omentoplasty and drainage were performed. The drainage decreased to less than 10 mL per day, and the drain was removed on day 25 with the continued oozing of foul‐smelling, yellowish–green fluid.\n",
+   "edits": [
+    {
+     "start": 0,
+     "end": 58,
+     "originalStart": 0,
+     "originalEnd": 0,
+     "replaced": ""
+    },
+    {
+     "start": 156,
+     "end": 163,
+     "originalStart": 98,
+     "originalEnd": 98,
+     "replaced": ""
+    }
+   ],
+   "spans": [
+    {
+     "start": 15,
+     "end": 34,
+     "value": "26th September 1976",
+     "type": "DATE",
+     "family": "date:month-ordinal",
+     "split": "heldout",
+     "challenge": [
+      "header",
+      "birth-date"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 45,
+     "end": 57,
+     "value": "T39-157-0524",
+     "type": "HEALTH_PLAN",
+     "family": "plan:alnum-dash",
+     "split": "heldout",
+     "challenge": [
+      "header"
+     ],
+     "replaced": ""
+    },
+    {
+     "start": 158,
+     "end": 162,
+     "value": "B.J.",
+     "type": "NAME",
+     "family": "name:initials",
+     "split": "heldout",
+     "challenge": [
+      "initials"
+     ],
+     "replaced": ""
+    }
+   ]
+  },
+  {
+   "id": "cms-ncd-211-3",
+   "split": "heldout",
+   "planted": false,
+   "text": "I. General Description Positron emission tomography (PET) is a noninvasive diagnostic imaging procedure that assesses the level of metabolic activity and perfusion in various organ systems of the [human] body. A positron camera (tomograph) is used to produce cross-sectional tomographic images, which are obtained from positron emitting radioactive tracer substances (radiopharmaceuticals) such as 2-[F-18] Fluoro-D-Glucose (FDG), that are administered intravenously to the patient.\n",
+   "edits": [],
+   "spans": []
+  },
+  {
+   "id": "cms-ncd-22-2",
+   "split": "dev",
+   "planted": false,
+   "text": "While electric nerve stimulation has been employed to control chronic intractable pain for some time, its use in the treatment of motor function disorders, such as multiple sclerosis, is a recent innovation, and the medical effectiveness of such therapy has not been verified by scientifically controlled studies.\n",
+   "edits": [],
+   "spans": []
+  }
+ ]
+}

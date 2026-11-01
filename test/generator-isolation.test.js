@@ -43,3 +43,15 @@ test('gate code contains no generator seed or planted answer value', () => {
  assert.ok(values.length > 0)
  for (const [path, code] of gateCode) for (const value of values) assert.ok(!code.includes(value), `${path} contains generator value ${value}`)
 })
+
+test('gate code contains no word from the Set B generator pools', async () => {
+ const { GIVEN, SURNAMES, CITIES, STREETS, SEED } = await import('../eval/public-plant.js')
+ const words = new Set([String(SEED)])
+ for (const value of [...GIVEN, ...SURNAMES, ...CITIES, ...STREETS]) for (const word of value.split(/[\s'\-]+/)) if (word.length >= 4) words.add(word)
+ const escape = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+ for (const [path, code] of gateCode) for (const word of words) assert.doesNotMatch(code, new RegExp(`(?<![\\p{L}])${escape(word)}(?![\\p{L}])`, 'u'), `${path} contains generator pool word ${word}`)
+})
+
+test('the gate never imports evaluation code or answer keys', () => {
+ for (const [path, code] of gateCode) assert.doesNotMatch(code, /eval\/|public-plant|planted\.json|labels\.json|heldout\.json/, path)
+})

@@ -58,8 +58,9 @@ test('every planted span has exact offsets, a format split and frozen generator 
    assert.equal(saved.text.slice(span.start, span.end), span.value)
    assert.ok(span.start >= end && span.end > span.start)
    assert.ok(['dev', 'heldout'].includes(span.split))
-   assert.ok(span.type && span.family && span.replaced)
-   assert.ok(read(doc.file).includes(span.replaced))
+   // Header, footer and appositive spans are insertions and replace nothing.
+   assert.ok(span.type && span.family && typeof span.replaced === 'string')
+   if (span.replaced) assert.ok(read(doc.file).includes(span.replaced))
    families[span.split].add(span.family)
    end = span.end
   }
