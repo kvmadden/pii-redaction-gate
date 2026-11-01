@@ -1,0 +1,636 @@
+{
+  "version": 1,
+  "documents": [
+    {
+      "id": "pmc-13720331",
+      "source": "PMC",
+      "sourceId": "PMC13720331",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13720331/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13720331.1/PMC13720331.1.xml",
+      "title": "Hyperdominant Left Circumflex Artery Challenging Conventional Paradigms and Current Guideline Recommendations: A Comprehensive Literature Review and Case Series",
+      "authors": [
+        "Amirmahdi Mohammadi",
+        "Mohammad Sadegh\u2010Vashveshady"
+      ],
+      "publisher": "Wiley",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Amirmahdi Mohammadi, Mohammad Sadegh\u2010Vashveshady. Hyperdominant Left Circumflex Artery Challenging Conventional Paradigms and Current Guideline Recommendations: A Comprehensive Literature Review and Case Series. Wiley. \u00a9 2026 The Author(s). Clinical Case Reports published by John Wiley & Sons Ltd.",
+      "notice": "\u00a9 2026 The Author(s). Clinical Case Reports published by John Wiley & Sons Ltd.",
+      "file": "data/public/text/pmc-13720331.txt",
+      "sha256": "7a0489b5673000bcb94984a0739d9034b43839143f1f2677261e707c3754446e",
+      "retrievedSha256": "1814e2cc62c5e5d7d52c41cce003b45c5ba7e9c6733e7ac22b8a1e6e357fdfc9",
+      "selector": {
+        "paragraph": "Hemodynamically stable on admission with an unremarkable cardiac exam, the patient presented with lateral ST\u2010segment changes and elevated troponin\u2010T. Serial ECGs demonstrated persistent subtle lateral ST\u2010segment depression (< 0.5 mm in V5\u2013V6; Figure 1). Initial labs were notable for HbA1c 5.7% and LDL\u2010C 142 mg/dL. Despite treatment with standard cardiovascular medications at the referring hospital, refractory angina accompanied by a rise in troponin T (8160 ng/L) led to the patient being classified as a very high\u2010risk NSTEMI profile. Furthermore, he was identified as a candidate for an immediate invasive strategy with CAG within 2 h (Table 1). The angiogram showed acute thrombotic occlusion at the ostium of the left PDA in the setting of a left\u2010dominant coronary circulation, resulting in extensive IPMI (Figure 2A,B). The hyperdominant\u2010LCx, which was widely patent and free of significant stenosis, supplied myocardial territories that are typically perfused by the right coronary artery (RCA) (Figure 2C). Additionally, the left anterior descending artery (LAD) showed two moderate atherosclerotic plaques (~50% stenosis) at the proximal and middle segments, which could potentially contribute to the subtle, non\u2010dynamic, STD observed in the lateral precordial leads (Figure 2C). The RCA revealed multiple proximal concentric stenoses; however, as it was not the infarct\u2010related artery, no emergent percutaneous coronary intervention (PCI) was performed (Figure 2D)."
+      },
+      "genre": "case report",
+      "split": "dev",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "pmc-13720340",
+      "source": "PMC",
+      "sourceId": "PMC13720340",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13720340/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13720340.1/PMC13720340.1.xml",
+      "title": "Adipsic Hypernatremia Complicated by Hyperosmolar Hyperglycemic State and Extensive Venous Thromboembolism After Traumatic Brain Injury: A Case Report",
+      "authors": [
+        "Mahshad Ghoddusi",
+        "Khashayar Shahverdi",
+        "Negar Zareshahi",
+        "Zahra Shafizadeh",
+        "Mohammad Taghi Talebian",
+        "Amir Shokri",
+        "Fatemeh Afra"
+      ],
+      "publisher": "Wiley",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Mahshad Ghoddusi, Khashayar Shahverdi, Negar Zareshahi, Zahra Shafizadeh, Mohammad Taghi Talebian, Amir Shokri, Fatemeh Afra. Adipsic Hypernatremia Complicated by Hyperosmolar Hyperglycemic State and Extensive Venous Thromboembolism After Traumatic Brain Injury: A Case Report. Wiley. \u00a9 2026 The Author(s). Clinical Case Reports published by John Wiley & Sons Ltd.",
+      "notice": "\u00a9 2026 The Author(s). Clinical Case Reports published by John Wiley & Sons Ltd.",
+      "file": "data/public/text/pmc-13720340.txt",
+      "sha256": "3484ea749c228fb61cd4cbca52ed89eab39d9fd4752f1a5f21ef946e0582bfc4",
+      "retrievedSha256": "f6997685a3bd54d719d07caa7ef2dca16862f919cf251a344463e8c56ea3ff29",
+      "selector": {
+        "paragraph": "On admission, the patient appeared acutely ill and clinically dehydrated. He remained conscious but had cognitive slowing, impaired orientation, and dysarthria. Vital signs revealed a blood pressure of 119/88 mmHg, pulse rate of 126 beats/min, respiratory rate of 19 breaths/min, and oxygen saturation of 93% on room air. His height was 185 cm and weight was 84 kg, corresponding to a body mass index of 24.5 kg/m2. Physical examination demonstrated non\u2010pitting edema of the left lower extremity with reduced muscle strength (2/5), primarily attributable to pain. Peripheral pulses were preserved."
+      },
+      "genre": "case report",
+      "split": "dev",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "pmc-13719627",
+      "source": "PMC",
+      "sourceId": "PMC13719627",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13719627/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13719627.1/PMC13719627.1.xml",
+      "title": "Case report: When encephalitis is not an infection: two cases of autoimmune GFAP astrocytopathy mimicking infectious encephalitis",
+      "authors": [
+        "Gabriela Trojan",
+        "Ngoc Hoang Anh Than",
+        "Abisha Senthilkumar",
+        "Faith Emmanuel",
+        "Anna Moniuszko-Malinowska",
+        "Piotr Czupryna"
+      ],
+      "publisher": "Frontiers Media SA",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Gabriela Trojan, Ngoc Hoang Anh Than, Abisha Senthilkumar, Faith Emmanuel, Anna Moniuszko-Malinowska, Piotr Czupryna. Case report: When encephalitis is not an infection: two cases of autoimmune GFAP astrocytopathy mimicking infectious encephalitis. Frontiers Media SA. Copyright \u00a9 2026 Trojan, Than, Senthilkumar, Emmanuel, Moniuszko-Malinowska and Czupryna.",
+      "notice": "Copyright \u00a9 2026 Trojan, Than, Senthilkumar, Emmanuel, Moniuszko-Malinowska and Czupryna.",
+      "file": "data/public/text/pmc-13719627.txt",
+      "sha256": "841cc657796ad5ea3ae65fc13b1b547ebb88119aefad1acee964e694b05d661b",
+      "retrievedSha256": "5e2fb8695d7c8aba14811914b77dee9174adcc16fd21a4c96ae6ea9fe953697c",
+      "selector": {
+        "paragraph": "A 36-year-old woman presented with a 5-day history of low-grade fever and severe stabbing headaches. Her past medical history was unremarkable. Neurological examination was unremarkable except for marked meningeal signs. A computed tomography (CT) scan of the head revealed no abnormalities. CSF analysis demonstrated inflammatory findings with lymphocytic pleocytosis (183 cells/\u00b5L; 97.8% lymphocytes) and elevated protein concentration (83.3 mg/dL). CSF polymerase chain reaction (PCR) testing did not identify an infectious etiology. Serological testing for tick-borne infections, including Borrelia burgdorferi, was negative. Based on the clinical presentation and initial laboratory findings, the patient was initially diagnosed with lymphocytic meningitis syndrome. She received intravenous dexamethasone (Dexaven) for 9 days, starting at 8 mg/day for 2 days, followed by 12 mg/day for 3 days, then tapered to 8 mg/day for 3 days and 4 mg/day on the final day, together with symptomatic treatment. A follow-up lumbar puncture showed partial improvement, with a WBC count of 130 cells/\u00b5L and protein concentration of 46.1 mg/dL. After 12 days of hospitalization, she was discharged in good condition on 11 March 2026."
+      },
+      "genre": "case report",
+      "split": "dev",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "pmc-13719403",
+      "source": "PMC",
+      "sourceId": "PMC13719403",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13719403/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13719403.1/PMC13719403.1.xml",
+      "title": "Two suspected sequential retinal arterial macroaneurysms in a single eye with secondary nonvascular cystoid macular edema: 5-year follow-up: a case report",
+      "authors": [
+        "Kaiyao Chi",
+        "Daoxi Lei",
+        "Tong Guo",
+        "Xiaoding Shui",
+        "Huili Li"
+      ],
+      "publisher": "Frontiers Media SA",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Kaiyao Chi, Daoxi Lei, Tong Guo, Xiaoding Shui, Huili Li. Two suspected sequential retinal arterial macroaneurysms in a single eye with secondary nonvascular cystoid macular edema: 5-year follow-up: a case report. Frontiers Media SA. \u00a9 2026 Chi, Lei, Guo, Shui and Li.",
+      "notice": "\u00a9 2026 Chi, Lei, Guo, Shui and Li.",
+      "file": "data/public/text/pmc-13719403.txt",
+      "sha256": "cb6d692c422a5312f7c21693a48b81998985379607f0bc69d63111b10ee974d8",
+      "retrievedSha256": "09d4d4a317cf44ddb36a3c178b86a6c5c7b58a3c5a17c1949715250dbf0d6898",
+      "selector": {
+        "paragraph": "At a follow-up visit on September 30, 2020, the patient reported progressive enlargement of the visual obscuration in her left eye since the day following her initial presentation. BCVA remained 0.8 in the right eye but had deteriorated to hand motions at 60 cm in the left eye. Blood pressure (BP) was markedly elevated at 187/104 mmHg, although she denied symptoms suggestive of hypertensive emergency, including headache, dizziness, nausea, or chest pain. Slit-lamp biomicroscopic examination with a fundus lens disclosed mild vitreous hemorrhage and expansion of the subretinal hemorrhage, while repeat OCT demonstrated progressive worsening of the neurosensory retinal elevation with accumulating subretinal blood components in the left eye (Figure 2). Given the patient's refusal of intravitreal anti-VEGF therapy, systemic antihypertensive treatment was initiated with oral nifedipine controlled-release tablets (30 mg twice daily) and metoprolol succinate sustained-release tablets (47.5 mg once daily), and she was instructed to maintain strict bed rest to minimize the risk of further hemorrhage."
+      },
+      "genre": "case report",
+      "split": "dev",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "pmc-13719311",
+      "source": "PMC",
+      "sourceId": "PMC13719311",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13719311/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13719311.1/PMC13719311.1.xml",
+      "title": "Intra-aortic Balloon Counterpulsation-Assisted Cardiac Support in the Anesthetic Management of Surgery for Acute Cervical Spine Compression With Severe Coronary Artery Disease in the Prone Position",
+      "authors": [
+        "Priya Motiani",
+        "Swathi Mallikarjuna",
+        "Murali Chakravarthy",
+        "Shafiya Shaikh"
+      ],
+      "publisher": "Cureus Inc.",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Priya Motiani, Swathi Mallikarjuna, Murali Chakravarthy, Shafiya Shaikh. Intra-aortic Balloon Counterpulsation-Assisted Cardiac Support in the Anesthetic Management of Surgery for Acute Cervical Spine Compression With Severe Coronary Artery Disease in the Prone Position. Cureus Inc.. Copyright \u00a9 2026, Motiani et al.",
+      "notice": "Copyright \u00a9 2026, Motiani et al.",
+      "file": "data/public/text/pmc-13719311.txt",
+      "sha256": "c9a1877a608ae5ca3d42c4db43bfa65ba95135cfe7e6cfdcfee7e878cefbe794",
+      "retrievedSha256": "738b7ccc1b8a257f37e8eb560a73c574056e5884498460205e562fb3b50f248c",
+      "selector": {
+        "paragraph": "A 74-year-old gentleman presented to the emergency department with an acute onset of weakness involving both upper and lower limbs, accompanied by exertional chest pain and discomfort. He had a history of a fall at home due to dizziness. ECG showed anterolateral ischemia, and the troponin T level was 313. Echocardiography showed global hypokinesia of the left ventricle and regional wall motion abnormalities, with an ejection fraction of 45%. Coronary angiography demonstrated severe triple-vessel coronary artery disease (Figures 1, 2), and a diagnosis of ACS with NSTEMI was established. The patient was managed medically with heparin 5000 units (injection), a diuretic, and aspirin (tablet). Revascularization was not beneficial as the coronary arteries were thin and completely occluded."
+      },
+      "genre": "case report",
+      "split": "dev",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "pmc-13721425",
+      "source": "PMC",
+      "sourceId": "PMC13721425",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13721425/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13721425.1/PMC13721425.1.xml",
+      "title": "Cocaine-induced PRES in a previously normotensive patient: a case report and review of literature",
+      "authors": [
+        "Akshayaa Kumar Aggarawal",
+        "Aniruddh Shailesh Shringare",
+        "Mansoor Gazi"
+      ],
+      "publisher": "BMC",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Akshayaa Kumar Aggarawal, Aniruddh Shailesh Shringare, Mansoor Gazi. Cocaine-induced PRES in a previously normotensive patient: a case report and review of literature. BMC. \u00a9 The Author(s) 2026",
+      "notice": "\u00a9 The Author(s) 2026",
+      "file": "data/public/text/pmc-13721425.txt",
+      "sha256": "4583a21886bea467f867deb69c8600fbc4a57b84e6756cbf3a435b0078d6433a",
+      "retrievedSha256": "120e1fc39e22c560da7a8c93ac4eb528dde8c31542b40ad58f4b8abc2702b108",
+      "selector": {
+        "paragraph": "Urine toxicology screening was positive for benzoylecgonine, a metabolite of cocaine. The benzoylecgonine is the primary, pharmacologically inactive metabolite of cocaine, formed in the liver and excreted in urine (Table 1). On further questioning, the patient admitted to cocaine use disclosed a history of intermittent recreational use."
+      },
+      "genre": "case report",
+      "split": "dev",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "pmc-13721315",
+      "source": "PMC",
+      "sourceId": "PMC13721315",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13721315/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13721315.1/PMC13721315.1.xml",
+      "title": "Tazemetostat combined PD-1 inhibitor achieving prolonged survival in primary proximal epithelioid sarcoma: a case report and review of the literature",
+      "authors": [
+        "Wei Li",
+        "Chenlu Zhang",
+        "Yang You",
+        "Xi Guo",
+        "Rongkui Luo",
+        "Yuhong Zhou"
+      ],
+      "publisher": "BMC",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Wei Li, Chenlu Zhang, Yang You, Xi Guo, Rongkui Luo, Yuhong Zhou. Tazemetostat combined PD-1 inhibitor achieving prolonged survival in primary proximal epithelioid sarcoma: a case report and review of the literature. BMC. \u00a9 The Author(s) 2026",
+      "notice": "\u00a9 The Author(s) 2026",
+      "file": "data/public/text/pmc-13721315.txt",
+      "sha256": "6629f928aa5f6f320d279ffcce6217011836a5056ec151f31f9b67fbda52de74",
+      "retrievedSha256": "db0ef4033872c4dea32e43d917ee9c9b065eb2e5c3a7cb09c344586620d35d27",
+      "selector": {
+        "paragraph": "A 44-year-old Han woman with an Eastern Cooperative Oncology Group performance status (ECOG PS) score of 1 was admitted to our hospital in August 2022. The patient was initially considered with localized epithelioid low-grade spindle cell tumors and underwent systemic chemotherapy with IA at another hospital in May 2022. Unfortunately, chemotherapy was discontinued due to severe myelosuppression (grade 4 leukopenia, grade 4 neutropenia, grade 2 anemia) after one cycle. Subsequent CT imaging in August 2022 indicated disease progression. The patient then received anlotinib (12 mg orally once daily) until September 2022, discontinued due to vaginal hemorrhage."
+      },
+      "genre": "case report",
+      "split": "heldout",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "pmc-13721448",
+      "source": "PMC",
+      "sourceId": "PMC13721448",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13721448/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13721448.1/PMC13721448.1.xml",
+      "title": "Congenital fibrovascular pupillary membrane with secondary glaucoma and associated fundus anomalies: a case report and literature review",
+      "authors": [
+        "Yanyan Cheng",
+        "Ying Yang",
+        "Lihui Yin",
+        "Mingyu Ren",
+        "Juan Yin",
+        "Congying Wang",
+        "Yi Gao"
+      ],
+      "publisher": "BMC",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Yanyan Cheng, Ying Yang, Lihui Yin, Mingyu Ren, Juan Yin, Congying Wang, Yi Gao. Congenital fibrovascular pupillary membrane with secondary glaucoma and associated fundus anomalies: a case report and literature review. BMC. \u00a9 The Author(s) 2026",
+      "notice": "\u00a9 The Author(s) 2026",
+      "file": "data/public/text/pmc-13721448.txt",
+      "sha256": "a11942e435fabdfdee715a1711092e459ae01bc607ae7adf5c4f81659e5917be",
+      "retrievedSha256": "daee889fffae5c609fa1190b804d0170321b2a814638faf20db3218ccb1b976e",
+      "selector": {
+        "paragraph": "A 5-month-old female infant presented with right eye photophobia and epiphora, which had developed 20 days prior. The patient had a history of miosis and inferior pupil displacement in her right eye at birth which was found by her parents but wasn\u2019t given treatment."
+      },
+      "genre": "case report",
+      "split": "heldout",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "pmc-13721443",
+      "source": "PMC",
+      "sourceId": "PMC13721443",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13721443/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13721443.1/PMC13721443.1.xml",
+      "title": "Membranous obliterans bronchitis after hematopoietic stem cell transplantation: case report",
+      "authors": [
+        "Weiquan Pan",
+        "Yang Li",
+        "Changjin Wei",
+        "Zhiyi He",
+        "Jianming Luo",
+        "Guopeng Liao",
+        "Lingyun Chen",
+        "Meihua Li"
+      ],
+      "publisher": "BMC",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Weiquan Pan, Yang Li, Changjin Wei, Zhiyi He, Jianming Luo, Guopeng Liao, Lingyun Chen, Meihua Li. Membranous obliterans bronchitis after hematopoietic stem cell transplantation: case report. BMC. \u00a9 The Author(s) 2026",
+      "notice": "\u00a9 The Author(s) 2026",
+      "file": "data/public/text/pmc-13721443.txt",
+      "sha256": "1af8c41a1cd1e375387ed738ddc3d3b0457ee408cbce5b34cf6e1f809f9961bd",
+      "retrievedSha256": "637a38e557c1b538a8169a7068a4e1a83fa44e8a0b502cda64b7a518b762d869",
+      "selector": {
+        "paragraph": "Present Illness and Physical Examination: On December 29, 2020, the patient developed cough and wheezing without obvious inducement, accompanied by expectoration and diarrhea (more than 10 episodes of yellow-green watery stool per day), without fever, chest pain or hemoptysis. Physical examination on admission: body temperature 36.4\u2103, pulse 135 beats/min, respiratory rate 32 breaths/min, blood pressure 121/95 mmHg; acute facies, clear consciousness, positive inspiratory three-depressions sign; coarse bilateral breath sounds with numerous wheezes and fine crackles; abdominal distension, liver palpable 6 cm below the costal margin with soft consistency; digital clubbing of extremities, no other abnormal findings."
+      },
+      "genre": "case report",
+      "split": "heldout",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "pmc-13722120",
+      "source": "PMC",
+      "sourceId": "PMC13722120",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13722120/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722120.1/PMC13722120.1.xml",
+      "title": "Surgical management of cecal volvulus using endoscopic reduction as a bridge to elective laparoscopic surgery: a three-case series",
+      "authors": [
+        "Kaita Suzuki",
+        "Koshiro Harata",
+        "Ryo Taguchi",
+        "Rena Saito",
+        "Nobuaki Kagohashi",
+        "Ryosuke Niwamoto",
+        "Motoki Futamata",
+        "Tsuyoshi Saito",
+        "Shuji Koide",
+        "Takeyasu Katada",
+        "Futoshi Teranishi",
+        "Shuji Takiguchi"
+      ],
+      "publisher": "Oxford University Press",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Kaita Suzuki, Koshiro Harata, Ryo Taguchi, Rena Saito, Nobuaki Kagohashi, Ryosuke Niwamoto, Motoki Futamata, Tsuyoshi Saito, Shuji Koide, Takeyasu Katada, Futoshi Teranishi, Shuji Takiguchi. Surgical management of cecal volvulus using endoscopic reduction as a bridge to elective laparoscopic surgery: a three-case series. Oxford University Press. \u00a9 The Author(s) 2026. Published by Oxford University Press and JSCR Publishing Ltd.",
+      "notice": "\u00a9 The Author(s) 2026. Published by Oxford University Press and JSCR Publishing Ltd.",
+      "file": "data/public/text/pmc-13722120.txt",
+      "sha256": "fb3f9637b66a75a59549cc9a99a5f5b1b2a1908d5b78e9a2ceb43cb7b0f20283",
+      "retrievedSha256": "0d4535421719aa67461ccee54338511582d4bb98b05b365b1e48a43c6def8b47",
+      "selector": {
+        "paragraph": "Because bowel necrosis or perforation was considered unlikely, endoscopic reduction was performed. The volvulus was easily reduced without endoscopic evidence of mucosal ischemia. After reduction, abdominal pain and distension promptly improved. Until surgery, nutritional support consisted of parenteral nutrition and an oral liquid nutritional formula. Elective laparoscopic ileocecal resection was performed on hospital day 9, and the patient was discharged on postoperative day 14."
+      },
+      "genre": "case report",
+      "split": "heldout",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "pmc-13722112",
+      "source": "PMC",
+      "sourceId": "PMC13722112",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13722112/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722112.1/PMC13722112.1.xml",
+      "title": "Joint-preserving reconstruction of an acute Type IV reverse Hill\u2013Sachs lesion following posterior shoulder fracture-dislocation: a case report",
+      "authors": [
+        "Matteo Vitali",
+        "Filippo Montalbano",
+        "Vincenzo Salini"
+      ],
+      "publisher": "Oxford University Press",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Matteo Vitali, Filippo Montalbano, Vincenzo Salini. Joint-preserving reconstruction of an acute Type IV reverse Hill\u2013Sachs lesion following posterior shoulder fracture-dislocation: a case report. Oxford University Press. \u00a9 The Author(s) 2026. Published by Oxford University Press and JSCR Publishing Ltd.",
+      "notice": "\u00a9 The Author(s) 2026. Published by Oxford University Press and JSCR Publishing Ltd.",
+      "file": "data/public/text/pmc-13722112.txt",
+      "sha256": "922ff0403ed4b2d7816ab31b5e66c35afaf80390f7d4cddc3bdbb8677eb37221",
+      "retrievedSha256": "eb70daad6b787a7b3d89e48bf3986d0150efdea47eb76f608151175d42e616fe",
+      "selector": {
+        "paragraph": "CT imaging demonstrated a comminuted displaced fracture of the proximal humerus associated with posterior dislocation of a large osseous fragment measuring ~4 cm, consistent with an acute posterior fracture-dislocation (Fig. 2). Clinical examination revealed an alert and cooperative patient with adequate pain control."
+      },
+      "genre": "case report",
+      "split": "heldout",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "pmc-13722088",
+      "source": "PMC",
+      "sourceId": "PMC13722088",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13722088/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13722088.1/PMC13722088.1.xml",
+      "title": "Prenatal Diagnosis and Perinatal Management of Acrania Progressing to Anencephaly",
+      "authors": [
+        "Cesar Alas-Pineda",
+        "Oswaldo Montes Bardales",
+        "Anahi Pacheco",
+        "Sendy Ruiz",
+        "Elijah J Remis",
+        "Simmons Gough"
+      ],
+      "publisher": "Cureus Inc.",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Cesar Alas-Pineda, Oswaldo Montes Bardales, Anahi Pacheco, Sendy Ruiz, Elijah J Remis, Simmons Gough. Prenatal Diagnosis and Perinatal Management of Acrania Progressing to Anencephaly. Cureus Inc.. Copyright \u00a9 2026, Alas-Pineda et al.",
+      "notice": "Copyright \u00a9 2026, Alas-Pineda et al.",
+      "file": "data/public/text/pmc-13722088.txt",
+      "sha256": "6c50ddfe104556cacf4c21402f8a5da02db380a870028e72dffbd20ce4abcb3a",
+      "retrievedSha256": "057a76a172132ad0f20a984d2ab0703578ce3465f0bf13e79a9138f78fb1cb7e",
+      "selector": {
+        "paragraph": "The patient reported initiating prenatal care at 7 weeks of gestation and adherence to folic acid and iron supplementation. At 12 weeks, ultrasonography detected a congenital malformation consistent with acrania, characterized by complete absence of cranial ossification and exposed brain tissue without clear evidence of degeneration (Figure 1)."
+      },
+      "genre": "case report",
+      "split": "heldout",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "pmc-13720603",
+      "source": "PMC",
+      "sourceId": "PMC13720603",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13720603/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13720603.1/PMC13720603.1.xml",
+      "title": "Recognizing a duplicated inferior vena cava during radical nephrectomy for papillary renal cell carcinoma: A case report",
+      "authors": [
+        "Muhammad Wajid Siddique",
+        "Muhammad Waqas",
+        "Muhammad Hanzla Shahzad",
+        "Muhammad Hassaan Javaid",
+        "Nazila Dalir"
+      ],
+      "publisher": "Elsevier",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Muhammad Wajid Siddique, Muhammad Waqas, Muhammad Hanzla Shahzad, Muhammad Hassaan Javaid, Nazila Dalir. Recognizing a duplicated inferior vena cava during radical nephrectomy for papillary renal cell carcinoma: A case report. Elsevier. \u00a9 2026 The Authors",
+      "notice": "\u00a9 2026 The Authors",
+      "file": "data/public/text/pmc-13720603.txt",
+      "sha256": "96baeab6a0b9d7a6278e87994a2cb2af48feea43e6e53de83ccf074c6f890df0",
+      "retrievedSha256": "ef35ceb0339f5eba29bfa6f62cf651ee43c370f51f2488250bf715ce1da34691",
+      "selector": {
+        "paragraph": "Laboratory investigations revealed persistently increased erythrocytosis with microcytosis. On 21st January 2026, Hb was 18.3 g/dL, Hct 55%, RBC count 7.19 \u00d7 106/\u03bcL, MCV 76.5 fL. Hemoglobin remained elevated in repeated tests, with a value of 18.9 g/dL on 4th March 2026. Given the context of renal cell carcinoma, the patient's erythrocytosis was believed to be paraneoplastic, but the erythropoietin levels and workup for primary erythrocytosis was not done (Table 2).Table 2Selected hematologic laboratory results.ParameterReference range21 Jan 202623 Jan 202622 Feb 20264 Mar 2026WBC (\u00d7103/\u03bcL)4.52\u201310.9311.049.0110.619.99RBC (\u00d7106/\u03bcL)4.54\u20135.597.196.937.427.64Hemoglobin (g/dL)13.2\u201316.718.317.518.418.9Hematocrit (%)40.1\u201349.055.053.655.857.5MCV (fL)77.8\u201396.276.577.375.275.3RDW-CV (%)11.9\u201315.218.017.418.718.8Platelets (\u00d7103/\u03bcL)150\u2013450278219204251"
+      },
+      "genre": "case report",
+      "split": "heldout",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "pmc-13720511",
+      "source": "PMC",
+      "sourceId": "PMC13720511",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13720511/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13720511.1/PMC13720511.1.xml",
+      "title": "Nd:YAG Laser for Effective Treatment of Subhyaloid and Sub\u2013Internal Limiting Membrane Hemorrhages Secondary to Valsalva Retinopathy: A Case Series",
+      "authors": [
+        "Yong Zheng Wai",
+        "Kar Yong Chong",
+        "Elicia Tze Zhing Chieng",
+        "Nurhayati Abdul Kadir",
+        "Lik Thai Lim",
+        "Wai Seng Chiang"
+      ],
+      "publisher": "Wiley",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Yong Zheng Wai, Kar Yong Chong, Elicia Tze Zhing Chieng, Nurhayati Abdul Kadir, Lik Thai Lim, Wai Seng Chiang. Nd:YAG Laser for Effective Treatment of Subhyaloid and Sub\u2013Internal Limiting Membrane Hemorrhages Secondary to Valsalva Retinopathy: A Case Series. Wiley. Copyright \u00a9 2026 Yong Zheng Wai et al. Case Reports in Ophthalmological Medicine published by John Wiley & Sons Ltd.",
+      "notice": "Copyright \u00a9 2026 Yong Zheng Wai et al. Case Reports in Ophthalmological Medicine published by John Wiley & Sons Ltd.",
+      "file": "data/public/text/pmc-13720511.txt",
+      "sha256": "ff358c6f5b6cca790fdac6b1bac974c718fe6be0bfdb201015b31cecf34f8e1f",
+      "retrievedSha256": "5a402f9c6d162c2e90122319341aa5317dd14e155e2bff149b262cd29fe71e43",
+      "selector": {
+        "paragraph": "Although the hemorrhage spared the fovea\u2014making conservative observation a viable alternative\u2014the patient experienced severe anxiety regarding the dense inferior visual field defect. Being in her third trimester of pregnancy, she felt the scotoma was disorienting and significantly increased her risk of falls, particularly when navigating stairs. Following comprehensive counseling on the risks and benefits of both observation and laser intervention, the patient opted for Nd:YAG laser hyaloidotomy to achieve rapid visual rehabilitation and alleviate her safety concerns."
+      },
+      "genre": "case report",
+      "split": "heldout",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "pmc-13720756",
+      "source": "PMC",
+      "sourceId": "PMC13720756",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13720756/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13720756.1/PMC13720756.1.xml",
+      "title": "When Fibrosis Mimics Cancer: A Rare Case of Idiopathic Sclerosing Mesenteritis Presenting as Locally Advanced Colonic Neoplasia",
+      "authors": [
+        "Adelaide Andriani",
+        "Daniele Lomiento",
+        "Enrica Avezz\u00f9 Pignatelli di Montecalvo",
+        "Amin Titi"
+      ],
+      "publisher": "Wiley",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Adelaide Andriani, Daniele Lomiento, Enrica Avezz\u00f9 Pignatelli di Montecalvo, Amin Titi. When Fibrosis Mimics Cancer: A Rare Case of Idiopathic Sclerosing Mesenteritis Presenting as Locally Advanced Colonic Neoplasia. Wiley. Copyright \u00a9 2026 Adelaide Andriani et al. Case Reports in Surgery published by John Wiley & Sons Ltd.",
+      "notice": "Copyright \u00a9 2026 Adelaide Andriani et al. Case Reports in Surgery published by John Wiley & Sons Ltd.",
+      "file": "data/public/text/pmc-13720756.txt",
+      "sha256": "3b7ebed4cdcaeee0e4f14ed2f7275315667fcec017b1339a12ec3e4549a0a125",
+      "retrievedSha256": "d1337924c589190bb6bbb0f6c48c64b2834922a0c42a6dcac8ca343f68f81f26",
+      "selector": {
+        "paragraph": "In March 2026, a 56\u2010year\u2010old Moroccan man, who had been living in Italy for several years, presented to the Emergency Department with persistent diffuse abdominal pain, predominantly localized to the mesogastric region, associated with constipation and clinical features suggestive of subacute intestinal obstruction. The patient was afebrile and denied urinary symptoms, recent travel abroad, ingestion of raw or poorly preserved food, or episodes of vomiting."
+      },
+      "genre": "case report",
+      "split": "heldout",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "pmc-13720755",
+      "source": "PMC",
+      "sourceId": "PMC13720755",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13720755/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13720755.1/PMC13720755.1.xml",
+      "title": "A Case of Treatment\u2010Refractory Tumefactive Multiple Sclerosis Mimicking Brain Abscess",
+      "authors": [
+        "Pooja Patel",
+        "Henrik Ehrhardt",
+        "Daniel Augh",
+        "Kant Matsuda",
+        "Kanika Sharma"
+      ],
+      "publisher": "Wiley",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Pooja Patel, Henrik Ehrhardt, Daniel Augh, Kant Matsuda, Kanika Sharma. A Case of Treatment\u2010Refractory Tumefactive Multiple Sclerosis Mimicking Brain Abscess. Wiley. Copyright \u00a9 2026 Pooja Patel et al. Case Reports in Neurological Medicine published by John Wiley & Sons Ltd.",
+      "notice": "Copyright \u00a9 2026 Pooja Patel et al. Case Reports in Neurological Medicine published by John Wiley & Sons Ltd.",
+      "file": "data/public/text/pmc-13720755.txt",
+      "sha256": "5a47f3223384bed9373eb6a49b253dc1d3201b92a5bcaabbe326ef368e17f26b",
+      "retrievedSha256": "b18c71fe694516aaacaa8195c703fee1154816529143c089abc364367c439992",
+      "selector": {
+        "paragraph": "A 47\u2010year\u2010old female with a history of recent dental extractions of sixteen decayed teeth presented with one week of left facial numbness and swelling. She noted that the onset of her left facial numbness preceded her dental extractions by five days. Vital signs included a temperature of 98.2\u00b0F, blood pressure of 157/78 mmHg, heart rate of 78 bpm, and respiratory rate of 18 breaths/minute. On examination, she was in no acute distress and appeared nontoxic. Oral examination revealed left mandibular swelling, abnormal dentition with dental tenderness, and gingival swelling. Neurological examination was notable for reduced sensation to light touch in the left V1\u2010V2 region. Computed tomography (CT) of the head without contrast demonstrated hypodensities in the right parietal and occipital lobes. Brain magnetic resonance imaging (MRI) with and without contrast demonstrated an 11 \u00d7 18 mm enhancing lesion in the right parieto\u2010occipital region with mild diffusion restriction and vasogenic edema, as well as small enhancing lesions in the right frontal and parietal lobes (Figures 1A\u2013D). There were no paramagnetic rim lesions or central vein signs. Given the patient\u2019s history of extensive dental caries, there was a high concern for odontogenic brain abscesses due to spread from her dental infections, for which she received empiric antibiotic treatment with IV vancomycin, ceftriaxone, and metronidazole. Infectious workup was unrevealing, with negative blood cultures, serum QuantiFERON\u2010TB Gold test, nonreactive rapid plasma reagin (RPR), HIV screen, and cryptococcal antigen. CT of the chest, abdomen, and pelvis showed no signs of occult malignancy, and the patient was up to date with her cancer screenings. A timeline of the patient\u2019s clinical course is depicted in Table 1."
+      },
+      "genre": "case report",
+      "split": "heldout",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "pmc-13720758",
+      "source": "PMC",
+      "sourceId": "PMC13720758",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13720758/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13720758.1/PMC13720758.1.xml",
+      "title": "Beyond the Gastrointestinal Tract: When Ingestion Turns Into Migration\u2014A Case Series",
+      "authors": [
+        "Yusuf AlSaffar",
+        "Rawan Mahdi",
+        "Jaffar Alkhuzaie",
+        "Mariam Alkooheji"
+      ],
+      "publisher": "Wiley",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Yusuf AlSaffar, Rawan Mahdi, Jaffar Alkhuzaie, Mariam Alkooheji. Beyond the Gastrointestinal Tract: When Ingestion Turns Into Migration\u2014A Case Series. Wiley. Copyright \u00a9 2026 Yusuf AlSaffar et al. Case Reports in Surgery published by John Wiley & Sons Ltd.",
+      "notice": "Copyright \u00a9 2026 Yusuf AlSaffar et al. Case Reports in Surgery published by John Wiley & Sons Ltd.",
+      "file": "data/public/text/pmc-13720758.txt",
+      "sha256": "0adc103c8576c6178e3b757cf36e6609990aecf8f4c8090f21b77e43076b6bfe",
+      "retrievedSha256": "d325b74856b013263e84f61e5b67333dd08af083ec4660b2c06b8e6f50beedf4",
+      "selector": {
+        "paragraph": "A 48\u2010year\u2010old healthy male presented to the accident and emergency (AE) department with a 10\u2010day history of right flank pain radiating to the groin. The patient was slightly hypotensive but otherwise vitally stable. There was mild epigastric and right hypochondriac tenderness without any peritoneal signs. Lab workup revealed a white blood count (WBC) of 20 \u00d7 109/L (ref: 3.4 \u2013 9.6 \u00d7 109/L). Multiple views of abdominal radiographs were done, showcasing a radiopaque needlelike structure in the right side of the abdomen and paravertebral planes, suspicious for a foreign body (Figure 1). The patient denied any recent procedures or ingestion of bones or other objects."
+      },
+      "genre": "case report",
+      "split": "heldout",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "pmc-13720761",
+      "source": "PMC",
+      "sourceId": "PMC13720761",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13720761/",
+      "fetchUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13720761.1/PMC13720761.1.xml",
+      "title": "Fistulo\u2010Jejunostomy for Bilio\u2010Cutaneous Fistula After Hydatid Cyst Surgery: A Case Report",
+      "authors": [
+        "Kenan Mohsen Sbh",
+        "Abdul Ghani Alshalabi"
+      ],
+      "publisher": "Wiley",
+      "retrieved": "2026-11-01",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Kenan Mohsen Sbh, Abdul Ghani Alshalabi. Fistulo\u2010Jejunostomy for Bilio\u2010Cutaneous Fistula After Hydatid Cyst Surgery: A Case Report. Wiley. Copyright \u00a9 2026 Kenan Mohsen Sbh and Abdul Ghani Alshalabi. Case Reports in Surgery published by John Wiley & Sons Ltd.",
+      "notice": "Copyright \u00a9 2026 Kenan Mohsen Sbh and Abdul Ghani Alshalabi. Case Reports in Surgery published by John Wiley & Sons Ltd.",
+      "file": "data/public/text/pmc-13720761.txt",
+      "sha256": "3221eae00b6adaa9e9b999155958d55a1e44fbe0f76d8e2142ce4adf168f89a3",
+      "retrievedSha256": "0ba5b5470b9f3117cb0b4b75d8ee4768be86521aed0a1671eb933bf384aec49f",
+      "selector": {
+        "paragraph": "ERCP was repeated several times as described in Table 1, as the oozing continued until the patient underwent another open surgery to repair the bilio\u2010cutaneous fistula in 2020. In this procedure, the fistula tract was sutured, and omentoplasty and drainage were performed. The drainage decreased to less than 10 mL per day, and the drain was removed on day 25 with the continued oozing of foul\u2010smelling, yellowish\u2013green fluid."
+      },
+      "genre": "case report",
+      "split": "heldout",
+      "rightsReview": "Explicit CC BY article license. Narrative excerpt only, no figures or third-party material.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "cms-ncd-211-3",
+      "source": "CMS",
+      "sourceId": "NCD 220.6 version 3",
+      "url": "https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?ncdid=211&ncdver=3",
+      "fetchUrl": "https://api.coverage.cms.gov/v1/data/ncd/?ncdid=211&ncdver=3",
+      "title": "PET Scans",
+      "authors": [
+        "Centers for Medicare & Medicaid Services"
+      ],
+      "publisher": "CMS",
+      "retrieved": "2026-11-01",
+      "license": "US-government-work",
+      "licenseUrl": "https://www.cms.gov/about-cms/web-policies-important-links/website-policies",
+      "attribution": "Centers for Medicare & Medicaid Services. PET Scans. Historical NCD version 3.",
+      "notice": "CMS-authored NCD narrative only. No LCD or CPT material. Historical snapshot, not current coverage advice.",
+      "file": "data/public/text/cms-ncd-211-3.txt",
+      "sha256": "0f1c5ea6b58fe159855b974658aae2c5d351b7221f6d8012cee4b424a5e338f8",
+      "retrievedSha256": "8c869406c420bc08b54c37783e45aec887dde3f92b62f76960b2cb37f9defe5f",
+      "selector": {
+        "jsonField": "item_service_description"
+      },
+      "genre": "coverage policy",
+      "split": "heldout",
+      "rightsReview": "CMS-authored general description. No third-party notices or CPT content in excerpt.",
+      "identifierAudit": "draft, pending pharmacist review"
+    },
+    {
+      "id": "cms-ncd-22-2",
+      "source": "CMS",
+      "sourceId": "NCD 160.2 version 2",
+      "url": "https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?ncdid=22&ncdver=2",
+      "fetchUrl": "https://api.coverage.cms.gov/v1/data/ncd/?ncdid=22&ncdver=2",
+      "title": "Treatment of Motor Function Disorders with Electric Nerve Stimulation",
+      "authors": [
+        "Centers for Medicare & Medicaid Services"
+      ],
+      "publisher": "CMS",
+      "retrieved": "2026-11-01",
+      "license": "US-government-work",
+      "licenseUrl": "https://www.cms.gov/about-cms/web-policies-important-links/website-policies",
+      "attribution": "Centers for Medicare & Medicaid Services. Treatment of Motor Function Disorders with Electric Nerve Stimulation. Historical NCD version 2.",
+      "notice": "CMS-authored NCD narrative only. No LCD or CPT material. Historical snapshot, not current coverage advice.",
+      "file": "data/public/text/cms-ncd-22-2.txt",
+      "sha256": "f13d923db8a661550329dab5021e320efb980e3f1b2bce880d8c45559c9dbbaa",
+      "retrievedSha256": "10bbf4960154d52cf77071be24dffea471e6f49f77ce021d81f0c6ed720b4ab5",
+      "selector": {
+        "jsonField": "item_service_description"
+      },
+      "genre": "coverage policy",
+      "split": "dev",
+      "rightsReview": "CMS-authored general description. No third-party notices or CPT content in excerpt.",
+      "identifierAudit": "draft, pending pharmacist review"
+    }
+  ],
+  "exclusions": [
+    {
+      "source": "DailyMed",
+      "sourceId": "583f2a2e-a9d7-f266-e063-6294a90ad0ab",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=583f2a2e-a9d7-f266-e063-6294a90ad0ab",
+      "retrieved": "2026-11-01",
+      "retrievedSha256": "8a464bb856477ae052464f04e20265bdfd7cfc79bbe722d418f5a5d050dc08c0",
+      "reason": "Excluded pending affirmative redistribution rights for manufacturer-authored label text. API access is not a license. No copyright notice in selected indications paragraph, but reuse rights remain unresolved."
+    },
+    {
+      "source": "VAERS",
+      "reason": "Deferred. Official download requires CAPTCHA. No challenge bypassed."
+    }
+  ]
+}

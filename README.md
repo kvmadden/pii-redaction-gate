@@ -74,3 +74,14 @@ BASELINE_ENGINE=/path/to/baseline/src/engine.js node eval/compare.js
 Originally built in June 2026 as a privacy gate for a private knowledge system, maintained through October and published as a standalone snapshot. The original release evidence and technical background are preserved in the [published README](docs/published-readme.md). This upgrade adds clinical identifier coverage, a frozen synthetic evaluation and an inspectable demo.
 
 MIT. Copyright 2026 Kevin Madden. All fixtures are fictional or synthetic.
+
+
+## Public text acquisition status
+
+The frozen synthetic held-out evaluation above remains the reported identifier benchmark. Its fixtures, before and after results and detector rules are unchanged.
+
+[data/public/SOURCES.md](data/public/SOURCES.md) records a staged snapshot of 18 CC BY PMC case-report excerpts and two historical CMS NCD narrative excerpts, including original links, retrieval dates, attribution and source and excerpt hashes. Verify committed files offline with `python3 data/public/fetch.py`. Add `--online` to reproduce the excerpts from pinned official API downloads. PMC downloads use the official replacement for its retired OA Web Service. No website scraping is used.
+
+This snapshot is acquisition preparation, not a completed real-text evaluation. The selected DailyMed label is excluded because its manufacturer-authored text has unresolved redistribution rights. VAERS is deferred because its official download requires a CAPTCHA. No MIMIC, n2c2, i2b2, MTSamples or data use agreement material is included.
+
+The required evaluation contract is copied verbatim in [docs/REAL-TEXT-EVAL.md](docs/REAL-TEXT-EVAL.md). Set A stays synthetic. Set B will measure fictional planted spans inside public text. Set C will measure over-redaction and labeled clinical extraction on untouched public text. No pooled result is permitted. Public identifier audits and clinical labels remain draft, pending pharmacist review. No Set B or C score is available. The public source switch, planted markers and corresponding screenshots are not implemented yet. The six public evaluation contracts intentionally remain RED, so the full candidate gate does not pass.

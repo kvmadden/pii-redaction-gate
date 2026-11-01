@@ -1,0 +1,10 @@
+✔ staged public acquisition has pinned rights, source downloads, partitions and exact excerpt hashes (7.599625ms)
+✔ staged acquisition verifies offline without creating scratch files or changing synthetic fixtures (136.946875ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 218.606125
