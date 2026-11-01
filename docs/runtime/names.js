@@ -142,6 +142,37 @@ const COMMON_CAPITALIZED = new Set([
   "Don", "Didn", "Won", "Isn", "Aren", "Wasn", // contraction stems after squash
 ]);
 
+// Unicode-aware name shapes. JavaScript's \b only knows ASCII letters, so word
+// edges are written as letter lookarounds instead.
+const START = "(?<![\\p{L}\\p{M}\\p{N}])";
+const END = "(?![\\p{L}\\p{M}\\p{N}])";
+// Capitalized word, with an optional O'/D' style prefix and one hyphen or
+// apostrophe part ("Ines", "O'Neal", "Ruiz-Lopez", "Ji-ho").
+const NAME_WORD = "\\p{Lu}(?:\\p{Ll}{1,20}|['’]\\p{Lu}\\p{Ll}{1,20})(?:-\\p{L}\\p{Ll}{1,20}|['’]\\p{Lu}\\p{Ll}{1,20})?";
+// Lowercase surname particles that may sit between name words ("de", "van der").
+const PARTICLES = "(?:(?:van|von|der|den|de|del|della|da|di|du|la|le|bin|ibn|al|el|dos|das)\\s+){0,2}";
+// Single mid-sentence token: no lowercase hyphen part, so "Anti-inflammatory" is
+// judged on "Anti" as before.
+const SINGLE_WORD = "\\p{Lu}(?:\\p{Ll}{2,20}|['’]\\p{Lu}\\p{Ll}{1,20})(?:-\\p{Lu}\\p{Ll}{1,20}|['’]\\p{Lu}\\p{Ll}{1,20})?";
+
+// Drug-name endings used to recognize "generic (Brand)" pairs.
+const GENERIC_SUFFIX = "(?:sone|olone|mab|nib|pril|sartan|statin|mycin|micin|cillin|azole|olol|dipine|parin|tidine|prazole|floxacin|cycline|oxetine|azepam|amine|ine|ide|ate|one|ol|vir|afil)";
+
+/**
+ * Capitalized words the text itself shows are clinical vocabulary, not names:
+ *   - a genus before a Latin species epithet ("Borrelia burgdorferi")
+ *   - a brand in parentheses right after a generic drug ("dexamethasone (Brandname)")
+ * Read from the surrounding text only, never from a fixed list of terms.
+ */
+function clinicalVocabulary(text) {
+  const words = new Set();
+  const binomial = /(?<![\p{L}])(\p{Lu}\p{Ll}{3,})\s+\p{Ll}{3,}(?:ii|i|ae|ensis|orum|arum|um|icus|ica|ium|oides)(?![\p{L}])/gu;
+  for (const m of text.matchAll(binomial)) words.add(m[1]);
+  const brand = new RegExp(`(?<![\\p{L}])\\p{Ll}{3,}${GENERIC_SUFFIX}\\s*\\(\\s*(\\p{Lu}[\\p{L}-]{2,30})\\s*\\)`, "gu");
+  for (const m of text.matchAll(brand)) words.add(m[1]);
+  return words;
+}
+
 function escapeRe(s) {
   return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
@@ -207,7 +238,11 @@ export function applyNames(text, { map, unknownNames = false } = {}) {
   }
 
   if (unknownNames) {
-    const isSafe = (word) => safe.has(word) || COMMON_CAPITALIZED.has(word);
+    // Words the text itself marks as clinical vocabulary (see clinicalVocabulary below).
+    const vocab = clinicalVocabulary(out);
+    const isSafe = (word) => safe.has(word) || COMMON_CAPITALIZED.has(word) || vocab.has(word);
+    // A hyphenated or apostrophe word is safe when its first part is ("Follow-up").
+    const isSafeWord = (word) => isSafe(word) || isSafe(word.split(/[-'’]/)[0]);
 
     // Facility-shaped phrases must be handled before vocabulary protection.
     out = out.replace(/\b(?:St\.\s+)?(?:[A-Z][a-z]+\s+){1,4}(?:Clinic|Hospital|Center|Care|Suite|Practice|Home|Cardiology|Pulmonology)\b/g, () => {
@@ -215,38 +250,39 @@ export function applyNames(text, { map, unknownNames = false } = {}) {
       return '[name]'
     })
 
-    // Pass 2a — honorific + Name ("Dr. Alvarez", "Mrs Tran").
-    out = out.replace(/\b(Mr|Mrs|Ms|Mx|Dr|Prof|Rev|Coach|Aunt|Uncle|Grandma|Grandpa)\.?\s+([A-Z][a-z]{1,20}(?:[-'][A-Z][a-z]{1,20})?(?:\s+(?:[A-Z]\.\s+)?[A-Z][a-z]{1,20}(?:[-'][A-Z][a-z]{1,20})?){0,2})\b/g, (m, hon, nm) => {
-      if (nm.split(/\s+/).every(isSafe)) return m;
+    // Pass 2a — honorific + Name ("Dr. Alvarez", "Mrs Tran", "Ms. O'Neal").
+    out = out.replace(new RegExp(`\\b(Mr|Mrs|Ms|Mx|Dr|Prof|Rev|Coach|Aunt|Uncle|Grandma|Grandpa)\\.?\\s+(${NAME_WORD}(?:\\s+${PARTICLES}(?:\\p{Lu}\\.\\s+)?${NAME_WORD}){0,2})${END}`, "gu"), (m, hon, nm) => {
+      if (nm.split(/\s+/).every(isSafeWord)) return m;
       bump("name");
       return "[name]";
     });
 
-    // Pass 2b — First Last (2–3 capitalized words). Skips when every word is
-    // safe/common ("Thank You", a multi-word brand name on the safe list).
-    out = out.replace(/\b[A-Z][a-z]{1,20}(?:[-'][A-Z][a-z]{1,20})?(?:\s+(?:[A-Z]\.\s+)?[A-Z][a-z]{1,20}(?:[-'][A-Z][a-z]{1,20})?){1,2}\b/g, (m) => {
+    // Pass 2b — First Last (2–3 capitalized words, a line break may sit between
+    // them). Skips when every word is safe/common ("Thank You").
+    out = out.replace(new RegExp(`${START}${NAME_WORD}(?:\\s+${PARTICLES}(?:\\p{Lu}\\.\\s+)?${NAME_WORD}){1,2}${END}`, "gu"), (m) => {
       const words = m.split(/\s+/);
-      if (words.some(isSafe)) {
-        return words.map(word => {
-          if (isSafe(word)) return word
+      if (words.some(isSafeWord)) {
+        return m.split(/(\s+)/).map(word => {
+          if (/^\s*$/.test(word) || isSafeWord(word)) return word
           bump('name')
           return '[name]'
-        }).join(' ')
+        }).join('')
       }
       bump("name");
       return "[name]";
     });
 
-    out = out.replace(/\b((?:[Dd]aughter|[Ss]on|[Hh]usband|[Ww]ife|[Pp]artner|[Bb]rother|[Ss]ister|[Mm]other|[Ff]ather|[Pp]atient|[Pp]t)\s*[:,(]?\s+)([A-Z][a-z]{1,24})\b/g, (m, prefix, name) => {
-      if (isSafe(name) || ['is','was','has','reports','called'].includes(name.toLowerCase())) return m
+    out = out.replace(new RegExp(`\\b((?:[Dd]aughter|[Ss]on|[Hh]usband|[Ww]ife|[Pp]artner|[Bb]rother|[Ss]ister|[Mm]other|[Ff]ather|[Pp]atient|[Pp]t)\\s*[:,(]?\\s+)(${NAME_WORD})${END}`, "gu"), (m, prefix, name) => {
+      if (isSafeWord(name) || ['is','was','has','reports','called'].includes(name.toLowerCase())) return m
       bump('name')
       return prefix + '[name]'
     })
 
     // Pass 2c — mid-sentence single capitalized token. Sentence-start capitals
-    // survive (ordinary prose); safe/common words survive.
-    out = out.replace(/\b[A-Z][a-z]{2,20}\b/g, (m, index, whole) => {
-      if (isSafe(m)) return m;
+    // survive (ordinary prose); safe/common words survive. Letters outside
+    // ASCII count as letters, so "Ruíz" is one word, not "Ru" plus "íz".
+    out = out.replace(new RegExp(`${START}${SINGLE_WORD}${END}`, "gu"), (m, index, whole) => {
+      if (isSafeWord(m)) return m;
       if (atSentenceStart(whole, index)) return m;
       bump("name");
       return "[name]";
