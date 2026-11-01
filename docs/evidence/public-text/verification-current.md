@@ -43,3 +43,5 @@ Toolchain: Node v24.14.1, npm 11.11.0 and Python 3.9.6 standard library. No depe
 - Untouched control at 63ac3abc48094e86f6883f99c1586b45bf6ebd3f in a fresh /tmp clone, with `MFW_UMBRELLA_ROOT` and `OPERATOR_ECOSYSTEM_ROOT` unset, `npm test`: exit 0. 109 tests pass. Identical Node installation, no dependencies and the same committed synthetic fixtures. The Python TemporaryDirectory context removed the clone.
 
 The previous run's logs remain historical evidence. Current control and candidate counts supersede them. No skip flags, disabled hooks, forced push or merge was used.
+
+`git diff --cached --check` initially reported whitespace on blank lines emitted by the Node failure formatter. Raw logs were preserved in the resolved evidence home, and trailing whitespace was removed from the repository copies only. The final `git diff origin/main --check` exits 0. Test assertions and outcomes were not altered.

@@ -92,7 +92,7 @@ test at test/public-text.test.js:77:1
 test at test/public-text.test.js:99:1
 ✖ inspector exposes source attribution, original link and visible planted markers (0.928ms)
   AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Real public text/. Input:
-  
+
   '<!doctype html>\n' +
     '<html lang="en" data-theme="light">\n' +
     '<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Redaction inspector</title><link rel="stylesheet" href="demo.css"></head>\n' +
@@ -109,7 +109,7 @@ test at test/public-text.test.js:99:1
     '<section class="gate"><div><p class="eyebrow">FAIL-CLOSED BOUNDARY</p><h2>When the engine fails, the gate stays shut.</h2><p id="send-status" role="status" aria-live="polite">Inspect a note before trying the gate.</p></div><div class="gate-actions"><label class="toggle"><input id="failure" type="checkbox"> Inject synthetic failure</label><button id="send" class="quiet">Try simulated send →</button></div></section>\n' +
     '<footer><span>Fictional inputs. Actual engine.</span><p>Pattern detection can miss identifiers. Review every result. This is not certified de-identification. Use synthetic text only.</p></footer>\n' +
     '</main><script type="module" src="demo.js"></script></body></html>\n'
-  
+
       at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-public-text/test/public-text.test.js:101:9)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
