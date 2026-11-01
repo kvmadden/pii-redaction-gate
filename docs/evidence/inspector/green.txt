@@ -1,0 +1,11 @@
+✔ inspector runs real profiles and derives spans and counts (10.628ms)
+✔ failure blocks with no review spans or preserved clinical claims (0.47ms)
+✔ empty and token-like input do not invent removed identifiers (0.136875ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 65.666417

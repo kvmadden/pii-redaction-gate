@@ -8,7 +8,9 @@ For teams exploring how to protect free text before a model prompt or a record w
 
 ## Try it
 
-Run `python3 -m http.server 8769` in this repository, then open [the interactive demo](http://localhost:8769/docs/). Pick a fictional note or paste synthetic text, review the removed spans and their rule explanations, and try the simulated send. Toggle a pattern failure to see the same engine return a blocked placeholder and the shared send guard refuse it. Editing a note invalidates the previous result. No note text is transmitted or persisted by the demo.
+Run `npm run demo` in this repository, then open [the redaction inspector](http://127.0.0.1:8769). No install step is needed with Node 22 or later. Pick a fictional note or paste synthetic text, choose one of the four real profiles, review labeled original spans beside redacted text and per-type counts, and try the simulated send. Switch between light and dark themes with the header button. Choose Blank note to see the empty state. Green marks identify a finite set of clinical phrases preserved verbatim, not every clinical term. Toggle a pattern failure to see the same engine return a blocked placeholder and the shared send guard refuse it. Editing a note invalidates the previous result. No note text is transmitted or persisted by the demo.
+
+Screenshot assets at 1440×900 and 390×844, full mobile views, dark and blocked states, and the short [core flow GIF](docs/media/inspector-flow.gif) are in `docs/media/`.
 
 The static demo also works when the `docs` directory is served on its own. Its runtime modules are exact generated copies of the production modules, checked by a test. No build service, API key or paid model is involved. The send action is a local simulation, not a clinical workflow integration.
 

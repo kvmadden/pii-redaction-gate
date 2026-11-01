@@ -1,71 +1,126 @@
+import { inspectNote } from './inspector.js'
+import { PROFILES } from './runtime/profiles.js'
 import { assertSendable } from './runtime/send-guard.js'
-import { redactText } from './runtime/engine.js'
-import { PATTERN_RULES } from './runtime/patterns.js'
 const $ = id => document.getElementById(id)
 const examples = {
- visit: 'Patient Inez Q. Thorn-Smith, DOB 03/04/1961, MRN#: Z9900188. Admitted 10/22/2025. Continue Ozempic 0.5 mg weekly. A1c 7.4%, BP 138/84.',
+ visit: 'Patient Inez Q. Thorn-Smith, DOB 03/04/1961, MRN#: Z9900188.\nAdmitted 10/22/2025. Phone 202-555-0143.\n\nContinue Ozempic 0.5 mg weekly.\nA1c 7.4%, BP 138/84.\nContinue metformin 500 mg BID.',
  contact: 'Dr. Adira Linden. Age: 97. Phone 202-555-0143. Device serial: DEMO-90188. Portal https://example.org/chart/88. Continue metformin 500 mg BID.',
- limits: 'tanya called. IP: 192.0.2.87. Continue metformin 500 mg BID. Year 2026.'
+ limits: 'tanya called. IP: 192.0.2.87. Continue metformin 500 mg BID. Year 2026.',
+ blank: ''
 }
-const reasons = {name:'Name-shaped phrase or contextual name',dob:'Date next to a birth marker',date:'Calendar date beyond year alone',age:'Age greater than 89',account:'Labeled record, account, plan or other identifier',phone:'Phone or fax number',email:'Email address',address:'Street, PO box or labeled locality',ssn:'Social Security number shape',url:'Web address',ip:'IP address shape',card:'Luhn-valid card number',coords:'Geographic coordinates'}
 let current = null
-let reviewedInput = ''
-function spans(input, output) {
- const escaped = s => s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')
- const tokens = [...output.matchAll(/\[([a-z-]+)\]/g)]
- if (!tokens.length) return []
- let end = 0
- const pieces = tokens.map(t => {
-   const p = escaped(output.slice(end,t.index))
-   end = t.index + t[0].length
-   return p
- })
- pieces.push(escaped(output.slice(end)))
- const match = new RegExp('^'+pieces.join('([\\s\\S]+?)')+'$').exec(input)
- if (!match) return null
- return tokens.map((t,i)=>({type:t[1],value:match[i+1]}))
+let version = 0
+function keptText(container, text, terms) {
+ const positions = terms.flatMap(term => [...text.matchAll(new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'))].map(m => ({start:m.index,end:m.index+term.length}))).sort((a,b) => a.start-b.start)
+ let cursor = 0
+ for (const span of positions) {
+  container.append(document.createTextNode(text.slice(cursor, span.start)))
+  const mark = document.createElement('mark')
+  mark.className = 'kept'
+  mark.textContent = text.slice(span.start, span.end)
+  container.append(mark)
+  cursor = span.end
+ }
+ container.append(document.createTextNode(text.slice(cursor)))
 }
-function run() {
- const broken = {type:'demo-failure',re:/[\s\S]+/g,validate(){throw new Error('Synthetic failure')}}
- if ($('failure').checked) PATTERN_RULES.push(broken)
- try { current = redactText($('note').value,{profile:'identifiers',peopleMap:{people:[],safe:[]}}) }
- finally { if ($('failure').checked) PATTERN_RULES.splice(PATTERN_RULES.indexOf(broken),1) }
- reviewedInput = $('note').value
- $('output').textContent = current.text
- $('status').textContent = current.blocked ? 'Blocked. Engine failure. Nothing can be sent.' : 'Redaction completed. Review for identifiers the rules may have missed.'
- $('kept').textContent = current.blocked ? 'No note content is available for sending.' : 'Text outside the replacement tokens stayed intact. Check the output for preserved medications, doses, conditions and lab values, and for missed identifiers.'
+function invalidate(message = 'Note changed. Inspect again before sending.') {
+ version++
+ current = null
+ $('status').textContent = message
+ document.querySelector('.statusbar .small').textContent = PROFILES[$('profile').value].tiers.join(' → ').toUpperCase()
+ $('result-badge').textContent = 'AWAITING INSPECTION'
+ $('output').textContent = 'Your inspected result will appear here.'
+ $('original').textContent = 'Inspect the note to reveal removed spans.'
+ $('counts').replaceChildren()
  $('removed').replaceChildren()
- if (!current.blocked) {
- const removed = spans(reviewedInput,current.text)
- for (const item of removed || []) {
-  const li = document.createElement('li')
-  const code = document.createElement('code')
-  code.textContent = item.value
-  li.append(code,document.createTextNode(` → [${item.type}]: ${reasons[item.type] || 'Configured identifier rule'}`))
-  $('removed').append(li)
- }
- if (!removed) $('removed').textContent = 'Span review unavailable. Input containing token-like text may be ambiguous. Review the redacted output.'
- if (removed?.length === 0) $('removed').textContent = 'No rules matched. This does not mean the note contains no identifiers.'
- }
- $('send-status').textContent = current.blocked ? 'Send gate: blocked.' : 'Send gate: ready for a simulated attempt after review.'
+ $('kept').textContent = ''
+ $('send-status').textContent = 'Send gate: blocked until the current note is inspected.'
+ document.querySelector('.workspace').dataset.state = 'idle'
 }
-$('example').addEventListener('change',()=>{
- $('note').value=examples[$('example').value]
- run()
-})
-$('run').addEventListener('click',run)
-$('failure').addEventListener('change',run)
-$('note').addEventListener('input',()=>{
- current=null
- $('send-status').textContent='Note changed. Redact again before trying send.'
-})
-$('send').addEventListener('click',()=>{
+async function run() {
+ invalidate('Inspecting with the local engine…')
+ const ticket = version
+ const input = $('note').value
+ if (!input.trim()) { $('status').textContent = 'Empty note. Pick an example or paste synthetic text.'
+ return }
+ $('run').disabled = true
+ document.querySelector('.workspace').setAttribute('aria-busy', 'true')
  try {
-  assertSendable(reviewedInput === $('note').value ? current : null)
-  $('send-status').textContent = 'Simulated send allowed. Only the redacted result would pass to a writer. No network request was made.'
+  await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))
+  if (ticket !== version) return
+  current = inspectNote(input, $('profile').value, $('failure').checked)
+  const blocked = current.blocked
+  document.querySelector('.workspace').dataset.state = blocked ? 'blocked' : 'ready'
+  $('status').textContent = blocked ? 'BLOCKED / Engine failure. No payload can pass.' : 'Inspection complete / Review required before use'
+  $('result-badge').textContent = blocked ? 'BLOCKED' : 'REVIEW REQUIRED'
+  $('output').replaceChildren()
+  if (blocked) $('output').textContent = current.text
+  else {
+   const parts = current.text.split(/(\[[a-z-]+\])/g)
+   for (const part of parts) {
+    if (/^\[[a-z-]+\]$/.test(part)) {
+     const mark = document.createElement('mark')
+     mark.className = 'removed'
+     mark.textContent = part
+     $('output').append(mark)
+    } else keptText($('output'), part, current.kept)
+   }
+  }
+  $('original').replaceChildren()
+  if (blocked) $('original').textContent = 'Span inspection withheld because the engine failed.'
+  else if (current.spans === null) $('original').textContent = 'Span highlights unavailable for token-like or ambiguous input. Review the text output.'
+  else {
+   let cursor = 0
+   for (const span of current.spans) {
+    keptText($('original'), input.slice(cursor, span.start), current.kept)
+    const mark = document.createElement('mark')
+    mark.className = 'removed'
+    mark.textContent = input.slice(span.start, span.end)
+    const label = document.createElement('small')
+    label.textContent = span.token
+    mark.append(label)
+    $('original').append(mark)
+    const li = document.createElement('li')
+    li.textContent = `${input.slice(span.start, span.end)} → [${span.token}]`
+    $('removed').append(li)
+    cursor = span.end
+   }
+   keptText($('original'), input.slice(cursor), current.kept)
+  }
+  for (const [type, count] of Object.entries(current.counts)) {
+   const item = document.createElement('span')
+   item.textContent = `${type} · ${count}`
+   $('counts').append(item)
+  }
+  if (!$('counts').children.length) $('counts').textContent = blocked ? 'Withheld on failure' : 'No rules matched'
+  $('kept').textContent = blocked ? 'No content is available for sending.' : `${current.kept.length} recognized clinical phrases preserved. Green marks show exact phrases retained, not a completeness score.`
+  $('send-status').textContent = blocked ? 'Send gate: BLOCKED. No payload available.' : 'Send gate: ready for a local simulated attempt.'
  } catch {
-  $('send-status').textContent = 'Send blocked. No payload passed to the simulated writer.'
+  invalidate('BLOCKED / Inspector error. No payload can pass.')
+  document.querySelector('.workspace').dataset.state = 'blocked'
+  $('result-badge').textContent = 'BLOCKED'
+  $('output').textContent = '[redaction-blocked]'
+ } finally {
+  $('run').disabled = false
+  document.querySelector('.workspace').removeAttribute('aria-busy')
  }
+}
+$('example').addEventListener('change', () => { $('note').value = examples[$('example').value]
+ run() })
+$('profile').addEventListener('change', () => invalidate('Profile changed. Inspect again before sending.'))
+$('failure').addEventListener('change', run)
+$('note').addEventListener('input', () => invalidate())
+$('run').addEventListener('click', run)
+$('send').addEventListener('click', () => {
+ try { assertSendable(current)
+ $('send-status').textContent = 'Simulated send allowed. Only redacted text passed the gate. No request was made.' }
+ catch { $('send-status').textContent = 'Send blocked. No payload passed to the simulated writer.' }
 })
-$('note').value=examples.visit
+$('theme').addEventListener('click', () => {
+ const dark = document.documentElement.dataset.theme !== 'dark'
+ document.documentElement.dataset.theme = dark ? 'dark' : 'light'
+ $('theme').setAttribute('aria-label', `Switch to ${dark ? 'light' : 'dark'} theme`)
+ $('theme').querySelector('span').textContent = dark ? 'Light mode' : 'Dark mode'
+})
+$('note').value = examples.visit
 run()
