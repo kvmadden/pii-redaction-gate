@@ -1,6 +1,6 @@
 # Testing redaction on real public text (v3)
 
-Shared spec for pii-redaction-gate (job 35) and clinical-evidence-map (job 34). Written by Claude on the M1, 11/1. v2 folds in the Codex review in review-real-text-codex.md. Keep the build small and inspectable. This is a portfolio evaluation, not a compliance study, and it says so.
+Evaluation spec for real public text, shared with the clinical-evidence-map project. Keep the build small and inspectable. This is a portfolio evaluation, not a compliance study, and it says so.
 
 ## The problem
 

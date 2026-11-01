@@ -36,7 +36,7 @@ test('public manifest permits only approved sources and verifies committed text 
  if (!sources.has('DailyMed')) assert.ok(manifest.exclusions.some(doc => doc.source === 'DailyMed'))
 })
 
-test('every planted span has exact offsets, a format split and frozen generator provenance', {todo: 'Sets B and C are not built yet. Contract kept until the eval lands.'}, async () => {
+test('every planted span has exact offsets, a format split and frozen generator provenance', async () => {
  required('eval/public-plant.js')
  required('data/public/planted.json')
  const { plant } = await import('../eval/public-plant.js')
@@ -72,7 +72,7 @@ test('every planted span has exact offsets, a format split and frozen generator 
  assert.ok([...families.dev].every(family => !families.heldout.has(family)))
 })
 
-test('planted scoring uses exact answer key spans and counts partial removal as a miss', {todo: 'Sets B and C are not built yet. Contract kept until the eval lands.'}, async () => {
+test('planted scoring uses exact answer key spans and counts partial removal as a miss', async () => {
  required('eval/public-score.js')
  const { scorePlanted } = await import('../eval/public-score.js')
  const doc = {id: 'fixture', text: 'Rose Bell called', spans: [{start: 0, end: 9, value: 'Rose Bell', type: 'NAME', family: 'common-word', split: 'heldout'}]}
@@ -82,7 +82,7 @@ test('planted scoring uses exact answer key spans and counts partial removal as 
  assert.equal(scorePlanted(doc, '[name] called').byFamily['common-word'].full, 1)
 })
 
-test('untouched scoring measures labeled clinical token loss and extraction before and after', {todo: 'Sets B and C are not built yet. Contract kept until the eval lands.'}, async () => {
+test('untouched scoring measures labeled clinical token loss and extraction before and after', async () => {
  required('eval/public-score.js')
  required('data/public/labels.json')
  const { scoreUntouched } = await import('../eval/public-score.js')
@@ -104,7 +104,7 @@ test('untouched scoring measures labeled clinical token loss and extraction befo
  assert.equal(damaged.extractionsAfter, 2)
 })
 
-test('inspector exposes source attribution, original link and visible planted markers', {todo: 'Sets B and C are not built yet. Contract kept until the eval lands.'}, () => {
+test('inspector exposes source attribution, original link and visible planted markers', {todo: 'Inspector data-source switch, license chips and planted markers are not built yet.'}, () => {
  const html = read('docs/index.html')
  assert.match(html, /Real public text/)
  assert.match(html, /Real text with planted identifiers/)
@@ -117,7 +117,7 @@ test('inspector exposes source attribution, original link and visible planted ma
  assert.match(code, /planted/)
 })
 
-test('offline public evaluation reproduces committed results without modifying frozen synthetic files', {todo: 'Sets B and C are not built yet. Contract kept until the eval lands.'}, () => {
+test('offline public evaluation reproduces committed results without modifying frozen synthetic files', () => {
  required('eval/public-run.js')
  const paths = ['eval/heldout.json', 'eval/results.json', 'eval/results.md', 'eval/comparison.json', 'eval/comparison.md']
  const before = paths.map(read)
