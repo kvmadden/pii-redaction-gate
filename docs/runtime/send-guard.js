@@ -7,4 +7,3 @@ export function assertSendable(gate) {
   }
   return gate;
 }
-

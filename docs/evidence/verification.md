@@ -39,3 +39,11 @@ Browser command: `PLAYWRIGHT_MODULE=/Users/kevin/dev/repos/ascent-alert-origin-b
 At 1440×900, 430×932 and 390×844, checked normal and injected-failure flows, rendered removal explanations, normal simulated send, blocked send, stale-input blocking, HTML-safe output and keyboard focus from example selector to note. No page errors or horizontal overflow. Form buttons and select have minimum 46 CSS pixel height, the checkbox label has a 44 pixel click target. Screenshots were rendered at those viewport sizes and captured full page. Desktop, mobile and blocked screenshots were visually inspected. JSON results are in ui.json. Synthetic screenshots are under docs/media.
 
 The demo has no service integration and makes no note-text requests. It shows execution failure blocking, not a guarantee that detection is complete.
+
+## Final isolation and cleanup
+
+A fresh `git clone --no-local` under the system temporary directory ran `npm test` with `MFW_UMBRELLA_ROOT` and `OPERATOR_ECOSYSTEM_ROOT` removed from its environment. Exit 0, 105 passes. The final whitespace-only send-guard correction was overlaid identically in source and its generated copy. The clone was removed in a finally block. See fresh-clone.txt.
+
+Captured test logs have trailing whitespace removed for a clean patch. The assertions, counts and exit outcomes are unchanged. `git diff origin/main --check` exits 0 after that normalization.
+
+Evidence is committed here for PR inspection and copied to `/Volumes/HubData/evidence/pii-redaction-gate-upgrade`. This host's available orchestrator runtime uses `/Volumes/HubData/evidence` as its evidence-volume fallback. No current registry resolver for this standalone repository was found, so this path is recorded explicitly rather than presented as a verified registry resolution.
