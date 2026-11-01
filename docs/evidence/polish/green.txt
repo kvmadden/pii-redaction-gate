@@ -1,0 +1,12 @@
+✔ three clinical document fixtures preserve provenance and clinical context (0.4475ms)
+✔ metrics retain gold type recall and explicit grouped precision from canonical evaluation (0.204917ms)
+✔ review log persists only metadata and rejects failed or stale inspection (1.814ms)
+✔ browser evaluation artifact is byte-identical to its canonical source (0.303958ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 60.571875

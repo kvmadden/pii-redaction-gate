@@ -1,0 +1,56 @@
+✖ three clinical document fixtures preserve provenance and clinical context (0.472542ms)
+✖ metrics retain gold type recall and explicit grouped precision from canonical evaluation (0.095042ms)
+✖ review log persists only metadata and rejects failed or stale inspection (1.01075ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 0
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 59.48025
+
+✖ failing tests:
+
+test at test/workspace.test.js:6:1
+✖ three clinical document fixtures preserve provenance and clinical context (0.472542ms)
+  TypeError: Cannot read properties of undefined (reading 'includes')
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-polish/test/workspace.test.js:8:33)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.start (node:internal/test_runner/test:1015:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)
+
+test at test/workspace.test.js:12:1
+✖ metrics retain gold type recall and explicit grouped precision from canonical evaluation (0.095042ms)
+  TypeError: Cannot read properties of undefined (reading 'recall')
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-polish/test/workspace.test.js:15:19)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3)
+
+test at test/workspace.test.js:20:1
+✖ review log persists only metadata and rejects failed or stale inspection (1.01075ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'flagged'
+  
+      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-polish/test/workspace.test.js:25:9)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'flagged',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
