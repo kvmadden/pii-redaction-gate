@@ -1,0 +1,8074 @@
+{
+ "version": 2,
+ "benchmark": "Fixed public benchmark. The generator, seed and answer key are public, so this is not a blind test.",
+ "provenance": {
+  "gateCommit": "1d38fbaa10e998ee603931ab310ace9c17bfbd37",
+  "generatorCommit": "1a5592ec6c558bb69ae20d597322b96c68db1ea0",
+  "answerKeyCommit": "1a5592ec6c558bb69ae20d597322b96c68db1ea0",
+  "labelsCommit": "a30e6ac2be3b2ea30061263e6dc6a139744c05e4",
+  "seed": 60417233,
+  "frozenNote": "Version 2 gate rules were changed using the dev split only and committed before the held-out split was scored. The held-out split was then scored once with this version. Any later gate change is a regression check, not a new result.",
+  "testSplitSeen": "The held-out split was seen once after dev tuning. Version 1 held-out results, including its failure list, were already public when version 2 tuning began, so version 2 held-out numbers are a second look at a fixed public benchmark, not a blind result.",
+  "previousVersion": {
+   "version": 1,
+   "file": "eval/public-results.json",
+   "gateCommit": "63ac3abc48094e86f6883f99c1586b45bf6ebd3f"
+  }
+ },
+ "setA": {
+  "gate": {
+   "identifiers": 108,
+   "fullyRemoved": 104,
+   "partial": 0,
+   "recall": 0.9629629629629629,
+   "spansEmitted": 112,
+   "spanPrecision": 0.9642857142857143,
+   "clinicalNegatives": 114,
+   "clinicalNegativesKept": 114,
+   "clinicalNegativesKeptRate": 1,
+   "byType": {
+    "NAME": {
+     "n": 12,
+     "full": 12,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "DATE": {
+     "n": 16,
+     "full": 16,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "DOB": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "AGE_OVER_89": {
+     "n": 8,
+     "full": 8,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "PHONE": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "FAX": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "EMAIL": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "MRN": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "ACCOUNT": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "PLAN": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "ADDRESS": {
+     "n": 16,
+     "full": 16,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "SSN": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "DEVICE": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "LICENSE": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "VEHICLE": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "URL": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "IP": {
+     "n": 8,
+     "full": 4,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0.5
+    }
+   }
+  },
+  "doNothing": {
+   "identifiers": 108,
+   "fullyRemoved": 0,
+   "partial": 0,
+   "recall": 0,
+   "spansEmitted": 0,
+   "spanPrecision": null,
+   "clinicalNegatives": 114,
+   "clinicalNegativesKept": 114,
+   "clinicalNegativesKeptRate": 1,
+   "byType": {
+    "NAME": {
+     "n": 12,
+     "full": 0,
+     "partial": 0,
+     "missed": 12,
+     "recall": 0
+    },
+    "DATE": {
+     "n": 16,
+     "full": 0,
+     "partial": 0,
+     "missed": 16,
+     "recall": 0
+    },
+    "DOB": {
+     "n": 4,
+     "full": 0,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0
+    },
+    "AGE_OVER_89": {
+     "n": 8,
+     "full": 0,
+     "partial": 0,
+     "missed": 8,
+     "recall": 0
+    },
+    "PHONE": {
+     "n": 4,
+     "full": 0,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0
+    },
+    "FAX": {
+     "n": 4,
+     "full": 0,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0
+    },
+    "EMAIL": {
+     "n": 4,
+     "full": 0,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0
+    },
+    "MRN": {
+     "n": 4,
+     "full": 0,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0
+    },
+    "ACCOUNT": {
+     "n": 4,
+     "full": 0,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0
+    },
+    "PLAN": {
+     "n": 4,
+     "full": 0,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0
+    },
+    "ADDRESS": {
+     "n": 16,
+     "full": 0,
+     "partial": 0,
+     "missed": 16,
+     "recall": 0
+    },
+    "SSN": {
+     "n": 4,
+     "full": 0,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0
+    },
+    "DEVICE": {
+     "n": 4,
+     "full": 0,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0
+    },
+    "LICENSE": {
+     "n": 4,
+     "full": 0,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0
+    },
+    "VEHICLE": {
+     "n": 4,
+     "full": 0,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0
+    },
+    "URL": {
+     "n": 4,
+     "full": 0,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0
+    },
+    "IP": {
+     "n": 8,
+     "full": 0,
+     "partial": 0,
+     "missed": 8,
+     "recall": 0
+    }
+   }
+  },
+  "redactEverything": {
+   "identifiers": 108,
+   "fullyRemoved": 108,
+   "partial": 0,
+   "recall": 1,
+   "spansEmitted": 1080,
+   "spanPrecision": 0.26666666666666666,
+   "clinicalNegatives": 114,
+   "clinicalNegativesKept": 0,
+   "clinicalNegativesKeptRate": 0,
+   "byType": {
+    "NAME": {
+     "n": 12,
+     "full": 12,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "DATE": {
+     "n": 16,
+     "full": 16,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "DOB": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "AGE_OVER_89": {
+     "n": 8,
+     "full": 8,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "PHONE": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "FAX": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "EMAIL": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "MRN": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "ACCOUNT": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "PLAN": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "ADDRESS": {
+     "n": 16,
+     "full": 16,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "SSN": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "DEVICE": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "LICENSE": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "VEHICLE": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "URL": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "IP": {
+     "n": 8,
+     "full": 8,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    }
+   }
+  }
+ },
+ "planted": {
+  "gate": {
+   "dev": {
+    "plantedDocuments": 4,
+    "untouchedDocumentsInRun": 3,
+    "spans": 20,
+    "fullyRemoved": 20,
+    "partial": 0,
+    "missed": 0,
+    "recall": 1,
+    "recallInterval95": [
+     1,
+     1
+    ],
+    "documentsWithAnyIdentifierLeft": 0,
+    "byType": {
+     "MRN": {
+      "n": 3,
+      "full": 3,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "NAME": {
+      "n": 9,
+      "full": 9,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "HEALTH_PLAN": {
+      "n": 3,
+      "full": 3,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "DATE": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "PHONE": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "ADDRESS": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     }
+    },
+    "byFamily": {
+     "mrn:alpha-prefix": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "name:title-surname": {
+      "n": 5,
+      "full": 5,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "plan:alpha-digits": {
+      "n": 3,
+      "full": 3,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "date:numeric-slash": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "mrn:digits": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "phone:paren": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "name:first-last": {
+      "n": 4,
+      "full": 4,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "address:street-city": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     }
+    },
+    "byChallenge": {
+     "header": {
+      "n": 10,
+      "full": 10,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "narrative": {
+      "n": 5,
+      "full": 5,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "surname-only": {
+      "n": 3,
+      "full": 3,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "birth-date": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "possessive": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "footer": {
+      "n": 4,
+      "full": 4,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "relative": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "line-break": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     }
+    },
+    "spanResults": [
+     {
+      "id": "pmc-13720340",
+      "type": "MRN",
+      "family": "mrn:alpha-prefix",
+      "challenge": [
+       "header"
+      ],
+      "value": "UJ-906320",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720340",
+      "type": "NAME",
+      "family": "name:title-surname",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Albuquerque",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alpha-digits",
+      "challenge": [
+       "header"
+      ],
+      "value": "PUN 4154 9263",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "DATE",
+      "family": "date:numeric-slash",
+      "challenge": [
+       "header",
+       "birth-date"
+      ],
+      "value": "02/03/1990",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "MRN",
+      "family": "mrn:digits",
+      "challenge": [
+       "header"
+      ],
+      "value": "528972951",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "NAME",
+      "family": "name:title-surname",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Hunter",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "NAME",
+      "family": "name:title-surname",
+      "challenge": [
+       "possessive",
+       "surname-only"
+      ],
+      "value": "Hunter",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "PHONE",
+      "family": "phone:paren",
+      "challenge": [
+       "footer"
+      ],
+      "value": "(231) 555-0163",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alpha-digits",
+      "challenge": [
+       "header"
+      ],
+      "value": "NKM 4531 4136",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "NAME",
+      "family": "name:title-surname",
+      "challenge": [
+       "header"
+      ],
+      "value": "Nwachukwu",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "DATE",
+      "family": "date:numeric-slash",
+      "challenge": [
+       "header"
+      ],
+      "value": "04/15/2026",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "NAME",
+      "family": "name:title-surname",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Nwachukwu",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "NAME",
+      "family": "name:first-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Clifford Nwachukwu",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "ADDRESS",
+      "family": "address:street-city",
+      "challenge": [
+       "footer"
+      ],
+      "value": "1443 Briarwood Avenue, Sedalia",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "MRN",
+      "family": "mrn:alpha-prefix",
+      "challenge": [
+       "header"
+      ],
+      "value": "UR-069488",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "NAME",
+      "family": "name:first-last",
+      "challenge": [
+       "header"
+      ],
+      "value": "Kavya Kostova",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alpha-digits",
+      "challenge": [
+       "header"
+      ],
+      "value": "TRY 9559 3979",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "NAME",
+      "family": "name:first-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Kavya Kostova",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "NAME",
+      "family": "name:first-last",
+      "challenge": [
+       "footer",
+       "relative",
+       "line-break"
+      ],
+      "value": "Chayton\nBeridze",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "ADDRESS",
+      "family": "address:street-city",
+      "challenge": [
+       "footer"
+      ],
+      "value": "6381 Dunmore Trail, Bangor",
+      "status": "full"
+     }
+    ]
+   },
+   "heldout": {
+    "plantedDocuments": 9,
+    "untouchedDocumentsInRun": 4,
+    "spans": 38,
+    "fullyRemoved": 25,
+    "partial": 0,
+    "missed": 13,
+    "recall": 0.6578947368421053,
+    "recallInterval95": [
+     0.5277777777777778,
+     0.7837837837837838
+    ],
+    "documentsWithAnyIdentifierLeft": 8,
+    "byType": {
+     "NAME": {
+      "n": 20,
+      "full": 10,
+      "partial": 0,
+      "missed": 10,
+      "recall": 0.5
+     },
+     "DATE": {
+      "n": 7,
+      "full": 4,
+      "partial": 0,
+      "missed": 3,
+      "recall": 0.5714285714285714
+     },
+     "HEALTH_PLAN": {
+      "n": 5,
+      "full": 5,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "MRN": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "EMAIL": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "PHONE": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "ADDRESS": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     }
+    },
+    "byFamily": {
+     "name:surname-only": {
+      "n": 9,
+      "full": 4,
+      "partial": 0,
+      "missed": 5,
+      "recall": 0.4444444444444444
+     },
+     "date:dashed-short-year": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "plan:alnum-dash": {
+      "n": 5,
+      "full": 5,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "name:first-initial-last": {
+      "n": 6,
+      "full": 6,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "mrn:dashed": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "date:month-ordinal": {
+      "n": 5,
+      "full": 2,
+      "partial": 0,
+      "missed": 3,
+      "recall": 0.4
+     },
+     "email:initial-digits": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "phone:dot-ext": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "name:upper-last-comma-first": {
+      "n": 1,
+      "full": 0,
+      "partial": 0,
+      "missed": 1,
+      "recall": 0
+     },
+     "name:initials": {
+      "n": 4,
+      "full": 0,
+      "partial": 0,
+      "missed": 4,
+      "recall": 0
+     },
+     "address:street-only": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     }
+    },
+    "byChallenge": {
+     "header": {
+      "n": 17,
+      "full": 13,
+      "partial": 0,
+      "missed": 4,
+      "recall": 0.7647058823529411
+     },
+     "narrative": {
+      "n": 9,
+      "full": 5,
+      "partial": 0,
+      "missed": 4,
+      "recall": 0.5555555555555556
+     },
+     "surname-only": {
+      "n": 6,
+      "full": 2,
+      "partial": 0,
+      "missed": 4,
+      "recall": 0.3333333333333333
+     },
+     "footer": {
+      "n": 6,
+      "full": 5,
+      "partial": 0,
+      "missed": 1,
+      "recall": 0.8333333333333334
+     },
+     "relative": {
+      "n": 2,
+      "full": 1,
+      "partial": 0,
+      "missed": 1,
+      "recall": 0.5
+     },
+     "birth-date": {
+      "n": 3,
+      "full": 1,
+      "partial": 0,
+      "missed": 2,
+      "recall": 0.3333333333333333
+     },
+     "line-break": {
+      "n": 1,
+      "full": 0,
+      "partial": 0,
+      "missed": 1,
+      "recall": 0
+     },
+     "initials": {
+      "n": 4,
+      "full": 0,
+      "partial": 0,
+      "missed": 4,
+      "recall": 0
+     },
+     "common-word": {
+      "n": 3,
+      "full": 3,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "possessive": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     }
+    },
+    "spanResults": [
+     {
+      "id": "pmc-13721448",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "header"
+      ],
+      "value": "Nurlanovna",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721448",
+      "type": "DATE",
+      "family": "date:dashed-short-year",
+      "challenge": [
+       "header"
+      ],
+      "value": "19-4-26",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721448",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alnum-dash",
+      "challenge": [
+       "header"
+      ],
+      "value": "Z77-456-7168",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721448",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Bríd W. Nurlanovna",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721448",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Nurlanovna",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721448",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "footer",
+       "relative"
+      ],
+      "value": "Oskar X. Ashworth",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721443",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alnum-dash",
+      "challenge": [
+       "header"
+      ],
+      "value": "H66-680-3905",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721443",
+      "type": "MRN",
+      "family": "mrn:dashed",
+      "challenge": [
+       "header"
+      ],
+      "value": "9638-8601-1",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721443",
+      "type": "DATE",
+      "family": "date:month-ordinal",
+      "challenge": [
+       "header"
+      ],
+      "value": "January 14th, 2021",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721443",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Zeynep L. Short",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721443",
+      "type": "EMAIL",
+      "family": "email:initial-digits",
+      "challenge": [
+       "footer"
+      ],
+      "value": "zshort83@example.org",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alnum-dash",
+      "challenge": [
+       "header"
+      ],
+      "value": "W36-356-9377",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "DATE",
+      "family": "date:month-ordinal",
+      "challenge": [
+       "header",
+       "birth-date"
+      ],
+      "value": "23rd April 1980",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "header"
+      ],
+      "value": "Ngata",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "EMAIL",
+      "family": "email:initial-digits",
+      "challenge": [
+       "footer"
+      ],
+      "value": "rngata94@example.com",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "PHONE",
+      "family": "phone:dot-ext",
+      "challenge": [
+       "footer"
+      ],
+      "value": "906.888.4335 ext. 195",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "NAME",
+      "family": "name:upper-last-comma-first",
+      "challenge": [
+       "footer",
+       "relative",
+       "line-break"
+      ],
+      "value": "COOK,\nMei",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13722088",
+      "type": "DATE",
+      "family": "date:month-ordinal",
+      "challenge": [
+       "header"
+      ],
+      "value": "April 24th, 2026",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13722088",
+      "type": "DATE",
+      "family": "date:dashed-short-year",
+      "challenge": [
+       "header",
+       "birth-date"
+      ],
+      "value": "6-7-92",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13722088",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Calloway",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720511",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alnum-dash",
+      "challenge": [
+       "header"
+      ],
+      "value": "P08-665-0382",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720511",
+      "type": "NAME",
+      "family": "name:initials",
+      "challenge": [
+       "initials"
+      ],
+      "value": "P.H.",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720511",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Hrytsenko",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720756",
+      "type": "MRN",
+      "family": "mrn:dashed",
+      "challenge": [
+       "header"
+      ],
+      "value": "4711-3210-2",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720756",
+      "type": "DATE",
+      "family": "date:month-ordinal",
+      "challenge": [
+       "header"
+      ],
+      "value": "17th April 2026",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720756",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "header"
+      ],
+      "value": "Trinh",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720756",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Eamon I. Trinh",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720756",
+      "type": "ADDRESS",
+      "family": "address:street-only",
+      "challenge": [
+       "footer"
+      ],
+      "value": "9643 Foxglove Drive",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720755",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "narrative",
+       "common-word"
+      ],
+      "value": "Thandiwe C. Gold",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720755",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "possessive",
+       "surname-only",
+       "common-word"
+      ],
+      "value": "Gold",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720755",
+      "type": "NAME",
+      "family": "name:initials",
+      "challenge": [
+       "initials"
+      ],
+      "value": "T.G.",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720755",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "possessive",
+       "surname-only",
+       "common-word"
+      ],
+      "value": "Gold",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720758",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Dariush H. Iyer",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720758",
+      "type": "NAME",
+      "family": "name:initials",
+      "challenge": [
+       "initials"
+      ],
+      "value": "D.I.",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720758",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Iyer",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720761",
+      "type": "DATE",
+      "family": "date:month-ordinal",
+      "challenge": [
+       "header",
+       "birth-date"
+      ],
+      "value": "26th September 1976",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720761",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alnum-dash",
+      "challenge": [
+       "header"
+      ],
+      "value": "T39-157-0524",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720761",
+      "type": "NAME",
+      "family": "name:initials",
+      "challenge": [
+       "initials"
+      ],
+      "value": "B.J.",
+      "status": "missed"
+     }
+    ]
+   }
+  },
+  "doNothing": {
+   "dev": {
+    "plantedDocuments": 4,
+    "untouchedDocumentsInRun": 3,
+    "spans": 20,
+    "fullyRemoved": 0,
+    "partial": 0,
+    "missed": 20,
+    "recall": 0,
+    "recallInterval95": [
+     0,
+     0
+    ],
+    "documentsWithAnyIdentifierLeft": 4,
+    "byType": {
+     "MRN": {
+      "n": 3,
+      "full": 0,
+      "partial": 0,
+      "missed": 3,
+      "recall": 0
+     },
+     "NAME": {
+      "n": 9,
+      "full": 0,
+      "partial": 0,
+      "missed": 9,
+      "recall": 0
+     },
+     "HEALTH_PLAN": {
+      "n": 3,
+      "full": 0,
+      "partial": 0,
+      "missed": 3,
+      "recall": 0
+     },
+     "DATE": {
+      "n": 2,
+      "full": 0,
+      "partial": 0,
+      "missed": 2,
+      "recall": 0
+     },
+     "PHONE": {
+      "n": 1,
+      "full": 0,
+      "partial": 0,
+      "missed": 1,
+      "recall": 0
+     },
+     "ADDRESS": {
+      "n": 2,
+      "full": 0,
+      "partial": 0,
+      "missed": 2,
+      "recall": 0
+     }
+    },
+    "byFamily": {
+     "mrn:alpha-prefix": {
+      "n": 2,
+      "full": 0,
+      "partial": 0,
+      "missed": 2,
+      "recall": 0
+     },
+     "name:title-surname": {
+      "n": 5,
+      "full": 0,
+      "partial": 0,
+      "missed": 5,
+      "recall": 0
+     },
+     "plan:alpha-digits": {
+      "n": 3,
+      "full": 0,
+      "partial": 0,
+      "missed": 3,
+      "recall": 0
+     },
+     "date:numeric-slash": {
+      "n": 2,
+      "full": 0,
+      "partial": 0,
+      "missed": 2,
+      "recall": 0
+     },
+     "mrn:digits": {
+      "n": 1,
+      "full": 0,
+      "partial": 0,
+      "missed": 1,
+      "recall": 0
+     },
+     "phone:paren": {
+      "n": 1,
+      "full": 0,
+      "partial": 0,
+      "missed": 1,
+      "recall": 0
+     },
+     "name:first-last": {
+      "n": 4,
+      "full": 0,
+      "partial": 0,
+      "missed": 4,
+      "recall": 0
+     },
+     "address:street-city": {
+      "n": 2,
+      "full": 0,
+      "partial": 0,
+      "missed": 2,
+      "recall": 0
+     }
+    },
+    "byChallenge": {
+     "header": {
+      "n": 10,
+      "full": 0,
+      "partial": 0,
+      "missed": 10,
+      "recall": 0
+     },
+     "narrative": {
+      "n": 5,
+      "full": 0,
+      "partial": 0,
+      "missed": 5,
+      "recall": 0
+     },
+     "surname-only": {
+      "n": 3,
+      "full": 0,
+      "partial": 0,
+      "missed": 3,
+      "recall": 0
+     },
+     "birth-date": {
+      "n": 1,
+      "full": 0,
+      "partial": 0,
+      "missed": 1,
+      "recall": 0
+     },
+     "possessive": {
+      "n": 1,
+      "full": 0,
+      "partial": 0,
+      "missed": 1,
+      "recall": 0
+     },
+     "footer": {
+      "n": 4,
+      "full": 0,
+      "partial": 0,
+      "missed": 4,
+      "recall": 0
+     },
+     "relative": {
+      "n": 1,
+      "full": 0,
+      "partial": 0,
+      "missed": 1,
+      "recall": 0
+     },
+     "line-break": {
+      "n": 1,
+      "full": 0,
+      "partial": 0,
+      "missed": 1,
+      "recall": 0
+     }
+    },
+    "spanResults": [
+     {
+      "id": "pmc-13720340",
+      "type": "MRN",
+      "family": "mrn:alpha-prefix",
+      "challenge": [
+       "header"
+      ],
+      "value": "UJ-906320",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720340",
+      "type": "NAME",
+      "family": "name:title-surname",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Albuquerque",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alpha-digits",
+      "challenge": [
+       "header"
+      ],
+      "value": "PUN 4154 9263",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "DATE",
+      "family": "date:numeric-slash",
+      "challenge": [
+       "header",
+       "birth-date"
+      ],
+      "value": "02/03/1990",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "MRN",
+      "family": "mrn:digits",
+      "challenge": [
+       "header"
+      ],
+      "value": "528972951",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "NAME",
+      "family": "name:title-surname",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Hunter",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "NAME",
+      "family": "name:title-surname",
+      "challenge": [
+       "possessive",
+       "surname-only"
+      ],
+      "value": "Hunter",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "PHONE",
+      "family": "phone:paren",
+      "challenge": [
+       "footer"
+      ],
+      "value": "(231) 555-0163",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alpha-digits",
+      "challenge": [
+       "header"
+      ],
+      "value": "NKM 4531 4136",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "NAME",
+      "family": "name:title-surname",
+      "challenge": [
+       "header"
+      ],
+      "value": "Nwachukwu",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "DATE",
+      "family": "date:numeric-slash",
+      "challenge": [
+       "header"
+      ],
+      "value": "04/15/2026",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "NAME",
+      "family": "name:title-surname",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Nwachukwu",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "NAME",
+      "family": "name:first-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Clifford Nwachukwu",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "ADDRESS",
+      "family": "address:street-city",
+      "challenge": [
+       "footer"
+      ],
+      "value": "1443 Briarwood Avenue, Sedalia",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "MRN",
+      "family": "mrn:alpha-prefix",
+      "challenge": [
+       "header"
+      ],
+      "value": "UR-069488",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "NAME",
+      "family": "name:first-last",
+      "challenge": [
+       "header"
+      ],
+      "value": "Kavya Kostova",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alpha-digits",
+      "challenge": [
+       "header"
+      ],
+      "value": "TRY 9559 3979",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "NAME",
+      "family": "name:first-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Kavya Kostova",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "NAME",
+      "family": "name:first-last",
+      "challenge": [
+       "footer",
+       "relative",
+       "line-break"
+      ],
+      "value": "Chayton\nBeridze",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "ADDRESS",
+      "family": "address:street-city",
+      "challenge": [
+       "footer"
+      ],
+      "value": "6381 Dunmore Trail, Bangor",
+      "status": "missed"
+     }
+    ]
+   },
+   "heldout": {
+    "plantedDocuments": 9,
+    "untouchedDocumentsInRun": 4,
+    "spans": 38,
+    "fullyRemoved": 0,
+    "partial": 0,
+    "missed": 38,
+    "recall": 0,
+    "recallInterval95": [
+     0,
+     0
+    ],
+    "documentsWithAnyIdentifierLeft": 9,
+    "byType": {
+     "NAME": {
+      "n": 20,
+      "full": 0,
+      "partial": 0,
+      "missed": 20,
+      "recall": 0
+     },
+     "DATE": {
+      "n": 7,
+      "full": 0,
+      "partial": 0,
+      "missed": 7,
+      "recall": 0
+     },
+     "HEALTH_PLAN": {
+      "n": 5,
+      "full": 0,
+      "partial": 0,
+      "missed": 5,
+      "recall": 0
+     },
+     "MRN": {
+      "n": 2,
+      "full": 0,
+      "partial": 0,
+      "missed": 2,
+      "recall": 0
+     },
+     "EMAIL": {
+      "n": 2,
+      "full": 0,
+      "partial": 0,
+      "missed": 2,
+      "recall": 0
+     },
+     "PHONE": {
+      "n": 1,
+      "full": 0,
+      "partial": 0,
+      "missed": 1,
+      "recall": 0
+     },
+     "ADDRESS": {
+      "n": 1,
+      "full": 0,
+      "partial": 0,
+      "missed": 1,
+      "recall": 0
+     }
+    },
+    "byFamily": {
+     "name:surname-only": {
+      "n": 9,
+      "full": 0,
+      "partial": 0,
+      "missed": 9,
+      "recall": 0
+     },
+     "date:dashed-short-year": {
+      "n": 2,
+      "full": 0,
+      "partial": 0,
+      "missed": 2,
+      "recall": 0
+     },
+     "plan:alnum-dash": {
+      "n": 5,
+      "full": 0,
+      "partial": 0,
+      "missed": 5,
+      "recall": 0
+     },
+     "name:first-initial-last": {
+      "n": 6,
+      "full": 0,
+      "partial": 0,
+      "missed": 6,
+      "recall": 0
+     },
+     "mrn:dashed": {
+      "n": 2,
+      "full": 0,
+      "partial": 0,
+      "missed": 2,
+      "recall": 0
+     },
+     "date:month-ordinal": {
+      "n": 5,
+      "full": 0,
+      "partial": 0,
+      "missed": 5,
+      "recall": 0
+     },
+     "email:initial-digits": {
+      "n": 2,
+      "full": 0,
+      "partial": 0,
+      "missed": 2,
+      "recall": 0
+     },
+     "phone:dot-ext": {
+      "n": 1,
+      "full": 0,
+      "partial": 0,
+      "missed": 1,
+      "recall": 0
+     },
+     "name:upper-last-comma-first": {
+      "n": 1,
+      "full": 0,
+      "partial": 0,
+      "missed": 1,
+      "recall": 0
+     },
+     "name:initials": {
+      "n": 4,
+      "full": 0,
+      "partial": 0,
+      "missed": 4,
+      "recall": 0
+     },
+     "address:street-only": {
+      "n": 1,
+      "full": 0,
+      "partial": 0,
+      "missed": 1,
+      "recall": 0
+     }
+    },
+    "byChallenge": {
+     "header": {
+      "n": 17,
+      "full": 0,
+      "partial": 0,
+      "missed": 17,
+      "recall": 0
+     },
+     "narrative": {
+      "n": 9,
+      "full": 0,
+      "partial": 0,
+      "missed": 9,
+      "recall": 0
+     },
+     "surname-only": {
+      "n": 6,
+      "full": 0,
+      "partial": 0,
+      "missed": 6,
+      "recall": 0
+     },
+     "footer": {
+      "n": 6,
+      "full": 0,
+      "partial": 0,
+      "missed": 6,
+      "recall": 0
+     },
+     "relative": {
+      "n": 2,
+      "full": 0,
+      "partial": 0,
+      "missed": 2,
+      "recall": 0
+     },
+     "birth-date": {
+      "n": 3,
+      "full": 0,
+      "partial": 0,
+      "missed": 3,
+      "recall": 0
+     },
+     "line-break": {
+      "n": 1,
+      "full": 0,
+      "partial": 0,
+      "missed": 1,
+      "recall": 0
+     },
+     "initials": {
+      "n": 4,
+      "full": 0,
+      "partial": 0,
+      "missed": 4,
+      "recall": 0
+     },
+     "common-word": {
+      "n": 3,
+      "full": 0,
+      "partial": 0,
+      "missed": 3,
+      "recall": 0
+     },
+     "possessive": {
+      "n": 2,
+      "full": 0,
+      "partial": 0,
+      "missed": 2,
+      "recall": 0
+     }
+    },
+    "spanResults": [
+     {
+      "id": "pmc-13721448",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "header"
+      ],
+      "value": "Nurlanovna",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721448",
+      "type": "DATE",
+      "family": "date:dashed-short-year",
+      "challenge": [
+       "header"
+      ],
+      "value": "19-4-26",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721448",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alnum-dash",
+      "challenge": [
+       "header"
+      ],
+      "value": "Z77-456-7168",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721448",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Bríd W. Nurlanovna",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721448",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Nurlanovna",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721448",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "footer",
+       "relative"
+      ],
+      "value": "Oskar X. Ashworth",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721443",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alnum-dash",
+      "challenge": [
+       "header"
+      ],
+      "value": "H66-680-3905",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721443",
+      "type": "MRN",
+      "family": "mrn:dashed",
+      "challenge": [
+       "header"
+      ],
+      "value": "9638-8601-1",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721443",
+      "type": "DATE",
+      "family": "date:month-ordinal",
+      "challenge": [
+       "header"
+      ],
+      "value": "January 14th, 2021",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721443",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Zeynep L. Short",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13721443",
+      "type": "EMAIL",
+      "family": "email:initial-digits",
+      "challenge": [
+       "footer"
+      ],
+      "value": "zshort83@example.org",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alnum-dash",
+      "challenge": [
+       "header"
+      ],
+      "value": "W36-356-9377",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "DATE",
+      "family": "date:month-ordinal",
+      "challenge": [
+       "header",
+       "birth-date"
+      ],
+      "value": "23rd April 1980",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "header"
+      ],
+      "value": "Ngata",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "EMAIL",
+      "family": "email:initial-digits",
+      "challenge": [
+       "footer"
+      ],
+      "value": "rngata94@example.com",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "PHONE",
+      "family": "phone:dot-ext",
+      "challenge": [
+       "footer"
+      ],
+      "value": "906.888.4335 ext. 195",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "NAME",
+      "family": "name:upper-last-comma-first",
+      "challenge": [
+       "footer",
+       "relative",
+       "line-break"
+      ],
+      "value": "COOK,\nMei",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13722088",
+      "type": "DATE",
+      "family": "date:month-ordinal",
+      "challenge": [
+       "header"
+      ],
+      "value": "April 24th, 2026",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13722088",
+      "type": "DATE",
+      "family": "date:dashed-short-year",
+      "challenge": [
+       "header",
+       "birth-date"
+      ],
+      "value": "6-7-92",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13722088",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Calloway",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720511",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alnum-dash",
+      "challenge": [
+       "header"
+      ],
+      "value": "P08-665-0382",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720511",
+      "type": "NAME",
+      "family": "name:initials",
+      "challenge": [
+       "initials"
+      ],
+      "value": "P.H.",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720511",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Hrytsenko",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720756",
+      "type": "MRN",
+      "family": "mrn:dashed",
+      "challenge": [
+       "header"
+      ],
+      "value": "4711-3210-2",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720756",
+      "type": "DATE",
+      "family": "date:month-ordinal",
+      "challenge": [
+       "header"
+      ],
+      "value": "17th April 2026",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720756",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "header"
+      ],
+      "value": "Trinh",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720756",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Eamon I. Trinh",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720756",
+      "type": "ADDRESS",
+      "family": "address:street-only",
+      "challenge": [
+       "footer"
+      ],
+      "value": "9643 Foxglove Drive",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720755",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "narrative",
+       "common-word"
+      ],
+      "value": "Thandiwe C. Gold",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720755",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "possessive",
+       "surname-only",
+       "common-word"
+      ],
+      "value": "Gold",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720755",
+      "type": "NAME",
+      "family": "name:initials",
+      "challenge": [
+       "initials"
+      ],
+      "value": "T.G.",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720755",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "possessive",
+       "surname-only",
+       "common-word"
+      ],
+      "value": "Gold",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720758",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Dariush H. Iyer",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720758",
+      "type": "NAME",
+      "family": "name:initials",
+      "challenge": [
+       "initials"
+      ],
+      "value": "D.I.",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720758",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Iyer",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720761",
+      "type": "DATE",
+      "family": "date:month-ordinal",
+      "challenge": [
+       "header",
+       "birth-date"
+      ],
+      "value": "26th September 1976",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720761",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alnum-dash",
+      "challenge": [
+       "header"
+      ],
+      "value": "T39-157-0524",
+      "status": "missed"
+     },
+     {
+      "id": "pmc-13720761",
+      "type": "NAME",
+      "family": "name:initials",
+      "challenge": [
+       "initials"
+      ],
+      "value": "B.J.",
+      "status": "missed"
+     }
+    ]
+   }
+  },
+  "redactEverything": {
+   "dev": {
+    "plantedDocuments": 4,
+    "untouchedDocumentsInRun": 3,
+    "spans": 20,
+    "fullyRemoved": 20,
+    "partial": 0,
+    "missed": 0,
+    "recall": 1,
+    "recallInterval95": [
+     1,
+     1
+    ],
+    "documentsWithAnyIdentifierLeft": 0,
+    "byType": {
+     "MRN": {
+      "n": 3,
+      "full": 3,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "NAME": {
+      "n": 9,
+      "full": 9,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "HEALTH_PLAN": {
+      "n": 3,
+      "full": 3,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "DATE": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "PHONE": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "ADDRESS": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     }
+    },
+    "byFamily": {
+     "mrn:alpha-prefix": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "name:title-surname": {
+      "n": 5,
+      "full": 5,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "plan:alpha-digits": {
+      "n": 3,
+      "full": 3,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "date:numeric-slash": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "mrn:digits": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "phone:paren": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "name:first-last": {
+      "n": 4,
+      "full": 4,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "address:street-city": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     }
+    },
+    "byChallenge": {
+     "header": {
+      "n": 10,
+      "full": 10,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "narrative": {
+      "n": 5,
+      "full": 5,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "surname-only": {
+      "n": 3,
+      "full": 3,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "birth-date": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "possessive": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "footer": {
+      "n": 4,
+      "full": 4,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "relative": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "line-break": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     }
+    },
+    "spanResults": [
+     {
+      "id": "pmc-13720340",
+      "type": "MRN",
+      "family": "mrn:alpha-prefix",
+      "challenge": [
+       "header"
+      ],
+      "value": "UJ-906320",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720340",
+      "type": "NAME",
+      "family": "name:title-surname",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Albuquerque",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alpha-digits",
+      "challenge": [
+       "header"
+      ],
+      "value": "PUN 4154 9263",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "DATE",
+      "family": "date:numeric-slash",
+      "challenge": [
+       "header",
+       "birth-date"
+      ],
+      "value": "02/03/1990",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "MRN",
+      "family": "mrn:digits",
+      "challenge": [
+       "header"
+      ],
+      "value": "528972951",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "NAME",
+      "family": "name:title-surname",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Hunter",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "NAME",
+      "family": "name:title-surname",
+      "challenge": [
+       "possessive",
+       "surname-only"
+      ],
+      "value": "Hunter",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719403",
+      "type": "PHONE",
+      "family": "phone:paren",
+      "challenge": [
+       "footer"
+      ],
+      "value": "(231) 555-0163",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alpha-digits",
+      "challenge": [
+       "header"
+      ],
+      "value": "NKM 4531 4136",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "NAME",
+      "family": "name:title-surname",
+      "challenge": [
+       "header"
+      ],
+      "value": "Nwachukwu",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "DATE",
+      "family": "date:numeric-slash",
+      "challenge": [
+       "header"
+      ],
+      "value": "04/15/2026",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "NAME",
+      "family": "name:title-surname",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Nwachukwu",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "NAME",
+      "family": "name:first-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Clifford Nwachukwu",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13719311",
+      "type": "ADDRESS",
+      "family": "address:street-city",
+      "challenge": [
+       "footer"
+      ],
+      "value": "1443 Briarwood Avenue, Sedalia",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "MRN",
+      "family": "mrn:alpha-prefix",
+      "challenge": [
+       "header"
+      ],
+      "value": "UR-069488",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "NAME",
+      "family": "name:first-last",
+      "challenge": [
+       "header"
+      ],
+      "value": "Kavya Kostova",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alpha-digits",
+      "challenge": [
+       "header"
+      ],
+      "value": "TRY 9559 3979",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "NAME",
+      "family": "name:first-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Kavya Kostova",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "NAME",
+      "family": "name:first-last",
+      "challenge": [
+       "footer",
+       "relative",
+       "line-break"
+      ],
+      "value": "Chayton\nBeridze",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721425",
+      "type": "ADDRESS",
+      "family": "address:street-city",
+      "challenge": [
+       "footer"
+      ],
+      "value": "6381 Dunmore Trail, Bangor",
+      "status": "full"
+     }
+    ]
+   },
+   "heldout": {
+    "plantedDocuments": 9,
+    "untouchedDocumentsInRun": 4,
+    "spans": 38,
+    "fullyRemoved": 38,
+    "partial": 0,
+    "missed": 0,
+    "recall": 1,
+    "recallInterval95": [
+     1,
+     1
+    ],
+    "documentsWithAnyIdentifierLeft": 0,
+    "byType": {
+     "NAME": {
+      "n": 20,
+      "full": 20,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "DATE": {
+      "n": 7,
+      "full": 7,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "HEALTH_PLAN": {
+      "n": 5,
+      "full": 5,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "MRN": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "EMAIL": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "PHONE": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "ADDRESS": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     }
+    },
+    "byFamily": {
+     "name:surname-only": {
+      "n": 9,
+      "full": 9,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "date:dashed-short-year": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "plan:alnum-dash": {
+      "n": 5,
+      "full": 5,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "name:first-initial-last": {
+      "n": 6,
+      "full": 6,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "mrn:dashed": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "date:month-ordinal": {
+      "n": 5,
+      "full": 5,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "email:initial-digits": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "phone:dot-ext": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "name:upper-last-comma-first": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "name:initials": {
+      "n": 4,
+      "full": 4,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "address:street-only": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     }
+    },
+    "byChallenge": {
+     "header": {
+      "n": 17,
+      "full": 17,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "narrative": {
+      "n": 9,
+      "full": 9,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "surname-only": {
+      "n": 6,
+      "full": 6,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "footer": {
+      "n": 6,
+      "full": 6,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "relative": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "birth-date": {
+      "n": 3,
+      "full": 3,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "line-break": {
+      "n": 1,
+      "full": 1,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "initials": {
+      "n": 4,
+      "full": 4,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "common-word": {
+      "n": 3,
+      "full": 3,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     },
+     "possessive": {
+      "n": 2,
+      "full": 2,
+      "partial": 0,
+      "missed": 0,
+      "recall": 1
+     }
+    },
+    "spanResults": [
+     {
+      "id": "pmc-13721448",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "header"
+      ],
+      "value": "Nurlanovna",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721448",
+      "type": "DATE",
+      "family": "date:dashed-short-year",
+      "challenge": [
+       "header"
+      ],
+      "value": "19-4-26",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721448",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alnum-dash",
+      "challenge": [
+       "header"
+      ],
+      "value": "Z77-456-7168",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721448",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Bríd W. Nurlanovna",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721448",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Nurlanovna",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721448",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "footer",
+       "relative"
+      ],
+      "value": "Oskar X. Ashworth",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721443",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alnum-dash",
+      "challenge": [
+       "header"
+      ],
+      "value": "H66-680-3905",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721443",
+      "type": "MRN",
+      "family": "mrn:dashed",
+      "challenge": [
+       "header"
+      ],
+      "value": "9638-8601-1",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721443",
+      "type": "DATE",
+      "family": "date:month-ordinal",
+      "challenge": [
+       "header"
+      ],
+      "value": "January 14th, 2021",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721443",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Zeynep L. Short",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13721443",
+      "type": "EMAIL",
+      "family": "email:initial-digits",
+      "challenge": [
+       "footer"
+      ],
+      "value": "zshort83@example.org",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alnum-dash",
+      "challenge": [
+       "header"
+      ],
+      "value": "W36-356-9377",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "DATE",
+      "family": "date:month-ordinal",
+      "challenge": [
+       "header",
+       "birth-date"
+      ],
+      "value": "23rd April 1980",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "header"
+      ],
+      "value": "Ngata",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "EMAIL",
+      "family": "email:initial-digits",
+      "challenge": [
+       "footer"
+      ],
+      "value": "rngata94@example.com",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "PHONE",
+      "family": "phone:dot-ext",
+      "challenge": [
+       "footer"
+      ],
+      "value": "906.888.4335 ext. 195",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13722112",
+      "type": "NAME",
+      "family": "name:upper-last-comma-first",
+      "challenge": [
+       "footer",
+       "relative",
+       "line-break"
+      ],
+      "value": "COOK,\nMei",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13722088",
+      "type": "DATE",
+      "family": "date:month-ordinal",
+      "challenge": [
+       "header"
+      ],
+      "value": "April 24th, 2026",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13722088",
+      "type": "DATE",
+      "family": "date:dashed-short-year",
+      "challenge": [
+       "header",
+       "birth-date"
+      ],
+      "value": "6-7-92",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13722088",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Calloway",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720511",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alnum-dash",
+      "challenge": [
+       "header"
+      ],
+      "value": "P08-665-0382",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720511",
+      "type": "NAME",
+      "family": "name:initials",
+      "challenge": [
+       "initials"
+      ],
+      "value": "P.H.",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720511",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Hrytsenko",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720756",
+      "type": "MRN",
+      "family": "mrn:dashed",
+      "challenge": [
+       "header"
+      ],
+      "value": "4711-3210-2",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720756",
+      "type": "DATE",
+      "family": "date:month-ordinal",
+      "challenge": [
+       "header"
+      ],
+      "value": "17th April 2026",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720756",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "header"
+      ],
+      "value": "Trinh",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720756",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Eamon I. Trinh",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720756",
+      "type": "ADDRESS",
+      "family": "address:street-only",
+      "challenge": [
+       "footer"
+      ],
+      "value": "9643 Foxglove Drive",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720755",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "narrative",
+       "common-word"
+      ],
+      "value": "Thandiwe C. Gold",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720755",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "possessive",
+       "surname-only",
+       "common-word"
+      ],
+      "value": "Gold",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720755",
+      "type": "NAME",
+      "family": "name:initials",
+      "challenge": [
+       "initials"
+      ],
+      "value": "T.G.",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720755",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "possessive",
+       "surname-only",
+       "common-word"
+      ],
+      "value": "Gold",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720758",
+      "type": "NAME",
+      "family": "name:first-initial-last",
+      "challenge": [
+       "narrative"
+      ],
+      "value": "Dariush H. Iyer",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720758",
+      "type": "NAME",
+      "family": "name:initials",
+      "challenge": [
+       "initials"
+      ],
+      "value": "D.I.",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720758",
+      "type": "NAME",
+      "family": "name:surname-only",
+      "challenge": [
+       "narrative",
+       "surname-only"
+      ],
+      "value": "Iyer",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720761",
+      "type": "DATE",
+      "family": "date:month-ordinal",
+      "challenge": [
+       "header",
+       "birth-date"
+      ],
+      "value": "26th September 1976",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720761",
+      "type": "HEALTH_PLAN",
+      "family": "plan:alnum-dash",
+      "challenge": [
+       "header"
+      ],
+      "value": "T39-157-0524",
+      "status": "full"
+     },
+     {
+      "id": "pmc-13720761",
+      "type": "NAME",
+      "family": "name:initials",
+      "challenge": [
+       "initials"
+      ],
+      "value": "B.J.",
+      "status": "full"
+     }
+    ]
+   }
+  },
+  "heldout": {
+   "plantedDocuments": 9,
+   "untouchedDocumentsInRun": 4,
+   "spans": 38,
+   "fullyRemoved": 25,
+   "partial": 0,
+   "missed": 13,
+   "recall": 0.6578947368421053,
+   "recallInterval95": [
+    0.5277777777777778,
+    0.7837837837837838
+   ],
+   "documentsWithAnyIdentifierLeft": 8,
+   "byType": {
+    "NAME": {
+     "n": 20,
+     "full": 10,
+     "partial": 0,
+     "missed": 10,
+     "recall": 0.5
+    },
+    "DATE": {
+     "n": 7,
+     "full": 4,
+     "partial": 0,
+     "missed": 3,
+     "recall": 0.5714285714285714
+    },
+    "HEALTH_PLAN": {
+     "n": 5,
+     "full": 5,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "MRN": {
+     "n": 2,
+     "full": 2,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "EMAIL": {
+     "n": 2,
+     "full": 2,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "PHONE": {
+     "n": 1,
+     "full": 1,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "ADDRESS": {
+     "n": 1,
+     "full": 1,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    }
+   },
+   "byFamily": {
+    "name:surname-only": {
+     "n": 9,
+     "full": 4,
+     "partial": 0,
+     "missed": 5,
+     "recall": 0.4444444444444444
+    },
+    "date:dashed-short-year": {
+     "n": 2,
+     "full": 2,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "plan:alnum-dash": {
+     "n": 5,
+     "full": 5,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "name:first-initial-last": {
+     "n": 6,
+     "full": 6,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "mrn:dashed": {
+     "n": 2,
+     "full": 2,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "date:month-ordinal": {
+     "n": 5,
+     "full": 2,
+     "partial": 0,
+     "missed": 3,
+     "recall": 0.4
+    },
+    "email:initial-digits": {
+     "n": 2,
+     "full": 2,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "phone:dot-ext": {
+     "n": 1,
+     "full": 1,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "name:upper-last-comma-first": {
+     "n": 1,
+     "full": 0,
+     "partial": 0,
+     "missed": 1,
+     "recall": 0
+    },
+    "name:initials": {
+     "n": 4,
+     "full": 0,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0
+    },
+    "address:street-only": {
+     "n": 1,
+     "full": 1,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    }
+   },
+   "byChallenge": {
+    "header": {
+     "n": 17,
+     "full": 13,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0.7647058823529411
+    },
+    "narrative": {
+     "n": 9,
+     "full": 5,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0.5555555555555556
+    },
+    "surname-only": {
+     "n": 6,
+     "full": 2,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0.3333333333333333
+    },
+    "footer": {
+     "n": 6,
+     "full": 5,
+     "partial": 0,
+     "missed": 1,
+     "recall": 0.8333333333333334
+    },
+    "relative": {
+     "n": 2,
+     "full": 1,
+     "partial": 0,
+     "missed": 1,
+     "recall": 0.5
+    },
+    "birth-date": {
+     "n": 3,
+     "full": 1,
+     "partial": 0,
+     "missed": 2,
+     "recall": 0.3333333333333333
+    },
+    "line-break": {
+     "n": 1,
+     "full": 0,
+     "partial": 0,
+     "missed": 1,
+     "recall": 0
+    },
+    "initials": {
+     "n": 4,
+     "full": 0,
+     "partial": 0,
+     "missed": 4,
+     "recall": 0
+    },
+    "common-word": {
+     "n": 3,
+     "full": 3,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "possessive": {
+     "n": 2,
+     "full": 2,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    }
+   },
+   "spanResults": [
+    {
+     "id": "pmc-13721448",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "challenge": [
+      "header"
+     ],
+     "value": "Nurlanovna",
+     "status": "missed"
+    },
+    {
+     "id": "pmc-13721448",
+     "type": "DATE",
+     "family": "date:dashed-short-year",
+     "challenge": [
+      "header"
+     ],
+     "value": "19-4-26",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13721448",
+     "type": "HEALTH_PLAN",
+     "family": "plan:alnum-dash",
+     "challenge": [
+      "header"
+     ],
+     "value": "Z77-456-7168",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13721448",
+     "type": "NAME",
+     "family": "name:first-initial-last",
+     "challenge": [
+      "narrative"
+     ],
+     "value": "Bríd W. Nurlanovna",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13721448",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "challenge": [
+      "narrative",
+      "surname-only"
+     ],
+     "value": "Nurlanovna",
+     "status": "missed"
+    },
+    {
+     "id": "pmc-13721448",
+     "type": "NAME",
+     "family": "name:first-initial-last",
+     "challenge": [
+      "footer",
+      "relative"
+     ],
+     "value": "Oskar X. Ashworth",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13721443",
+     "type": "HEALTH_PLAN",
+     "family": "plan:alnum-dash",
+     "challenge": [
+      "header"
+     ],
+     "value": "H66-680-3905",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13721443",
+     "type": "MRN",
+     "family": "mrn:dashed",
+     "challenge": [
+      "header"
+     ],
+     "value": "9638-8601-1",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13721443",
+     "type": "DATE",
+     "family": "date:month-ordinal",
+     "challenge": [
+      "header"
+     ],
+     "value": "January 14th, 2021",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13721443",
+     "type": "NAME",
+     "family": "name:first-initial-last",
+     "challenge": [
+      "narrative"
+     ],
+     "value": "Zeynep L. Short",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13721443",
+     "type": "EMAIL",
+     "family": "email:initial-digits",
+     "challenge": [
+      "footer"
+     ],
+     "value": "zshort83@example.org",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13722112",
+     "type": "HEALTH_PLAN",
+     "family": "plan:alnum-dash",
+     "challenge": [
+      "header"
+     ],
+     "value": "W36-356-9377",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13722112",
+     "type": "DATE",
+     "family": "date:month-ordinal",
+     "challenge": [
+      "header",
+      "birth-date"
+     ],
+     "value": "23rd April 1980",
+     "status": "missed"
+    },
+    {
+     "id": "pmc-13722112",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "challenge": [
+      "header"
+     ],
+     "value": "Ngata",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13722112",
+     "type": "EMAIL",
+     "family": "email:initial-digits",
+     "challenge": [
+      "footer"
+     ],
+     "value": "rngata94@example.com",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13722112",
+     "type": "PHONE",
+     "family": "phone:dot-ext",
+     "challenge": [
+      "footer"
+     ],
+     "value": "906.888.4335 ext. 195",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13722112",
+     "type": "NAME",
+     "family": "name:upper-last-comma-first",
+     "challenge": [
+      "footer",
+      "relative",
+      "line-break"
+     ],
+     "value": "COOK,\nMei",
+     "status": "missed"
+    },
+    {
+     "id": "pmc-13722088",
+     "type": "DATE",
+     "family": "date:month-ordinal",
+     "challenge": [
+      "header"
+     ],
+     "value": "April 24th, 2026",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13722088",
+     "type": "DATE",
+     "family": "date:dashed-short-year",
+     "challenge": [
+      "header",
+      "birth-date"
+     ],
+     "value": "6-7-92",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13722088",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "challenge": [
+      "narrative",
+      "surname-only"
+     ],
+     "value": "Calloway",
+     "status": "missed"
+    },
+    {
+     "id": "pmc-13720511",
+     "type": "HEALTH_PLAN",
+     "family": "plan:alnum-dash",
+     "challenge": [
+      "header"
+     ],
+     "value": "P08-665-0382",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13720511",
+     "type": "NAME",
+     "family": "name:initials",
+     "challenge": [
+      "initials"
+     ],
+     "value": "P.H.",
+     "status": "missed"
+    },
+    {
+     "id": "pmc-13720511",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "challenge": [
+      "narrative",
+      "surname-only"
+     ],
+     "value": "Hrytsenko",
+     "status": "missed"
+    },
+    {
+     "id": "pmc-13720756",
+     "type": "MRN",
+     "family": "mrn:dashed",
+     "challenge": [
+      "header"
+     ],
+     "value": "4711-3210-2",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13720756",
+     "type": "DATE",
+     "family": "date:month-ordinal",
+     "challenge": [
+      "header"
+     ],
+     "value": "17th April 2026",
+     "status": "missed"
+    },
+    {
+     "id": "pmc-13720756",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "challenge": [
+      "header"
+     ],
+     "value": "Trinh",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13720756",
+     "type": "NAME",
+     "family": "name:first-initial-last",
+     "challenge": [
+      "narrative"
+     ],
+     "value": "Eamon I. Trinh",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13720756",
+     "type": "ADDRESS",
+     "family": "address:street-only",
+     "challenge": [
+      "footer"
+     ],
+     "value": "9643 Foxglove Drive",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13720755",
+     "type": "NAME",
+     "family": "name:first-initial-last",
+     "challenge": [
+      "narrative",
+      "common-word"
+     ],
+     "value": "Thandiwe C. Gold",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13720755",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "challenge": [
+      "possessive",
+      "surname-only",
+      "common-word"
+     ],
+     "value": "Gold",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13720755",
+     "type": "NAME",
+     "family": "name:initials",
+     "challenge": [
+      "initials"
+     ],
+     "value": "T.G.",
+     "status": "missed"
+    },
+    {
+     "id": "pmc-13720755",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "challenge": [
+      "possessive",
+      "surname-only",
+      "common-word"
+     ],
+     "value": "Gold",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13720758",
+     "type": "NAME",
+     "family": "name:first-initial-last",
+     "challenge": [
+      "narrative"
+     ],
+     "value": "Dariush H. Iyer",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13720758",
+     "type": "NAME",
+     "family": "name:initials",
+     "challenge": [
+      "initials"
+     ],
+     "value": "D.I.",
+     "status": "missed"
+    },
+    {
+     "id": "pmc-13720758",
+     "type": "NAME",
+     "family": "name:surname-only",
+     "challenge": [
+      "narrative",
+      "surname-only"
+     ],
+     "value": "Iyer",
+     "status": "missed"
+    },
+    {
+     "id": "pmc-13720761",
+     "type": "DATE",
+     "family": "date:month-ordinal",
+     "challenge": [
+      "header",
+      "birth-date"
+     ],
+     "value": "26th September 1976",
+     "status": "missed"
+    },
+    {
+     "id": "pmc-13720761",
+     "type": "HEALTH_PLAN",
+     "family": "plan:alnum-dash",
+     "challenge": [
+      "header"
+     ],
+     "value": "T39-157-0524",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13720761",
+     "type": "NAME",
+     "family": "name:initials",
+     "challenge": [
+      "initials"
+     ],
+     "value": "B.J.",
+     "status": "missed"
+    }
+   ]
+  },
+  "dev": {
+   "plantedDocuments": 4,
+   "untouchedDocumentsInRun": 3,
+   "spans": 20,
+   "fullyRemoved": 20,
+   "partial": 0,
+   "missed": 0,
+   "recall": 1,
+   "recallInterval95": [
+    1,
+    1
+   ],
+   "documentsWithAnyIdentifierLeft": 0,
+   "byType": {
+    "MRN": {
+     "n": 3,
+     "full": 3,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "NAME": {
+     "n": 9,
+     "full": 9,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "HEALTH_PLAN": {
+     "n": 3,
+     "full": 3,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "DATE": {
+     "n": 2,
+     "full": 2,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "PHONE": {
+     "n": 1,
+     "full": 1,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "ADDRESS": {
+     "n": 2,
+     "full": 2,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    }
+   },
+   "byFamily": {
+    "mrn:alpha-prefix": {
+     "n": 2,
+     "full": 2,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "name:title-surname": {
+     "n": 5,
+     "full": 5,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "plan:alpha-digits": {
+     "n": 3,
+     "full": 3,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "date:numeric-slash": {
+     "n": 2,
+     "full": 2,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "mrn:digits": {
+     "n": 1,
+     "full": 1,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "phone:paren": {
+     "n": 1,
+     "full": 1,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "name:first-last": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "address:street-city": {
+     "n": 2,
+     "full": 2,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    }
+   },
+   "byChallenge": {
+    "header": {
+     "n": 10,
+     "full": 10,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "narrative": {
+     "n": 5,
+     "full": 5,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "surname-only": {
+     "n": 3,
+     "full": 3,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "birth-date": {
+     "n": 1,
+     "full": 1,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "possessive": {
+     "n": 1,
+     "full": 1,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "footer": {
+     "n": 4,
+     "full": 4,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "relative": {
+     "n": 1,
+     "full": 1,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    },
+    "line-break": {
+     "n": 1,
+     "full": 1,
+     "partial": 0,
+     "missed": 0,
+     "recall": 1
+    }
+   },
+   "spanResults": [
+    {
+     "id": "pmc-13720340",
+     "type": "MRN",
+     "family": "mrn:alpha-prefix",
+     "challenge": [
+      "header"
+     ],
+     "value": "UJ-906320",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13720340",
+     "type": "NAME",
+     "family": "name:title-surname",
+     "challenge": [
+      "narrative",
+      "surname-only"
+     ],
+     "value": "Albuquerque",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13719403",
+     "type": "HEALTH_PLAN",
+     "family": "plan:alpha-digits",
+     "challenge": [
+      "header"
+     ],
+     "value": "PUN 4154 9263",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13719403",
+     "type": "DATE",
+     "family": "date:numeric-slash",
+     "challenge": [
+      "header",
+      "birth-date"
+     ],
+     "value": "02/03/1990",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13719403",
+     "type": "MRN",
+     "family": "mrn:digits",
+     "challenge": [
+      "header"
+     ],
+     "value": "528972951",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13719403",
+     "type": "NAME",
+     "family": "name:title-surname",
+     "challenge": [
+      "narrative",
+      "surname-only"
+     ],
+     "value": "Hunter",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13719403",
+     "type": "NAME",
+     "family": "name:title-surname",
+     "challenge": [
+      "possessive",
+      "surname-only"
+     ],
+     "value": "Hunter",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13719403",
+     "type": "PHONE",
+     "family": "phone:paren",
+     "challenge": [
+      "footer"
+     ],
+     "value": "(231) 555-0163",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13719311",
+     "type": "HEALTH_PLAN",
+     "family": "plan:alpha-digits",
+     "challenge": [
+      "header"
+     ],
+     "value": "NKM 4531 4136",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13719311",
+     "type": "NAME",
+     "family": "name:title-surname",
+     "challenge": [
+      "header"
+     ],
+     "value": "Nwachukwu",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13719311",
+     "type": "DATE",
+     "family": "date:numeric-slash",
+     "challenge": [
+      "header"
+     ],
+     "value": "04/15/2026",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13719311",
+     "type": "NAME",
+     "family": "name:title-surname",
+     "challenge": [
+      "narrative"
+     ],
+     "value": "Nwachukwu",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13719311",
+     "type": "NAME",
+     "family": "name:first-last",
+     "challenge": [
+      "narrative"
+     ],
+     "value": "Clifford Nwachukwu",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13719311",
+     "type": "ADDRESS",
+     "family": "address:street-city",
+     "challenge": [
+      "footer"
+     ],
+     "value": "1443 Briarwood Avenue, Sedalia",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13721425",
+     "type": "MRN",
+     "family": "mrn:alpha-prefix",
+     "challenge": [
+      "header"
+     ],
+     "value": "UR-069488",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13721425",
+     "type": "NAME",
+     "family": "name:first-last",
+     "challenge": [
+      "header"
+     ],
+     "value": "Kavya Kostova",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13721425",
+     "type": "HEALTH_PLAN",
+     "family": "plan:alpha-digits",
+     "challenge": [
+      "header"
+     ],
+     "value": "TRY 9559 3979",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13721425",
+     "type": "NAME",
+     "family": "name:first-last",
+     "challenge": [
+      "narrative"
+     ],
+     "value": "Kavya Kostova",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13721425",
+     "type": "NAME",
+     "family": "name:first-last",
+     "challenge": [
+      "footer",
+      "relative",
+      "line-break"
+     ],
+     "value": "Chayton\nBeridze",
+     "status": "full"
+    },
+    {
+     "id": "pmc-13721425",
+     "type": "ADDRESS",
+     "family": "address:street-city",
+     "challenge": [
+      "footer"
+     ],
+     "value": "6381 Dunmore Trail, Bangor",
+     "status": "full"
+    }
+   ]
+  }
+ },
+ "untouched": {
+  "gate": {
+   "dev": {
+    "status": "draft, pending pharmacist review",
+    "documents": 7,
+    "keepTokens": 268,
+    "keepTokensRemoved": 0,
+    "overRedactionRate": 0,
+    "overRedactionInterval95": [
+     0,
+     0
+    ],
+    "extractionLabels": 35,
+    "extractedBefore": 35,
+    "extractedAfter": 35,
+    "extractionByType": {
+     "diagnosis": {
+      "labeled": 18,
+      "before": 18,
+      "after": 18
+     },
+     "route": {
+      "labeled": 3,
+      "before": 3,
+      "after": 3
+     },
+     "medication": {
+      "labeled": 6,
+      "before": 6,
+      "after": 6
+     },
+     "dose": {
+      "labeled": 6,
+      "before": 6,
+      "after": 6
+     },
+     "frequency": {
+      "labeled": 2,
+      "before": 2,
+      "after": 2
+     }
+    },
+    "unlabeledExtractionsBefore": 1,
+    "unlabeledExtractionsAfter": 1,
+    "sourceLeftInIdentifiers": {
+     "n": 2,
+     "fullyRemoved": 2,
+     "partial": 0,
+     "missed": 0
+    },
+    "removedKeepTokens": [],
+    "sourceLeftIn": [
+     {
+      "type": "DATE",
+      "value": "11 March 2026",
+      "status": "full",
+      "id": "pmc-13719627"
+     },
+     {
+      "type": "DATE",
+      "value": "September 30, 2020",
+      "status": "full",
+      "id": "pmc-13719403"
+     }
+    ]
+   },
+   "heldout": {
+    "status": "draft, pending pharmacist review",
+    "documents": 13,
+    "keepTokens": 402,
+    "keepTokensRemoved": 5,
+    "overRedactionRate": 0.012437810945273632,
+    "overRedactionInterval95": [
+     0.0027247956403269754,
+     0.02416918429003021
+    ],
+    "extractionLabels": 52,
+    "extractedBefore": 51,
+    "extractedAfter": 50,
+    "extractionByType": {
+     "medication": {
+      "labeled": 7,
+      "before": 7,
+      "after": 6
+     },
+     "dose": {
+      "labeled": 1,
+      "before": 1,
+      "after": 1
+     },
+     "route": {
+      "labeled": 4,
+      "before": 4,
+      "after": 4
+     },
+     "frequency": {
+      "labeled": 1,
+      "before": 1,
+      "after": 1
+     },
+     "diagnosis": {
+      "labeled": 39,
+      "before": 38,
+      "after": 38
+     }
+    },
+    "unlabeledExtractionsBefore": 4,
+    "unlabeledExtractionsAfter": 4,
+    "sourceLeftInIdentifiers": {
+     "n": 12,
+     "fullyRemoved": 1,
+     "partial": 4,
+     "missed": 7
+    },
+    "removedKeepTokens": [
+     {
+      "id": "pmc-13721315",
+      "token": "Han"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "Moroccan"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "Gold"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "Positron"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "Fluoro"
+     }
+    ],
+    "sourceLeftIn": [
+     {
+      "type": "DATE",
+      "value": "August 2022",
+      "status": "missed",
+      "id": "pmc-13721315"
+     },
+     {
+      "type": "DATE",
+      "value": "August 2022",
+      "status": "missed",
+      "id": "pmc-13721315"
+     },
+     {
+      "type": "DATE",
+      "value": "May 2022",
+      "status": "missed",
+      "id": "pmc-13721315"
+     },
+     {
+      "type": "DATE",
+      "value": "September 2022",
+      "status": "missed",
+      "id": "pmc-13721315"
+     },
+     {
+      "type": "DATE",
+      "value": "December 29, 2020",
+      "status": "full",
+      "id": "pmc-13721443"
+     },
+     {
+      "type": "DATE",
+      "value": "21st January 2026",
+      "status": "missed",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "4th March 2026",
+      "status": "missed",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "21 Jan 2026",
+      "status": "partial",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "23 Jan 2026",
+      "status": "partial",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "22 Feb 2026",
+      "status": "partial",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "4 Mar 2026",
+      "status": "partial",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "March 2026",
+      "status": "missed",
+      "id": "pmc-13720756"
+     }
+    ]
+   }
+  },
+  "doNothing": {
+   "dev": {
+    "status": "draft, pending pharmacist review",
+    "documents": 7,
+    "keepTokens": 268,
+    "keepTokensRemoved": 0,
+    "overRedactionRate": 0,
+    "overRedactionInterval95": [
+     0,
+     0
+    ],
+    "extractionLabels": 35,
+    "extractedBefore": 35,
+    "extractedAfter": 35,
+    "extractionByType": {
+     "diagnosis": {
+      "labeled": 18,
+      "before": 18,
+      "after": 18
+     },
+     "route": {
+      "labeled": 3,
+      "before": 3,
+      "after": 3
+     },
+     "medication": {
+      "labeled": 6,
+      "before": 6,
+      "after": 6
+     },
+     "dose": {
+      "labeled": 6,
+      "before": 6,
+      "after": 6
+     },
+     "frequency": {
+      "labeled": 2,
+      "before": 2,
+      "after": 2
+     }
+    },
+    "unlabeledExtractionsBefore": 1,
+    "unlabeledExtractionsAfter": 1,
+    "sourceLeftInIdentifiers": {
+     "n": 2,
+     "fullyRemoved": 0,
+     "partial": 0,
+     "missed": 2
+    },
+    "removedKeepTokens": [],
+    "sourceLeftIn": [
+     {
+      "type": "DATE",
+      "value": "11 March 2026",
+      "status": "missed",
+      "id": "pmc-13719627"
+     },
+     {
+      "type": "DATE",
+      "value": "September 30, 2020",
+      "status": "missed",
+      "id": "pmc-13719403"
+     }
+    ]
+   },
+   "heldout": {
+    "status": "draft, pending pharmacist review",
+    "documents": 13,
+    "keepTokens": 402,
+    "keepTokensRemoved": 0,
+    "overRedactionRate": 0,
+    "overRedactionInterval95": [
+     0,
+     0
+    ],
+    "extractionLabels": 52,
+    "extractedBefore": 51,
+    "extractedAfter": 51,
+    "extractionByType": {
+     "medication": {
+      "labeled": 7,
+      "before": 7,
+      "after": 7
+     },
+     "dose": {
+      "labeled": 1,
+      "before": 1,
+      "after": 1
+     },
+     "route": {
+      "labeled": 4,
+      "before": 4,
+      "after": 4
+     },
+     "frequency": {
+      "labeled": 1,
+      "before": 1,
+      "after": 1
+     },
+     "diagnosis": {
+      "labeled": 39,
+      "before": 38,
+      "after": 38
+     }
+    },
+    "unlabeledExtractionsBefore": 4,
+    "unlabeledExtractionsAfter": 4,
+    "sourceLeftInIdentifiers": {
+     "n": 12,
+     "fullyRemoved": 0,
+     "partial": 0,
+     "missed": 12
+    },
+    "removedKeepTokens": [],
+    "sourceLeftIn": [
+     {
+      "type": "DATE",
+      "value": "August 2022",
+      "status": "missed",
+      "id": "pmc-13721315"
+     },
+     {
+      "type": "DATE",
+      "value": "August 2022",
+      "status": "missed",
+      "id": "pmc-13721315"
+     },
+     {
+      "type": "DATE",
+      "value": "May 2022",
+      "status": "missed",
+      "id": "pmc-13721315"
+     },
+     {
+      "type": "DATE",
+      "value": "September 2022",
+      "status": "missed",
+      "id": "pmc-13721315"
+     },
+     {
+      "type": "DATE",
+      "value": "December 29, 2020",
+      "status": "missed",
+      "id": "pmc-13721443"
+     },
+     {
+      "type": "DATE",
+      "value": "21st January 2026",
+      "status": "missed",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "4th March 2026",
+      "status": "missed",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "21 Jan 2026",
+      "status": "missed",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "23 Jan 2026",
+      "status": "missed",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "22 Feb 2026",
+      "status": "missed",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "4 Mar 2026",
+      "status": "missed",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "March 2026",
+      "status": "missed",
+      "id": "pmc-13720756"
+     }
+    ]
+   }
+  },
+  "redactEverything": {
+   "dev": {
+    "status": "draft, pending pharmacist review",
+    "documents": 7,
+    "keepTokens": 268,
+    "keepTokensRemoved": 268,
+    "overRedactionRate": 1,
+    "overRedactionInterval95": [
+     1,
+     1
+    ],
+    "extractionLabels": 35,
+    "extractedBefore": 35,
+    "extractedAfter": 0,
+    "extractionByType": {
+     "diagnosis": {
+      "labeled": 18,
+      "before": 18,
+      "after": 0
+     },
+     "route": {
+      "labeled": 3,
+      "before": 3,
+      "after": 0
+     },
+     "medication": {
+      "labeled": 6,
+      "before": 6,
+      "after": 0
+     },
+     "dose": {
+      "labeled": 6,
+      "before": 6,
+      "after": 0
+     },
+     "frequency": {
+      "labeled": 2,
+      "before": 2,
+      "after": 0
+     }
+    },
+    "unlabeledExtractionsBefore": 1,
+    "unlabeledExtractionsAfter": 0,
+    "sourceLeftInIdentifiers": {
+     "n": 2,
+     "fullyRemoved": 2,
+     "partial": 0,
+     "missed": 0
+    },
+    "removedKeepTokens": [
+     {
+      "id": "pmc-13720331",
+      "token": "lateral"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "ST"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "segment"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "changes"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "elevated"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "troponin"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "T"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "HbA1c"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "5"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "7"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "LDL"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "C"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "142"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "mg"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "dL"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "refractory"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "angina"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "troponin"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "T"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "8160"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "ng"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "L"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "NSTEMI"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "acute"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "thrombotic"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "occlusion"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "left"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "PDA"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "hyperdominant"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "LCx"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "right"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "coronary"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "artery"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "RCA"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "left"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "anterior"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "descending"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "artery"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "LAD"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "50"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "stenosis"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "percutaneous"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "coronary"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "intervention"
+     },
+     {
+      "id": "pmc-13720331",
+      "token": "PCI"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "clinically"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "dehydrated"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "cognitive"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "slowing"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "impaired"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "orientation"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "dysarthria"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "119"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "88"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "mmHg"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "126"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "beats"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "min"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "19"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "breaths"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "min"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "93"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "on"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "room"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "air"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "185"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "cm"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "84"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "kg"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "24"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "5"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "kg"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "m2"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "non"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "pitting"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "edema"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "of"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "the"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "left"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "lower"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "extremity"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "muscle"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "strength"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "2"
+     },
+     {
+      "id": "pmc-13720340",
+      "token": "5"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "36"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "year"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "old"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "woman"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "low"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "grade"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "fever"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "severe"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "stabbing"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "headaches"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "marked"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "meningeal"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "signs"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "lymphocytic"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "pleocytosis"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "183"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "cells"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "µL"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "97"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "8"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "lymphocytes"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "83"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "3"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "mg"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "dL"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "Borrelia"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "burgdorferi"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "lymphocytic"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "meningitis"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "syndrome"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "intravenous"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "dexamethasone"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "Dexaven"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "8"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "mg"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "day"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "12"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "mg"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "day"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "8"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "mg"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "day"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "4"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "mg"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "day"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "130"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "cells"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "µL"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "46"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "1"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "mg"
+     },
+     {
+      "id": "pmc-13719627",
+      "token": "dL"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "visual"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "obscuration"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "in"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "her"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "left"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "eye"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "BCVA"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "remained"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "0"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "8"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "hand"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "motions"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "at"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "60"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "cm"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "187"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "104"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "mmHg"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "hypertensive"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "emergency"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "mild"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "vitreous"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "hemorrhage"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "subretinal"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "hemorrhage"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "intravitreal"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "anti"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "VEGF"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "therapy"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "oral"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "nifedipine"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "controlled"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "release"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "tablets"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "30"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "mg"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "twice"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "daily"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "metoprolol"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "succinate"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "sustained"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "release"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "tablets"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "47"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "5"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "mg"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "once"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "daily"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "strict"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "bed"
+     },
+     {
+      "id": "pmc-13719403",
+      "token": "rest"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "74"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "year"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "old"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "weakness"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "involving"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "both"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "upper"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "and"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "lower"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "limbs"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "exertional"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "chest"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "pain"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "fall"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "at"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "home"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "due"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "to"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "dizziness"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "anterolateral"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "ischemia"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "troponin"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "T"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "level"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "was"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "313"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "global"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "hypokinesia"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "of"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "the"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "left"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "ventricle"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "ejection"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "fraction"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "of"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "45"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "severe"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "triple"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "vessel"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "coronary"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "artery"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "disease"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "ACS"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "with"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "NSTEMI"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "heparin"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "5000"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "units"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "injection"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "a"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "diuretic"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "aspirin"
+     },
+     {
+      "id": "pmc-13719311",
+      "token": "tablet"
+     },
+     {
+      "id": "pmc-13721425",
+      "token": "Urine"
+     },
+     {
+      "id": "pmc-13721425",
+      "token": "toxicology"
+     },
+     {
+      "id": "pmc-13721425",
+      "token": "screening"
+     },
+     {
+      "id": "pmc-13721425",
+      "token": "benzoylecgonine"
+     },
+     {
+      "id": "pmc-13721425",
+      "token": "metabolite"
+     },
+     {
+      "id": "pmc-13721425",
+      "token": "of"
+     },
+     {
+      "id": "pmc-13721425",
+      "token": "cocaine"
+     },
+     {
+      "id": "pmc-13721425",
+      "token": "benzoylecgonine"
+     },
+     {
+      "id": "pmc-13721425",
+      "token": "metabolite"
+     },
+     {
+      "id": "pmc-13721425",
+      "token": "of"
+     },
+     {
+      "id": "pmc-13721425",
+      "token": "cocaine"
+     },
+     {
+      "id": "pmc-13721425",
+      "token": "cocaine"
+     },
+     {
+      "id": "pmc-13721425",
+      "token": "use"
+     },
+     {
+      "id": "pmc-13721425",
+      "token": "intermittent"
+     },
+     {
+      "id": "pmc-13721425",
+      "token": "recreational"
+     },
+     {
+      "id": "pmc-13721425",
+      "token": "use"
+     },
+     {
+      "id": "cms-ncd-22-2",
+      "token": "electric"
+     },
+     {
+      "id": "cms-ncd-22-2",
+      "token": "nerve"
+     },
+     {
+      "id": "cms-ncd-22-2",
+      "token": "stimulation"
+     },
+     {
+      "id": "cms-ncd-22-2",
+      "token": "chronic"
+     },
+     {
+      "id": "cms-ncd-22-2",
+      "token": "intractable"
+     },
+     {
+      "id": "cms-ncd-22-2",
+      "token": "pain"
+     },
+     {
+      "id": "cms-ncd-22-2",
+      "token": "motor"
+     },
+     {
+      "id": "cms-ncd-22-2",
+      "token": "function"
+     },
+     {
+      "id": "cms-ncd-22-2",
+      "token": "disorders"
+     },
+     {
+      "id": "cms-ncd-22-2",
+      "token": "multiple"
+     },
+     {
+      "id": "cms-ncd-22-2",
+      "token": "sclerosis"
+     }
+    ],
+    "sourceLeftIn": [
+     {
+      "type": "DATE",
+      "value": "11 March 2026",
+      "status": "full",
+      "id": "pmc-13719627"
+     },
+     {
+      "type": "DATE",
+      "value": "September 30, 2020",
+      "status": "full",
+      "id": "pmc-13719403"
+     }
+    ]
+   },
+   "heldout": {
+    "status": "draft, pending pharmacist review",
+    "documents": 13,
+    "keepTokens": 402,
+    "keepTokensRemoved": 402,
+    "overRedactionRate": 1,
+    "overRedactionInterval95": [
+     1,
+     1
+    ],
+    "extractionLabels": 52,
+    "extractedBefore": 51,
+    "extractedAfter": 0,
+    "extractionByType": {
+     "medication": {
+      "labeled": 7,
+      "before": 7,
+      "after": 0
+     },
+     "dose": {
+      "labeled": 1,
+      "before": 1,
+      "after": 0
+     },
+     "route": {
+      "labeled": 4,
+      "before": 4,
+      "after": 0
+     },
+     "frequency": {
+      "labeled": 1,
+      "before": 1,
+      "after": 0
+     },
+     "diagnosis": {
+      "labeled": 39,
+      "before": 38,
+      "after": 0
+     }
+    },
+    "unlabeledExtractionsBefore": 4,
+    "unlabeledExtractionsAfter": 0,
+    "sourceLeftInIdentifiers": {
+     "n": 12,
+     "fullyRemoved": 12,
+     "partial": 0,
+     "missed": 0
+    },
+    "removedKeepTokens": [
+     {
+      "id": "pmc-13721315",
+      "token": "44"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "year"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "old"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "Han"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "woman"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "performance"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "status"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "ECOG"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "PS"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "score"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "of"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "1"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "epithelioid"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "low"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "grade"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "spindle"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "cell"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "tumors"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "systemic"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "chemotherapy"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "with"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "IA"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "severe"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "myelosuppression"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "grade"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "4"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "leukopenia"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "grade"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "4"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "neutropenia"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "grade"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "2"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "anemia"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "disease"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "progression"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "anlotinib"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "12"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "mg"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "orally"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "once"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "daily"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "vaginal"
+     },
+     {
+      "id": "pmc-13721315",
+      "token": "hemorrhage"
+     },
+     {
+      "id": "pmc-13721448",
+      "token": "5"
+     },
+     {
+      "id": "pmc-13721448",
+      "token": "month"
+     },
+     {
+      "id": "pmc-13721448",
+      "token": "old"
+     },
+     {
+      "id": "pmc-13721448",
+      "token": "female"
+     },
+     {
+      "id": "pmc-13721448",
+      "token": "infant"
+     },
+     {
+      "id": "pmc-13721448",
+      "token": "right"
+     },
+     {
+      "id": "pmc-13721448",
+      "token": "eye"
+     },
+     {
+      "id": "pmc-13721448",
+      "token": "photophobia"
+     },
+     {
+      "id": "pmc-13721448",
+      "token": "and"
+     },
+     {
+      "id": "pmc-13721448",
+      "token": "epiphora"
+     },
+     {
+      "id": "pmc-13721448",
+      "token": "miosis"
+     },
+     {
+      "id": "pmc-13721448",
+      "token": "inferior"
+     },
+     {
+      "id": "pmc-13721448",
+      "token": "pupil"
+     },
+     {
+      "id": "pmc-13721448",
+      "token": "displacement"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "cough"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "and"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "wheezing"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "expectoration"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "and"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "diarrhea"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "yellow"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "green"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "watery"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "stool"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "fever"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "chest"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "pain"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "or"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "hemoptysis"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "36"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "4"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "135"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "beats"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "min"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "32"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "breaths"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "min"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "121"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "95"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "mmHg"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "acute"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "facies"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "three"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "depressions"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "sign"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "wheezes"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "and"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "fine"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "crackles"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "abdominal"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "distension"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "liver"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "palpable"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "6"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "cm"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "below"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "the"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "costal"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "margin"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "digital"
+     },
+     {
+      "id": "pmc-13721443",
+      "token": "clubbing"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "bowel"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "necrosis"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "or"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "perforation"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "endoscopic"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "reduction"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "volvulus"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "mucosal"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "ischemia"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "abdominal"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "pain"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "and"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "distension"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "parenteral"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "nutrition"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "oral"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "liquid"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "nutritional"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "formula"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "laparoscopic"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "ileocecal"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "resection"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "hospital"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "day"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "9"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "postoperative"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "day"
+     },
+     {
+      "id": "pmc-13722120",
+      "token": "14"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "comminuted"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "displaced"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "fracture"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "of"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "the"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "proximal"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "humerus"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "posterior"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "dislocation"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "of"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "a"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "large"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "osseous"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "fragment"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "4"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "cm"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "acute"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "posterior"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "fracture"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "dislocation"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "adequate"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "pain"
+     },
+     {
+      "id": "pmc-13722112",
+      "token": "control"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "7"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "weeks"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "of"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "gestation"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "folic"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "acid"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "and"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "iron"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "supplementation"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "12"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "weeks"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "acrania"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "complete"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "absence"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "of"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "cranial"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "ossification"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "exposed"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "brain"
+     },
+     {
+      "id": "pmc-13722088",
+      "token": "tissue"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "erythrocytosis"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "with"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "microcytosis"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "Hb"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "was"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "18"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "3"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "g"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "dL"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "Hct"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "55"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "RBC"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "count"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "7"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "19"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "106"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "μL"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "MCV"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "76"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "5"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "fL"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "18"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "9"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "g"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "dL"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "renal"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "cell"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "carcinoma"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "paraneoplastic"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "erythropoietin"
+     },
+     {
+      "id": "pmc-13720603",
+      "token": "levels"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "hemorrhage"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "spared"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "the"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "fovea"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "severe"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "anxiety"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "dense"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "inferior"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "visual"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "field"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "defect"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "third"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "trimester"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "of"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "pregnancy"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "scotoma"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "Nd"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "YAG"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "laser"
+     },
+     {
+      "id": "pmc-13720511",
+      "token": "hyaloidotomy"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "56"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "year"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "old"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "Moroccan"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "man"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "diffuse"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "abdominal"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "pain"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "mesogastric"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "region"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "constipation"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "subacute"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "intestinal"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "obstruction"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "afebrile"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "urinary"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "symptoms"
+     },
+     {
+      "id": "pmc-13720756",
+      "token": "vomiting"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "47"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "year"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "old"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "female"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "dental"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "extractions"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "left"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "facial"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "numbness"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "left"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "facial"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "numbness"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "dental"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "extractions"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "98"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "2"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "F"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "157"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "78"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "mmHg"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "78"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "bpm"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "18"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "breaths"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "minute"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "left"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "mandibular"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "swelling"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "gingival"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "swelling"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "V1"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "V2"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "region"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "hypodensities"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "in"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "the"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "right"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "parietal"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "and"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "occipital"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "lobes"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "11"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "18"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "mm"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "enhancing"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "lesion"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "vasogenic"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "edema"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "odontogenic"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "brain"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "abscesses"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "IV"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "vancomycin"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "ceftriaxone"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "and"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "metronidazole"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "QuantiFERON"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "TB"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "Gold"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "test"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "rapid"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "plasma"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "reagin"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "RPR"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "HIV"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "screen"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "cryptococcal"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "antigen"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "occult"
+     },
+     {
+      "id": "pmc-13720755",
+      "token": "malignancy"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "48"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "year"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "old"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "healthy"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "male"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "right"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "flank"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "pain"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "radiating"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "to"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "the"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "groin"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "slightly"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "hypotensive"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "epigastric"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "and"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "right"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "hypochondriac"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "tenderness"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "peritoneal"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "signs"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "white"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "blood"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "count"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "WBC"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "of"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "20"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "109"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "L"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "radiopaque"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "needlelike"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "structure"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "foreign"
+     },
+     {
+      "id": "pmc-13720758",
+      "token": "body"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "ERCP"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "open"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "surgery"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "bilio"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "cutaneous"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "fistula"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "omentoplasty"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "and"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "drainage"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "less"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "than"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "10"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "mL"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "per"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "day"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "foul"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "smelling"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "yellowish"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "green"
+     },
+     {
+      "id": "pmc-13720761",
+      "token": "fluid"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "Positron"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "emission"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "tomography"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "PET"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "noninvasive"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "diagnostic"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "imaging"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "procedure"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "metabolic"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "activity"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "and"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "perfusion"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "positron"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "camera"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "tomograph"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "cross"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "sectional"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "tomographic"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "images"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "positron"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "emitting"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "radioactive"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "tracer"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "substances"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "radiopharmaceuticals"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "2"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "F"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "18"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "Fluoro"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "D"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "Glucose"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "FDG"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "administered"
+     },
+     {
+      "id": "cms-ncd-211-3",
+      "token": "intravenously"
+     }
+    ],
+    "sourceLeftIn": [
+     {
+      "type": "DATE",
+      "value": "August 2022",
+      "status": "full",
+      "id": "pmc-13721315"
+     },
+     {
+      "type": "DATE",
+      "value": "August 2022",
+      "status": "full",
+      "id": "pmc-13721315"
+     },
+     {
+      "type": "DATE",
+      "value": "May 2022",
+      "status": "full",
+      "id": "pmc-13721315"
+     },
+     {
+      "type": "DATE",
+      "value": "September 2022",
+      "status": "full",
+      "id": "pmc-13721315"
+     },
+     {
+      "type": "DATE",
+      "value": "December 29, 2020",
+      "status": "full",
+      "id": "pmc-13721443"
+     },
+     {
+      "type": "DATE",
+      "value": "21st January 2026",
+      "status": "full",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "4th March 2026",
+      "status": "full",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "21 Jan 2026",
+      "status": "full",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "23 Jan 2026",
+      "status": "full",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "22 Feb 2026",
+      "status": "full",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "4 Mar 2026",
+      "status": "full",
+      "id": "pmc-13720603"
+     },
+     {
+      "type": "DATE",
+      "value": "March 2026",
+      "status": "full",
+      "id": "pmc-13720756"
+     }
+    ]
+   }
+  },
+  "status": "draft, pending pharmacist review"
+ },
+ "generatorCommit": "1a5592ec6c558bb69ae20d597322b96c68db1ea0",
+ "swap": {
+  "runs": [
+   {
+    "valueSeed": 60418233,
+    "heldoutRecall": 0.6578947368421053,
+    "heldoutFull": 25,
+    "heldoutSpans": 38,
+    "devRecall": 1,
+    "byType": {
+     "NAME": "10/20",
+     "DATE": "4/7",
+     "HEALTH_PLAN": "5/5",
+     "MRN": "2/2",
+     "EMAIL": "2/2",
+     "PHONE": "1/1",
+     "ADDRESS": "1/1"
+    }
+   },
+   {
+    "valueSeed": 60419233,
+    "heldoutRecall": 0.631578947368421,
+    "heldoutFull": 24,
+    "heldoutSpans": 38,
+    "devRecall": 1,
+    "byType": {
+     "NAME": "9/20",
+     "DATE": "4/7",
+     "HEALTH_PLAN": "5/5",
+     "MRN": "2/2",
+     "EMAIL": "2/2",
+     "PHONE": "1/1",
+     "ADDRESS": "1/1"
+    }
+   },
+   {
+    "valueSeed": 60420233,
+    "heldoutRecall": 0.6578947368421053,
+    "heldoutFull": 25,
+    "heldoutSpans": 38,
+    "devRecall": 1,
+    "byType": {
+     "NAME": "10/20",
+     "DATE": "4/7",
+     "HEALTH_PLAN": "5/5",
+     "MRN": "2/2",
+     "EMAIL": "2/2",
+     "PHONE": "1/1",
+     "ADDRESS": "1/1"
+    }
+   },
+   {
+    "valueSeed": 60421233,
+    "heldoutRecall": 0.631578947368421,
+    "heldoutFull": 24,
+    "heldoutSpans": 38,
+    "devRecall": 1,
+    "byType": {
+     "NAME": "9/20",
+     "DATE": "4/7",
+     "HEALTH_PLAN": "5/5",
+     "MRN": "2/2",
+     "EMAIL": "2/2",
+     "PHONE": "1/1",
+     "ADDRESS": "1/1"
+    }
+   },
+   {
+    "valueSeed": 60422233,
+    "heldoutRecall": 0.6578947368421053,
+    "heldoutFull": 25,
+    "heldoutSpans": 38,
+    "devRecall": 1,
+    "byType": {
+     "NAME": "10/20",
+     "DATE": "4/7",
+     "HEALTH_PLAN": "5/5",
+     "MRN": "2/2",
+     "EMAIL": "2/2",
+     "PHONE": "1/1",
+     "ADDRESS": "1/1"
+    }
+   }
+  ],
+  "keyHeldoutRecall": 0.6578947368421053,
+  "rule": "Every swap run must fall inside the 95 percent document bootstrap interval of the key run.",
+  "withinNoise": true
+ },
+ "metadataInvariance": {
+  "rule": "Same outputs after reversing order, fresh random IDs and a second call.",
+  "identical": true
+ },
+ "indistinguishability": {
+  "method": "Mask each planted edit as <ID>, take up to 60 characters each side on the same line, match with windows around random one or two word runs in untouched text, character 2 to 4 gram logistic regression, 5 folds grouped by document, 20 negative draws.",
+  "body": {
+   "plantedWindows": 21,
+   "untouchedWindowsPerDraw": 21,
+   "draws": 20,
+   "meanAccuracy": 0.5702380952380952,
+   "minAccuracy": 0.42857142857142855,
+   "maxAccuracy": 0.6904761904761905,
+   "pooledCorrect": 479,
+   "pooledN": 840,
+   "interval95": [
+    0.42092391918340455,
+    0.7077801400117368
+   ]
+  },
+  "header-footer": {
+   "plantedWindows": 21,
+   "untouchedWindowsPerDraw": 21,
+   "draws": 20,
+   "meanAccuracy": 0.819047619047619,
+   "minAccuracy": 0.7142857142857143,
+   "maxAccuracy": 0.8809523809523809,
+   "pooledCorrect": 688,
+   "pooledN": 840,
+   "interval95": [
+    0.6777030065884176,
+    0.9069188216200218
+   ]
+  },
+  "human": {
+   "status": "not yet done",
+   "sheet": "docs/blind-check.md"
+  }
+ },
+ "failures": {
+  "rule": "Severity order: missed planted identifier, partial leak, removed clinical keep token, source-left-in identifier not removed. Within a class, document id then position.",
+  "missedPlanted": [
+   {
+    "split": "heldout",
+    "id": "pmc-13720511",
+    "type": "NAME",
+    "family": "name:initials",
+    "challenge": [
+     "initials"
+    ],
+    "value": "P.H.",
+    "status": "missed"
+   },
+   {
+    "split": "heldout",
+    "id": "pmc-13720511",
+    "type": "NAME",
+    "family": "name:surname-only",
+    "challenge": [
+     "narrative",
+     "surname-only"
+    ],
+    "value": "Hrytsenko",
+    "status": "missed"
+   },
+   {
+    "split": "heldout",
+    "id": "pmc-13720755",
+    "type": "NAME",
+    "family": "name:initials",
+    "challenge": [
+     "initials"
+    ],
+    "value": "T.G.",
+    "status": "missed"
+   },
+   {
+    "split": "heldout",
+    "id": "pmc-13720756",
+    "type": "DATE",
+    "family": "date:month-ordinal",
+    "challenge": [
+     "header"
+    ],
+    "value": "17th April 2026",
+    "status": "missed"
+   },
+   {
+    "split": "heldout",
+    "id": "pmc-13720758",
+    "type": "NAME",
+    "family": "name:initials",
+    "challenge": [
+     "initials"
+    ],
+    "value": "D.I.",
+    "status": "missed"
+   },
+   {
+    "split": "heldout",
+    "id": "pmc-13720758",
+    "type": "NAME",
+    "family": "name:surname-only",
+    "challenge": [
+     "narrative",
+     "surname-only"
+    ],
+    "value": "Iyer",
+    "status": "missed"
+   },
+   {
+    "split": "heldout",
+    "id": "pmc-13720761",
+    "type": "DATE",
+    "family": "date:month-ordinal",
+    "challenge": [
+     "header",
+     "birth-date"
+    ],
+    "value": "26th September 1976",
+    "status": "missed"
+   },
+   {
+    "split": "heldout",
+    "id": "pmc-13720761",
+    "type": "NAME",
+    "family": "name:initials",
+    "challenge": [
+     "initials"
+    ],
+    "value": "B.J.",
+    "status": "missed"
+   },
+   {
+    "split": "heldout",
+    "id": "pmc-13721448",
+    "type": "NAME",
+    "family": "name:surname-only",
+    "challenge": [
+     "header"
+    ],
+    "value": "Nurlanovna",
+    "status": "missed"
+   },
+   {
+    "split": "heldout",
+    "id": "pmc-13721448",
+    "type": "NAME",
+    "family": "name:surname-only",
+    "challenge": [
+     "narrative",
+     "surname-only"
+    ],
+    "value": "Nurlanovna",
+    "status": "missed"
+   },
+   {
+    "split": "heldout",
+    "id": "pmc-13722088",
+    "type": "NAME",
+    "family": "name:surname-only",
+    "challenge": [
+     "narrative",
+     "surname-only"
+    ],
+    "value": "Calloway",
+    "status": "missed"
+   },
+   {
+    "split": "heldout",
+    "id": "pmc-13722112",
+    "type": "DATE",
+    "family": "date:month-ordinal",
+    "challenge": [
+     "header",
+     "birth-date"
+    ],
+    "value": "23rd April 1980",
+    "status": "missed"
+   },
+   {
+    "split": "heldout",
+    "id": "pmc-13722112",
+    "type": "NAME",
+    "family": "name:upper-last-comma-first",
+    "challenge": [
+     "footer",
+     "relative",
+     "line-break"
+    ],
+    "value": "COOK,\nMei",
+    "status": "missed"
+   }
+  ],
+  "overRedaction": [
+   {
+    "split": "heldout",
+    "id": "pmc-13721315",
+    "token": "Han",
+    "status": "draft, pending pharmacist review"
+   },
+   {
+    "split": "heldout",
+    "id": "pmc-13720756",
+    "token": "Moroccan",
+    "status": "draft, pending pharmacist review"
+   },
+   {
+    "split": "heldout",
+    "id": "pmc-13720755",
+    "token": "Gold",
+    "status": "draft, pending pharmacist review"
+   },
+   {
+    "split": "heldout",
+    "id": "cms-ncd-211-3",
+    "token": "Positron",
+    "status": "draft, pending pharmacist review"
+   },
+   {
+    "split": "heldout",
+    "id": "cms-ncd-211-3",
+    "token": "Fluoro",
+    "status": "draft, pending pharmacist review"
+   }
+  ],
+  "sourceLeftInKept": [
+   {
+    "split": "heldout",
+    "type": "DATE",
+    "value": "August 2022",
+    "status": "missed",
+    "id": "pmc-13721315"
+   },
+   {
+    "split": "heldout",
+    "type": "DATE",
+    "value": "August 2022",
+    "status": "missed",
+    "id": "pmc-13721315"
+   },
+   {
+    "split": "heldout",
+    "type": "DATE",
+    "value": "May 2022",
+    "status": "missed",
+    "id": "pmc-13721315"
+   },
+   {
+    "split": "heldout",
+    "type": "DATE",
+    "value": "September 2022",
+    "status": "missed",
+    "id": "pmc-13721315"
+   },
+   {
+    "split": "heldout",
+    "type": "DATE",
+    "value": "21st January 2026",
+    "status": "missed",
+    "id": "pmc-13720603"
+   },
+   {
+    "split": "heldout",
+    "type": "DATE",
+    "value": "4th March 2026",
+    "status": "missed",
+    "id": "pmc-13720603"
+   },
+   {
+    "split": "heldout",
+    "type": "DATE",
+    "value": "21 Jan 2026",
+    "status": "partial",
+    "id": "pmc-13720603"
+   },
+   {
+    "split": "heldout",
+    "type": "DATE",
+    "value": "23 Jan 2026",
+    "status": "partial",
+    "id": "pmc-13720603"
+   },
+   {
+    "split": "heldout",
+    "type": "DATE",
+    "value": "22 Feb 2026",
+    "status": "partial",
+    "id": "pmc-13720603"
+   },
+   {
+    "split": "heldout",
+    "type": "DATE",
+    "value": "4 Mar 2026",
+    "status": "partial",
+    "id": "pmc-13720603"
+   },
+   {
+    "split": "heldout",
+    "type": "DATE",
+    "value": "March 2026",
+    "status": "missed",
+    "id": "pmc-13720756"
+   }
+  ]
+ }
+}

@@ -1,0 +1,9 @@
+{
+  "url": "https://vaers.hhs.gov/eSubDownload/index.jsp?fn=1990VAERSData.zip",
+  "retrieved": "2026-11-01",
+  "httpStatus": 200,
+  "contentType": "text/html;charset=ISO-8859-1",
+  "zipReceived": false,
+  "captchaPresent": true,
+  "requiredAction": "An official downloaded VAERS CSV or ZIP must be supplied by local path after human verification."
+}

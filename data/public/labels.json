@@ -1,0 +1,1689 @@
+{
+ "status": "draft, pending pharmacist review",
+ "proposedBy": "AI coding assistant, not reviewed",
+ "reviewer": null,
+ "secondReviewer": "not done",
+ "reviewLog": [],
+ "documents": [
+  {
+   "id": "pmc-13720331",
+   "split": "dev",
+   "keep": [
+    {
+     "start": 98,
+     "end": 124,
+     "value": "lateral ST‐segment changes"
+    },
+    {
+     "start": 129,
+     "end": 148,
+     "value": "elevated troponin‐T"
+    },
+    {
+     "start": 284,
+     "end": 294,
+     "value": "HbA1c 5.7%"
+    },
+    {
+     "start": 299,
+     "end": 314,
+     "value": "LDL‐C 142 mg/dL"
+    },
+    {
+     "start": 402,
+     "end": 419,
+     "value": "refractory angina"
+    },
+    {
+     "start": 445,
+     "end": 467,
+     "value": "troponin T (8160 ng/L)"
+    },
+    {
+     "start": 524,
+     "end": 530,
+     "value": "NSTEMI"
+    },
+    {
+     "start": 673,
+     "end": 699,
+     "value": "acute thrombotic occlusion"
+    },
+    {
+     "start": 721,
+     "end": 729,
+     "value": "left PDA"
+    },
+    {
+     "start": 833,
+     "end": 850,
+     "value": "hyperdominant‐LCx"
+    },
+    {
+     "start": 977,
+     "end": 1004,
+     "value": "right coronary artery (RCA)"
+    },
+    {
+     "start": 1036,
+     "end": 1073,
+     "value": "left anterior descending artery (LAD)"
+    },
+    {
+     "start": 1119,
+     "end": 1132,
+     "value": "~50% stenosis"
+    },
+    {
+     "start": 1411,
+     "end": 1451,
+     "value": "percutaneous coronary intervention (PCI)"
+    }
+   ],
+   "realIdentifiers": [],
+   "extractions": [
+    {
+     "type": "diagnosis",
+     "value": "refractory angina",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "NSTEMI",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "acute thrombotic occlusion",
+     "negated": false
+    }
+   ]
+  },
+  {
+   "id": "pmc-13720340",
+   "split": "dev",
+   "keep": [
+    {
+     "start": 51,
+     "end": 72,
+     "value": "clinically dehydrated"
+    },
+    {
+     "start": 104,
+     "end": 121,
+     "value": "cognitive slowing"
+    },
+    {
+     "start": 123,
+     "end": 143,
+     "value": "impaired orientation"
+    },
+    {
+     "start": 149,
+     "end": 159,
+     "value": "dysarthria"
+    },
+    {
+     "start": 202,
+     "end": 213,
+     "value": "119/88 mmHg"
+    },
+    {
+     "start": 229,
+     "end": 242,
+     "value": "126 beats/min"
+    },
+    {
+     "start": 264,
+     "end": 278,
+     "value": "19 breaths/min"
+    },
+    {
+     "start": 305,
+     "end": 320,
+     "value": "93% on room air"
+    },
+    {
+     "start": 337,
+     "end": 343,
+     "value": "185 cm"
+    },
+    {
+     "start": 359,
+     "end": 364,
+     "value": "84 kg"
+    },
+    {
+     "start": 404,
+     "end": 414,
+     "value": "24.5 kg/m2"
+    },
+    {
+     "start": 450,
+     "end": 495,
+     "value": "non‐pitting edema of the left lower extremity"
+    },
+    {
+     "start": 509,
+     "end": 530,
+     "value": "muscle strength (2/5)"
+    }
+   ],
+   "realIdentifiers": [],
+   "extractions": [
+    {
+     "type": "diagnosis",
+     "value": "dysarthria",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "non‐pitting edema",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "cognitive slowing",
+     "negated": false
+    }
+   ]
+  },
+  {
+   "id": "pmc-13719627",
+   "split": "dev",
+   "keep": [
+    {
+     "start": 2,
+     "end": 19,
+     "value": "36-year-old woman"
+    },
+    {
+     "start": 54,
+     "end": 69,
+     "value": "low-grade fever"
+    },
+    {
+     "start": 74,
+     "end": 99,
+     "value": "severe stabbing headaches"
+    },
+    {
+     "start": 197,
+     "end": 219,
+     "value": "marked meningeal signs"
+    },
+    {
+     "start": 345,
+     "end": 402,
+     "value": "lymphocytic pleocytosis (183 cells/µL; 97.8% lymphocytes)"
+    },
+    {
+     "start": 439,
+     "end": 449,
+     "value": "83.3 mg/dL"
+    },
+    {
+     "start": 594,
+     "end": 614,
+     "value": "Borrelia burgdorferi"
+    },
+    {
+     "start": 739,
+     "end": 770,
+     "value": "lymphocytic meningitis syndrome"
+    },
+    {
+     "start": 785,
+     "end": 820,
+     "value": "intravenous dexamethasone (Dexaven)"
+    },
+    {
+     "start": 845,
+     "end": 853,
+     "value": "8 mg/day"
+    },
+    {
+     "start": 878,
+     "end": 887,
+     "value": "12 mg/day"
+    },
+    {
+     "start": 916,
+     "end": 924,
+     "value": "8 mg/day"
+    },
+    {
+     "start": 940,
+     "end": 948,
+     "value": "4 mg/day"
+    },
+    {
+     "start": 1080,
+     "end": 1092,
+     "value": "130 cells/µL"
+    },
+    {
+     "start": 1122,
+     "end": 1132,
+     "value": "46.1 mg/dL"
+    }
+   ],
+   "realIdentifiers": [
+    {
+     "start": 1208,
+     "end": 1221,
+     "value": "11 March 2026",
+     "type": "DATE"
+    }
+   ],
+   "extractions": [
+    {
+     "type": "diagnosis",
+     "value": "lymphocytic meningitis syndrome",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "Borrelia burgdorferi",
+     "negated": true
+    },
+    {
+     "type": "route",
+     "value": "intravenous",
+     "negated": false
+    },
+    {
+     "type": "medication",
+     "value": "dexamethasone",
+     "negated": false
+    },
+    {
+     "type": "medication",
+     "value": "Dexaven",
+     "negated": false
+    },
+    {
+     "type": "dose",
+     "value": "8 mg/day",
+     "negated": false
+    },
+    {
+     "type": "dose",
+     "value": "12 mg/day",
+     "negated": false
+    },
+    {
+     "type": "dose",
+     "value": "4 mg/day",
+     "negated": false
+    }
+   ]
+  },
+  {
+   "id": "pmc-13719403",
+   "split": "dev",
+   "keep": [
+    {
+     "start": 96,
+     "end": 130,
+     "value": "visual obscuration in her left eye"
+    },
+    {
+     "start": 181,
+     "end": 198,
+     "value": "BCVA remained 0.8"
+    },
+    {
+     "start": 240,
+     "end": 261,
+     "value": "hand motions at 60 cm"
+    },
+    {
+     "start": 324,
+     "end": 336,
+     "value": "187/104 mmHg"
+    },
+    {
+     "start": 381,
+     "end": 403,
+     "value": "hypertensive emergency"
+    },
+    {
+     "start": 525,
+     "end": 549,
+     "value": "mild vitreous hemorrhage"
+    },
+    {
+     "start": 571,
+     "end": 592,
+     "value": "subretinal hemorrhage"
+    },
+    {
+     "start": 789,
+     "end": 819,
+     "value": "intravitreal anti-VEGF therapy"
+    },
+    {
+     "start": 876,
+     "end": 938,
+     "value": "oral nifedipine controlled-release tablets (30 mg twice daily)"
+    },
+    {
+     "start": 943,
+     "end": 1010,
+     "value": "metoprolol succinate sustained-release tablets (47.5 mg once daily)"
+    },
+    {
+     "start": 1047,
+     "end": 1062,
+     "value": "strict bed rest"
+    }
+   ],
+   "realIdentifiers": [
+    {
+     "start": 24,
+     "end": 42,
+     "value": "September 30, 2020",
+     "type": "DATE"
+    }
+   ],
+   "extractions": [
+    {
+     "type": "diagnosis",
+     "value": "hypertensive emergency",
+     "negated": true
+    },
+    {
+     "type": "diagnosis",
+     "value": "headache",
+     "negated": true
+    },
+    {
+     "type": "diagnosis",
+     "value": "chest pain",
+     "negated": true
+    },
+    {
+     "type": "diagnosis",
+     "value": "vitreous hemorrhage",
+     "negated": false
+    },
+    {
+     "type": "route",
+     "value": "oral",
+     "negated": false
+    },
+    {
+     "type": "medication",
+     "value": "nifedipine",
+     "negated": false
+    },
+    {
+     "type": "dose",
+     "value": "30 mg",
+     "negated": false
+    },
+    {
+     "type": "frequency",
+     "value": "twice daily",
+     "negated": false
+    },
+    {
+     "type": "medication",
+     "value": "metoprolol succinate",
+     "negated": false
+    },
+    {
+     "type": "dose",
+     "value": "47.5 mg",
+     "negated": false
+    },
+    {
+     "type": "frequency",
+     "value": "once daily",
+     "negated": false
+    }
+   ]
+  },
+  {
+   "id": "pmc-13719311",
+   "split": "dev",
+   "keep": [
+    {
+     "start": 2,
+     "end": 13,
+     "value": "74-year-old"
+    },
+    {
+     "start": 85,
+     "end": 130,
+     "value": "weakness involving both upper and lower limbs"
+    },
+    {
+     "start": 147,
+     "end": 168,
+     "value": "exertional chest pain"
+    },
+    {
+     "start": 207,
+     "end": 236,
+     "value": "fall at home due to dizziness"
+    },
+    {
+     "start": 249,
+     "end": 271,
+     "value": "anterolateral ischemia"
+    },
+    {
+     "start": 281,
+     "end": 305,
+     "value": "troponin T level was 313"
+    },
+    {
+     "start": 331,
+     "end": 371,
+     "value": "global hypokinesia of the left ventricle"
+    },
+    {
+     "start": 420,
+     "end": 444,
+     "value": "ejection fraction of 45%"
+    },
+    {
+     "start": 480,
+     "end": 524,
+     "value": "severe triple-vessel coronary artery disease"
+    },
+    {
+     "start": 560,
+     "end": 575,
+     "value": "ACS with NSTEMI"
+    },
+    {
+     "start": 632,
+     "end": 662,
+     "value": "heparin 5000 units (injection)"
+    },
+    {
+     "start": 664,
+     "end": 674,
+     "value": "a diuretic"
+    },
+    {
+     "start": 680,
+     "end": 696,
+     "value": "aspirin (tablet)"
+    }
+   ],
+   "realIdentifiers": [],
+   "extractions": [
+    {
+     "type": "medication",
+     "value": "heparin",
+     "negated": false
+    },
+    {
+     "type": "dose",
+     "value": "5000 units",
+     "negated": false
+    },
+    {
+     "type": "route",
+     "value": "injection",
+     "negated": false
+    },
+    {
+     "type": "medication",
+     "value": "aspirin",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "anterolateral ischemia",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "triple-vessel coronary artery disease",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "NSTEMI",
+     "negated": false
+    }
+   ]
+  },
+  {
+   "id": "pmc-13721425",
+   "split": "dev",
+   "keep": [
+    {
+     "start": 0,
+     "end": 26,
+     "value": "Urine toxicology screening"
+    },
+    {
+     "start": 44,
+     "end": 59,
+     "value": "benzoylecgonine"
+    },
+    {
+     "start": 63,
+     "end": 84,
+     "value": "metabolite of cocaine"
+    },
+    {
+     "start": 90,
+     "end": 105,
+     "value": "benzoylecgonine"
+    },
+    {
+     "start": 149,
+     "end": 170,
+     "value": "metabolite of cocaine"
+    },
+    {
+     "start": 273,
+     "end": 284,
+     "value": "cocaine use"
+    },
+    {
+     "start": 308,
+     "end": 337,
+     "value": "intermittent recreational use"
+    }
+   ],
+   "realIdentifiers": [],
+   "extractions": [
+    {
+     "type": "diagnosis",
+     "value": "cocaine use",
+     "negated": false
+    }
+   ]
+  },
+  {
+   "id": "pmc-13721315",
+   "split": "heldout",
+   "keep": [
+    {
+     "start": 2,
+     "end": 23,
+     "value": "44-year-old Han woman"
+    },
+    {
+     "start": 67,
+     "end": 106,
+     "value": "performance status (ECOG PS) score of 1"
+    },
+    {
+     "start": 204,
+     "end": 245,
+     "value": "epithelioid low-grade spindle cell tumors"
+    },
+    {
+     "start": 260,
+     "end": 289,
+     "value": "systemic chemotherapy with IA"
+    },
+    {
+     "start": 375,
+     "end": 398,
+     "value": "severe myelosuppression"
+    },
+    {
+     "start": 400,
+     "end": 418,
+     "value": "grade 4 leukopenia"
+    },
+    {
+     "start": 420,
+     "end": 439,
+     "value": "grade 4 neutropenia"
+    },
+    {
+     "start": 441,
+     "end": 455,
+     "value": "grade 2 anemia"
+    },
+    {
+     "start": 521,
+     "end": 540,
+     "value": "disease progression"
+    },
+    {
+     "start": 568,
+     "end": 603,
+     "value": "anlotinib (12 mg orally once daily)"
+    },
+    {
+     "start": 646,
+     "end": 664,
+     "value": "vaginal hemorrhage"
+    }
+   ],
+   "realIdentifiers": [
+    {
+     "start": 139,
+     "end": 150,
+     "value": "August 2022",
+     "type": "DATE"
+    },
+    {
+     "start": 499,
+     "end": 510,
+     "value": "August 2022",
+     "type": "DATE"
+    },
+    {
+     "start": 313,
+     "end": 321,
+     "value": "May 2022",
+     "type": "DATE"
+    },
+    {
+     "start": 610,
+     "end": 624,
+     "value": "September 2022",
+     "type": "DATE"
+    }
+   ],
+   "extractions": [
+    {
+     "type": "medication",
+     "value": "anlotinib",
+     "negated": false
+    },
+    {
+     "type": "dose",
+     "value": "12 mg",
+     "negated": false
+    },
+    {
+     "type": "route",
+     "value": "orally",
+     "negated": false
+    },
+    {
+     "type": "frequency",
+     "value": "once daily",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "myelosuppression",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "leukopenia",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "neutropenia",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "anemia",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "vaginal hemorrhage",
+     "negated": false
+    }
+   ]
+  },
+  {
+   "id": "pmc-13721448",
+   "split": "heldout",
+   "keep": [
+    {
+     "start": 2,
+     "end": 27,
+     "value": "5-month-old female infant"
+    },
+    {
+     "start": 43,
+     "end": 77,
+     "value": "right eye photophobia and epiphora"
+    },
+    {
+     "start": 143,
+     "end": 149,
+     "value": "miosis"
+    },
+    {
+     "start": 154,
+     "end": 181,
+     "value": "inferior pupil displacement"
+    }
+   ],
+   "realIdentifiers": [],
+   "extractions": [
+    {
+     "type": "diagnosis",
+     "value": "photophobia",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "epiphora",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "miosis",
+     "negated": false
+    }
+   ]
+  },
+  {
+   "id": "pmc-13721443",
+   "split": "heldout",
+   "keep": [
+    {
+     "start": 86,
+     "end": 104,
+     "value": "cough and wheezing"
+    },
+    {
+     "start": 148,
+     "end": 174,
+     "value": "expectoration and diarrhea"
+    },
+    {
+     "start": 201,
+     "end": 226,
+     "value": "yellow-green watery stool"
+    },
+    {
+     "start": 245,
+     "end": 276,
+     "value": "fever, chest pain or hemoptysis"
+    },
+    {
+     "start": 330,
+     "end": 335,
+     "value": "36.4℃"
+    },
+    {
+     "start": 343,
+     "end": 356,
+     "value": "135 beats/min"
+    },
+    {
+     "start": 375,
+     "end": 389,
+     "value": "32 breaths/min"
+    },
+    {
+     "start": 406,
+     "end": 417,
+     "value": "121/95 mmHg"
+    },
+    {
+     "start": 419,
+     "end": 431,
+     "value": "acute facies"
+    },
+    {
+     "start": 475,
+     "end": 497,
+     "value": "three-depressions sign"
+    },
+    {
+     "start": 544,
+     "end": 569,
+     "value": "wheezes and fine crackles"
+    },
+    {
+     "start": 571,
+     "end": 591,
+     "value": "abdominal distension"
+    },
+    {
+     "start": 593,
+     "end": 636,
+     "value": "liver palpable 6 cm below the costal margin"
+    },
+    {
+     "start": 660,
+     "end": 676,
+     "value": "digital clubbing"
+    }
+   ],
+   "realIdentifiers": [
+    {
+     "start": 45,
+     "end": 62,
+     "value": "December 29, 2020",
+     "type": "DATE"
+    }
+   ],
+   "extractions": [
+    {
+     "type": "diagnosis",
+     "value": "cough",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "wheezing",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "diarrhea",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "fever",
+     "negated": true
+    },
+    {
+     "type": "diagnosis",
+     "value": "chest pain",
+     "negated": true
+    },
+    {
+     "type": "diagnosis",
+     "value": "hemoptysis",
+     "negated": true
+    },
+    {
+     "type": "diagnosis",
+     "value": "digital clubbing",
+     "negated": false
+    }
+   ]
+  },
+  {
+   "id": "pmc-13722120",
+   "split": "heldout",
+   "keep": [
+    {
+     "start": 8,
+     "end": 37,
+     "value": "bowel necrosis or perforation"
+    },
+    {
+     "start": 63,
+     "end": 83,
+     "value": "endoscopic reduction"
+    },
+    {
+     "start": 103,
+     "end": 111,
+     "value": "volvulus"
+    },
+    {
+     "start": 162,
+     "end": 178,
+     "value": "mucosal ischemia"
+    },
+    {
+     "start": 197,
+     "end": 226,
+     "value": "abdominal pain and distension"
+    },
+    {
+     "start": 294,
+     "end": 314,
+     "value": "parenteral nutrition"
+    },
+    {
+     "start": 322,
+     "end": 353,
+     "value": "oral liquid nutritional formula"
+    },
+    {
+     "start": 364,
+     "end": 396,
+     "value": "laparoscopic ileocecal resection"
+    },
+    {
+     "start": 414,
+     "end": 428,
+     "value": "hospital day 9"
+    },
+    {
+     "start": 464,
+     "end": 484,
+     "value": "postoperative day 14"
+    }
+   ],
+   "realIdentifiers": [],
+   "extractions": [
+    {
+     "type": "diagnosis",
+     "value": "volvulus",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "mucosal ischemia",
+     "negated": true
+    },
+    {
+     "type": "route",
+     "value": "oral",
+     "negated": false
+    }
+   ]
+  },
+  {
+   "id": "pmc-13722112",
+   "split": "heldout",
+   "keep": [
+    {
+     "start": 26,
+     "end": 79,
+     "value": "comminuted displaced fracture of the proximal humerus"
+    },
+    {
+     "start": 96,
+     "end": 145,
+     "value": "posterior dislocation of a large osseous fragment"
+    },
+    {
+     "start": 156,
+     "end": 161,
+     "value": "~4 cm"
+    },
+    {
+     "start": 182,
+     "end": 218,
+     "value": "acute posterior fracture-dislocation"
+    },
+    {
+     "start": 297,
+     "end": 318,
+     "value": "adequate pain control"
+    }
+   ],
+   "realIdentifiers": [],
+   "extractions": [
+    {
+     "type": "diagnosis",
+     "value": "comminuted displaced fracture of the proximal humerus",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "posterior fracture-dislocation",
+     "negated": false
+    }
+   ]
+  },
+  {
+   "id": "pmc-13722088",
+   "split": "heldout",
+   "keep": [
+    {
+     "start": 49,
+     "end": 69,
+     "value": "7 weeks of gestation"
+    },
+    {
+     "start": 87,
+     "end": 122,
+     "value": "folic acid and iron supplementation"
+    },
+    {
+     "start": 127,
+     "end": 135,
+     "value": "12 weeks"
+    },
+    {
+     "start": 204,
+     "end": 211,
+     "value": "acrania"
+    },
+    {
+     "start": 230,
+     "end": 270,
+     "value": "complete absence of cranial ossification"
+    },
+    {
+     "start": 275,
+     "end": 295,
+     "value": "exposed brain tissue"
+    }
+   ],
+   "realIdentifiers": [],
+   "extractions": [
+    {
+     "type": "medication",
+     "value": "folic acid",
+     "negated": false
+    },
+    {
+     "type": "medication",
+     "value": "iron",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "acrania",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "degeneration",
+     "negated": true
+    }
+   ]
+  },
+  {
+   "id": "pmc-13720603",
+   "split": "heldout",
+   "keep": [
+    {
+     "start": 58,
+     "end": 90,
+     "value": "erythrocytosis with microcytosis"
+    },
+    {
+     "start": 114,
+     "end": 130,
+     "value": "Hb was 18.3 g/dL"
+    },
+    {
+     "start": 132,
+     "end": 139,
+     "value": "Hct 55%"
+    },
+    {
+     "start": 141,
+     "end": 164,
+     "value": "RBC count 7.19 × 106/μL"
+    },
+    {
+     "start": 166,
+     "end": 177,
+     "value": "MCV 76.5 fL"
+    },
+    {
+     "start": 243,
+     "end": 252,
+     "value": "18.9 g/dL"
+    },
+    {
+     "start": 293,
+     "end": 313,
+     "value": "renal cell carcinoma"
+    },
+    {
+     "start": 363,
+     "end": 377,
+     "value": "paraneoplastic"
+    },
+    {
+     "start": 387,
+     "end": 408,
+     "value": "erythropoietin levels"
+    }
+   ],
+   "realIdentifiers": [
+    {
+     "start": 95,
+     "end": 112,
+     "value": "21st January 2026",
+     "type": "DATE"
+    },
+    {
+     "start": 256,
+     "end": 270,
+     "value": "4th March 2026",
+     "type": "DATE"
+    },
+    {
+     "start": 541,
+     "end": 552,
+     "value": "21 Jan 2026",
+     "type": "DATE"
+    },
+    {
+     "start": 552,
+     "end": 563,
+     "value": "23 Jan 2026",
+     "type": "DATE"
+    },
+    {
+     "start": 563,
+     "end": 574,
+     "value": "22 Feb 2026",
+     "type": "DATE"
+    },
+    {
+     "start": 574,
+     "end": 584,
+     "value": "4 Mar 2026",
+     "type": "DATE"
+    }
+   ],
+   "extractions": [
+    {
+     "type": "diagnosis",
+     "value": "erythrocytosis",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "microcytosis",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "renal cell carcinoma",
+     "negated": false
+    }
+   ]
+  },
+  {
+   "id": "pmc-13720511",
+   "split": "heldout",
+   "keep": [
+    {
+     "start": 13,
+     "end": 40,
+     "value": "hemorrhage spared the fovea"
+    },
+    {
+     "start": 118,
+     "end": 132,
+     "value": "severe anxiety"
+    },
+    {
+     "start": 147,
+     "end": 181,
+     "value": "dense inferior visual field defect"
+    },
+    {
+     "start": 196,
+     "end": 224,
+     "value": "third trimester of pregnancy"
+    },
+    {
+     "start": 239,
+     "end": 246,
+     "value": "scotoma"
+    },
+    {
+     "start": 475,
+     "end": 500,
+     "value": "Nd:YAG laser hyaloidotomy"
+    }
+   ],
+   "realIdentifiers": [],
+   "extractions": [
+    {
+     "type": "diagnosis",
+     "value": "severe anxiety",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "scotoma",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "inferior visual field defect",
+     "negated": false
+    }
+   ]
+  },
+  {
+   "id": "pmc-13720756",
+   "split": "heldout",
+   "keep": [
+    {
+     "start": 17,
+     "end": 41,
+     "value": "56‐year‐old Moroccan man"
+    },
+    {
+     "start": 145,
+     "end": 167,
+     "value": "diffuse abdominal pain"
+    },
+    {
+     "start": 200,
+     "end": 218,
+     "value": "mesogastric region"
+    },
+    {
+     "start": 236,
+     "end": 248,
+     "value": "constipation"
+    },
+    {
+     "start": 285,
+     "end": 316,
+     "value": "subacute intestinal obstruction"
+    },
+    {
+     "start": 334,
+     "end": 342,
+     "value": "afebrile"
+    },
+    {
+     "start": 354,
+     "end": 370,
+     "value": "urinary symptoms"
+    },
+    {
+     "start": 452,
+     "end": 460,
+     "value": "vomiting"
+    }
+   ],
+   "realIdentifiers": [
+    {
+     "start": 3,
+     "end": 13,
+     "value": "March 2026",
+     "type": "DATE"
+    }
+   ],
+   "extractions": [
+    {
+     "type": "diagnosis",
+     "value": "subacute intestinal obstruction",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "constipation",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "urinary symptoms",
+     "negated": true
+    },
+    {
+     "type": "diagnosis",
+     "value": "vomiting",
+     "negated": true
+    }
+   ]
+  },
+  {
+   "id": "pmc-13720755",
+   "split": "heldout",
+   "keep": [
+    {
+     "start": 2,
+     "end": 20,
+     "value": "47‐year‐old female"
+    },
+    {
+     "start": 46,
+     "end": 64,
+     "value": "dental extractions"
+    },
+    {
+     "start": 117,
+     "end": 137,
+     "value": "left facial numbness"
+    },
+    {
+     "start": 184,
+     "end": 204,
+     "value": "left facial numbness"
+    },
+    {
+     "start": 218,
+     "end": 236,
+     "value": "dental extractions"
+    },
+    {
+     "start": 289,
+     "end": 295,
+     "value": "98.2°F"
+    },
+    {
+     "start": 315,
+     "end": 326,
+     "value": "157/78 mmHg"
+    },
+    {
+     "start": 342,
+     "end": 348,
+     "value": "78 bpm"
+    },
+    {
+     "start": 374,
+     "end": 391,
+     "value": "18 breaths/minute"
+    },
+    {
+     "start": 487,
+     "end": 511,
+     "value": "left mandibular swelling"
+    },
+    {
+     "start": 560,
+     "end": 577,
+     "value": "gingival swelling"
+    },
+    {
+     "start": 665,
+     "end": 677,
+     "value": "V1‐V2 region"
+    },
+    {
+     "start": 746,
+     "end": 801,
+     "value": "hypodensities in the right parietal and occipital lobes"
+    },
+    {
+     "start": 884,
+     "end": 911,
+     "value": "11 × 18 mm enhancing lesion"
+    },
+    {
+     "start": 986,
+     "end": 1001,
+     "value": "vasogenic edema"
+    },
+    {
+     "start": 1241,
+     "end": 1268,
+     "value": "odontogenic brain abscesses"
+    },
+    {
+     "start": 1368,
+     "end": 1413,
+     "value": "IV vancomycin, ceftriaxone, and metronidazole"
+    },
+    {
+     "start": 1486,
+     "end": 1510,
+     "value": "QuantiFERON‐TB Gold test"
+    },
+    {
+     "start": 1524,
+     "end": 1549,
+     "value": "rapid plasma reagin (RPR)"
+    },
+    {
+     "start": 1551,
+     "end": 1561,
+     "value": "HIV screen"
+    },
+    {
+     "start": 1567,
+     "end": 1587,
+     "value": "cryptococcal antigen"
+    },
+    {
+     "start": 1645,
+     "end": 1662,
+     "value": "occult malignancy"
+    }
+   ],
+   "realIdentifiers": [],
+   "extractions": [
+    {
+     "type": "route",
+     "value": "IV",
+     "negated": false
+    },
+    {
+     "type": "medication",
+     "value": "vancomycin",
+     "negated": false
+    },
+    {
+     "type": "medication",
+     "value": "ceftriaxone",
+     "negated": false
+    },
+    {
+     "type": "medication",
+     "value": "metronidazole",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "odontogenic brain abscesses",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "vasogenic edema",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "occult malignancy",
+     "negated": true
+    },
+    {
+     "type": "diagnosis",
+     "value": "acute distress",
+     "negated": true
+    }
+   ]
+  },
+  {
+   "id": "pmc-13720758",
+   "split": "heldout",
+   "keep": [
+    {
+     "start": 2,
+     "end": 26,
+     "value": "48‐year‐old healthy male"
+    },
+    {
+     "start": 108,
+     "end": 147,
+     "value": "right flank pain radiating to the groin"
+    },
+    {
+     "start": 165,
+     "end": 185,
+     "value": "slightly hypotensive"
+    },
+    {
+     "start": 231,
+     "end": 276,
+     "value": "epigastric and right hypochondriac tenderness"
+    },
+    {
+     "start": 289,
+     "end": 305,
+     "value": "peritoneal signs"
+    },
+    {
+     "start": 329,
+     "end": 366,
+     "value": "white blood count (WBC) of 20 × 109/L"
+    },
+    {
+     "start": 457,
+     "end": 488,
+     "value": "radiopaque needlelike structure"
+    },
+    {
+     "start": 565,
+     "end": 577,
+     "value": "foreign body"
+    }
+   ],
+   "realIdentifiers": [],
+   "extractions": [
+    {
+     "type": "diagnosis",
+     "value": "right flank pain",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "peritoneal signs",
+     "negated": true
+    },
+    {
+     "type": "diagnosis",
+     "value": "foreign body",
+     "negated": false
+    }
+   ]
+  },
+  {
+   "id": "pmc-13720761",
+   "split": "heldout",
+   "keep": [
+    {
+     "start": 0,
+     "end": 4,
+     "value": "ERCP"
+    },
+    {
+     "start": 117,
+     "end": 129,
+     "value": "open surgery"
+    },
+    {
+     "start": 144,
+     "end": 167,
+     "value": "bilio‐cutaneous fistula"
+    },
+    {
+     "start": 231,
+     "end": 256,
+     "value": "omentoplasty and drainage"
+    },
+    {
+     "start": 299,
+     "end": 322,
+     "value": "less than 10 mL per day"
+    },
+    {
+     "start": 389,
+     "end": 425,
+     "value": "foul‐smelling, yellowish–green fluid"
+    }
+   ],
+   "realIdentifiers": [],
+   "extractions": [
+    {
+     "type": "diagnosis",
+     "value": "bilio‐cutaneous fistula",
+     "negated": false
+    }
+   ]
+  },
+  {
+   "id": "cms-ncd-211-3",
+   "split": "heldout",
+   "keep": [
+    {
+     "start": 23,
+     "end": 57,
+     "value": "Positron emission tomography (PET)"
+    },
+    {
+     "start": 63,
+     "end": 103,
+     "value": "noninvasive diagnostic imaging procedure"
+    },
+    {
+     "start": 131,
+     "end": 163,
+     "value": "metabolic activity and perfusion"
+    },
+    {
+     "start": 212,
+     "end": 239,
+     "value": "positron camera (tomograph)"
+    },
+    {
+     "start": 259,
+     "end": 293,
+     "value": "cross-sectional tomographic images"
+    },
+    {
+     "start": 319,
+     "end": 366,
+     "value": "positron emitting radioactive tracer substances"
+    },
+    {
+     "start": 368,
+     "end": 388,
+     "value": "radiopharmaceuticals"
+    },
+    {
+     "start": 398,
+     "end": 429,
+     "value": "2-[F-18] Fluoro-D-Glucose (FDG)"
+    },
+    {
+     "start": 440,
+     "end": 466,
+     "value": "administered intravenously"
+    }
+   ],
+   "realIdentifiers": [],
+   "extractions": [
+    {
+     "type": "medication",
+     "value": "Fluoro-D-Glucose",
+     "negated": false
+    },
+    {
+     "type": "route",
+     "value": "intravenously",
+     "negated": false
+    }
+   ]
+  },
+  {
+   "id": "cms-ncd-22-2",
+   "split": "dev",
+   "keep": [
+    {
+     "start": 6,
+     "end": 32,
+     "value": "electric nerve stimulation"
+    },
+    {
+     "start": 62,
+     "end": 86,
+     "value": "chronic intractable pain"
+    },
+    {
+     "start": 130,
+     "end": 154,
+     "value": "motor function disorders"
+    },
+    {
+     "start": 164,
+     "end": 182,
+     "value": "multiple sclerosis"
+    }
+   ],
+   "realIdentifiers": [],
+   "extractions": [
+    {
+     "type": "diagnosis",
+     "value": "chronic intractable pain",
+     "negated": false
+    },
+    {
+     "type": "diagnosis",
+     "value": "multiple sclerosis",
+     "negated": false
+    }
+   ]
+  }
+ ]
+}
