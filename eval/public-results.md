@@ -1,6 +1,6 @@
 # Real-text evaluation results
 
-Fixed public benchmark. The generator, seed and answer key are public, so this is not a blind test. Gate commit `63ac3ab`, generator `a30e6ac`, answer key `a30e6ac`, labels `a30e6ac`. Seed 60417233. Produced by `node eval/public-run.js`, offline. Three separate panels. There is no pooled score.
+Fixed public benchmark. The generator, seed and answer key are public, so this is not a blind test. Gate commit `63ac3ab`, generator `1a5592e`, answer key `1a5592e`, labels `a30e6ac`. Seed 60417233. Produced by `node eval/public-run.js`, offline. Three separate panels. There is no pooled score.
 
 ## Panel A. Synthetic held-out notes
 
@@ -98,7 +98,7 @@ Metadata invariance: identical outputs after reversing order with fresh random I
 | Windows | Planted windows | Held-out accuracy, mean of 20 draws | Range | 95% interval |
 |---|---|---|---|---|
 | body | 21 | 57.0% | 42.9% to 69.0% | 42.1% to 70.8% |
-| header-footer | 21 | 81.1% | 71.4% to 88.1% | 66.8% to 90.1% |
+| header-footer | 21 | 81.9% | 71.4% to 88.1% | 67.8% to 90.7% |
 
 Near 50% means the masked context gives the edit away no better than chance. Header and footer lines only exist in planted documents, so they are a structural trace by construction. The human blind check is not yet done.
 

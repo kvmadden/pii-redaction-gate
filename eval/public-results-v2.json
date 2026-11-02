@@ -3,8 +3,8 @@
  "benchmark": "Fixed public benchmark. The generator, seed and answer key are public, so this is not a blind test.",
  "provenance": {
   "gateCommit": "1d38fbaa10e998ee603931ab310ace9c17bfbd37",
-  "generatorCommit": "a30e6ac2be3b2ea30061263e6dc6a139744c05e4",
-  "answerKeyCommit": "a30e6ac2be3b2ea30061263e6dc6a139744c05e4",
+  "generatorCommit": "1a5592ec6c558bb69ae20d597322b96c68db1ea0",
+  "answerKeyCommit": "1a5592ec6c558bb69ae20d597322b96c68db1ea0",
   "labelsCommit": "a30e6ac2be3b2ea30061263e6dc6a139744c05e4",
   "seed": 60417233,
   "frozenNote": "Version 2 gate rules were changed using the dev split only and committed before the held-out split was scored. The held-out split was then scored once with this version. Any later gate change is a regression check, not a new result.",
@@ -1122,7 +1122,7 @@
       "challenge": [
        "footer"
       ],
-      "value": "zshort83@kazenzen.us",
+      "value": "zshort83@example.org",
       "status": "full"
      },
      {
@@ -1163,7 +1163,7 @@
       "challenge": [
        "footer"
       ],
-      "value": "rngata94@quizen.com",
+      "value": "rngata94@example.com",
       "status": "full"
      },
      {
@@ -2119,7 +2119,7 @@
       "challenge": [
        "footer"
       ],
-      "value": "zshort83@kazenzen.us",
+      "value": "zshort83@example.org",
       "status": "missed"
      },
      {
@@ -2160,7 +2160,7 @@
       "challenge": [
        "footer"
       ],
-      "value": "rngata94@quizen.com",
+      "value": "rngata94@example.com",
       "status": "missed"
      },
      {
@@ -3116,7 +3116,7 @@
       "challenge": [
        "footer"
       ],
-      "value": "zshort83@kazenzen.us",
+      "value": "zshort83@example.org",
       "status": "full"
      },
      {
@@ -3157,7 +3157,7 @@
       "challenge": [
        "footer"
       ],
-      "value": "rngata94@quizen.com",
+      "value": "rngata94@example.com",
       "status": "full"
      },
      {
@@ -3730,7 +3730,7 @@
      "challenge": [
       "footer"
      ],
-     "value": "zshort83@kazenzen.us",
+     "value": "zshort83@example.org",
      "status": "full"
     },
     {
@@ -3771,7 +3771,7 @@
      "challenge": [
       "footer"
      ],
-     "value": "rngata94@quizen.com",
+     "value": "rngata94@example.com",
      "status": "full"
     },
     {
@@ -7677,7 +7677,7 @@
   },
   "status": "draft, pending pharmacist review"
  },
- "generatorCommit": "a30e6ac2be3b2ea30061263e6dc6a139744c05e4",
+ "generatorCommit": "1a5592ec6c558bb69ae20d597322b96c68db1ea0",
  "swap": {
   "runs": [
    {
@@ -7789,14 +7789,14 @@
    "plantedWindows": 21,
    "untouchedWindowsPerDraw": 21,
    "draws": 20,
-   "meanAccuracy": 0.8107142857142857,
+   "meanAccuracy": 0.819047619047619,
    "minAccuracy": 0.7142857142857143,
    "maxAccuracy": 0.8809523809523809,
-   "pooledCorrect": 681,
+   "pooledCorrect": 688,
    "pooledN": 840,
    "interval95": [
-    0.6683234055971836,
-    0.9010284494864085
+    0.6777030065884176,
+    0.9069188216200218
    ]
   },
   "human": {
