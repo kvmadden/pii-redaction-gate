@@ -117,8 +117,10 @@ test('inspector exposes source attribution, original link and visible planted ma
  assert.match(code, /planted/)
 })
 
-test('version 1 public results stay frozen as first committed', () => {
- for (const path of ['eval/public-results.json', 'eval/public-results.md']) assert.equal(read(path), execFileSync('git', ['show', `4313491:${path}`], {cwd: root, encoding: 'utf8'}), `${path} was rewritten`)
+// Version 1 was first committed in 4313491. It was rescored once, in 4bd9f3e, after the planted
+// email addresses moved to reserved example domains, with the version 1 gate unchanged.
+test('version 1 public results stay frozen after the one reserved-domain rescoring', () => {
+ for (const path of ['eval/public-results.json', 'eval/public-results.md']) assert.equal(read(path), execFileSync('git', ['show', `4bd9f3e:${path}`], {cwd: root, encoding: 'utf8'}), `${path} was rewritten`)
 })
 
 test('offline public evaluation reproduces committed results without modifying frozen synthetic files', () => {

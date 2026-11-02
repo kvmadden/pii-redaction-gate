@@ -17,5 +17,5 @@ Earlier acquisition logs for this branch were replaced by this summary. They rem
 ## Checks
 
 - `npm test`: 137 tests, 136 pass, 0 fail, 1 todo (the inspector data-source switch, not built yet).
-- `node eval/public-run.js --check` reproduces the version 2 results, `eval/public-results-v2.json` and `eval/public-results-v2.md`, byte for byte, offline. The version 1 files `eval/public-results.json` and `eval/public-results.md` are frozen, and a test checks they still match commit `4313491`.
+- `node eval/public-run.js --check` reproduces the version 2 results, `eval/public-results-v2.json` and `eval/public-results-v2.md`, byte for byte, offline. The version 1 files `eval/public-results.json` and `eval/public-results.md` are frozen, and a test checks they still match commit `4bd9f3e`, where they were rescored once on the amended key. They were first committed in `4313491`.
 - `node eval/public-plant.js --write` reproduces `data/public/planted.json` byte for byte.
