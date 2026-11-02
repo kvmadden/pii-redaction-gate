@@ -104,7 +104,7 @@ Each panel is its own number. There is no pooled score.
 
 | Check | What it does | Result |
 |---|---|---|
-| Frozen before scoring | Generator, seed 60417233, answer key and draft labels committed in `a30e6ac` before any Set B or C score existed. Results record the gate, generator, key and label commits | Version 1 gate `63ac3ab` unchanged before scoring. Version 2 gate `1d38fba` committed before its one held-out run |
+| Frozen before scoring | Generator, seed 60417233, answer key and draft labels committed in `a30e6ac` before any Set B or C score existed. In `1a5592e` the two planted email addresses were moved to reserved example domains, with every other planted value unchanged, and both versions were rescored on that key with no gate change. Results record the gate, generator, key and label commits | Version 1 gate `63ac3ab` unchanged before scoring. Version 2 gate `1d38fba` committed before its one held-out run |
 | Fixed public benchmark | The generator and key are public, so this is not a blind test | Stated in results |
 | One serializer | Every document, planted or not, goes through the same final step (NFC, LF, collapsed spaces, one trailing newline) | Tested |
 | Edits only where recorded | Undoing each recorded edit gives back the original byte for byte. Untouched documents are byte identical | Tested |
@@ -114,7 +114,7 @@ Each panel is its own number. There is no pooled score.
 | Swap test | Five reruns with every planted value redrawn, same structure | Version 1: held out 18 to 20 of 38. Version 2: 24 to 25 of 38. All inside each key run's interval |
 | Metadata invariance | Shuffled order, fresh random IDs, scrambled spans, splits and labels | Identical outputs |
 | Controls | Do-nothing gate and redact-everything gate on identical inputs | Do-nothing removes 0 identifiers. Redact-everything removes every clinical token and every extracted fact |
-| Indistinguishability, automatic | Mask each edit, character n-gram logistic regression against matched untouched windows, folds grouped by document, 20 draws | Narrative edits 57.0% (draws 42.9% to 69.0%). Header and footer lines 81.1% |
+| Indistinguishability, automatic | Mask each edit, character n-gram logistic regression against matched untouched windows, folds grouped by document, 20 draws | Narrative edits 57.0% (draws 42.9% to 69.0%). Header and footer lines 81.9% |
 | Indistinguishability, human | 20 blind sentences in [docs/blind-check.md](docs/blind-check.md) | Not yet done |
 
 The automatic check passes for narrative edits but not for header and footer lines. Published case reports have no chart header, so those lines exist only in planted documents and a classifier spots them. The rule-based gate reads each document on its own and has no way to compare it with an untouched version, but this is still a real weakness of the planting and is reported here rather than fixed after seeing scores. Any planting change now would make a new benchmark version.

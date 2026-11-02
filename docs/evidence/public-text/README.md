@@ -12,6 +12,7 @@ Earlier acquisition logs for this branch were replaced by this summary. They rem
 
 1. `a30e6ac` committed the Set B generator (`eval/public-plant.js`), its seed, the answer key (`data/public/planted.json`) and the draft Set C labels (`data/public/labels.json`). No score existed at that point.
 2. The scoring code and results were committed after that. The gate in `src/` is unchanged from `63ac3ab` on main.
+3. `1a5592e` moved the two planted email addresses to reserved example domains (example.com, example.net, example.org) so no planted address can belong to a real mailbox. Every other planted value is unchanged. Both versions were then rescored on the amended key with no gate change. Every recall, precision and control count stayed the same. The header and footer indistinguishability accuracy moved from 81.1% to 81.9%.
 
 ## Checks
 
