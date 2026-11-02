@@ -4,11 +4,11 @@ Node v24.14.1, macOS arm64. No application dependencies were added. This is the 
 
 ## Routing and scope
 
-Worktree belongs to `<repo>`. Fetched origin before building and before publication. Untouched main is `91c4e16`. The open upgrade PR is #1 at `c51bb57`. This branch fast-forwards from that upgrade because it already supplies the canonical static demo. The PR targets main under the global dispatcher rule and names #1 as a dependency.
+Worktree belongs to `<repo>`. Fetched origin before building and before publication. Untouched main is `91c4e16`. The open upgrade PR is #1 at `c51bb57`. This branch fast-forwards from that upgrade because it already supplies the canonical static demo. The PR targets main and names #1 as a dependency.
 
-Checked open and recent PRs, source trees and function and synonym searches for demo, inspector, showcase and redaction. Checked available state, briefs and run directories. The existing upgrade owns detector improvements and the basic demo. No separate inspector implementation or PR was found. State evidence dated October 31 distinguishes the upgrade job from this showcase job. No work ledger rows were edited.
+Checked open and recent PRs, source trees and function and synonym searches for demo, inspector, showcase and redaction. The existing upgrade owns detector improvements and the basic demo. No separate inspector implementation or PR was found.
 
-No repository or ancestor AGENTS.md, CLAUDE.md, CANONICAL.md or FACTS.md files were found in this standalone clone. The user-supplied AGENTS instructions apply. Existing screens and the light green ink, paper and accent tokens in demo.css were read before editing. The new UI extends those tokens, with corresponding dark-theme tokens.
+No repository or ancestor AGENTS.md, CLAUDE.md, CANONICAL.md or FACTS.md files were found in this standalone clone. Existing screens and the light green ink, paper and accent tokens in demo.css were read before editing. The new UI extends those tokens, with corresponding dark-theme tokens.
 
 ## RED and GREEN
 
@@ -40,7 +40,7 @@ The four clinical phrase highlights are a finite display vocabulary and indicate
 
 ## Evidence home and cleanup
 
-Resolved `/Volumes/HubData/evidence` from current umbrella origin/main at `tools/hosts/hosts.registry.json`, host `m1-max-hub`, `storage.paths.evidence.path`. Evidence and media are copied to `/Volumes/HubData/evidence/pii-redaction-gate-showcase-ui`. The registry itself was not modified.
+Evidence and media are also copied to a local evidence home outside the repository.
 
 The GIF tool used a disposable virtual environment with Pillow and four temporary PNG frames. Both are removed after export. The local development server is stopped after capture. No paid API, deployment, merge or service reload was performed.
 

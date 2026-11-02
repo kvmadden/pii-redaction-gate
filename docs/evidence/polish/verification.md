@@ -4,9 +4,9 @@ Base: origin/main `63ac3abc48094e86f6883f99c1586b45bf6ebd3f`. Candidate branch: 
 
 ## Pickup and scope
 
-The assigned worktree is registered to the canonical clone under `/Users/kevin/dev/repos/pii-redaction-gate`, starts at fetched origin/main and was clean. No applicable repository or ancestor guidance files were found. User-supplied AGENTS instructions apply. Kai-specific instructions do not apply to this builder.
+The worktree starts at fetched origin/main and was clean. No applicable repository or ancestor guidance files were found.
 
-Fetched origin/main and repeated `git ls-tree -r --name-only origin/main` and `git grep -n -i -E 'review|precision|recall|fax|discharge|refill' origin/main -- docs eval test`. Inspected existing inspector, CSS tokens, canonical evaluation, tests and build script. Searched umbrella origin/main source, archives and parked paths with `git ls-tree` and `git grep` for inspector and reviewer synonyms. Read relevant state and briefs, queued and started jobs, and recent run evidence. Existing upgrade and showcase work is already on main. The only started polish job is this assigned job. `gh pr list --state open --json number,title,headRefName,url` returned an empty list at pickup and again before publication. No ledger row was edited. No duplicate implementation owner was found.
+Fetched origin/main and repeated `git ls-tree -r --name-only origin/main` and `git grep -n -i -E 'review|precision|recall|fax|discharge|refill' origin/main -- docs eval test`. Inspected existing inspector, CSS tokens, canonical evaluation, tests and build script. Existing upgrade and showcase work is already on main. `gh pr list --state open --json number,title,headRefName,url` returned an empty list at pickup and again before publication. No duplicate implementation owner was found.
 
 ## RED to GREEN
 
@@ -19,7 +19,7 @@ Fetched origin/main and repeated `git ls-tree -r --name-only origin/main` and `g
 | `node scripts/build-demo.js` | 0 | Runtime modules and comparison JSON generated from canonical sources |
 | `npm test` candidate | 0 | 113 passed, candidate-full.txt |
 | `python3 docs/evidence/polish/check-isolated.py` | 0 | Main 109 passed, candidate overlay 113 passed |
-| `FRAME_DIR=/tmp/pii-polish-frames PLAYWRIGHT_MODULE=/Users/kevin/dev/repos/ascent-alert-origin-build/node_modules/playwright node scripts/check-demo.cjs` | 0 | UI assertions and media, browser.txt and ui.json |
+| `FRAME_DIR=/tmp/pii-polish-frames PLAYWRIGHT_MODULE=<path-to-playwright> node scripts/check-demo.cjs` | 0 | UI assertions and media, browser.txt and ui.json |
 | `git diff --check` | 0 | No whitespace errors |
 
 The isolation script uses a fresh `git clone --no-local` under `/tmp`, outside the estate, pinned to untouched main. The candidate is overlaid onto that clone. Both runs use identical Node, no installed repository dependencies and unchanged synthetic evaluation fixtures, with MFW_UMBRELLA_ROOT and OPERATOR_ECOSYSTEM_ROOT unset. TemporaryDirectory removes the clone on success or failure. No baseline failures or final candidate-only failures. Trailing whitespace in two RED log lines was removed after the staged comparison caught it. Assertion evidence is unchanged. No detector, send-guard or fail-closed changes.
@@ -40,4 +40,4 @@ Recaptured exact viewport images, full inspector views, dark and blocked states 
 
 See assessment.md for the 15-row self-assessment, 10.5/15 before and 14.5/15 after. The remaining half point is unmeasured workflow value. No clinical outcomes, real-world accuracy, OCR coverage, deployment, compliance or authenticated review are claimed. Younger ages are intentionally kept. Existing lowercase-name and held-out IP misses remain.
 
-Evidence home was resolved read-only from umbrella origin/main `tools/hosts/hosts.registry.json`, host `m1-max-hub`, `storage.paths.evidence.path` as `/Volumes/HubData/evidence`. Evidence and media are retained under `/Volumes/HubData/evidence/pii-redaction-gate-polish`. Registry unchanged. Scratch clone, GIF frames, registry scratch JSON and media environment removed after export. Local demo server stopped after capture. No deployment, service reload, paid API, force push or merge.
+Evidence and media are also retained in a local evidence home outside the repository. Scratch clone, GIF frames and media environment removed after export. Local demo server stopped after capture. No deployment, service reload, paid API, force push or merge.

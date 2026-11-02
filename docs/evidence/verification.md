@@ -1,6 +1,6 @@
 # Verification record
 
-Node v24.14.1, macOS arm64. No package dependencies or install step. Baseline `91c4e16`, fetched from origin/main before work and rechecked before publication. No open PRs were present on either check. Source, archive, parked and state/brief searches found no separate implementation of this upgrade. No ledger rows changed.
+Node v24.14.1, macOS arm64. No package dependencies or install step. Baseline `91c4e16`, fetched from origin/main before work and rechecked before publication. No open PRs were present on either check. Source and archive searches found no separate implementation of this upgrade.
 
 ## RED then GREEN
 
@@ -46,4 +46,4 @@ A fresh `git clone --no-local` under the system temporary directory ran `npm tes
 
 Captured test logs have trailing whitespace removed for a clean patch. The assertions, counts and exit outcomes are unchanged. `git diff origin/main --check` exits 0 after that normalization.
 
-Evidence is committed here for PR inspection and copied to `/Volumes/HubData/evidence/pii-redaction-gate-upgrade`. This host's available orchestrator runtime uses `/Volumes/HubData/evidence` as its evidence-volume fallback. No current registry resolver for this standalone repository was found, so this path is recorded explicitly rather than presented as a verified registry resolution.
+Evidence is committed here for PR inspection. A copy is also kept in a local evidence directory outside the repository.
