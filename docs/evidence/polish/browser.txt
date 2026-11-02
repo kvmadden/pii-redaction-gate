@@ -1,4 +1,4 @@
-Command: FRAME_DIR=/tmp/pii-polish-frames PLAYWRIGHT_MODULE=/Users/kevin/dev/repos/ascent-alert-origin-build/node_modules/playwright node scripts/check-demo.cjs
+Command: FRAME_DIR=/tmp/pii-polish-frames PLAYWRIGHT_MODULE=<path-to-playwright> node scripts/check-demo.cjs
 Exit: 0
 Viewport results: ui.json
 Additional assertions: evaluation load failure is visible, storage write failure reports not saved.

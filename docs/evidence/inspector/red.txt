@@ -20,7 +20,7 @@ test at test/inspector.test.js:5:1
   + undefined
   - false
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-showcase-ui/test/inspector.test.js:8:9)
+      at TestContext.<anonymous> (file://<repo>/test/inspector.test.js:8:9)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.start (node:internal/test_runner/test:1015:17)
@@ -41,7 +41,7 @@ test at test/inspector.test.js:15:1
   + undefined
   - true
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-showcase-ui/test/inspector.test.js:17:9)
+      at TestContext.<anonymous> (file://<repo>/test/inspector.test.js:17:9)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
@@ -62,7 +62,7 @@ test at test/inspector.test.js:25:1
 
   undefined !== ''
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-showcase-ui/test/inspector.test.js:26:9)
+      at TestContext.<anonymous> (file://<repo>/test/inspector.test.js:26:9)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:787:18)

@@ -116,7 +116,7 @@ test at test/clinical.test.js:18:4
 
     assert.ok(!redact(text).includes(value))
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at TestContext.<anonymous> (file://<repo>/test/clinical.test.js:18:48)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.start (node:internal/test_runner/test:1015:17)
@@ -135,7 +135,7 @@ test at test/clinical.test.js:18:4
 
     assert.ok(!redact(text).includes(value))
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at TestContext.<anonymous> (file://<repo>/test/clinical.test.js:18:48)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
@@ -156,7 +156,7 @@ test at test/clinical.test.js:18:4
 
     assert.ok(!redact(text).includes(value))
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at TestContext.<anonymous> (file://<repo>/test/clinical.test.js:18:48)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
@@ -177,7 +177,7 @@ test at test/clinical.test.js:18:4
 
     assert.ok(!redact(text).includes(value))
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at TestContext.<anonymous> (file://<repo>/test/clinical.test.js:18:48)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
@@ -198,7 +198,7 @@ test at test/clinical.test.js:18:4
 
     assert.ok(!redact(text).includes(value))
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at TestContext.<anonymous> (file://<repo>/test/clinical.test.js:18:48)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
@@ -219,7 +219,7 @@ test at test/clinical.test.js:18:4
 
     assert.ok(!redact(text).includes(value))
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at TestContext.<anonymous> (file://<repo>/test/clinical.test.js:18:48)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
@@ -240,7 +240,7 @@ test at test/clinical.test.js:18:4
 
     assert.ok(!redact(text).includes(value))
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at TestContext.<anonymous> (file://<repo>/test/clinical.test.js:18:48)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
@@ -261,7 +261,7 @@ test at test/clinical.test.js:18:4
 
     assert.ok(!redact(text).includes(value))
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at TestContext.<anonymous> (file://<repo>/test/clinical.test.js:18:48)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
@@ -282,7 +282,7 @@ test at test/clinical.test.js:18:4
 
     assert.ok(!redact(text).includes(value))
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at TestContext.<anonymous> (file://<repo>/test/clinical.test.js:18:48)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
@@ -303,7 +303,7 @@ test at test/clinical.test.js:18:4
 
     assert.ok(!redact(text).includes(value))
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at TestContext.<anonymous> (file://<repo>/test/clinical.test.js:18:48)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
@@ -324,7 +324,7 @@ test at test/clinical.test.js:18:4
 
     assert.ok(!redact(text).includes(value))
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:18:48)
+      at TestContext.<anonymous> (file://<repo>/test/clinical.test.js:18:48)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
@@ -347,7 +347,7 @@ test at test/clinical.test.js:19:180
   + '[name] 0.5 mg weekly.'
   - 'Continue Ozempic 0.5 mg weekly.'
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:19:215)
+      at TestContext.<anonymous> (file://<repo>/test/clinical.test.js:19:215)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
@@ -370,7 +370,7 @@ test at test/clinical.test.js:19:180
   + '[name]: Crohn disease.'
   - 'Chief Complaint: Crohn disease.'
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:19:215)
+      at TestContext.<anonymous> (file://<repo>/test/clinical.test.js:19:215)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
@@ -393,7 +393,7 @@ test at test/clinical.test.js:19:180
   + '[name] 5 mg BID.'
   - 'Continue Eliquis 5 mg BID.'
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-upgrade/test/clinical.test.js:19:215)
+      at TestContext.<anonymous> (file://<repo>/test/clinical.test.js:19:215)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:787:18)

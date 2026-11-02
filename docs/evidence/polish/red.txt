@@ -15,7 +15,7 @@
 test at test/workspace.test.js:6:1
 ✖ three clinical document fixtures preserve provenance and clinical context (0.472542ms)
   TypeError: Cannot read properties of undefined (reading 'includes')
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-polish/test/workspace.test.js:8:33)
+      at TestContext.<anonymous> (file://<repo>/test/workspace.test.js:8:33)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.start (node:internal/test_runner/test:1015:17)
@@ -24,7 +24,7 @@ test at test/workspace.test.js:6:1
 test at test/workspace.test.js:12:1
 ✖ metrics retain gold type recall and explicit grouped precision from canonical evaluation (0.095042ms)
   TypeError: Cannot read properties of undefined (reading 'recall')
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-polish/test/workspace.test.js:15:19)
+      at TestContext.<anonymous> (file://<repo>/test/workspace.test.js:15:19)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
@@ -40,7 +40,7 @@ test at test/workspace.test.js:20:1
   + undefined
   - 'flagged'
 
-      at TestContext.<anonymous> (file:///Volumes/HubData/work/worktrees/pii-redaction-gate-polish/test/workspace.test.js:25:9)
+      at TestContext.<anonymous> (file://<repo>/test/workspace.test.js:25:9)
       at Test.runInAsyncScope (node:async_hooks:228:14)
       at Test.run (node:internal/test_runner/test:1118:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
