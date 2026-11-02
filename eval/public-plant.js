@@ -72,7 +72,8 @@ export const CITIES = ['Kettering', 'Chillicothe', 'Wapakoneta', 'Zanesville', '
 export const STREETS = ['Larkspur', 'Wexford', 'Tamarack', 'Juniper Hollow', 'Cobblestone', 'Fieldcrest', 'Old Mill', 'Sumac', 'Briarwood', 'Quarry', 'Hawthorn', 'Kingfisher', 'Sassafras', 'Chestnut Ridge', 'Foxglove', 'Pinecone', 'Meadowlark', 'Bluestem', 'Wren', 'Saddlebrook', 'Tanager', 'Cottonwood', 'Stillwater', 'Indigo', 'Harrowgate', 'Thistle', 'Copperfield', 'Glenhaven', 'Ridgecrest', 'Marigold', 'Alder', 'Bramble', 'Clover Hill', 'Dunmore', 'Elderberry', 'Fernwood', 'Gristmill', 'Heron', 'Ironwood', 'Jasper', 'Kestrel', 'Linden', 'Mulberry', 'Northgate', 'Orchard View', 'Primrose', 'Quail Run', 'Rosemont', 'Sycamore', 'Timberline', 'Upland', 'Vinewood', 'Willowbend', 'Yarrow', 'Zephyr', 'Amberly', 'Brookstone', 'Cedar Bluff', 'Driftwood', 'Evergreen Knoll']
 const STREET_KINDS = ['Way', 'Court', 'Lane', 'Drive', 'Road', 'Avenue', 'Street', 'Place', 'Circle', 'Trail']
 const SYLLABLES = ['vel', 'tra', 'no', 'mar', 'qui', 'zen', 'lo', 'pa', 'ri', 'sto', 'ka', 'fen', 'dor', 'wy', 'bel', 'cas', 'ti', 'ro', 'mun', 'har', 'vi', 'lux', 'ne', 'sa']
-const TLDS = ['com', 'net', 'org', 'us', 'co']
+// Planted email addresses use only these reserved domains (RFC 2606), so none can belong to a real mailbox.
+const EMAIL_DOMAINS = ['example.com', 'example.net', 'example.org']
 const AREA_CODES = [216, 234, 330, 380, 419, 440, 513, 567, 614, 740, 937, 260, 317, 463, 574, 765, 812, 930, 231, 248, 269, 313, 517, 586, 616, 734, 810, 906, 947, 989, 262, 414, 534, 608, 715, 920, 319, 515, 563, 641, 712, 218, 320, 507, 612, 651, 763, 952, 314, 417, 573, 636, 660, 816, 316, 620, 785, 913, 405, 539, 580, 918]
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 const MONTH_ABBR = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -209,7 +210,14 @@ function makeValues(doc, split, valueSeed, avoid) {
   },
   email(person, family) {
    const ascii = s => s.normalize('NFD').replace(/[^A-Za-z]/g, '').toLowerCase()
-   const domain = v() < 0.15 ? 'example.com' : `${Array.from({ length: v.int(2, 3) }, () => v.pick(SYLLABLES)).join('')}.${v.pick(TLDS)}`
+   // The domain used to be made up from syllables and could match a real one. It is now always a
+   // reserved domain. The value stream still takes the draws the made-up domain took, so every
+   // other planted value in the key stays exactly as it was.
+   let domain = 'example.com'
+   if (v() >= 0.15) {
+    for (let labels = v.int(2, 3); labels > 0; labels--) v.pick(SYLLABLES)
+    domain = v.pick(EMAIL_DOMAINS)
+   }
    if (family === 'email:first.last') return `${ascii(person.given)}.${ascii(person.surname)}@${domain}`
    return `${ascii(person.given)[0]}${ascii(person.surname)}${v.int(10, 99)}@${domain}`
   },

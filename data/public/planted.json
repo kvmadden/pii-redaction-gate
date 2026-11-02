@@ -528,7 +528,7 @@
    "id": "pmc-13721443",
    "split": "heldout",
    "planted": true,
-   "text": "Subscriber ID: H66-680-3905 / Hospital no. 9638-8601-1 / Report date: January 14th, 2021\nPresent Illness and Physical Examination: On December 29, 2020, Zeynep L. Short developed cough and wheezing without obvious inducement, accompanied by expectoration and diarrhea (more than 10 episodes of yellow-green watery stool per day), without fever, chest pain or hemoptysis. Physical examination on admission: body temperature 36.4℃, pulse 135 beats/min, respiratory rate 32 breaths/min, blood pressure 121/95 mmHg; acute facies, clear consciousness, positive inspiratory three-depressions sign; coarse bilateral breath sounds with numerous wheezes and fine crackles; abdominal distension, liver palpable 6 cm below the costal margin with soft consistency; digital clubbing of extremities, no other abnormal findings.\nEmail on file: zshort83@kazenzen.us\n",
+   "text": "Subscriber ID: H66-680-3905 / Hospital no. 9638-8601-1 / Report date: January 14th, 2021\nPresent Illness and Physical Examination: On December 29, 2020, Zeynep L. Short developed cough and wheezing without obvious inducement, accompanied by expectoration and diarrhea (more than 10 episodes of yellow-green watery stool per day), without fever, chest pain or hemoptysis. Physical examination on admission: body temperature 36.4℃, pulse 135 beats/min, respiratory rate 32 breaths/min, blood pressure 121/95 mmHg; acute facies, clear consciousness, positive inspiratory three-depressions sign; coarse bilateral breath sounds with numerous wheezes and fine crackles; abdominal distension, liver palpable 6 cm below the costal margin with soft consistency; digital clubbing of extremities, no other abnormal findings.\nEmail on file: zshort83@example.org\n",
    "edits": [
     {
      "start": 0,
@@ -604,7 +604,7 @@
     {
      "start": 829,
      "end": 849,
-     "value": "zshort83@kazenzen.us",
+     "value": "zshort83@example.org",
      "type": "EMAIL",
      "family": "email:initial-digits",
      "split": "heldout",
@@ -627,7 +627,7 @@
    "id": "pmc-13722112",
    "split": "heldout",
    "planted": true,
-   "text": "Subscriber ID: W36-356-9377 · D.O.B. 23rd April 1980 · Patient: Ngata\nCT imaging demonstrated a comminuted displaced fracture of the proximal humerus associated with posterior dislocation of a large osseous fragment measuring ~4 cm, consistent with an acute posterior fracture-dislocation (Fig. 2). Clinical examination revealed an alert and cooperative patient with adequate pain control.\nReply to rngata94@quizen.com\nMobile: 906.888.4335 ext. 195\nNext of kin: COOK,\nMei (daughter)\n",
+   "text": "Subscriber ID: W36-356-9377 · D.O.B. 23rd April 1980 · Patient: Ngata\nCT imaging demonstrated a comminuted displaced fracture of the proximal humerus associated with posterior dislocation of a large osseous fragment measuring ~4 cm, consistent with an acute posterior fracture-dislocation (Fig. 2). Clinical examination revealed an alert and cooperative patient with adequate pain control.\nReply to rngata94@example.com\nMobile: 906.888.4335 ext. 195\nNext of kin: COOK,\nMei (daughter)\n",
    "edits": [
     {
      "start": 0,
@@ -638,21 +638,21 @@
     },
     {
      "start": 389,
-     "end": 418,
+     "end": 419,
      "originalStart": 319,
      "originalEnd": 319,
      "replaced": ""
     },
     {
-     "start": 418,
-     "end": 448,
+     "start": 419,
+     "end": 449,
      "originalStart": 319,
      "originalEnd": 319,
      "replaced": ""
     },
     {
-     "start": 448,
-     "end": 482,
+     "start": 449,
+     "end": 483,
      "originalStart": 319,
      "originalEnd": 319,
      "replaced": ""
@@ -698,8 +698,8 @@
     },
     {
      "start": 399,
-     "end": 418,
-     "value": "rngata94@quizen.com",
+     "end": 419,
+     "value": "rngata94@example.com",
      "type": "EMAIL",
      "family": "email:initial-digits",
      "split": "heldout",
@@ -709,8 +709,8 @@
      "replaced": ""
     },
     {
-     "start": 427,
-     "end": 448,
+     "start": 428,
+     "end": 449,
      "value": "906.888.4335 ext. 195",
      "type": "PHONE",
      "family": "phone:dot-ext",
@@ -721,8 +721,8 @@
      "replaced": ""
     },
     {
-     "start": 462,
-     "end": 471,
+     "start": 463,
+     "end": 472,
      "value": "COOK,\nMei",
      "type": "NAME",
      "family": "name:upper-last-comma-first",
