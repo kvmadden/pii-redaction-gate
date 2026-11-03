@@ -16,7 +16,7 @@ async function main() {
   assert.ok(await page.locator('#counts').textContent())
   await page.waitForFunction(() => document.querySelectorAll('#metrics tr').length > 0)
   assert.match(await page.locator('#metric-status').textContent(), /identifiers-profile/)
-  await page.locator('#corpus').selectOption('heldout')
+  await page.locator('#corpus').selectOption('templates')
   assert.ok(await page.locator('#metrics tr').count())
   for (const type of ['fax','discharge','refill']) {
    await page.locator('#example').selectOption(type)
