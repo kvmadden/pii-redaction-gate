@@ -217,9 +217,17 @@ test("contract: a people map that fails to load is not cached, and required mode
   assert.throws(() => loadPeopleMap({ mapPath: p, required: true }), { name: "RedactionConfigError" });
   fs.writeFileSync(p, JSON.stringify({ people: [{ name: "Avery Sample", role: "patient" }], safe: [] }));
   assert.equal(loadPeopleMap({ mapPath: p }).people[0].name, "Avery Sample", "the fixed file is read, not a cached failure");
-  const gate = gateParsedTranscript({ parsed: { firstUserMsg: "hi" }, source: "clinical-note", requirePeopleMap: true, peopleMap: undefined });
-  // The committed default map is readable, so required mode passes here.
-  assert.notEqual(gate.status, undefined);
+  // Required mode with a readable map: the gate runs normally (clean, not blocked).
+  // Required mode with an unreadable map blocks: test/review-round-2.test.js (K30).
+  const before = process.env.REDACTION_PEOPLE_PATH;
+  process.env.REDACTION_PEOPLE_PATH = p;
+  try {
+    const gate = gateParsedTranscript({ parsed: { firstUserMsg: "hi" }, source: "clinical-note", requirePeopleMap: true });
+    assert.equal(gate.status, "clean");
+  } finally {
+    if (before === undefined) delete process.env.REDACTION_PEOPLE_PATH;
+    else process.env.REDACTION_PEOPLE_PATH = before;
+  }
   fs.rmSync(dir, { recursive: true, force: true });
 });
 
