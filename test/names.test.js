@@ -20,10 +20,13 @@ function kept(text, values, peopleMap) {
   for (const v of values) assert.ok(r.text.includes(v), `${JSON.stringify(v)} was removed from ${JSON.stringify(text)}: ${JSON.stringify(r.text)}`);
   return r;
 }
-/** The value is removed, or the result is marked for review. Never a silent pass. */
+/** The value is removed, or a review span sits on it. A review span elsewhere does not count. */
 function notSilent(text, value) {
   const r = run(text);
-  assert.ok(!r.text.includes(value) || r.status === "review", `${JSON.stringify(value)} passed silently in ${JSON.stringify(r.text)}`);
+  for (let at = r.text.indexOf(value); at >= 0; at = r.text.indexOf(value, at + 1)) {
+    const end = at + value.length;
+    assert.ok(r.review.some((x) => x.start < end && x.end > at), `${JSON.stringify(value)} left without a review span on it in ${JSON.stringify(r.text)}`);
+  }
   return r;
 }
 

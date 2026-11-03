@@ -1,9 +1,10 @@
 // perf.test.js: the rules run in linear time on long and hostile input
 // (register 31, 36). The old email rule took 17 seconds on 100 KB of "a.".
 // Budgets are loose on purpose so a slow or busy machine does not fail them.
-// The growth check catches a quadratic rule: four times the input takes about
-// four times as long when linear and sixteen times when quadratic, so the test
-// fails above nine.
+// The growth check catches a quadratic rule: eight times the input takes about
+// eight times as long when linear and sixty-four times when quadratic. The test
+// fails above twenty, with only a 30 ms floor for timer noise, so a quadratic
+// path fails even when the small input is fast (review round 2, K22).
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -25,11 +26,12 @@ function ms(text) {
 redactText("warm up the lexicon", OPTS);
 
 test("perf: hostile repeated shapes finish within budget and grow linearly", () => {
-  for (const unit of ["a.", "a@", "1-", "Dr. ", "Aa ", "1/", "aa@aa.", "x"]) {
-    const small = ms(unit.repeat(5000));
-    const big = ms(unit.repeat(20000));
-    assert.ok(big < 15000, `${JSON.stringify(unit)} x20000 took ${big.toFixed(0)} ms`);
-    assert.ok(big < Math.max(small, 25) * 9, `${JSON.stringify(unit)}: ${small.toFixed(0)} ms, then ${big.toFixed(0)} ms at four times the size`);
+  // "A. " is a chain of initials with no surname (review round 2, G14).
+  for (const unit of ["a.", "a@", "1-", "Dr. ", "Aa ", "1/", "aa@aa.", "x", "A. ", "A.B. ", "d-e-", "[x]"]) {
+    const small = ms(unit.repeat(2000));
+    const big = ms(unit.repeat(16000));
+    assert.ok(big < 15000, `${JSON.stringify(unit)} x16000 took ${big.toFixed(0)} ms`);
+    assert.ok(big < small * 20 + 30, `${JSON.stringify(unit)}: ${small.toFixed(0)} ms, then ${big.toFixed(0)} ms at eight times the size`);
   }
 });
 

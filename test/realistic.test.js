@@ -7,10 +7,21 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { redactText, KNOWN_GAPS } from "../src/engine.js";
 
+/** Every occurrence of v left in the output sits inside a review span. */
+export function flaggedWhereLeft(r, v) {
+  for (let at = r.text.indexOf(v); at >= 0; at = r.text.indexOf(v, at + 1)) {
+    const end = at + v.length;
+    if (!r.review.some((x) => x.start < end && x.end > at)) return false;
+  }
+  return true;
+}
+
 function check(text, source, { removed = [], kept = [], gap = [] }) {
   const r = redactText(text, { source, peopleMap: { people: [], safe: [] } });
   assert.notEqual(r.status, "blocked");
-  for (const v of removed) assert.ok(!r.text.includes(v) || r.status === "review", `${JSON.stringify(v)} passed silently:\n${r.text}`);
+  // Removed, or flagged for review AT the identifier. A review span elsewhere
+  // in the document does not excuse it.
+  for (const v of removed) assert.ok(!r.text.includes(v) || flaggedWhereLeft(r, v), `${JSON.stringify(v)} left without a review span on it:\n${r.text}`);
   for (const v of kept) assert.ok(r.text.includes(v), `${JSON.stringify(v)} was removed:\n${r.text}`);
   for (const v of gap) assert.ok(r.text.includes(v), `${JSON.stringify(v)} is a documented gap that now passes: update this test and KNOWN_GAPS`);
   return r;
