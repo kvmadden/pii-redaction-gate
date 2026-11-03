@@ -122,7 +122,7 @@ Recall fell from 187 to 184 because ten facility names made of ordinary words ("
 ## Development
 
 ```bash
-npm test                      # 201 tests, about 10 seconds
+npm test                      # 206 tests, about 15 seconds
 npm run check                 # committed comparison matches the engine, lexicon matches its hash
 node eval/compare.js          # print the development comparison for this tree
 node eval/run.js              # print per-profile results on the development snippets
