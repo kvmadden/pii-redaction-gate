@@ -1,44 +1,51 @@
-// engine.js — the pure redaction composition: profile → tiers → redacted
-// text + typed hits.
+// engine.js: the pure redaction composition. Profile -> tiers -> redacted text,
+// typed hits, a residual scan and a send status.
 //
-// Pure: no I/O, no env, no fs — browser/Deno-portable (engine + patterns +
-// names + topics + profiles have no Node imports). Node-side conveniences
+// Pure: no I/O, no env, no fs. Browser and Deno portable. Node conveniences
 // (people-map loading, quarantine sidecars) live in ./index.js.
 //
-// THE COVENANT (test/tripwire.test.js enforces it):
-//   1. No synthetic PII fixture survives to any writer output under each
-//      profile's active tiers.
-//   2. Idempotent: redacting already-redacted text is a no-op.
-//   3. Code-safe: under the light profile, code spans pass through
-//      byte-identical.
+// Every result carries a status:
+//   clean    every part of the text that this profile scans was read, and the
+//            residual scan found nothing left to decide. It is a statement
+//            about the checks listed in result.scan.checks, not proof that no
+//            identifier remains.
+//   review   the residual scan listed spans the rules could not decide
+//            (result.review). The send guard refuses the result until a person
+//            has reviewed them.
+//   blocked  a stage failed, the input or options were invalid, or the input
+//            was too long. result.text is "[redaction-blocked]", never the input.
 //
-// FAIL CLOSED (test/fail-closed.test.js enforces it): if profile resolution,
-// people-map normalization, or any tier throws, redactText returns
-// BLOCKED_TEXT with blocked: true. The original text is never returned on an
-// error path. Non-string input other than null/undefined/"" is also blocked.
+// FAIL CLOSED (test/fail-closed.test.js, test/contract.test.js): profile
+// resolution, people-map normalization, every tier, and every record helper
+// return a blocked result instead of throwing or passing input through.
 //
-// Tier order is load-bearing: pattern → name → topic. The name tier turns a
-// mapped name into a role token BEFORE the topic tier looks for personal
-// context, and the topic tier swallows whole sentences LAST so pattern/name
-// hits inside a redacted sentence are still counted in the hit log.
+// Tier order is load-bearing: pattern -> name -> topic. The name tier turns a
+// mapped name into a role token before the topic tier looks for personal
+// context, and the topic tier swallows whole sentences last.
 
 import { applyPatterns } from "./patterns.js";
-import { applyNames, normalizePeopleMap } from "./names.js";
+import { applyNames, normalizePeopleMap, nameTokensFor } from "./names.js";
 import { applyTopics } from "./topics.js";
+import { scanResidual, RESIDUAL_CHECKS } from "./scan.js";
+import { seal } from "./seal.js";
 import { resolveProfile, profileForSource, PROFILES, DEFAULT_PROFILE, SOURCE_PROFILES } from "./profiles.js";
 
 export { profileForSource, PROFILES, DEFAULT_PROFILE, SOURCE_PROFILES, normalizePeopleMap };
 
 /** Version stamp for meta.redaction provenance. Bump when tier behavior changes. */
-export const REDACTION_VERSION = 2;
+export const REDACTION_VERSION = 3;
 
 /** What a blocked result carries in place of the text. Never the original. */
 export const BLOCKED_TEXT = "[redaction-blocked]";
 
+/** Longest input accepted by default, in characters. Longer input is blocked. */
+export const DEFAULT_MAX_LENGTH = 2_000_000;
+
+// Error class names that may appear in a blocked result. Anything else becomes
+// "Error", so a thrown object cannot carry input text out through error.name.
+const ERROR_NAMES = new Set(["Error", "TypeError", "RangeError", "SyntaxError", "ReferenceError", "RedactionConfigError", "RedactionInputError"]);
+
 // ── code-span segmentation (light profile) ───────────────────────────
-// Fenced blocks (``` … ```) and inline code (`…`) are exempt under profiles
-// with exemptCode. Works on squashed single-line transcript text too (the
-// transcript parser collapses newlines; fences survive as ``` … ``` runs).
 const CODE_SPAN_RE = /```[\s\S]*?```|`[^`\n]{1,2000}`/g;
 
 /** Split text into [{ code: boolean, text }] segments. */
@@ -64,23 +71,46 @@ function mergeHits(into, hits) {
 function hitsFromMap(map) {
   return [...map.entries()]
     .map(([key, count]) => {
-      const [tier, type] = key.split(":");
-      return { tier, type, count };
+      const i = key.indexOf(":");
+      return { tier: key.slice(0, i), type: key.slice(i + 1), count };
     })
     .sort((a, b) => (a.tier + a.type).localeCompare(b.tier + b.type));
 }
 
-/** Build the blocked result. Carries the failing stage and error NAME only —
- *  never the error message, which a custom tier could have built from input. */
+function errorName(err) {
+  const name = err && typeof err === "object" ? err.name : null;
+  return typeof name === "string" && ERROR_NAMES.has(name) ? name : "Error";
+}
+
+/** Which checks a profile runs, and which identifier kinds it does not check. */
+export function profileChecks(profile) {
+  const checks = ["email", "ssn", "dob", "card", "account", "phone", "coords", "address"];
+  const notChecked = [];
+  if (profile.clinicalPatterns) checks.push("url", "ip", "device", "labeled-ids", "date", "age");
+  else notChecked.push("url", "ip", "device", "labeled-ids", "date", "age");
+  if (profile.tiers.includes("name")) checks.push("known-names");
+  else notChecked.push("known-names");
+  if (profile.unknownNames) checks.push("unknown-names");
+  else notChecked.push("unknown-names");
+  if (profile.tiers.includes("topic")) checks.push("topics");
+  if (profile.residualScan) checks.push(...RESIDUAL_CHECKS.map((c) => `residual:${c}`));
+  else notChecked.push("residual-scan");
+  return { checks, notChecked };
+}
+
+/** Build the blocked result. Carries the failing stage and an allowlisted error name only. */
 function blockedResult(profileName, stage, err) {
-  return {
+  return seal({
     text: BLOCKED_TEXT,
     redacted: true,
     blocked: true,
+    status: "blocked",
     hits: [{ tier: "engine", type: "blocked", count: 1 }],
+    review: [],
+    scan: null,
     profile: profileName,
-    error: { stage, name: (err && err.name) || "Error" },
-  };
+    error: { stage, name: errorName(err) },
+  });
 }
 
 /**
@@ -89,178 +119,311 @@ function blockedResult(profileName, stage, err) {
  * @param {string} text
  * @param {object} [opts]
  * @param {"light"|"standard"|"identifiers"|"strict"} [opts.profile]  explicit profile (wins)
- * @param {string} [opts.source]                        source id → profile
- * @param {object} [opts.peopleMap]                     { people:[{name,role,aliases}], safe:[] }
- *                                                      (raw JSON shape; normalized here)
- * @param {Array}  [opts.topicCategories]               override topic categories
- * @returns {{ text: string, redacted: boolean, blocked: boolean,
- *             hits: Array<{tier,type,count}>, profile: string|null,
- *             error?: {stage: string, name: string} }}
+ * @param {string} [opts.source]          registered source id; an unregistered id blocks
+ * @param {string} [opts.unknownSource]   profile to use for an unregistered source instead of blocking
+ * @param {object} [opts.peopleMap]       { people:[{name,role,aliases}], safe:[] }
+ * @param {Array}  [opts.topicCategories] override topic categories
+ * @param {string|Date} [opts.referenceDate]  date used to judge birth years (age over 89)
+ * @param {number} [opts.maxLength]       longest input accepted (default 2,000,000 characters)
+ * @param {Array}  [opts.extraPatternRules] rules appended to the pattern tier ({ type, re, validate?, replace? }).
+ *                                        Append-only: the built-in rules always run.
+ * @param {string} [opts.injectFault]     test seam: "pattern", "name", "topic" or "scan" throws at that
+ *                                        stage. It can only turn a result into a blocked one.
  */
 export function redactText(text, opts = {}) {
-  if (!opts || typeof opts !== "object") opts = {}; // tolerate an explicit null/non-object arg
+  if (!opts || typeof opts !== "object") opts = {};
   let profile;
   try {
     profile = resolveProfile(opts);
+    if (!profile || typeof profile !== "object" || !Array.isArray(profile.tiers)) throw new TypeError("profile did not resolve");
   } catch (e) {
     return blockedResult(null, "profile", e);
   }
+  const profileName = profile.name;
   if (text === null || text === undefined || text === "") {
-    return { text, redacted: false, blocked: false, hits: [], profile: profile.name };
+    const { checks, notChecked } = profileChecks(profile);
+    return seal({ text, redacted: false, blocked: false, status: "clean", hits: [], review: [], scan: { profile: profileName, characters: 0, read: 0, exempt: [], checks, notChecked }, profile: profileName });
   }
-  if (typeof text !== "string") {
-    return blockedResult(profile.name, "input", new TypeError("non-string input"));
-  }
+  if (typeof text !== "string") return blockedResult(profileName, "input", new TypeError("non-string input"));
+  const maxLength = Number.isFinite(opts.maxLength) ? opts.maxLength : DEFAULT_MAX_LENGTH;
+  if (text.length > maxLength) return blockedResult(profileName, "input", new RangeError("input too long"));
 
   let stage = "people-map";
   try {
-    const map = opts.peopleMap && opts.peopleMap.__normalized
-      ? opts.peopleMap
-      : Object.assign(normalizePeopleMap(opts.peopleMap), { __normalized: true });
-
+    const map = normalizePeopleMap(opts.peopleMap);
+    let referenceDate = null;
+    if (opts.referenceDate !== undefined && opts.referenceDate !== null) {
+      stage = "options";
+      referenceDate = opts.referenceDate instanceof Date ? opts.referenceDate : new Date(String(opts.referenceDate));
+      if (!Number.isFinite(referenceDate.getTime())) throw new RangeError("invalid referenceDate");
+    }
     const tiers = new Set(profile.tiers);
     const counts = new Map();
+    const extraRules = Array.isArray(opts.extraPatternRules) ? opts.extraPatternRules : [];
+    const fault = (name) => {
+      if (opts.injectFault === name) throw new Error(`injected fault at ${name}`);
+    };
     stage = "segment";
     const segments = profile.exemptCode ? splitCodeSegments(text) : [{ code: false, text }];
-
-    const out = segments
-      .map((seg) => {
-        if (seg.code) return seg.text; // byte-identical pass-through
-        let t = seg.text;
-        if (tiers.has("pattern")) {
-          stage = "pattern";
-          const r = applyPatterns(t, { clinical: profile.unknownNames });
-          t = r.text;
-          mergeHits(counts, r.hits);
+    const exempt = [];
+    let out = "";
+    for (const seg of segments) {
+      if (seg.code) {
+        exempt.push({ start: out.length, end: out.length + seg.text.length, reason: "code span, exempt under the light profile" });
+        out += seg.text; // byte-identical pass-through
+        continue;
+      }
+      let t = seg.text;
+      if (tiers.has("pattern")) {
+        stage = "pattern";
+        fault("pattern");
+        const r = applyPatterns(t, { clinical: profile.clinicalPatterns, referenceDate });
+        t = r.text;
+        mergeHits(counts, r.hits);
+        if (extraRules.length) {
+          const x = applyPatterns(t, { rules: extraRules });
+          t = x.text;
+          mergeHits(counts, x.hits);
         }
-        if (tiers.has("name")) {
-          stage = "name";
-          const r = applyNames(t, { map, unknownNames: profile.unknownNames });
-          t = r.text;
-          mergeHits(counts, r.hits);
-        }
-        if (tiers.has("topic")) {
-          stage = "topic";
-          const r = applyTopics(t, { strict: profile.topicStrict, categories: opts.topicCategories });
-          t = r.text;
-          mergeHits(counts, r.hits);
-        }
-        if (typeof t !== "string") throw new TypeError(`${stage} tier returned non-string`);
-        return t;
-      })
-      .join("");
-
+      }
+      if (tiers.has("name")) {
+        stage = "name";
+        fault("name");
+        const r = applyNames(t, { map, unknownNames: profile.unknownNames });
+        t = r.text;
+        mergeHits(counts, r.hits);
+      }
+      if (tiers.has("topic")) {
+        stage = "topic";
+        fault("topic");
+        const r = applyTopics(t, { strict: profile.topicStrict, categories: opts.topicCategories });
+        t = r.text;
+        mergeHits(counts, r.hits);
+      }
+      if (typeof t !== "string") throw new TypeError(`${stage} tier returned non-string`);
+      out += t;
+    }
+    stage = "scan";
+    fault("scan");
+    const review = profile.residualScan ? scanResidual(out, { names: profile.unknownNames, safe: map.safe, nameTokens: nameTokensFor(map), referenceDate, skip: exempt }) : [];
+    const { checks, notChecked } = profileChecks(profile);
     const hits = hitsFromMap(counts);
-    return { text: out, redacted: hits.length > 0, blocked: false, hits, profile: profile.name };
+    const exemptChars = exempt.reduce((n, e) => n + (e.end - e.start), 0);
+    return seal({
+      text: out,
+      redacted: hits.length > 0,
+      blocked: false,
+      status: review.length ? "review" : "clean",
+      hits,
+      review,
+      scan: { profile: profileName, characters: text.length, read: text.length - exemptChars, exempt, checks, notChecked },
+      profile: profileName,
+    });
   } catch (e) {
-    return blockedResult(profile.name, stage, e);
+    return blockedResult(profileName, stage, e);
   }
 }
 
-// ── structured-record helpers ────────────────────────────────────────
-// A parsed conversation/transcript record carries FOUR text surfaces that can
-// leave the trust boundary: operatorTurns[].text + assistantTail[] (the model
-// prompt), firstUserMsg + lastAssistantMsg (stored on the record). Redacting
-// the record ONCE, before the prompt is built and before the record is
-// written, covers both egress points. Only these named fields (plus turns[])
-// are redacted; any other field on the record is copied unchanged.
+// ── structured records ───────────────────────────────────────────────
+// Every string in a record is redacted, wherever it sits. The fields declared
+// as text (firstUserMsg, lastAssistantMsg, operatorTurns[].text,
+// assistantTail[], turns[].text, and the summary fields) must be strings when
+// present. Any value this code cannot read (a Date, a Buffer, a class instance,
+// a function, a cycle, nesting deeper than 32) blocks the record, and so does
+// an identifier inside an object key. Originals are kept only on the
+// non-enumerable `changes` property, for the local quarantine.
 
-/** Shared per-field runner: redacts strings, blocks non-strings, accumulates. */
-function fieldRunner(opts, counts, changes, state) {
-  return (value, field) => {
+const MAX_DEPTH = 32;
+const NOT_TEXT = Object.freeze({ notText: true }); // a declared text field that is not a string
+
+function isPlainObject(v) {
+  if (v === null || typeof v !== "object") return false;
+  const proto = Object.getPrototypeOf(v);
+  return proto === Object.prototype || proto === null;
+}
+
+function attachChanges(result, changes) {
+  Object.defineProperty(result, "changes", { value: changes, enumerable: false, writable: true, configurable: true });
+  return result;
+}
+
+function worst(a, b) {
+  const rank = { clean: 0, review: 1, blocked: 2 };
+  return rank[b] > rank[a] ? b : a;
+}
+
+function recordWalker(opts) {
+  const counts = new Map();
+  const changes = [];
+  const review = [];
+  const seen = new WeakSet();
+  const state = { status: "clean", blockedFields: [] };
+  const block = (field) => {
+    state.status = "blocked";
+    state.blockedFields.push(field);
+    return BLOCKED_TEXT;
+  };
+  const text = (value, field) => {
     if (value === null || value === undefined || value === "") return value;
+    if (typeof value !== "string") return block(field);
     const r = redactText(value, opts);
     mergeHits(counts, r.hits);
-    if (r.blocked) state.blocked = true;
+    state.status = worst(state.status, r.status);
+    if (r.blocked) state.blockedFields.push(field);
+    for (const item of r.review) review.push({ field, ...item });
     if (r.text !== value) changes.push({ field, before: value, after: r.text });
     return r.text;
   };
+  const any = (value, field, depth = 0) => {
+    if (value === null || value === undefined) return value;
+    const t = typeof value;
+    if (t === "string") return text(value, field);
+    if (t === "number" || t === "boolean" || t === "bigint") return value;
+    if (t !== "object" || depth > MAX_DEPTH || seen.has(value)) return block(field);
+    seen.add(value);
+    if (Array.isArray(value)) return value.map((v, i) => any(v, `${field}[${i}]`, depth + 1));
+    if (value instanceof Map) {
+      const out = new Map();
+      for (const [k, v] of value) {
+        if (typeof k === "string" && redactText(k, opts).text !== k) return block(`${field} (key)`);
+        out.set(k, any(v, `${field}.get(${typeof k === "string" ? k.slice(0, 40) : typeof k})`, depth + 1));
+      }
+      return out;
+    }
+    if (value instanceof Set) return new Set([...value].map((v, i) => any(v, `${field}{${i}}`, depth + 1)));
+    if (!isPlainObject(value)) return block(field);
+    const out = {};
+    for (const key of Object.keys(value)) {
+      if (redactText(key, opts).text !== key) return block(`${field} (key)`);
+      out[key] = any(value[key], field ? `${field}.${key}` : key, depth + 1);
+    }
+    return out;
+  };
+  return { text, any, block, counts, changes, review, state };
+}
+
+function recordResult(key, value, w, profileName) {
+  const hits = hitsFromMap(w.counts);
+  const blocked = w.state.status === "blocked";
+  const result = {
+    [key]: value,
+    redacted: hits.length > 0 || blocked,
+    blocked,
+    status: w.state.status,
+    hits,
+    review: w.review,
+    profile: profileName,
+  };
+  if (blocked) result.error = { stage: "record", fields: w.state.blockedFields.slice(0, 20) };
+  return seal(attachChanges(result, w.changes));
+}
+
+function safeProfileName(opts) {
+  try {
+    return resolveProfile(opts).name;
+  } catch {
+    return null;
+  }
+}
+
+function transcriptFields(parsed, w) {
+  const out = {};
+  for (const key of Object.keys(parsed)) {
+    const v = parsed[key];
+    if (key === "firstUserMsg" || key === "lastAssistantMsg") out[key] = w.text(v, key);
+    else if (key === "assistantTail") {
+      out[key] = v === undefined || v === null ? v : Array.isArray(v) ? v.map((t, i) => w.text(t, `assistantTail[${i}]`)) : w.text(NOT_TEXT, key);
+    } else if (key === "operatorTurns" || key === "turns") {
+      if (v === undefined || v === null) out[key] = v;
+      else if (!Array.isArray(v)) out[key] = w.text(NOT_TEXT, key);
+      else {
+        out[key] = v.map((turn, i) => {
+          if (!isPlainObject(turn)) return w.text(NOT_TEXT, `${key}[${i}]`);
+          const { text, ...rest } = turn;
+          return { ...w.any(rest, `${key}[${i}]`), text: w.text(text, `${key}[${i}].text`) };
+        });
+      }
+    } else out[key] = w.any(v, key);
+  }
+  return out;
 }
 
 /**
- * Redact a parsed transcript record IN A COPY (input untouched).
+ * Redact a parsed transcript record in a copy (input untouched). A record that
+ * is not a plain object is blocked.
  *
  * @param {object} parsed   { firstUserMsg, lastAssistantMsg, operatorTurns[], assistantTail[], turns[], … }
  * @param {object} [opts]   same options as redactText
- * @returns {{ parsed: object, redacted: boolean, blocked: boolean, hits: Array, profile: string|null,
- *             changes: Array<{field: string, before: string, after: string}> }}
  */
 export function redactParsedTranscript(parsed, opts = {}) {
-  let profileName = null;
+  const profileName = safeProfileName(opts);
+  const w = recordWalker(opts);
+  if (parsed === null || parsed === undefined) return recordResult("parsed", parsed, w, profileName);
+  if (!isPlainObject(parsed)) {
+    w.block("(record)");
+    return recordResult("parsed", null, w, profileName);
+  }
+  let out;
   try {
-    profileName = resolveProfile(opts).name;
+    out = transcriptFields(parsed, w);
   } catch {
-    profileName = null; // redactText below blocks every field for the same reason
+    w.block("(record)");
+    out = null;
   }
-  if (!parsed || typeof parsed !== "object") {
-    return { parsed, redacted: false, blocked: false, hits: [], profile: profileName, changes: [] };
-  }
-  const counts = new Map();
-  const changes = [];
-  const state = { blocked: false };
-  const run = fieldRunner(opts, counts, changes, state);
-
-  const out = {
-    ...parsed,
-    firstUserMsg: run(parsed.firstUserMsg, "firstUserMsg"),
-    lastAssistantMsg: run(parsed.lastAssistantMsg, "lastAssistantMsg"),
-    operatorTurns: Array.isArray(parsed.operatorTurns)
-      ? parsed.operatorTurns.map((t, i) => ({ ...t, text: run(t?.text, `operatorTurns[${i}]`) }))
-      : parsed.operatorTurns,
-    assistantTail: Array.isArray(parsed.assistantTail)
-      ? parsed.assistantTail.map((t, i) => run(t, `assistantTail[${i}]`))
-      : parsed.assistantTail,
-    turns: Array.isArray(parsed.turns)
-      ? parsed.turns.map((t, i) => ({ ...t, text: run(t?.text, `turns[${i}]`) }))
-      : parsed.turns,
-  };
-
-  const hits = hitsFromMap(counts);
-  return { parsed: out, redacted: hits.length > 0, blocked: state.blocked, hits, profile: profileName, changes };
+  return recordResult("parsed", out, w, profileName);
 }
 
 /**
- * Redact a model-output summary ({ summary, topics, operatorDirections, … })
- * AFTER the model call. The model only saw redacted input, but its output is
- * also a writer surface, so it passes the same gate.
+ * Redact model output before it is stored or sent. Accepts a plain string or a
+ * summary object ({ summary, topics, operatorDirections, … }). Every string in
+ * it is redacted. Anything else is blocked.
  *
- * @param {object|null} summary
- * @param {object} [opts]         same options as redactText
- * @returns {{ summary: object|null, redacted: boolean, blocked: boolean, hits: Array,
- *             changes: Array<{field, before, after}> }}
+ * @param {string|object|null} summary
+ * @param {object} [opts]  same options as redactText
  */
 export function redactSummaryFields(summary, opts = {}) {
-  if (!summary || typeof summary !== "object") return { summary, redacted: false, blocked: false, hits: [], changes: [] };
-  const counts = new Map();
-  const changes = [];
-  const state = { blocked: false };
-  const run = fieldRunner(opts, counts, changes, state);
-  const out = {
-    ...summary,
-    summary: run(summary.summary, "summary"),
-    topics: Array.isArray(summary.topics) ? summary.topics.map((t, i) => run(t, `topics[${i}]`)) : summary.topics,
-    operatorDirections: Array.isArray(summary.operatorDirections)
-      ? summary.operatorDirections.map((q, i) => ({
-          intent: run(q.intent, `operatorDirections[${i}].intent`),
-          raw_text: run(q.raw_text, `operatorDirections[${i}].raw_text`),
-        }))
-      : summary.operatorDirections,
-  };
-  const hits = hitsFromMap(counts);
-  return { summary: out, redacted: hits.length > 0, blocked: state.blocked, hits, changes };
+  const profileName = safeProfileName(opts);
+  const w = recordWalker(opts);
+  if (summary === null || summary === undefined) return recordResult("summary", summary, w, profileName);
+  let out;
+  try {
+    if (typeof summary === "string") out = w.text(summary, "summary");
+    else if (!isPlainObject(summary)) {
+      w.block("(summary)");
+      out = null;
+    } else {
+      out = {};
+      for (const key of Object.keys(summary)) {
+        const v = summary[key];
+        if (key === "summary") out[key] = w.text(v, "summary");
+        else if (key === "topics") out[key] = v == null ? v : Array.isArray(v) ? v.map((t, i) => w.text(t, `topics[${i}]`)) : w.text(NOT_TEXT, "topics");
+        else if (key === "operatorDirections") {
+          out[key] = v == null ? v : Array.isArray(v)
+            ? v.map((q, i) => (isPlainObject(q) ? w.any(q, `operatorDirections[${i}]`) : w.text(NOT_TEXT, `operatorDirections[${i}]`)))
+            : w.text(NOT_TEXT, "operatorDirections");
+        } else out[key] = w.any(v, key);
+      }
+    }
+  } catch {
+    w.block("(summary)");
+    out = null;
+  }
+  return recordResult("summary", out, w, profileName);
 }
 
 /**
- * meta.redaction provenance stamp for rows that passed this gate. Carries
- * WHICH tiers/types hit and how often — NEVER the original text (that lives
- * only in the local quarantine sidecar).
+ * meta.redaction provenance stamp. Carries which tiers and types hit and how
+ * often, never the original text. The clock is injectable for reproducible
+ * stamps. It is the only use of Date in the engine.
  */
-export function redactionMeta({ profile, hits }) {
+export function redactionMeta({ profile, hits, status = undefined, now = undefined }) {
+  const at = now instanceof Date ? now : new Date();
   return {
     version: REDACTION_VERSION,
     profile,
+    ...(status ? { status } : {}),
     hits: hits.map((h) => ({ tier: h.tier, type: h.type, count: h.count })),
-    redactedAt: new Date().toISOString(),
+    redactedAt: at.toISOString(),
   };
 }
 
@@ -271,6 +434,7 @@ export default {
   redactionMeta,
   splitCodeSegments,
   profileForSource,
+  profileChecks,
   REDACTION_VERSION,
   BLOCKED_TEXT,
 };
