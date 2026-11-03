@@ -67,7 +67,7 @@ console.log(r.text, r.status, r.review)
 printf 'Patient Inez Thorn, MRN 4471023. Continue metformin.\n' | node bin/redaction-gate.js --source clinical-note
 
 # Browser demo, local only
-npm run demo   # then open http://127.0.0.1:8769
+npm run demo   # then open the local address it prints
 ```
 
 No install step and no dependencies with Node 22 or later. Nothing is sent over the network.
@@ -166,10 +166,10 @@ It refuses a document whose SHA-256 differs from `labels.jsonl` or the manifest,
 
 ```bash
 node eval/fresh/score.mjs <set> --check     # verify the set and print counts, runs no engine
-node eval/fresh/score.mjs <set> --out <dir> --presidio-python ~/dev/toolchains/presidio/venv/bin/python
+node eval/fresh/score.mjs <set> --out <dir> --presidio-python <presidio venv>/bin/python
 ```
 
-Presidio is installed outside this repository from [eval/fresh/presidio-requirements.txt](eval/fresh/presidio-requirements.txt) and runs under macOS `sandbox-exec` with all network access denied. Its email recognizer uses the public-suffix list bundled with tldextract instead of fetching one. The scorer is tested on a 13-document synthetic fixture with known answers ([test/fixtures/fresh-sample](test/fixtures/fresh-sample), [test/fresh-score.test.js](test/fresh-score.test.js)). A run on a fixture is labeled a sample, never a result.
+Presidio is installed outside this repository, in a virtual environment written `<presidio venv>` above, from [eval/fresh/presidio-requirements.txt](eval/fresh/presidio-requirements.txt) and runs under macOS `sandbox-exec` with all network access denied. Its email recognizer uses the public-suffix list bundled with tldextract instead of fetching one. The scorer is tested on a 13-document synthetic fixture with known answers ([test/fixtures/fresh-sample](test/fixtures/fresh-sample), [test/fresh-score.test.js](test/fresh-score.test.js)). A run on a fixture is labeled a sample, never a result.
 
 ## Limits
 
@@ -192,7 +192,7 @@ node eval/run.js              # print per-profile results on the development sni
 node scripts/build-demo.js    # copy the runtime modules into docs/runtime (checked by test)
 ```
 
-To regenerate the comparison with the baselines, export each commit's `src` outside the tree (for example `git archive 91c4e16 src | tar -x -C /tmp/91c4e16`, plus a `package.json` with `"type": "module"`) and run `node eval/compare.js --write --engine release=91c4e16=/tmp/91c4e16/src/engine.js --engine previous=facae00=/tmp/facae00/src/engine.js`.
+To regenerate the comparison with the baselines, export each commit's `src` to a folder outside the tree, written `<export>` here (for example `git archive 91c4e16 src | tar -x -C <export>/91c4e16`, plus a `package.json` with `"type": "module"`) and run `node eval/compare.js --write --engine release=91c4e16=<export>/91c4e16/src/engine.js --engine previous=facae00=<export>/facae00/src/engine.js`.
 
 Rebuilding the lexicon needs the six source files listed in the manifest. The script refuses any file whose SHA-256 differs from the pinned value. CI runs the tests and both checks on Node 22 and 24.
 
