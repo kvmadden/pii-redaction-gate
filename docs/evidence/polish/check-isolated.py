@@ -1,4 +1,4 @@
-"""Compare untouched main and candidate in a disposable clone outside the estate."""
+"""Compare untouched main and candidate in a disposable temporary clone."""
 import os
 import pathlib
 import shutil
@@ -7,9 +7,8 @@ import tempfile
 
 current = pathlib.Path(__file__).resolve().parents[3]
 evidence = current / 'docs/evidence/polish'
-env = os.environ.copy()
-for key in ['MFW_UMBRELLA_ROOT', 'OPERATOR_ECOSYSTEM_ROOT']:
-    env.pop(key, None)
+# Drop every *_ROOT variable, so nothing points the clone at another checkout.
+env = {key: value for key, value in os.environ.items() if not key.endswith('_ROOT')}
 with tempfile.TemporaryDirectory(prefix='pii-polish-control-', dir='/tmp') as tmp:
     subprocess.run(['git', 'clone', '--no-local', str(current), tmp], check=True, capture_output=True)
     subprocess.run(['git', 'checkout', '--detach', '63ac3abc48094e86f6883f99c1586b45bf6ebd3f'], cwd=tmp, check=True, capture_output=True)

@@ -21,10 +21,10 @@ Fetched origin/main and repeated `git ls-tree -r --name-only origin/main` and `g
 | `node scripts/build-demo.js` | 0 | Runtime modules and comparison JSON generated from canonical sources |
 | `npm test` candidate | 0 | 113 passed, candidate-full.txt |
 | `python3 docs/evidence/polish/check-isolated.py` | 0 | Main 109 passed, candidate overlay 113 passed |
-| `FRAME_DIR=/tmp/pii-polish-frames PLAYWRIGHT_MODULE=<path-to-playwright> node scripts/check-demo.cjs` | 0 | UI assertions and media, browser.txt and ui.json |
+| `FRAME_DIR=<temp dir>/pii-polish-frames PLAYWRIGHT_MODULE=<path-to-playwright> node scripts/check-demo.cjs` | 0 | UI assertions and media, browser.txt and ui.json |
 | `git diff --check` | 0 | No whitespace errors |
 
-The isolation script uses a fresh `git clone --no-local` under `/tmp`, outside the estate, pinned to untouched main. The candidate is overlaid onto that clone. Both runs use identical Node, no installed repository dependencies and unchanged synthetic evaluation fixtures, with MFW_UMBRELLA_ROOT and OPERATOR_ECOSYSTEM_ROOT unset. TemporaryDirectory removes the clone on success or failure. No baseline failures or final candidate-only failures. Trailing whitespace in two RED log lines was removed after the staged comparison caught it. Assertion evidence is unchanged. No detector, send-guard or fail-closed changes.
+The isolation script uses a fresh `git clone --no-local` in the system temporary folder, pinned to untouched main. The candidate is overlaid onto that clone. Both runs use identical Node, no installed repository dependencies and unchanged synthetic evaluation fixtures, with the workspace root variables unset. TemporaryDirectory removes the clone on success or failure. No baseline failures or final candidate-only failures. Trailing whitespace in two RED log lines was removed after the staged comparison caught it. Assertion evidence is unchanged. No detector, send-guard or fail-closed changes.
 
 An initial browser harness attempt timed out because its clear-log button was inside a closed details element. The harness was corrected to open the details through its summary before clicking. The product action worked. No assertion was removed or forced click used. Visible browser creation was attempted, but the access host reported unavailable. Repeatable browser testing used the existing installed Playwright and Chrome.
 

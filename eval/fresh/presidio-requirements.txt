@@ -1,7 +1,7 @@
 # Presidio baseline for eval/fresh/presidio_run.py, pinned 3 November 2026.
-# Install outside the repository, in ~/dev/toolchains/presidio, with the macOS system Python 3.9.6:
-#   /usr/bin/python3 -m venv ~/dev/toolchains/presidio/venv
-#   ~/dev/toolchains/presidio/venv/bin/python -m pip install --only-binary=spacy,thinc,blis -r eval/fresh/presidio-requirements.txt
+# Install outside the repository, in a virtual environment written <presidio venv> here, with the macOS system Python 3.9.6:
+#   /usr/bin/python3 -m venv <presidio venv>
+#   <presidio venv>/bin/python -m pip install --only-binary=spacy,thinc,blis -r eval/fresh/presidio-requirements.txt
 # en_core_web_lg 3.8.0 comes from the spaCy models release (python -m spacy download en_core_web_lg).
 annotated-doc==0.0.5
 annotated-types==0.7.0
