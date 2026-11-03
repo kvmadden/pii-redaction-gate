@@ -1,5 +1,7 @@
 # Verification record
 
+> **Correction, 3 November 2026.** The set this record calls held out (`eval/heldout.json`) is a 27-template development check: 27 identifier templates written four times each, plus 6 clinical sentences. `dc528aa` added its own vocabulary (Jardiance, Rheumatoid, Portal, Telephone) to the protected word list after `d05d144` committed it, so it was never blind, and its 104 of 108 is 26 of 27 templates. The commands, exit codes and hashes below are an accurate record of what was run. The conclusions drawn from them about held-out performance are withdrawn. See the main [README](../../README.md).
+
 Node v24.14.1, macOS arm64. No package dependencies or install step. Baseline `91c4e16`, fetched from origin/main before work and rechecked before publication. No open PRs were present on either check. Source and archive searches found no separate implementation of this upgrade.
 
 ## RED then GREEN

@@ -1,5 +1,7 @@
 # Layered PII Redaction
 
+> **Correction, 3 November 2026.** This is the first release README, kept as a record. Two of its claims no longer hold. An unknown source did not fail safe: it selected `standard`, which skips the unknown-name pass, so a mistyped source returned a note unchanged. Unknown sources now block. The evaluation numbers here are on the 182 development snippets, written before the rules changed and used as development data since. See the main [README](../README.md) for the current behavior and evidence.
+
 A fail-closed, rule-based engine that removes personal identifiers from free text before it is sent to a model or written to a datastore.
 
 > This is pattern-based PII redaction. It is not certified clinical de-identification. It has not been validated against any regulatory standard and should not be used as the only control for protected health information.

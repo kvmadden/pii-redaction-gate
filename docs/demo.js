@@ -54,7 +54,8 @@ function showScan(result) {
  const s = result.scan
  const read = `Read ${s.read} of ${s.characters} characters with ${s.checks.length} checks.`
  const not = s.notChecked.length ? ` Not checked under this profile: ${s.notChecked.join(', ')}.` : ''
- const verdict = result.status === 'review' ? ` ${result.review.length} span${result.review.length === 1 ? '' : 's'} need review before sending.` : ' Nothing left to decide. Not proof that no identifier remains.'
+ const n = result.review.length
+ const verdict = result.status === 'review' ? ` ${n} span${n === 1 ? ' needs' : 's need'} review before sending.` : ' Nothing left to decide. Not proof that no identifier remains.'
  $('scan-report').textContent = read + not + verdict
  for (const r of result.review) {
   const li = document.createElement('li')
@@ -122,7 +123,7 @@ async function run() {
    $('counts').append(item)
   }
   if (!$('counts').children.length) $('counts').textContent = blocked ? 'Withheld on failure' : 'No rules matched'
-  $('kept').textContent = blocked ? 'No content is available for sending.' : `${current.kept.length} clinical words from the public drug and diagnosis lists kept. Green marks show words retained, not a completeness score.`
+  $('kept').textContent = blocked ? 'No content is available for sending.' : `${current.kept.length} clinical word${current.kept.length === 1 ? '' : 's'} from the public drug and diagnosis lists kept. Green marks show words retained, not a completeness score.`
   showScan(current.result)
   $('send-status').textContent = blocked ? 'Send gate: BLOCKED. No payload available.' : review ? 'Send gate: refused until a reviewer marks the flagged spans reviewed.' : 'Send gate: ready for a local simulated attempt.'
  } catch {
