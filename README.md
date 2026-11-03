@@ -185,7 +185,7 @@ Presidio is installed outside this repository, in a virtual environment written 
 ## Development
 
 ```bash
-npm test                      # 270 tests, about 15 seconds
+npm test                      # 272 tests, about 15 seconds
 npm run check                 # committed comparison matches the engine, lexicon matches its hash
 node eval/compare.js          # print the development comparison for this tree
 node eval/run.js              # print per-profile results on the development snippets
