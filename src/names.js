@@ -29,7 +29,9 @@
 // (titles, relation words, facility types) live in ./grammar.js.
 
 import { wordClass, lookup } from "./lexicon.js";
-import { foldKey } from "./text-fold.js";
+import { foldKey, accentPattern, accentKey } from "./text-fold.js";
+import { PATTERN_TOKEN_TYPES } from "./patterns.js";
+import { DEFAULT_TOPIC_CATEGORIES } from "./topics.js";
 import {
   HONORIFICS,
   RELATION_CUES,
@@ -49,6 +51,11 @@ import {
   LOWERCASE_TITLES,
   PARTICLES,
   DOTTED_ABBREVIATIONS,
+  NON_PERSON_LABELS,
+  COPULAS,
+  CLINICAL_CONTEXT,
+  CLINICAL_CONTEXT_PAIRS,
+  UNIT_WORDS,
 } from "./grammar.js";
 
 const MIN_KNOWN_NAME = 2;
@@ -76,6 +83,20 @@ export function normalizePeopleMap(peopleMap) {
   return { people, safe };
 }
 
+/**
+ * Inner names of the tokens this library writes ("email", "name", "patient").
+ * A bracketed word in the input that is not one of these ("[smith]") is read
+ * as text, so input brackets can never pass a name off as a redaction.
+ */
+const BASE_TOKENS = Object.freeze(new Set([...PATTERN_TOKEN_TYPES, "name", "redaction-blocked", ...DEFAULT_TOPIC_CATEGORIES.map((c) => c.type)]));
+
+export function tokenNamesFor(map, extraTypes = []) {
+  const out = new Set(BASE_TOKENS);
+  for (const p of map?.people || []) if (p && typeof p.role === "string") out.add(p.role);
+  for (const t of extraTypes) if (typeof t === "string") out.add(t);
+  return out;
+}
+
 /** The tokens that stand for a person: "[name]" and every role in the people map. */
 export function nameTokensFor(map) {
   const out = new Set(["[name]"]);
@@ -89,25 +110,29 @@ function escapeRe(s) {
 
 const TOKEN_SPLIT = /(\[[a-z-]+\])/;
 
-/** Pass 1: known names to role tokens, longest first, never inside a [token]. */
-function applyKnownNames(text, people, bump) {
+/**
+ * Pass 1: known names to role tokens, longest first, never inside a token this
+ * library wrote. Matching ignores case and accents: "Jose" in the map matches
+ * "José" in the text, and the reverse.
+ */
+function applyKnownNames(text, people, bump, tokenNames) {
   const entries = [];
-  for (const person of people) for (const name of person.names) entries.push({ name: name.normalize("NFC"), role: person.role });
+  for (const person of people) for (const name of person.names) entries.push({ name, role: person.role });
   if (!entries.length) return text;
   entries.sort((a, b) => b.name.length - a.name.length);
   const roleOf = new Map();
   for (const e of entries) {
-    const key = e.name.toLowerCase();
+    const key = accentKey(e.name);
     if (!roleOf.has(key)) roleOf.set(key, e.role);
   }
-  const alternation = entries.map((e) => escapeRe(e.name).replace(/ /g, "\\s+")).join("|");
+  const alternation = entries.map((e) => accentPattern(e.name)).join("|");
   const re = new RegExp(`(?<![\\p{L}\\p{M}\\p{N}])(?:${alternation})(?![\\p{L}\\p{M}\\p{N}])`, "giu");
   return text
     .split(TOKEN_SPLIT)
     .map((piece, i) => {
-      if (i % 2 === 1) return piece; // an existing [token]
+      if (i % 2 === 1 && tokenNames.has(piece.slice(1, -1))) return piece; // a token this library wrote
       return piece.replace(re, (m) => {
-        const role = roleOf.get(m.normalize("NFC").replace(/\s+/g, " ").toLowerCase()) || "name";
+        const role = roleOf.get(accentKey(m)) || "name";
         bump(role);
         return `[${role}]`;
       });
@@ -119,17 +144,34 @@ function applyKnownNames(text, people, bump) {
 const WORD = "\\p{L}[\\p{L}\\p{M}]*(?:['’][\\p{L}\\p{M}]+)*(?:-\\p{L}[\\p{L}\\p{M}]*(?:['’][\\p{L}\\p{M}]+)*)*";
 const TOKEN_RE = new RegExp(`\\[[a-z-]+\\]|${WORD}|\\p{N}+|\\r?\\n|[^\\S\\r\\n]+|[\\s\\S]`, "gu");
 
-function tokenize(text) {
+function tokenType(s) {
+  if (/^\p{L}/u.test(s)) return "word";
+  if (/^\p{N}/u.test(s)) return "num";
+  if (/^\r?\n$/.test(s)) return "nl";
+  if (/^\s+$/u.test(s)) return "sp";
+  return "p";
+}
+
+function tokenize(text, tokenNames = BASE_TOKENS) {
   const toks = [];
   for (const m of text.matchAll(TOKEN_RE)) {
     const s = m[0];
-    let t = "p";
-    if (/^\[[a-z-]+\]$/.test(s)) t = "red";
-    else if (/^\p{L}/u.test(s)) t = "word";
-    else if (/^\p{N}/u.test(s)) t = "num";
-    else if (/^\r?\n$/.test(s)) t = "nl";
-    else if (/^\s+$/u.test(s)) t = "sp";
-    toks.push({ t, text: s, s: m.index, e: m.index + s.length });
+    if (/^\[[a-z-]+\]$/.test(s)) {
+      if (tokenNames.has(s.slice(1, -1))) {
+        toks.push({ t: "red", text: s, s: m.index, e: m.index + s.length });
+        continue;
+      }
+      // Brackets from the input: "[" and "]" are punctuation and the word
+      // inside is read like any other word.
+      toks.push({ t: "p", text: "[", s: m.index, e: m.index + 1 });
+      for (const sub of s.slice(1, -1).matchAll(TOKEN_RE)) {
+        const at = m.index + 1 + sub.index;
+        toks.push({ t: tokenType(sub[0]), text: sub[0], s: at, e: at + sub[0].length });
+      }
+      toks.push({ t: "p", text: "]", s: m.index + s.length - 1, e: m.index + s.length });
+      continue;
+    }
+    toks.push({ t: tokenType(s), text: s, s: m.index, e: m.index + s.length });
   }
   return toks;
 }
@@ -157,7 +199,9 @@ function info(tok, safe) {
   const parts = base.split("-");
   const shapes = parts.map(partShape);
   let shape;
-  if (shapes.every((s) => s === "lower")) shape = "lower";
+  // Letters spelled one at a time ("D-E-L-G-A-D-O") are for the residual scan.
+  if (parts.length >= 2 && parts.every((p) => p.replace(/['’]/g, "").length === 1)) shape = "spelled";
+  else if (shapes.every((s) => s === "lower")) shape = "lower";
   else if (shapes.length === 1 && shapes[0] === "initial") shape = "initial";
   else if (shapes[0] !== "initial" && shapes.every((s) => s === "title" || s === "initial")) shape = "title";
   else if (shapes.every((s) => s === "upper" || s === "initial") && shapes.some((s) => s === "upper")) shape = "upper";
@@ -257,7 +301,7 @@ function eponymHeadAfter(toks, i, safe) {
   if (j < 0) return inf.possessive && inf.cls === "eponymous";
   const nxt = info(toks[j], safe);
   if (EPONYM_HEADS.has(nxt.lower)) return true;
-  if (nxt.shape === "lower" && technicalWord(nxt)) return true;
+  if ((nxt.shape === "lower" || (nxt.shape === "upper" && inf.shape === "upper")) && technicalWord(nxt)) return true;
   return false;
 }
 
@@ -270,10 +314,42 @@ function numberAfter(toks, i) {
   return toks[i + 1]?.t === "sp" && toks[i + 2]?.t === "num";
 }
 
+/** A whole number with no decimal part and no unit after it ("Zarqavi 12", not "Hgb 9.1" or "Lasix 40 mg"). */
+function bareNumberAfter(toks, i) {
+  if (!numberAfter(toks, i)) return false;
+  if (toks[i + 3]?.text === "." && toks[i + 4]?.t === "num") return false;
+  if (toks[i + 3]?.text === "%" || toks[i + 3]?.text === "/") return false;
+  const u = nextWordAfterSpace(toks, i + 2);
+  if (u >= 0 && UNIT_WORDS.has(toks[u].text.toLowerCase())) return false;
+  return true;
+}
+
+function copulaAfter(toks, i) {
+  const j = nextWordAfterSpace(toks, i);
+  return j >= 0 && COPULAS.has(toks[j].text.toLowerCase());
+}
+
+/** A medication or culture word right before: "Start Allegra", "grew Candida", "positive for Rosa". */
+function clinicalContextBefore(toks, i) {
+  const back = (k) => {
+    let j = k - 1;
+    while (j >= 0 && toks[j].t === "sp") j--;
+    return j >= 0 && toks[j].t === "word" ? j : -1;
+  };
+  const a = back(i);
+  if (a < 0) return false;
+  const w = toks[a].text.toLowerCase();
+  if (CLINICAL_CONTEXT.has(w)) return true;
+  const b = back(a);
+  return b >= 0 && CLINICAL_CONTEXT_PAIRS.has(`${toks[b].text.toLowerCase()} ${w}`);
+}
+
 // ── name sequence parsing ────────────────────────────────────────────
 // mode: "title" (after Dr./Mrs.), "cue" (after a label, relation word or greeting),
 // "lower" (a lowercase cue: lowercase name words accepted when they are on a name list),
-// "titleLower" (a lowercase title: "dr smith", where a surname-list word is enough).
+// "titleLower" (a lowercase title: "dr smith", where a surname-list word is enough),
+// "label" (after a person field label such as "Patient:": like "cue", but the
+// label outranks eponym constructions, so "Patient: Smith disease" is a name).
 function acceptable(toks, i, mode, first, safe) {
   const tok = toks[i];
   if (!tok || tok.t !== "word") return false;
@@ -294,7 +370,7 @@ function acceptable(toks, i, mode, first, safe) {
     return mode === "titleLower" || /first/.test(nameLists(tok.text));
   }
   if (!isCapShape(inf)) return false;
-  if (mode !== "title" && mode !== "titleLower" && eponymHeadAfter(toks, i, safe)) return false;
+  if (mode !== "title" && mode !== "titleLower" && mode !== "label" && eponymHeadAfter(toks, i, safe)) return false;
   if (mode === "title" || mode === "titleLower") {
     if (first) return inf.cls !== "clinical" || named || inf.cls === "safe";
     return named || (inf.cls === "unknown" && inf.letters >= 2) || continuationWord(inf);
@@ -407,8 +483,8 @@ function afterCuePunct(toks, i, chars) {
 const HEAD_PHRASES = [...FACILITY_HEADS].sort((a, b) => b.length - a.length);
 
 /** Decide every word: "name", "keep", "review" or undecided (null). */
-function classify(text, safe, nameTokens = new Set(["[name]"])) {
-  const toks = tokenize(text);
+function classify(text, safe, nameTokens = new Set(["[name]"]), tokenNames = BASE_TOKENS) {
+  const toks = tokenize(text, tokenNames);
   const isNameToken = (t) => Boolean(t && t.t === "red" && nameTokens.has(t.text));
   const decided = new Array(toks.length).fill(null);
   const spans = [];
@@ -445,6 +521,12 @@ function classify(text, safe, nameTokens = new Set(["[name]"])) {
     if (toks[j]?.text === ".") j++;
     if (toks[j]?.t !== "sp") continue;
     if (tryName(j + 1, isLower ? "titleLower" : "title", {}, "title")) decided[i] = "keep";
+    else if (toks[j + 1]?.t === "word" && !decided[j + 1] && isCapShape(info(toks[j + 1], safe))) {
+      // A title says a person follows. A capitalized word after it that the
+      // lists call clinical or a function word ("Dr. Synthroid", "Dr. The")
+      // cannot be cleared by a list, so it goes to review.
+      review(j + 1, "capitalized word after a title that the word lists do not read as a name");
+    }
   }
 
   // 2. Cues.
@@ -461,7 +543,7 @@ function classify(text, safe, nameTokens = new Set(["[name]"])) {
       const k = nextSig(toks, colon, { newline: true });
       if (k >= 0 && toks[k].t === "word") {
         const run = initialsRun(toks, k);
-        const kMode = toks[k].text === toks[k].text.toLowerCase() ? "lower" : "cue";
+        const kMode = toks[k].text === toks[k].text.toLowerCase() ? "lower" : NON_PERSON_LABELS.has(label) ? "cue" : "label";
         if (run > 0) { if (free(k, run)) mark(k, run, "name", "label"); }
         else tryName(k, kMode, { allowComma: true }, "label");
       }
@@ -574,11 +656,14 @@ function classify(text, safe, nameTokens = new Set(["[name]"])) {
     if (free(start, end)) mark(start, end, "name", "facility");
   }
 
-  // 4. Initial + surname: "J. Smith", "A. B. Ng".
-  for (let i = 0; i < toks.length; i++) {
-    if (decided[i] || !isInitialAt(toks, i) || toks[i + 1]?.text !== ".") continue;
+  // 4. Initial + surname: "J. Smith", "A. B. Ng". Each chain of initials is
+  //    read once: a later initial in the same chain cannot start a new match,
+  //    so "A. A. A. ..." stays linear.
+  for (let i = 0, chainEnd = -1; i < toks.length; i++) {
+    if (i <= chainEnd || decided[i] || !isInitialAt(toks, i) || toks[i + 1]?.text !== ".") continue;
     let j = i;
     while (toks[j + 2]?.t === "sp" && isInitialAt(toks, j + 3) && toks[j + 4]?.text === ".") j += 3;
+    chainEnd = j + 1;
     // One ordinary space: "B.        MRN" across a column gap is not "J. Smith".
     if (toks[j + 2]?.t !== "sp" || toks[j + 2].text.length > 2) continue;
     const k = j + 3;
@@ -620,7 +705,9 @@ function classify(text, safe, nameTokens = new Set(["[name]"])) {
       if (j > 0 && !decided[j]) {
         const b = info(toks[j], safe);
         const lastOk = /surname/.test(nameLists(toks[i].text)) && a.cls !== "clinical";
-        const firstOk = /first/.test(nameLists(toks[j].text)) && (b.cls === "nameStrong" || a.cls === "nameStrong");
+        // Both words on name lists. Ordinary-word names ("BROWN, GRACE") count
+        // in capitals or at a line start, where a list of names is the norm.
+        const firstOk = /first/.test(nameLists(toks[j].text)) && (b.cls === "nameStrong" || a.cls === "nameStrong" || a.shape === "upper" || boundaryBefore(toks, i) === "start");
         if (lastOk && firstOk && a.shape === b.shape && isCapShape(b)) {
           mark(i, j, "name", "last-first");
           continue;
@@ -631,7 +718,9 @@ function classify(text, safe, nameTokens = new Set(["[name]"])) {
     const calendarName = CALENDAR_WORDS.has(a.lower) && onFirstList; // "June Park"
     // Any word on the first-name list can open a pair, including one that is
     // also an ordinary or clinical word ("Grace Okafor", "Brian Oduya").
-    const firstLike = a.cls === "unknown" ? a.letters >= 3 : (["nameStrong", "nameWeak", "eponymous"].includes(a.cls) && onFirstList) || calendarName;
+    // In capitals an unknown word is more often an acronym than a name
+    // ("CBC WBC"), so a capitals pair needs a name list behind the first word.
+    const firstLike = a.cls === "unknown" ? a.letters >= 3 && a.shape !== "upper" : (["nameStrong", "nameWeak", "eponymous"].includes(a.cls) && onFirstList) || calendarName;
     if (!firstLike) continue;
     let j = nextWordAfterSpace(toks, i);
     if (j > 0 && isInitialAt(toks, j) && toks[j + 1]?.text === ".") j = nextWordAfterSpace(toks, j + 1);
@@ -641,7 +730,7 @@ function classify(text, safe, nameTokens = new Set(["[name]"])) {
       isCapShape(b) && b.shape === a.shape && !b.isFunction && b.cls !== "clinical" && b.cls !== "safe" &&
       !eponymHeadAfter(toks, j, safe) &&
       ((b.cls !== "english" && /surname/.test(nameLists(toks[j].text))) ||
-        (b.cls === "unknown" && b.letters >= 3 && (a.cls === "unknown" || onFirstList)) ||
+        (b.cls === "unknown" && b.letters >= 3 && (a.cls === "unknown" || onFirstList) && (b.shape !== "upper" || b.letters >= 5)) ||
         // A first name that is not an ordinary word, then a capitalized word: "Dana Example".
         (a.cls === "nameStrong" && onFirstList && continuationWord(b)));
     if (!surnameLike) continue;
@@ -674,6 +763,10 @@ function classify(text, safe, nameTokens = new Set(["[name]"])) {
     //     its position ("Called Price back", "Spoke Jones")
     //   - a word on the first-name list ("Gave Grace", "Escalated Brian")
     const atStart = boundaryBefore(toks, i) === "start";
+    // A run in capitals is usually a sentence in an all-capitals note, not a
+    // heading, so it keeps its ordinary and clinical words only. Other words
+    // in it go on to the single-word rules ("XQVRZPL ARRIVED THIS MORNING").
+    const upperRun = run.every((x) => info(toks[x], safe).shape === "upper");
     const plain = run.filter((x, n) => {
       if (decided[x] === "keep") return true;
       if (n === 0 && atStart) return false;
@@ -681,7 +774,14 @@ function classify(text, safe, nameTokens = new Set(["[name]"])) {
       if ((c.cls === "nameWeak" || c.cls === "eponymous") && /first/.test(nameLists(toks[x].text))) return false;
       return ["english", "clinical", "eponymous", "nameWeak", "safe"].includes(c.cls);
     });
-    if (plain.length >= 2) for (const x of run) if (!decided[x]) decided[x] = "keep";
+    if (plain.length >= 2) {
+      for (const x of run) {
+        if (decided[x]) continue;
+        const c = info(toks[x], safe);
+        if (upperRun && !["english", "clinical", "safe"].includes(c.cls) && !c.isFunction) continue;
+        decided[x] = "keep";
+      }
+    }
     i = j;
   }
 
@@ -694,19 +794,49 @@ function classify(text, safe, nameTokens = new Set(["[name]"])) {
     // Facility types and service words are common nouns ("Pulmonology", "Clinic").
     if (HEAD_PHRASES.includes(inf.lower) || SERVICE_MODIFIERS.has(inf.lower)) continue;
     if (inf.shape === "lower") {
-      if (inf.cls === "nameStrong" && inf.letters >= 3 && /first/.test(nameLists(tok.text))) {
-        // "tanya called": a first name that is not an ordinary word, as the subject of a person verb.
-        if (personVerbAfter(toks, i)) mark(i, i, "name", "lowercase first name before a person verb");
-        else review(i, "lowercase word that is on the first-name list");
-      } else if (inf.cls === "nameWeak" && !AUXILIARIES.has(inf.lower) && /first/.test(nameLists(tok.text)) && personVerbAfter(toks, i) && boundaryBefore(toks, i) !== "mid") {
+      if (inf.letters < 3) continue;
+      const lists = nameLists(tok.text);
+      const person = personVerbAfter(toks, i);
+      const clauseStart = boundaryBefore(toks, i) !== "mid";
+      // Surname-only words count in lowercase when the surname is common (1,000
+      // or more people): rare surnames collide with modern words and
+      // abbreviations the 1934 word list lacks ("okay", "auth").
+      if (inf.cls === "nameStrong" && (/first/.test(lists) || (lookup(inf.base).commonSurname && inf.letters >= 4))) {
+        // "tanya called", "saw okafor yesterday": a name-list word that is not an
+        // ordinary word. Kept before an eponym head or after a device or
+        // medication word ("foley catheter", "removed foley").
+        if (person) mark(i, i, "name", "lowercase name before a person verb");
+        else if (!eponymHeadAfter(toks, i, safe) && !clinicalContextBefore(toks, i)) review(i, "lowercase word that is on a name list");
+      } else if (inf.cls === "nameWeak" && !AUXILIARIES.has(inf.lower) && /first/.test(lists) && person && clauseStart) {
         // "grace reported pain": an ordinary word that is also a first name,
         // opening a clause as the subject of a person verb.
         mark(i, i, "name", "lowercase first name before a person verb");
+      } else if (inf.cls === "unknown" && inf.letters >= 4 && person && clauseStart) {
+        // "hrytsenko called": a word on no list, as the subject of a person verb.
+        mark(i, i, "name", "lowercase unrecognized word before a person verb");
       }
       continue;
     }
     if (inf.shape === "upper") {
-      if (inf.cls === "nameStrong" && inf.letters >= 4 && !inf.base.includes("-")) review(i, "all-capitals word that is on a name list");
+      if (inf.letters < 3) continue;
+      const lists = nameLists(tok.text);
+      const onList = /first|surname/.test(lists);
+      if (personVerbAfter(toks, i) && (inf.cls === "unknown" || inf.cls === "nameStrong" || inf.cls === "eponymous" || (inf.cls === "nameWeak" && onList))) {
+        mark(i, i, "name", "all-capitals word before a person verb");
+      } else if ((inf.cls === "nameStrong" || inf.cls === "eponymous") && inf.letters >= 4) {
+        review(i, "all-capitals word that is on a name list");
+      } else if (inf.cls === "nameWeak" && onList && boundaryBefore(toks, i) === "start" && copulaAfter(toks, i)) {
+        review(i, "all-capitals word that is also a name, as the subject of a sentence");
+      } else if (inf.cls === "unknown" && inf.letters >= 6) {
+        // Short capitals words are mostly acronyms (CBC, COPD). Longer unknown ones are not.
+        review(i, "unrecognized all-capitals word");
+      }
+      continue;
+    }
+    if (inf.shape === "mixed") {
+      // "zArQaVi": mixed case that is not a known shape. Units like "mmHg" are short.
+      // Lab and unit abbreviations in mixed case are short ("aPTT", "eGFR", "mmHg").
+      if (["nameStrong", "eponymous", "unknown"].includes(inf.cls) && inf.letters >= 5) review(i, "mixed-case word that may be a name");
       continue;
     }
     if (inf.shape !== "title") continue;
@@ -726,6 +856,13 @@ function classify(text, safe, nameTokens = new Set(["[name]"])) {
     // redaction token ("Fax:", "Email [email]"), unless it is a first name.
     const after = nextSig(toks, i);
     if (after >= 0 && (toks[after].text === ":" || (toks[after].t === "red" && !isNameToken(toks[after]))) && !/first/.test(lists)) continue;
+    // After a medication or culture word ("Start Allegra", "grew Candida") a
+    // drug-and-name word is the drug, and any other unread word goes to review
+    // instead of being removed as a name.
+    if (pos === "mid" && !person && clinicalContextBefore(toks, i)) {
+      if (inf.cls === "unknown" || inf.cls === "nameStrong") review(i, "capitalized word after a medication or culture word");
+      if (inf.cls !== "nameWeak") continue;
+    }
     switch (inf.cls) {
       case "clinical":
       case "english":
@@ -740,6 +877,8 @@ function classify(text, safe, nameTokens = new Set(["[name]"])) {
       case "nameWeak": {
         if (person) { mark(i, i, "name", "person verb"); break; }
         if (pos === "start" && inf.possessive) { review(i, "possessive of a word that is also a name"); break; }
+        // "Brown is a 54-year-old man": a name-list word as the subject of a copula.
+        if (pos === "start" && copulaAfter(toks, i) && /first|surname/.test(lists)) { review(i, "word that is also a name, as the subject of a sentence"); break; }
         if (pos === "start") {
           const c = nextSig(toks, i);
           const w = c >= 0 && toks[c].text === "," ? nextWordAfterSpace(toks, c) : -1;
@@ -757,8 +896,13 @@ function classify(text, safe, nameTokens = new Set(["[name]"])) {
         break;
       default: // unknown
         if (inf.letters < 3) break;
-        if (number) break; // a measurement name before its value ("Ferritin 12", "QTc 478")
-        else if (person) mark(i, i, "name", "person verb");
+        if (number) {
+          // A measurement name before its value ("Hgb 9.1", "QTc 478") is kept. A
+          // longer word before a bare whole number could be a name ("Zarqavi 12").
+          if (inf.letters >= 5 && bareNumberAfter(toks, i)) review(i, "unrecognized word before a bare number");
+          break;
+        }
+        if (person) mark(i, i, "name", "person verb");
         else if (pos === "mid") mark(i, i, "name", "unrecognized capitalized word");
         else review(i, pos === "start" ? "unrecognized capitalized word at a sentence or field start" : "unrecognized capitalized word in a list");
     }
@@ -774,15 +918,16 @@ function classify(text, safe, nameTokens = new Set(["[name]"])) {
  * @param {boolean} [opts.unknownNames=false]          run the unknown-name pass
  * @returns {{ text: string, hits: Array<{tier:"name", type:string, count:number}> }}
  */
-export function applyNames(text, { map, unknownNames = false } = {}) {
+export function applyNames(text, { map, unknownNames = false, tokenNames } = {}) {
   if (typeof text !== "string" || !text) return { text, hits: [] };
   const { people, safe } = map || { people: [], safe: new Set() };
   const counts = new Map();
   const bump = (type) => counts.set(type, (counts.get(type) || 0) + 1);
-  let out = applyKnownNames(text, people || [], bump);
+  const tokens = tokenNames || tokenNamesFor({ people });
+  let out = applyKnownNames(text, people || [], bump, tokens);
 
   if (unknownNames) {
-    const { toks, spans } = classify(out, safe, nameTokensFor({ people }));
+    const { toks, spans } = classify(out, safe, nameTokensFor({ people }), tokens);
     spans.sort((a, b) => toks[a.start].s - toks[b.start].s);
     let rebuilt = "";
     let cursor = 0;
@@ -809,9 +954,9 @@ const COMMON_DOTTED = new Set(["u.s.", "u.s.a.", "u.k.", "a.m.", "p.m.", "e.g.",
  * or could not decide. Used by the residual scan. Offsets are into `text`.
  * @returns {Array<{start:number,end:number,check:string,reason:string}>}
  */
-export function nameReviewSpans(text, { safe = new Set(), nameTokens } = {}) {
+export function nameReviewSpans(text, { safe = new Set(), nameTokens, tokenNames } = {}) {
   if (typeof text !== "string" || !text) return [];
-  const { toks, decided, spans, reasons } = classify(text, safe, nameTokens);
+  const { toks, decided, spans, reasons } = classify(text, safe, nameTokens, tokenNames || BASE_TOKENS);
   const out = [];
   for (const sp of spans) out.push({ start: toks[sp.start].s, end: toks[sp.end].e, check: "names", reason: "name-shaped words left in the output" });
   for (let i = 0; i < toks.length; i++) {
@@ -821,10 +966,13 @@ export function nameReviewSpans(text, { safe = new Set(), nameTokens } = {}) {
     const end = initialsRun(toks, i);
     if (end < 0) continue;
     const dotted = toks.slice(i, end + 1).map((t) => t.text).join("").toLowerCase();
-    if (!COMMON_DOTTED.has(dotted) && !decided[i]) out.push({ start: toks[i].s, end: toks[end].e, check: "names", reason: "initials" });
+    // People have two or three initials. Four or more dotted letters are an
+    // abbreviation ("C.O.P.D.", "M.R.S.A.").
+    const letters = dotted.replace(/\./g, "").length;
+    if (letters <= 3 && !COMMON_DOTTED.has(dotted) && !decided[i]) out.push({ start: toks[i].s, end: toks[end].e, check: "names", reason: "initials" });
     i = end;
   }
   return out.sort((a, b) => a.start - b.start);
 }
 
-export default { applyNames, normalizePeopleMap, nameReviewSpans, nameTokensFor };
+export default { applyNames, normalizePeopleMap, nameReviewSpans, nameTokensFor, tokenNamesFor };

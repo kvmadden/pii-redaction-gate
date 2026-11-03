@@ -38,6 +38,33 @@ export const LABEL_CUES = Object.freeze([
   "attn", "attention", "author", "caller", "cosigned by", "cosigner",
 ]);
 
+/** Labels in LABEL_CUES whose value is not always a person ("Re: Parkinson disease follow-up"). */
+export const NON_PERSON_LABELS = set(`re regarding to from cc attn attention contact`);
+
+/** Verbs of being and having: "Brown is a 54-year-old man". */
+export const COPULAS = set(`is was has had`);
+
+/** Words before a drug or an organism: "Start Allegra", "grew Candida". */
+export const CLINICAL_CONTEXT = set(`
+  start started starting continue continued continuing stop stopped stopping
+  hold held holding taking prescribed prescribe increase
+  increased decrease decreased discontinue discontinued resume resumed restart
+  restarted titrate titrated refill refilled dispense dispensed switch switched
+  grew growing isolated cultured place placed insert inserted remove removed
+  replace replaced
+`);
+export const CLINICAL_CONTEXT_PAIRS = Object.freeze(new Set([
+  "treated with", "positive for", "negative for", "allergic to", "allergy to", "intolerant of",
+  "intolerant to", "switched to", "started on", "continued on", "changed to",
+]));
+
+/** Units after a number: the number is a quantity, not part of an identifier. */
+export const UNIT_WORDS = set(`
+  mg mcg g gm kg lb lbs oz ml l dl ul meq mmol mol iu units unit copies cells
+  mmhg bpm cm mm in ft percent tabs tab tablets tablet caps capsules puffs drops
+  hours hrs hr minutes min days weeks months years
+`);
+
 /** Labels whose value must be a name: an unredacted value goes to review. */
 export const STRONG_NAME_LABELS = Object.freeze(["patient name", "pt name", "full name", "member name", "subscriber name", "name"]);
 
@@ -123,6 +150,7 @@ export const FUNCTION_WORDS = set(`
   onto over under about after before between during through while when where than
   then this that these those his her their its our your my no not if up out off
   all any each every both either neither some such only also just
+  i me mine we us ours you yours he him she hers it they them theirs who whom whose
 `);
 
 /** Contractions of pronouns and auxiliaries ("I'm", "Don't"). */
