@@ -1,0 +1,33 @@
+CLINICAL LABORATORY AND IMAGING CONSULTATION REPORT
+
+DEMOGRAPHICS
+Patient: Female, 54-year-old
+Referring Unit: Cardiology
+Service Copy: Pain Clinic
+Comparison Source: Outside Hospital
+Evaluation Year: 2024
+
+CLINICAL FINDINGS
+The patient is a 54-year-old female presenting for evaluation of unilateral
+lower extremity edema and progressive facial weakness. A clinical Wells score
+of 2.0 was calculated prior to ultrasound, placing the patient at moderate
+pretest probability for deep venous thrombosis. Compression duplex sonography of
+the right lower extremity demonstrates complete compressibility of the common
+femoral, femoral, and popliteal veins without thrombus.
+
+Physical examination reveals acute unilateral facial droop consistent with Bell
+palsy. Vitals obtained on arrival: BP 134/82 mmHg, HR 76 bpm, RR 16 /min, SpO2
+98% on room air, temperature 36.8 C. Comprehensive metabolic panel and blood
+counts reveal: WBC 6.4 x10^3/uL, hemoglobin 13.8 g/dL, platelet count 245
+x10^3/uL, serum creatinine 0.82 mg/dL, and potassium 4.1 mmol/L.
+
+CURRENT MEDICATIONS
+1. Lyrica 75 mg PO BID
+2. prednisone 60 mg PO daily for 5 days
+3. valacyclovir 1000 mg PO TID
+4. famotidine 20 mg PO daily
+
+IMPRESSION AND PLAN
+Imaging records transferred from Outside Hospital were reviewed. Follow-up
+coordination will be handled by the covering pharmacist and Cardiology, with
+ongoing neuropathic symptom surveillance directed to Pain Clinic.

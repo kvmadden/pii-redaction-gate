@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "offset_unit": "codepoint",
+  "set_hash_rule": "sha256 of the sorted file hashes (lowercase hex) joined by newlines",
+  "fixture": true,
+  "authoring_families": [
+    "synthetic test fixture (Claude)"
+  ],
+  "labeling_families": [
+    "synthetic test fixture (Claude)"
+  ],
+  "note": "Scorer test fixture, not the blind set.",
+  "files": {
+    "labels.jsonl": "18ebbaff1e66fcef18ae053ac0b2898f7445242c6a4b279434112904e7fc968f",
+    "documents/call-004.txt": "e2987d044abd612556c8f8475e61d6958b7edc1ac92ab1304299902796794cb1",
+    "documents/call-012.txt": "df4dda150b83dd35ee084dafab38daa6eb19010a88fb783b834b2ba8af49b76c",
+    "documents/dev-010.txt": "c0d8f3304bd3b8119d64ed0d39702ef4cb2d2139e7d30eea71961a65ea7a2dda",
+    "documents/email-007.txt": "50b7fd9614749aefbedfbc43a3df00441da9cac52125979d9dbefba5033628b7",
+    "documents/lab-006.txt": "997f25ed5298bee99ad79b1eb2c332d33e7617299d9584905c8e23ec8b6cf275",
+    "documents/msg-003.txt": "677bb850b0956f7bcf8031ac03cf870a2dbc2e83d2fdba043da6e5b07fed7d99",
+    "documents/msg-009.txt": "670e92867b66374cbd95dcc350b6c0f29484c817ae1e5d51d13c169a7e3edf3f",
+    "documents/msg-013.txt": "452b140ee33a99b52d248e5c881751b634ac7489ef36033eb96c873a907638cd",
+    "documents/note-001.txt": "e588d2d243de8a833b13e84ae667146df3c856e75a699db752d7d3941f665497",
+    "documents/note-002.txt": "c04d92c536f269131f87d8fb94e7181fe61e02d6253f0ff1e5a1c230044fe837",
+    "documents/note-008.txt": "7291837dfebd1bf733ede8a631c546606500c26360eb1abcd163875c1ad33fe4",
+    "documents/note-011.txt": "16f71acf59cad5551228d686f6244e1837762f1d5ee658e19d0e860ca1c33ac5",
+    "documents/rx-005.txt": "f458ca4f71b06aae9b1a26a7b4dc8bc5bd96a807648f1c2207b8ef7cfe5ba9aa"
+  },
+  "set_sha256": "3d2ab7c6f2327de6ad6d8126d83c67406cdbe228ff82ac2a280adf2bca2e17bc"
+}

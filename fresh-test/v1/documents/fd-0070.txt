@@ -1,0 +1,27 @@
+Date of Service: October 14, 2026
+Patient: BAHADOR-ZADEH, NILOUFAR
+Health Plan Member ID: HPM-84920411
+Subject: Question regarding glipizide dose and lab paperwork
+
+Message 1
+From: niloufar
+Sent: October 14, 2026 08:22 AM
+To: Dr. Craig Halloway
+
+hello dr. halloway,
+i am writing to ask about my morning blood sugars over the last week. i have been taking glipizide 5 mg PO daily before breakfast along with metformin 1000 mg PO BID. my fasting redings have been running between 148 and 165 mg/dL, and my bedtime check yesterday was 182 mg/dL. i spoke with my husband Alan Cooper becasue i felt a little dizzy on tuesday, but my blood pressure was 128/76 mmHg and heart rate was 72 bpm. my daughter checked my ketone strips and they were negative.
+also, we recently relocated and i currently work in Kirkland, so the local diagnostic center near my office asked for the order form. could your medical assistant please transmit the updated requisition for my HbA1c, comprehensive metabolic panel, and urine microalbumin? the imaging and draw station there gave me their direct transmission line: Fax: (425) 555-0148. i want to make sure the lab has everything ready before my scheduld fasting draw. thank you so much for checking on this.
+
+Message 2
+From: Dr. Craig Halloway
+Sent: October 14, 2026 11:45 AM
+To: BAHADOR-ZADEH, NILOUFAR
+
+Dear Mrs. Bahador-Zadeh,
+
+Thank you for the detailed log. Given that your fasting blood glucose levels remain above our target of 90-130 mg/dL despite metformin 1000 mg PO BID, we will increase your glipizide to 10 mg PO daily taken 30 minutes before your morning meal. Please continue logging both preprandial and 2-hour postprandial values. If you experience any episodes of hypoglycemia (blood glucose under 70 mg/dL, diaphoresis, or tremor), take 15 grams of fast-acting carbohydrate immediately and notify our office.
+
+Regarding your lab orders, our clinical coordinator just transmitted your requisition for hemoglobin A1c, CMP, and urine albumin-to-creatinine ratio to the facility at Fax: (425) 555-0148. I have also verified that your coverage under Health Plan Member ID: HPM-84920411 is attached to the requisition so there will be no billing delay. If your dizziness recurs or systolic blood pressure drops below 110 mmHg, please let Alan Cooper or our triage nurse know right away. We will review your new lab results together during our follow-up consultation on November 4, 2026.
+
+Sincerely,
+Craig Halloway, MD

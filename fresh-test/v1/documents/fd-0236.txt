@@ -1,0 +1,26 @@
+MEDICATION RECONCILIATION
+Patient: BECKWITH, SYLVIA
+DOB: 04/17/1958
+MRN: 7044182
+Age: 68 years
+Date: 11/03/2026
+Prescriber: Malcolm Ashby, MD
+NPI: 1473829054
+Caregiver email: c.difranco@example.com
+
+The patient was reviewed by phone with her daughter, Caterina Di Franco, who is the caregiver listed on the profile and who manages the pill box. She is followed at Larkspur Heart and Vascular Center for heart failure with reduced ejection fraction, last ejection fraction 35 percent, and for coronary disease treated medically. She is not short of breath at rest. She can walk to the mailbox and back, stopping once. Ankles show trace edema by her daughter's report. No chest pain this week, no orthopnea on two pillows, and weight is down about two pounds from her usual baseline after she cut back on soup.
+
+Home list, reconciled to the bottles she read:
+sacubitril-valsartan 49-51 mg by mouth twice daily
+carvedilol 12.5 mg by mouth twice daily
+spironolactone 25 mg by mouth daily
+empagliflozin 10 mg by mouth daily
+atorvastatin 40 mg by mouth at bedtime
+aspirin 81 mg by mouth daily
+furosemide 20 mg by mouth daily as needed for a three-pound weight gain
+
+The daughter read each label. Sacubitril-valsartan was started after an ACE inhibitor was stopped, with a 36-hour washout, which she remembers. She has not recieved a potassium result since the spironolactone was increased, so the clinic was asked to draw a basic metabolic panel before the next refill cycle. Blood pressure at home this morning was 118/70 and the pulse was 64. She is not dizzy on standing. Empagliflozin caused one yeast infection early in treatment, since resolved, and she wants to continue it.
+
+The prescriber's NPI on the hard copy matches the number above. The daughter can be reached at the email on the header if a letter is needed for sacubitril-valsartan; the health plan already approved it through the end of the year, and no new form is required unless the strength changes. She was advised not to use ibuprofen for knee pain and to use acetaminophen instead, because an NSAID fits poorly with heart failure and with the loop diuretic. She will seperate the as-needed furosemide from the daily box so it is not taken every morning by habit.
+
+No allergy to these agents is known. Penicillin caused a rash in childhood and is already on the profile. The reconcilation was filed, and the office was asked to send the lab order. Aspirin and atorvastatin can be dispensed now. The remaining monthly fill waits until the panel is back so the potassium and creatinine can be seen before spironolactone and the diuretic are released. Counseling covered rise-slowly precautions, daily weights, and a call to the clinic for a gain of three pounds or more, for waking short of breath, or for swelling that leaves a pit. Salt substitute products that contain potassium were discouraged while spironolactone is on the list.

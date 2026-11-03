@@ -1,0 +1,58 @@
+Cedar Ridge Clinic
+Outpatient Progress Note
+
+Patient: Cora J. Whitacre
+DOB: March 4, 1934
+Age: 92 y.o.
+Record no. 7394-2281-56
+Date of visit: March 4, 2026
+
+Chief complaint
+Ankle swelling, shorter walking distance, and a bruise after a parking lot fall.
+
+History of present illness
+She came in with her son Nolan Whitacre, who lives in the house with her and does the driving. Over about ten days the ankles have become puffier by evening and she gets short of breathe walking from the kitchen to the front porch. She denies chest pain, a new cough, waking orthopnea, and fever. Last month she slipped while climbing out of the sedan in the lot. She was not thrown clear, did not strike her head, and did not black out. The sedan, plate 8HWT392, had to be towed that afternoon because it would not start after the bump. A broad bruise rose over the left hip. She chose to rest at home instead of going to an emergency department. Her son has kept a morning weight log on the refrigerator.
+
+Medications sit in a weekly box that he fills on Sundays. She missed two doses of the loop diuretic when that box was left on her daughter's counter. Appetite is fair, with a smaller breakfast than usual. There is no melena, no vomiting, and no pain with urination. Knee pain is occassional and she has been taking acetaminophen, which is the right choice. She was asked to keep NSAIDs off to the side, and she recieved that advice again today.
+
+Past medical history
+Heart failure with reduced ejection fraction, last measured at 35 percent. Stage 3b chronic kidney disease. Hypothyroidism. Osteoarthritis of the knees. Cataract extraction years ago. No diabetes.
+
+Medications
+Furosemide 40 mg by mouth daily
+Carvedilol 6.25 mg by mouth twice daily
+Lisinopril 5 mg by mouth daily
+Levothyroxine 88 mcg by mouth each morning
+Acetaminophen 650 mg by mouth three times daily as needed for pain
+
+Allergies
+Rash after a sulfa antibiotic.
+
+Social history
+She lives in a single-story house with her son. She worked as a school librarian and retired in her sixties. No tobacco.
+
+Examination
+Blood pressure 138/76 mmHg, pulse 64 beats per minute, respirations 18 per minute, oxygen saturation 95 percent on room air, temperature 97.8 F, weight 61.4 kg, which is 1.8 kg above the last visit.
+She is alert and speaking in full sentences. Lungs have fine crackles at both bases without wheeze. Heart rhythm is regular, with no new murmur and no gallop. There is pitting edema to mid shin bilaterally. The left hip bruise is yellow-green and not tender when pressed. Gait with a cane is slow and steady.
+
+Laboratory studies drawn this morning
+Sodium 136 mmol/L, potassium 4.6 mmol/L, chloride 102 mmol/L, bicarbonate 26 mmol/L, blood urea nitrogen 28 mg/dL, creatinine 1.48 mg/dL against a baseline near 1.3 mg/dL, BNP 640 pg/mL, hemoglobin 11.9 g/dL, TSH 2.4 mIU/L.
+
+Assessment and plan
+1. Volume overload on known HFrEF. The extra salt at a birthday lunch and the two missed diuretic doses are enough to explain the gain. Furosemide will increase to 40 mg by mouth twice daily for five days, then return to daily dosing if the morning weight is back at baseline. A basic metabolic panel is due in one week. She should call for a gain over 2 kg, dyspnea at rest, or new dizziness.
+2. Chronic kidney disease, stage 3b. Creatinine is mildly above her usual number. Lisinopril stays on for now. Hold it if she is lightheaded or if the repeat creatinine climbs by more than 30 percent. No NSAIDs. A seperate renal clinic referral is not needed if the repeat panel is stable.
+3. Contusion after a low-speed collision. History and exam do not suggest fracture or head injury, so radiographs are deferred. Acetaminophen is adequate. Her son will move the door mat and the boots so the path from the car is clear.
+4. Hypothyroidism. TSH is in range on levothyroxine 88 mcg, and the dose stays the same.
+
+The plan was reviewed slowly with her son, and a paper copy went home in her bag. She can also send a note through the portal at https://portal.example.org/phim/whitacre-msg.
+
+Address confirmed at check-in:
+418 Siltstone Court
+Bend, OR 97702
+Home phone (541) 555-0148. Her son's mobile is 541.555.0136.
+
+Electronically signed
+Ruby Seo, MD
+Internal Medicine
+
+Author: Ruby Seo, MD

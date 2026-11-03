@@ -1,0 +1,3 @@
+NURSE: How is the lisinopril working?
+PATIENT: Fine. My sister Philippa reminds me every day.
+NURSE: Good. Your next visit is November 20, 2026.

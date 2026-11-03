@@ -1,0 +1,75 @@
+CLINICAL PHARMACY DISPENSARY CONSULTATION NOTE
+TRANSCRIBED FROM AMBULATORY CARE REFILL SYSTEM
+
+PATIENT NAME: Kenji
+Fujimoto
+DOB: 12.08.1934
+AGE: The patient is ninety-two years old.
+PLAN IDENTIFIER: Plan Member ID: GHP-9938201
+PRESCRIPTION NUMBER: Rx # 8392014
+ADDRESS: 518 Evergreen Point Road, Bellevue, WA 98004
+CAREGIVER: Ms. Alice Taylor (patient's adult stepdaughter)
+CONTACT PHONE: +1-206-555-0158
+PRIMARY PHYSICIAN: Dr. Thomas Crawford, MD
+CONSULTING GERIATRICIAN: Dr. Eleanor O'Connor-Bates, MD
+CLINICAL PHARMACIST: Robert Miller, PharmD, BCGP
+DATE OF CONSULTATION: 04.11.2026
+
+REASON FOR CONSULTATION:
+Comprehensive
+ medication reconciliation and blister-pack compliance
+review requested by Dr. Crawford following recent clinic discharge.
+Mr. Fujimoto is a ninety-two years old male with chronic open-angle
+glaucoma, mild vascular cognitive impairment, hypertension, and
+benign prostatic hyperplasia. Previous outpatient records indicate
+occasional missed doses when taking loose tablets from individual
+manufacturer bottles. Outreach was completed to evaluate current
+tolerability, verify caregiver administration, and coordinate refill
+dispensing through our specialized packaging pharmacy.
+
+CAREGIVER INTERVIEW & COMPLIANCE ASSESSMENT:
+Robert Miller conducted an extensive structured telephone intake with
+Ms. Alice Taylor, who oversees daily pill organizers and eye drop
+instillation. Ms. Taylor reported that Mr. Fujimoto has maintained
+consistent compliance since the implementation of weekly pre-sorted
+blister packaging. Baseline intraocular pressures measured last week
+were 15 mmHg in the right eye and 16 mmHg in the left eye, indicating
+effective therapeutic response to latanoprost. No episodes of
+orthostatic lightheadedness, syncope, or acute visual changes have
+occurred over the preceding month. Blood pressure logs recorded at
+home average 126/74 mmHg seated.
+
+MEDICATION PROFILE RECONCILED:
+1. Latanoprost 0.005% ophthalmic solution, instill 1 drop into both
+eyes once daily in the evening for intraocular pressure control.
+Dispensed under Rx # 8392014 for 30-day cycle.
+2. Amlodipine besylate 5 mg PO daily each morning.
+3. Tamsulosin hydrochloride 0.4 mg PO daily approximately 30 minutes
+after the evening meal.
+4. Donepezil hydrochloride 5 mg PO daily at bedtime for cognitive
+support; Dr. O'Connor-Bates recommended continuing current dose
+without escalation to minimize bradycardia risk.
+5. Cholecalciferol 1,000 IU PO daily with breakfast.
+6. Artificial tears, instill 1 to 2 drops in both eyes topically
+PRN for dry eye irritation.
+
+CLINICAL PHARMACY EVALUATION & PLAN:
+1. Reconciled full regimen against hospital discharge summary and clinic
+records provided by Dr. Thomas Crawford. Serum creatinine measured on
+04.11.2026 was 1.02 mg/dL with eGFR 66 mL/min/1.73 m2, confirming stable
+renal clearance for all maintenance agents.
+2. Verified coverage under Plan Member ID: GHP-9938201. Prior
+authorization renewal for latanoprost multi-pack was validated with the
+patient's health plan to prevent lapse in therapy.
+3. Synchronized refill schedules for all oral maintenance medications to
+dispense concurrently in 30-day multi-dose blister compliance cards.
+Blister packaging organizes morning and evening doses into separate
+sealed compartments to enhance safety and prevent inadvertent dose
+duplication.
+4. Ms. Taylor confirmed pharmacy courier delivery to 518 Evergreen
+Point Road is arranged for tomorrow afternoon.
+5. Follow-up medication therapy review scheduled with Dr. Eleanor
+O'Connor-Bates in three months.
+
+Robert Miller, PharmD, BCGP
+Clinical Specialist in Geriatric Pharmacotherapy

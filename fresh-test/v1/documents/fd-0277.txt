@@ -1,0 +1,80 @@
+99482015
+GRAFTON MEMORIAL HOSPITAL
+DEPARTMENT OF INPATIENT MEDICINE
+DISCHARGE SUMMARY
+
+PATIENT NAME: CHAKRABORTY, SUBHASHISH
+DATE OF BIRTH: 03/12/1934
+AGE: 92 y.o.
+GENDER: Male
+ADMISSION DATE: 10/14/2026
+DISCHARGE DATE: 2026-10-18
+ATTENDING PHYSICIAN: ALISTAIR MACINTYRE, MD
+PRIMARY CARE TEAM: Dr. Alistair MacIntyre, Dr. Rebecca Vogel, Bradley Miller, NP, Dr. Fiona O'Connor-Silva
+PATIENT RESIDENCE: 742 EAST HIGHLAND AVENUE, APT 4B, TAMPA, FL 33602
+CORRESPONDENCE ADDRESS: PO Box 4819, Tampa, FL 33682
+PRIMARY CONTACT: Mr. Derek Sterling (Son-in-law), Home Phone: (813) 555-0143
+COORDINATION PHONE: 813.555.0187
+PHYSICIAN LIAISON: amacintyre at example dot org
+HEALTH PLAN: Senior Medicare Advantage health plan
+PLAN MEMBER ID: HPM-49201844-01
+GROUP NUMBER: G-88301A
+PRIOR AUTHORIZATION TRACKING: PA-8O19l43-O2
+
+DISCHARGE DIAGNOSES:
+1. Acute-on-chronic decompensated heart failure with mildly reduced ejection fraction (EF 40%), resolved to euvolemic baseline.
+2. Chronic ischemic cardiomyopathy.
+3. Permanent atrial fibrillation, rate-controlled on discharge.
+4. Stage 3a chronic kidney disease, stable baseline.
+5. History of Bell palsy, remote, resolved.
+
+CHIEF COMPLAINT:
+Shortness of breath, orthopnea, and worsening bilateral lower extremity swelling.
+
+HISTORY OF PRESENT ILLNESS:
+Mr. Subhashish Chakraborty is a 92 y.o. gentleman with ischemic cardiomyopathy, atrial fibrillation, chronic kidney disease, and hypertension, who presented on October 14th after five days of progressive dyspnea. He noted severe orthopnea requiring four pillows, paroxysmal nocturnal dyspnea, and marked bilateral pedal edema with an eight-pound weight gain. On the morning of 10/14/2026, his son-in-law, Mr. Derek Sterling, noted that Mr. Chakraborty was tachypneic at rest. Emergency services transported him directly to Grafton Memorial Hospital, where oxygen saturation was 88% on room air, improving to 95% on 3 L/min nasal cannula.
+
+HOSPITAL COURSE:
+1. Acute Decompensated Heart Failure:
+Upon arrival on October 14th, Mr. Chakraborty exhibited jugular venous distention of 12 cm H2O and bibasilar crackles. Transthoracic echocardiogram showed left ventricular ejection fraction of 40% and moderate mitral regurgitation. NT-proBNP was elevated at 4,820 pg/mL. Intravenous furosemide 40 mg twice daily produced a brisk diuresis with 4.2 L total negative balance over 48 hours. Peripheral edema improved to trace pretibial edema. He was transitioned to oral bumetanide 1 mg daily. Asymmetric calf fullness prompted calculation of a Wells score of 0 points, and duplex ultrasonography excluded deep vein thrombosis. At discharge on 2026-10-18, the patient was clinically euvolemic, ambulating comfortably on ambient air.
+
+2. Atrial Fibrillation:
+Initial electrocardiogram showed atrial fibrillation with rapid ventricular response at 124 bpm. Dr. Rebecca Vogel from cardiology recommended titrating metoprolol succinate to 50 mg daily, stabilizing the ventricular rate between 68 and 82 bpm. Eliquis (apixaban) was maintained at the dose-adjusted regimen of 2.5 mg PO BID.
+
+3. Neurologic Assessment:
+Dr. Fiona O'Connor-Silva performed neurological evaluation for transient lightheadedness on day 2. Glasgow Coma Scale was 15/15. Cranial nerve examination demonstrated symmetric facial grimace, with no recurrence of prior Bell palsy. Lightheadedness was determined to be transient benign positional dizziness from fluid shifts.
+
+4. Disposition and Coordination:
+Bradley Miller, NP, coordinated discharge planning. Although Mr. Chakraborty typically resides at his apartment on Highland Avenue in Tampa, his son-in-law Derek Sterling arranged for him to stay at his single-story home in Clearwater during rehabilitation. Home health nursing was arranged through Grafton Memorial Hospital home services.
+
+DISCHARGE PHYSICAL EXAMINATION:
+Vital Signs: Temperature 98.4 F (36.9 C), blood pressure 126/72 mmHg, heart rate 72 beats/min regular, respiratory rate 16 breaths/min, oxygen saturation 98% on room air. Weight 74.2 kg (down 3.8 kg from admission weight of 78.0 kg).
+General: Frail elderly male, resting comfortably.
+Neck: JVP 6 cm H2O.
+Cardiovascular: Irregular rhythm, rate-controlled, grade II/VI systolic apical murmur. Peripheral pulses 2+ bilaterally.
+Lungs: Clear to auscultation bilaterally without wheezing or crackles.
+Extremities: Trace pedal edema bilaterally.
+Neurologic: Alert and oriented x4, Glasgow Coma Scale 15, symmetric facial grimace, motor strength 5/5 upper and 4+/5 lower extremities.
+
+DISCHARGE LABS:
+Sodium: 138 mEq/L, Potassium: 4.2 mEq/L, Chloride: 101 mEq/L, Bicarbonate: 25 mEq/L, BUN: 21 mg/dL, Serum Creatinine: 1.20 mg/dL (baseline 1.18 mg/dL), Estimated GFR: 52 mL/min/1.73 m2, Glucose: 112 mg/dL, Hemoglobin: 11.4 g/dL, Platelets: 218 x 10^3/uL, NT-proBNP: 1,410 pg/mL.
+
+DISCHARGE MEDICATIONS:
+1. Bumetanide 1 mg PO every morning.
+2. Metoprolol succinate 50 mg PO daily.
+3. Eliquis 2.5 mg PO BID.
+4. Atorvastatin 20 mg PO nightly.
+5. Potassium chloride 20 mEq PO daily.
+6. Acetaminophen 500 mg PO q8h PRN joint pain.
+
+DISCHARGE INSTRUCTIONS AND FOLLOW-UP:
+1. Daily morning weights: Derek Sterling will assist with logging. Call clinic if weight increases by 2 pounds overnight or 4 pounds in one week.
+2. Diet: 2,000 mg sodium daily restriction and 2.0 L fluid limit.
+3. Follow-up appointments: Outpatient visit with Dr. Rebecca Vogel on October 28, 2026, and primary care follow-up with Dr. Heather Campbell on November 2, 2026.
+4. Discharge summary, care plans, and rehabilitation schedules are accessible at https://portal.example.org/discharge-summary/7041.
+
+Attending Signoff:
+Electronically signed by:
+ALISTAIR MACINTYRE, MD
+Grafton Memorial Hospital Inpatient Medicine
+Date: 2026-10-18

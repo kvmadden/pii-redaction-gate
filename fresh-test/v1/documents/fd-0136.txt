@@ -1,0 +1,124 @@
+77291044
+BANCROFT MEMORIAL HOSPITAL
+DISCHARGE SUMMARY AND COMPREHENSIVE CARE TRANSITION REPORT
+
+PATIENT: Long, Vahan
+SSN: 984-21-5019
+DOB: 05/19/1933
+AGE: 93 y.o.
+GENDER: Male
+ADMISSION DATE: 8/14/26
+DISCHARGE DATE: 2026-08-21
+ATTENDING PHYSICIAN: Gregory Campbell, MD
+REFERRING GERIATRICIAN: M.R. Foster, MD
+PRIMARY CARE TEAM: Dr. Gregory Campbell, Dr. Meredith Foster, Lindsay Becker, RN, Dr. Tariq al-Rashid
+FACILITY SATELLITE: Cardiovascular Institute of the Foothills
+PATIENT RESIDENCE: 1104 NORTH ADAMS STREET, SUITE 200, GLENDALE, CA 91206
+PRIMARY CONTACT: Tolga Yilmaz (Son-in-law), Contact Tel: (818) 555-0174
+PHYSICIAN OFFICE FAX: Fax: (818) 555-0192
+ELECTRONIC COMMUNICATION: gcampbell (at) example.org
+INSURANCE: Senior Medicare HMO plan, Policy ID: HPN-77291-03, Group: G-4902A
+IMPLANTED CARDIAC DEVICE: Medtronic Azure dual-chamber pacemaker, Model W1SR01, SN: PXR4920187
+LOCAL DISPENSING PHARMACY AREA: 91205
+ELECTRONIC CHART ACCESS: https://records.example.org/portal/ref?id=49102
+
+ADMISSION DIAGNOSIS:
+Syncope, high-grade atrioventricular block, and acute pre-renal azotemia.
+
+DISCHARGE DIAGNOSES:
+1. Symptomatic high-grade (Mobitz type II) second-degree atrioventricular block progressing to transient third-degree heart block, successfully treated with permanent dual-chamber pacemaker implantation.
+2. Syncope secondary to bradyarrhythmia, fully resolved post-device placement.
+3. Acute kidney injury secondary to pre-renal hypoperfusion, fully resolved to baseline renal status.
+4. Chronic essential hypertension.
+5. Mild vascular dementia, stable.
+6. Senile osteoporosis without current pathological fracture.
+
+CONSULTING SPECIALTIES:
+1. Clinical Cardiac Electrophysiology: Dr. Gregory Campbell.
+2. Nephrology: Dr. Tariq al-Rashid.
+3. Geriatric Medicine: Dr. Meredith Foster.
+4. Transition Coordination: Lindsay Becker, RN.
+
+HISTORY OF PRESENT ILLNESS:
+Mr. Vahan Long is a 93 y.o. gentleman with a medical history notable for essential hypertension, mild vascular cognitive impairment, osteoporosis, and chronic sinus bradycardia, who was admitted on August 14th after experiencing an unwitnessed syncopal episode at home. According to his son-in-law, Mr. Tolga Yilmaz, Mr. Long was walking from his bedroom toward the kitchen at approximately 9:30 AM when he suddenly lost consciousness and fell to the carpeted floor. There was no preceding chest pain, palpitations, diaphoresis, shortness of breath, aura, or focal weakness. The syncopal event lasted an estimated thirty to forty-five seconds without tonic-clonic motor activity or urinary or bowel incontinence. Upon regaining consciousness, Mr. Long was initially confused but returned to his cognitive baseline within ten minutes.
+
+Paramedics were summoned to the residence. Initial vital signs obtained on the scene on 8/14/26 demonstrated profound bradycardia with a heart rate of 34 bpm and a blood pressure of 88/54 mmHg. An electrocardiogram demonstrated Mobitz type II second-degree atrioventricular block with intermittent 3:1 AV conduction and ventricular pauses measuring up to 3.8 seconds. Intravenous access was established, and he was transferred directly to the emergency department at Bancroft Memorial Hospital.
+
+PAST MEDICAL AND SURGICAL HISTORY:
+1. Cardiovascular: Chronic sinus bradycardia with baseline heart rates in the mid-fifties, essential hypertension. No prior history of coronary revascularization or myocardial infarction.
+2. Neurologic: Mild vascular neurocognitive disorder diagnosed two years prior, baseline Mini-Mental State Examination score 23/30.
+3. Musculoskeletal: Osteoporosis treated with calcium and vitamin D supplementation; bilateral hip bursitis.
+4. Surgical: Left inguinal hernia repair fifteen years prior; bilateral cataract extractions.
+
+ALLERGIES:
+Sulfa drugs (hives), Codeine (severe nausea).
+
+HOSPITAL COURSE:
+1. Electrophysiology / Pacemaker Implantation:
+Upon hospital admission on August 14th, Mr. Long was placed on continuous cardiac telemetry and transferred to the cardiac step-down unit under the primary care of Dr. Gregory Campbell. Electrocardiographic telemetry confirmed recurrent high-grade atrioventricular block with prolonged ventricular pauses up to 4.2 seconds accompanied by presyncopal lightheadedness. Temporary transcutaneous pacing pads were placed on standby. Dr. Campbell reviewed the clinical findings with Mr. Long and Mr. Tolga Yilmaz, recommending urgent permanent pacemaker implantation.
+
+On August 16, 2026, the patient underwent uneventful surgical placement of a Medtronic Azure dual-chamber transvenous pacemaker, Model W1SR01, SN: PXR4920187, performed in the electrophysiology laboratory at Bancroft Memorial Hospital. Right atrial and right ventricular active-fixation leads were positioned under fluoroscopic guidance with excellent electrical sensing and pacing thresholds (atrial sensing 3.8 mV, impedance 520 ohms; ventricular sensing 12.4 mV, impedance 610 ohms, pacing threshold 0.6 V at 0.4 ms). Interrogation performed twenty-four hours postoperatively revealed 100% ventricular capture and optimal device function programmed in DDDR mode with a lower rate limit of 60 bpm and upper sensor rate of 120 bpm. Post-procedure chest radiography confirmed stable lead positioning without pneumothorax or hemothorax. Mr. Long experienced no further episodes of syncope, presyncope, or pauses.
+
+2. Renal Function / Acute Kidney Injury:
+On admission, serum creatinine was elevated at 1.84 mg/dL above his documented baseline of 1.10 mg/dL, with BUN of 42 mg/dL, consistent with acute pre-renal azotemia caused by transient systemic hypoperfusion during severe bradycardia. Nephrology was consulted, and Dr. Tariq al-Rashid evaluated Mr. Long. Renal ultrasonography showed normal kidney size bilaterally without hydronephrosis or structural obstruction. Following pacemaker placement and gentle intravenous fluid administration with 0.45% normal saline at 50 mL/hr for twenty-four hours, renal perfusion normalized rapidly. By 2026-08-21, serum creatinine decreased to 1.12 mg/dL with BUN of 18 mg/dL, reflecting complete recovery of baseline renal function.
+
+3. Geriatric Evaluation and Cognitive Assessment:
+Dr. Meredith Foster performed a geriatric evaluation to ensure delirium was not superimposed on baseline cognitive impairment. Mr. Long was found to be oriented to person, hospital, and year, with fluent speech and no visual hallucinations. Physical therapist and occupational therapist assessments were completed on hospital day 4. He ambulated eighty feet with a front-wheeled walker under supervision, maintaining pacemaker precautions (avoidance of left shoulder abduction beyond 90 degrees and heavy lifting over ten pounds for six weeks).
+
+4. Discharge Planning and Nursing Care Coordination:
+Lindsay Becker, RN, facilitated multidisciplinary care transition conferences with Mr. Long and Mr. Tolga Yilmaz. In-home physical therapy, occupational therapy, and visiting nurse support were scheduled. A home safety inspection was arranged to mitigate trip hazards. Outpatient electrophysiology follow-up was coordinated through the Cardiovascular Institute of the Foothills. Medications were carefully reconciled, and discharge prescriptions were sent electronically to the retail pharmacy servicing ZIP code 91205.
+
+DISCHARGE PHYSICAL EXAMINATION:
+Vital Signs: Temperature 98.2 F (36.8 C), blood pressure 130/74 mmHg, heart rate 68 bpm (paced), respiratory rate 16 breaths/min, oxygen saturation 98% on room air.
+General: Well-nourished, comfortable gentleman in no acute distress, pleasant and cooperative.
+HEENT: Normocephalic, atraumatic. Pupils equal, round, reactive to light. Mucous membranes moist. Neck supple without jugular venous distention.
+Cardiovascular: Regular rate and rhythm, normal S1 and S2, no murmurs, gallops, or friction rubs. Left pectoral pacemaker pocket incision clean, intact, edges well-approximated with Dermabond, no erythema, fluctuance, hematoma, or drainage. Peripheral pulses 2+ and symmetric.
+Pulmonary: Lungs clear to auscultation bilaterally, good air movement throughout all lung zones, no adventitious sounds.
+Abdomen: Soft, non-tender, non-distended, normoactive bowel sounds.
+Extremities: Warm, dry, no peripheral edema bilaterally, no calf tenderness. Left arm with active range of motion preserved below shoulder level.
+Neurologic: Alert, oriented x 3. Cranial nerves II through XII grossly intact. Motor strength 5/5 in bilateral lower extremities and right upper extremity, left upper extremity limited by post-procedure precautions. Sensation intact to light touch throughout.
+
+DISCHARGE LABS AND DIAGNOSTICS:
+Complete Metabolic Panel:
+Sodium: 139 mEq/L
+Potassium: 4.3 mEq/L
+Chloride: 102 mEq/L
+Bicarbonate: 26 mEq/L
+BUN: 18 mg/dL
+Creatinine: 1.12 mg/dL
+eGFR: >60 mL/min/1.73 m2
+Glucose: 104 mg/dL
+Calcium: 9.2 mg/dL
+Total Protein: 6.8 g/dL
+Albumin: 4.0 g/dL
+Alkaline Phosphatase: 68 U/L
+AST: 21 U/L
+ALT: 18 U/L
+Complete Blood Count:
+White Blood Cell Count: 6.4 x 10^3/uL
+Hemoglobin: 13.1 g/dL
+Hematocrit: 39.4%
+Platelet Count: 242 x 10^3/uL
+Coagulation:
+INR: 1.05
+Prothrombin Time: 11.8 seconds
+12-Lead Electrocardiogram: Atrial-sensed ventricular-paced rhythm at 68 bpm, narrow paced QRS morphology, normal axis, no ST-segment deviations.
+
+DISCHARGE MEDICATIONS:
+1. Amlodipine 5 mg oral tablet once daily in the morning.
+2. Lisinopril 10 mg oral tablet once daily in the morning.
+3. Calcium carbonate 500 mg with Vitamin D 400 IU oral tablet twice daily with meals.
+4. Acetaminophen 650 mg oral tablet every 8 hours as needed for incisional discomfort (avoid NSAIDs).
+5. Polyethylene glycol 3350 powder 17 grams dissolved in water once daily as needed for constipation.
+
+DISCHARGE INSTRUCTIONS AND FOLLOW-UP:
+1. Pacemaker Precautions: Do not lift the left arm above shoulder level for six weeks. Do not lift objects weighing greater than ten pounds with the left arm. Keep the incision site clean and dry; do not submerge in water or soak in a tub.
+2. Device Follow-up: Pacemaker wound check and initial device clinic evaluation scheduled with Dr. Gregory Campbell at Cardiovascular Institute of the Foothills on August 28, 2026 at 9:00 AM.
+3. Geriatric Follow-up: Outpatient appointment scheduled with Dr. Meredith Foster on September 8, 2026 at 1:30 PM.
+4. Nephrology Follow-up: Dr. Tariq al-Rashid will review outpatient lab studies in four weeks.
+5. Online Chart Access: Full medical records, device serial cards, and discharge instructions can be accessed through the patient records portal at https://records.example.org/portal/ref?id=49102.
+
+Attending Physician:
+Gregory Campbell, MD
+Bancroft Memorial Hospital, Division of Cardiology
+Date: 2026-08-21

@@ -1,0 +1,72 @@
+PRIOR AUTHORIZATION AND CLINICAL MEDICATION REVIEW
+FACILITY: Cedar Grove Clinic
+DEPARTMENT: Clinical Pharmacy Services
+
+TRANSMISSION HEADER:
+Date of Request: October 18, 2026
+Prescriber: Dr. Lev M. Rosenberg, MD
+Prescriber Specialty: Dermatology
+Clinic Telephone: (206) 555-0142
+Direct Clinic Fax: 206.555.0188
+
+PATIENT DEMOGRAPHICS:
+PATIENT: AYLA CEVIK
+DOB: June 14, 1934
+Age: 92 y.o.
+Sex: Female
+Home Address:
+742 Orchard View Road
+Seattle, WA 98103
+Primary Caregiver / Emergency Contact: Sung-ho Kim (husband)
+Contact Phone: (206) 555-0177
+Health Plan Member ID: 7741-2098-53
+Prescription Benefit Group: RX-99410
+
+MEDICATION REQUESTED:
+Drug Name: Dupixent (dupilumab) pre-filled syringe
+Dose and Administration: 600 mg subcutaneous injection loading dose (administered as two 300 mg injections at separate sites), followed by 300 mg SC every 14 days
+Quantity: 2 syringes (300 mg/2 mL) per 28 days
+Anticipated Duration: 12 months
+
+CLINICAL JUSTIFICATION AND HISTORY:
+Ayla Cevik is a 92 y.o. female presenting with severe, intractable atopic dermatitis complicated by generalized prurigo nodularis. The patient has been followed longitudinally at Cedar Grove Clinic by Dr. Lev M. Rosenberg. Physical exam demonstrates severe lichenification, excoriations, and erythematous plaques involving approximately 24% of total body surface area, predominantly affecting the bilateral upper extremities, trunk, and neck. Intense nocturnal pruritus has produced persistent sleep deprivation and secondary functional impairment.
+
+TREATMENT HISTORY AND PREVIOUS FAILURES:
+1. Topical Corticosteroids: Clobetasol propionate 0.05% cream and ointment applied twice daily to active lesions for eight consecutive weeks between May 2026 and July 2026, with only temporary and marginal reduction in erythema. Chronic application was subsequently tapered due to cutaneous atrophy and telangiectasias.
+2. Topical Calcineurin Inhibitors: Tacrolimus 0.1% ointment applied BID for six weeks resulted in minimal therapeutic benefit and marked localized burning sensations.
+3. Systemic Immunosuppressive Therapy: Oral methotrexate and cyclosporine were evaluated but contraindicated following multidisciplinary evaluation due to age-related renal insufficiency, mild hepatic enzyme elevation, and increased susceptibility to infectious complications.
+
+VITAL SIGNS AND LABORATORY MONITORING:
+Vitals documented on October 18, 2026:
+Blood Pressure: 132/78 mmHg
+Pulse: 68 bpm, regular
+Respiratory Rate: 16 breaths/min
+Body Temperature: 36.8 C
+Weight: 54.2 kg, BMI: 23.1 kg/m2
+
+Laboratory Findings (sampled October 12, 2026):
+Serum Creatinine: 1.05 mg/dL
+Estimated GFR: 51 mL/min/1.73m2
+Blood Urea Nitrogen: 22 mg/dL
+Serum Sodium: 140 mEq/L
+Serum Potassium: 4.2 mEq/L
+Total Bilirubin: 0.7 mg/dL
+AST: 38 U/L
+ALT: 41 U/L
+Absolute Eosinophil Count: 680 cells/uL (reference 15 to 500 cells/uL)
+Total Serum IgE: 1,420 IU/mL (reference <100 IU/mL)
+
+COMPREHENSIVE MEDICATION RECONCILIATION:
+Reconciliation performed via chart review and structured telephone interview with the patient's husband, Sung-ho Kim:
+1. Clobetasol propionate 0.05% ointment: Apply sparingly to affected areas BID PRN acute flares; dispensed 60 g tube.
+2. Hydroxyzine hydrochloride 25 mg PO QHS PRN nocturnal itching; taking nightly.
+3. Amlodipine besylate 5 mg PO daily for primary hypertension; adherence verified.
+4. Rosuvastatin calcium 10 mg PO daily at bedtime for hyperlipidemia; tolerated well.
+5. Cholecalciferol 1,000 IU PO daily for bone health maintenance.
+6. Artificial tears (carboxymethylcellulose 0.5%) 1 drop into both eyes PRN dryness.
+
+CLINICAL PHARMACY ASSESSMENT AND RECOMMENDATION:
+The clinical documentation confirms that Ayla Cevik has severe atopic dermatitis unresponsive to standard-of-care high-potency topical therapies. Systemic non-biologic immunosuppressants pose disproportionate toxicity risks. Dupilumab targeting interleukin-4 and interleukin-13 provides an established efficacy and safety profile in geriatric patients. Sung-ho Kim confirmed willingness to assist with proper refrigeration and subcutaneous injection administration at home following clinical training. Prior authorization criteria established by the patient's health plan mandate documented failure of topical therapies and contraindication to phototherapy or systemic agents. The patient cannot travel to the regional phototherapy center due to mobility limitations and lack of transportation. Her spouse also expressed concern regarding potential cutaneous infection given extensive excoriations. Initial authorization is requested for a twelve-month duration, after which objective clinical improvement will be documented using the Eczema Area and Severity Index (EASI) score prior to renewal. Complete dosing algorithms and monitoring guidelines are accessible at https://clinical-pathways.example.com/dermatology/biologics.
+
+Reviewing Pharmacist: Rachel B. Klein, PharmD, BCPS
+Cedar Grove Clinic Pharmacy Services

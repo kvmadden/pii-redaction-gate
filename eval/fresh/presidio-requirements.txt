@@ -1,0 +1,58 @@
+# Presidio baseline for eval/fresh/presidio_run.py, pinned 3 November 2026.
+# Install outside the repository, in ~/dev/toolchains/presidio, with the macOS system Python 3.9.6:
+#   /usr/bin/python3 -m venv ~/dev/toolchains/presidio/venv
+#   ~/dev/toolchains/presidio/venv/bin/python -m pip install --only-binary=spacy,thinc,blis -r eval/fresh/presidio-requirements.txt
+# en_core_web_lg 3.8.0 comes from the spaCy models release (python -m spacy download en_core_web_lg).
+annotated-doc==0.0.5
+annotated-types==0.7.0
+blis==1.2.0
+catalogue==2.0.10
+certifi==2026.10.23
+cffi==2.0.0
+charset-normalizer==3.5.2
+click==8.1.8
+cloudpathlib==0.25.0
+confection==0.1.5
+cryptography==44.0.3
+cymem==2.0.16
+en_core_web_lg @ https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.8.0/en_core_web_lg-3.8.0-py3-none-any.whl#sha256=293e9547a655b25499198ab15a525b05b9407a75f10255e405e8c3854329ab63
+filelock==3.19.1
+idna==3.20
+Jinja2==3.1.6
+langcodes==3.5.1
+markdown-it-py==3.0.0
+MarkupSafe==3.0.4
+mdurl==0.1.2
+murmurhash==1.0.16
+numpy==2.0.2
+packaging==26.3
+phonenumbers==9.0.42
+preshed==3.0.15
+presidio_analyzer==2.2.360
+presidio_anonymizer==2.2.360
+pycparser==2.23
+pydantic==2.13.5
+pydantic_core==2.46.5
+Pygments==2.21.0
+PyYAML==6.0.3
+regex==2026.1.15
+requests==2.32.5
+requests-file==3.0.1
+rich==15.0.0
+shellingham==1.5.4
+smart_open==7.5.0
+spacy==3.8.7
+spacy-legacy==3.0.12
+spacy-loggers==1.0.5
+srsly==2.5.5
+thinc==8.3.4
+tldextract==5.3.0
+tqdm==4.70.1
+typer==0.23.2
+typer-slim==0.23.2
+typing-inspection==0.4.2
+typing_extensions==4.16.0
+urllib3==2.6.3
+wasabi==1.1.3
+weasel==0.4.3
+wrapt==2.5.2

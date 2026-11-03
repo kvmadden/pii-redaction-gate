@@ -1,0 +1,3 @@
+Pump serial SN-77A-310452 was replaced.
+Patient drove a car with VIN 1HGCM82633A004352 to the visit.
+Insulin pump settings unchanged.

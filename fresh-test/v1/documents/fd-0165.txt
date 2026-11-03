@@ -1,0 +1,109 @@
+MEDICATION RECONCILIATION AND PRIOR AUTHORIZATION
+
+The covering pharmacist completed this review by telephone after a
+syncope admission. Records from Outside Hospital supplied the
+administration list and the discharge diagnoses. The patient is a
+69-year-old man. His son brought every bottle from the house and stayed
+for the teaching.
+
+Reason for review
+He was admitted after a brief loss of consciousness at home with prompt
+recovery. The Glasgow Coma Scale was 15 on arrival and stayed there.
+Telemetry showed atrial fibrillation with ventricular rates mostly under
+100 and no prolonged pause. An echocardiogram showed a normal ejection
+fraction, no large effusion, and left atrial enlargement. Orthostatic
+vital signs were positive, and the working judgment was volume depletion
+plus rate-related lightheadedness rather than a primary neurologic
+event. He has Graves disease, diagnosed in 2018, still treated with an
+antithyroid drug, along with hypertension, type 2 diabetes mellitus,
+stage 3 chronic kidney disease, and gout. A shin ulcer has been open for
+months. Allopurinol has been on the list since 2020.
+
+During the stay a gout flare began in the right great toe. Nonsteroidal
+anti-inflammatory drugs were avoided because of kidney disease and
+because he takes an anticoagulant. Colchicine was also held to avoid
+stacking interacting drugs. A short steroid taper was chosen instead.
+Cardiology will follow the syncope and the atrial fibrillation as a
+service. Wound Care will follow the ulcer.
+
+Diagnoses relevant to dispensing
+Graves disease on antithyroid therapy.
+Atrial fibrillation, rate controlled.
+Hypertension.
+Type 2 diabetes mellitus.
+Chronic kidney disease, stage 3.
+Gout, recent flare.
+Venous stasis ulcer of the shin.
+Allergic rhinitis.
+
+Allergies
+No drug allergy is recorded.
+
+Current regimen
+methimazole 10 mg PO daily
+propranolol 20 mg PO TID with meals
+apixaban 5 mg PO BID with breakfast and supper
+metformin 500 mg PO BID with meals
+empagliflozin 10 mg PO every morning
+lisinopril 10 mg PO daily
+atorvastatin 20 mg PO at bedtime
+allopurinol 100 mg PO daily
+prednisone 40/30/20/10 mg PO every morning with food, four days at
+each step, then stop
+Allegra 180 mg PO daily for rhinitis, generic fexofenadine acceptable
+acetaminophen 650 mg PO q6h PRN pain, maximum 3 g in a day
+cholecalciferol 1000 units PO daily
+
+Prednisone will be dispensed as 10 mg tablets: four tablets, then
+three, then two, then one, each for four days. That matches the
+40/30/20/10 mg taper and totals forty tablets. He should not stretch
+the course because the toe feels better early.
+
+Apixaban stays at 5 mg rather than 2.5 mg. Dose-reduction criteria that
+combine advanced age with kidney function are not met, and body weight
+is above 60 kg. Do not add aspirin for the arrhythmia. If a dose of
+apixaban is missed, he should not double the next one.
+
+Brand Allegra was requested on an old bottle. The son agreed to generic
+fexofenadine at the same dose and schedule, which avoids a needless
+prior authorization.
+
+The ulcer is cleaned with saline and covered with a nonadherent foam
+under compression arranged by Wound Care. No topical antibiotic was
+added. Debridement of loose fibrin was done during the admission and is
+the procedure of record. An ankle-brachial index before compression was
+adequate, so compression stays appropriate.
+
+Vitals at the clinic recheck, seated then standing
+Seated blood pressure 138/82 mmHg, heart rate 76 beats per minute.
+Standing blood pressure 116/74 mmHg, heart rate 92 beats per minute.
+Temperature 36.6 C. Respiratory rate 14 breaths per minute. Oxygen
+saturation 97 percent on room air. Weight 78 kg.
+
+Laboratory results used for renal and thyroid decisions
+Sodium 136 mmol/L. Potassium 4.3 mmol/L. Chloride 101 mmol/L.
+Bicarbonate 24 mmol/L. Creatinine 1.3 mg/dL.
+eGFR 52 mL/min/1.73 m2.
+Fasting glucose 128 mg/dL. Hemoglobin A1c 7.1 percent.
+Hemoglobin 13.4 g/dL. Platelets 228 K/uL. WBC 6.9 K/uL.
+TSH 1.6 mIU/L. Free T4 1.2 ng/dL.
+Urate 7.1 mg/dL, not a reason to raise allopurinol during
+an acute flare.
+
+Counseling and monitoring
+Hold empagliflozin and metformin on days he cannot eat or drink, then
+restart when intake is normal, to limit ketoacidosis and lactic
+acidosis. Hold lisinopril if vomiting persists. He should rise slowly
+and sit before walking because the standing pressure drops. On
+methimazole, fever, sore throat, or mouth ulcers need a same-day call
+because of agranulocytosis. Propranolol should not be stopped abruptly.
+Keep a steady apixaban schedule and avoid naproxen, ibuprofen, and
+aspirin. Allopurinol continues through the flare at the current dose
+and is not increased now. Acetaminophen is the analgesic for the toe
+and for ulcer pain. Prednisone will raise glucose, so fingerstick
+checks increase until the taper ends. The clinic should hear about
+repeated readings above 250 mg/dL. Fexofenadine is preferred to
+diphenhydramine, which would add fall risk. The son repeated the taper
+counts correctly. A thirty-day supply of the chronic medicines was
+prepared, with prednisone limited to forty tablets. No colchicine and
+no nonsteroidal drug were dispensed.

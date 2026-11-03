@@ -1,0 +1,51 @@
+CALL RECORDING: AMBULATORY NURSE LINE
+FACILITY: St. Anselm Medical Center
+MRN: 7301928
+PATIENT: Châu Bích Ngân
+ATTENDING: Dr. Scott Higgins
+STAFF: Heaven Clark, RN
+CALLER: Marco D'Angelo (son-in-law)
+
+[Call Recording Begins]
+
+Heaven Clark, RN: St. Anselm Medical Center outpatient triage, this is Nurse
+Heaven Clark. How can I, uh, help you today?
+
+Marco D'Angelo: Hi Heaven, yes, um, my name is Marco D'Angelo. I'm calling for
+my mother-in-law, Châu Bích Ngân. She, uh, she had an outpatient colonoscopy
+with polypectomy back around the 4th of July, and Dr. Higgins scheduled a
+repeat flexible sigmoidoscopy. We received, uh, we received an automated
+reminder about pre-procedure fasting, but we weren't sure about her morning
+medications.
+
+Heaven Clark, RN: Okay, let me pull up her chart under MRN: 7301928. Can you
+confirm her address for me first?
+
+Marco D'Angelo: Yes, she lives at:
+4128 Evergreen Terrace, Apartment 5B
+Portland, OR 97221
+
+Heaven Clark, RN: Thank you, Marco. And what is the best direct callback number
+in case we get disconnected?
+
+Marco D'Angelo: You can reach me at 503-555-0118 ext. 240 during business hours.
+
+Heaven Clark, RN: Perfect. Looking at the scheduling orders entered on August
+fourth, twenty twenty-six, Dr. Higgins noted that for patient C.B.N., she
+should hold her lisinopril 20 mg PO on the morning of the procedure. However,
+she should take her levothyroxine 75 mcg PO with a small sip of water at
+6:00 AM. Also, she must finish her polyethylene glycol bowel prep tonight
+by 10:00 PM.
+
+Marco D'Angelo: Got it. Hold the lisinopril, take the levothyroxine with a tiny
+sip of water, and finish the prep tonight.
+
+Heaven Clark, RN: Exactly. Check in at the endoscopy suite tomorrow morning at
+7:30 AM. If she develops any nausea or abdominal pain tonight, call our
+on-call line.
+
+Marco D'Angelo: Thank you so much, Heaven. Have a wonderful day.
+
+Heaven Clark, RN: You too, Marco. Goodbye.
+
+[Call Recording Ends]

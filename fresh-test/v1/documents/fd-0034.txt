@@ -1,0 +1,26 @@
+DISCHARGE SUMMARY
+
+Patient: HALE PAGET
+MRN: 7391842
+Age: 67 years
+
+Hale Paget was admitted to Metabolic Bone Hospital in March 2026 for worsening left hip pain and a suspected stress fracture through pagetic bone. He is a 67 year old man with longstanding Paget disease of the pelvis and proximal femur, previously treated with an oral bisphosphonate that he stopped taking two years ago after dental work. His sister, Summer Braddock, age 61, has been staying with him and will drive him home.
+
+The attending physician was Karim ibn Farouk, NPI 1609384725. Endocrinology consultation was provided by Layla al-Najjar. On arrival he was afebrile, blood pressure 146/82 mmHg, heart rate 78 beats per minute, and oxygen saturation 97 percent on room air. Alkaline phosphatase was 512 U/L, calcium 9.0 mg/dL, albumin 3.8 g/dL, creatinine 1.05 mg/dL, and 25-hydroxy vitamin D 19 ng/mL. Pelvic radiographs and a bone scan showed intensely active Paget disease without cortical destruction suggestive of sarcoma. Pain was controlled and no new neurologic deficit occured.
+
+Past medical history also includes hypertension, hyperlipidemia, and osteoarthritis of the knees. He does not smoke. He drinks rarely. There is no history of osteosarcoma in the family and no prior fracture of the hip. During the stay his creatinine stayed stable and his calcium did not fall below 8.6 mg/dL. He was advised to report jaw pain, thigh pain, or fever over the next several weeks, and to keep a dental appointment already scheduled for routine cleaning.
+
+Hospital course. After dental clearance he recieved zoledronic acid 5 mg IV once, infused over 30 minutes, and tolerated it without fever that required more than acetaminophen. Calcium carbonate 500 mg PO BID and cholecalciferol 2000 IU PO daily were started. Celecoxib 200 mg PO daily was given for five days, then stopped. Physical therapy advanced him to a walker with wieght bearing as tolerated. A seperate copy of the imaging report was printed for his sister.
+
+Discharge medications.
+Zoledronic acid infusion completed this admission. Next dose to be arranged by endocrinology.
+Calcium carbonate 500 mg PO BID with meals.
+Cholecalciferol 2000 IU PO daily.
+Acetaminophen 650 mg PO every 6 hours as needed for pain. Rx 8841207.
+Atorvastatin 40 mg PO nightly and lisinopril 10 mg PO daily, both continued from home.
+
+Follow-up. He will be seen in the endocrine clinic within two weeks. Ambulation is limited to household distances with the walker until that visit. His sister will stay at the house until he is steady with the walker. Questions about the infusion can be sent to bone.desk@example.org. Outside films from before March 2026 should be forwarded if they exist. Summer Braddock understands the fever precautions for the first few days at home.
+
+Signed,
+Karim ibn Farouk
+Metabolic Bone Hospital

@@ -1,0 +1,25 @@
+Date: 2026-11-04
+Patient: Wood, Keiko (92F)
+Caregiver: Amadou Traore
+Attending: Dr. Jianhua Zhang
+Subject: Medication tolerance and morning refill request
+
+Message 1
+From: amadou
+Sent: 2026-11-04 08:35
+To: Dr. Jianhua Zhang
+
+hello dr. zhang,
+i am contacting the clinic on behalf of Mrs. Wood. as a 92F with moderate cognitive decline, she has been following your updated titration schedule. her home aide and i noted that Mrs. Wood's appetite has decreased slightly over the past three days, but she has had no nausea or vomiting. she continues taking donepezil 10 mg PO at bedtime and memantine 10 mg PO BID with meals. her morning vitals were BP 124/72 mmHg, HR 66 bpm, and pulse oximetry 97% on room air. we had a brief concen about mild sedation in the afternoon, but her gait remains stedy with her walker. could you confirm if we should contnue the same memantine dosage? also, our backup contact line is Phone: (415) 555–0173 if you need to speak with me directly. thank you.
+
+Message 2
+From: Dr. Jianhua Zhang
+Sent: 2026-11-04 11:10
+To: amadou
+
+Dear Amadou,
+
+Thank you for the update regarding Keiko Wood's status. Mild transient anorexia can occur during memantine titration. Because Mrs. Wood's vital signs and ambulatory stability are preserved, please continue memantine 10 mg PO BID alongside donepezil 10 mg PO at bedtime. Offer smaller, more frequent meals to encourage intake. We have updated Wood's chart with your direct callback number (415) 555–0173. Please notify our office if dizziness or worsening lethargy occurs.
+
+Sincerely,
+Jianhua Zhang, MD

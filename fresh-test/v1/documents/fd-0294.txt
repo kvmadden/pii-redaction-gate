@@ -1,0 +1,30 @@
+Discharge Summary
+Patient Name: BABATUNDE TAGBO
+Account Number: 6041 3829 15
+Date of Admission: Nov. 8, 2026
+Discharge Date: Nov. 12, 2026
+Primary Care Clinic: Pine Grove Rehabilitation Center
+Contact Telephone: (404) 555-0144
+Home Address: 482 Highland Avenue, Atlanta, GA 30312
+Emergency Contact: Aylin Demir (partner)
+Care Team: Dr. Miriam Feinstein (Attending), Dr. Ari Levin (Resident), Leah Goldfarb, RN (Primary Nurse)
+
+Service: Internal Medicine
+Admission Diagnosis: Acute unprovoked deep vein thrombosis of the left lower extremity.
+Discharge Diagnosis: Left lower extremity deep vein thrombosis, resolved acute pain.
+
+History of Present Illness:
+Mr. Tagbo is a 52-year-old male who presented with four days of progressive left calf swelling, erythema, and calf tenderness. In the emergency department, his Wells score for DVT was calculated at 3 points (high probability), prompting a lower extremity duplex ultrasound which demonstrated an occlusive thrombus in the left popliteal and posterior tibial veins. He denied chest pain, shortness of breath, or hemoptysis. He has no prior personal history of venous thromboembolism.
+
+Hospital Course:
+Upon admission to the medical floor under the care of Dr. Miriam Feinstein and Dr. Ari Levin, the patient was initiated on enoxaparin 1 mg/kg subcutaneously every 12 hours as bridging therapy, alongside apixaban 10 mg PO BID. Over the subsequent 72 hours, his leg pain and edema improved significantly. Serial examinations revealed progressive softening of the gastrocnemius compartment with resolving erythema and decreasing circumference discrepancy between the lower extremities. Repeat duplex ultrasound confirmed non-propagation of the popliteal clot. He remained hemodynamically stable throughout the stay with blood pressure averaging 124/78 mmHg and heart rate 68 to 74 beats per minute. Ambulatory saturation remained 98% on room air. PT/INR and complete metabolic panel were unremarkable; baseline serum creatinine was 0.92 mg/dL. He toelrated oral intake and physical therapy without complication. Prior to discharge, apixaban was transitioned to maintenance planning, and he was provided with educational materials regarding signs of bleeding and pulmonary embolism. His partner, Aylin Demir, was present for nursing education delivered by Leah Goldfarb, RN, and confirmed understanding of the medication schedule and red-flag symptoms.
+
+Discharge Medications:
+1. Apixaban 10 mg oral tablet, take 1 tablet PO BID through Nov. 15, 2026, then decrease to 5 mg PO BID for 6 months. Rx 6912048-D.
+2. Acetaminophen 500 mg oral tablet, take 1 to 2 tablets PO every 6 hours PRN mild calf ache.
+
+Follow-Up Plan:
+The patient was dischaged in stable condition. He will follow up with Dr. Miriam Feinstein at Pine Grove Rehabilitation Center on Nov. 24, 2026, for repeat clinical assesment and therapeutic monitoring.
+
+Miriam Feinstein, MD
+Attending Physician, Department of Medicine

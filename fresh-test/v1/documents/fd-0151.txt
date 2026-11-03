@@ -1,0 +1,11 @@
+From: Patient
+Sent: 8:16 AM
+
+hi, i recieved the lab message and i am pretty worried. my heart has been racing with palpatations, and i get shakey when i climb stairs. it doesnt feel like the medicine is keeping up. i was told this is Graves disease back in 2019, and i have been on methimazole 10 mg PO daily plus propranolol 20 mg PO TID. i am 61 and i do not want this to turn into a heart problem. the thyroid uptake scan was done at Outside Hospital and nobody at the clinic has gone over it with me. can someone look and tell me if a high free T4 means the dose is too small. my daughter keeps asking whether this runs in the family.
+
+From: Covering clinician
+Sent: 11:02 AM
+
+Thanks for writing. A free T4 of 2.8 ng/dL with a TSH under 0.01 mIU/L still fits active Graves disease, so the current methimazole dose looks low. Please increase methimazole to 20 mg PO daily and keep propranolol 20 mg PO TID for the tremor and the fast heart rate. For a 61-year-old, a heart rhythm check is warranted, and I am placing a referral to Cardiology. The home blood pressure was 148/86 mmHg and the pulse was 112 bpm at the last nurse visit, which is too fast to leave alone. ALT was 34 U/L, so it is acceptable to continue methimazole, but stop it and send a portal note for jaundice, a severe rash, or a sore throat with fever. The uptake images show diffuse increased uptake, which supports Graves disease rather than a single nodule. This can cluster in families, though that does not diagnose your daughter. Take the two medicines at the same times each day, and do not stop propranolol all at once.
+
+Endocrinology

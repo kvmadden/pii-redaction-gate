@@ -1,0 +1,8 @@
+{
+ "rule": "every file under eval/ and src/ on main and on every PR or branch head",
+ "repo": "pii-redaction-gate",
+ "main_commit": "0ec21a9cc86bbe56eb4f20a33dad92b3a315b3ae",
+ "refs_scanned": 18,
+ "files": 46,
+ "shingles_8word": 77397
+}

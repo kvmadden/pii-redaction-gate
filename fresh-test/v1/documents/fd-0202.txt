@@ -1,0 +1,38 @@
+PRIOR AUTHORIZATION REFILL TRIAGE NOTE
+Date: 11-14-2026
+Patient: Mr. Charles Stone
+Age: ninety-four years old
+Prescriber: Dr. Donald Fraser
+Authorized Representative: Ms. Page Stone (daughter)
+Callback Phone: 617–555–0184
+
+Clinical Context:
+Telephone triage request received from patient's daughter, Ms. Page
+Stone, regarding coverage denial for apixaban (Eliquis) 5 mg PO BID.
+Mr. Stone is a ninety-four years old male with chronic nonvalvular atrial
+fibrillation and history of transient ischemic attack. Documentation from
+Dr. Donald Fraser confirms stable renal clearance (CrCl 44 mL/min). Payer
+mandates step therapy with warfarin sodium; however, records from 03-12-2026
+show Mr. Stone suffered severe coagulopathy on warfarin in 2024 with gross
+hematuria and labile INR values between 1.2 and 5.1.
+
+Patient profile review indicates concurrent treatment for stage 3 chronic
+kidney disease, coronary artery disease status post percutaneous coronary
+intervention, and hypertension. Baseline serum creatinine is 1.24 mg/dL
+with potassium 4.6 mEq/L documented at last clinic visit. Caregiver
+emphasizes patient cannot afford out-of-pocket retail costs while awaiting
+coverage determination.
+
+Current Orders:
+1. Apixaban 5 mg PO BID #60, 30-day supply
+2. Metoprolol succinate 25 mg PO daily #30
+3. Lisinopril 5 mg PO daily #30
+
+Intervention:
+Submitted urgent prior authorization redetermination appeal with clinical
+chart notes. Faxed clinical appeal packet directly to payer utilization
+management division. Dispensed 7-day emergency bridge supply of apixaban
+5 mg PO BID to ensure continuity of care. Advised Ms. Page Stone of
+anticipated 48-hour payer review window.
+
+Triage Pharmacist: Heather MacLeod, RPh

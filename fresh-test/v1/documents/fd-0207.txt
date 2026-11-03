@@ -1,0 +1,155 @@
+OAKHAVEN REGIONAL HOSPITAL
+OUTPATIENT CARDIOLOGY CLINIC CONSULTATION NOTE
+Date of Service: 10/16/2026
+Author: Kavita Chadha, MD, Resident Physician
+
+PATIENT DEMOGRAPHICS AND CLINIC INTAKE:
+Patient Name: FAULKNER, KENNETH R.
+MRN: 7492018
+Account Number: AC-8820491
+Device Transmitter ID: 4821-9932-07
+Date of Birth: 04/12/1959
+Age: 67-year-old male
+Home Phone: (404) 555-0134
+Cellular Phone: 404.555.0191
+Patient Address:
+742 NORTH BRIARCLIFF RD, DECATUR, GA 30033
+
+Referring Practice:
+Clear Creek Health Center
+1240 Clear Creek Parkway
+Roswell, GA 30075
+Practice Telephone: 404-555-0182 ext. 409
+
+CARE TEAM PRESENT:
+Attending Physician: Gurpreet S. Sandhu, MD
+Cardiology Fellow: Rohit Bansal, MD
+Resident Physician: Kavita Chadha, MD
+Clinical Nurse Specialist: Preeti Dhillon, RN
+
+CHIEF COMPLAINT:
+Post-hospitalization heart failure follow-up and medication titration.
+
+HISTORY OF PRESENT ILLNESS:
+Kenneth R. Faulkner is a 67-year-old male with ischemic cardiomyopathy
+(LVEF 30% in August 2024), CAD status post stent in 2021, and stage 3a
+chronic kidney disease, who presents for post-hospitalization
+evaluation. He was admitted to Oakhaven Regional Hospital from
+October 10 through October 14, 2026, for volume overload with exertional
+dyspnea and lower extremity edema. He was discharged on 10-14-2026 after
+intravenous furosemide diuresis achieved a net fluid balance of -4.2
+liters and reduced his weight to 84.2 kg.
+
+The patient was accompanied to today's appointment by his wife, Eleanor
+Faulkner, who corroborated the interval history. Mr. Faulkner reports
+that since returning home on Oct 15 2026, his stamina has improved,
+though he still notes mild dyspnea when climbing stairs. He denies
+orthopnea, chest pressure, or syncope, but reports brief palpatations
+when bending forward. Mrs. Faulkner logs his daily morning weights; his
+weight this morning was 84.5 kg. He adheres to a 2000 mg daily sodium
+restriction and a 1.5 L fluid restriction. Labs were drawn yesterday
+at Clear Creek Health Center, located at 1240 Clear Creek Parkway,
+Roswell, GA 30075.
+
+REVIEW OF SYSTEMS:
+Constitutional: Denies fever, chills, or acute fatigue.
+Cardiovascular: Mild exertional dyspnea, occasional brief palpitations.
+Denies chest pain, orthopnea, or presyncope.
+Respiratory: Denies cough or wheezing.
+Gastrointestinal: Denies nausea, vomiting, or diarrhea.
+Genitourinary: Denies dysuria; mild nocturia once nightly.
+Musculoskeletal: Ambulatroy without assistive devices.
+Neurological: No focal weakness or dizziness.
+Skin: Warm, dry, intact without breakdown.
+
+PAST MEDICAL AND SURGICAL HISTORY:
+1. Ischemic cardiomyopathy (LVEF 30% in August 2024).
+2. CAD status post drug-eluting stent to LAD (2021).
+3. Primary hypertension and hyperlipidemia.
+4. CKD stage 3a (baseline creatinine 1.15 mg/dL).
+5. Open right inguinal hernia repair (2015).
+
+CURRENT MEDICATIONS:
+1. Sacubitril / valsartan 49/51 mg PO BID.
+2. Carvedilol 12.5 mg PO BID with meals.
+3. Spironolactone 25 mg PO daily.
+4. Furosemide 40 mg PO every morning.
+5. Empagliflozin 10 mg PO every morning.
+6. Atorvastatin 40 mg PO nightly at bedtime.
+7. Aspirin 81 mg PO daily.
+8. Potassium chloride 20 mEq PO daily.
+
+ALLERGIES:
+Lisinopril (angioedema with lip swelling). No known food allergies.
+
+PHYSICAL EXAMINATION:
+Vital Signs:
+Temperature: 98.4 F (36.9 C), oral
+Pulse: 72 beats per minute, regular rhythm
+Blood Pressure: 138/84 mmHg, right arm, seated
+Respiratory Rate: 16 breaths per minute, unlabored
+Oxygen Saturation: 97% on ambient room air
+Weight: 84.5 kg (186.3 lbs)
+
+General: 67-year-old male sitting comfortably, alert, oriented x4,
+in no acute respiratory distress.
+HEENT: Normocephalic, atraumatic. Moist mucous membranes.
+Neck: Supple. Jugular venous pulse estimated at 7 cm H2O at 45 degrees.
+Cardiovascular: Regular rate and rhythm. S1 and S2 present. Soft grade
+2/6 holosystolic murmur at cardiac apex. No S3 gallop or rub.
+Lungs: Clear to auscultation bilaterally; scant bibasilar end-
+inspiratory crackles, improved from admission.
+Abdomen: Soft, non-distended, non-tender. Normoactive bowel sounds.
+Extremities: Warm with trace peripheal edema at both ankles; no calf
+tenderness. Dorsalis pedis pulses 2+ bilaterally.
+
+DIAGNOSTIC DATA:
+Serum Chemistry and Hematology (drawn Oct 15 2026):
+  Sodium: 137 mmol/L
+  Potassium: 4.2 mmol/L
+  Chloride: 101 mmol/L
+  Bicarbonate: 24 mmol/L
+  BUN: 22 mg/dL
+  Serum Creatinine: 1.15 mg/dL
+  Estimated GFR: 64 mL/min/1.73m2
+  Serum Glucose: 118 mg/dL
+  B-type Natriuretic Peptide (BNP): 340 pg/mL
+12-Lead Electrocardiogram (clinic today, 10/16/2026):
+Normal sinus rhythm at 70 bpm. PR interval 168 ms. QRS duration 106 ms.
+Old anterior infarct pattern with Q waves in V1-V3, unchanged from
+discharge tracing on 10-14-2026. No acute ST elevations.
+
+ASSESSMENT AND CLINICAL IMPRESSION:
+1. Chronic systolic heart failure (HFrEF, NYHA class II) secondary to
+ischemic cardiomyopathy. Favorable response to diuresis at Oakhaven
+Regional Hospital; near euvolemic with stable renal function on GDMT.
+2. Coronary artery disease: Clinically stable, without angina.
+3. Essential hypertension: Controlled on carvedilol and Entresto.
+4. Chronic kidney disease stage 3a: Preserved baseline eGFR.
+
+PLAN AND RECOMMENDATIONS:
+1. Heart Failure Medical Regimen:
+   - Continue sacubitril / valsartan 49/51 mg PO BID.
+   - Continue carvedilol 12.5 mg PO BID; titrate to 25 mg BID next visit.
+   - Continue spironolactone 25 mg PO daily.
+   - Continue furosemide 40 mg PO daily for 5 days, then reduce to 20 mg
+     PO daily if stable.
+   - Continue empagliflozin 10 mg PO daily for cardioprotection.
+   - Continue potassium chloride 20 mEq PO daily.
+2. Fluid and Dietary Counseling:
+   - Strict 2000 mg sodium and 1.5 L fluid limits reinforced.
+   - Instructed patient and wife Eleanor to record morning weights daily.
+   - Call clinic if weight increases by > 3 lbs in 24 hours.
+3. Monitoring and Follow-Up:
+   - Repeat BMP in 10 to 14 days.
+   - Return to Outpatient Cardiology Clinic in four weeks.
+   - Educational resources available at
+     https://portal.example.org/chf-care.
+
+Care Team Signoff:
+Electronically signed by:
+Kavita Chadha, MD, Resident Physician
+Rohit Bansal, MD, Cardiology Fellow
+Gurpreet S. Sandhu, MD, Attending Cardiologist
+Clinic Primary Contact: Preeti Dhillon, RN
+Oakhaven Regional Hospital Cardiovascular Institute

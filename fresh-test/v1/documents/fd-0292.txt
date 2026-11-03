@@ -1,0 +1,55 @@
+Red Cedar Clinic
+Outpatient Progress Note
+
+Patient: RIVERS CALDERÓN
+DOB: 14 May 1922
+Date of Service: 4 Sep 2026
+
+Chief complaint
+A slow gait, urinary hesitancy, and a check of blood pressure after a dizzy spell.
+
+History of present illness
+Rivers Calderón is a 104-year-old man who still tells his own story if given a little time. Present at the visit: Hasmik Davtyan, his wife; Garen Avagyan, his brother; and Love O'Neill-McCarthy, MD. He felt lightheaded one morning last week when he stood up, sat back down, and did not fall. No chest pain, no palpitations, and no focal weakness came with it. Urinary hesitancy is longstanding, with a slower stream and no burning. The stream is weaker than it was five years ago, but he is not incontinent and he has no fever or back pain. He is up twice at night. Bowel habits are regular with prunes, and there is no rectal bleeding. Gait is slower over the past year, and he uses a cane in the hall. He has not driven in several years.
+
+The old driver license D5521-8834-02 stays in the wallet Hasmik Davtyan brings, only so the desk can match him. Appetite is steady and weight has not dropped. He has no fever and no cough. Hearing loss makes a crowded room hard, so this visit was kept quiet and one person spoke at a time. He still enjoys the radio news and a slow walk to the mailbox with a hand on the rail.
+
+A right cataract extraction years ago left him able to read large print. A forearm basal cell carcinoma was treated with excision, and the scar is soft. He acheived that recovery without complication.
+
+Past medical history
+Hypertension. Osteoarthritis of both hips. Benign prostatic hyperplasia. Hearing loss. Remote open cholecystectomy. No diabetes, no stroke, and no Parkinson disease.
+
+Medications
+Amlodipine 5 mg PO daily
+Tamsulosin 0.4 mg PO at bedtime
+Acetaminophen 650 mg PO BID PRN pain
+Artificial tears, one drop each eye BID
+No anticoagulant and no sedating antihistamine.
+
+Allergies
+Sulfa antibiotics, rash.
+
+Social history
+He lives with his wife in a single-level house. Garen Avagyan works in Alhambra and visits on Saturdays to walk the block with him. A grab bar is already in the bathroom. He does not smoke or drink.
+
+Examination
+Blood pressure 138/64 mmHg seated and 130/62 mmHg standing, pulse 72 beats per minute, respirations 16 per minute, afebrile, weight 58.0 kg. Alert, hearing better on the right, speech clear. Lungs clear, heart regular, no murmur. Abdomen soft with an old cholecystectomy scar. Hips have limited rotation without warmth. Ankles are without edema. Prostate is not examined today. Gait with a cane is slow, base is acceptable, and he did not stumble. Neurologic exam shows no rest tremor and no rigidity. Cranial nerves are grossly intact aside from the hearing loss, and strength is 5 out of 5 in both arms. There is no facial droop to suggest Bell palsy.
+
+Labs
+Creatinine 1.05 mg/dL, potassium 4.0 mmol/L, hemoglobin 13.1 g/dL, PSA 2.4 ng/mL, unchanged. Results are also listed at https://portal.example.org/records/calderon-labs for the family to read.
+
+Assessment and plan
+1. Hypertension with a brief postural symptom and no measured orthostasis of consequence. Amlodipine 5 mg PO daily stays, because the standing pressure is still adequate and the dizzy spell did not repeat. I advised him to pause at the edge of the bed for a few breaths before standing, which is the change most likely to prevent a fall. If lightheadedness returns, his wife will check a seated pressure and call rather than wait a month.
+2. Benign prostatic hyperplasia with hesitancy. Tamsulosin 0.4 mg PO at bedtime continues. Tamsulosin can drop the pressure on standing, but today's numbers do not show a meaningful fall, so the dose stays, with a reminder to sit if he feels lightheaded. He will folow up sooner for inability to void, fever, or blood in the urine. PSA remains in a range that does not, by itself, push me toward a biopsy at his age, and he does not want cancer screening that would not change his care.
+3. Osteoarthritis and fall risk. Acetaminophen 650 mg PO BID as needed is enough. No steroid injection and no procedure were offered today. The prior cataract extraction and the excision of basal cell carcinoma need no new action. The cholecystectomy scar is quiet and there is no hernia.
+4. Medications were seperated into a morning cup and a bedtime cup by his wife so the tamsulosin is not taken at breakfast. Love O'Neill-McCarthy initialed the instruction as L.O. and reviewed the cups with both of them.
+
+A shingles vaccine was discussed and he accepted it, to be given at the pharmacy visit already on his calendar. No new medicine was added, which is deliberate. Return in three months, or sooner for a fall, chest pain, inability to pass urine, or blood in the stool.
+
+Address: 418 Wisteria Drive, Glendale, CA 91205.
+Phone (818) 555–0133.
+
+Electronically signed
+Love O'Neill-McCarthy, MD
+Geriatrics
+
+Author: Love O'Neill-McCarthy, MD

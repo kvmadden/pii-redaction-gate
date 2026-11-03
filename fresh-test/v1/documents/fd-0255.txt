@@ -1,0 +1,80 @@
+TRAUMA AND ORTHOPEDIC SPECIALTY HOSPITAL
+OUTPATIENT SURGICAL FOLLOW-UP PROGRESS NOTE
+Date of Evaluation: Nov. 2, 2026
+
+PATIENT DEMOGRAPHIC AND CLINICAL RECORD:
+Patient Name: Mr. Thiago da Silva Tavares
+Medical Record Number: MRN: MR-8830194
+Universal Encounter Tracking ID: 9481-2204-71
+Date of Birth: 06/18/1983 (Age: 43-year-old male)
+Home Address: 842 Blossom Hill Road, Suite 210, San Jose, CA 95123
+Contact Email: thiago.tavares@example.net
+Attending Surgical Practice Telephone: (408) 555-0177 ext. 234
+
+CLINICAL CARE TEAM:
+Attending Orthopedic Surgeon: Dr. Major Singh, MD (State Medical License # C-489201)
+Orthopedic Clinical Assistant: Little Sharma, MA
+Accompanied By: Wife, Mrs. Agnieszka Dąbrowska (Age: 41-year-old)
+
+CHIEF COMPLAINT:
+Initial post-discharge surgical follow-up evaluation for open reduction and internal fixation (ORIF) of the right distal radius fracture, splint removal, wound inspection, and cast application.
+
+HISTORY OF PRESENT ILLNESS:
+Mr. Thiago da Silva Tavares is a 43-year-old right-hand-dominant male software engineer who presents for his first scheduled post-operative visit following orthopedic trauma surgery. The patient was involved in a motor vehicle collision on 10/28/2026 when his sedan was struck on the passenger side by another vehicle. Emergency transport documentation notes that the vehicle, bearing VIN: 1HGCR2F83HA029184, sustained significant front-end damage with airbag deployment. The patient was transported directly to Trauma and Orthopedic Specialty Hospital, where physical examination and emergency radiographic imaging confirmed an acute, displaced, intra-articular fracture of the right distal radius with dorsal comminution and associated ulnar styloid fracture.
+
+Following emergent closed reduction and sugar-tong splint immobilization in the emergency department, the patient was admitted to the inpatient orthopedic surgery service from 10/28/2026 to 11/02/2026. On 10/29/2026, he underwent definitive operative management comprising open reduction and internal fixation utilizing a volar locking plate system with intraoperative fluoroscopic guidance. The surgical procedure was uncomplicated, achieving anatomic restoration of the radial articular surface, radial inclination, and volar tilt. He was discharged home on Nov. 2, 2026, in stable condition with a sterile surgical dressing and plaster volar-dorsal immobilization splint.
+
+Today, Mr. Thiago da Silva Tavares is accompanied by his wife, Mrs. Agnieszka Dąbrowska, who assists with his daily activities and medication administration. The patient reports that his postoperative pain has been manageable and steadily improving. He has been taking oral acetaminophen and ibuprofen as prescribed, having required only two doses of oxycodone over the last 48 hours. He notes mild swelling and tightness over the dorsum of the right fingers, which improves when the extremity is elevated above the level of his heart. He denies fever, chills, numbness, tingling in the median nerve distribution, or progressive throbbing pain. His postoperative digital radiographs and operative summary were retrieved and reviewed through the regional PACS imaging portal at https://imaging.example.com/reports/ortho-trauma.
+
+PAST MEDICAL AND SURGICAL HISTORY:
+1. Right distal radius intra-articular fracture, status post ORIF on 10/29/2026.
+2. Mild hypercholesterolemia, diagnosed in September 2025.
+3. Left knee arthroscopic partial meniscectomy in 2016.
+4. No prior wrist fractures, carpal tunnel syndrome, or inflammatory arthropathy.
+
+CURRENT MEDICATIONS:
+1. Oxycodone hydrochloride 5 mg PO q4-6h PRN severe pain (Rx # RX-8492013).
+2. Acetaminophen 650 mg PO q6h PRN mild-to-moderate pain.
+3. Ibuprofen 600 mg PO TID with meals.
+4. Enoxaparin sodium 40 mg subcutaneous daily for venous thromboembolism prophylaxis (completed 5-day post-injury course).
+5. Atorvastatin calcium 10 mg PO daily at bedtime.
+
+ALLERGIES:
+No known drug allergies.
+
+PHYSICAL EXAMINATION:
+Vital Signs (measured by Little Sharma, MA):
+Blood Pressure: 122/78 mmHg
+Pulse: 68 beats per minute, regular
+Respiratory Rate: 14 breaths per minute
+Temperature: 98.2 F (36.8 C), oral
+Oxygen Saturation: 99% on ambient room air
+Weight: 78.4 kg (172.8 lbs)
+
+General: The patient is a healthy-appearing 43-year-old male, alert, oriented x4, comfortable, in no acute distress.
+Right Upper Extremity Examination:
+The postoperative plaster splint and bulky gauze dressing were removed under clean technique. Inspection reveals a 7 cm longitudinal volar incision over the distal forearm and wrist, well-approximated with intact non-absorbable monofilament sutures. There is mild surrounding ecchymosis and expected postoperative edema, but no erythema, purulent drainage, hematoma, or skin necrosis. Mild tenderness is elicited along the surgical site, without fluctuance.
+Compartments of the forearm and hand are soft and completely compressible.
+Neurovascular Examination: Radial and ulnar pulses are 2+ palpable at the wrist. Capillary refill is brisk at less than 2 seconds across all five digits. Sensation to light touch and two-point discrimination is completely intact across the thumb, index, long, and radial ring fingers (median nerve distribution), small finger (ulnar nerve distribution), and dorsal first webspace (superficial radial nerve distribution). No signs of acute carpal tunnel syndrome. Active range of motion of the thumb interphalangeal joint and all finger MCP, PIP, and DIP joints is full and symmetric without significant discomfort.
+
+DIAGNOSTIC IMAGING REVIEW:
+Three-View Radiographs of the Right Wrist (clinic today, Nov. 2, 2026):
+Orthopedic radiographs demonstrate stable anatomical alignment of the right distal radius fracture. The volar locking plate and screws remain well-seated without loosening, hardware failure, or articular penetration. Radial length, radial inclination (22 degrees), and volar tilt (10 degrees) are anatomically restored. The ulnar styloid base fracture is stable and non-displaced. No periosteal reaction or heterotopic ossification observed.
+
+ASSESSMENT AND CLINICAL IMPRESSION:
+1. Status post open reduction and internal fixation of acute right distal radius intra-articular fracture: Healing appropriately on postoperative day 4. Clean surgical incision without wound infection, dehiscence, or median nerve neurapraxia.
+2. Post-traumatic pain and soft tissue edema: Improving, well-controlled on multimodal non-opioid analgesia.
+
+PLAN AND RECOMMENDATIONS:
+1. Wound Management and Immobilization: The incision was cleansed with sterile saline and dressed with sterile Telfa pads. A short arm fiberglass cast was applied in neutral wrist alignment by orthopedic staff under my direct supervision. Cast care instructions were provided, emphasizing the need to keep the cast dry and clean.
+2. Analgesia and Medications: Discontinue scheduled opioids; continue acetaminophen 650 mg PO q6h PRN and ibuprofen 600 mg PO TID with meals. Continue atorvastatin 10 mg PO daily.
+3. Activity and Rehabilitation: Maintain right arm elevation when resting. Gentle active finger and thumb range-of-motion exercises encouraged. Strict non-weight-bearing restriction on the right upper extremity (no lifting greater than 1 pound).
+4. Follow-Up: The patient will return to Trauma and Orthopedic Specialty Hospital in ten days for cast bivalving, suture removal, and transition to a removable thermoplastic wrist orthosis with formal occupational hand therapy initiation. Patient and Mrs. Agnieszka Dąbrowska were instructed to call the office immediately or seek urgent evaluation if finger numbness, blue discoloration, intractable pain, or cast tightness develops.
+
+Attending Physician Signoff:
+Electronically signed by:
+Dr. Major Singh, MD
+Trauma and Reconstructive Orthopedic Surgery
+State Medical License # C-489201
+major.singh@example.org
+Trauma and Orthopedic Specialty Hospital

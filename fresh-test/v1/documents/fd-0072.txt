@@ -1,0 +1,67 @@
+REEDSMILL COMMUNITY HOSPITAL
+410 MERRITT AVENUE, REEDSMILL, OR 97044
+Inpatient History and Physical
+
+PATIENT: BEATRICE L. CROWELL
+Age: 94
+MRN: 5582104
+Group number: 61509
+Admitted: March 4, 2026
+Author: Ellen Pryor, MD
+
+Home address:
+12 Sycamore Court
+Reedsmill, OR 97044
+
+Chief complaint
+Fever, cough, and increased shortness of breath for two days.
+
+History of present illness
+Beatrice L. Crowell is admitted from home with an acute respiratory illness. Two days ago she developed a dry cough that became productive of yellow sputum, with feverishness and a new need to pause while walking from the bed to the chair. Her daughter noted faster breathing overnight and a temperature taken at home of 101.4 F. There is no chest pain, no hemoptysis, no orthopnea different from baseline, and no leg swelling that is new. Appetite is down. She has not traveled and has had no known ill contacts. Aspiration is a concern because meals have been slower this winter, but there was no witnessed choking event. She takes fluids poorly when short of breath and had only sips of tea yesterday. Urine output, by her daughter's account, has been less today but still present. There is no rash, no stiff neck, and no complaint of pain with urination. The emergency unit gave the first dose of the antibiotic and a liter of normal saline before she came upstairs. She felt slightly less winded after the fluid but was not back to her usual self.
+
+A venous ulcer on the left medial ankle was last debrided on 20 February 2026 at Wound Care Center. Drainage has not increased, and the pain there is unchanged. Her Parkinson disease has been stable, with no recent fall, no new hallucination, and no missed doses of carbidopa-levodopa.
+
+Past medical history
+Parkinson disease. Chronic venous insufficiency with a recurrent left medial ankle ulcer. Hypertension. Osteoarthritis of the knees. Remote hysterectomy. No diabetes. No heart failure. No chronic lung disease previously diagnosed. No tobacco use.
+
+Past surgical history
+Hysterectomy in middle age. No thoracic surgery. Ulcer debridement as noted above, without a skin graft.
+
+Medications on admission
+1. Carbidopa-levodopa 25/100 mg by mouth three times daily.
+2. Amlodipine 5 mg by mouth daily.
+3. Acetaminophen 650 mg by mouth every eight hours as needed for pain.
+4. Doxycycline 100 mg by mouth twice daily for five days, started in the emergency unit, Rx 7741208.
+5. A plain petrolatum dressing to the ankle ulcer daily.
+
+Allergies
+Penicillin, which caused a diffuse rash in the remote past. No other drug allergy.
+
+Social history
+She lives with her daughter in a single-level house and does not drive. She never smoked and does not drink alcohol. A home health nurse visits twice a week for the ulcer. Caregiver and daughter Chantal de la Roche can be reached at 541.555.0190. The ward desk for this admission is (541) 555-0128 ext. 214.
+
+Family history
+Her mother had a stroke in late life. No family history of lung disease was known to the daughter.
+
+Review of systems
+Fever and cough as above. No dysuria, no abdominal pain, no diarrhea, no rash except the healing ulcer, no headache, no focal weakness that is new. The rest of the review is negative or unreliable where her soft voice made details thin, and her daughter confirmed the negatives.
+
+Physical examination
+Blood pressure 132/70 mmHg, heart rate 98, respiratory rate 24, temperature 38.4 C, oxygen saturation 91 percent on room air and 95 percent on 2 liters nasal cannula. Weight 48 kg. She is alert and oriented to person and place, mildly tired, not toxic. Speech is hypophonic. On exam, Crowell's breathing is slightly labored, with coarse crackles at the right base and no wheeze. Heart regular, no murmur. Abdomen soft. Left medial ankle ulcer measures about 1.5 cm, pink base, minimal serous drainage, no new erythema tracking up the leg. No calf swelling. Tremor at rest is mild in both hands. Tone is somewhat increased. Strength is near baseline. Gait was not tested. Face is mildly masked. Extraocular movements are intact. There is no nuchal rigidity. Cogwheel tone is present at the wrists. She can rise from the chair only with two tries and a hand on the rail, which her daughter says is usual since last winter.
+
+Studies
+White cells 13.6 x 10 to the 9 per liter. Hemoglobin 12.4 g/dL. Platelets 242,000/microliter. Sodium 138 mmol/L. Creatinine 0.9 mg/dL. Glucose 112 mg/dL. Chest radiograph shows a right lower lobe infiltrate without effusion or pneumothorax. Electrocardiogram shows sinus rhythm at 98, no acute ischemic change. Sputum culture is pending. Influenza and COVID swabs from the emergency unit were negative. Venous duplex was not required; the leg exam does not suggest thrombosis.
+
+Assessment and plan
+1. Community-acquired pneumonia, likely, with hypoxia and a right lower lobe infiltrate. Admission is for hypoxia and limited home reserve. The CURB-65 score is 1 on age alone, since the respiratory rate is under 30 and the pressure is adequate. Continue doxycycline under the existing prescription, add close nursing observation, and keep oxygen for a saturation at or above 92 percent. Blood cultures were drawn before the second dose. Advance diet as she tolerates, with aspiration precautions and an upright position for meals. Reassess tomorrow for clinical response. Incentive spirometry every hour while awake was ordered. Physical therapy will evaluate her tomorrow for safe transfers. If the white count and the work of breathing are not improved by the second morning, coverage will be broadened and a chest film repeated.
+2. Parkinson disease, stable. Continue carbidopa-levodopa 25/100 mg three times daily on her home schedule so doses are not delayed. Fall precautions are in place. Speech is at baseline per her daughter.
+3. Venous ulcer, chronic, recently debrided. Continue daily petrolatum dressing and elevation when in bed. The same clinic will see her after discharge. No antibiotic is directed at the ulcer, which shows no cellulitis.
+4. Hypertension. Hold amlodipine tonight if systolic pressure is under 110, otherwise continue 5 mg daily.
+5. Code status was discussed with her and with her daughter. She wants treatment of reversible problems, including antibiotics and a brief trial of noninvasive ventilation if it were ever needed, and she does not want chest compressions or intubation. This was entered in the chart.
+
+She was tired but able to agree with the plan. Her daughter stayed for the discussion.
+
+Electronically signed by Ellen Pryor, MD
+DEA FP2291846
+Pulmonary and Critical Care
+Date of note matches the admission field above.

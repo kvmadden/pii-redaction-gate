@@ -1,15 +1,34 @@
 {
   "name": "layered-pii-redaction",
-  "version": "1.0.0",
-  "description": "A fail-closed, three-tier PII redaction engine for free text bound for a model prompt or a datastore: deterministic pattern rules, known- and unknown-name redaction, and sensitive-topic sentence removal, selected per source profile. Pattern-based; not certified de-identification.",
+  "version": "2.0.0",
+  "description": "A fail-closed PII redaction gate for clinical free text bound for a model prompt or a datastore: validated pattern rules, an evidence-based name classifier built on public vocabularies, a residual scan that sends undecided spans to review, and a send guard that accepts only sealed results. Rule-based. Not certified de-identification.",
   "type": "module",
   "license": "MIT",
   "engines": {
     "node": ">=22"
   },
+  "bin": {
+    "redaction-gate": "./bin/redaction-gate.js"
+  },
+  "types": "./index.d.ts",
+  "files": [
+    "src/",
+    "bin/",
+    "types/",
+    "index.d.ts",
+    "data/lexicon/manifest.json",
+    "data/redaction-people.json",
+    "data/people-map.example.json",
+    "README.md",
+    "CHANGELOG.md",
+    "SECURITY.md",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "node --test 'test/**/*.test.js'",
     "eval": "node eval/run.js",
+    "compare": "node eval/compare.js",
+    "check": "node eval/compare.js --check && node scripts/build-lexicon.mjs --check",
     "demo": "node scripts/serve-demo.js"
   },
   "keywords": [
@@ -21,14 +40,15 @@
     "clinical-notes"
   ],
   "exports": {
-    ".": "./src/index.js",
-    "./engine": "./src/engine.js",
-    "./profiles": "./src/profiles.js",
-    "./patterns": "./src/patterns.js",
-    "./names": "./src/names.js",
-    "./topics": "./src/topics.js",
-    "./gate": "./src/gate.js",
-    "./quarantine": "./src/quarantine.js"
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./gate": {
+      "types": "./types/gate.d.ts",
+      "default": "./src/gate.js"
+    },
+    "./package.json": "./package.json"
   },
   "author": "Kevin Madden <kevin@kvmadden.com>"
 }

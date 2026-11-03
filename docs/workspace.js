@@ -5,8 +5,9 @@ export const examples = {
  refill: {source:'Synthetic pharmacy call note / RX-003 / 2025-10-24', text:'PHARMACY REFILL CALL\nPatient Inez Q. Thorn-Smith, DOB 03/04/1961.\nCallback 202-555-0143. Call dated 10/24/2025.\ntanya called about metformin 500 mg BID.\nPatient reports two days remaining. No dose change requested.\nPharmacist must verify caller and prescription. This note does not authorize a refill.'}
 }
 const familyFor = type => ({RELATIVE:'NAME',FACILITY:'NAME',DOB:'DATE',MRN:'ID',ACCOUNT:'ID',PLAN:'ID',LICENSE:'ID',DEVICE:'ID',VEHICLE:'ID',FAX:'PHONE',AGE_OVER_89:'AGE'}[type] || type)
+// Rows for this tree's engine on one development set ("development" or "templates").
 export function metricRows(comparison, corpus) {
- const run = comparison[corpus].after
+ const run = comparison.sets[corpus].results.current
  return Object.entries(run.byType).map(([type, row]) => {
   const family = familyFor(type)
   const precision = run.precisionByFamily[family]

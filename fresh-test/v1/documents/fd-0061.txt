@@ -1,0 +1,49 @@
+Liver and Biliary Center
+Surgical Pathology Report
+
+Patient: Käthe Höfer
+DOB: 08/19/1964
+Age: 61 years
+SSN: 000-48-2291
+MRN: 5582104
+Accession: LBC-26-10934
+Specimen: liver, core biopsy
+Date of Service: March 4, 2026
+Ordering: Dr. Amos Whitaker
+Contact: Ms. Đặng Ngọc Quỳnh
+Address: PO Box 905, Quillhaven, WI 54481
+
+CLINICAL HISTORY
+Woman with longstanding psoriasis treated with methotrexate. ALT and AST have
+risen over the past season. Her daughter, Ms. Đặng Ngọc Quỳnh, translates
+at visits and fills the pill box. There is no family history of cirrhosis.
+Viral hepatitis serologies were negative on outside labs that
+accompanied the referral.
+
+GROSS DESCRIPTION
+Received in formalin are two cylindrical cores of tan-brown tissue,
+measuring 1.4 cm and 1.1 cm in length. The entire speciman is submitted
+in one cassette after standard processing.
+
+MICROSCOPIC DESCRIPTION
+The cores show portal tracts with a mild lymphocytic infiltrate. The
+limiting plate is intact. No signifcant steatosis, no ballooning, and
+no Mallory-Denk bodies are seen. A trichrome stain shows portal fibrous
+expansion without bridging, consistant with METAVIR stage F1. Reticulin
+stain shows preserved hepatic-plate architecture. Bile ducts are present
+in the sampled portal tracts. An iron stain is negative. The PAS-D stain
+shows no diastase-resistant globules.
+
+Methotrexate has been taken at 15 mg PO once weekly, with folic acid
+1 mg PO daily on the other days. Labs drawn for this procedure were
+ALT 96 U/L, AST 71 U/L, alkaline phosphatase 88 U/L, total bilirubin
+0.7 mg/dL, albumin 4.1 g/dL, INR 1.0, and platelets 242,000/uL.
+
+DIAGNOSIS
+Liver, core biopsy: mild portal inflammation with early periportal
+fibrosis, METAVIR F1. There is no steatohepatitis and no malignancy.
+The findings are nonspecific and may be seen with methotrexate
+exposure. Clinical correlation is advised.
+
+Interpreted by Prof. Lillian Crowe, gastrointestinal pathology.
+End of report.

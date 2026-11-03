@@ -1,0 +1,53 @@
+OUTPATIENT HISTORY AND PHYSICAL
+Patient: Golnar Pirouzmehr
+MRN: 5830241
+DOB: 19 August 1931
+Age: 94
+Date of Service: March 18, 2026
+Author: Dorothy K. Ellsworth, MD
+Location: general internal medicine clinic
+
+Mailing label on the scanned packet:
+1480 CEDAR RIDGE DRIVE, APT 2B, HESTERVILLE, IA 50148
+
+Chief complaint: Hospital follow-up after a fall.
+
+History of present illness: Golnar Pirouzmehr is a 94-year-old woman with Parkinson disease who is seen with her daughter, Ruth Calder, fourteen days after a short admission to Quenby Memorial Hospital. She was admitted 4 March 2026 after a ground-level fall in the hallway at home. She did not lose consciousness. The Glasgow Coma Scale in the emergency unit was 15, and because she takes an anticoagulant, a noncontrast CT of the head was obtained and showed no hemorrhage and no mass. Radiographs of the pelvis and right hip showed no fracture. A skin tear on the right forearm was closed with adhesive strips. She was dry on arrival, received intravenous fluid, and went home after physical therapy cleared a supervised walk with her rolling walker. Ruth Calder, who is her daughter and healthcare proxy, has stayed overnight since discharge and describes no further fall, no chest pain, and no fever. Pirouzmehr's orthostatic symptoms are the main concern today: lightheadedness on standing, without syncope. Home blood pressures brought in by her daughter run lower upright than seated. Bowel movements have slowed since the stay. Pain at a prior L1 compression fracture, followed at Pain Clinic, is unchanged and is controlled with acetaminophen. Appetite is fair. She denies melena, dysuria, cough, and headache.
+
+Past medical history: Parkinson disease diagnosed in 2017. Atrial fibrillation on anticoagulation. Osteoporosis with an L1 vertebral compression fracture after a remote fall, treated with vertebral augmentation. Hypertension. Hypothyroidism. Chronic constipation. Age-related hearing loss. Cataract extraction from both eyes. No diabetes. No known coronary disease. No prior hip fracture.
+
+Allergies: No known drug allergy. Adhesive tape causes a mild rash. No contrast reaction during the recent CT.
+
+Medications: carbidopa-levodopa 25/100 mg PO TID, on an empty stomach. apixaban 2.5 mg PO BID. amlodipine 5 mg PO daily. levothyroxine 50 mcg PO each morning. acetaminophen 650 mg PO q6h PRN pain. polyethylene glycol 17 g PO daily. calcium carbonate 500 mg PO BID with meals. cholecalciferol 1000 units PO daily. senna 8.6 mg PO qHS PRN constipation. A new prescription for polyethylene glycol was sent today under Rx 7701842 so the daughter can refill it without a delay. Her health plan member ID is 6104-8831-27.
+
+Social history: Widowed and lives alone in a single-level apartment, with her daughter staying overnight since the fall. She worked as a seamstress. She does not use alcohol or tobacco. Her daughter can be reached at 27 Willow Lane, Hesterville, IA 50149, and by phone at (515) 555-0136. For a morning weight or blood pressure concern the clinic nurse line is 515.555.0188.
+
+Family history: Parents died of old age. One sister had a stroke. No known Parkinson disease in the family. Her daughter is well.
+
+Review of systems: No chest pain, no palpitations today, no hemoptysis, no melena, no dysuria, no new weakness, and no severe headache. Constipation as above. Hearing is poor without the right-sided aid. Mood is steady, and she is frustrated by the loss of confidence after the fall.
+
+Physical examination: Alert and oriented, hypophonic speech, no distress. Blood pressure 148/72 mmHg seated and 118/64 mmHg standing at two minutes, with reproduced lightheadedness and no syncope. Heart rate 78 beats per minute seated and 86 standing, irregularly irregular. Temperature 36.4 C. Respiratory rate 16 breaths per minute. Oxygen saturation 97 percent on room air. Weight 52.4 kg. Height 155 cm. Hearing aid in the right ear. Dry mucosa. No jugular venous distention. Lungs clear. Heart irregular, no murmur, no gallop. Abdomen soft. No pretibial edema. Right forearm skin tear is closed and clean. Neurologic exam shows masked facies, resting tremor of the left hand, mild rigidity, and shuffling gait with a walker. Strength is symmetric. A healing skin tear does not limit use of the arm.
+
+Studies and labs from the admission, reviewed today: sodium 136 mmol/L, potassium 4.1 mmol/L, urea nitrogen 22 mg/dL, creatinine 1.10 mg/dL, glucose 108 mg/dL, hemoglobin 11.8 g/dL, white cell count 6.1 thousand per microliter, platelets 190 thousand per microliter, TSH 3.2 mIU/L. Urinalysis was bland. Electrocardiogram showed atrial fibrillation with a ventricular rate in the 80s and no acute ischemic change. Noncontrast head CT and hip and pelvis radiographs were negative, as above. The scanned face sheet prints an old chart number as 88O21l46. After-visit instructions for the daughter are posted at https://portal.example.com/results/44921.
+
+Pain Clinic is the specialty practice following her vertebral fracture. Office address:
+410 North Market Street
+Hesterville, IA 50148
+
+Assessment and plan: Parkinson disease with a recent ground-level fall and orthostatic hypotension. Continue carbidopa-levodopa 25/100 mg PO TID. Do not add an anticholinergic. Hold amlodipine 5 mg PO daily for now because the standing pressure was 118/64 mmHg with symptoms. Recheck seated and standing pressures with her daughter this week. She should rise slowly, wear compression stockings by day, and aim for about 1.5 liters of fluid if no swelling appears. Physical therapy continues, and the walker is to be used for every transfer. No nighttime sedation.
+
+Atrial fibrillation. Continue apixaban 2.5 mg PO BID, reduced for age and for weight under 60 kg. Do not add aspirin. The ventricular rate is acceptable. Bleeding precautions were reviewed with her daughter.
+
+Osteoporosis with a prior vertebral compression fracture. Acetaminophen 650 mg PO q6h PRN is sufficient. Avoid nonsteroidal anti-inflammatory drugs. Continue calcium carbonate 500 mg PO BID and cholecalciferol 1000 units PO daily. Further drug therapy for bone was deferred after a discussion of falls and frailty. Follow-up remains with the specialty practice named above.
+
+Constipation. Continue polyethylene glycol 17 g PO daily and senna 8.6 mg PO qHS PRN if there is no stool by evening. Call for abdominal pain or vomiting.
+
+Hypothyroidism. Continue levothyroxine 50 mcg PO each morning, separated from calcium by four hours. TSH is acceptable.
+
+Forearm skin tear. Keep the strips dry and watch for redness, warmth, or drainage.
+
+Return to the clinic in two weeks, sooner for a repeated fall, syncope, black stool, focal weakness, or poor intake that threatens the anticoagulant. Her daughter will bring a written pressure log.
+
+Dorothy K. Ellsworth, MD
+Attending physician, general internal medicine
+Electronically signed

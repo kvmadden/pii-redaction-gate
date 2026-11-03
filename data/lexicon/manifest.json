@@ -1,0 +1,62 @@
+{
+  "note": "Public vocabularies behind the name tier. No word is added by hand and nothing is read from the evaluation fixtures.",
+  "fold": "NFKD, remove combining marks, lowercase, keep a to z only (src/text-fold.js)",
+  "sources": {
+    "census2010": {
+      "title": "US Census Bureau, Frequently Occurring Surnames from the 2010 Census (Names_2010Census.csv)",
+      "url": "https://www2.census.gov/topics/genealogy/2010surnames/names.zip",
+      "license": "Public domain (US government work)",
+      "sha256": "6b4933178060b4e5ac8dd9a611ec15472d35eab98fe9027474bc5ccc5b7a8708",
+      "use": "Surnames that occur 100 or more times, and separately those that occur 1,000 or more times"
+    },
+    "female": {
+      "title": "US Census Bureau, 1990 Census female first names (dist.female.first)",
+      "url": "https://www2.census.gov/topics/genealogy/1990surnames/dist.female.first",
+      "license": "Public domain (US government work)",
+      "sha256": "bd2f310fc4e5d5e5ea122c9d4342c9821145823118eb20db1647f305ec77b358",
+      "use": "First names"
+    },
+    "male": {
+      "title": "US Census Bureau, 1990 Census male first names (dist.male.first)",
+      "url": "https://www2.census.gov/topics/genealogy/1990surnames/dist.male.first",
+      "license": "Public domain (US government work)",
+      "sha256": "0a5078ef6effe3b483d15b0f7f95047662126c9bfb624ecd5e5b978fc0f2470b",
+      "use": "First names"
+    },
+    "fda": {
+      "title": "US FDA, Drugs@FDA data files, Products.txt (DrugName and ActiveIngredient columns)",
+      "url": "https://www.fda.gov/media/89850/download",
+      "license": "Public domain (US government work)",
+      "sha256": "ca06aa71a38bfd70c62df724d3c6144897ba8a96b8e2b7b57255a84396c897f2",
+      "use": "Drug brand names and active ingredients"
+    },
+    "icd": {
+      "title": "CMS, ICD-10-CM 2025 code descriptions in tabular order (icd10cm_codes_2025.txt)",
+      "url": "https://www.cms.gov/files/zip/2025-code-descriptions-tabular-order.zip",
+      "license": "Public domain (US government work)",
+      "sha256": "d4dcdbc05997e2c3f9728a0d44ae8fa9101cc37648769d95747a153a3f56e9be",
+      "use": "Words used in diagnosis descriptions"
+    },
+    "english": {
+      "title": "Webster's Second International word list (web2, as distributed in BSD and macOS /usr/share/dict)",
+      "url": "https://cgit.freebsd.org/src/tree/share/dict/web2",
+      "license": "Public domain (the 1934 copyright has lapsed, per the distribution README)",
+      "sha256": "be41ad97963bf8dabedd5871d5d691596175269d540956b0f9965a885c2bbab9",
+      "use": "Lowercase entries as ordinary English words. Capitalized entries ending in -an, -ese, -ish, -ic or -i as proper adjectives (nationalities, languages, peoples)"
+    }
+  },
+  "counts": {
+    "surnames": 162253,
+    "commonSurnames": 24889,
+    "first": 5163,
+    "drugs": 7859,
+    "icd": 7230,
+    "english": 210747,
+    "demonyms": 4449
+  },
+  "module": {
+    "path": "src/lexicon-data.js",
+    "bytes": 1668852,
+    "sha256": "8ff16d0d41cdfb1bd06b5cd933c71eb32c0677169ff3966445859cb33d6cadf2"
+  }
+}

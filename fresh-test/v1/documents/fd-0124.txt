@@ -1,0 +1,47 @@
+DISCHARGE SUMMARY
+
+Patient: SOO-JIN MOON
+MRN: 8821046
+DOB: 18 August 1932
+Age: 93
+Admitted: 2026-03-04
+Discharged: 2026-03-08
+Member no. 440291776
+
+Principal diagnosis: non-ST elevation myocardial infarction treated with percutaneous coronary intervention.
+
+Soo-jin Moon was admitted on 4 March 2026 with chest pressure and a rising troponin, and she left four days later after percutaneous coronary intervention. She is 93 and lives with her daughter-in-law, Mrs. Olena Kravchuk, who is 62 and manages the medicines. Follow-up is arranged at Cinder Meadow Clinic with Dr. Maren L. Bliss.
+
+History of present illness. On 4 March 2026 she noticed heavy pressure across the chest while walking from the kitchen, with shortness of breath and nausea, but no syncope. The discomfort eased and then returned, and Olena Kravchuk called for help. There was no fever and no cough. She has hypertension and stage 3 chronic kidney disease. A similar but milder pressure had occured once in the prior month and had been attributed to indigestion. She does not smoke. She walked in the house with a cane before this illness.
+
+Past medical history also includes osteoarthritis of the knees and remote cataract surgery. She has never had a myocardial infarction that she can recall and has never had a stent. There is no diabetes. Her father died of a stroke as an older adult. Korean is her first language, and her daughter-in-law repeated the key points of consent in both languages. Olena Kravchuk is the wife of the patient's son and has been the daytime caregiver since the patient's husband died. The patient still cooks simple meals and manages her cane on one level of the house.
+
+Examination and data. Blood pressure on arrival was 162/78 mmHg, heart rate 88 beats per minute, respiratory rate 18 breaths per minute, and oxygen saturation 96 percent on room air. She was uncomfortable but alert. Lungs were clear. There was no peripheral edema. The electrocardiogram showed ST depression in the lateral leads without persistent ST elevation. Initial high-sensitivity troponin I was 180 ng/L and rose to 940 ng/L. Hemoglobin was 11.6 g/dL, platelets 198 thousand per microliter, sodium 136 mmol/L, potassium 4.2 mmol/L, creatinine 1.35 mg/dL, and glucose 128 mg/dL. LDL cholesterol later returned at 96 mg/dL. A transthoracic echocardiogram showed a left ventricular ejection fraction of 50 percent with hypokinesis of the anterior wall and no significant valve disease.
+
+Hospital course. She recieved aspirin 324 mg once and was started on heparin infusion and clopidogrel. On teh morning of the second hospital day she went to the catheterization laboratory. Coronary angiography showed a severe stenosis of the proximal left anterior descending artery and moderate disease in a small diagonal branch that was left alone. A drug-eluting stent was placed in the proximal left anterior descending artery with a good angiographic result and no dissection. Hemostasis at the radial access site was uncomplicated. Creatinine the next day was 1.42 mg/dL and then returned toward baseline. She had brief nausea treated with ondansetron 4 mg IV once. No bleeding occured at the access site. A seperate note from the pharmacist documents counseling on dual antiplatelet therapy and on not stopping either agent for minor procedures. Chest pressure did not return. She walked in the hall with her cane and with Olena Kravchuk at her side. Heparin was stopped at the end of the procedure. The radial band was loosened on a schedule and the hand stayed warm with a strong pulse. She ate breakfast the next morning and had no further nausea. Metoprolol was started at a low dose because of the anterior wall motion abnormality, and blood pressure remained acceptable. Atorvastatin was new for her. Amlodipine was continued because home readings had been high. No diuretic was required. Physical therapy cleared her on the cane for level surfaces and advised a tub bench that the family already owns. Discharge teaching was completed by the care team listed below.
+
+Care team:
+Maren L. Bliss, MD
+Colin Harrow, PharmD
+Edith Lang, RN
+
+Discharge medications.
+Aspirin 81 mg PO daily. Do not stop.
+Clopidogrel 75 mg PO daily for at least six months, then to be reviewed. Rx 6612048.
+Atorvastatin 40 mg PO nightly.
+Metoprolol succinate 25 mg PO daily.
+Amlodipine 5 mg PO daily, continued from home, and hold for dizziness.
+Pantoprazole 40 mg PO daily while on dual antiplatelet therapy.
+Acetaminophen 650 mg PO every 6 hours as needed for pain. Avoid nonsteroidal anti-inflammatory drugs.
+
+Follow-up. She will be seen at Cinder Meadow Clinic about two weeks after discharge, sooner for recurrent pressure, fainting, black stools, or swelling at the access site. Activity is household walking. She should not lift more than ten pounds with the instrumented arm for several days. Blood pressure checks at home were requested, with a call if readings stay above 170 systolic. Her health plan member number is on the face sheet for authorization of the outpatient visit. Cardiac rehabilitation was offered and declined for now because of the distance. Diet counseling favored smaller meals and steady salt intake given the kidney disease. Warning signs were reviewed in plain words. She is to seek care the same day for pressure that lasts more than a few minutes, for sudden weakness, or for vomiting blood. Bruising is expected on dual therapy, but a nosebleed that will not stop needs a call. Clopidogrel should not be taken with omeprazole, which is why pantoprazole was chosen. A basic metabolic panel is suggested at the clinic visit because of the small creatinine rise.
+
+She will stay at the following address.
+1842 Quarry Lane
+Brindle, WA 98099
+
+Questions can be called to (206) 555-0174. Records may be faxed to Fax: (206) 555-0188. The visit summary is posted at https://portal.example.net/visit/8821046. If the page will not open, write to records at example dot net. Olena Kravchuk has the paper copy.
+
+Signed,
+Maren L. Bliss, MD
+Cinder Meadow Clinic

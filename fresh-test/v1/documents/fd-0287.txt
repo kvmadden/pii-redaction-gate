@@ -1,0 +1,83 @@
+Clearwater Medical Center
+Department of Hematology and Medical Oncology
+CLINICAL CONSULTATION AND MULTIDISCIPLINARY ONCOLOGY NOTE
+Date of Consultation: 2026-03-04
+PATIENT: MARC CÉLESTIN DE LA COUR
+DOB: 14 January 1932
+Age: 94
+MRN: 8940129
+Health Plan Member ID: HPM-4920184
+Patient Address:
+782 Highland View Avenue
+Seattle, WA 98104
+Contact Telephone: (206) 555-0163
+Department Fax: (206) 555-0177
+Provider Contact: babatunde.adeyemi at example dot org
+Clinical Portal Access: https://portal.example.org/records/oncology-summary
+
+MULTIDISCIPLINARY CARE CONFERENCE ATTENDEES:
+1. Babatunde Adeyemi, MD (Attending Medical Oncologist)
+2. Ngozi Okonkwo, MD (Hematology-Oncology Fellow)
+3. Chidubem Eze, MD (Palliative Medicine Consultant)
+4. Olumide Adeleke, RN (Oncology Nurse Navigator)
+5. Laura M. Sage (Patient Granddaughter and Healthcare Proxy)
+
+HISTORY OF PRESENT ILLNESS:
+Mr. Marc Célestin de la Cour is an Age: 94 retired school administrator who presents for an initial outpatient hematology-oncology consultation following a recent diagnostic workup for iron deficiency anemia and lower gastrointestinal bleeding. The patient was accompanied to the clinic by his 28-year-old granddaughter and primary caregiver, Laura M. Sage. 
+
+The patient's clinical trajectory began on 4 March 2026 when routine screening laboratories demonstrated an unexpected drop in hemoglobin to 7.8 g/dL. Subsequent diagnostic colonoscopy performed on 18 February 2026 revealed an ulcerated, partially obstructing mass measuring 4.2 cm in maximal diameter located at the rectosigmoid junction, approximately 16 cm from the anal verge. Multiple endoscopic biopsies were obtained. Histopathological analysis confirmed moderately differentiated invasive adenocarcinoma of the rectosigmoid colon. Staging computed tomography of the chest, abdomen, and pelvis with intravenous contrast performed on 24 February 2026 revealed localized circumferential wall thickening of the rectosigmoid junction with pericolic fat stranding and two prominent regional mesenteric lymph nodes measuring 1.1 cm and 1.3 cm in short axis. No evidence of distant hepatic, pulmonary, or peritoneal metastatic disease was identified (clinical stage T3, N1, M0, Stage III).
+
+Over the preceding three months, Mr. Célestin de la Cour has endorsed intermittent passage of dark red blood mixed with formed stools, progressive fatigue, and a 4 kg unintentional weight loss. He denies severe abdominal pain, nausea, vomiting, tenesmus, or obstipation. He reports that his appetite remains fair, though he requires assistance with meal preparation, which Laura Sage coordinates alongside home nursing visits. Current performance status is assessed as Eastern Cooperative Oncology Group (ECOG) grade 2, reflecting ambulation with a cane and capability of all self-care but restricted from strenuous activity.
+
+PAST MEDICAL HISTORY:
+1. Adenocarcinoma of the rectosigmoid colon, clinical Stage III (T3 N1 M0).
+2. Iron deficiency anemia secondary to chronic gastrointestinal blood loss.
+3. Essential hypertension for over 25 years.
+4. Paroxysmal atrial fibrillation, anticoagulated.
+5. Mild bilateral sensorineural hearing loss.
+
+PAST SURGICAL HISTORY:
+1. Diagnostic colonoscopy with rectosigmoid biopsies (February 2026).
+2. Right inguinal herniorrhaphy with mesh repair (2011).
+3. Bilateral cataract surgery (2018).
+
+CURRENT MEDICATIONS:
+1. Apixaban 2.5 mg PO BID (temporarily held prior to planned surgical evaluation).
+2. Amlodipine 5 mg PO daily.
+3. Lisinopril 10 mg PO daily.
+4. Ferrous sulfate 325 mg PO daily (dispensed under outpatient Rx # 9481024).
+5. Polyethylene glycol 17 g PO daily in water.
+6. Cyanocobalamin (Vitamin B12) 1000 mcg PO daily.
+
+PHYSICAL EXAMINATION:
+Vital Signs: BP 132/78 mmHg, pulse 74 bpm regular, respirations 16 breaths/min, temperature 98.4 F, SpO2 98% on room air. Weight 64.5 kg, height 170 cm, ECOG performance status 2.
+General: Frail but alert, engaging, pleasant gentleman in no acute distress.
+HEENT: Normocephalic, atraumatic. Conjunctivae show moderate pallor. Sclerae anicteric. Oropharynx pink and moist without mucositis or ulcerations.
+Cardiovascular: Regular rate and rhythm, normal S1 and S2. Soft 2/6 systolic flow murmur heard best over the aortic listening area. Peripheral pulses 2+ in radial and posterior tibial arteries bilaterally. No peripheral lower extremity edema.
+Pulmonary: Clear to auscultation bilaterally; vesicular breath sounds throughout all lung fields. No wheezes, crackles, or rhonchi.
+Abdomen: Scaphoid, soft, non-tender to light and deep palpation. No guarding, rigidity, or rebound tenderness. Well-healed right inguinal scar. No palpable hepatomegaly or splenomegaly. Normoactive bowel sounds.
+Rectal Exam: Deferred today in clinic in light of recent colonoscopy.
+Neurologic: Cranial nerves II-XII intact. Sensation intact to light touch. Motor strength 5/5 in upper extremities, 4+/5 in lower extremities. Gait steady with single-point cane.
+Lymphatics: No cervical, supraclavicular, axillary, or inguinal lymphadenopathy palpable.
+
+LABORATORY REVIEW:
+Hemoglobin 8.6 g/dL (improved post oral iron), hematocrit 27.2%, MCV 74 fL, white blood cell count 5.8 x10^3/uL, platelet count 265 x10^3/uL. Serum ferritin 18 ng/mL, iron saturation 9%. Serum sodium 141 mEq/L, potassium 4.1 mEq/L, BUN 19 mg/dL, serum creatinine 1.0 mg/dL, eGFR 66 mL/min/1.73m2. Total bilirubin 0.6 mg/dL, alkaline phosphatase 72 U/L, AST 18 U/L, ALT 20 U/L, albumin 3.6 g/dL. Carcinoembryonic antigen (CEA) 6.4 ng/mL (moderately elevated).
+
+ASSESSMENT AND MANAGEMENT PLAN:
+Marc Célestin de la Cour is an Age: 94 gentleman with newly diagnosed, non-metastatic clinical Stage III adenocarcinoma of the rectosigmoid junction who presents with symptomatic anemia and functional frailty. His case was formally discussed during today's multidisciplinary conference involving Babatunde Adeyemi, MD, Ngozi Okonkwo, MD, Chidubem Eze, MD, Olumide Adeleke, RN, and Laura M. Sage.
+1. Surgical Oncology Referral:
+- Given the partially obstructing nature of the rectosigmoid lesion and ongoing bleeding, primary surgical resection remains the definitive local modality. Urgent consultation arranged with colorectal surgery to evaluate candidacy for laparoscopic versus robotic low anterior resection with total mesorectal excision.
+2. Medical Oncology Consideration:
+- Discussion held regarding adjuvant chemotherapy in a patient of Age: 94. While standard adjuvant FOLFOX or CAPOX yields survival benefit in Stage III disease in younger populations, the substantial toxicity risk of oxaliplatin-induced sensory neuropathy and myelosuppression necessitates extreme caution. If surgery proceeds successfully, single-agent fluoropyrimidine monotherapy (capecitabine) or active surveillance with close imaging will be reconsidered postoperatively depending on final pathologic staging and performance status.
+3. Supportive Care and Anemia Optimization:
+- Continue oral iron supplementation (dispensed under Rx # 9481024). Consider intravenous iron sucrose if oral tolerance wanes.
+- Palliative medicine consultation conducted today by Chidubem Eze, MD, focused on goal concordance, caregiver support for Ms. Sage, advance care planning, and symptom management.
+4. Follow-up:
+- Re-evaluation in medical oncology clinic following surgical consultation in 2 weeks. Comprehensive notes and pathology uploaded to portal: https://portal.example.org/records/oncology-summary.
+
+Electronic Signature:
+BABATUNDE ADEYEMI, MD
+Attending Physician, Medical Oncology
+Clearwater Medical Center
+Fellow Cosignature:
+Ngozi Okonkwo, MD

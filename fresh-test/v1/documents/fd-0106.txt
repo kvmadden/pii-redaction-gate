@@ -1,0 +1,178 @@
+88301942
+ST. ANSELM REGIONAL MEDICAL CENTER
+OUTPATIENT GERIATRIC MEDICINE CLINIC
+4820 Highland Terrace, Suite 300, Minneapolis, MN 55416
+Telephone: (612) 555-0144 | Direct: 612.555.0182
+Patient Portal: https://portal.example.org/records/patient-access
+
+ENCOUNTER DOCUMENTATION: CLINICAL PROGRESS NOTE
+PATIENT: VON LINDEMANN, JÜRGEN
+DOB: 03/18/1932
+AGE: 94-year-old
+GENDER: Male
+ACCOUNT NUMBER: ACCT-904128
+DATE OF SERVICE: 11/04/2026
+PREVIOUS VISIT: 14 Oct 2026
+ATTENDING PHYSICIAN: Arthur Pendelton, MD
+
+SUBJECTIVE:
+REASON FOR VISIT:
+Routine follow-up evaluation for chronic hypertension, bilateral knee
+osteoarthritis, and benign prostatic hyperplasia.
+
+HISTORY OF PRESENT ILLNESS:
+Mr. Jürgen von Lindemann is a 94-year-old gentleman who presents to
+the outpatient geriatric clinic today for routine interval follow-up.
+He is accompanied to the visit by his 61-year-old daughter, Martha
+Caldwell, who serves as his primary caregiver and assists with his
+instrumental activities of daily living, including grocery shopping and
+weekly medication organization. Mr. von Lindemann reports that he has
+been feeling generally well since his prior evaluation on 14 Oct 2026.
+He notes persistent but mild early morning stiffness in his right knee
+that typically resolves within twenty to thirty minutes after he begins
+moving around his residence. He reports no acute joint swelling, heat,
+or redness. He ambulates using a single-point cane and denies falls or
+near-fall episodes over the past three months.
+
+From a cardiovascular and pulmonary standpoint, Mr. von Lindemann
+denies chest tightness, exertional chest pressure, palpitations,
+orthopnea, paroxysmal nocturnal dyspnea, or lower extremity swelling.
+He has not experienced lightheadedness, postural dizziness, or visual
+changes upon standing. Home blood pressure measurements recorded by
+his daughter have been stable, typically running from 122/70 mmHg to
+134/76 mmHg.
+
+Regarding his urologic history, he reports no dysuria, urgency, or
+acute urinary symtoms. He awakens twice per night to void, which has
+been his stable baseline for over three years. He maintains a good
+stream without hesitancy or terminal dribbling. Appetite is intact,
+weight has been steady, and bowel habits remain regular without
+melena or hematochezia.
+
+CURRENT MEDICATIONS:
+1. Lisinopril 20 mg oral tablet once daily every morning
+2. Atorvastatin 20 mg oral tablet once daily at bedtime
+3. Tamsulosin hydrochloride 0.4 mg oral capsule daily after dinner
+4. Acetaminophen 500 mg oral tablet as needed for knee discomfort
+5. Cholecalciferol (Vitamin D3) 1000 international units oral daily
+
+ALLERGIES:
+No known drug allergies (NKDA).
+
+PAST MEDICAL HISTORY:
+1. Essential hypertension, longstanding, well controlled.
+2. Primary osteoarthritis of bilateral knees, right worse than left.
+3. Benign prostatic hyperplasia without urinary retention.
+4. Hyperlipidemia, controlled on moderate-intensity statin therapy.
+5. Bilateral sensorineural hearing impairment, corrected with aids.
+
+PAST SURGICAL HISTORY:
+1. Right total knee arthroplasty, eleven years prior, uncomplicated.
+2. Left inguinal herniorrhaphy, fifteen years prior, uncomplicated.
+3. Bilateral cataract phacoemulsification with intraocular lenses.
+
+SOCIAL HISTORY:
+Mr. von Lindemann resides in a private senior apartment situated at
+712 Cedar Ridge Lane, Apt 4B, St. Paul, MN 55105. He is a retired
+structural draftsman. His daughter, Mrs. Caldwell, lives within ten
+minutes and visits four times weekly. He is a lifetime non-smoker
+with no history of tobacco or recreational substance use. He does not
+consume alcoholic beverages. He remains independent with feeding,
+dressing, grooming, and personal hygiene.
+
+REVIEW OF SYSTEMS:
+General: Denies fever, chills, diaphoresis, fatigue, or anorexia.
+HEENT: Wears hearing aids. Denies vision loss, epistaxis,
+or sore throat.
+Respiratory: Denies cough, wheeze, dyspnea, or hemoptysis.
+Cardiovascular: Denies chest pain, palpitations, or pedal edema.
+Gastrointestinal: Denies nausea, vomiting, dysphagia, or constipation.
+Genitourinary: Denies dysuria, gross hematuria, or incontinence.
+Musculoskeletal: Reports mild right knee ache, denies hip or back pain.
+Neurological: Denies transient weakness, numbness, vertigo, or tremor.
+Psychiatric: Denies anxiety, restlessness, or sleep disturbances.
+
+OBJECTIVE:
+PHYSICAL EXAMINATION:
+Vitals:
+Blood pressure: 126/72 mmHg (right arm, seated)
+Heart rate: 66 beats per minute, regular rhythm
+Respiratory rate: 16 breaths per minute, unlabored
+Temperature: 98.2 deg F (36.8 deg C) oral
+Pulse oximetry: 98% on room air
+Weight: 166.0 lbs (75.3 kg) | Height: 68.0 in | BMI: 25.2 kg/m2
+
+General: Well-appearing, cooperative, articulate 94-year-old gentleman
+sitting comfortably on the examination table in no distress.
+Head/Eyes: Normocephalic. Pupils equal, round, reactive to light.
+Extraocular motions intact. Sclerae anicteric.
+Ears/Nose/Throat: Hearing aids in place bilaterally. Moist mucous
+membranes. Pharynx non-erythematous without exudates.
+Neck: Supple. Trachea midline. Jugular venous distension absent. No
+cervical lymphadenopathy or carotid bruits.
+Cardiovascular: Regular rhythm, normal S1 and S2. No murmur, gallop,
+or pericardial friction rub. Peripheral pulses palpable 2+ bilaterally.
+Pulmonary: Thorax symmetric with normal respiratory effort. Clear to
+auscultaion bilaterally across all lung fields. No wheeze or rales.
+Abdomen: Soft, non-distended, non-tender to light and deep palpation.
+Bowel sounds normoactive in all four quadrants. No organomegaly.
+Extremities: No clubbing, cyanosis, or peripheral edema. Right knee
+demonstrates a well-healed midline anterior arthroplasty scar.
+Passive range of motion reveals mild crepitation without joint effusion,
+warmth, or erythema. Left knee has full range of motion. Wells score
+for deep vein thrombosis equals 0 (low clinical probability).
+Neurologic: Alert and oriented to person, place, time, and situation.
+Cranial nerves II through XII intact. Motor strength 5/5 in bilateral
+upper and lower extremities. Light touch sensation intact distally.
+Gait is steady with single-point cane.
+
+IN-CLINIC LABORATORY DATA:
+Point-of-care capillary glucose: 104 mg/dL
+Urinalysis dipstick: Negative for leukocytes, nitrites, protein, blood.
+Serum creatinine from 11/04/2026: 1.12 mg/dL, eGFR 64 mL/min/1.73m2.
+Serum potassium from 11/04/2026: 4.4 mEq/L.
+
+ASSESSMENT AND PLAN:
+Mr. Jürgen von Lindemann is a pleasant 94-year-old male who presents
+for scheduled chronic disease management. Findings and management plans
+are organized by active medical problem below:
+
+1. Essential hypertension:
+Blood pressure is currently at goal on lisinopril 20 mg daily, with no
+postural symptoms or adverse effects. Renal function and electrolytes
+are stable. Plan is to continue lisinopril 20 mg oral daily. Home log
+monitoring will continue with assistance from his daughter.
+
+2. Bilateral knee osteoarthritis:
+Mild, chronic symptoms managed adequately with prn acetaminophen and
+assistive cane ambulation. Wells score is 0 with no evidence of deep
+venous thrombosis. Joint exam is stable without effusion. Plan: Continue
+current acetaminophen 500 mg as needed (not to exceed 2000 mg daily).
+Formal outpatient physical therapy will be recomended if mobility
+becomes impaired.
+
+3. Benign prostatic hyperplasia:
+Lower urinary tract symptoms remain mild and stable on tamsulosin.
+No urinary tract infection on in-clinic urinalysis. Plan: Continue
+tamsulosin 0.4 mg oral capsule daily after dinner.
+
+4. Preventive and health maintenance:
+Seasonal influenza vaccine (FL-90214) administered intramuscularly
+into the left deltoid today after discussion of risks and benefits.
+Fall risk precautions reviewed; home environment is well adapted.
+
+PATIENT EDUCATION AND FOLLOW-UP:
+Diagnostic results, appointment reminders, and visit summaries remain
+accessible through the patient portal at:
+https://portal.example.org/records/patient-access
+
+Follow-up visit scheduled in six months for routine geriatric review,
+or sooner if interval medical concerns arise. Patient and caregiver
+instructed to contact the clinic nursing staff at (612) 555-0144 with
+any interim questions.
+
+Arthur Pendelton, MD
+Division of Geriatric Medicine
+St. Anselm Regional Medical Center
+Direct provider line: 612.555.0182
+Signed electronically: 11/04/2026 14:15 CST

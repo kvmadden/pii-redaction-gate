@@ -1,0 +1,28 @@
+CT PULMONARY ANGIOGRAM
+
+Patient: the patient
+Sex: female
+Age: 67 years
+Ordering service: Diabetes Center
+Comparison: outside imaging from 2019, brought over from Outside Hospital
+
+INDICATION
+67-year-old woman with dyspnea and a Wells score of 6. Her daughter supplied the medication list. The request came through Diabetes Center on the day of a glucose check.
+
+TECHNIQUE
+CT pulmonary angiography was performed from the lung apices through the upper abdomen after injection of 80 mL of iohexol 350 mg I/mL at 4.5 mL/sec. Images were reconstructed at 1 mm.
+
+VITALS AND LABS
+Blood pressure 148/86 mmHg. Heart rate 104 beats per minute. Respiratory rate 22 breaths per minute. Oxygen saturation 93 percent on room air. Temperature 37.1 C. D-dimer 1.84 mg/L FEU. Creatinine 1.1 mg/dL. Glucose 214 mg/dL. Hemoglobin A1c 8.4 percent. BNP 88 pg/mL.
+
+MEDICATIONS
+Lyrica (pregabalin) 75 mg PO BID. Metformin 1000 mg PO BID. Insulin glargine 18 units SUBQ at bedtime. Apixaban had not been started before the scan.
+
+FINDINGS
+The main, lobar, segmental, and subsegmental pulmonary arteries opacify without a filling defect. There is no evidance of acute pulmonary embolism. The right ventricle is not enlarged. No pleural effusion is seen. Mild dependant atelectasis is present at the bases.
+
+IMPRESSION
+1. No pulmonary embolus. The Wells score remains a clinical score and is not changed by this negative study.
+2. Glycemic control is outside the scope of this report. Follow-up stays with Diabetes Center. Comparison with the 2019 images showed no new central embolus, and a seperate note is on file.
+
+End of report.

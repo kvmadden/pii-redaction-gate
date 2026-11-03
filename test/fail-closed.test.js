@@ -11,7 +11,6 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 
 import { redactText, redactParsedTranscript, redactSummaryFields, BLOCKED_TEXT } from "../src/engine.js";
-import { PATTERN_RULES } from "../src/patterns.js";
 import { gateParsedTranscript, gateSummary, assertSendable, describeGate } from "../src/gate.js";
 import { buildSummaryInput, buildTranscriptRow } from "../src/writers.js";
 
@@ -24,9 +23,10 @@ function assertNoLeak(obj, label) {
   for (const lit of LITERALS) assert.ok(!s.includes(lit), `${label}: "${lit}" leaked → ${s.slice(0, 200)}`);
 }
 
-/** Temporarily add a pattern rule that throws (optionally only on a trigger). */
-function withBrokenPatternRule(fn, trigger = null) {
-  const rule = {
+/** A pattern rule that throws (optionally only on a trigger). The rule tables
+ *  are frozen, so failures are injected per call through extraPatternRules. */
+function brokenRule(trigger = null) {
+  return {
     type: "broken",
     re: /[\s\S]+/g,
     validate: (m) => {
@@ -34,24 +34,18 @@ function withBrokenPatternRule(fn, trigger = null) {
       return false; // leave non-trigger text alone
     },
   };
-  PATTERN_RULES.push(rule);
-  try {
-    return fn();
-  } finally {
-    PATTERN_RULES.splice(PATTERN_RULES.indexOf(rule), 1);
-  }
 }
 
 test("fail-closed: a throwing PATTERN rule blocks the text (every profile)", () => {
   for (const profile of ["light", "standard", "identifiers", "strict"]) {
-    const r = withBrokenPatternRule(() => redactText(PII, { profile, peopleMap: EMPTY_MAP }));
+    const r = redactText(PII, { profile, peopleMap: EMPTY_MAP, extraPatternRules: [brokenRule()] });
     assert.equal(r.blocked, true, profile);
     assert.equal(r.text, BLOCKED_TEXT, profile);
     assert.equal(r.error.stage, "pattern");
     assert.equal(r.error.name, "RangeError");
     assertNoLeak(r, profile);
   }
-  // and the rule list is restored: the next call redacts normally
+  // the injected rule affects only that call: the next call redacts normally
   const ok = redactText(PII, { profile: "identifiers", peopleMap: EMPTY_MAP });
   assert.equal(ok.blocked, false);
   assert.ok(ok.text.includes("[phone]"), ok.text);
@@ -71,13 +65,21 @@ test("fail-closed: a broken people map blocks at normalization", () => {
 });
 
 test("fail-closed: a throwing NAME tier blocks the text", () => {
-  const bad = { toString() { throw new TypeError("bad name entry"); } };
-  const map = { __normalized: true, people: [{ names: [bad], role: "patient" }], safe: new Set() };
-  const r = redactText(PII, { profile: "identifiers", peopleMap: map });
+  // The people map is copied during normalization, so nothing caller-supplied
+  // can make the name tier throw. A fault is injected at that stage instead.
+  const r = redactText(PII, { profile: "identifiers", peopleMap: EMPTY_MAP, injectFault: "name" });
   assert.equal(r.blocked, true);
   assert.equal(r.text, BLOCKED_TEXT);
   assert.equal(r.error.stage, "name");
   assertNoLeak(r, "name");
+});
+
+test("fail-closed: a caller-marked __normalized map is normalized anyway", () => {
+  const bad = { toString() { throw new TypeError("bad name entry"); } };
+  const map = { __normalized: true, people: [{ names: [bad], role: "patient" }], safe: new Set() };
+  const r = redactText(PII, { profile: "identifiers", peopleMap: map });
+  assert.equal(r.blocked, false);
+  assertNoLeak(r, "normalized");
 });
 
 test("fail-closed: a throwing TOPIC category blocks, and its error message (built from input) is not echoed", () => {
@@ -129,7 +131,7 @@ test("fail-closed: one failing field blocks that field and flags the whole recor
     assistantTail: ["noted"],
     counts: { user: 2, assistant: 1 },
   };
-  const r = withBrokenPatternRule(() => redactParsedTranscript(parsed, { profile: "standard", peopleMap: EMPTY_MAP }), "TRIGGER");
+  const r = redactParsedTranscript(parsed, { profile: "standard", peopleMap: EMPTY_MAP, extraPatternRules: [brokenRule("TRIGGER")] });
   assert.equal(r.blocked, true);
   assert.equal(r.parsed.firstUserMsg, BLOCKED_TEXT);
   assert.equal(r.parsed.operatorTurns[0].text, BLOCKED_TEXT);
@@ -147,9 +149,7 @@ test("fail-closed: a non-string field inside a record is blocked, not copied thr
 });
 
 test("fail-closed: model-output summary with a failing field is blocked", () => {
-  const r = withBrokenPatternRule(() =>
-    redactSummaryFields({ summary: PII, topics: [PII], operatorDirections: [] }, { profile: "strict", peopleMap: EMPTY_MAP }),
-  );
+  const r = redactSummaryFields({ summary: PII, topics: [PII], operatorDirections: [] }, { profile: "strict", peopleMap: EMPTY_MAP, extraPatternRules: [brokenRule()] });
   assert.equal(r.blocked, true);
   assert.equal(r.summary.summary, BLOCKED_TEXT);
   assertNoLeak(r.summary, "summary");
@@ -164,15 +164,15 @@ test("fail-closed: at the writer surfaces nothing leaks and assertSendable refus
     counts: { user: 1, assistant: 1 },
     operatorTurnCount: 1,
   };
-  const { gate, summary } = withBrokenPatternRule(() => {
-    const g = gateParsedTranscript({ parsed, source: "clinical-note", body: PII, peopleMap: EMPTY_MAP });
-    const s = gateSummary({ summary: PII, topics: [], operatorDirections: [] }, g, "clinical-note", EMPTY_MAP);
-    return { gate: g, summary: s };
-  });
+  // A people map that fails while it is being read makes every field fail.
+  const poisoned = { get people() { throw new Error("map store unavailable"); } };
+  const gate = gateParsedTranscript({ parsed, source: "clinical-note", body: PII, peopleMap: poisoned });
+  const summaryGate = gateSummary({ summary: PII, topics: [], operatorDirections: [] }, gate, "clinical-note", poisoned);
   assert.equal(gate.blocked, true);
   assert.equal(gate.body, BLOCKED_TEXT);
+  assert.equal(summaryGate.blocked, true);
   const prompt = buildSummaryInput(gate.parsed);
-  const row = buildTranscriptRow({ recordId: "r1", parsed: gate.parsed, summary, body: gate.body, source: "clinical-note" });
+  const row = buildTranscriptRow({ recordId: "r1", parsed: gate.parsed, summary: summaryGate.summary, body: gate.body, source: "clinical-note" });
   assertNoLeak(prompt, "prompt");
   assertNoLeak(row, "row");
   assert.throws(() => assertSendable(gate), { name: "RedactionBlockedError" });

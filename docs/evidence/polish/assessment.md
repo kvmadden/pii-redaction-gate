@@ -1,5 +1,7 @@
 # Expert-reader assessment
 
+> **Correction, 3 November 2026.** This self-assessment scored the template set as held out and repeated its 104 of 108 and 96.3% figures. That set is a 27-template development check (26 of 27 templates), and the real-text measure for the same engine was 20 of 38 planted identifiers. The "after" scores for evaluation and generalization rest on that claim and should be read as withdrawn. See the main [README](../../README.md).
+
 November 1, 2026. Self-assessment using the supplied 15-check expert-reader rubric. Scores assess portfolio evidence within the stated prototype boundary, not clinical validation or the reader's private criteria. One point means evidenced, half means limited evidence, zero means absent.
 
 | Check | Before | After | Evidence and remaining limit |

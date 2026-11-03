@@ -1,0 +1,38 @@
+# Changelog
+
+## 2.0.0 (November 2026)
+
+Breaking changes:
+
+- An unregistered source id blocks. It used to select `standard`, which skips the unknown-name pass. Pass `{ unknownSource: '<profile>' }` to accept unknown sources on purpose.
+- The default profile is `identifiers`. Patient messages and call and voice transcripts map to `identifiers` instead of `strict`, because strict's topic tier deleted the clinical sentences they carry.
+- `assertSendable` accepts only results this library sealed, and refuses `review` results unless called with `{ acceptReview: true }`.
+- Results carry `status` (`clean`, `review` or `blocked`), `review` items and a `scan` report. `REDACTION_VERSION` is 3.
+- Record helpers redact every string in a record and block values they cannot read, non-object records and identifiers used as keys. `changes` is no longer enumerable.
+
+Added:
+
+- A name tier built on public vocabularies (Census names, Drugs@FDA, ICD-10-CM, Webster's Second), pinned by SHA-256.
+- The residual scan and `KNOWN_GAPS`.
+- `sendRedacted`, the `redaction-gate` command, `index.d.ts`, CI on Node 22 and 24.
+- Validated dates, IPv4 and IPv6, labeled IDs, ages over 89, international phones, Unicode digits and dashes, lowercase and city-state-ZIP addresses.
+
+Changed after the second outside review (3 November 2026):
+
+- Results are frozen when sealed, and the sealing function is no longer exported (src/seal.js is gone). A result cannot change after `assertSendable` checks it.
+- `gateSummary` and `gateBodyText` return a new sealed gate instead of changing the gate passed in. The redacted summary is `gate.summary`. A gate this library did not build blocks.
+- Records: numbers are read with their key as a label, a Map comes back as an array of `[key, value]` pairs and a Set as an array, keys the rules would flag block, arrays with their own methods block, shared references are allowed, and there are budgets for values, array length and total text. Record and gate results carry a scan report.
+- Bracketed words in the input are read as text. New residual checks: card, phone, age, token-run, bracketed-word, other digit scripts and Greek words.
+- Only `.` and `./gate` are exported. Import everything else from the package root.
+- `redaction-gate --help` writes usage to stderr and exits 1. Options also take the `--name=value` form.
+- The quarantine refuses symlinked, shared or foreign-owned directories and reports fixed error codes only.
+
+Evaluation:
+
+- Both synthetic sets are development data. The set called held out in 1.x is a 27-template development check, reported per template. See the README.
+- The blind-set scorer (`eval/fresh/`), fixed before the blind set was locked, at scorer commit `047c193`: two pre-declared gate configurations, a do-nothing and a remove-every-word bound, and Microsoft Presidio run offline, scored side by side with Wilson 95% intervals. It refuses a set whose hashes, labels or offsets do not check out, and a scored run that could not stand as the one result.
+- Held-out result on fresh blind set v1, scored once on 3 November 2026 (set hash `2d2011ff449da01bb3200b5f2832cb40faa70323cc85a5f97a79446dd4f71055`, gate commit `30b6061`, scorer commit `047c193`). On 132 synthetic documents written and labeled by other model families, the gate with an empty people map left 12 of 2,577 identifier mentions (0.5%) in documents it marked clean, against 701 (27.2%) for Microsoft Presidio. It sent 120 of the 132 documents (91%) to review, including 26 of the 28 with no identifier, and 29 of those had nothing left to find. Full removal 79.0% against 72.8%, keep spans intact 99.4% against 91.8%. Presidio fully removes more clinician names (89.1% against 79.5%). See the README.
+
+## 1.0.0 (October 2026)
+
+First public release.

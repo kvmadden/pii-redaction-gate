@@ -1,0 +1,84 @@
+INPATIENT CONSULTATION REPORT
+DIVISION OF RHEUMATOLOGY AND CLINICAL IMMUNOLOGY
+Author: Fellow in Rheumatology and Clinical Immunology
+Supervising Attending: Attending Physician, Division of Rheumatology
+
+REASON FOR CONSULTATION:
+Evaluation and inpatient management of acute polyarticular rheumatoid arthritis flare, corticosteroid taper planning, and optimization of neuropathic pain.
+
+HISTORY OF PRESENT ILLNESS:
+The patient is a 56-year-old female with seropositive rheumatoid arthritis diagnosed in 2017, type 2 diabetes mellitus diagnosed in 2019, essential hypertension, and an episode of right-sided Bell palsy in 2021 that resolved completely. She was admitted to the inpatient medicine service three days ago following a severe multi-joint flare involving symmetrical swelling, warmth, and morning stiffness in bilateral wrists, metacarpophalangeal joints, proximal interphalangeal joints, and the right knee.
+
+The flare began four weeks ago after a lapse in her baseline subcutaneous biologic regimen. Prior to admission, she was maintained on certolizumab pegol 200 mg subcutaneously every 2/3 weeks alongside oral hydroxychloroquine. Historical records and plain radiographs forwarded from Outside Hospital confirm symmetrical marginal erosions of the metacarpal heads and carpal joint space narrowing first identified in 2023.
+
+On hospital day 1, she underwent diagnostic and therapeutic right knee arthrocentesis, yielding 38 mL of cloudy yellow synovial fluid. Synovial fluid analysis revealed a total nucleated cell count of 18,400 /uL with 78% polymorphonuclear leukocytes, negative Gram stain, and no birefringent crystals under polarizing microscopy, confirming inflammatory synovitis without septic arthritis or crystalline disease. Bacterial cultures show no growth.
+
+Over the past 48 hours, the patient has reported burning dysesthesias over bilateral feet in a stocking pattern. Her 32-year-old daughter at the bedside confirms progressive nocturnal burning over six months and steroid-induced glucose elevations. The primary inpatient team requested consultation for corticosteroid tapering, neuropathic pain management, and specialty referrals to Diabetes Center and Pain Clinic.
+
+PAST MEDICAL HISTORY:
+1. Seropositive rheumatoid arthritis, diagnosed in 2017.
+2. Type 2 diabetes mellitus, diagnosed in 2019.
+3. Essential hypertension, diagnosed in 2018.
+4. Right peripheral facial paralysis (Bell palsy), diagnosed in 2021, resolved.
+5. Diabetic peripheral neuropathy, diagnosed in 2023.
+
+MEDICATIONS PRIOR TO ADMISSION:
+1. Certolizumab pegol 200 mg subcutaneously every 2/3 weeks (held).
+2. Hydroxychloroquine sulfate 200 mg PO BID.
+3. Lyrica 75 mg PO BID for neuropathic pain.
+4. Allegra 180 mg PO daily for allergic rhinitis.
+5. Metformin hydrochloride 1000 mg PO BID.
+6. Lisinopril 20 mg PO daily.
+
+PHYSICAL EXAMINATION:
+Vital Signs:
+Temperature: 98.6 F (37.0 C)
+Blood Pressure: 132/80 mmHg
+Pulse: 76 beats per minute, regular
+Respiratory Rate: 16 breaths per minute
+Oxygen Saturation: 98% on ambient air
+
+General: 56-year-old female, alert, oriented, in no acute distress.
+HEENT: Normocephalic. Moist oral mucosa. Facial movements symmetric without residual Bell palsy.
+Cardiovascular: Regular rhythm, normal S1 and S2. Pulses 2+ bilaterally.
+Lungs: Clear to auscultation bilaterally without wheezing or crackles.
+Abdomen: Soft, non-tender, non-distended.
+Musculoskeletal: Symmetrical synovial swelling and tenderness of bilateral radiocarpal and MCP joints. Right knee with trace effusion and mild warmth without erythema, improved post-arthrocentesis.
+Neurological: Light touch and pinprick reduced in stocking distribution distal to mid-calves. Bilateral plantar allodynia.
+Vascular: Calves soft and non-tender. Wells score for deep vein thrombosis calculated at 0 points.
+
+LABORATORY AND DIAGNOSTIC DATA:
+Serum Chemistry and Inflammatory Markers:
+Sodium: 139 mmol/L, Potassium: 4.1 mmol/L, Chloride: 102 mmol/L, Bicarbonate: 25 mmol/L, BUN: 16 mg/dL, Creatinine: 0.82 mg/dL, Glucose: 164 mg/dL.
+C-reactive protein: 24.6 mg/L, ESR: 48 mm/h, Rheumatoid Factor: 84 IU/mL, Anti-CCP: > 250 U/mL.
+Synovial fluid: Total nucleated cells 18,400 /uL, neutrophils 78%, crystals negative, Gram stain negative.
+Duplex ultrasound: Bilateral lower extremities negative for deep vein thrombosis.
+
+ASSESSMENT:
+1. Rheumatoid arthritis flare: Polyarticular inflammatory synovitis improving after corticosteroid therapy and right knee arthrocentesis; synovial analysis negative for crystals and infection.
+2. Diabetic peripheral neuropathy: Stocking sensory deficit and allodynia.
+3. Type 2 diabetes mellitus: Steroid-associated hyperglycemia.
+4. History of Bell palsy: Resolved without residual deficit.
+5. Low DVT probability: Wells score 0 points and duplex ultrasound negative.
+
+PLAN AND RECOMMENDATIONS:
+1. Rheumatoid Arthritis Management and Corticosteroid Taper:
+- Initiate oral prednisone 40/30/20/10 mg daily taper: administer prednisone 40 mg PO daily for 7 days, 30 mg PO daily for 7 days, 20 mg PO daily for 7 days, then 10 mg PO daily for 7 days, followed by 5 mg PO daily maintenance until outpatient rheumatology re-evaluation.
+- Continue hydroxychloroquine sulfate 200 mg PO BID.
+- Maintain hold on certolizumab pegol until completion of prednisone taper; resume certolizumab pegol 200 mg subcutaneously every 2/3 weeks under outpatient rheumatology supervision.
+- Pantoprazole sodium 40 mg PO daily for gastric protection.
+2. Neuropathic Pain Optimization:
+- Increase Lyrica from 75 mg PO BID to 150 mg PO BID.
+- Continue Allegra 180 mg PO daily.
+- Outpatient referral submitted to Pain Clinic for multidisciplinary pain rehabilitation.
+3. Metabolic Management:
+- Outpatient referral to Diabetes Center for glycemic titration and education during steroid taper.
+4. Venous Thromboembolism Prophylaxis:
+- Enoxaparin sodium 40 mg subcutaneous once daily while inpatient; discontinue at discharge given ambulation and Wells score of 0.
+5. Follow-Up:
+- Outpatient follow-up with Rheumatology in 3 weeks, Diabetes Center in 2 weeks, and Pain Clinic within 4 weeks. If pressure injury occurs, referral to Wound Care will be arranged. Records from Outside Hospital have been archived.
+
+Care Team Signoff:
+Electronically signed by:
+Fellow in Rheumatology and Clinical Immunology
+Attending Physician, Division of Rheumatology and Internal Medicine

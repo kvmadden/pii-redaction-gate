@@ -1,0 +1,18 @@
+CLINICAL PHARMACY CONSULTATION NOTE
+REASON FOR CONSULT: Medication reconciliation and pain regimen review.
+
+PATIENT STATUS:
+The patient is a 58-year-old female referred to Pain Clinic for ongoing management of post-herpetic neuralgia and suspected secondary Bell palsy. Outside Hospital records from 2024 note intolerance to gabapentin due to pronounced somnolence and peripheral edema. Her daughter confirmed home adherence at bedside.
+
+CURRENT VITALS AND LABS:
+BP 128/78 mmHg, HR 72 bpm, SpO2 98% on room air, temp 36.8 C.
+Serum creatinine 0.82 mg/dL, eGFR > 60 mL/min/1.73 m2, K+ 4.1 mEq/L, Na+ 139 mEq/L, ALT 22 U/L, AST 19 U/L.
+
+ACTIVE MEDICATIONS RECONCILED:
+1. Lyrica (pregabalin) 75 mg PO BID; increase to 150 mg PO BID recommended.
+2. Duloxetine 30 mg PO daily.
+3. Acetaminophen 500 mg PO q6h PRN mild pain.
+4. Artificial tears 1 drop in affected eye q4h PRN corneal dryness secondary to facial weakness.
+
+ASSESSMENT AND RECOMMENDATIONS:
+Renal function is stable and supports cautious dose escalation of pregabalin. Recommended gradual upward titration of Lyrica to target therapeutic dosing while monitoring for ataxia or dizziness. Follow-up coordination will be handled through the outpatient clinic. Covering clinical pharmacist signed.

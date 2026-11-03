@@ -1,0 +1,16 @@
+NURSE: Cinderleaf Pharmacy nurse line, this is Shirin Dalvand. Uh, how can I help you?
+CALLER: Hi, um, this is Hae-won Gwak. I'm calling about my mother-in-law, Ngọc Quỳnh An. She she missed the refill window and I want the blister pack to go out before the weekend.
+NURSE: Okay, let me pull An's chart. Can you confirm the date of birth?
+CALLER: She was born on August 19, 1933. The face sheet lists her as 92F. The health plan member number is 7741-3308-62.
+NURSE: Thank you. I have Ngọc Quỳnh An, born on August 19, 1933. Mara Hunt signed the last reconciliation on 18.02.2026. Parisa Dehghan, the covering pharmacist, left a note that the apixaban bottle was short.
+CALLER: That's why I'm calling. Hunt's instruction was apixaban 5 mg PO BID, but she only weighs 52 kilograms and her creatinine was 1.7 mg/dL, so I think the dose should be 2.5 mg PO BID. She also takes metoprolol succinate 25 mg PO daily, furosemide 20 mg PO every morning, and acetaminophen 650 mg PO q6h PRN for the knee. Cholecalciferol 1000 units PO daily is in the same pack. Please don't seperate the heart pills from the water pill.
+NURSE: Understood. Home address on file is 418 North Laurel Avenue, Harrow Bend, OR 97341. Is delivery still going there?
+CALLER: Send it to me. She texted the ship-to in lowercase, 22 cedar lane, harrow bend. My phone, if the driver gets lost, is +1 971 555 0164.
+NURSE: Reading that back. Delivery to 22 cedar lane, harrow bend, callback +1 971 555 0164. The follow-up Mara Hunt asked for is March fourth, twenty twenty-six, in the afternoon, for a blood pressure check and a basic metabolic panel. Last potassium was 3.4 mmol/L, a little low, so nobody should bump the furosemide untill those labs are back.
+CALLER: She gets dizzy when she stands. Last week at home the pressure was 98/60 mmHg and the heart rate was 58. I recieved a voicemail but the message cut off after a few seconds. There was a mechanical fall in the kitchen last month. No loss of consciousness, and she did not hit her head.
+NURSE: I see no head CT on the list. We will not send her for imaging from this call unless the dizziness changes. I'll flag the low pressure for Mara Hunt. An's weight is down two pounds since the winter visit. No chest pain, no melena, no new edema above the ankle. Diagnoses on the list are persistent atrial fibrillation, heart failure with preserved ejection fraction, stage 3 chronic kidney disease, and osteoarthritis of the right knee. If the systolic stays under 100 mmHg, hold the metoprolol and call us. Do not double the apixaban.
+CALLER: Parisa Dehghan told my husband the same thing, um, about the dose. Can you note that Hae-won Gwak is the caregiver who can pick up the pack? Ngọc Quỳnh An does not drive anymore.
+NURSE: Noted on An's chart. Parisa Dehghan will release the pack once the plan pays member number 7741-3308-62. If the claim bounces we will call her at the number you gave. The reconciliation date stays 18.02.2026. Anything else today?
+CALLER: No. Uh, actually, yes. Please ask Mara Hunt whether the acetaminophen is still okay with the kidney disease. She takes it most evenings.
+NURSE: I will send that question. We are not changing Hunt's acetaminophen 650 mg PO q6h PRN until she answers. Thank you for calling Cinderleaf Pharmacy.
+CALLER: Thank you. Bye.

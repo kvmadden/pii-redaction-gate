@@ -1,0 +1,30 @@
+Red Lantern Laboratory
+Surgical Pathology
+
+Patient: Edna Mossman
+DOB: June 19, 1929
+Age: ninety-six years old
+MRN: 6612048
+Accession: SP-26-77419
+Specimen: shave biopsy, left forearm
+Collected: 04.03.2026
+Ordering: Dr. Ruth Calder
+Daughter: Mrs. Bilqis Rehman
+Phone: +1 802 555-0118
+
+CLINICAL INFORMATION
+The patient is ninety-six years old and was seen for a slowly growing pearly papule on the left forearm. Her daughter, Mrs. Bilqis Rehman, attended the visit and confirmed the medicine list. No bleeding disorder is known. Bleeding at the site was controlled with pressure and a small amount of aluminum chloride before the dressing. The site was photographed before the shave.
+
+GROSS
+The specimen is a tan-white skin shave, 0.8 x 0.6 x 0.1 cm, inked and entirely submitted in one cassette after processing.
+
+MICROSCOPIC
+Sections show nests of basaloid cells with peripheral palisading and retraction artifact in the dermis, connected to the epidermis. The tumor islands show focal melanin pigment, and a connection to the overlying epidermis is confirmed on the deeper levels. The inflammatory infiltrate around the tumor is sparse. Solar elastosis is present in the adjacent dermis. No ulceration is identified on these sections. No perineural invasion is seen in the planes examined. Margins are positive at the deep edge, as expected for a shave.
+
+Medicines at the time of biopsy: levothyroxine 88 mcg PO daily, atorvastatin 20 mg PO QHS, acetaminophen 650 mg PO q8h PRN pain, and cholecalciferol 1000 units PO daily.
+
+DIAGNOSIS
+Skin, left forearm, shave biopsy: nodular basal cell carcinoma, present at the deep margin. Clinical correlation and a plan for definitive treatment are suggested.
+
+Interpreted by Dr. Owen Bramble, dermatopathology.
+End of report.

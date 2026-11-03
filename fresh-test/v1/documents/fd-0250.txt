@@ -1,0 +1,12 @@
+Message Thread
+Sender: Patient
+To: Triage Nurse
+Subject: Medication adjustment and referral question
+
+hello, i am writing about my mother who is a 64-year-old female currently recovering from her recent flare. she is still having burning dysesthesias in both lower legs. the covering pharmacist had suggested switching from gabapentin to Lyrica 75 mg PO BID, taken with meals, alongside her current regimen of duloxetine 30 mg PO daily. her vitals recorded this morning on our home cuff were BP 124/78 mmHg, HR 72 bpm, and temp 98.4 F. her latest routine renal panel showed potassium 4.2 mEq/L and serum creatinine 0.88 mg/dL. we also wanted to know if her prior evaluation for possible deep vein thrombosis needs repeating. when she was assessed at Outside Hospital, her Wells score was 0 points and her D-dimer was 210 ng/mL (reference less than 500 ng/mL), which ruled it out at that time. finally, has the electronic order for her formal consult with Pain Clinic been submitted yet? thank you for your help.
+
+Care Team Reply
+Sender: Registered Nurse
+To: Patient
+
+Thank you for your message. The covering physician reviewed the update for the 64-year-old patient. The transition to Lyrica 75 mg PO BID is approved to start tonight, and you may continue duloxetine 30 mg PO daily as scheduled. Her reported BP 124/78 mmHg and normal labs are reassuring. Given the low Wells score and negative D-dimer from Outside Hospital, repeat venous duplex imaging is not indicated unless unilateral asymmetric edema or calf tenderness develops. The referral to Pain Clinic for comprehensive neuropathy management was submitted this morning. Please submit a follow-up portal note in two weeks regarding symptom control or if somnolence occurs.

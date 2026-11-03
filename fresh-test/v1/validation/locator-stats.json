@@ -1,0 +1,26 @@
+{
+ "grok": {
+  "docs_labeled": 132,
+  "missing_docs": 0,
+  "spans": 12221,
+  "unresolved_items": 0,
+  "bad_json_lines": 0,
+  "how_exact": 12211,
+  "how_near": 11,
+  "dup_span": 2,
+  "how_unique": 1
+ },
+ "gemini": {
+  "docs_labeled": 132,
+  "missing_docs": 0,
+  "spans": 10442,
+  "unresolved_items": 0,
+  "bad_json_lines": 24,
+  "how_exact": 10436,
+  "how_near": 3,
+  "unresolved": 1,
+  "resolved_by_fix_round": 1,
+  "how_unique": 1,
+  "how_ws": 2
+ }
+}

@@ -28,7 +28,10 @@
 //   (section headers, versions, gestational age, order numbers)
 //
 // The set was written to exercise the categories above, including shapes the
-// engine is known not to handle. The engine was not tuned against it.
+// engine is known not to handle. It is DEVELOPMENT DATA: the first release
+// was not tuned against it, but every later rule change (October and November
+// 2026) was made while looking at its misses. Its numbers show progress on
+// known cases, not performance on unseen text.
 
 const s = (id, kind, text, pii = [], keep = []) => ({ id, kind, text, pii, keep });
 

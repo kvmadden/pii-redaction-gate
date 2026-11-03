@@ -1,0 +1,20 @@
+Clinical Pharmacy Consultation Note
+
+Reason for Consult: Comprehensive medication reconciliation following discharge.
+
+Patient Description: The patient is a 67-year-old individual with a history of Parkinson disease, peripheral neuropathy, and essential hypertension, admitted last week following an acute fall.
+
+Subjective: The patient and the patient's spouse report persistent burning dysesthesias in the lower extremities despite gabapentin therapy. Records received from Outside Hospital noted poor response to gabapentin 600 mg PO TID. They request transition to Lyrica as recommended by neurology prior to transfer. The patient also reports mild dry cough and orthostasis.
+
+Vitals: BP 118/74 mmHg, HR 72 bpm, SpO2 98% on room air, BMI 26.4 kg/m2.
+
+Labs: Serum creatinine 0.92 mg/dL, eGFR >60 mL/min/1.73m2, serum potassium 4.4 mEq/L, AST 22 U/L, ALT 26 U/L, HbA1c 6.1%.
+
+Medication Reconciliation and Assessment:
+1. Neuropathic pain: Discontinue gabapentin. Initiate Lyrica 75 mg PO BID for 1 week, then titrate to 150 mg PO BID if tolerated.
+2. Parkinson disease: Carbidopa-levodopa 25/100 mg PO TID with meals. Patient advised to avoid taking doses simultaneously with high-protein meals.
+3. Hypertension: Lisinopril 10 mg PO daily. Blood pressure is currently well controlled.
+4. Dyslipidemia: Atorvastatin 20 mg PO QHS.
+
+Plan and Recommendations:
+Counseling provided via telephone to the patient regarding sedation and peripheral edema risks with Lyrica. Scheduled follow-up with Pain Clinic in four weeks for evaluation of neuropathic symptoms. Routine lab panel recommended in 2026. Clinical pharmacist review completed.

@@ -1,5 +1,14 @@
-// Frozen before tuning. Synthetic grammar corpus, seed 20261031.
-// No identifiers originate from a person or clinical record.
+// 27-TEMPLATE DEVELOPMENT CHECK (historical file name: heldout.json).
+//
+// Synthetic grammar corpus, seed 20261031. No identifiers originate from a
+// person or clinical record. It was committed in d05d144 before the rule
+// changes in dc528aa, but those changes added this set's own vocabulary
+// (Jardiance, Rheumatoid, Portal, Telephone and others) to a protected word
+// list, so it was never a blind held-out set. The loop below writes each of
+// the 27 identifier templates four times, so its 108 identifier rows are 27
+// independent cases. Report it per template ("26 of 27"), never as a rate over
+// 108. It is development data. The committed JSON is kept byte-identical (a
+// test checks its hash), so the limitation text it carries is unchanged.
 import fs from 'node:fs'
 export const SEED = 20261031
 let state = SEED

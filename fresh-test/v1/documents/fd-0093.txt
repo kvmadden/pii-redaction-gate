@@ -1,0 +1,71 @@
+Round Hill Clinic
+History and Physical
+
+Patient: Maïmouna Haba
+Age: 94
+MRN: 6104-8831-27
+Date of Service: 03/18/2026
+Claim number 8830214461
+
+Chief complaint
+Dyspnea on exertion, leg swelling, and a medicine review with her daughter.
+
+History of present illness
+Maïmouna Haba comes in with her daughter, Mrs. Ivy Langford, who sets up the pill box and keeps the pacemaker wallet card in a kitchen drawer. Over three weeks she has needed one pause on the short walk from the bedroom to the kitchen, and she now sleeps on two pillows. She has not had chest pain, noticed palpitations, fever, or a cough that brings up sputum. The home scale is up about four pounds, and supper portions are smaller than they were last month. She does not wake gasping, and she has not fainted.
+
+On the 4th of July she was a belted passenger in a low-speed lot collision. She did not hit her head and did not lose consciousness. The sedan would not restart and was towed, and the plate she remembered is 7QRM218. Bruising over the hip and the chest wall faded, and she gave up driving after that day. She has no pain today that she links to the collision.
+
+A dual-chamber pacemaker was placed for sick sinus syndrome on Mar. 11, 2024. She does not know her pacing thresholds. The wallet card lists generator serial AX9044182. The pocket does not twitch, and the old incision is flat and pale. Interrogation is due this spring, and her daughter will drive her when the device clinic calls.
+
+Mrs. Ivy Langford lives in Calders Ferry and stays in the apartment three nights a week. Ms. June Adeyemi at the front desk changed the refill pharmacy to Willow Lane Pharmacy so bottles are not split between shops. She initialed the medication review as J.A. before I came in.
+
+Past medical history
+Sick sinus syndrome status post dual-chamber pacemaker. Heart failure with preserved ejection fraction, last ejection fraction 60 percent. Stage 3b chronic kidney disease. Hypertension. Osteoarthritis of the knees and the right hip. Hypothyroidism. Remote cholecystectomy. No diabetes and no prior stroke.
+
+Medications
+Apixaban 2.5 mg PO BID
+Metoprolol succinate 50 mg PO daily
+Furosemide 20 mg PO daily
+Lisinopril 2.5 mg PO daily
+Levothyroxine 75 mcg PO each morning
+Acetaminophen 650 mg PO TID PRN pain
+Cholecalciferol 1000 units PO daily
+
+Allergies
+Penicillin caused a rash in childhood, with no airway swelling.
+
+Family history
+Her mother died of a stroke in late life, and her father died of pneumonia after a fracture. Her daughter is in good health. There is no known bleeding disorder in the family.
+
+Social history
+She lives in a ground-floor apartment and worked for years as a seamstress before retiring. She does not smoke and has not taken alcohol in many years. Walking is indoors, with a walker for the hall and the ramp. A neighbor sits with her on nights when her daughter is away. She reads with glasses and has not fallen inside the apartment this season.
+
+Review of systems
+General: fatigue with the dyspnea, no fever and no night sweats. Eyes and ears: no new change in vision and no spinning vertigo. Cardiac and respiratory: as in the present illness, no wheeze. Gastrointestinal: mild constipation, no black stool, no vomiting. Urinary: no burning and no new incontinence. Neurologic: no focal weakness and no new confusion. Mood: frustrated by the limits, not hopeless, and she still enjoys radio in the afternoon. Skin: no new rash around the pacemaker pocket.
+
+Examination
+Blood pressure 146/72 mmHg, pulse 68 beats per minute and regular, respirations 18 per minute, oxygen saturation 95 percent on room air, temperature 97.9 F, weight 52.4 kg.
+She is frail, alert, and oriented to person, place, and year. Mucosa is moist and speech is clear. Jugular venous pressure is about 8 cm of water. Lungs have crackles at both bases without wheeze. The heart is regular, with a soft systolic murmur at the upper sternal border that her daughter says is old. The abdomen is soft, with a cholecystectomy scar and no tenderness. The pacemaker pocket on the left upper chest is flat, without redness or warmth. There is pitting edema to the mid shins. Knees are bony without a warm effusion. Face is symmetric, without the droop of Bell palsy. No pill-rolling tremor of Parkinson disease. Gait with the walker is slow, and the turn is steady. Mood is appropriate and insight is intact.
+
+Labs and studies
+Basic metabolic panel this morning: sodium 138 mmol/L, potassium 4.3 mmol/L, creatinine 1.28 mg/dL against a baseline near 1.2 mg/dL, blood urea nitrogen 24 mg/dL, glucose 96 mg/dL. Hemoglobin is 12.4 g/dL. TSH was 3.1 mIU/L last autumn and was not repeated today. The electrocardiogram shows a paced rhythm with capture. A chest radiograph was not repeated, because the weight and the lung exam already support volume overload.
+
+Assessment and plan
+1. Volume overload on a background of heart failure with preserved ejection fraction. Furosemide will increase from 20 mg PO daily to 40 mg PO daily for five days, then return to 20 mg PO daily if the morning weight is back to her usual number. She should call for a gain over 2 kg, dyspnea at rest, or dizziness. Creatinine and potassium will be rechecked in one week.
+2. Anticoagulation. Two apixaban dose-reduction factors are present, age and weight at 52.4 kg, while creatinine stays under 1.5 mg/dL, so the dose remains apixaban 2.5 mg PO BID. There has been no fall in the apartment this season. Continue the same dose, and hold it for black stool, a nosebleed that will not stop, or any strike to the head. The brand name Eliquis is what the bottle says, and the daughter knows that name.
+3. Pacemaker follow-up. The pocket looks quiet and there is no hiccup at rest. Interrogation will be scheduled with the device clinic rather than forced into this visit. The serial from the card was copied into today's note so the clinic can match the generator.
+4. Blood pressure. Systolic pressure is still above the goal I would like, but I will not raise lisinopril on the same day the diuretic changes, with creatinine already a little above baseline. Recheck the number with the lab draw.
+5. Osteoarthritis and constipation. Acetaminophen may continue. Ibuprofen was discussed again and set aside because of apixaban and the kidneys. Polyethylene glycol 17 g PO daily as needed, one cap in water, was added for constipation. A physical therapy referral can wait unless the walker starts to feel unsafe on the ramp.
+6. Teaching and follow-up. Her daughter repeated the furosemide change, wich is the teach-back I wanted. She recieved a written schedule. A seperate pill box for the five higher-dose days was marked with tape.
+
+Contacts confirmed by her daughter:
+1844 BIRCH LANE APT 3B
+GREYSTONE, WI 53599
+Phone (414) 555-0162
+Fax (414) 555-0108
+Email m.haba@example.com
+
+Electronically signed by Dr. Tosin Balogun
+Internal Medicine
+
+Author: Dr. Tosin Balogun

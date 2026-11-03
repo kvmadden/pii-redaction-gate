@@ -1,0 +1,104 @@
+INPATIENT CONSULTATION NOTE
+SERVICE: CARDIOLOGY CONSULTATION SERVICE
+REASON FOR CONSULTATION: Acute decompensated heart failure management and
+medication optimization in the setting of ischemic cardiomyopathy.
+
+HISTORY OF PRESENT ILLNESS:
+The patient is a 72-year-old male with a significant cardiac history including
+ischemic cardiomyopathy status post three-vessel coronary artery bypass
+grafting in 2018, persistent atrial fibrillation, and Graves disease who was
+admitted through the emergency department with worsening dyspnea on exertion,
+orthopnea, and progressive lower extremity edema over the past two weeks. He
+reports awakening with sudden shortness of breath requiring three pillows to
+sleep comfortably. Outside Hospital records indicate an admission in 2022 for
+a similar heart failure exacerbation, at which time a transthoracic
+echocardiogram demonstrated a left ventricular ejection fraction of 30% with
+severe anterior and apical hypokinesis.
+
+Prior to admission, the patient was toleratting his home cardiac regimen
+without difficulty, but notes poor adherence over the past holiday period due
+to increased dietary sodium intake. In addition, the patient has a history of
+post-herpetic neuralgia along the right T6 dermatome, for which he takes Lyrica
+with modest relief. He has had no chest pressure, syncope, fevers, or cough.
+His wife reports that his functional exercise tolerance has dropped from
+walking several blocks to struggling with simple household transfers.
+
+PAST MEDICAL AND SURGICAL HISTORY:
+1. Ischemic cardiomyopathy (NYHA Class III, Stage C), diagnosed in 2017.
+2. Coronary artery bypass graft x3 in 2018 (LIMA-LAD, SVG-OM1, SVG-PDA).
+3. Persistent atrial fibrillation, rate-controlled.
+4. Graves disease, diagnosed in 2020, clinically euthyroid on therapy.
+5. Post-herpetic neuralgia affecting right thoracic wall.
+6. Chronic stasis dermatitis of bilateral lower extremities.
+
+CURRENT INPATIENT MEDICATIONS:
+1. Furosemide 80 mg IV BID (initiated upon admission).
+2. Sacubitril/valsartan 24/26 mg PO BID.
+3. Carvedilol 12.5 mg PO BID.
+4. Spironolactone 25 mg PO daily.
+5. Apixaban 5 mg PO BID.
+6. Methimazole 5 mg PO daily.
+7. Lyrica 50 mg PO TID.
+8. Prednisone 40/30/20/10 mg oral taper prescribed by the outpatient clinic
+   for a severe flare of inflammatory dermatosis, currently on 10 mg daily.
+9. Heparin 5000 units subcutaneous q8h (held while on apixaban).
+
+PHYSICAL EXAMINATION:
+Vitals: BP 114/72 mmHg, HR 68 bpm (irregularly irregular), RR 18 /min,
+temperature 98.6 F, SpO2 96% on 2 L/min oxygen via nasal cannula.
+General: Moderately ill-appearing male resting in bed with head elevated at
+45 degrees, conversant in full sentences without overt respiratory distress.
+HEENT: Normocephalic, no scleral icterus. Mild proptosis secondary to Graves
+disease without active conjunctival injection or ophthalmoplegia.
+Neck: Jugular venous distension noted at 8 cm above the sternal notch at 45
+degrees. Carotid upstrokes normal bilaterally without audible bruits.
+Cardiovascular: Irregular rhythm, normal S1, physiologically split S2, S3
+gallop appreciated at the apex. Soft 2/6 holosystolic murmur at the lower left
+sternal border.
+Pulmonary: Bibasilar fine inspiratory crackles extending through the lower
+one-third of both lung fields. No wheezing or rhonchi.
+Abdomen: Soft, mildly distended, non-tender. Hepatojugular reflux positive.
+Extremities: 3+ pitting edema extending bilaterally to mid-calf with chronic
+hyperpigmentation and mild weeping skin changes. Peripheal pulses 1+ at the
+posterior tibial arteries bilaterally.
+Neurologic: Alert, oriented to person, place, and year. Non-focal exam.
+
+LABORATORY AND DIAGNOSTIC DATA:
+Serum sodium 137 mEq/L, potassium 4.4 mEq/L, chloride 101 mEq/L, bicarbonate
+23 mEq/L, BUN 28 mg/dL, serum creatinine 1.3 mg/dL, eGFR 58 mL/min/1.73m2.
+Total bilirubin 0.9 mg/dL, AST 24 U/L, ALT 22 U/L. Serum troponin I <0.02
+ng/mL (negative x2). NT-proBNP 2480 pg/mL (elevated). Free T4 1.2 ng/dL,
+thyroid-stimulating hormone 1.8 mIU/L.
+Electrocardiogram: Atrial fibrillation with controlled ventricular response,
+mean heart rate 70 bpm, left bundle branch block, QRS duration 148 ms.
+Chest Radiography: Cardiomegaly with pulmonary vascular congestion, prominent
+interstitial markings, and small blunting of bilateral costophrenic angles.
+
+ASSESSMENT AND PLAN:
+Acute decompensated biventricular heart failure in a 72-year-old male with
+known ischemic cardiomyopathy, reduced ejection fraction, and baseline atrial
+fibrillation, provoked primarily by dietary noncompliance and volume overload.
+1. Volume Overload / Decongestion:
+- Continue aggressive intravenous diuresis with furosemide 80 mg IV BID.
+- Maintain strict intake and output recording and daily standing weights.
+- Goal net fluid removal of 1.5 to 2.0 liters over the next 24 hours.
+- Monitor basic metabolic panel every 12 hours during active titration.
+2. Guideline-Directed Medical Therapy:
+- Continue sacubitril/valsartan at current dose; defer upward titration until
+  euvolumic state is approached and renal function stabilizes.
+- Continue carvedilol 12.5 mg PO BID; heart rate is appropriately controlled.
+- Continue spironolactone 25 mg PO daily with close monitoring of potassium.
+3. Anticoagulation & Comorbidities:
+- Continue apixaban 5 mg PO BID for systemic thromboembolism prophylaxis.
+- Maintain methimazole 5 mg PO daily for Graves disease.
+- Complete final day of prednisone taper (10 mg PO daily) then discontinue.
+- Continue Lyrica 50 mg PO TID for neuropathic symptoms.
+- Inpatient referral sent to Wound Care for management of weeping lower
+  extremity stasis changes and application of protective barrier dressings.
+4. Disposition:
+- Case disussed with the primary inpatient medical service.
+- Follow-up cardiology evaluation scheduled tomorrow morning.
+
+Consultant Signature:
+Attending Cardiologist, Cardiology Service
+Consultation Fellow, Cardiovascular Disease

@@ -6,12 +6,13 @@ const $ = id => document.getElementById(id)
 const examples = {
  visit: 'Patient Inez Q. Thorn-Smith, DOB 03/04/1961, MRN#: Z9900188.\nAdmitted 10/22/2025. Phone 202-555-0143.\n\nContinue Ozempic 0.5 mg weekly.\nA1c 7.4%, BP 138/84.\nContinue metformin 500 mg BID.',
  contact: 'Dr. Adira Linden. Age: 97. Phone 202-555-0143. Device serial: DEMO-90188. Portal https://example.org/chart/88. Continue metformin 500 mg BID.',
- limits: 'tanya called. IP: 192.0.2.87. Continue metformin 500 mg BID. Year 2026.',
+ limits: 'Spoke with grace about her refill. Admitted to Valley Hospital. Age: 72. Continue metformin 500 mg BID.',
  ...Object.fromEntries(Object.entries(clinicalExamples).map(([key, value]) => [key, value.text])),
  blank: ''
 }
 let current = null
 let version = 0
+let reviewedRevision = -1
 function keptText(container, text, terms) {
  const positions = terms.flatMap(term => [...text.matchAll(new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'))].map(m => ({start:m.index,end:m.index+term.length}))).sort((a,b) => a.start-b.start)
  let cursor = 0
@@ -39,8 +40,28 @@ function invalidate(message = 'Note changed. Inspect again before sending.') {
  $('counts').replaceChildren()
  $('removed').replaceChildren()
  $('kept').textContent = ''
+ $('scan-report').textContent = ''
+ $('review-spans').replaceChildren()
  $('send-status').textContent = 'Send gate: blocked until the current note is inspected.'
  document.querySelector('.workspace').dataset.state = 'idle'
+}
+// What the engine read and what it could not decide, in plain words.
+function showScan(result) {
+ const spans = $('review-spans')
+ spans.replaceChildren()
+ if (!result || result.blocked || !result.scan) { $('scan-report').textContent = ''
+  return }
+ const s = result.scan
+ const read = `Read ${s.read} of ${s.characters} characters with ${s.checks.length} checks.`
+ const not = s.notChecked.length ? ` Not checked under this profile: ${s.notChecked.join(', ')}.` : ''
+ const n = result.review.length
+ const verdict = result.status === 'review' ? ` ${n} span${n === 1 ? ' needs' : 's need'} review before sending.` : ' Nothing left to decide. Not proof that no identifier remains.'
+ $('scan-report').textContent = read + not + verdict
+ for (const r of result.review) {
+  const li = document.createElement('li')
+  li.textContent = `“${result.text.slice(r.start, r.end)}”: ${r.reason}`
+  spans.append(li)
+ }
 }
 async function run() {
  invalidate('Inspecting with the local engine…')
@@ -59,8 +80,9 @@ async function run() {
   $('flagged').disabled = blocked
   $('review-status').textContent = blocked ? 'Review unavailable because the engine failed.' : 'Compare source and output, then record your review or flag a missed identifier.'
   document.querySelector('.workspace').dataset.state = blocked ? 'blocked' : 'ready'
-  $('status').textContent = blocked ? 'BLOCKED / Engine failure. No payload can pass.' : 'Inspection complete / Review required before use'
-  $('result-badge').textContent = blocked ? 'BLOCKED' : 'REVIEW REQUIRED'
+  const review = current.status === 'review'
+  $('status').textContent = blocked ? 'BLOCKED / Engine failure. No payload can pass.' : review ? 'Inspection complete / Spans need review before sending' : 'Inspection complete / Nothing left to decide, compare before use'
+  $('result-badge').textContent = blocked ? 'BLOCKED' : review ? 'NEEDS REVIEW' : 'CHECKS PASSED'
   $('output').replaceChildren()
   if (blocked) $('output').textContent = current.text
   else {
@@ -101,8 +123,9 @@ async function run() {
    $('counts').append(item)
   }
   if (!$('counts').children.length) $('counts').textContent = blocked ? 'Withheld on failure' : 'No rules matched'
-  $('kept').textContent = blocked ? 'No content is available for sending.' : `${current.kept.length} recognized clinical phrases preserved. Green marks show exact phrases retained, not a completeness score.`
-  $('send-status').textContent = blocked ? 'Send gate: BLOCKED. No payload available.' : 'Send gate: ready for a local simulated attempt.'
+  $('kept').textContent = blocked ? 'No content is available for sending.' : `${current.kept.length} clinical word${current.kept.length === 1 ? '' : 's'} from the public drug and diagnosis lists kept. Green marks show words retained, not a completeness score.`
+  showScan(current.result)
+  $('send-status').textContent = blocked ? 'Send gate: BLOCKED. No payload available.' : review ? 'Send gate: refused until a reviewer marks the flagged spans reviewed.' : 'Send gate: ready for a local simulated attempt.'
  } catch {
   invalidate('BLOCKED / Inspector error. No payload can pass.')
   document.querySelector('.workspace').dataset.state = 'blocked'
@@ -120,9 +143,12 @@ $('failure').addEventListener('change', run)
 $('note').addEventListener('input', () => invalidate())
 $('run').addEventListener('click', run)
 $('send').addEventListener('click', () => {
- try { assertSendable(current)
- $('send-status').textContent = 'Simulated send allowed. Only redacted text passed the gate. No request was made.' }
- catch { $('send-status').textContent = 'Send blocked. No payload passed to the simulated writer.' }
+ // The guard accepts only the sealed engine result. A review result passes
+ // only after "Mark as reviewed" for this exact revision.
+ const acceptReview = reviewedRevision === version
+ try { assertSendable(current?.result, {acceptReview})
+ $('send-status').textContent = current.result.status === 'review' ? 'Simulated send allowed after a reviewer marked the flagged spans reviewed. No request was made.' : 'Simulated send allowed. The checks found nothing left to decide, which is not proof that no identifier remains. No request was made.' }
+ catch (e) { $('send-status').textContent = e?.name === 'RedactionReviewRequiredError' ? 'Send refused: spans need review. Check them, then mark the note as reviewed.' : 'Send blocked. No payload passed to the simulated writer.' }
 })
 $('theme').addEventListener('click', () => {
  const dark = document.documentElement.dataset.theme !== 'dark'
@@ -139,6 +165,7 @@ $('note').addEventListener('input', () => { $('provenance').textContent = 'Custo
 for (const action of ['reviewed','flagged']) $(action).addEventListener('click', () => {
  try {
   recordReview(localStorage, action, {ready:!!current, blocked:current?.blocked, document:$('note').value === examples[$('example').value] ? $('example').value : 'custom-synthetic-draft', profile:$('profile').value, revision:version})
+  reviewedRevision = action === 'reviewed' ? version : -1
   $('review-status').textContent = action === 'flagged' ? 'Missed identifier flagged locally. Correct the draft and inspect again. No escalation was sent.' : 'Review recorded locally. This does not certify the output or release a payload.'
   showLog()
  } catch { $('review-status').textContent = 'Review was not saved. Inspect again or check browser storage availability.' }
@@ -168,7 +195,7 @@ function renderMetrics() {
   }
   $('metrics').append(tr)
  }
- $('metric-status').textContent = 'Frozen identifiers-profile evaluation. These are identifier types, not document-type scores. Other profiles and the curated examples are not scored here.'
+ $('metric-status').textContent = 'Development data, identifiers-profile evaluation of this engine. Rules were changed while looking at these sets. These are identifier types, not document-type scores. Other profiles and the curated examples are not scored here.'
 }
 fetch('./comparison.json').then(response => { if (!response.ok) throw Error('Unavailable')
  return response.json() }).then(data => { evaluation = data

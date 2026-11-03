@@ -1,5 +1,7 @@
 # Clinical inspector verification
 
+> **Correction, 3 November 2026.** The "held-out" metrics referred to here come from a 27-template development check, not a blind set. See the main [README](../../README.md).
+
 Base: origin/main `63ac3abc48094e86f6883f99c1586b45bf6ebd3f`. Candidate branch: `grok/pii-redaction-gate-polish`. Node v24.14.1, npm 11.11.0. No runtime or test dependencies added.
 
 ## Pickup and scope

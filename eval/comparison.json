@@ -1,2605 +1,3742 @@
 {
-  "original": {
-    "before": {
-      "overall": {
-        "entities": 207,
-        "entityRecall": 0.7053140096618358,
-        "entityPartial": 7,
-        "spansEmitted": 190,
-        "spanPrecision": 0.8263157894736842,
-        "charPrecision": 0.8520657485561972,
-        "charRecall": 0.8386532575426323,
-        "hardNegatives": 227,
-        "hardNegativesKept": 0.8810572687224669,
-        "snippetsWithPii": 118,
-        "snippetsNoLeak": 63,
-        "negativeSnippets": 40,
-        "negativeIntact": 27
-      },
-      "byType": {
-        "NAME": {
-          "n": 51,
-          "full": 43,
-          "partial": 4,
-          "missed": 4,
-          "recall": 0.8431372549019608
-        },
-        "DOB": {
-          "n": 11,
-          "full": 10,
-          "partial": 0,
-          "missed": 1,
-          "recall": 0.9090909090909091
-        },
-        "ID": {
-          "n": 19,
-          "full": 13,
-          "partial": 0,
-          "missed": 6,
-          "recall": 0.6842105263157895
-        },
-        "FACILITY": {
-          "n": 21,
-          "full": 20,
-          "partial": 1,
-          "missed": 0,
-          "recall": 0.9523809523809523
-        },
-        "DATE": {
-          "n": 25,
-          "full": 0,
-          "partial": 0,
-          "missed": 25,
-          "recall": 0
-        },
-        "AGE": {
-          "n": 14,
-          "full": 0,
-          "partial": 0,
-          "missed": 14,
-          "recall": 0
-        },
-        "RELATIVE": {
-          "n": 26,
-          "full": 21,
-          "partial": 1,
-          "missed": 4,
-          "recall": 0.8076923076923077
-        },
-        "PHONE": {
-          "n": 19,
-          "full": 19,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "ADDRESS": {
-          "n": 13,
-          "full": 12,
-          "partial": 1,
-          "missed": 0,
-          "recall": 0.9230769230769231
-        },
-        "EMAIL": {
-          "n": 8,
-          "full": 8,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        }
-      },
-      "byToken": {
-        "name": {
-          "emitted": 128,
-          "tp": 95,
-          "fp": 33,
-          "precision": 0.7421875
-        },
-        "dob": {
-          "emitted": 10,
-          "tp": 10,
-          "fp": 0,
-          "precision": 1
-        },
-        "account": {
-          "emitted": 9,
-          "tp": 9,
-          "fp": 0,
-          "precision": 1
-        },
-        "phone": {
-          "emitted": 19,
-          "tp": 19,
-          "fp": 0,
-          "precision": 1
-        },
-        "address": {
-          "emitted": 11,
-          "tp": 11,
-          "fp": 0,
-          "precision": 1
-        },
-        "email": {
-          "emitted": 8,
-          "tp": 8,
-          "fp": 0,
-          "precision": 1
-        },
-        "ssn": {
-          "emitted": 3,
-          "tp": 3,
-          "fp": 0,
-          "precision": 1
-        },
-        "card": {
-          "emitted": 1,
-          "tp": 1,
-          "fp": 0,
-          "precision": 1
-        },
-        "coords": {
-          "emitted": 1,
-          "tp": 1,
-          "fp": 0,
-          "precision": 1
-        }
-      },
-      "byCategory": {
-        "CLINICAL": {
-          "n": 47,
-          "kept": 44,
-          "damaged": 3,
-          "keptRate": 0.9361702127659575
-        },
-        "DRUG": {
-          "n": 63,
-          "kept": 49,
-          "damaged": 14,
-          "keptRate": 0.7777777777777778
-        },
-        "DOSE": {
-          "n": 39,
-          "kept": 39,
-          "damaged": 0,
-          "keptRate": 1
-        },
-        "LAB": {
-          "n": 50,
-          "kept": 49,
-          "damaged": 1,
-          "keptRate": 0.98
-        },
-        "VITAL": {
-          "n": 9,
-          "kept": 9,
-          "damaged": 0,
-          "keptRate": 1
-        },
-        "OTHER": {
-          "n": 19,
-          "kept": 10,
-          "damaged": 9,
-          "keptRate": 0.5263157894736842
-        }
-      },
-      "misses": [
-        {
-          "id": "c001",
-          "type": "NAME",
-          "value": "John Q. Sample",
-          "status": "partial"
-        },
-        {
-          "id": "c001",
-          "type": "DATE",
-          "value": "05/14/2024",
-          "status": "missed"
-        },
-        {
-          "id": "c002",
-          "type": "AGE",
-          "value": "72",
-          "status": "missed"
-        },
-        {
-          "id": "c003",
-          "type": "DATE",
-          "value": "02/11/2025",
-          "status": "missed"
-        },
-        {
-          "id": "c004",
-          "type": "RELATIVE",
-          "value": "Rosa",
-          "status": "missed"
-        },
-        {
-          "id": "c006",
-          "type": "DATE",
-          "value": "06/02/2024",
-          "status": "missed"
-        },
-        {
-          "id": "c009",
-          "type": "AGE",
-          "value": "54",
-          "status": "missed"
-        },
-        {
-          "id": "c010",
-          "type": "ID",
-          "value": "W123456789",
-          "status": "missed"
-        },
-        {
-          "id": "c012",
-          "type": "DATE",
-          "value": "03/22/2025",
-          "status": "missed"
-        },
-        {
-          "id": "c014",
-          "type": "AGE",
-          "value": "81",
-          "status": "missed"
-        },
-        {
-          "id": "c014",
-          "type": "DATE",
-          "value": "1/9/2025",
-          "status": "missed"
-        },
-        {
-          "id": "c018",
-          "type": "FACILITY",
-          "value": "St. Brendan Medical Center",
-          "status": "partial"
-        },
-        {
-          "id": "c018",
-          "type": "DATE",
-          "value": "7/4/2024",
-          "status": "missed"
-        },
-        {
-          "id": "c026",
-          "type": "AGE",
-          "value": "93",
-          "status": "missed"
-        },
-        {
-          "id": "c028",
-          "type": "DATE",
-          "value": "04/18/2025",
-          "status": "missed"
-        },
-        {
-          "id": "c033",
-          "type": "AGE",
-          "value": "67",
-          "status": "missed"
-        },
-        {
-          "id": "c035",
-          "type": "DATE",
-          "value": "08/19/2025",
-          "status": "missed"
-        },
-        {
-          "id": "c040",
-          "type": "ID",
-          "value": "7782194",
-          "status": "missed"
-        },
-        {
-          "id": "c043",
-          "type": "DATE",
-          "value": "10/02/2024",
-          "status": "missed"
-        },
-        {
-          "id": "c045",
-          "type": "DATE",
-          "value": "05/05/2025",
-          "status": "missed"
-        },
-        {
-          "id": "c047",
-          "type": "AGE",
-          "value": "82",
-          "status": "missed"
-        },
-        {
-          "id": "c052",
-          "type": "RELATIVE",
-          "value": "Dev",
-          "status": "missed"
-        },
-        {
-          "id": "c053",
-          "type": "DATE",
-          "value": "12/01/2024",
-          "status": "missed"
-        },
-        {
-          "id": "c054",
-          "type": "DATE",
-          "value": "03/03/2025",
-          "status": "missed"
-        },
-        {
-          "id": "c056",
-          "type": "AGE",
-          "value": "45",
-          "status": "missed"
-        },
-        {
-          "id": "c058",
-          "type": "RELATIVE",
-          "value": "Alexei",
-          "status": "missed"
-        },
-        {
-          "id": "c060",
-          "type": "NAME",
-          "value": "Ramona Iturbe-Klein",
-          "status": "partial"
-        },
-        {
-          "id": "c061",
-          "type": "DATE",
-          "value": "11/12/2025",
-          "status": "missed"
-        },
-        {
-          "id": "c063",
-          "type": "RELATIVE",
-          "value": "Linda Okonkwo-Baptiste",
-          "status": "partial"
-        },
-        {
-          "id": "c065",
-          "type": "AGE",
-          "value": "3",
-          "status": "missed"
-        },
-        {
-          "id": "c067",
-          "type": "ID",
-          "value": "30019487",
-          "status": "missed"
-        },
-        {
-          "id": "c072",
-          "type": "AGE",
-          "value": "88",
-          "status": "missed"
-        },
-        {
-          "id": "c072",
-          "type": "DATE",
-          "value": "9/14/2023",
-          "status": "missed"
-        },
-        {
-          "id": "c075",
-          "type": "DATE",
-          "value": "07/30/2025",
-          "status": "missed"
-        },
-        {
-          "id": "c076",
-          "type": "DATE",
-          "value": "2/20/2025",
-          "status": "missed"
-        },
-        {
-          "id": "c077",
-          "type": "AGE",
-          "value": "86",
-          "status": "missed"
-        },
-        {
-          "id": "c082",
-          "type": "AGE",
-          "value": "47",
-          "status": "missed"
-        },
-        {
-          "id": "c083",
-          "type": "NAME",
-          "value": "Elena Vasquez-Moore",
-          "status": "partial"
-        },
-        {
-          "id": "c084",
-          "type": "NAME",
-          "value": "Harriet Nakamura-Boyd",
-          "status": "partial"
-        },
-        {
-          "id": "c085",
-          "type": "DATE",
-          "value": "4/30/2025",
-          "status": "missed"
-        },
-        {
-          "id": "m002",
-          "type": "NAME",
-          "value": "Omar",
-          "status": "missed"
-        },
-        {
-          "id": "m007",
-          "type": "DATE",
-          "value": "09/08/2025",
-          "status": "missed"
-        },
-        {
-          "id": "m012",
-          "type": "AGE",
-          "value": "68",
-          "status": "missed"
-        },
-        {
-          "id": "m013",
-          "type": "ID",
-          "value": "4500 1123 9987",
-          "status": "missed"
-        },
-        {
-          "id": "m013",
-          "type": "ID",
-          "value": "77821",
-          "status": "missed"
-        },
-        {
-          "id": "m017",
-          "type": "DATE",
-          "value": "3/18/2025",
-          "status": "missed"
-        },
-        {
-          "id": "m024",
-          "type": "AGE",
-          "value": "101",
-          "status": "missed"
-        },
-        {
-          "id": "m025",
-          "type": "DATE",
-          "value": "12/5/1988",
-          "status": "missed"
-        },
-        {
-          "id": "m026",
-          "type": "DATE",
-          "value": "6/1/2025",
-          "status": "missed"
-        },
-        {
-          "id": "m026",
-          "type": "DATE",
-          "value": "6/9/2025",
-          "status": "missed"
-        },
-        {
-          "id": "m028",
-          "type": "NAME",
-          "value": "tanya",
-          "status": "missed"
-        },
-        {
-          "id": "m030",
-          "type": "AGE",
-          "value": "79",
-          "status": "missed"
-        },
-        {
-          "id": "m031",
-          "type": "ADDRESS",
-          "value": "PO Box 4471, Springfield, MO 65801",
-          "status": "partial"
-        },
-        {
-          "id": "m032",
-          "type": "DATE",
-          "value": "8/31/2025",
-          "status": "missed"
-        },
-        {
-          "id": "m034",
-          "type": "DOB",
-          "value": "2/14/1970",
-          "status": "missed"
-        },
-        {
-          "id": "g010",
-          "type": "DATE",
-          "value": "01/15/2025",
-          "status": "missed"
-        },
-        {
-          "id": "g013",
-          "type": "ID",
-          "value": "D123-4567-8901",
-          "status": "missed"
-        },
-        {
-          "id": "g014",
-          "type": "RELATIVE",
-          "value": "Kwame",
-          "status": "missed"
-        },
-        {
-          "id": "g017",
-          "type": "NAME",
-          "value": "Carlos",
-          "status": "missed"
-        },
-        {
-          "id": "g018",
-          "type": "NAME",
-          "value": "Fatima",
-          "status": "missed"
-        },
-        {
-          "id": "g021",
-          "type": "DATE",
-          "value": "09/02/2025",
-          "status": "missed"
-        }
-      ],
-      "damaged": [
-        {
-          "id": "c009",
-          "category": "CLINICAL",
-          "value": "Crohn disease"
-        },
-        {
-          "id": "c010",
-          "category": "DRUG",
-          "value": "Ozempic"
-        },
-        {
-          "id": "c030",
-          "category": "DRUG",
-          "value": "Eliquis"
-        },
-        {
-          "id": "c031",
-          "category": "OTHER",
-          "value": "Assessment and Plan"
-        },
-        {
-          "id": "c032",
-          "category": "OTHER",
-          "value": "Chief Complaint"
-        },
-        {
-          "id": "c033",
-          "category": "OTHER",
-          "value": "History of Present Illness"
-        },
-        {
-          "id": "c038",
-          "category": "DRUG",
-          "value": "Lexapro"
-        },
-        {
-          "id": "c071",
-          "category": "CLINICAL",
-          "value": "abnormal Pap"
-        },
-        {
-          "id": "c074",
-          "category": "DRUG",
-          "value": "Tylenol"
-        },
-        {
-          "id": "m022",
-          "category": "DRUG",
-          "value": "Benadryl"
-        },
-        {
-          "id": "m029",
-          "category": "DRUG",
-          "value": "Zoloft"
-        },
-        {
-          "id": "m032",
-          "category": "DRUG",
-          "value": "Humira"
-        },
-        {
-          "id": "g022",
-          "category": "OTHER",
-          "value": "Finance Reports"
-        },
-        {
-          "id": "n007",
-          "category": "LAB",
-          "value": "Glasgow Coma Scale 14"
-        },
-        {
-          "id": "n012",
-          "category": "DRUG",
-          "value": "Zofran"
-        },
-        {
-          "id": "n014",
-          "category": "DRUG",
-          "value": "Keytruda"
-        },
-        {
-          "id": "n016",
-          "category": "DRUG",
-          "value": "Humalog"
-        },
-        {
-          "id": "n018",
-          "category": "CLINICAL",
-          "value": "Graves disease"
-        },
-        {
-          "id": "n019",
-          "category": "OTHER",
-          "value": "Cardiology"
-        },
-        {
-          "id": "n027",
-          "category": "OTHER",
-          "value": "Hospital Course"
-        },
-        {
-          "id": "n029",
-          "category": "DRUG",
-          "value": "Keflex"
-        },
-        {
-          "id": "n030",
-          "category": "OTHER",
-          "value": "Social History"
-        },
-        {
-          "id": "n032",
-          "category": "DRUG",
-          "value": "Pfizer COVID-19 vaccine"
-        },
-        {
-          "id": "n036",
-          "category": "DRUG",
-          "value": "Xarelto"
-        },
-        {
-          "id": "n036",
-          "category": "DRUG",
-          "value": "Entresto"
-        },
-        {
-          "id": "n037",
-          "category": "OTHER",
-          "value": "Review of Systems"
-        },
-        {
-          "id": "n040",
-          "category": "OTHER",
-          "value": "Physical Exam"
-        }
-      ],
-      "falsePositives": [
-        {
-          "id": "c009",
-          "token": "name",
-          "text": "Crohn",
-          "hitsKeep": true
-        },
-        {
-          "id": "c010",
-          "token": "name",
-          "text": "Ozempic",
-          "hitsKeep": true
-        },
-        {
-          "id": "c020",
-          "token": "name",
-          "text": "Patient",
-          "hitsKeep": false
-        },
-        {
-          "id": "c030",
-          "token": "name",
-          "text": "Started Eliquis",
-          "hitsKeep": true
-        },
-        {
-          "id": "c031",
-          "token": "name",
-          "text": "Plan",
-          "hitsKeep": true
-        },
-        {
-          "id": "c032",
-          "token": "name",
-          "text": "Chief Complaint",
-          "hitsKeep": true
-        },
-        {
-          "id": "c033",
-          "token": "name",
-          "text": "Present Illness",
-          "hitsKeep": true
-        },
-        {
-          "id": "c038",
-          "token": "name",
-          "text": "Prescribed Lexapro",
-          "hitsKeep": true
-        },
-        {
-          "id": "c053",
-          "token": "name",
-          "text": "West",
-          "hitsKeep": false
-        },
-        {
-          "id": "c067",
-          "token": "name",
-          "text": "Sex",
-          "hitsKeep": false
-        },
-        {
-          "id": "c071",
-          "token": "name",
-          "text": "Pap",
-          "hitsKeep": true
-        },
-        {
-          "id": "c074",
-          "token": "name",
-          "text": "Tylenol",
-          "hitsKeep": true
-        },
-        {
-          "id": "c077",
-          "token": "name",
-          "text": "Age",
-          "hitsKeep": false
-        },
-        {
-          "id": "c077",
-          "token": "name",
-          "text": "Phone",
-          "hitsKeep": false
-        },
-        {
-          "id": "c080",
-          "token": "name",
-          "text": "Twin",
-          "hitsKeep": false
-        },
-        {
-          "id": "m022",
-          "token": "name",
-          "text": "Benadryl",
-          "hitsKeep": true
-        },
-        {
-          "id": "m029",
-          "token": "name",
-          "text": "Zoloft",
-          "hitsKeep": true
-        },
-        {
-          "id": "m032",
-          "token": "name",
-          "text": "Humira",
-          "hitsKeep": true
-        },
-        {
-          "id": "g022",
-          "token": "name",
-          "text": "Finance Reports",
-          "hitsKeep": true
-        },
-        {
-          "id": "n007",
-          "token": "name",
-          "text": "Glasgow Coma Scale",
-          "hitsKeep": true
-        },
-        {
-          "id": "n012",
-          "token": "name",
-          "text": "Zofran",
-          "hitsKeep": true
-        },
-        {
-          "id": "n014",
-          "token": "name",
-          "text": "Keytruda",
-          "hitsKeep": true
-        },
-        {
-          "id": "n016",
-          "token": "name",
-          "text": "Humalog",
-          "hitsKeep": true
-        },
-        {
-          "id": "n018",
-          "token": "name",
-          "text": "Graves",
-          "hitsKeep": true
-        },
-        {
-          "id": "n019",
-          "token": "name",
-          "text": "Cardiology",
-          "hitsKeep": true
-        },
-        {
-          "id": "n027",
-          "token": "name",
-          "text": "Hospital Course",
-          "hitsKeep": true
-        },
-        {
-          "id": "n029",
-          "token": "name",
-          "text": "Keflex",
-          "hitsKeep": true
-        },
-        {
-          "id": "n030",
-          "token": "name",
-          "text": "Social History",
-          "hitsKeep": true
-        },
-        {
-          "id": "n032",
-          "token": "name",
-          "text": "Pfizer",
-          "hitsKeep": true
-        },
-        {
-          "id": "n036",
-          "token": "name",
-          "text": "Xarelto",
-          "hitsKeep": true
-        },
-        {
-          "id": "n036",
-          "token": "name",
-          "text": "Entresto",
-          "hitsKeep": true
-        },
-        {
-          "id": "n037",
-          "token": "name",
-          "text": "Systems",
-          "hitsKeep": true
-        },
-        {
-          "id": "n040",
-          "token": "name",
-          "text": "Physical Exam",
-          "hitsKeep": true
-        }
-      ],
-      "precisionByFamily": {
-        "NAME": {
-          "tp": 94,
-          "fp": 33,
-          "precision": 0.7401574803149606
-        },
-        "DATE": {
-          "tp": 10,
-          "fp": 0,
-          "precision": 1
-        },
-        "ID": {
-          "tp": 13,
-          "fp": 0,
-          "precision": 1
-        },
-        "PHONE": {
-          "tp": 19,
-          "fp": 0,
-          "precision": 1
-        },
-        "ADDRESS": {
-          "tp": 13,
-          "fp": 0,
-          "precision": 1
-        },
-        "EMAIL": {
-          "tp": 8,
-          "fp": 0,
-          "precision": 1
-        }
-      }
+  "note": "Both sets are development data, so no number here measures performance on unseen text. A headline number needs the fresh locked set described in the README.",
+  "profile": "identifiers",
+  "peopleMap": "empty",
+  "engines": [
+    {
+      "id": "release",
+      "label": "First public release",
+      "commit": "91c4e16"
     },
-    "after": {
-      "overall": {
-        "entities": 207,
-        "entityRecall": 0.9033816425120773,
-        "entityPartial": 1,
-        "spansEmitted": 202,
-        "spanPrecision": 0.9702970297029703,
-        "charPrecision": 0.9601903937689312,
-        "charRecall": 0.9702667249672059,
-        "hardNegatives": 227,
-        "hardNegativesKept": 0.9823788546255506,
-        "snippetsWithPii": 118,
-        "snippetsNoLeak": 99,
-        "negativeSnippets": 40,
-        "negativeIntact": 38
-      },
-      "byType": {
-        "NAME": {
-          "n": 51,
-          "full": 46,
-          "partial": 1,
-          "missed": 4,
-          "recall": 0.9019607843137255
-        },
-        "DOB": {
-          "n": 11,
-          "full": 11,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "ID": {
-          "n": 19,
-          "full": 17,
-          "partial": 0,
-          "missed": 2,
-          "recall": 0.8947368421052632
-        },
-        "FACILITY": {
-          "n": 21,
-          "full": 21,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "DATE": {
-          "n": 25,
-          "full": 25,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "AGE": {
-          "n": 14,
-          "full": 1,
-          "partial": 0,
-          "missed": 13,
-          "recall": 0.07142857142857142
-        },
-        "RELATIVE": {
-          "n": 26,
-          "full": 26,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "PHONE": {
-          "n": 19,
-          "full": 19,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "ADDRESS": {
-          "n": 13,
-          "full": 13,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "EMAIL": {
-          "n": 8,
-          "full": 8,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        }
-      },
-      "byToken": {
-        "name": {
-          "emitted": 107,
-          "tp": 102,
-          "fp": 5,
-          "precision": 0.9532710280373832
-        },
-        "dob": {
-          "emitted": 10,
-          "tp": 10,
-          "fp": 0,
-          "precision": 1
-        },
-        "account": {
-          "emitted": 13,
-          "tp": 13,
-          "fp": 0,
-          "precision": 1
-        },
-        "date": {
-          "emitted": 27,
-          "tp": 26,
-          "fp": 1,
-          "precision": 0.9629629629629629
-        },
-        "phone": {
-          "emitted": 19,
-          "tp": 19,
-          "fp": 0,
-          "precision": 1
-        },
-        "address": {
-          "emitted": 12,
-          "tp": 12,
-          "fp": 0,
-          "precision": 1
-        },
-        "email": {
-          "emitted": 8,
-          "tp": 8,
-          "fp": 0,
-          "precision": 1
-        },
-        "ssn": {
-          "emitted": 3,
-          "tp": 3,
-          "fp": 0,
-          "precision": 1
-        },
-        "age": {
-          "emitted": 1,
-          "tp": 1,
-          "fp": 0,
-          "precision": 1
-        },
-        "card": {
-          "emitted": 1,
-          "tp": 1,
-          "fp": 0,
-          "precision": 1
-        },
-        "coords": {
-          "emitted": 1,
-          "tp": 1,
-          "fp": 0,
-          "precision": 1
-        }
-      },
-      "byCategory": {
-        "CLINICAL": {
-          "n": 47,
-          "kept": 47,
-          "damaged": 0,
-          "keptRate": 1
-        },
-        "DRUG": {
-          "n": 63,
-          "kept": 63,
-          "damaged": 0,
-          "keptRate": 1
-        },
-        "DOSE": {
-          "n": 39,
-          "kept": 39,
-          "damaged": 0,
-          "keptRate": 1
-        },
-        "LAB": {
-          "n": 50,
-          "kept": 50,
-          "damaged": 0,
-          "keptRate": 1
-        },
-        "VITAL": {
-          "n": 9,
-          "kept": 9,
-          "damaged": 0,
-          "keptRate": 1
-        },
-        "OTHER": {
-          "n": 19,
-          "kept": 15,
-          "damaged": 4,
-          "keptRate": 0.7894736842105263
-        }
-      },
-      "misses": [
-        {
-          "id": "c002",
-          "type": "AGE",
-          "value": "72",
-          "status": "missed"
-        },
-        {
-          "id": "c009",
-          "type": "AGE",
-          "value": "54",
-          "status": "missed"
-        },
-        {
-          "id": "c014",
-          "type": "AGE",
-          "value": "81",
-          "status": "missed"
-        },
-        {
-          "id": "c033",
-          "type": "AGE",
-          "value": "67",
-          "status": "missed"
-        },
-        {
-          "id": "c047",
-          "type": "AGE",
-          "value": "82",
-          "status": "missed"
-        },
-        {
-          "id": "c056",
-          "type": "AGE",
-          "value": "45",
-          "status": "missed"
-        },
-        {
-          "id": "c065",
-          "type": "AGE",
-          "value": "3",
-          "status": "missed"
-        },
-        {
-          "id": "c072",
-          "type": "AGE",
-          "value": "88",
-          "status": "missed"
-        },
-        {
-          "id": "c077",
-          "type": "AGE",
-          "value": "86",
-          "status": "missed"
-        },
-        {
-          "id": "c082",
-          "type": "AGE",
-          "value": "47",
-          "status": "missed"
-        },
-        {
-          "id": "m002",
-          "type": "NAME",
-          "value": "Omar",
-          "status": "missed"
-        },
-        {
-          "id": "m012",
-          "type": "AGE",
-          "value": "68",
-          "status": "missed"
-        },
-        {
-          "id": "m013",
-          "type": "ID",
-          "value": "4500 1123 9987",
-          "status": "missed"
-        },
-        {
-          "id": "m013",
-          "type": "ID",
-          "value": "77821",
-          "status": "missed"
-        },
-        {
-          "id": "m024",
-          "type": "AGE",
-          "value": "101",
-          "status": "missed"
-        },
-        {
-          "id": "m028",
-          "type": "NAME",
-          "value": "tanya",
-          "status": "missed"
-        },
-        {
-          "id": "m030",
-          "type": "AGE",
-          "value": "79",
-          "status": "missed"
-        },
-        {
-          "id": "g007",
-          "type": "NAME",
-          "value": "June Park",
-          "status": "partial"
-        },
-        {
-          "id": "g017",
-          "type": "NAME",
-          "value": "Carlos",
-          "status": "missed"
-        },
-        {
-          "id": "g018",
-          "type": "NAME",
-          "value": "Fatima",
-          "status": "missed"
-        }
-      ],
-      "damaged": [
-        {
-          "id": "g015",
-          "category": "OTHER",
-          "value": "2025-03-01"
-        },
-        {
-          "id": "g022",
-          "category": "OTHER",
-          "value": "Finance Reports"
-        },
-        {
-          "id": "n030",
-          "category": "OTHER",
-          "value": "Social History"
-        },
-        {
-          "id": "n037",
-          "category": "OTHER",
-          "value": "Review of Systems"
-        }
-      ],
-      "falsePositives": [
-        {
-          "id": "c053",
-          "token": "name",
-          "text": "West",
-          "hitsKeep": false
-        },
-        {
-          "id": "c080",
-          "token": "name",
-          "text": "Twin",
-          "hitsKeep": false
-        },
-        {
-          "id": "g015",
-          "token": "date",
-          "text": "2025-03-01",
-          "hitsKeep": true
-        },
-        {
-          "id": "g022",
-          "token": "name",
-          "text": "Finance Reports",
-          "hitsKeep": true
-        },
-        {
-          "id": "n030",
-          "token": "name",
-          "text": "Social",
-          "hitsKeep": true
-        },
-        {
-          "id": "n037",
-          "token": "name",
-          "text": "Systems",
-          "hitsKeep": true
-        }
-      ],
-      "precisionByFamily": {
-        "NAME": {
-          "tp": 102,
-          "fp": 5,
-          "precision": 0.9532710280373832
-        },
-        "DATE": {
-          "tp": 36,
-          "fp": 1,
-          "precision": 0.972972972972973
-        },
-        "ID": {
-          "tp": 17,
-          "fp": 0,
-          "precision": 1
-        },
-        "PHONE": {
-          "tp": 19,
-          "fp": 0,
-          "precision": 1
-        },
-        "ADDRESS": {
-          "tp": 13,
-          "fp": 0,
-          "precision": 1
-        },
-        "EMAIL": {
-          "tp": 8,
-          "fp": 0,
-          "precision": 1
-        },
-        "AGE": {
-          "tp": 1,
-          "fp": 0,
-          "precision": 1
-        }
-      }
+    {
+      "id": "previous",
+      "label": "main before this branch",
+      "commit": "facae00"
+    },
+    {
+      "id": "current",
+      "label": "This tree (REDACTION_VERSION 3)",
+      "commit": "this tree"
     }
-  },
-  "heldout": {
-    "before": {
-      "overall": {
-        "entities": 108,
-        "entityRecall": 0.25925925925925924,
-        "entityPartial": 8,
-        "spansEmitted": 54,
-        "spanPrecision": 0.6666666666666666,
-        "charPrecision": 0.5750636132315522,
-        "charRecall": 0.3741721854304636,
-        "hardNegatives": 114,
-        "hardNegativesKept": 0.8421052631578947,
-        "snippetsWithPii": 108,
-        "snippetsNoLeak": 28,
-        "negativeSnippets": 6,
-        "negativeIntact": 5
-      },
-      "byType": {
-        "NAME": {
-          "n": 12,
-          "full": 8,
-          "partial": 0,
-          "missed": 4,
-          "recall": 0.6666666666666666
-        },
-        "DATE": {
-          "n": 16,
-          "full": 0,
-          "partial": 0,
-          "missed": 16,
-          "recall": 0
-        },
-        "DOB": {
-          "n": 4,
-          "full": 4,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "AGE_OVER_89": {
-          "n": 8,
-          "full": 0,
-          "partial": 0,
-          "missed": 8,
-          "recall": 0
-        },
-        "PHONE": {
-          "n": 4,
-          "full": 0,
-          "partial": 4,
-          "missed": 0,
-          "recall": 0
-        },
-        "FAX": {
-          "n": 4,
-          "full": 4,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "EMAIL": {
-          "n": 4,
-          "full": 4,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "MRN": {
-          "n": 4,
-          "full": 0,
-          "partial": 0,
-          "missed": 4,
-          "recall": 0
-        },
-        "ACCOUNT": {
-          "n": 4,
-          "full": 0,
-          "partial": 0,
-          "missed": 4,
-          "recall": 0
-        },
-        "PLAN": {
-          "n": 4,
-          "full": 0,
-          "partial": 0,
-          "missed": 4,
-          "recall": 0
-        },
-        "ADDRESS": {
-          "n": 16,
-          "full": 4,
-          "partial": 4,
-          "missed": 8,
-          "recall": 0.25
-        },
-        "SSN": {
-          "n": 4,
-          "full": 4,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "DEVICE": {
-          "n": 4,
-          "full": 0,
-          "partial": 0,
-          "missed": 4,
-          "recall": 0
-        },
-        "LICENSE": {
-          "n": 4,
-          "full": 0,
-          "partial": 0,
-          "missed": 4,
-          "recall": 0
-        },
-        "VEHICLE": {
-          "n": 4,
-          "full": 0,
-          "partial": 0,
-          "missed": 4,
-          "recall": 0
-        },
-        "URL": {
-          "n": 4,
-          "full": 0,
-          "partial": 0,
-          "missed": 4,
-          "recall": 0
-        },
-        "IP": {
-          "n": 8,
-          "full": 0,
-          "partial": 0,
-          "missed": 8,
-          "recall": 0
-        }
-      },
-      "byToken": {
-        "name": {
-          "emitted": 30,
-          "tp": 12,
-          "fp": 18,
-          "precision": 0.4
-        },
-        "dob": {
-          "emitted": 4,
-          "tp": 4,
-          "fp": 0,
-          "precision": 1
-        },
-        "phone": {
-          "emitted": 8,
-          "tp": 8,
-          "fp": 0,
-          "precision": 1
-        },
-        "email": {
-          "emitted": 4,
-          "tp": 4,
-          "fp": 0,
-          "precision": 1
-        },
-        "address": {
-          "emitted": 4,
-          "tp": 4,
-          "fp": 0,
-          "precision": 1
-        },
-        "ssn": {
-          "emitted": 4,
-          "tp": 4,
-          "fp": 0,
-          "precision": 1
-        }
-      },
-      "byCategory": {
-        "DRUG": {
-          "n": 41,
-          "kept": 23,
-          "damaged": 18,
-          "keptRate": 0.5609756097560976
-        },
-        "OTHER": {
-          "n": 20,
-          "kept": 20,
-          "damaged": 0,
-          "keptRate": 1
-        },
-        "LAB": {
-          "n": 12,
-          "kept": 12,
-          "damaged": 0,
-          "keptRate": 1
-        },
-        "VITAL": {
-          "n": 19,
-          "kept": 19,
-          "damaged": 0,
-          "keptRate": 1
-        },
-        "CLINICAL": {
-          "n": 22,
-          "kept": 22,
-          "damaged": 0,
-          "keptRate": 1
-        }
-      },
-      "misses": [
-        {
-          "id": "h3",
-          "type": "NAME",
-          "value": "Nola",
-          "status": "missed"
-        },
-        {
-          "id": "h4",
-          "type": "DATE",
-          "value": "2026-08-17",
-          "status": "missed"
-        },
-        {
-          "id": "h5",
-          "type": "DATE",
-          "value": "September 19, 2026",
-          "status": "missed"
-        },
-        {
-          "id": "h6",
-          "type": "DATE",
-          "value": "17 August 2026",
-          "status": "missed"
-        },
-        {
-          "id": "h7",
-          "type": "DATE",
-          "value": "08/17",
-          "status": "missed"
-        },
-        {
-          "id": "h9",
-          "type": "AGE_OVER_89",
-          "value": "96",
-          "status": "missed"
-        },
-        {
-          "id": "h10",
-          "type": "AGE_OVER_89",
-          "value": "104",
-          "status": "missed"
-        },
-        {
-          "id": "h11",
-          "type": "PHONE",
-          "value": "+1 (202) 555-0186 ext 42",
-          "status": "partial"
-        },
-        {
-          "id": "h14",
-          "type": "MRN",
-          "value": "R8137042",
-          "status": "missed"
-        },
-        {
-          "id": "h15",
-          "type": "ACCOUNT",
-          "value": "AX-402781",
-          "status": "missed"
-        },
-        {
-          "id": "h16",
-          "type": "PLAN",
-          "value": "HP908174",
-          "status": "missed"
-        },
-        {
-          "id": "h18",
-          "type": "ADDRESS",
-          "value": "PO Box 871, Imaginary, CA 90000",
-          "status": "partial"
-        },
-        {
-          "id": "h19",
-          "type": "ADDRESS",
-          "value": "Imaginary",
-          "status": "missed"
-        },
-        {
-          "id": "h20",
-          "type": "ADDRESS",
-          "value": "90000",
-          "status": "missed"
-        },
-        {
-          "id": "h22",
-          "type": "DEVICE",
-          "value": "SYN-810427",
-          "status": "missed"
-        },
-        {
-          "id": "h23",
-          "type": "LICENSE",
-          "value": "SYN-610284",
-          "status": "missed"
-        },
-        {
-          "id": "h24",
-          "type": "VEHICLE",
-          "value": "1SYNTHETIC00000001",
-          "status": "missed"
-        },
-        {
-          "id": "h25",
-          "type": "URL",
-          "value": "https://example.org/patient/871",
-          "status": "missed"
-        },
-        {
-          "id": "h26",
-          "type": "IP",
-          "value": "192.0.2.87",
-          "status": "missed"
-        },
-        {
-          "id": "h27",
-          "type": "IP",
-          "value": "2001:db8::87",
-          "status": "missed"
-        },
-        {
-          "id": "h30",
-          "type": "NAME",
-          "value": "Nola",
-          "status": "missed"
-        },
-        {
-          "id": "h31",
-          "type": "DATE",
-          "value": "2026-08-17",
-          "status": "missed"
-        },
-        {
-          "id": "h32",
-          "type": "DATE",
-          "value": "September 19, 2026",
-          "status": "missed"
-        },
-        {
-          "id": "h33",
-          "type": "DATE",
-          "value": "17 August 2026",
-          "status": "missed"
-        },
-        {
-          "id": "h34",
-          "type": "DATE",
-          "value": "08/17",
-          "status": "missed"
-        },
-        {
-          "id": "h36",
-          "type": "AGE_OVER_89",
-          "value": "96",
-          "status": "missed"
-        },
-        {
-          "id": "h37",
-          "type": "AGE_OVER_89",
-          "value": "104",
-          "status": "missed"
-        },
-        {
-          "id": "h38",
-          "type": "PHONE",
-          "value": "+1 (202) 555-0186 ext 42",
-          "status": "partial"
-        },
-        {
-          "id": "h41",
-          "type": "MRN",
-          "value": "R8137042",
-          "status": "missed"
-        },
-        {
-          "id": "h42",
-          "type": "ACCOUNT",
-          "value": "AX-402781",
-          "status": "missed"
-        },
-        {
-          "id": "h43",
-          "type": "PLAN",
-          "value": "HP908174",
-          "status": "missed"
-        },
-        {
-          "id": "h45",
-          "type": "ADDRESS",
-          "value": "PO Box 871, Imaginary, CA 90000",
-          "status": "partial"
-        },
-        {
-          "id": "h46",
-          "type": "ADDRESS",
-          "value": "Imaginary",
-          "status": "missed"
-        },
-        {
-          "id": "h47",
-          "type": "ADDRESS",
-          "value": "90000",
-          "status": "missed"
-        },
-        {
-          "id": "h49",
-          "type": "DEVICE",
-          "value": "SYN-810427",
-          "status": "missed"
-        },
-        {
-          "id": "h50",
-          "type": "LICENSE",
-          "value": "SYN-610284",
-          "status": "missed"
-        },
-        {
-          "id": "h51",
-          "type": "VEHICLE",
-          "value": "1SYNTHETIC00000001",
-          "status": "missed"
-        },
-        {
-          "id": "h52",
-          "type": "URL",
-          "value": "https://example.org/patient/871",
-          "status": "missed"
-        },
-        {
-          "id": "h53",
-          "type": "IP",
-          "value": "192.0.2.87",
-          "status": "missed"
-        },
-        {
-          "id": "h54",
-          "type": "IP",
-          "value": "2001:db8::87",
-          "status": "missed"
-        },
-        {
-          "id": "h57",
-          "type": "NAME",
-          "value": "Nola",
-          "status": "missed"
-        },
-        {
-          "id": "h58",
-          "type": "DATE",
-          "value": "2026-08-17",
-          "status": "missed"
-        },
-        {
-          "id": "h59",
-          "type": "DATE",
-          "value": "September 19, 2026",
-          "status": "missed"
-        },
-        {
-          "id": "h60",
-          "type": "DATE",
-          "value": "17 August 2026",
-          "status": "missed"
-        },
-        {
-          "id": "h61",
-          "type": "DATE",
-          "value": "08/17",
-          "status": "missed"
-        },
-        {
-          "id": "h63",
-          "type": "AGE_OVER_89",
-          "value": "96",
-          "status": "missed"
-        },
-        {
-          "id": "h64",
-          "type": "AGE_OVER_89",
-          "value": "104",
-          "status": "missed"
-        },
-        {
-          "id": "h65",
-          "type": "PHONE",
-          "value": "+1 (202) 555-0186 ext 42",
-          "status": "partial"
-        },
-        {
-          "id": "h68",
-          "type": "MRN",
-          "value": "R8137042",
-          "status": "missed"
-        },
-        {
-          "id": "h69",
-          "type": "ACCOUNT",
-          "value": "AX-402781",
-          "status": "missed"
-        },
-        {
-          "id": "h70",
-          "type": "PLAN",
-          "value": "HP908174",
-          "status": "missed"
-        },
-        {
-          "id": "h72",
-          "type": "ADDRESS",
-          "value": "PO Box 871, Imaginary, CA 90000",
-          "status": "partial"
-        },
-        {
-          "id": "h73",
-          "type": "ADDRESS",
-          "value": "Imaginary",
-          "status": "missed"
-        },
-        {
-          "id": "h74",
-          "type": "ADDRESS",
-          "value": "90000",
-          "status": "missed"
-        },
-        {
-          "id": "h76",
-          "type": "DEVICE",
-          "value": "SYN-810427",
-          "status": "missed"
-        },
-        {
-          "id": "h77",
-          "type": "LICENSE",
-          "value": "SYN-610284",
-          "status": "missed"
-        },
-        {
-          "id": "h78",
-          "type": "VEHICLE",
-          "value": "1SYNTHETIC00000001",
-          "status": "missed"
-        },
-        {
-          "id": "h79",
-          "type": "URL",
-          "value": "https://example.org/patient/871",
-          "status": "missed"
-        },
-        {
-          "id": "h80",
-          "type": "IP",
-          "value": "192.0.2.87",
-          "status": "missed"
-        },
-        {
-          "id": "h81",
-          "type": "IP",
-          "value": "2001:db8::87",
-          "status": "missed"
-        },
-        {
-          "id": "h84",
-          "type": "NAME",
-          "value": "Nola",
-          "status": "missed"
-        },
-        {
-          "id": "h85",
-          "type": "DATE",
-          "value": "2026-08-17",
-          "status": "missed"
-        },
-        {
-          "id": "h86",
-          "type": "DATE",
-          "value": "September 19, 2026",
-          "status": "missed"
-        },
-        {
-          "id": "h87",
-          "type": "DATE",
-          "value": "17 August 2026",
-          "status": "missed"
-        },
-        {
-          "id": "h88",
-          "type": "DATE",
-          "value": "08/17",
-          "status": "missed"
-        },
-        {
-          "id": "h90",
-          "type": "AGE_OVER_89",
-          "value": "96",
-          "status": "missed"
-        },
-        {
-          "id": "h91",
-          "type": "AGE_OVER_89",
-          "value": "104",
-          "status": "missed"
-        },
-        {
-          "id": "h92",
-          "type": "PHONE",
-          "value": "+1 (202) 555-0186 ext 42",
-          "status": "partial"
-        },
-        {
-          "id": "h95",
-          "type": "MRN",
-          "value": "R8137042",
-          "status": "missed"
-        },
-        {
-          "id": "h96",
-          "type": "ACCOUNT",
-          "value": "AX-402781",
-          "status": "missed"
-        },
-        {
-          "id": "h97",
-          "type": "PLAN",
-          "value": "HP908174",
-          "status": "missed"
-        },
-        {
-          "id": "h99",
-          "type": "ADDRESS",
-          "value": "PO Box 871, Imaginary, CA 90000",
-          "status": "partial"
-        },
-        {
-          "id": "h100",
-          "type": "ADDRESS",
-          "value": "Imaginary",
-          "status": "missed"
-        },
-        {
-          "id": "h101",
-          "type": "ADDRESS",
-          "value": "90000",
-          "status": "missed"
-        },
-        {
-          "id": "h103",
-          "type": "DEVICE",
-          "value": "SYN-810427",
-          "status": "missed"
-        },
-        {
-          "id": "h104",
-          "type": "LICENSE",
-          "value": "SYN-610284",
-          "status": "missed"
-        },
-        {
-          "id": "h105",
-          "type": "VEHICLE",
-          "value": "1SYNTHETIC00000001",
-          "status": "missed"
-        },
-        {
-          "id": "h106",
-          "type": "URL",
-          "value": "https://example.org/patient/871",
-          "status": "missed"
-        },
-        {
-          "id": "h107",
-          "type": "IP",
-          "value": "192.0.2.87",
-          "status": "missed"
-        },
-        {
-          "id": "h108",
-          "type": "IP",
-          "value": "2001:db8::87",
-          "status": "missed"
-        }
-      ],
-      "damaged": [
-        {
-          "id": "h6",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        },
-        {
-          "id": "h22",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        },
-        {
-          "id": "h24",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        },
-        {
-          "id": "h26",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        },
-        {
-          "id": "h42",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        },
-        {
-          "id": "h44",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        },
-        {
-          "id": "h58",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        },
-        {
-          "id": "h64",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        },
-        {
-          "id": "h66",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        },
-        {
-          "id": "h68",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        },
-        {
-          "id": "h72",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        },
-        {
-          "id": "h78",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        },
-        {
-          "id": "h80",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        },
-        {
-          "id": "h88",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        },
-        {
-          "id": "h94",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        },
-        {
-          "id": "h98",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        },
-        {
-          "id": "h104",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        },
-        {
-          "id": "h110",
-          "category": "DRUG",
-          "value": "Continue Jardiance 10 mg daily"
-        }
-      ],
-      "falsePositives": [
-        {
-          "id": "h6",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        },
-        {
-          "id": "h22",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        },
-        {
-          "id": "h24",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        },
-        {
-          "id": "h26",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        },
-        {
-          "id": "h42",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        },
-        {
-          "id": "h44",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        },
-        {
-          "id": "h58",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        },
-        {
-          "id": "h64",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        },
-        {
-          "id": "h66",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        },
-        {
-          "id": "h68",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        },
-        {
-          "id": "h72",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        },
-        {
-          "id": "h78",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        },
-        {
-          "id": "h80",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        },
-        {
-          "id": "h88",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        },
-        {
-          "id": "h94",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        },
-        {
-          "id": "h98",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        },
-        {
-          "id": "h104",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        },
-        {
-          "id": "h110",
-          "token": "name",
-          "text": "Continue Jardiance",
-          "hitsKeep": true
-        }
-      ],
-      "precisionByFamily": {
-        "NAME": {
-          "tp": 8,
-          "fp": 18,
-          "precision": 0.3076923076923077
-        },
-        "DATE": {
-          "tp": 4,
-          "fp": 0,
-          "precision": 1
-        },
-        "PHONE": {
-          "tp": 8,
-          "fp": 0,
-          "precision": 1
-        },
-        "EMAIL": {
-          "tp": 4,
-          "fp": 0,
-          "precision": 1
-        },
-        "ADDRESS": {
-          "tp": 8,
-          "fp": 0,
-          "precision": 1
-        },
-        "SSN": {
-          "tp": 4,
-          "fp": 0,
-          "precision": 1
+  ],
+  "sets": {
+    "development": {
+      "label": "Development snippets: 182 synthetic snippets, 207 labeled identifiers",
+      "data": "development",
+      "note": "Written with the first release. Every later rule change was made while looking at it.",
+      "results": {
+        "release": {
+          "overall": {
+            "entities": 207,
+            "entityRecall": 0.705314,
+            "entityPartial": 7,
+            "spansEmitted": 190,
+            "spanPrecision": 0.826316,
+            "charPrecision": 0.852066,
+            "charRecall": 0.838653,
+            "hardNegatives": 227,
+            "hardNegativesKept": 0.881057,
+            "snippetsWithPii": 118,
+            "snippetsNoLeak": 63,
+            "negativeSnippets": 40,
+            "negativeIntact": 27
+          },
+          "byType": {
+            "NAME": {
+              "n": 51,
+              "full": 43,
+              "partial": 4,
+              "missed": 4,
+              "recall": 0.843137
+            },
+            "DOB": {
+              "n": 11,
+              "full": 10,
+              "partial": 0,
+              "missed": 1,
+              "recall": 0.909091
+            },
+            "ID": {
+              "n": 19,
+              "full": 13,
+              "partial": 0,
+              "missed": 6,
+              "recall": 0.684211
+            },
+            "FACILITY": {
+              "n": 21,
+              "full": 20,
+              "partial": 1,
+              "missed": 0,
+              "recall": 0.952381
+            },
+            "DATE": {
+              "n": 25,
+              "full": 0,
+              "partial": 0,
+              "missed": 25,
+              "recall": 0
+            },
+            "AGE": {
+              "n": 14,
+              "full": 0,
+              "partial": 0,
+              "missed": 14,
+              "recall": 0
+            },
+            "RELATIVE": {
+              "n": 26,
+              "full": 21,
+              "partial": 1,
+              "missed": 4,
+              "recall": 0.807692
+            },
+            "PHONE": {
+              "n": 19,
+              "full": 19,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "ADDRESS": {
+              "n": 13,
+              "full": 12,
+              "partial": 1,
+              "missed": 0,
+              "recall": 0.923077
+            },
+            "EMAIL": {
+              "n": 8,
+              "full": 8,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            }
+          },
+          "byToken": {
+            "name": {
+              "emitted": 128,
+              "tp": 95,
+              "fp": 33,
+              "precision": 0.742188
+            },
+            "dob": {
+              "emitted": 10,
+              "tp": 10,
+              "fp": 0,
+              "precision": 1
+            },
+            "account": {
+              "emitted": 9,
+              "tp": 9,
+              "fp": 0,
+              "precision": 1
+            },
+            "phone": {
+              "emitted": 19,
+              "tp": 19,
+              "fp": 0,
+              "precision": 1
+            },
+            "address": {
+              "emitted": 11,
+              "tp": 11,
+              "fp": 0,
+              "precision": 1
+            },
+            "email": {
+              "emitted": 8,
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            },
+            "ssn": {
+              "emitted": 3,
+              "tp": 3,
+              "fp": 0,
+              "precision": 1
+            },
+            "card": {
+              "emitted": 1,
+              "tp": 1,
+              "fp": 0,
+              "precision": 1
+            },
+            "coords": {
+              "emitted": 1,
+              "tp": 1,
+              "fp": 0,
+              "precision": 1
+            }
+          },
+          "byCategory": {
+            "CLINICAL": {
+              "n": 47,
+              "kept": 44,
+              "damaged": 3,
+              "keptRate": 0.93617
+            },
+            "DRUG": {
+              "n": 63,
+              "kept": 49,
+              "damaged": 14,
+              "keptRate": 0.777778
+            },
+            "DOSE": {
+              "n": 39,
+              "kept": 39,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "LAB": {
+              "n": 50,
+              "kept": 49,
+              "damaged": 1,
+              "keptRate": 0.98
+            },
+            "VITAL": {
+              "n": 9,
+              "kept": 9,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "OTHER": {
+              "n": 19,
+              "kept": 10,
+              "damaged": 9,
+              "keptRate": 0.526316
+            }
+          },
+          "misses": [
+            {
+              "id": "c001",
+              "type": "NAME",
+              "value": "John Q. Sample",
+              "status": "partial",
+              "resultStatus": null
+            },
+            {
+              "id": "c001",
+              "type": "DATE",
+              "value": "05/14/2024",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c002",
+              "type": "AGE",
+              "value": "72",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c003",
+              "type": "DATE",
+              "value": "02/11/2025",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c004",
+              "type": "RELATIVE",
+              "value": "Rosa",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c006",
+              "type": "DATE",
+              "value": "06/02/2024",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c009",
+              "type": "AGE",
+              "value": "54",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c010",
+              "type": "ID",
+              "value": "W123456789",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c012",
+              "type": "DATE",
+              "value": "03/22/2025",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c014",
+              "type": "AGE",
+              "value": "81",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c014",
+              "type": "DATE",
+              "value": "1/9/2025",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c018",
+              "type": "FACILITY",
+              "value": "St. Brendan Medical Center",
+              "status": "partial",
+              "resultStatus": null
+            },
+            {
+              "id": "c018",
+              "type": "DATE",
+              "value": "7/4/2024",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c026",
+              "type": "AGE",
+              "value": "93",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c028",
+              "type": "DATE",
+              "value": "04/18/2025",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c033",
+              "type": "AGE",
+              "value": "67",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c035",
+              "type": "DATE",
+              "value": "08/19/2025",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c040",
+              "type": "ID",
+              "value": "7782194",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c043",
+              "type": "DATE",
+              "value": "10/02/2024",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c045",
+              "type": "DATE",
+              "value": "05/05/2025",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c047",
+              "type": "AGE",
+              "value": "82",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c052",
+              "type": "RELATIVE",
+              "value": "Dev",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c053",
+              "type": "DATE",
+              "value": "12/01/2024",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c054",
+              "type": "DATE",
+              "value": "03/03/2025",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c056",
+              "type": "AGE",
+              "value": "45",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c058",
+              "type": "RELATIVE",
+              "value": "Alexei",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c060",
+              "type": "NAME",
+              "value": "Ramona Iturbe-Klein",
+              "status": "partial",
+              "resultStatus": null
+            },
+            {
+              "id": "c061",
+              "type": "DATE",
+              "value": "11/12/2025",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c063",
+              "type": "RELATIVE",
+              "value": "Linda Okonkwo-Baptiste",
+              "status": "partial",
+              "resultStatus": null
+            },
+            {
+              "id": "c065",
+              "type": "AGE",
+              "value": "3",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c067",
+              "type": "ID",
+              "value": "30019487",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c072",
+              "type": "AGE",
+              "value": "88",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c072",
+              "type": "DATE",
+              "value": "9/14/2023",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c075",
+              "type": "DATE",
+              "value": "07/30/2025",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c076",
+              "type": "DATE",
+              "value": "2/20/2025",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c077",
+              "type": "AGE",
+              "value": "86",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c082",
+              "type": "AGE",
+              "value": "47",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c083",
+              "type": "NAME",
+              "value": "Elena Vasquez-Moore",
+              "status": "partial",
+              "resultStatus": null
+            },
+            {
+              "id": "c084",
+              "type": "NAME",
+              "value": "Harriet Nakamura-Boyd",
+              "status": "partial",
+              "resultStatus": null
+            },
+            {
+              "id": "c085",
+              "type": "DATE",
+              "value": "4/30/2025",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m002",
+              "type": "NAME",
+              "value": "Omar",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m007",
+              "type": "DATE",
+              "value": "09/08/2025",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m012",
+              "type": "AGE",
+              "value": "68",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m013",
+              "type": "ID",
+              "value": "4500 1123 9987",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m013",
+              "type": "ID",
+              "value": "77821",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m017",
+              "type": "DATE",
+              "value": "3/18/2025",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m024",
+              "type": "AGE",
+              "value": "101",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m025",
+              "type": "DATE",
+              "value": "12/5/1988",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m026",
+              "type": "DATE",
+              "value": "6/1/2025",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m026",
+              "type": "DATE",
+              "value": "6/9/2025",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m028",
+              "type": "NAME",
+              "value": "tanya",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m030",
+              "type": "AGE",
+              "value": "79",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m031",
+              "type": "ADDRESS",
+              "value": "PO Box 4471, Springfield, MO 65801",
+              "status": "partial",
+              "resultStatus": null
+            },
+            {
+              "id": "m032",
+              "type": "DATE",
+              "value": "8/31/2025",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m034",
+              "type": "DOB",
+              "value": "2/14/1970",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "g010",
+              "type": "DATE",
+              "value": "01/15/2025",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "g013",
+              "type": "ID",
+              "value": "D123-4567-8901",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "g014",
+              "type": "RELATIVE",
+              "value": "Kwame",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "g017",
+              "type": "NAME",
+              "value": "Carlos",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "g018",
+              "type": "NAME",
+              "value": "Fatima",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "g021",
+              "type": "DATE",
+              "value": "09/02/2025",
+              "status": "missed",
+              "resultStatus": null
+            }
+          ],
+          "damaged": [
+            {
+              "id": "c009",
+              "category": "CLINICAL",
+              "value": "Crohn disease"
+            },
+            {
+              "id": "c010",
+              "category": "DRUG",
+              "value": "Ozempic"
+            },
+            {
+              "id": "c030",
+              "category": "DRUG",
+              "value": "Eliquis"
+            },
+            {
+              "id": "c031",
+              "category": "OTHER",
+              "value": "Assessment and Plan"
+            },
+            {
+              "id": "c032",
+              "category": "OTHER",
+              "value": "Chief Complaint"
+            },
+            {
+              "id": "c033",
+              "category": "OTHER",
+              "value": "History of Present Illness"
+            },
+            {
+              "id": "c038",
+              "category": "DRUG",
+              "value": "Lexapro"
+            },
+            {
+              "id": "c071",
+              "category": "CLINICAL",
+              "value": "abnormal Pap"
+            },
+            {
+              "id": "c074",
+              "category": "DRUG",
+              "value": "Tylenol"
+            },
+            {
+              "id": "m022",
+              "category": "DRUG",
+              "value": "Benadryl"
+            },
+            {
+              "id": "m029",
+              "category": "DRUG",
+              "value": "Zoloft"
+            },
+            {
+              "id": "m032",
+              "category": "DRUG",
+              "value": "Humira"
+            },
+            {
+              "id": "g022",
+              "category": "OTHER",
+              "value": "Finance Reports"
+            },
+            {
+              "id": "n007",
+              "category": "LAB",
+              "value": "Glasgow Coma Scale 14"
+            },
+            {
+              "id": "n012",
+              "category": "DRUG",
+              "value": "Zofran"
+            },
+            {
+              "id": "n014",
+              "category": "DRUG",
+              "value": "Keytruda"
+            },
+            {
+              "id": "n016",
+              "category": "DRUG",
+              "value": "Humalog"
+            },
+            {
+              "id": "n018",
+              "category": "CLINICAL",
+              "value": "Graves disease"
+            },
+            {
+              "id": "n019",
+              "category": "OTHER",
+              "value": "Cardiology"
+            },
+            {
+              "id": "n027",
+              "category": "OTHER",
+              "value": "Hospital Course"
+            },
+            {
+              "id": "n029",
+              "category": "DRUG",
+              "value": "Keflex"
+            },
+            {
+              "id": "n030",
+              "category": "OTHER",
+              "value": "Social History"
+            },
+            {
+              "id": "n032",
+              "category": "DRUG",
+              "value": "Pfizer COVID-19 vaccine"
+            },
+            {
+              "id": "n036",
+              "category": "DRUG",
+              "value": "Xarelto"
+            },
+            {
+              "id": "n036",
+              "category": "DRUG",
+              "value": "Entresto"
+            },
+            {
+              "id": "n037",
+              "category": "OTHER",
+              "value": "Review of Systems"
+            },
+            {
+              "id": "n040",
+              "category": "OTHER",
+              "value": "Physical Exam"
+            }
+          ],
+          "falsePositives": [
+            {
+              "id": "c009",
+              "token": "name",
+              "text": "Crohn",
+              "hitsKeep": true
+            },
+            {
+              "id": "c010",
+              "token": "name",
+              "text": "Ozempic",
+              "hitsKeep": true
+            },
+            {
+              "id": "c020",
+              "token": "name",
+              "text": "Patient",
+              "hitsKeep": false
+            },
+            {
+              "id": "c030",
+              "token": "name",
+              "text": "Started Eliquis",
+              "hitsKeep": true
+            },
+            {
+              "id": "c031",
+              "token": "name",
+              "text": "Plan",
+              "hitsKeep": true
+            },
+            {
+              "id": "c032",
+              "token": "name",
+              "text": "Chief Complaint",
+              "hitsKeep": true
+            },
+            {
+              "id": "c033",
+              "token": "name",
+              "text": "Present Illness",
+              "hitsKeep": true
+            },
+            {
+              "id": "c038",
+              "token": "name",
+              "text": "Prescribed Lexapro",
+              "hitsKeep": true
+            },
+            {
+              "id": "c053",
+              "token": "name",
+              "text": "West",
+              "hitsKeep": false
+            },
+            {
+              "id": "c067",
+              "token": "name",
+              "text": "Sex",
+              "hitsKeep": false
+            },
+            {
+              "id": "c071",
+              "token": "name",
+              "text": "Pap",
+              "hitsKeep": true
+            },
+            {
+              "id": "c074",
+              "token": "name",
+              "text": "Tylenol",
+              "hitsKeep": true
+            },
+            {
+              "id": "c077",
+              "token": "name",
+              "text": "Age",
+              "hitsKeep": false
+            },
+            {
+              "id": "c077",
+              "token": "name",
+              "text": "Phone",
+              "hitsKeep": false
+            },
+            {
+              "id": "c080",
+              "token": "name",
+              "text": "Twin",
+              "hitsKeep": false
+            },
+            {
+              "id": "m022",
+              "token": "name",
+              "text": "Benadryl",
+              "hitsKeep": true
+            },
+            {
+              "id": "m029",
+              "token": "name",
+              "text": "Zoloft",
+              "hitsKeep": true
+            },
+            {
+              "id": "m032",
+              "token": "name",
+              "text": "Humira",
+              "hitsKeep": true
+            },
+            {
+              "id": "g022",
+              "token": "name",
+              "text": "Finance Reports",
+              "hitsKeep": true
+            },
+            {
+              "id": "n007",
+              "token": "name",
+              "text": "Glasgow Coma Scale",
+              "hitsKeep": true
+            },
+            {
+              "id": "n012",
+              "token": "name",
+              "text": "Zofran",
+              "hitsKeep": true
+            },
+            {
+              "id": "n014",
+              "token": "name",
+              "text": "Keytruda",
+              "hitsKeep": true
+            },
+            {
+              "id": "n016",
+              "token": "name",
+              "text": "Humalog",
+              "hitsKeep": true
+            },
+            {
+              "id": "n018",
+              "token": "name",
+              "text": "Graves",
+              "hitsKeep": true
+            },
+            {
+              "id": "n019",
+              "token": "name",
+              "text": "Cardiology",
+              "hitsKeep": true
+            },
+            {
+              "id": "n027",
+              "token": "name",
+              "text": "Hospital Course",
+              "hitsKeep": true
+            },
+            {
+              "id": "n029",
+              "token": "name",
+              "text": "Keflex",
+              "hitsKeep": true
+            },
+            {
+              "id": "n030",
+              "token": "name",
+              "text": "Social History",
+              "hitsKeep": true
+            },
+            {
+              "id": "n032",
+              "token": "name",
+              "text": "Pfizer",
+              "hitsKeep": true
+            },
+            {
+              "id": "n036",
+              "token": "name",
+              "text": "Xarelto",
+              "hitsKeep": true
+            },
+            {
+              "id": "n036",
+              "token": "name",
+              "text": "Entresto",
+              "hitsKeep": true
+            },
+            {
+              "id": "n037",
+              "token": "name",
+              "text": "Systems",
+              "hitsKeep": true
+            },
+            {
+              "id": "n040",
+              "token": "name",
+              "text": "Physical Exam",
+              "hitsKeep": true
+            }
+          ],
+          "precisionByFamily": {
+            "NAME": {
+              "tp": 94,
+              "fp": 33,
+              "precision": 0.740157
+            },
+            "DATE": {
+              "tp": 10,
+              "fp": 0,
+              "precision": 1
+            },
+            "ID": {
+              "tp": 13,
+              "fp": 0,
+              "precision": 1
+            },
+            "PHONE": {
+              "tp": 19,
+              "fp": 0,
+              "precision": 1
+            },
+            "ADDRESS": {
+              "tp": 13,
+              "fp": 0,
+              "precision": 1
+            },
+            "EMAIL": {
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            }
+          },
+          "status": null
+        },
+        "previous": {
+          "overall": {
+            "entities": 207,
+            "entityRecall": 0.903382,
+            "entityPartial": 1,
+            "spansEmitted": 202,
+            "spanPrecision": 0.970297,
+            "charPrecision": 0.96019,
+            "charRecall": 0.970267,
+            "hardNegatives": 227,
+            "hardNegativesKept": 0.982379,
+            "snippetsWithPii": 118,
+            "snippetsNoLeak": 99,
+            "negativeSnippets": 40,
+            "negativeIntact": 38
+          },
+          "byType": {
+            "NAME": {
+              "n": 51,
+              "full": 46,
+              "partial": 1,
+              "missed": 4,
+              "recall": 0.901961
+            },
+            "DOB": {
+              "n": 11,
+              "full": 11,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "ID": {
+              "n": 19,
+              "full": 17,
+              "partial": 0,
+              "missed": 2,
+              "recall": 0.894737
+            },
+            "FACILITY": {
+              "n": 21,
+              "full": 21,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "DATE": {
+              "n": 25,
+              "full": 25,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "AGE": {
+              "n": 14,
+              "full": 1,
+              "partial": 0,
+              "missed": 13,
+              "recall": 0.071429
+            },
+            "RELATIVE": {
+              "n": 26,
+              "full": 26,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "PHONE": {
+              "n": 19,
+              "full": 19,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "ADDRESS": {
+              "n": 13,
+              "full": 13,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "EMAIL": {
+              "n": 8,
+              "full": 8,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            }
+          },
+          "byToken": {
+            "name": {
+              "emitted": 107,
+              "tp": 102,
+              "fp": 5,
+              "precision": 0.953271
+            },
+            "dob": {
+              "emitted": 10,
+              "tp": 10,
+              "fp": 0,
+              "precision": 1
+            },
+            "account": {
+              "emitted": 13,
+              "tp": 13,
+              "fp": 0,
+              "precision": 1
+            },
+            "date": {
+              "emitted": 27,
+              "tp": 26,
+              "fp": 1,
+              "precision": 0.962963
+            },
+            "phone": {
+              "emitted": 19,
+              "tp": 19,
+              "fp": 0,
+              "precision": 1
+            },
+            "address": {
+              "emitted": 12,
+              "tp": 12,
+              "fp": 0,
+              "precision": 1
+            },
+            "email": {
+              "emitted": 8,
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            },
+            "ssn": {
+              "emitted": 3,
+              "tp": 3,
+              "fp": 0,
+              "precision": 1
+            },
+            "age": {
+              "emitted": 1,
+              "tp": 1,
+              "fp": 0,
+              "precision": 1
+            },
+            "card": {
+              "emitted": 1,
+              "tp": 1,
+              "fp": 0,
+              "precision": 1
+            },
+            "coords": {
+              "emitted": 1,
+              "tp": 1,
+              "fp": 0,
+              "precision": 1
+            }
+          },
+          "byCategory": {
+            "CLINICAL": {
+              "n": 47,
+              "kept": 47,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "DRUG": {
+              "n": 63,
+              "kept": 63,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "DOSE": {
+              "n": 39,
+              "kept": 39,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "LAB": {
+              "n": 50,
+              "kept": 50,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "VITAL": {
+              "n": 9,
+              "kept": 9,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "OTHER": {
+              "n": 19,
+              "kept": 15,
+              "damaged": 4,
+              "keptRate": 0.789474
+            }
+          },
+          "misses": [
+            {
+              "id": "c002",
+              "type": "AGE",
+              "value": "72",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c009",
+              "type": "AGE",
+              "value": "54",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c014",
+              "type": "AGE",
+              "value": "81",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c033",
+              "type": "AGE",
+              "value": "67",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c047",
+              "type": "AGE",
+              "value": "82",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c056",
+              "type": "AGE",
+              "value": "45",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c065",
+              "type": "AGE",
+              "value": "3",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c072",
+              "type": "AGE",
+              "value": "88",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c077",
+              "type": "AGE",
+              "value": "86",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "c082",
+              "type": "AGE",
+              "value": "47",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m002",
+              "type": "NAME",
+              "value": "Omar",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m012",
+              "type": "AGE",
+              "value": "68",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m013",
+              "type": "ID",
+              "value": "4500 1123 9987",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m013",
+              "type": "ID",
+              "value": "77821",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m024",
+              "type": "AGE",
+              "value": "101",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m028",
+              "type": "NAME",
+              "value": "tanya",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "m030",
+              "type": "AGE",
+              "value": "79",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "g007",
+              "type": "NAME",
+              "value": "June Park",
+              "status": "partial",
+              "resultStatus": null
+            },
+            {
+              "id": "g017",
+              "type": "NAME",
+              "value": "Carlos",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "g018",
+              "type": "NAME",
+              "value": "Fatima",
+              "status": "missed",
+              "resultStatus": null
+            }
+          ],
+          "damaged": [
+            {
+              "id": "g015",
+              "category": "OTHER",
+              "value": "2025-03-01"
+            },
+            {
+              "id": "g022",
+              "category": "OTHER",
+              "value": "Finance Reports"
+            },
+            {
+              "id": "n030",
+              "category": "OTHER",
+              "value": "Social History"
+            },
+            {
+              "id": "n037",
+              "category": "OTHER",
+              "value": "Review of Systems"
+            }
+          ],
+          "falsePositives": [
+            {
+              "id": "c053",
+              "token": "name",
+              "text": "West",
+              "hitsKeep": false
+            },
+            {
+              "id": "c080",
+              "token": "name",
+              "text": "Twin",
+              "hitsKeep": false
+            },
+            {
+              "id": "g015",
+              "token": "date",
+              "text": "2025-03-01",
+              "hitsKeep": true
+            },
+            {
+              "id": "g022",
+              "token": "name",
+              "text": "Finance Reports",
+              "hitsKeep": true
+            },
+            {
+              "id": "n030",
+              "token": "name",
+              "text": "Social",
+              "hitsKeep": true
+            },
+            {
+              "id": "n037",
+              "token": "name",
+              "text": "Systems",
+              "hitsKeep": true
+            }
+          ],
+          "precisionByFamily": {
+            "NAME": {
+              "tp": 102,
+              "fp": 5,
+              "precision": 0.953271
+            },
+            "DATE": {
+              "tp": 36,
+              "fp": 1,
+              "precision": 0.972973
+            },
+            "ID": {
+              "tp": 17,
+              "fp": 0,
+              "precision": 1
+            },
+            "PHONE": {
+              "tp": 19,
+              "fp": 0,
+              "precision": 1
+            },
+            "ADDRESS": {
+              "tp": 13,
+              "fp": 0,
+              "precision": 1
+            },
+            "EMAIL": {
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            },
+            "AGE": {
+              "tp": 1,
+              "fp": 0,
+              "precision": 1
+            }
+          },
+          "status": null
+        },
+        "current": {
+          "overall": {
+            "entities": 207,
+            "entityRecall": 0.888889,
+            "entityPartial": 0,
+            "spansEmitted": 186,
+            "spanPrecision": 0.994624,
+            "charPrecision": 0.993714,
+            "charRecall": 0.898557,
+            "hardNegatives": 227,
+            "hardNegativesKept": 0.995595,
+            "snippetsWithPii": 118,
+            "snippetsNoLeak": 95,
+            "negativeSnippets": 40,
+            "negativeIntact": 40
+          },
+          "byType": {
+            "NAME": {
+              "n": 51,
+              "full": 51,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "DOB": {
+              "n": 11,
+              "full": 11,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "ID": {
+              "n": 19,
+              "full": 18,
+              "partial": 0,
+              "missed": 1,
+              "recall": 0.947368
+            },
+            "FACILITY": {
+              "n": 21,
+              "full": 11,
+              "partial": 0,
+              "missed": 10,
+              "recall": 0.52381
+            },
+            "DATE": {
+              "n": 25,
+              "full": 25,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "AGE": {
+              "n": 14,
+              "full": 2,
+              "partial": 0,
+              "missed": 12,
+              "recall": 0.142857
+            },
+            "RELATIVE": {
+              "n": 26,
+              "full": 26,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "PHONE": {
+              "n": 19,
+              "full": 19,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "ADDRESS": {
+              "n": 13,
+              "full": 13,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "EMAIL": {
+              "n": 8,
+              "full": 8,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            }
+          },
+          "byToken": {
+            "name": {
+              "emitted": 89,
+              "tp": 89,
+              "fp": 0,
+              "precision": 1
+            },
+            "dob": {
+              "emitted": 11,
+              "tp": 11,
+              "fp": 0,
+              "precision": 1
+            },
+            "account": {
+              "emitted": 14,
+              "tp": 14,
+              "fp": 0,
+              "precision": 1
+            },
+            "date": {
+              "emitted": 26,
+              "tp": 25,
+              "fp": 1,
+              "precision": 0.961538
+            },
+            "phone": {
+              "emitted": 19,
+              "tp": 19,
+              "fp": 0,
+              "precision": 1
+            },
+            "address": {
+              "emitted": 12,
+              "tp": 12,
+              "fp": 0,
+              "precision": 1
+            },
+            "email": {
+              "emitted": 8,
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            },
+            "ssn": {
+              "emitted": 3,
+              "tp": 3,
+              "fp": 0,
+              "precision": 1
+            },
+            "age": {
+              "emitted": 2,
+              "tp": 2,
+              "fp": 0,
+              "precision": 1
+            },
+            "card": {
+              "emitted": 1,
+              "tp": 1,
+              "fp": 0,
+              "precision": 1
+            },
+            "coords": {
+              "emitted": 1,
+              "tp": 1,
+              "fp": 0,
+              "precision": 1
+            }
+          },
+          "byCategory": {
+            "CLINICAL": {
+              "n": 47,
+              "kept": 47,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "DRUG": {
+              "n": 63,
+              "kept": 63,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "DOSE": {
+              "n": 39,
+              "kept": 39,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "LAB": {
+              "n": 50,
+              "kept": 50,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "VITAL": {
+              "n": 9,
+              "kept": 9,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "OTHER": {
+              "n": 19,
+              "kept": 18,
+              "damaged": 1,
+              "keptRate": 0.947368
+            }
+          },
+          "misses": [
+            {
+              "id": "c001",
+              "type": "FACILITY",
+              "value": "Lakeside Clinic",
+              "status": "missed",
+              "resultStatus": "review"
+            },
+            {
+              "id": "c002",
+              "type": "AGE",
+              "value": "72",
+              "status": "missed",
+              "resultStatus": "clean"
+            },
+            {
+              "id": "c003",
+              "type": "FACILITY",
+              "value": "Riverside General Hospital",
+              "status": "missed",
+              "resultStatus": "review"
+            },
+            {
+              "id": "c007",
+              "type": "FACILITY",
+              "value": "Northgate Cardiology",
+              "status": "missed",
+              "resultStatus": "review"
+            },
+            {
+              "id": "c009",
+              "type": "AGE",
+              "value": "54",
+              "status": "missed",
+              "resultStatus": "clean"
+            },
+            {
+              "id": "c012",
+              "type": "FACILITY",
+              "value": "Brightpath Home Care",
+              "status": "missed",
+              "resultStatus": "review"
+            },
+            {
+              "id": "c014",
+              "type": "AGE",
+              "value": "81",
+              "status": "missed",
+              "resultStatus": "clean"
+            },
+            {
+              "id": "c024",
+              "type": "FACILITY",
+              "value": "Eastside Kidney Center",
+              "status": "missed",
+              "resultStatus": "review"
+            },
+            {
+              "id": "c033",
+              "type": "AGE",
+              "value": "67",
+              "status": "missed",
+              "resultStatus": "clean"
+            },
+            {
+              "id": "c047",
+              "type": "AGE",
+              "value": "82",
+              "status": "missed",
+              "resultStatus": "clean"
+            },
+            {
+              "id": "c056",
+              "type": "AGE",
+              "value": "45",
+              "status": "missed",
+              "resultStatus": "clean"
+            },
+            {
+              "id": "c060",
+              "type": "FACILITY",
+              "value": "Lakeside Clinic Pulmonology",
+              "status": "missed",
+              "resultStatus": "review"
+            },
+            {
+              "id": "c064",
+              "type": "FACILITY",
+              "value": "Hillcrest Pediatrics",
+              "status": "missed",
+              "resultStatus": "review"
+            },
+            {
+              "id": "c065",
+              "type": "AGE",
+              "value": "3",
+              "status": "missed",
+              "resultStatus": "clean"
+            },
+            {
+              "id": "c072",
+              "type": "AGE",
+              "value": "88",
+              "status": "missed",
+              "resultStatus": "clean"
+            },
+            {
+              "id": "c077",
+              "type": "AGE",
+              "value": "86",
+              "status": "missed",
+              "resultStatus": "clean"
+            },
+            {
+              "id": "c080",
+              "type": "FACILITY",
+              "value": "Valley Birth Center",
+              "status": "missed",
+              "resultStatus": "review"
+            },
+            {
+              "id": "c082",
+              "type": "AGE",
+              "value": "47",
+              "status": "missed",
+              "resultStatus": "clean"
+            },
+            {
+              "id": "m007",
+              "type": "FACILITY",
+              "value": "Harborview Family Medicine",
+              "status": "missed",
+              "resultStatus": "review"
+            },
+            {
+              "id": "m012",
+              "type": "AGE",
+              "value": "68",
+              "status": "missed",
+              "resultStatus": "clean"
+            },
+            {
+              "id": "m013",
+              "type": "ID",
+              "value": "77821",
+              "status": "missed",
+              "resultStatus": "clean"
+            },
+            {
+              "id": "m026",
+              "type": "FACILITY",
+              "value": "Lakeview Behavioral Health",
+              "status": "missed",
+              "resultStatus": "review"
+            },
+            {
+              "id": "m030",
+              "type": "AGE",
+              "value": "79",
+              "status": "missed",
+              "resultStatus": "clean"
+            }
+          ],
+          "damaged": [
+            {
+              "id": "g015",
+              "category": "OTHER",
+              "value": "2025-03-01"
+            }
+          ],
+          "falsePositives": [
+            {
+              "id": "g015",
+              "token": "date",
+              "text": "2025-03-01",
+              "hitsKeep": true
+            }
+          ],
+          "precisionByFamily": {
+            "NAME": {
+              "tp": 89,
+              "fp": 0,
+              "precision": 1
+            },
+            "DATE": {
+              "tp": 36,
+              "fp": 1,
+              "precision": 0.972973
+            },
+            "ID": {
+              "tp": 18,
+              "fp": 0,
+              "precision": 1
+            },
+            "PHONE": {
+              "tp": 19,
+              "fp": 0,
+              "precision": 1
+            },
+            "ADDRESS": {
+              "tp": 13,
+              "fp": 0,
+              "precision": 1
+            },
+            "EMAIL": {
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            },
+            "AGE": {
+              "tp": 2,
+              "fp": 0,
+              "precision": 1
+            }
+          },
+          "status": {
+            "snippets": 182,
+            "review": 18,
+            "snippetsWithAMiss": 23,
+            "snippetsWithAMissInReview": 10,
+            "snippetsWithAMissMarkedClean": 13
+          }
         }
       }
     },
-    "after": {
-      "overall": {
-        "entities": 108,
-        "entityRecall": 0.9629629629629629,
-        "entityPartial": 0,
-        "spansEmitted": 112,
-        "spanPrecision": 0.9642857142857143,
-        "charPrecision": 0.9609120521172638,
-        "charRecall": 0.9768211920529801,
-        "hardNegatives": 114,
-        "hardNegativesKept": 1,
-        "snippetsWithPii": 108,
-        "snippetsNoLeak": 104,
-        "negativeSnippets": 6,
-        "negativeIntact": 6
-      },
-      "byType": {
-        "NAME": {
-          "n": 12,
-          "full": 12,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
+    "templates": {
+      "label": "27-template development check: 27 identifier templates x 4 copies, plus 6 clinical sentences",
+      "data": "development",
+      "note": "Committed before the rule changes in dc528aa, but those changes added this set's own vocabulary to a protected word list, so it was never blind. The 108 identifier rows are 27 templates written four times, so counts are given per template.",
+      "results": {
+        "release": {
+          "overall": {
+            "entities": 108,
+            "entityRecall": 0.259259,
+            "entityPartial": 8,
+            "spansEmitted": 54,
+            "spanPrecision": 0.666667,
+            "charPrecision": 0.575064,
+            "charRecall": 0.374172,
+            "hardNegatives": 114,
+            "hardNegativesKept": 0.842105,
+            "snippetsWithPii": 108,
+            "snippetsNoLeak": 28,
+            "negativeSnippets": 6,
+            "negativeIntact": 5
+          },
+          "byType": {
+            "NAME": {
+              "n": 12,
+              "full": 8,
+              "partial": 0,
+              "missed": 4,
+              "recall": 0.666667
+            },
+            "DATE": {
+              "n": 16,
+              "full": 0,
+              "partial": 0,
+              "missed": 16,
+              "recall": 0
+            },
+            "DOB": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "AGE_OVER_89": {
+              "n": 8,
+              "full": 0,
+              "partial": 0,
+              "missed": 8,
+              "recall": 0
+            },
+            "PHONE": {
+              "n": 4,
+              "full": 0,
+              "partial": 4,
+              "missed": 0,
+              "recall": 0
+            },
+            "FAX": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "EMAIL": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "MRN": {
+              "n": 4,
+              "full": 0,
+              "partial": 0,
+              "missed": 4,
+              "recall": 0
+            },
+            "ACCOUNT": {
+              "n": 4,
+              "full": 0,
+              "partial": 0,
+              "missed": 4,
+              "recall": 0
+            },
+            "PLAN": {
+              "n": 4,
+              "full": 0,
+              "partial": 0,
+              "missed": 4,
+              "recall": 0
+            },
+            "ADDRESS": {
+              "n": 16,
+              "full": 4,
+              "partial": 4,
+              "missed": 8,
+              "recall": 0.25
+            },
+            "SSN": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "DEVICE": {
+              "n": 4,
+              "full": 0,
+              "partial": 0,
+              "missed": 4,
+              "recall": 0
+            },
+            "LICENSE": {
+              "n": 4,
+              "full": 0,
+              "partial": 0,
+              "missed": 4,
+              "recall": 0
+            },
+            "VEHICLE": {
+              "n": 4,
+              "full": 0,
+              "partial": 0,
+              "missed": 4,
+              "recall": 0
+            },
+            "URL": {
+              "n": 4,
+              "full": 0,
+              "partial": 0,
+              "missed": 4,
+              "recall": 0
+            },
+            "IP": {
+              "n": 8,
+              "full": 0,
+              "partial": 0,
+              "missed": 8,
+              "recall": 0
+            }
+          },
+          "byToken": {
+            "name": {
+              "emitted": 30,
+              "tp": 12,
+              "fp": 18,
+              "precision": 0.4
+            },
+            "dob": {
+              "emitted": 4,
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "phone": {
+              "emitted": 8,
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            },
+            "email": {
+              "emitted": 4,
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "address": {
+              "emitted": 4,
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "ssn": {
+              "emitted": 4,
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            }
+          },
+          "byCategory": {
+            "DRUG": {
+              "n": 41,
+              "kept": 23,
+              "damaged": 18,
+              "keptRate": 0.560976
+            },
+            "OTHER": {
+              "n": 20,
+              "kept": 20,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "LAB": {
+              "n": 12,
+              "kept": 12,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "VITAL": {
+              "n": 19,
+              "kept": 19,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "CLINICAL": {
+              "n": 22,
+              "kept": 22,
+              "damaged": 0,
+              "keptRate": 1
+            }
+          },
+          "misses": [
+            {
+              "id": "h3",
+              "type": "NAME",
+              "value": "Nola",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h4",
+              "type": "DATE",
+              "value": "2026-08-17",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h5",
+              "type": "DATE",
+              "value": "September 19, 2026",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h6",
+              "type": "DATE",
+              "value": "17 August 2026",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h7",
+              "type": "DATE",
+              "value": "08/17",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h9",
+              "type": "AGE_OVER_89",
+              "value": "96",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h10",
+              "type": "AGE_OVER_89",
+              "value": "104",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h11",
+              "type": "PHONE",
+              "value": "+1 (202) 555-0186 ext 42",
+              "status": "partial",
+              "resultStatus": null
+            },
+            {
+              "id": "h14",
+              "type": "MRN",
+              "value": "R8137042",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h15",
+              "type": "ACCOUNT",
+              "value": "AX-402781",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h16",
+              "type": "PLAN",
+              "value": "HP908174",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h18",
+              "type": "ADDRESS",
+              "value": "PO Box 871, Imaginary, CA 90000",
+              "status": "partial",
+              "resultStatus": null
+            },
+            {
+              "id": "h19",
+              "type": "ADDRESS",
+              "value": "Imaginary",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h20",
+              "type": "ADDRESS",
+              "value": "90000",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h22",
+              "type": "DEVICE",
+              "value": "SYN-810427",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h23",
+              "type": "LICENSE",
+              "value": "SYN-610284",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h24",
+              "type": "VEHICLE",
+              "value": "1SYNTHETIC00000001",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h25",
+              "type": "URL",
+              "value": "https://example.org/patient/871",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h26",
+              "type": "IP",
+              "value": "192.0.2.87",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h27",
+              "type": "IP",
+              "value": "2001:db8::87",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h30",
+              "type": "NAME",
+              "value": "Nola",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h31",
+              "type": "DATE",
+              "value": "2026-08-17",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h32",
+              "type": "DATE",
+              "value": "September 19, 2026",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h33",
+              "type": "DATE",
+              "value": "17 August 2026",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h34",
+              "type": "DATE",
+              "value": "08/17",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h36",
+              "type": "AGE_OVER_89",
+              "value": "96",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h37",
+              "type": "AGE_OVER_89",
+              "value": "104",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h38",
+              "type": "PHONE",
+              "value": "+1 (202) 555-0186 ext 42",
+              "status": "partial",
+              "resultStatus": null
+            },
+            {
+              "id": "h41",
+              "type": "MRN",
+              "value": "R8137042",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h42",
+              "type": "ACCOUNT",
+              "value": "AX-402781",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h43",
+              "type": "PLAN",
+              "value": "HP908174",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h45",
+              "type": "ADDRESS",
+              "value": "PO Box 871, Imaginary, CA 90000",
+              "status": "partial",
+              "resultStatus": null
+            },
+            {
+              "id": "h46",
+              "type": "ADDRESS",
+              "value": "Imaginary",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h47",
+              "type": "ADDRESS",
+              "value": "90000",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h49",
+              "type": "DEVICE",
+              "value": "SYN-810427",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h50",
+              "type": "LICENSE",
+              "value": "SYN-610284",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h51",
+              "type": "VEHICLE",
+              "value": "1SYNTHETIC00000001",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h52",
+              "type": "URL",
+              "value": "https://example.org/patient/871",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h53",
+              "type": "IP",
+              "value": "192.0.2.87",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h54",
+              "type": "IP",
+              "value": "2001:db8::87",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h57",
+              "type": "NAME",
+              "value": "Nola",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h58",
+              "type": "DATE",
+              "value": "2026-08-17",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h59",
+              "type": "DATE",
+              "value": "September 19, 2026",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h60",
+              "type": "DATE",
+              "value": "17 August 2026",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h61",
+              "type": "DATE",
+              "value": "08/17",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h63",
+              "type": "AGE_OVER_89",
+              "value": "96",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h64",
+              "type": "AGE_OVER_89",
+              "value": "104",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h65",
+              "type": "PHONE",
+              "value": "+1 (202) 555-0186 ext 42",
+              "status": "partial",
+              "resultStatus": null
+            },
+            {
+              "id": "h68",
+              "type": "MRN",
+              "value": "R8137042",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h69",
+              "type": "ACCOUNT",
+              "value": "AX-402781",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h70",
+              "type": "PLAN",
+              "value": "HP908174",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h72",
+              "type": "ADDRESS",
+              "value": "PO Box 871, Imaginary, CA 90000",
+              "status": "partial",
+              "resultStatus": null
+            },
+            {
+              "id": "h73",
+              "type": "ADDRESS",
+              "value": "Imaginary",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h74",
+              "type": "ADDRESS",
+              "value": "90000",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h76",
+              "type": "DEVICE",
+              "value": "SYN-810427",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h77",
+              "type": "LICENSE",
+              "value": "SYN-610284",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h78",
+              "type": "VEHICLE",
+              "value": "1SYNTHETIC00000001",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h79",
+              "type": "URL",
+              "value": "https://example.org/patient/871",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h80",
+              "type": "IP",
+              "value": "192.0.2.87",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h81",
+              "type": "IP",
+              "value": "2001:db8::87",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h84",
+              "type": "NAME",
+              "value": "Nola",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h85",
+              "type": "DATE",
+              "value": "2026-08-17",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h86",
+              "type": "DATE",
+              "value": "September 19, 2026",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h87",
+              "type": "DATE",
+              "value": "17 August 2026",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h88",
+              "type": "DATE",
+              "value": "08/17",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h90",
+              "type": "AGE_OVER_89",
+              "value": "96",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h91",
+              "type": "AGE_OVER_89",
+              "value": "104",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h92",
+              "type": "PHONE",
+              "value": "+1 (202) 555-0186 ext 42",
+              "status": "partial",
+              "resultStatus": null
+            },
+            {
+              "id": "h95",
+              "type": "MRN",
+              "value": "R8137042",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h96",
+              "type": "ACCOUNT",
+              "value": "AX-402781",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h97",
+              "type": "PLAN",
+              "value": "HP908174",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h99",
+              "type": "ADDRESS",
+              "value": "PO Box 871, Imaginary, CA 90000",
+              "status": "partial",
+              "resultStatus": null
+            },
+            {
+              "id": "h100",
+              "type": "ADDRESS",
+              "value": "Imaginary",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h101",
+              "type": "ADDRESS",
+              "value": "90000",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h103",
+              "type": "DEVICE",
+              "value": "SYN-810427",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h104",
+              "type": "LICENSE",
+              "value": "SYN-610284",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h105",
+              "type": "VEHICLE",
+              "value": "1SYNTHETIC00000001",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h106",
+              "type": "URL",
+              "value": "https://example.org/patient/871",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h107",
+              "type": "IP",
+              "value": "192.0.2.87",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h108",
+              "type": "IP",
+              "value": "2001:db8::87",
+              "status": "missed",
+              "resultStatus": null
+            }
+          ],
+          "damaged": [
+            {
+              "id": "h6",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            },
+            {
+              "id": "h22",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            },
+            {
+              "id": "h24",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            },
+            {
+              "id": "h26",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            },
+            {
+              "id": "h42",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            },
+            {
+              "id": "h44",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            },
+            {
+              "id": "h58",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            },
+            {
+              "id": "h64",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            },
+            {
+              "id": "h66",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            },
+            {
+              "id": "h68",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            },
+            {
+              "id": "h72",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            },
+            {
+              "id": "h78",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            },
+            {
+              "id": "h80",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            },
+            {
+              "id": "h88",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            },
+            {
+              "id": "h94",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            },
+            {
+              "id": "h98",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            },
+            {
+              "id": "h104",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            },
+            {
+              "id": "h110",
+              "category": "DRUG",
+              "value": "Continue Jardiance 10 mg daily"
+            }
+          ],
+          "falsePositives": [
+            {
+              "id": "h6",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            },
+            {
+              "id": "h22",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            },
+            {
+              "id": "h24",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            },
+            {
+              "id": "h26",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            },
+            {
+              "id": "h42",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            },
+            {
+              "id": "h44",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            },
+            {
+              "id": "h58",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            },
+            {
+              "id": "h64",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            },
+            {
+              "id": "h66",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            },
+            {
+              "id": "h68",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            },
+            {
+              "id": "h72",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            },
+            {
+              "id": "h78",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            },
+            {
+              "id": "h80",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            },
+            {
+              "id": "h88",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            },
+            {
+              "id": "h94",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            },
+            {
+              "id": "h98",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            },
+            {
+              "id": "h104",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            },
+            {
+              "id": "h110",
+              "token": "name",
+              "text": "Continue Jardiance",
+              "hitsKeep": true
+            }
+          ],
+          "precisionByFamily": {
+            "NAME": {
+              "tp": 8,
+              "fp": 18,
+              "precision": 0.307692
+            },
+            "DATE": {
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "PHONE": {
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            },
+            "EMAIL": {
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "ADDRESS": {
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            },
+            "SSN": {
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            }
+          },
+          "status": null,
+          "templates": {
+            "identifierTemplates": 27,
+            "identifierTemplatesRemovedInEveryCopy": 7,
+            "identifierTemplatesMissed": [
+              {
+                "type": "NAME",
+                "value": "Nola",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "DATE",
+                "value": "2026-08-17",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "DATE",
+                "value": "September 19, 2026",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "DATE",
+                "value": "17 August 2026",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "DATE",
+                "value": "08/17",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "AGE_OVER_89",
+                "value": "96",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "AGE_OVER_89",
+                "value": "104",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "PHONE",
+                "value": "+1 (202) 555-0186 ext 42",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "MRN",
+                "value": "R8137042",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "ACCOUNT",
+                "value": "AX-402781",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "PLAN",
+                "value": "HP908174",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "ADDRESS",
+                "value": "PO Box 871, Imaginary, CA 90000",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "ADDRESS",
+                "value": "Imaginary",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "ADDRESS",
+                "value": "90000",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "DEVICE",
+                "value": "SYN-810427",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "LICENSE",
+                "value": "SYN-610284",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "VEHICLE",
+                "value": "1SYNTHETIC00000001",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "URL",
+                "value": "https://example.org/patient/871",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "IP",
+                "value": "192.0.2.87",
+                "fullCopies": 0,
+                "copies": 4
+              },
+              {
+                "type": "IP",
+                "value": "2001:db8::87",
+                "fullCopies": 0,
+                "copies": 4
+              }
+            ],
+            "clinicalPhrases": 6,
+            "clinicalPhrasesKeptInEveryCopy": 5,
+            "clinicalPhrasesDamaged": [
+              {
+                "value": "Continue Jardiance 10 mg daily",
+                "keptCopies": 0,
+                "copies": 18
+              }
+            ]
+          }
         },
-        "DATE": {
-          "n": 16,
-          "full": 16,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
+        "previous": {
+          "overall": {
+            "entities": 108,
+            "entityRecall": 0.962963,
+            "entityPartial": 0,
+            "spansEmitted": 112,
+            "spanPrecision": 0.964286,
+            "charPrecision": 0.960912,
+            "charRecall": 0.976821,
+            "hardNegatives": 114,
+            "hardNegativesKept": 1,
+            "snippetsWithPii": 108,
+            "snippetsNoLeak": 104,
+            "negativeSnippets": 6,
+            "negativeIntact": 6
+          },
+          "byType": {
+            "NAME": {
+              "n": 12,
+              "full": 12,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "DATE": {
+              "n": 16,
+              "full": 16,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "DOB": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "AGE_OVER_89": {
+              "n": 8,
+              "full": 8,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "PHONE": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "FAX": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "EMAIL": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "MRN": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "ACCOUNT": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "PLAN": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "ADDRESS": {
+              "n": 16,
+              "full": 16,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "SSN": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "DEVICE": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "LICENSE": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "VEHICLE": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "URL": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "IP": {
+              "n": 8,
+              "full": 4,
+              "partial": 0,
+              "missed": 4,
+              "recall": 0.5
+            }
+          },
+          "byToken": {
+            "name": {
+              "emitted": 16,
+              "tp": 16,
+              "fp": 0,
+              "precision": 1
+            },
+            "date": {
+              "emitted": 16,
+              "tp": 16,
+              "fp": 0,
+              "precision": 1
+            },
+            "dob": {
+              "emitted": 4,
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "age": {
+              "emitted": 8,
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            },
+            "phone": {
+              "emitted": 8,
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            },
+            "email": {
+              "emitted": 4,
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "account": {
+              "emitted": 24,
+              "tp": 24,
+              "fp": 0,
+              "precision": 1
+            },
+            "address": {
+              "emitted": 20,
+              "tp": 16,
+              "fp": 4,
+              "precision": 0.8
+            },
+            "ssn": {
+              "emitted": 4,
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "url": {
+              "emitted": 4,
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "ip": {
+              "emitted": 4,
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            }
+          },
+          "byCategory": {
+            "DRUG": {
+              "n": 41,
+              "kept": 41,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "OTHER": {
+              "n": 20,
+              "kept": 20,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "LAB": {
+              "n": 12,
+              "kept": 12,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "VITAL": {
+              "n": 19,
+              "kept": 19,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "CLINICAL": {
+              "n": 22,
+              "kept": 22,
+              "damaged": 0,
+              "keptRate": 1
+            }
+          },
+          "misses": [
+            {
+              "id": "h26",
+              "type": "IP",
+              "value": "192.0.2.87",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h53",
+              "type": "IP",
+              "value": "192.0.2.87",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h80",
+              "type": "IP",
+              "value": "192.0.2.87",
+              "status": "missed",
+              "resultStatus": null
+            },
+            {
+              "id": "h107",
+              "type": "IP",
+              "value": "192.0.2.87",
+              "status": "missed",
+              "resultStatus": null
+            }
+          ],
+          "damaged": [],
+          "falsePositives": [
+            {
+              "id": "h19",
+              "token": "address",
+              "text": "90000",
+              "hitsKeep": false
+            },
+            {
+              "id": "h46",
+              "token": "address",
+              "text": "90000",
+              "hitsKeep": false
+            },
+            {
+              "id": "h73",
+              "token": "address",
+              "text": "90000",
+              "hitsKeep": false
+            },
+            {
+              "id": "h100",
+              "token": "address",
+              "text": "90000",
+              "hitsKeep": false
+            }
+          ],
+          "precisionByFamily": {
+            "NAME": {
+              "tp": 16,
+              "fp": 0,
+              "precision": 1
+            },
+            "DATE": {
+              "tp": 20,
+              "fp": 0,
+              "precision": 1
+            },
+            "AGE": {
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            },
+            "PHONE": {
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            },
+            "EMAIL": {
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "ID": {
+              "tp": 24,
+              "fp": 0,
+              "precision": 1
+            },
+            "ADDRESS": {
+              "tp": 16,
+              "fp": 4,
+              "precision": 0.8
+            },
+            "SSN": {
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "URL": {
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "IP": {
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            }
+          },
+          "status": null,
+          "templates": {
+            "identifierTemplates": 27,
+            "identifierTemplatesRemovedInEveryCopy": 26,
+            "identifierTemplatesMissed": [
+              {
+                "type": "IP",
+                "value": "192.0.2.87",
+                "fullCopies": 0,
+                "copies": 4
+              }
+            ],
+            "clinicalPhrases": 6,
+            "clinicalPhrasesKeptInEveryCopy": 6,
+            "clinicalPhrasesDamaged": []
+          }
         },
-        "DOB": {
-          "n": 4,
-          "full": 4,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "AGE_OVER_89": {
-          "n": 8,
-          "full": 8,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "PHONE": {
-          "n": 4,
-          "full": 4,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "FAX": {
-          "n": 4,
-          "full": 4,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "EMAIL": {
-          "n": 4,
-          "full": 4,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "MRN": {
-          "n": 4,
-          "full": 4,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "ACCOUNT": {
-          "n": 4,
-          "full": 4,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "PLAN": {
-          "n": 4,
-          "full": 4,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "ADDRESS": {
-          "n": 16,
-          "full": 16,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "SSN": {
-          "n": 4,
-          "full": 4,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "DEVICE": {
-          "n": 4,
-          "full": 4,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "LICENSE": {
-          "n": 4,
-          "full": 4,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "VEHICLE": {
-          "n": 4,
-          "full": 4,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "URL": {
-          "n": 4,
-          "full": 4,
-          "partial": 0,
-          "missed": 0,
-          "recall": 1
-        },
-        "IP": {
-          "n": 8,
-          "full": 4,
-          "partial": 0,
-          "missed": 4,
-          "recall": 0.5
-        }
-      },
-      "byToken": {
-        "name": {
-          "emitted": 16,
-          "tp": 16,
-          "fp": 0,
-          "precision": 1
-        },
-        "date": {
-          "emitted": 16,
-          "tp": 16,
-          "fp": 0,
-          "precision": 1
-        },
-        "dob": {
-          "emitted": 4,
-          "tp": 4,
-          "fp": 0,
-          "precision": 1
-        },
-        "age": {
-          "emitted": 8,
-          "tp": 8,
-          "fp": 0,
-          "precision": 1
-        },
-        "phone": {
-          "emitted": 8,
-          "tp": 8,
-          "fp": 0,
-          "precision": 1
-        },
-        "email": {
-          "emitted": 4,
-          "tp": 4,
-          "fp": 0,
-          "precision": 1
-        },
-        "account": {
-          "emitted": 24,
-          "tp": 24,
-          "fp": 0,
-          "precision": 1
-        },
-        "address": {
-          "emitted": 20,
-          "tp": 16,
-          "fp": 4,
-          "precision": 0.8
-        },
-        "ssn": {
-          "emitted": 4,
-          "tp": 4,
-          "fp": 0,
-          "precision": 1
-        },
-        "url": {
-          "emitted": 4,
-          "tp": 4,
-          "fp": 0,
-          "precision": 1
-        },
-        "ip": {
-          "emitted": 4,
-          "tp": 4,
-          "fp": 0,
-          "precision": 1
-        }
-      },
-      "byCategory": {
-        "DRUG": {
-          "n": 41,
-          "kept": 41,
-          "damaged": 0,
-          "keptRate": 1
-        },
-        "OTHER": {
-          "n": 20,
-          "kept": 20,
-          "damaged": 0,
-          "keptRate": 1
-        },
-        "LAB": {
-          "n": 12,
-          "kept": 12,
-          "damaged": 0,
-          "keptRate": 1
-        },
-        "VITAL": {
-          "n": 19,
-          "kept": 19,
-          "damaged": 0,
-          "keptRate": 1
-        },
-        "CLINICAL": {
-          "n": 22,
-          "kept": 22,
-          "damaged": 0,
-          "keptRate": 1
-        }
-      },
-      "misses": [
-        {
-          "id": "h26",
-          "type": "IP",
-          "value": "192.0.2.87",
-          "status": "missed"
-        },
-        {
-          "id": "h53",
-          "type": "IP",
-          "value": "192.0.2.87",
-          "status": "missed"
-        },
-        {
-          "id": "h80",
-          "type": "IP",
-          "value": "192.0.2.87",
-          "status": "missed"
-        },
-        {
-          "id": "h107",
-          "type": "IP",
-          "value": "192.0.2.87",
-          "status": "missed"
-        }
-      ],
-      "damaged": [],
-      "falsePositives": [
-        {
-          "id": "h19",
-          "token": "address",
-          "text": "90000",
-          "hitsKeep": false
-        },
-        {
-          "id": "h46",
-          "token": "address",
-          "text": "90000",
-          "hitsKeep": false
-        },
-        {
-          "id": "h73",
-          "token": "address",
-          "text": "90000",
-          "hitsKeep": false
-        },
-        {
-          "id": "h100",
-          "token": "address",
-          "text": "90000",
-          "hitsKeep": false
-        }
-      ],
-      "precisionByFamily": {
-        "NAME": {
-          "tp": 16,
-          "fp": 0,
-          "precision": 1
-        },
-        "DATE": {
-          "tp": 20,
-          "fp": 0,
-          "precision": 1
-        },
-        "AGE": {
-          "tp": 8,
-          "fp": 0,
-          "precision": 1
-        },
-        "PHONE": {
-          "tp": 8,
-          "fp": 0,
-          "precision": 1
-        },
-        "EMAIL": {
-          "tp": 4,
-          "fp": 0,
-          "precision": 1
-        },
-        "ID": {
-          "tp": 24,
-          "fp": 0,
-          "precision": 1
-        },
-        "ADDRESS": {
-          "tp": 16,
-          "fp": 4,
-          "precision": 0.8
-        },
-        "SSN": {
-          "tp": 4,
-          "fp": 0,
-          "precision": 1
-        },
-        "URL": {
-          "tp": 4,
-          "fp": 0,
-          "precision": 1
-        },
-        "IP": {
-          "tp": 4,
-          "fp": 0,
-          "precision": 1
+        "current": {
+          "overall": {
+            "entities": 108,
+            "entityRecall": 0.962963,
+            "entityPartial": 4,
+            "spansEmitted": 112,
+            "spanPrecision": 0.964286,
+            "charPrecision": 0.961538,
+            "charRecall": 0.993377,
+            "hardNegatives": 114,
+            "hardNegativesKept": 1,
+            "snippetsWithPii": 108,
+            "snippetsNoLeak": 104,
+            "negativeSnippets": 6,
+            "negativeIntact": 6
+          },
+          "byType": {
+            "NAME": {
+              "n": 12,
+              "full": 8,
+              "partial": 4,
+              "missed": 0,
+              "recall": 0.666667
+            },
+            "DATE": {
+              "n": 16,
+              "full": 16,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "DOB": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "AGE_OVER_89": {
+              "n": 8,
+              "full": 8,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "PHONE": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "FAX": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "EMAIL": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "MRN": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "ACCOUNT": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "PLAN": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "ADDRESS": {
+              "n": 16,
+              "full": 16,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "SSN": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "DEVICE": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "LICENSE": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "VEHICLE": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "URL": {
+              "n": 4,
+              "full": 4,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            },
+            "IP": {
+              "n": 8,
+              "full": 8,
+              "partial": 0,
+              "missed": 0,
+              "recall": 1
+            }
+          },
+          "byToken": {
+            "name": {
+              "emitted": 12,
+              "tp": 12,
+              "fp": 0,
+              "precision": 1
+            },
+            "date": {
+              "emitted": 16,
+              "tp": 16,
+              "fp": 0,
+              "precision": 1
+            },
+            "dob": {
+              "emitted": 4,
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "age": {
+              "emitted": 8,
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            },
+            "phone": {
+              "emitted": 8,
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            },
+            "email": {
+              "emitted": 4,
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "account": {
+              "emitted": 24,
+              "tp": 24,
+              "fp": 0,
+              "precision": 1
+            },
+            "address": {
+              "emitted": 20,
+              "tp": 16,
+              "fp": 4,
+              "precision": 0.8
+            },
+            "ssn": {
+              "emitted": 4,
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "url": {
+              "emitted": 4,
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "ip": {
+              "emitted": 8,
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            }
+          },
+          "byCategory": {
+            "DRUG": {
+              "n": 41,
+              "kept": 41,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "OTHER": {
+              "n": 20,
+              "kept": 20,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "LAB": {
+              "n": 12,
+              "kept": 12,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "VITAL": {
+              "n": 19,
+              "kept": 19,
+              "damaged": 0,
+              "keptRate": 1
+            },
+            "CLINICAL": {
+              "n": 22,
+              "kept": 22,
+              "damaged": 0,
+              "keptRate": 1
+            }
+          },
+          "misses": [
+            {
+              "id": "h2",
+              "type": "NAME",
+              "value": "Dr. Emrys Calder",
+              "status": "partial",
+              "resultStatus": "clean"
+            },
+            {
+              "id": "h29",
+              "type": "NAME",
+              "value": "Dr. Emrys Calder",
+              "status": "partial",
+              "resultStatus": "clean"
+            },
+            {
+              "id": "h56",
+              "type": "NAME",
+              "value": "Dr. Emrys Calder",
+              "status": "partial",
+              "resultStatus": "clean"
+            },
+            {
+              "id": "h83",
+              "type": "NAME",
+              "value": "Dr. Emrys Calder",
+              "status": "partial",
+              "resultStatus": "clean"
+            }
+          ],
+          "damaged": [],
+          "falsePositives": [
+            {
+              "id": "h19",
+              "token": "address",
+              "text": "90000",
+              "hitsKeep": false
+            },
+            {
+              "id": "h46",
+              "token": "address",
+              "text": "90000",
+              "hitsKeep": false
+            },
+            {
+              "id": "h73",
+              "token": "address",
+              "text": "90000",
+              "hitsKeep": false
+            },
+            {
+              "id": "h100",
+              "token": "address",
+              "text": "90000",
+              "hitsKeep": false
+            }
+          ],
+          "precisionByFamily": {
+            "NAME": {
+              "tp": 12,
+              "fp": 0,
+              "precision": 1
+            },
+            "DATE": {
+              "tp": 20,
+              "fp": 0,
+              "precision": 1
+            },
+            "AGE": {
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            },
+            "PHONE": {
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            },
+            "EMAIL": {
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "ID": {
+              "tp": 24,
+              "fp": 0,
+              "precision": 1
+            },
+            "ADDRESS": {
+              "tp": 16,
+              "fp": 4,
+              "precision": 0.8
+            },
+            "SSN": {
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "URL": {
+              "tp": 4,
+              "fp": 0,
+              "precision": 1
+            },
+            "IP": {
+              "tp": 8,
+              "fp": 0,
+              "precision": 1
+            }
+          },
+          "status": {
+            "snippets": 114,
+            "review": 0,
+            "snippetsWithAMiss": 4,
+            "snippetsWithAMissInReview": 0,
+            "snippetsWithAMissMarkedClean": 4
+          },
+          "templates": {
+            "identifierTemplates": 27,
+            "identifierTemplatesRemovedInEveryCopy": 26,
+            "identifierTemplatesMissed": [
+              {
+                "type": "NAME",
+                "value": "Dr. Emrys Calder",
+                "fullCopies": 0,
+                "copies": 4
+              }
+            ],
+            "clinicalPhrases": 6,
+            "clinicalPhrasesKeptInEveryCopy": 6,
+            "clinicalPhrasesDamaged": []
+          }
         }
       }
     }

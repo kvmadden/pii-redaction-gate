@@ -1,0 +1,61 @@
+St. Leander Medical Center
+800 HARBOR STREET, MOSSBRIDGE, ID 83477
+Outpatient Progress Note
+Hematology and General Medicine
+
+Patient: Ida M. Prestwick
+Age: 93
+DOB: 8 June 1932
+MRN: 6601943
+SSN: 000-28-4419
+Account: 7031-4482-16
+Date of Service: March 18, 2026
+Author: Neil Braddock, MD
+Home: 15 Quarry Lane, Mossbridge, ID 83477
+
+Chief complaint
+Follow-up after excisional biopsy of a right cervical lymph node, including review of the written report.
+
+History of present illness
+Ida M. Prestwick is seen with her daughter for results and a wound check. She lives in Mossbridge. About five weeks before the biopsy she noticed a firm lump below the right jaw while washing her face. It was not painful. She was evaluated in the emergency department on 2/11/2026, where examination found a mobile node and no airway concern. A contrast CT of the neck and chest showed the dominant right level II node and no bulky mediastinal disease. Excisional biopsy of that node was performed on 4 March 2026. Pain at the incision was moderate for three days and is now a tug when she turns her head. She finished no antibiotic. Swallowing has been normal, and her voice did not change. She slept in a recliner for four nights and is back in her own bed. There has been no drainage on the pillow and no temperature she or her daughter could measure since leaving the procedure area. She is more worried about the word lymphoma than about the scar, and most of today's visit was spent on that fear. She had occassional night sweats earlier in the winter, none since the biopsy, and she denies fever and unintentional weight loss. Appetite is back to usual. The two adjacent nodes were measured seperately on the CT and were both under a centimeter.
+
+She has a remote history of Bell palsy on the left, with full recovery and no recurrence. Hypertension has been quiet. She does not drive. Her daughter drove her today, and the sedan plate 2MPL-774 was written on the transport line at registration.
+
+Past medical history
+Bell palsy, left, resolved. Hypertension. Osteoarthritis of the hands. Hypothyroidism. Removal of a cataract from the right eye several years ago. No cancer. No tuberculosis. No rheumatoid arthritis.
+
+Medications
+1. Amlodipine 5 mg by mouth daily, Rx 8831204.
+2. Levothyroxine 75 mcg by mouth each morning.
+3. Acetaminophen 650 mg by mouth as needed, rarely used.
+4. Cholecalciferol 1000 units by mouth daily.
+
+Allergies
+No known drug allergies. Iodine contrast at the CT caused only a warm feeling, which was expected, and no rash.
+
+Social history
+She lives in a single-level house with her daughter, Yasemin Kortan, who manages the pillbox and the calendar. She never smoked. Alcohol is none. She walks daily in the driveway with a cane she rarely leans on. She still cooks simple meals and manages her own bath. Dressing is independent. She does not climb stairs at home. Hearing is reduced on the right, and her daughter repeats questions when the room is noisy. There is no home oxygen and no CPAP. Advance directives are already on file, and she confirmed today that her daughter may speak with us about results. Daughter's phone is (208) 555-0155. The clinic direct line is 208.555.0108.
+
+Family history
+Her sister died of a stroke. No family history of lymphoma was known to the daughter.
+
+Review of systems
+No current fever, no drenching sweats, no pruritus, no cough, no chest pain, no abdominal pain, no change in bowel habit, no focal weakness, and no new facial droop. Sleep is fair. The remainder is negative.
+
+Physical examination
+Blood pressure 146/78 mmHg, heart rate 74, respiratory rate 16, temperature 97.6 F, oxygen saturation 97 percent on room air, weight 54 kg. She is alert, oriented, and pleasant. There is no scleral icterus and no petechiae. Prestwick's incision along the right upper neck is a 4 cm line, dry, closed, with steri-strips off and no erythema, fluctuance, or drainage. No facial asymmetry and no residual weakness from the old palsy. The mouth opens fully. A small shotty node remains low in the right neck, soft and mobile. The left neck, axillae, and groins are quiet. Lungs clear. Heart regular. Abdomen soft without a palpable spleen. No leg edema.
+
+Pathology and studies
+Before the slides were back, the working differential included a dental source, metastatic carcinoma from a head and neck primary, and lymphoma. The oral exam and the chest images did not show a mucosal lesion or a lung mass. Lactate dehydrogenase was not elevated on the pre-procedure panel, at 180 U/L, and the metabolic panel that day showed creatinine 0.8 mg/dL, which is why contrast was given without a renal hold. Those results were not repeated. The outside report was recieved yesterday and scanned into the chart. Excisional biopsy shows reactive follicular hyperplasia with preserved architecture. Immunohistochemistry does not support lymphoma. There is no Hodgkin lymphoma. Flow cytometry was negative for a clonal population. Caroline Hodgkin reviewed the slides this week and agrees with that reading. Her addendum is filed with the report. The blood count from the biopsy day showed hemoglobin 13.1 g/dL, white cells 6.2 x 10 to the 9 per liter, and platelets 210,000/microliter. No laboratories were drawn today.
+
+Assessment and plan
+1. Right cervical lymphadenopathy, status post excisional biopsy, with pathology showing reactive follicular hyperplasia and no lymphoma. No chemotherapy, no radiation, and no further node removal. Observe. Return sooner for a rapidly growing mass, drenching sweats, fever, or unexplained weight loss. A routine visit is set in three months.
+2. Healing surgical incision. Wound care was reviewed. She may shower. No ointment is required while the skin stays closed. Call for redness, drainage, or opening. She may walk as usual and should avoid lifting more than ten pounds for another week, mostly so the neck skin is not tugged. Acetaminophen is enough for the residual soreness. A second CT is not scheduled. We will examine the neck again at three months and order imaging only for a new or enlarging node, persistent drenching sweats, or weight loss over five pounds. Her daughter will call if the incision opens.
+3. Remote Bell palsy, no residual deficit on today's cranial nerve exam. No action.
+4. Hypertension and hypothyroidism. Continue amlodipine and levothyroxine without change. Recheck the pressure at the next visit.
+5. Transport and paperwork. The account number above is the one billing should use for the biopsy claim. Her daughter has a copy of the instructions.
+
+She understood that the result is benign and asked that we avoid repeating the scan unless a new node appears. The plan was restated and she agreed.
+
+Electronically signed by Neil Braddock, MD
+General Medicine

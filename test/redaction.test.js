@@ -211,29 +211,38 @@ test("topics: kid details require kid context; honorific periods don't split the
 
 // ── profiles ─────────────────────────────────────────────────────────
 
-test("profiles: source mapping — dev light, free text standard, clinical identifiers, correspondence strict, unknown standard", () => {
+test("profiles: source mapping — dev light, free text standard, clinical text identifiers, personal correspondence strict, unknown null", () => {
   assert.equal(profileForSource("source-code"), "light");
   assert.equal(profileForSource("build-log"), "light");
   assert.equal(profileForSource("commit-message"), "light");
   assert.equal(profileForSource("chat-export"), "standard");
   assert.equal(profileForSource("free-text"), "standard");
   assert.equal(profileForSource("support-ticket"), "standard");
-  assert.equal(profileForSource("free-text"), "standard");
   assert.equal(profileForSource("sms"), "strict");
   assert.equal(profileForSource("email"), "strict");
-  assert.equal(profileForSource("voice-transcript"), "strict");
-  assert.equal(profileForSource("call-transcript"), "strict");
+  // Patient messages and calls carry clinical content: identifiers, not strict.
+  assert.equal(profileForSource("patient-message"), "identifiers");
+  assert.equal(profileForSource("voice-transcript"), "identifiers");
+  assert.equal(profileForSource("call-transcript"), "identifiers");
   assert.equal(profileForSource("clinical-note"), "identifiers");
   assert.equal(profileForSource("discharge-summary"), "identifiers");
-  assert.equal(profileForSource("some-new-app"), "standard");
-  assert.equal(profileForSource(undefined), DEFAULT_PROFILE);
+  // Unregistered ids map to nothing; resolveProfile then blocks.
+  assert.equal(profileForSource("some-new-app"), null);
+  assert.equal(profileForSource("constructor"), null);
+  assert.equal(profileForSource("__proto__"), null);
+  assert.equal(profileForSource(undefined), null);
+  assert.equal(DEFAULT_PROFILE, "identifiers");
 });
 
-test("profiles: resolveProfile — explicit profile beats source", () => {
+test("profiles: resolveProfile — explicit profile beats source; unknown sources throw unless a fallback is named", () => {
   assert.equal(resolveProfile({ profile: "strict", source: "source-code" }).name, "strict");
   assert.equal(resolveProfile({ source: "commit-message" }).name, "light");
-  assert.equal(resolveProfile({}).name, "standard");
+  assert.equal(resolveProfile({}).name, "identifiers");
   assert.deepEqual(PROFILES.light.tiers, ["pattern"]);
+  assert.throws(() => resolveProfile({ source: "clinical_note" }), { name: "RedactionConfigError" });
+  assert.throws(() => resolveProfile({ source: "constructor" }), { name: "RedactionConfigError" });
+  assert.equal(resolveProfile({ source: "clinical_note", unknownSource: "identifiers" }).name, "identifiers");
+  assert.throws(() => resolveProfile({ source: "x", unknownSource: "nope" }), { name: "RedactionConfigError" });
 });
 
 test("profiles: resolveProfile degrades to default on null/undefined/non-object (never crashes)", () => {
@@ -448,29 +457,35 @@ test("gate: body text is gated and merged into the same sidecar payload", () => 
   assert.ok(gate.changes.some((c) => c.field === "body"));
 });
 
-test("gate: gateSummary re-gates model output and accumulates into the gate", () => {
+test("gate: gateSummary re-gates model output into a new gate that covers both", () => {
   const gate = gateParsedTranscript({ parsed: fixtureParsed(), source: "source-code", peopleMap: TEST_MAP });
-  const before = gate.changes.length;
-  const summary = gateSummary(
+  const withSummary = gateSummary(
     { summary: "You emailed jane.doe@example.com twice.", topics: ["email"], operatorDirections: [] },
     gate,
     "source-code",
     TEST_MAP,
   );
-  assert.ok(!summary.summary.includes("jane.doe@example.com"));
-  assert.ok(gate.changes.length > before);
-  assert.ok(gate.changes.some((c) => c.field.startsWith("summary.")));
+  assert.ok(!withSummary.summary.summary.includes("jane.doe@example.com"));
+  assert.ok(withSummary.changes.length > gate.changes.length);
+  assert.ok(withSummary.changes.some((c) => c.field.startsWith("summary.")));
+  assert.equal(gate.summary, null, "the earlier gate is unchanged");
+  assert.deepEqual(withSummary.parsed, gate.parsed);
 });
 
-test("gate: redactionMetaForRow stamps provenance only when something was redacted", () => {
+test("gate: redactionMetaForRow stamps every gated row, including rows where nothing matched", () => {
   const gate = gateParsedTranscript({ parsed: fixtureParsed(), source: "source-code", peopleMap: TEST_MAP });
-  const meta = redactionMetaForRow(gate);
+  const meta = redactionMetaForRow(gate, { now: new Date("2026-11-03T00:00:00Z") });
   assert.equal(meta.profile, "light");
+  assert.equal(meta.status, "clean");
+  assert.equal(meta.redactedAt, "2026-11-03T00:00:00.000Z");
   assert.ok(meta.hits.length >= 1);
   assert.ok(!JSON.stringify(meta).includes("jane.doe"));
   const cleanParsed = { ...fixtureParsed(), firstUserMsg: "hi", lastAssistantMsg: "ok", operatorTurns: [], assistantTail: [] };
   const cleanGate = gateParsedTranscript({ parsed: cleanParsed, source: "source-code", peopleMap: TEST_MAP });
-  assert.equal(redactionMetaForRow(cleanGate), null);
+  const cleanMeta = redactionMetaForRow(cleanGate);
+  assert.deepEqual(cleanMeta.hits, []);
+  assert.equal(cleanMeta.version, REDACTION_VERSION);
+  assert.equal(redactionMetaForRow(null), null);
 });
 
 test("gate: quarantineGate writes one sidecar per gated session", () => {

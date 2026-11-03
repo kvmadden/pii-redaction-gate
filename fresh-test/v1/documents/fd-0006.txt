@@ -1,0 +1,60 @@
+CLINICAL TRIAGE CALL TRANSCRIPT
+Date of Service: 10/16/2026
+Call Intake Time: 14:22 CST
+Call Log ID: CL-7729104
+Patient: ALENCAR, RODRIGO DE
+MRN: 8492018
+Health Plan ID: MED-8830192
+Primary Clinic: Willow Creek Clinic
+Attending: Dr. Bradley Vance, MD
+Triage Staff: Sharon Miller, RN
+
+[Call Recording Begins]
+
+Sharon Miller, RN: Willow Creek Clinic triage, uh, this is Sharon Miller, registered nurse. Who, who am I speaking with today?
+
+Brett Jenkins: Hi, uh, hello Sharon. My name is Brett Jenkins. I'm, um, I'm calling for my father-in-law, Rodrigo de Alencar. He's, uh, he's having some pretty bad dizziness when he stands up, and we're, we're kind of worried about him.
+
+Sharon Miller, RN: Okay, let me pull up Mr. Alencar's chart here in the system. Just a second... alright, got it. Can you confirm his date of birth and, uh, his address for verification?
+
+Brett Jenkins: Sure, uh, he was born on October twelfth, twenty twenty-six—wait, no, sorry, that's ridiculous, I'm looking at my own notes, October twelfth, nineteen forty-six. Sorry, my head is spinning today. And his address is 814 Meadow Ridge Court, Unit 3B, Edmond, OK 73034.
+
+Sharon Miller, RN: Thank you, Brett. And is he still residing there, or did he move? Because on the electronic intake note from 2026-10-14, the registration portal had it typed in as 814 meadow ridge court, unit 3b.
+
+Brett Jenkins: Yeah, yeah, that's the same place, just lower case from when I, uh, texted it through the app on my phone.
+
+Sharon Miller, RN: Perfect. And what is the best callback number for you or for Mr. de Alencar?
+
+Brett Jenkins: You can reach me directly at 405-555-0148. That's my cell phone.
+
+Sharon Miller, RN: Got it, 405-555-0148. Now tell me what's been happening with Mr. de Alencar. He had, uh, let's see, a left total knee arthroplasty three weeks ago, correct?
+
+Brett Jenkins: Yes, exactly. The knee surgery itself went well, but, um, ever since, well, really since New Year's Day he's had bouts of paroxysmal atrial fibrillation, and Dr. Vance started him on apixaban 5 mg PO BID and metoprolol succinate 50 mg PO daily. But, uh, yesterday and then again this morning, every time he gets up from the recliner to use the walker, he gets, you know, lightheaded, woozy. We took his vitals with our home cuff. His sitting blood pressure was 128/76 mmHg with a pulse of 68 beats per minute, but when he stood up, his standing blood pressure dropped down to 96/58 mmHg, and pulse went up to 88.
+
+Sharon Miller, RN: That sounds like significant orthostatic hypotension. Has he, uh, has he had any actual syncope, any loss of consciousness, chest pain, shortness of breath, or black tarry stools?
+
+Brett Jenkins: No, no fainting. No chest pressure either. He's just, uh, he says the room feels like it's tilting. He hasn't fallen, thank God, because we're being super careful with the walker, especially since his fall back around New Year's Day when he cracked a rib.
+
+Sharon Miller, RN: Good, I'm glad he hasn't fallen. Looking at the medication reconciliation from his discharge, is he taking any other antihypertensives or diuretics? What about hydrochlorothiazide or lisinopril?
+
+Brett Jenkins: Well, um, he was taking lisinopril 10 mg daily before the surgery, but Dr. Vance told us to hold that if his systolic was under 110. He hasn't taken lisinopril for four days now. But the pharmacy, uh, Pine Hill Pharmacy, they just delivered a refill of his metoprolol, and the bottle says metoprolol succinate 100 mg instead of 50 mg. We didn't know if that was, uh, if Dr. Vance increased it or if the pharmacy made a mistake.
+
+Sharon Miller, RN: Oh, let me check the order history. No, Dr. Bradley Vance wrote for metoprolol succinate 50 mg extended-release once daily. It definitely should not be 100 mg. That explains why his standing pressure is dropping so low. Do not give him that 100 mg tablet. Which pharmacy location filled that?
+
+Brett Jenkins: It was Pine Hill Pharmacy. They're located in the shopping center over in 73013.
+
+Sharon Miller, RN: Okay. I am going to contact Pharmacist Heather Campbell over at Pine Hill Pharmacy right now to verify that dispensation and have them send the correct 50 mg tablets. I will also transmit an urgent clarification via Fax: 405-555-0182 to their dispensing desk. For today, does he have any of the 50 mg tablets left from the previous bottle?
+
+Brett Jenkins: Yeah, he has about three or four pills left in the older bottle from last week.
+
+Sharon Miller, RN: Excellent. Have him take only the 50 mg tablet with food. Make sure he drinks at least two glasses of water, and have him sit on the edge of the bed for a full two minutes before standing up. If he feels lightheaded at all, he needs to sit right back down. If he has any chest pain, palpitation, or passes out, call 911 immediately.
+
+Brett Jenkins: Okay, understood. Sit on the edge first, plenty of fluids, and only the 50 mg pill.
+
+Sharon Miller, RN: Exactly. I'm going to put a note in Mr. Alencar's chart for Dr. Vance to review, and our clinic medical assistant will follow up by phone tomorrow morning. Thank you for calling this in promptly, Brett.
+
+Brett Jenkins: Thank you so much, Sharon. Bye-bye.
+
+Sharon Miller, RN: Goodbye.
+
+[End of Call]

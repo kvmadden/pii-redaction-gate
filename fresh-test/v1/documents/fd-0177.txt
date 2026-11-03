@@ -1,0 +1,36 @@
+CRESTVIEW SPECIALTY PHARMACY
+PRIOR AUTHORIZATION & MEDICATION RECONCILIATION NOTE
+TRANSCRIBED FROM CLINICAL FAX / PORTAL REFILL QUEUE
+
+PATIENT: SWEENEY-O'SULLIVAN, CONNOR
+DOB / AGE: 67-year-old male
+MRN: 8492014
+PRESCRIBER: KAUFMAN, ARTHUR, MD
+PRESCRIBER NPI: 1497283401
+CONTACT EMAIL: arthur.kaufman@example.org
+CLINIC PHONE: (617) 555-0128
+DATE OF REQUEST: 10/14/2026
+
+CALL AND QUEUE DETAILS:
+Staff intake completed by Sweet, CPhT at Crestview Specialty Pharmacy following electronic transmission receipt. Outreach call made to patient home to clarify prior auth renewal documentation for biologic therapy. Patient was unavailable; spoke directly with Clara Higgins, the patient's sister and primary caregiver, who assists with medication administration and home deliveries.
+
+CLINICAL BACKGROUND & INDICATION:
+Mr. Sweeney-O'Sullivan is a 67-year-old male with severe refractory plaque psoriasis and psoriatic arthritis diagnosed in October 2026. The patient also carries diagnoses of hypertension and gastroesophageal reflux disease, both managed stably on oral therapies. The rheumatology team noted extensive plaque involvement covering approximately 18% body surface area prior to starting targeted biologic treatment. Previous therapies failed due to inadequate disease control or intolerable adverse effects, including oral methotrexate 15 mg weekly discontinued due to persistent transaminitis, and adalimumab 40 mg subcutaneous every two weeks discontinued after six months due to secondary loss of efficacy. Prescriber Arthur Kaufman submitted an urgent prior authorization request for ustekinumab.
+
+PHARMACY RECONCILIATION & LAB REVIEW:
+Clara Higgins reported that Connor Sweeney-O'Sullivan received his initial loading dose without complications and experienced marked clearance of cutaneous plaques. Sister confirms patient has not had any recent fever, chronic cough, or active infectious symptoms. No injection-site reactions or systemic hypersensitivity was noted following the previous administration. Patient's sister reiterated that prescription adherence has remained consistent at home. Baseline QuantiFERON-TB Gold test completed prior to initiation was negative. Recent laboratory reivew from 10/14/2026 demonstrates stable hepatic and renal profiles: AST 24 U/L, ALT 28 U/L, serum creatinine 0.94 mg/dL, and absolute neutrophil count 3,800/uL.
+
+CURRENT MEDICATION PROFILE:
+1. Ustekinumab 90 mg subcutaneous injection every 12 weeks. Prior authorization required for maintenance refil.
+2. Naproxen 500 mg PO BID with meals PRN joint stiffness.
+3. Omeprazole 20 mg PO daily before breakfast for gastroprotection.
+4. Cholecalciferol 2,000 IU PO daily.
+
+PLAN AND ACTIONS TAKEN:
+1. Urgent prior authorization clinical narrative compiled by Hannah Sweet and forwarded to teh patient's commercial health plan along with relevant clinic notes and charted lab panels.
+2. Sent secure message confirmation to Arthur Kaufman at arthur.kaufman@example.org outlining submitted authorization forms and clinical rationale.
+3. Advised Clara Higgins that once approval is granted by the health plan, Crestview Specialty Pharmacy will arrange refrigerated courier delivery to their residence.
+4. Follow-up scheduled for 48 hours to monitor authorization determination status.
+
+Hannah Sweet, Lead Pharmacy Technician
+Crestview Specialty Pharmacy

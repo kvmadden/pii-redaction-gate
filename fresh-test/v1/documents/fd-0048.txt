@@ -1,0 +1,99 @@
+MEDICATION RECONCILIATION
+
+Performed by the covering pharmacist after the patient returned from an
+inpatient stay. Records from Outside Hospital were used to rebuild the home
+list. The patient is a 72-year-old woman. Her daughter helped with the
+bottle count and confirmed which inhalers are actually in the house.
+
+Reason for reconciliation
+She was treated for community-acquired pneumonia together with an acute
+exacerbation of chronic obstructive pulmonary disease. Antibiotics have
+been finished and are not continued. A steroid taper was started for the
+lung flare and must be dispensed as a short course, not as a chronic
+refill. She also lives with Parkinson disease, diagnosed in 2019, and with
+type 2 diabetes mellitus since 2021, hypertension, and painful distal
+sensory neuropathy in both feet. Recently she stumbled on a rug, did not
+hit her head, and did not lose consciousness.
+
+While swelling of the ankles was present during the stay, the Wells score
+for deep vein thrombosis was low. Duplex ultrasound of both legs showed no
+clot, and anticoagulation was not started. A chest radiograph showed a
+focal infiltrate judged consistent with pneumonia. Repeat imaging was not
+required once fever resolved and oxygen saturation recovered. Sputum
+culture was not obtained.
+
+Diagnoses relevant to dispensing
+Community-acquired pneumonia, improving.
+Chronic obstructive pulmonary disease with a recent exacerbation.
+Parkinson disease with early-morning stiffness and no current hallucination.
+Type 2 diabetes mellitus with distal sensory neuropathy.
+Hypertension, usually at goal.
+Constipation, mild, related to limited walking.
+
+Allergies
+Penicillin caused a rash in childhood and remains an avoidance. Codeine
+caused nausea and is avoided. No angiotensin-converting enzyme inhibitor
+cough is on file.
+
+Current regimen
+carbidopa-levodopa 25-100 mg PO TID on an empty stomach when she can
+entacapone 200 mg PO TID with each carbidopa-levodopa dose
+Lyrica 75 mg PO BID for neuropathic pain, with pregabalin as the generic
+duloxetine 60 mg PO daily
+prednisone 40/30/20/10 mg PO every morning with food, four days at each
+dose, then stop
+metformin 1000 mg PO BID with meals
+empagliflozin 10 mg PO every morning
+lisinopril 20 mg PO daily
+atorvastatin 40 mg PO at bedtime
+docusate sodium 100 mg PO BID
+senna 8.6 mg PO at bedtime PRN constipation
+albuterol sulfate HFA 2 puffs inhaled q6h PRN wheeze
+umeclidinium 62.5 mcg inhaled once daily
+acetaminophen 650 mg PO q6h PRN pain, not to exceed 3 g in a day
+
+The prednisone supply will be 10 mg tablets. She takes four tablets daily,
+then three, then two, then one, each block lasting four days, which is the
+same 40/30/20/10 mg taper. That is forty tablets in all. She should not
+lengthen the taper on her own.
+
+Gabapentin was tried previously at 300 mg PO TID and was stopped for
+sedation. That trial is the clinical basis for requesting Lyrica. Brand
+Lyrica needs prior authorization from the health plan. Pregabalin at the
+same dose is the preferred alternative if the plan denies the brand. Her
+daughter understands they are the same drug.
+
+Vitals at the clinic recheck
+Blood pressure 128/74 mmHg. Heart rate 78 beats per minute. Respiratory
+rate 16 breaths per minute. Temperature 36.7 C. Oxygen saturation 96
+percent on room air.
+
+Laboratory results copied from the discharge summary and the recheck
+WBC 8.4 K/uL. Hemoglobin 12.6 g/dL. Platelets 242 K/uL.
+Sodium 137 mmol/L. Potassium 4.1 mmol/L. Chloride 102 mmol/L.
+Bicarbonate 26 mmol/L. Creatinine 0.9 mg/dL.
+eGFR greater than 60 mL/min/1.73 m2.
+Fasting glucose 142 mg/dL. Hemoglobin A1c 7.4 percent.
+TSH 2.8 mIU/L.
+
+Counseling and holds
+Sick-day plan: hold empagliflozin and metformin if she cannot eat or
+drink, because of ketoacidosis and lactic acidosis risk, and restart when
+intake is normal. Hold lisinopril if she has vomiting or marked
+lightheadedness, then call the clinic. Do not start metoclopramide,
+haloperidol, or a high-dose phenothiazine, because each can worsen
+Parkinson disease. Urine may turn brown on entacapone, and that change is
+not blood. Separate carbidopa-levodopa from a heavy protein meal when her
+stomach allows it. Prednisone will raise glucose, so fingerstick checks
+should increase during the taper, and Diabetes Center should see her if
+readings stay high after the taper ends. A Pain Clinic referral is in
+place if burning pain in the feet does not ease on pregabalin once the
+steroid course is done. Inhaler technique was taught back correctly for
+both the rescue inhaler and the daily anticholinergic inhaler. She should
+rise slowly to limit levodopa-related dizziness. Acetaminophen remains the
+analgesic. Ibuprofen was discouraged while blood pressure is being
+watched. The bowel regimen is scheduled docusate, with senna only if she
+has no stool for two days. A thirty-day supply of the chronic medicines
+was queued, and the steroid quantity was limited to the taper. The
+prescriber was asked to sign the prior authorization if the plan will not
+accept pregabalin.

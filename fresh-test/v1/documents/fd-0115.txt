@@ -1,0 +1,156 @@
+9482014
+PEMBERTON REGIONAL MEDICAL CENTER
+DEPARTMENT OF GERIATRIC MEDICINE AND POST-ACUTE CARE
+CLINICAL PROGRESS NOTE
+Date of Evaluation: 11/04/2026
+
+PATIENT IDENTIFICATION:
+Name: JENKINS, JOY
+Title / Salutation: Mrs. Joy Jenkins
+DOB: 03/14/1934
+Age: 92-year-old female
+Account # AC-7740192
+Primary Residence:
+742 Crestview Drive, Apt 3B, Nashville, TN 37215
+Home Telephone: (615) 555-0148
+Contact Cell: 615.555.0183
+
+ATTENDING CLINICIAN:
+Dr. Arthur Pendelton, MD, Geriatric Medicine
+FELLOW / RESIDENT:
+Dr. Thomas Bradley, MD
+PRIMARY CLINIC NURSE:
+Nurse Nancy Miller, RN
+
+CHIEF COMPLAINT:
+Follow-up evaluation for acute uncomplicated cystitis, recent confusion,
+and mobility assessment following hospitalization.
+
+HISTORY OF PRESENT ILLNESS:
+Mrs. Joy Jenkins is a 92-year-old widowed female who is accompanied to
+the geriatric clinic today by her adult son, Mr. Kenneth
+Jenkins, who serves as her primary caregiver and durable healthcare proxy.
+The patient was discharged from Pemberton Regional Medical Center on
+November 4th, 2026, following a three-day admission for acute delirium in
+the setting of an Escherichia coli urinary tract infection and mild acute
+kidney injury.
+
+According to Mr. Kenneth Jenkins, the patient experienced abrupt cognitive
+fluctuation, decreased oral intake, and functional decline beginning five
+days prior to admission. During hospitalization, diagnostic workup confirmed
+a catheter-associated urinary tract infection treated successfully with
+intravenous ceftriaxone, followed by oral cefpodoxime. Diagnostic bedside
+cystoscopy and indwelling bladder catheterization were conducted during the
+inpatient stay, which confirmed severe trabeculation secondary to chronic
+atonic bladder without structural bladder obstruction or calculi. She was
+successfully decatheterized prior to release.
+
+Today, Mrs. Joy Jenkins is alert and oriented to person, month, and year.
+Her son reports that her confusion has almost completely resolved, with her
+baseline mild cognitive impairment unchanged. She has had no fever, chills,
+gross hematuria, dysuria, flank tenderness, or new urinary retention over
+the past 48 hours. Mr. Jenkins, who is a healthy 61-year-old retired school
+principal, states that her appetite has improved, though she continues to
+require minimal assistance with transfers and ambulation using a rolling
+walker. Her complete inpatient records, discharge instructions, and recent
+imaging summaries were accessed through the secure patient portal link at
+https://patient.example.org/records/discharge-summary for review.
+
+PAST MEDICAL AND SURGICAL HISTORY:
+1. Recurrent urinary tract infections and neurogenic bladder.
+2. Mild cognitive impairment, amnestic type.
+3. Essential hypertension, longstanding.
+4. Osteoarthritis of bilateral knees and lumbar spine.
+5. Osteopenia without prior fragility fracture.
+6. Status post right total hip hemiarthroplasty following fall (2019).
+7. Prior cataract extraction with intraocular lens implants bilaterally.
+
+CURRENT MEDICATIONS:
+1. Cefpodoxime proxetil 100 mg PO BID (day 5 of 7-day course).
+2. Amlodipine besylate 2.5 mg PO daily.
+3. Donepezil hydrochloride 5 mg PO nightly at bedtime.
+4. Calcium carbonate 600 mg with Vitamin D3 400 IU PO daily.
+5. Polyethylene glycol 3350 powder 17 grams PO daily in water.
+6. Acetaminophen 500 mg PO TID PRN joint pain.
+
+ALLERGIES:
+Trimethoprim-sulfamethoxazole (pruritic cutaneous rash).
+Nitrofurantoin (nausea and peripheral neuropathy).
+
+PHYSICAL EXAMINATION:
+Vital Signs:
+Temperature: 97.8 F (36.6 C), oral
+Pulse: 68 beats per minute, regular
+Blood Pressure: 124/72 mmHg, seated, right arm
+Respiratory Rate: 16 breaths per minute, unlabored
+Oxygen Saturation: 98% on room air
+Weight: 52.4 kg (115.5 lbs)
+Height: 59 inches (149.9 cm)
+Body Mass Index (BMI): 23.2 kg/m2
+
+General: 92-year-old female, pleasant, frail, resting comfortably in
+wheelchair, conversant, in no acute physical distress.
+HEENT: Normocephalic, atraumatic. Conjunctivae pink, sclerae anicteric.
+Moist oral mucosa without mucosal lesions. Hearing intact with bilateral
+digital hearing aids.
+Neck: Supple, full active range of motion, no carotid bruit, no JVD.
+Cardiovascular: Regular rate and rhythm, normal S1 and S2, soft grade 1/6
+systolic ejection murmur at the right upper sternal border. Peripheral
+pulses 2+ bilaterally in dorsalis pedis.
+Lungs: Clear to auscultation bilaterally anteriorly and posteriorly. No
+adventitious sounds, wheezes, or crackles.
+Abdomen: Soft, non-tender to light and deep palpation. No guarding, rebound,
+or palpable masses. Suprapubic area non-tender and non-distended.
+Genitourinary: External female genitalia normal for age without erythema
+or discharge; no indwelling catheter in place.
+Musculoskeletal: Healed surgical scar over right lateral hip. Stable hip
+and knee ranges of motion without acute erythema or effusion.
+Neurological: Cranial nerves II-XII grossly intact. Alert, attentive.
+Recall 2 of 3 words at five minutes. Motor strength 4+/5 throughout all
+four extremities. Deep tendon reflexes 1+ bilaterally.
+Gait / Mobility: Able to stand with minimal one-person assistance; ambulates
+30 feet with a standard rolling walker with steady, cautious cadence.
+Skin: Dry, intact without stage 1-4 pressure injury over sacrum or heels.
+
+LABORATORY AND DIAGNOSTIC DATA:
+Serum Chemistry and Complete Blood Count (drawn yesterday, 11/04/2026):
+  Sodium: 138 mmol/L
+  Potassium: 4.0 mmol/L
+  Chloride: 102 mmol/L
+  Bicarbonate: 24 mmol/L
+  BUN: 18 mg/dL
+  Serum Creatinine: 0.88 mg/dL (normalized from peak 1.42 mg/dL)
+  Estimated GFR: 58 mL/min/1.73m2
+  White Blood Cell Count: 6.8 x10^3/uL (normalized from 14.2 x10^3/uL)
+  Hemoglobin: 11.2 g/dL
+  Platelets: 232 x10^3/uL
+Post-Void Residual Bladder Ultrasound:
+  Post-void residual volume measured at 65 mL (well within normal limits).
+
+ASSESSMENT AND CLINICAL IMPRESSION:
+1. Acute uncomplicated urinary tract infection (E. coli): Clinically
+resolved with significant improvement in delirium and functional status.
+Renal function has completely normalized following intravenous hydration.
+2. Delirium, hyperactive type, resolved: Baseline cognitive function restored.
+3. Neurogenic bladder / urinary retention: Favorable post-void residual volume
+following removal of indwelling catheter.
+4. Fall risk and mobility impairment: High fall risk secondary to advanced
+age (92 years), visual/hearing sensory deficits, and walker dependence.
+
+PLAN AND RECOMMENDATIONS:
+1. Antimicrobial Therapy: Complete remaining 2 days of cefpodoxime proxetil
+100 mg PO BID to finish full 7-day therapeutic course.
+2. Bladder Care and Hydration: Maintain oral hydration of 1.5 to 2.0 liters
+daily. Scheduled voiding every 3 to 4 hours while awake. Post-void bladder scan
+can be performed PRN if abdominal discomfort or oliguria recurs.
+3. Cognitive and Fall Safety: Mr. Kenneth Jenkins has arranged 24-hour home
+health aide coverage. Physical therapy home health evaluation ordered for gait
+training and home hazard assessment.
+4. Follow-Up: Return to Pemberton Regional Medical Center Geriatric Clinic in
+six weeks, or sooner if dysuria, fever, or cognitive decline recurs.
+
+Attending Provider Signoff:
+Electronically signed by:
+Dr. Arthur Pendelton, MD
+Geriatric Medicine Specialist
+Pemberton Regional Medical Center

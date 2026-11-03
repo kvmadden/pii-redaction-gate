@@ -1,0 +1,119 @@
+ALDEN REGIONAL HOSPITAL
+DEPARTMENT OF GENERAL SURGERY - SURGICAL CONSULTATION NOTE
+CONSULTATION DATE: 11-04-2026
+HOSPITAL SERVICE: INPATIENT GENERAL SURGERY
+
+PATIENT IDENTIFICATION:
+Name: Wong Văn Khải
+MRN: 4892015
+Account #: AC-9938102
+Admission Date: 11-04-2026
+DOB: 12 August 1958
+Gender: Male
+Patient Address:
+4280 SEATTLE BOULEVARD, APT 3C
+SEATTLE, WA 98104
+Patient Contact: (206) 555-0138
+Digital Portal Reference: https://records.example.net/portal/view?id=804
+
+CONSULTING SURGICAL TEAM:
+Consulting Attending Surgeon: Dr. Violet Morita
+Surgical Fellow: Dr. H. Sato
+Consultant Email: violet.morita@example.org
+Referring Hospitalist: Dr. Kenji Takahashi
+
+REASON FOR CONSULTATION:
+Evaluation of acute calculous cholecystitis with suspected
+choledocholithiasis and surgical recommendation for urgent
+intervention.
+
+HISTORY OF PRESENT ILLNESS:
+Mr. Wong Văn Khải is a 68-year-old gentleman who presented to the
+emergency department at Alden Regional Hospital on the evening of 4
+November 2026 with an 18-hour history of severe, unrelenting right
+upper quadrant abdominal pain radiating to his right infrascapular
+region. The pain began roughly two hours following a fatty evening meal
+and was accompanied by persistent nausea, four episodes of bilious
+emesis, subjective chills, and low-grade fever. He noted dark
+tea-colored urine over the preceding twelve hours. He denied
+hematemesis, melena, hematochezia, chest pain, or dyspnea.
+
+The patient was accompanied to the hospital by his son-in-law Brian
+Miller, who provided collateral history and assisted with
+communication. The initial inpatient workup was initiated by the
+attending hospitalist, Dr. Kenji
+Takahashi, who noted significant right upper quadrant tenderness with a
+positive Murphy sign. Laboratory evaluation demonstrated leukocytosis
+with elevated alkaline phosphatase and total bilirubin. Inpatient
+surgical consultation was formally requested on 11-04-2026.
+
+PAST MEDICAL AND SURGICAL HISTORY:
+1. Type 2 diabetes mellitus, controlled without insulin.
+2. Hyperlipidemia.
+3. Gastroesophageal reflux disease.
+4. No prior abdominal surgical procedures.
+
+PHYSICAL EXAMINATION:
+Vital Signs: Temperature 38.2 C (100.8 F), blood pressure 138/84 mmHg,
+heart rate 92 bpm, respiratory rate 18 breaths/min, SpO2 97% on ambient
+air.
+General: Moderately uncomfortable gentleman lying still on the
+stretcher, grimacing with deep respiration.
+HEENT: Mild scleral icterus noted. Oral mucosa moist.
+Cardiovascular: Regular rate, normal heart sounds, no murmurs.
+Pulmonary: Lungs clear to auscultation bilaterally, no wheezes.
+Abdomen: Moderate distention. Marked tenderness to palpation in the
+right upper quadrant with inspiratory arrest (positive Murphy sign).
+Voluntary guarding present. No peritoneal rebound tenderness. Normal
+bowel sounds.
+Extremities: Warm, well-perfused, no peripheral edema.
+
+DIAGNOSTIC WORKUP:
+1. Complete Blood Count:
+   WBC: 14.8 x 10^3/uL (82% neutrophils)
+   Hemoglobin: 14.2 g/dL
+   Platelets: 230 x 10^3/uL
+2. Comprehensive Metabolic Panel:
+   Total Bilirubin: 3.4 mg/dL
+   Direct Bilirubin: 2.6 mg/dL
+   Alkaline Phosphatase: 284 U/L
+   AST: 142 U/L
+   ALT: 188 U/L
+   Serum Lipase: 38 U/L (normal)
+   Serum Creatinine: 0.94 mg/dL
+3. Abdominal Ultrasonography:
+   Demonstrated a distended gallbladder with marked wall thickening
+   measuring 4.8 mm, prominent pericholecystic fluid, multiple
+   shadowing gallstones, and a sonographic Murphy sign. The common bile
+   duct was dilated measuring 8.6 mm with acoustic shadowing in the
+   distal duct concerning for an impacted stone.
+
+ASSESSMENT AND CLINICAL IMPRESSION:
+Mr. Wong Văn Khải is a 68-year-old male with acute calculous
+cholecystitis complicated by choledocholithiasis, biliary obstruction,
+and mild secondary ascending cholangitis. He requires therapeutic
+biliary decompression followed by definitive surgical source control.
+
+RECOMMENDATIONS AND PLAN OF CARE:
+1. Maintain strict NPO status with intravenous fluid resuscitation
+   (lactated Ringer's solution at 125 mL/hr).
+2. Intravenous antimicrobial therapy: Continue piperacillin-tazobactam
+   3.375 grams IV every 6 hours.
+3. Gastroenterology Consultation: Endoscopic retrograde
+   cholangiopancreatography (ERCP) with biliary sphincterotomy and stone
+   extraction is recommended first thing tomorrow morning to clear the
+   common bile duct.
+4. Surgical Intervention: Following successful duct clearance via ERCP,
+   we will proceed with laparoscopic cholecystectomy, with conversion to
+   open cholecystectomy if severe inflammation or adhesions preclude
+   safe dissection.
+5. Informed Consent: Risks, benefits, and procedural alternatives were
+   discussed in detail with Mr. Wong and his son-in-law Brian Miller.
+   The patient expressed understanding and agreed with the proposed
+   surgical plan.
+6. Dr. H. Sato and I will re-evaluate the patient post-procedure.
+
+Violet Morita, MD, FACS
+Attending Surgeon, Department of General Surgery
+Alden Regional Hospital
+Pager: (206) 555-0138

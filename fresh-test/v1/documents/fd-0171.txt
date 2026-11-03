@@ -1,0 +1,81 @@
+Lantern Annex Laboratory
+Gastrointestinal Pathology
+
+Patient: de la Varenne, Élodie
+DOB: May 12, 1978
+Age: 47 years
+MRN: 8834217
+Accession: GI-26-19028
+Group no.: 44128
+Specimen: colon biopsies, surveillance
+Collected: 04.03.2026
+Ordering: Dr. Stanley Yarrow
+Phone: +44 20 7946 0144
+Address: 55 Harbor Lantern Road, Apt 4B, West Alder, OR 97381
+Brother: Mr. Gordon Phelps
+
+CLINICAL HISTORY
+47-year-old woman with ulcerative colitis diagnosed in adulthood, on
+surveillance colonoscopy. Eight biopsies were taken from the cecum to
+the rectum. She reports two formed stools a day and no nocturnal
+waking. Her brother, Mr. Gordon Phelps, is the contact if results
+need to be discussed, because she is traveling the week after the
+procedure. Élodie de la Varenne's prior biopsies, described in the
+request, showed chronic colitis without dysplasia.
+
+The medicine list on the requisition reads mesalamine DR 1.2 g PO TID
+and prednisone 20 mg PO daily, the latter started for a flare last
+season and still being tapered by her clinician. She also takes
+ondansetron 4 mg PO q8h PRN nausea around the bowel prep. No biologic
+is listed.
+
+GROSS
+Received in formalin are eight specimens in separate jars, each a
+fragment of tan mucosa, 0.3 to 0.5 cm. They are submitted entirely,
+one cassette per jar, after filtration.
+
+MICROSCOPIC
+All eight sites show distorted crypt architecture, basal plasmacytosis,
+and crypt shortening, in keeping with chronic colitis. The inflamation
+is mild and patchy, with cryptitis in the sigmoid and rectal samples
+and little activity in the right colon. No granulomas are seen. No
+dysplasia and no carcinoma are identified in the tissue examined. The
+findings are consistant with quiescent to mildly active chronic
+ulcerative colitis. A seperate comment on the requisition asks that
+dysplasia be excluded, and it is excluded here.
+
+The right-colon samples show Paneth cell metaplasia distal to the point
+where those cells are normally expected, which supports chronicity.
+Mucin preservation is good. No viral cytopathic effect is present.
+
+DIAGNOSIS
+Colon, cecum through rectum, biopsies: chronic colitis, mildly active
+in the distal samples, inactive in the proximal samples. Negative for
+dysplasia and negative for carcinoma.
+
+The degree of activity fits a patient who has improved on steroids but
+is not fully healed. Correlation with the endoscopic score, which was
+not included on this requisition, is suggested. Results may be
+telephoned to the number in the header.
+
+COMMENT
+The chronic changes are present in every jar, so this is read as
+extensive rather than limited colitis. Activity, scored simply as
+cryptitis without crypt abscesses, is confined to the two most distal
+jars. That pattern often tracks the endoscopic appearance, although
+no score was written on the bottle labels.
+
+A cytomegalovirus immunostain was reviewed on the rectal block and is
+negative, which matters because she is still on daily prednisone. No
+amoeba, no granuloma, and no basal giant cells are seen. The tissue
+is well oriented on most levels. One cecal fragment is superficial and
+includes only the upper half of the mucosa, so a deep basal
+lymphoplasmacytic band cannot be judged in that single jar; the other
+seven jars do show the band.
+
+These findings can be discussed with the patient at the address and
+phone already printed above. No amended diagnosis is anticipated unless
+new levels, which were not needed, are cut later.
+
+Interpreted by Dr. Margaret Ashcombe, gastrointestinal pathology.
+End of report.
