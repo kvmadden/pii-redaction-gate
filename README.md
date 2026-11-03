@@ -2,7 +2,7 @@
 
 A rule-based gate for clinical free text on its way to a model prompt or a record store. It removes identifiers, keeps the clinical content (drugs, doses, labs, diagnoses), and tells you what it could not decide. Every result is one of three things:
 
-- **clean**: every check this profile runs read the whole input and found nothing left to decide. This is not proof that no identifier remains. The result lists what was read, which checks ran, and the known gaps no check can see.
+- **clean**: every check this profile runs read the whole input and found nothing left to decide. This is not proof that no identifier remains: on the blind set, 8 of the 12 documents marked clean still held one. The result lists what was read, which checks ran, and the known gaps no check can see.
 - **review**: some spans could not be decided (a word that could be a name or a term, a number that looks like a scan error, a script the rules do not read). The send guard refuses the result until a person has looked.
 - **blocked**: something failed or could not be read. The output is `[redaction-blocked]` and nothing is sent.
 
@@ -12,7 +12,38 @@ A rule-based gate for clinical free text on its way to a model prompt or a recor
 
 ## Where the evidence stands
 
-**No score is quoted for this gate.** No set below was written blind and locked before its first run. The project page quotes no number until the blind set specified in [docs/fresh-test-spec.md](docs/fresh-test-spec.md) is written by other model families, locked by checksum and scored once, by the scorer under [Blind-set scorer](#blind-set-scorer). The tables on this page are development results, kept so the work can be checked, not results to cite.
+**Held-out result, 3 November 2026.** On a blind set of 132 synthetic clinical documents written and labeled by other model families, the gate left 12 of 2,577 identifier mentions (0.5%) in documents it marked clean. Microsoft Presidio, run offline on the same documents with its default English recognizers, left 701 (27.2%) in the text it returned. The gate gets there by asking for a person: it sent 120 of the 132 documents (91%) to review, including 26 of the 28 documents with no identifier at all, and 29 of those 120 reviews had nothing left to find. Clean is not a guarantee either: 8 of the 12 documents it marked clean still held an identifier.
+
+Set hash `2d2011ff449da01bb3200b5f2832cb40faa70323cc85a5f97a79446dd4f71055`, gate commit `30b6061` (its `src/` is unchanged since `e328c73`), scorer commit `047c193`. Identifiers profile, run once. The full report, with every engine and every type, is [fresh-test/v1/results/scored-2d2011ff449da01b.md](fresh-test/v1/results/scored-2d2011ff449da01b.md).
+
+| Blind set v1 | Gate, empty people map | Gate, people map from the header block | Presidio |
+|---|---|---|---|
+| Identifier mentions left in documents marked clean | 12 of 2,577 (0.5%, 0.3% to 0.8%) | 11 of 2,577 (0.4%, 0.2% to 0.8%) | 701 of 2,577 (27.2%, 25.5% to 29.0%) |
+| Documents marked clean that still hold an identifier | 8 of 12 | 7 of 12 | 101 of 132 |
+| Identifier mentions fully removed | 2,037 of 2,577 (79.0%, 77.4% to 80.6%) | 2,053 of 2,577 (79.7%, 78.1% to 81.2%) | 1,876 of 2,577 (72.8%, 71.0% to 74.5%) |
+| Clinical spans (KEEP) intact | 9,142 of 9,198 (99.4%) | 9,142 of 9,198 (99.4%) | 8,445 of 9,198 (91.8%) |
+| Ages under 90 and bare years kept | 198 of 198 | 198 of 198 | 13 of 198 |
+| Letters and digits removed outside identifiers | 1,184 of 391,855 (0.3%) | 1,184 of 391,855 (0.3%) | 15,471 of 391,855 (3.9%) |
+| Documents sent to review | 120 of 132 (90.9%, 84.8% to 94.7%) | 120 of 132 | no review status |
+| Review documents with nothing left to find | 29 of 120 | 29 of 120 | |
+| Documents blocked | 0 of 132 | 0 of 132 | 0 of 132 |
+
+Ranges are Wilson 95% intervals. Presidio has no review status, so everything it returns counts as sent.
+
+Where the gate falls short:
+
+- Presidio fully removes more clinician names (530 of 595, 89.1%, against 473, 79.5%) and relatives' names (264 of 298 against 249). Every clinician name the gate left was in a document marked review.
+- The gate fully removed 118 of 212 facility names (55.7%) and 157 of 231 record and plan numbers (68.0%). Most of the rest were in documents marked review.
+- Review means reading the whole document. Of the 528 identifier mentions left in review documents, 234 had no review span on them.
+- The 12 silent leaks: three dates written out in words in one call transcript, three facility names, two lowercase names, a sister's surname that is also an eponym ("Marfan"), the particle of a removed surname ("van"), an age written against a sex letter ("94F") and an account number written in groups of digits.
+
+The set was written by Grok 4.7 (67 documents) and Gemini 3.8 Flash (65), labeled by both independently, and every disagreement went to GPT 6.1 Sol. Before adjudication the two labelers agreed on identifier spans at F1 0.99 and on keep spans at 0.85. The Claude agents that wrote the gate's rules never saw the documents or the labels, and the scorer was fixed before the lock. A pharmacist's review of 30 keep spans the labelers marked uncertain runs after the lock: labels are never edited, any change goes to an errata file, and the score is then published both ways ([lock note](fresh-test/v1/LOCK-NOTE.md)).
+
+This is one run on one synthetic set. Any later run on it is a regression check on development data ([docs/fresh-test-spec.md](docs/fresh-test-spec.md), section 6), and a rule changed because of it needs a new blind set before the next headline.
+
+### Development results (not quoted)
+
+No set in this table was written blind and locked before its first run. They are kept so the work can be checked, not as results to cite.
 
 | Test set | What it is | Development result | Why it is not a quoted result |
 |---|---|---|---|
@@ -86,9 +117,9 @@ assertSendable(withSummary)             // throws on blocked, and on review unle
 - Put your own facility, clinician and patient names in the people map (`REDACTION_PEOPLE_PATH`). That is how a "needs review" facility becomes a deterministic removal next time. Use `loadPeopleMap({ required: true })` or `requirePeopleMap: true` to block when the map cannot be read.
 - Pass `referenceDate` so birth years can be judged against the 89-year limit. Without it a birth year goes to review.
 
-## Evidence in detail
+## Development evidence in detail
 
-All engines run with the identifiers profile and an empty people map. Full removal means every labeled letter and digit is gone. [eval/comparison.md](eval/comparison.md) lists every miss and every false positive.
+Development data, not quoted results. All engines run with the identifiers profile and an empty people map. Full removal means every labeled letter and digit is gone. [eval/comparison.md](eval/comparison.md) lists every miss and every false positive.
 
 **182 development snippets** (85 clinical, 35 message, 22 general, 40 negative), 207 labeled identifiers and 227 labeled clinical phrases:
 
@@ -111,9 +142,9 @@ Recall fell from 187 to 184 because ten facility names made of ordinary words ("
 
 ## Blind-set scorer
 
-The blind set will be scored once by `eval/fresh/score.mjs`, fixed before the set is locked. **No result exists yet.** Nothing in this section is a score.
+`eval/fresh/score.mjs` scored the blind set once, fixed before the set was locked. The result is under [Where the evidence stands](#where-the-evidence-stands).
 
-**Status:** locked on 2026-11-03, set hash `2d2011ff449da01bb3200b5f2832cb40faa70323cc85a5f97a79446dd4f71055`, scorer `047c193`, not yet scored. The set is in [fresh-test/v1](fresh-test/v1). Its [lock note](fresh-test/v1/LOCK-NOTE.md) says who wrote and labeled it and names the one deviation from the spec.
+**Status:** locked on 2026-11-03 (`30b6061`), set hash `2d2011ff449da01bb3200b5f2832cb40faa70323cc85a5f97a79446dd4f71055`, scorer `047c193`, scored once the same day (`a8bea3e`, files in [fresh-test/v1/results](fresh-test/v1/results)). Any later run on this set is a regression check on development data. The set is in [fresh-test/v1](fresh-test/v1). Its [lock note](fresh-test/v1/LOCK-NOTE.md) says who wrote and labeled it and names the one deviation from the spec.
 
 | | |
 |---|---|
@@ -145,8 +176,9 @@ Presidio is installed outside this repository from [eval/fresh/presidio-requirem
 - Rules, not a model. English and US formats. Transcribed text only: no OCR, images, PDFs or attachments.
 - Known gaps, listed in every clean or review result as `scan.knownGaps`: a lowercase name that is also an ordinary word ("grace", "will") unless a title, relation word, greeting or person verb marks it, a lowercase name on no list or with a rare surname unless a person verb follows it, a short all-capitals name of five letters or fewer on no name list (read as an acronym), a facility named with a clinical word, a name made of two English words joined together, ages under 90 (kept on purpose), unlabeled numbers under 7 digits and codes under 6 characters, identifiers spelled out in words or split across lines, and descriptions that identify a person without naming them.
 - The English list is from 1934, so modern words such as "fax" and "email" are unknown words. At a sentence start they go to review.
-- Review volume is real: 18 of 182 development snippets and 5 of 9 real documents needed review. Known causes: facility names made of ordinary words, words missing from the 1934 list at a sentence start, a capitalized ordinary-word surname mid-sentence ("The White count"), an eponym with no head noun ("History of Parkinson."), a common surname in lowercase ("foley in place"), and a longer lab name before a bare number ("Ferritin 12"). It has not been measured on real clinical workloads, and neither has reviewer time.
-- No external baseline has been run on the development sets above. The blind-set scorer runs Microsoft Presidio next to the gate, and the blind set has not been scored.
+- Review volume is the cost. On the blind set 120 of 132 documents (91%) went to review, including 26 of the 28 with no identifier, and 29 of the 120 had nothing left to find. On development data, 18 of 182 snippets and 5 of 9 real documents needed review. Causes seen on the blind set: clinical words the vocabulary lacks ("Normocephalic", "NT-proBNP", "HFrEF"), a drug that is also a first name even before a dose ("Allegra 180 mg"), credentials the lists lack ("PharmD", "RPh"), service names ("referral to Pain Clinic", "Wound Care"), and the words that open turns in call transcripts ("Okay", "Uh"). Causes seen in development: facility names made of ordinary words, words missing from the 1934 list at a sentence start, a capitalized ordinary-word surname mid-sentence ("The White count"), an eponym with no head noun ("History of Parkinson."), a common surname in lowercase ("foley in place"), and a longer lab name before a bare number ("Ferritin 12"). It has not been measured on real clinical workloads, and neither has reviewer time.
+- A review is a whole-document read. On the blind set, 234 of the 528 identifier mentions left in review documents had no review span on them, and some documents were in review only because of an unrelated word.
+- Microsoft Presidio has been run only on the blind set, not on the development sets.
 - Structure is lost: tokens replace values, with no consistent surrogates and no date shifting.
 - The quarantine sidecar holds originals in plain text.
 

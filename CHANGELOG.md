@@ -30,7 +30,8 @@ Changed after the second outside review (3 November 2026):
 Evaluation:
 
 - Both synthetic sets are development data. The set called held out in 1.x is a 27-template development check, reported per template. See the README.
-- The blind-set scorer (`eval/fresh/`), fixed before the blind set is locked at scorer commit `047c193`: two pre-declared gate configurations, a do-nothing and a remove-every-word bound, and Microsoft Presidio run offline, scored side by side with Wilson 95% intervals. It refuses a set whose hashes, labels or offsets do not check out, and a scored run that could not stand as the one result. No result yet.
+- The blind-set scorer (`eval/fresh/`), fixed before the blind set was locked, at scorer commit `047c193`: two pre-declared gate configurations, a do-nothing and a remove-every-word bound, and Microsoft Presidio run offline, scored side by side with Wilson 95% intervals. It refuses a set whose hashes, labels or offsets do not check out, and a scored run that could not stand as the one result.
+- Held-out result on fresh blind set v1, scored once on 3 November 2026 (set hash `2d2011ff449da01bb3200b5f2832cb40faa70323cc85a5f97a79446dd4f71055`, gate commit `30b6061`, scorer commit `047c193`). On 132 synthetic documents written and labeled by other model families, the gate with an empty people map left 12 of 2,577 identifier mentions (0.5%) in documents it marked clean, against 701 (27.2%) for Microsoft Presidio. It sent 120 of the 132 documents (91%) to review, including 26 of the 28 with no identifier, and 29 of those had nothing left to find. Full removal 79.0% against 72.8%, keep spans intact 99.4% against 91.8%. Presidio fully removes more clinician names (89.1% against 79.5%). See the README.
 
 ## 1.0.0 (October 2026)
 
