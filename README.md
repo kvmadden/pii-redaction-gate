@@ -6,6 +6,8 @@ A rule-based gate for clinical free text on its way to a model prompt or a recor
 - **review**: some spans could not be decided (a word that could be a name or a term, a number that looks like a scan error, a script the rules do not read). The send guard refuses the result until a person has looked.
 - **blocked**: something failed or could not be read. The output is `[redaction-blocked]` and nothing is sent.
 
+![The redaction inspector with a synthetic visit note: identifiers replaced by typed tokens, clinical words kept, and the scan report under the output](docs/media/demo-1440.png)
+
 **This is not validated de-identification.** It is a public demonstration built and tested on synthetic text and on public case reports with fictional identifiers planted in them. No real patient data was used. Do not use it as the only control for protected health information.
 
 ## Honest headline
