@@ -8,9 +8,8 @@ import tempfile
 current = pathlib.Path(__file__).resolve().parents[3]
 evidence = current / 'docs/evidence/inspector'
 repo = '<repo>'
-env = os.environ.copy()
-env.pop('MFW_UMBRELLA_ROOT', None)
-env.pop('OPERATOR_ECOSYSTEM_ROOT', None)
+# Drop every *_ROOT variable, so nothing points the clone at another checkout.
+env = {key: value for key, value in os.environ.items() if not key.endswith('_ROOT')}
 with tempfile.TemporaryDirectory(prefix='pii-inspector-control-') as tmp:
     clone = pathlib.Path(tmp) / 'repo'
     subprocess.run(['git', 'clone', '--no-local', repo, str(clone)], check=True, capture_output=True)
