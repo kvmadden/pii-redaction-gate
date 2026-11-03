@@ -16,6 +16,15 @@ export function fmt(w) {
 
 const short = (w) => (!w || !w.n ? "0 of 0" : `${w.k}/${w.n} (${pct(w.rate)})`);
 
+/** The offset unit and the evidence for it. */
+function offsets(set) {
+  const c = set.offsetCheck;
+  if (!c) return set.offsetUnit;
+  const why = [c.betterUnit ? `${c.betterUnit} fit the spans better` : null, c.tooManyMisfits ? `${c.misfits[c.declared]} of ${c.spans} spans split a word or a character` : null].filter(Boolean);
+  const trusted = c.trusted && why.length ? `, kept by --trust-offsets although ${why.join(" and ")}` : "";
+  return `${set.offsetUnit}${trusted}. Of ${c.spans} spans, these split a word or a character when read as code points: ${c.misfits.codepoint}, as UTF-16: ${c.misfits.utf16}, as bytes: ${c.misfits.byte}`;
+}
+
 // Which way is better for each measure.
 export const MEASURES = [
   { key: "silentLeaks", label: "Silent leaks: identifier mentions left in documents marked clean", better: "lower" },
@@ -64,8 +73,9 @@ export function markdown(results) {
   for (const [k, v] of [
     ["Set", `${results.set.dir.split("/").slice(-2).join("/")}, ${results.set.documents} documents, set hash ${results.set.setHash}`],
     ["Set hash encoding", results.set.setHashEncoding],
-    ["Offsets", results.set.offsetUnit],
-    ["Scorer", `content hash ${run.scorer.contentHash}${run.scorer.commit ? `, commit ${run.scorer.commit}${run.scorer.dirty ? " with uncommitted changes" : ""}` : ""}${run.scorer.matchesLock === null ? "" : run.scorer.matchesLock ? ", matches the locked scorer" : ", DOES NOT match the locked scorer"}`],
+    ["Offsets", offsets(results.set)],
+    ["Commit", run.scorer.commit ? `${run.scorer.commit}${run.scorer.dirty ? ", with uncommitted changes in src or eval/fresh" : ", no uncommitted changes in src or eval/fresh"}` : "not a git checkout"],
+    ["Scorer", `content hash ${run.scorer.contentHash}${run.scorer.matchesLock === null ? ", no lock file" : run.scorer.matchesLock ? ", matches eval/fresh/scorer-lock.json" : ", DOES NOT match eval/fresh/scorer-lock.json"}`],
     ["Gate", run.gate],
     ["Header rule", `version ${run.headerRule.version}, sha256 ${run.headerRule.sha256}`],
     ["Run", `${run.at}, Node ${run.node}`],
@@ -100,7 +110,7 @@ export function markdown(results) {
     }
   }
   L.push("## Definitions", "");
-  L.push("A labeled span is removed when every letter and digit in it is gone from the output, partial when some are, and missed when none are. A mention is left when it is partial or missed. Engines with no status (the bounds and Presidio) count as clean: what they return is what would be sent. Mentions in blocked documents are withheld, counted in neither removal nor leaks. Caught by review counts left mentions in documents marked review. Caught at the span counts only those with a review span on what remains of them.");
+  L.push("A labeled span is removed when every letter and digit in it is gone from the output, partial when some are, and missed when none are. A mention is left when it is partial or missed. Engines with no status (the bounds and Presidio) count as clean: what they return is what would be sent. Mentions in blocked documents are withheld, counted in neither removal nor leaks. Caught by review counts left mentions in documents marked review. Caught at the span counts only those with a review span on what remains of them. An output that cannot be aligned to its input is scored by text search, after folding case, width and accents: a span is missed when its text is still in the output, partial when any word of it is, and removed only when neither is true.");
   return L.join("\n") + "\n";
 }
 

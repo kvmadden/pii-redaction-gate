@@ -11,7 +11,10 @@
 //   removed  every letter and digit of the span is gone from the output
 //   partial  some are gone
 //   missed   none are gone
-// A mention is LEFT when it is partial or missed.
+// A mention is LEFT when it is partial or missed. An output that cannot be
+// aligned to its input is scored by text search instead, read cautiously (a
+// span counts as removed only when no word of it is left anywhere), and the
+// number of such documents is reported.
 //
 // Measures (docs/fresh-test-spec.md, section 5), each with counts, a
 // denominator and a Wilson 95% interval:
@@ -103,9 +106,29 @@ export function alignOutput(input, output, isToken) {
   return rebuilt === output ? { removed, outPos } : null;
 }
 
-/** Fallback when no alignment exists: a span counts as kept if its exact text is still in the output. */
+// Case, width and accents are folded away before a text search, so an engine
+// that changes them gets no credit for it.
+const fold = (s) => s.normalize("NFKD").replace(/\p{M}/gu, "").toLowerCase();
+const words = (s) => s.match(/[\p{L}\p{N}]+/gu) || [];
+
+/**
+ * Fallback when no alignment exists, read the cautious way. A span is missed
+ * when its text is still in the output, partial when any word of it (two or
+ * more letters or digits) is still anywhere in the output, and removed only
+ * when neither is true.
+ */
 function searchScore(input, output) {
-  return { removed: null, outPos: null, byText: (start, end) => output.includes(input.slice(start, end)) };
+  const folded = fold(output);
+  const left = new Set(words(folded));
+  return {
+    removed: null,
+    outPos: null,
+    byText(start, end) {
+      const value = fold(input.slice(start, end));
+      if (folded.includes(value)) return "missed";
+      return words(value).some((w) => [...w].length >= 2 && left.has(w)) ? "partial" : "removed";
+    },
+  };
 }
 
 /** Indices of letters and digits in [start, end), one per code point. */
@@ -121,7 +144,7 @@ function alnumIndices(text, start, end) {
 }
 
 function spanState(text, sp, aligned) {
-  if (aligned.byText) return aligned.byText(sp.start, sp.end) ? "missed" : "removed";
+  if (aligned.byText) return aligned.byText(sp.start, sp.end);
   const idx = alnumIndices(text, sp.start, sp.end);
   const gone = idx.filter((i) => aligned.removed[i]).length;
   return gone === idx.length ? "removed" : gone === 0 ? "missed" : "partial";

@@ -19,6 +19,17 @@
 // Offsets are Unicode code points into the document text unless the manifest
 // says "offset_unit": "utf16" or "byte". They are converted to JavaScript
 // string indices here, once, so the measures never see the difference.
+//
+// Offsets in the wrong unit would shift every span that follows an emoji or
+// an accented letter, and no hash would notice. Offsets counted on different
+// text (other line endings, a byte-order mark, another Unicode normalization)
+// would shift spans too. So every span is read in all three units. A span
+// fits a reading when its edges fall on word or character boundaries (and
+// match the span's own "text" field, if it has one). The set is refused when
+// another unit fits the spans clearly better than the declared one, or when
+// more than a tenth of the spans (and at least five) split a word or a
+// character as declared. A person who has checked the labels can pass
+// trustOffsets (score.mjs --trust-offsets), and the report says so.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -94,12 +105,89 @@ function indexMapper(text, unit) {
 }
 
 const ALNUM = /[\p{L}\p{N}]/u;
+const WORD = /[\p{L}\p{N}\p{M}]/u;
+export const OFFSET_UNITS = Object.freeze(["codepoint", "utf16", "byte"]);
+
+/** The manifest's offset unit, allowing common spellings. Undefined means code points. */
+function offsetUnitOf(manifest) {
+  const raw = manifest.offset_unit ?? manifest.offsetUnit;
+  if (raw === undefined || raw === null) return "codepoint";
+  const k = String(raw).toLowerCase().replace(/[^a-z0-9]/g, "");
+  if (["codepoint", "codepoints", "character", "characters", "char", "chars"].includes(k)) return "codepoint";
+  if (["utf16", "utf16codeunit", "utf16codeunits", "codeunit", "codeunits"].includes(k)) return "utf16";
+  if (["byte", "bytes", "utf8", "utf8byte", "utf8bytes"].includes(k)) return "byte";
+  fail(`manifest: unknown offset_unit ${JSON.stringify(raw)} (expected codepoint, utf16 or byte)`);
+}
+
+const isHigh = (c) => c >= 0xd800 && c <= 0xdbff;
+const isLow = (c) => c >= 0xdc00 && c <= 0xdfff;
+
+/** True when string index i falls inside a surrogate pair or between two word characters. */
+function splitsAt(text, i) {
+  if (i <= 0 || i >= text.length) return false;
+  if (isHigh(text.charCodeAt(i - 1)) && isLow(text.charCodeAt(i))) return true;
+  const before = i >= 2 && isLow(text.charCodeAt(i - 1)) && isHigh(text.charCodeAt(i - 2)) ? String.fromCodePoint(text.codePointAt(i - 2)) : text[i - 1];
+  const after = String.fromCodePoint(text.codePointAt(i));
+  return WORD.test(before) && WORD.test(after);
+}
+
+/** Where a span lands under one reading, and whether it fits there. */
+function placeSpan(text, toIndex, sp) {
+  const start = toIndex(sp.start);
+  const end = toIndex(sp.end);
+  const key = `${start}:${end}`;
+  if (!Number.isInteger(start) || !Number.isInteger(end) || start < 0 || end > text.length || start >= end) return { key, fits: false };
+  let fits = !splitsAt(text, start) && !splitsAt(text, end);
+  if (typeof sp.text === "string" && text.slice(start, end) !== sp.text) fits = false;
+  return { key, fits };
+}
+
+/**
+ * Read every span in all three units and compare each other unit with the
+ * declared one, on the spans the two place differently.
+ */
+function checkOffsets(docs, declared) {
+  const misfits = Object.fromEntries(OFFSET_UNITS.map((u) => [u, 0]));
+  const compared = Object.fromEntries(OFFSET_UNITS.filter((u) => u !== declared).map((u) => [u, { placedDifferently: 0, declaredMisfits: 0, otherMisfits: 0 }]));
+  const examples = []; // misfits as declared: document id, span index and type, never text
+  let spansRead = 0;
+  for (const { id, text, spans } of docs) {
+    const mappers = Object.fromEntries(OFFSET_UNITS.map((u) => [u, indexMapper(text, u)]));
+    for (const [k, sp] of spans.entries()) {
+      if (!sp || !Number.isInteger(sp.start) || !Number.isInteger(sp.end)) continue;
+      spansRead++;
+      const placed = Object.fromEntries(OFFSET_UNITS.map((u) => [u, placeSpan(text, mappers[u], sp)]));
+      for (const u of OFFSET_UNITS) if (!placed[u].fits) misfits[u]++;
+      if (!placed[declared].fits && examples.length < 20) examples.push({ id, span: k, type: String(sp.type) });
+      for (const u of Object.keys(compared)) {
+        if (placed[u].key === placed[declared].key) continue;
+        const c = compared[u];
+        c.placedDifferently++;
+        if (!placed[declared].fits) c.declaredMisfits++;
+        if (!placed[u].fits) c.otherMisfits++;
+      }
+    }
+  }
+  // Another unit wins when the declared one misfits spans and the other
+  // misfits fewer than half as many of the same spans.
+  const better = Object.entries(compared)
+    .filter(([, c]) => c.declaredMisfits > 0 && c.declaredMisfits > 2 * c.otherMisfits)
+    .sort((a, b) => b[1].declaredMisfits - b[1].otherMisfits - (a[1].declaredMisfits - a[1].otherMisfits))[0];
+  return { declared, spans: spansRead, misfits, compared, betterUnit: better ? better[0] : null, examples };
+}
+
+/** The ceiling on spans that split a word or a character as declared. */
+export const MISFIT_CEILING = Object.freeze({ share: 0.1, atLeast: 5 });
+const tooManyMisfits = (c) => c.misfits[c.declared] >= MISFIT_CEILING.atLeast && c.misfits[c.declared] > MISFIT_CEILING.share * c.spans;
 
 /**
  * Load and verify a set folder. Throws SetIntegrityError on any mismatch.
- * @returns {{ dir, setHash, setHashEncoding, offsetUnit, manifest, documents: Array<{id, kind, text, sha256, spans}> }}
+ * @param {string} dir
+ * @param {{ trustOffsets?: boolean }} [opts]  keep the declared offsets when the offset
+ *   check would refuse them (the check still runs and its findings are reported)
+ * @returns {{ dir, setHash, setHashEncoding, offsetUnit, offsetCheck, manifest, documents: Array<{id, kind, text, sha256, spans}> }}
  */
-export function loadSet(dir) {
+export function loadSet(dir, { trustOffsets = false } = {}) {
   const root = path.resolve(dir);
   const read = (rel) => {
     const p = path.join(root, rel);
@@ -135,8 +223,7 @@ export function loadSet(dir) {
   const setHashEncoding = Object.keys(candidates).find((k) => candidates[k] === setHash);
   if (!setHashEncoding) fail(`set hash mismatch: manifest says ${setHash}, the listed files give ${candidates["newline-joined"]} (sha256 of the sorted file hashes joined by newlines)`);
 
-  const offsetUnit = manifest.offset_unit ?? "codepoint";
-  if (!["codepoint", "utf16", "byte"].includes(offsetUnit)) fail(`manifest: unknown offset_unit ${JSON.stringify(offsetUnit)}`);
+  const offsetUnit = offsetUnitOf(manifest);
 
   const labels = new Map();
   const lines = read("labels.jsonl").toString("utf8").split(/\r?\n/);
@@ -156,11 +243,11 @@ export function loadSet(dir) {
     labels.set(rec.id, rec);
   });
 
-  const documents = [];
   for (const f of docFiles.sort()) {
     const id = f.slice(0, -4);
     if (!labels.has(id)) fail(`document has no label line: ${id}`);
   }
+  const texts = [];
   for (const [id, rec] of [...labels.entries()].sort((a, b) => (a[0] < b[0] ? -1 : 1))) {
     if (!docFiles.includes(`${id}.txt`)) fail(`label line has no document: ${id}`);
     const bytes = read(`documents/${id}.txt`);
@@ -172,6 +259,26 @@ export function loadSet(dir) {
     } catch {
       fail(`document is not valid UTF-8: ${id}`);
     }
+    texts.push({ id, rec, sha, text });
+  }
+
+  // The offsets, checked before any span is read in them.
+  const check = checkOffsets(texts.map((t) => ({ id: t.id, text: t.text, spans: t.rec.spans })), offsetUnit);
+  const offsetCheck = { ...check, tooManyMisfits: tooManyMisfits(check), trusted: trustOffsets };
+  if (!trustOffsets) {
+    const where = offsetCheck.examples.slice(0, 5).map((e) => `${e.id} span ${e.span}`).join(", ");
+    if (offsetCheck.betterUnit) {
+      const u = offsetCheck.betterUnit;
+      const c = offsetCheck.compared[u];
+      fail(`span offsets look like ${u} offsets, not ${offsetUnit}: of ${c.placedDifferently} spans the two readings place differently, ${c.declaredMisfits} split a word or a character as ${offsetUnit} and ${c.otherMisfits} as ${u}. Set "offset_unit": "${u}" in manifest.json, or pass --trust-offsets if ${offsetUnit} is right`);
+    }
+    if (offsetCheck.tooManyMisfits) {
+      fail(`${offsetCheck.misfits[offsetUnit]} of ${offsetCheck.spans} spans split a word or a character when read as ${offsetUnit} offsets (${where}, and so on). The offsets may have been counted on different text: other line endings, a byte-order mark or another Unicode normalization. Check the labels, or pass --trust-offsets if they are right`);
+    }
+  }
+
+  const documents = [];
+  for (const { id, rec, sha, text } of texts) {
     const toIndex = indexMapper(text, offsetUnit);
     const spans = rec.spans.map((sp, k) => {
       const where = `${id} span ${k}`;
@@ -193,9 +300,10 @@ export function loadSet(dir) {
     setHash,
     setHashEncoding,
     offsetUnit,
+    offsetCheck,
     manifest: { version: manifest.version ?? null, files: files.size, fixture: manifest.fixture === true, authors: manifest.authoring_families ?? manifest.authors ?? null, labelers: manifest.labeling_families ?? manifest.labelers ?? null },
     documents,
   };
 }
 
-export default { loadSet, setHashCandidates, sha256, TYPES, POLICIES, SetIntegrityError };
+export default { loadSet, setHashCandidates, sha256, TYPES, POLICIES, OFFSET_UNITS, SetIntegrityError };

@@ -14,9 +14,9 @@ import { fileURLToPath } from "node:url";
 
 import { loadSet, setHashCandidates, SetIntegrityError } from "../eval/fresh/set.mjs";
 import { wilson, alignOutput, scoreOutputs } from "../eval/fresh/measure.mjs";
-import { gateEngine, doNothing, removeEveryWord, presidioEngine } from "../eval/fresh/engines.mjs";
+import { gateEngine, doNothing, removeEveryWord, presidioEngine, ENGINE_ORDER } from "../eval/fresh/engines.mjs";
 import { headerPeopleMap, HEADER_RULE_VERSION } from "../eval/fresh/header-map.mjs";
-import { scoreSet } from "../eval/fresh/score.mjs";
+import { scoreSet, scoredRunProblems } from "../eval/fresh/score.mjs";
 import { markdown, belowBaseline } from "../eval/fresh/report.mjs";
 import { buildManifest } from "../eval/fresh/make-manifest.mjs";
 
@@ -59,12 +59,16 @@ const ids = (doc) => doc.spans.filter((s) => s.policy === "identifier");
 
 // ── the set and its integrity checks ─────────────────────────────────────
 test("fresh: the fixture loads, with code-point offsets mapped to string indices", () => {
-  assert.equal(D, 12);
+  assert.equal(D, 13);
   assert.ok(M >= 40 && K >= 15 && O >= 1);
   assert.equal(set.setHashEncoding, "newline-joined");
   const wren = set.documents.find((d) => d.id === "msg-009").spans[0];
   assert.equal(wren.value, "Wren Halvorsen", "an emoji before the span is one code point and two string units");
+  const jose = set.documents.find((d) => d.id === "msg-013").spans;
+  assert.deepEqual(jose.slice(0, 2).map((s) => s.value), ["José Pérez-Ibáñez", "Mónica"]);
   assert.equal(set.manifest.fixture, true);
+  assert.equal(set.offsetCheck.betterUnit, null);
+  assert.equal(set.offsetCheck.misfits.codepoint, 0);
 });
 
 test("fresh: the three common set-hash encodings are accepted, nothing else", () => {
@@ -117,6 +121,93 @@ test("fresh: a wrong set hash, an unlisted document, a missing label and a bad s
   fs.writeFileSync(path.join(dir, "labels.jsonl"), lines.map((l) => JSON.stringify(l)).join("\n") + "\n");
   relock(dir);
   refuses(dir, /unknown type "SSN"/);
+});
+
+// ── offset units ─────────────────────────────────────────────────────────
+/** Write a small set from {TYPE|value} templates, with offsets counted in the given unit. */
+function writeSet(templates, { unit = "codepoint", declared = "codepoint", withText = false, crlf = false } = {}) {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "fresh-units-"));
+  fs.mkdirSync(path.join(dir, "documents"));
+  const count = { codepoint: (x) => [...x].length, utf16: (x) => x.length, byte: (x) => Buffer.byteLength(x, "utf8") }[unit];
+  const lines = templates.map((tpl, n) => {
+    const id = `u-${n}`;
+    let text = "";
+    let last = 0;
+    const spans = [];
+    for (const m of tpl.matchAll(/\{([A-Z]+)\|([^}]+)\}/g)) {
+      text += tpl.slice(last, m.index);
+      const start = count(text);
+      text += m[2];
+      spans.push({ start, end: count(text), type: m[1], policy: m[1] === "KEEP" ? "not-identifier" : "identifier", ...(withText ? { text: m[2] } : {}) });
+      last = m.index + m[0].length;
+    }
+    text += tpl.slice(last);
+    if (crlf) text = text.replace(/\n/g, "\r\n"); // the offsets above were counted on the LF text
+    fs.writeFileSync(path.join(dir, "documents", `${id}.txt`), text);
+    return JSON.stringify({ id, kind: "note", text_sha256: sha(text), spans });
+  });
+  fs.writeFileSync(path.join(dir, "labels.jsonl"), lines.join("\n") + "\n");
+  const manifest = buildManifest(dir, {});
+  if (declared === undefined) delete manifest.offset_unit;
+  else manifest.offset_unit = declared;
+  fs.writeFileSync(path.join(dir, "manifest.json"), JSON.stringify(manifest));
+  return dir;
+}
+const UNIT_DOCS = [
+  "Thanks 🙏 {NAME|Wren Halvorsen} here. Call {PHONE|212-555-0147}, my {KEEP|insulin glargine} is fine.",
+  "Hi, this is {NAME|José Pérez-Ibáñez}. My wife {RELATIVE|Mónica} says the “refill” didn’t arrive. Call {PHONE|(415) 555-0172}.",
+  "Patient: {NAME|Inez Thorn}   MRN: {ID|4471023}",
+];
+const values = (s) => s.documents.flatMap((d) => d.spans.map((x) => x.value));
+const WANT = ["Wren Halvorsen", "212-555-0147", "insulin glargine", "José Pérez-Ibáñez", "Mónica", "(415) 555-0172", "Inez Thorn", "4471023"];
+
+test("fresh: offsets in the declared unit load, in any of the three units", () => {
+  for (const unit of ["codepoint", "utf16", "byte"]) {
+    const s = loadSet(writeSet(UNIT_DOCS, { unit, declared: unit }));
+    assert.deepEqual(values(s), WANT, unit);
+    assert.equal(s.offsetCheck.betterUnit, null, unit);
+  }
+  assert.deepEqual(values(loadSet(writeSet(UNIT_DOCS, { declared: undefined }))), WANT, "no offset_unit means code points");
+  assert.deepEqual(values(loadSet(writeSet(UNIT_DOCS, { declared: "characters" }))), WANT, "a common spelling");
+  refuses(writeSet(UNIT_DOCS, { declared: "glyphs" }), /unknown offset_unit "glyphs"/);
+});
+
+test("fresh: offsets in another unit than the manifest says are refused, naming the unit that fits", () => {
+  refuses(writeSet(UNIT_DOCS, { unit: "utf16", declared: "codepoint" }), /span offsets look like utf16 offsets, not codepoint/);
+  refuses(writeSet(UNIT_DOCS, { unit: "byte", declared: "codepoint" }), /span offsets look like byte offsets, not codepoint/);
+  refuses(writeSet(UNIT_DOCS, { unit: "codepoint", declared: "byte" }), /span offsets look like codepoint offsets, not byte/);
+  // A span's own text field is evidence too.
+  refuses(writeSet(UNIT_DOCS, { unit: "codepoint", declared: "utf16", withText: true }), /look like codepoint offsets, not utf16/);
+  // A person who has checked can keep the declared unit, and the report says so.
+  // Spans still have to be in bounds.
+  const kept = loadSet(writeSet(UNIT_DOCS, { unit: "utf16", declared: "codepoint" }), { trustOffsets: true });
+  assert.equal(kept.offsetCheck.trusted, true);
+  assert.equal(kept.offsetCheck.betterUnit, "utf16");
+  assert.equal(values(kept)[0], "ren Halvorsen ", "read as declared, so shifted");
+  assert.match(markdown({ set: { ...kept, dir: "x/y", documents: 3 }, run: { mode: "regression", scorer: { contentHash: "h", commit: null, dirty: null, matchesLock: null }, gate: "g", headerRule: { version: 1, sha256: "s" }, at: "t", node: "n" }, engines: [] }), /kept by --trust-offsets although utf16 fit the spans better/);
+  assert.throws(() => loadSet(writeSet(UNIT_DOCS, { unit: "byte", declared: "codepoint" }), { trustOffsets: true }), /out of bounds/);
+});
+
+const NOTE = "PROGRESS NOTE\nPatient: {NAME|Inez Thorn}\nMRN: {ID|4471023}\nDOB: {DOB|03/14/1951}\nCall {PHONE|212-555-0147}.\nSeen by {CLINICIAN|Lena Moreau}.\nContinue {KEEP|metformin 500 mg}.";
+
+test("fresh: offsets counted on different text are refused, whatever the unit", () => {
+  assert.deepEqual(values(loadSet(writeSet([NOTE]))).slice(0, 2), ["Inez Thorn", "4471023"]);
+  // Counted on LF line endings, written with CRLF: every span after a line break shifts.
+  const dir = writeSet([NOTE], { crlf: true });
+  refuses(dir, /6 of 6 spans split a word or a character when read as codepoint offsets \(u-0 span 0, u-0 span 1/);
+  refuses(dir, /other line endings, a byte-order mark or another Unicode normalization/);
+  const kept = loadSet(dir, { trustOffsets: true });
+  assert.equal(kept.offsetCheck.tooManyMisfits, true);
+  const check = spawnSync(process.execPath, [SCORE, dir, "--check", "--trust-offsets"], { encoding: "utf8" });
+  assert.equal(check.status, 0, check.stderr);
+  assert.match(check.stdout, /kept by --trust-offsets/);
+  assert.match(check.stdout, /spans that split a word or a character as read: u-0 span 0 \(NAME\), u-0 span 1 \(ID\)/);
+  assert.doesNotMatch(check.stdout, /Inez|4471023/, "the check prints ids and counts, never document text");
+  // A few split spans are normal labeling (an ID glued to its label, "74yo") and pass.
+  const glued = ["MRN{ID|4471023} seen", "age {AGE|74}yo today", "Patient: {NAME|Inez Thorn}", "Call {PHONE|212-555-0147}", "DOB {DOB|03/14/1951}", "Seen {DATE|10/22/2025}", "Dr. {CLINICIAN|Lena Moreau}", "Son {RELATIVE|Chidi}", "Fax {FAX|202-555-0196}", "at {FACILITY|Riverbend Medical Center}"];
+  const ok = loadSet(writeSet(glued));
+  assert.equal(ok.offsetCheck.misfits.codepoint, 2);
+  assert.equal(ok.offsetCheck.tooManyMisfits, false);
 });
 
 // ── measures with known answers ──────────────────────────────────────────
@@ -212,9 +303,18 @@ test("fresh: alignment handles multi-word spans, adjacent tokens and input brack
   assert.equal(alignOutput("same", "different", () => true), null);
 });
 
-test("fresh: an output that cannot be aligned is scored by text search and counted", () => {
-  const s = scoreOutputs(set, outputs((d) => ({ text: d.text.toUpperCase(), status: "clean" }))).overall;
-  assert.equal(s.counts.searchScored, D);
+test("fresh: an output that cannot be aligned is scored by text search, cautiously, and counted", () => {
+  const upper = scoreOutputs(set, outputs((d) => ({ text: d.text.toUpperCase(), status: "clean" }))).overall.counts;
+  assert.equal(upper.searchScored, D);
+  assert.equal(upper.missed, M, "changing case removes nothing");
+  assert.equal(upper.keepIntact, K);
+  const plain = scoreOutputs(set, outputs((d) => ({ text: d.text.normalize("NFD").replace(/\p{M}/gu, ""), status: "clean" }))).overall.counts;
+  assert.equal(plain.removed, 0, "dropping accents removes nothing");
+  // A full name replaced while the first name is still elsewhere in the output is partial, not removed.
+  const note = set.documents.find((d) => d.id === "note-001");
+  const one = scoreOutputs({ ...set, documents: [note] }, new Map([[note.id, { text: note.text.toUpperCase().replace("INEZ Q. THORN", "THE PATIENT"), status: "clean" }]]));
+  assert.deepEqual(one.documents[0].left[0], { type: "NAME", state: "partial", flaggedAtSpan: false });
+  assert.equal(one.overall.counts.removed, 0);
 });
 
 // ── engines ──────────────────────────────────────────────────────────────
@@ -265,21 +365,55 @@ test("fresh: the report shows every engine and every place a gate is below anoth
   for (const r of below) assert.match(md, new RegExp(`\\| ${r.gate} \\| ${r.other} \\|`));
 });
 
-test("fresh: the command refuses a second scored run of the same set", () => {
+test("fresh: a scored run must be able to stand as the one result", () => {
+  const good = { engines: ENGINE_ORDER, presidio: true, scorer: { matchesLock: true, dirty: false } };
+  assert.deepEqual(scoredRunProblems(good), []);
+  const one = (change, pattern) => {
+    const p = scoredRunProblems({ ...good, ...change, scorer: { ...good.scorer, ...(change.scorer || {}) } });
+    assert.equal(p.length, 1, JSON.stringify(p));
+    assert.match(p[0], pattern);
+  };
+  one({ alreadyScored: "out/scored-x.json" }, /already scored .*--regression-check/);
+  one({ engines: ENGINE_ORDER.filter((e) => e !== "remove-every-word") }, /leaves out remove-every-word/);
+  one({ presidio: false }, /Presidio has no outputs/);
+  one({ scorer: { matchesLock: false } }, /does not match the content hash/);
+  one({ scorer: { matchesLock: null } }, /scorer-lock\.json is missing/);
+  one({ scorer: { dirty: true } }, /uncommitted changes/);
+  one({ scorer: { dirty: null } }, /not a git checkout/);
+});
+
+test("fresh: the command checks a set, refuses runs that cannot stand, and labels later runs", () => {
+  const cli = (...a) => spawnSync(process.execPath, [SCORE, ...a], { encoding: "utf8" });
+  const check = cli(FIXTURE, "--check");
+  assert.equal(check.status, 0, check.stderr);
+  assert.match(check.stdout, /13 documents, \d+ spans/);
+  assert.match(check.stdout, /offsets: codepoint\. Of \d+ spans, these split a word or a character when read as code points 0, as UTF-16 4, as bytes 7/);
+  assert.match(check.stdout, /spans that split a word or a character as read: none/);
+
   const dir = copyFixture();
   const m = JSON.parse(fs.readFileSync(path.join(dir, "manifest.json"), "utf8"));
   delete m.fixture;
   fs.writeFileSync(path.join(dir, "manifest.json"), JSON.stringify(m));
   const out = fs.mkdtempSync(path.join(os.tmpdir(), "fresh-out-"));
-  const run = (...extra) => spawnSync(process.execPath, [SCORE, dir, "--out", out, "--engines", "do-nothing", ...extra], { encoding: "utf8" });
-  assert.equal(run().status, 0);
-  const again = run();
-  assert.equal(again.status, 2);
-  assert.match(again.stderr, /already scored/);
-  assert.equal(run("--regression-check").status, 0);
+  const noPresidio = cli(dir, "--out", out);
+  assert.equal(noPresidio.status, 2);
+  assert.match(noPresidio.stderr, /REFUSED: not a scored run:[\s\S]*Presidio has no outputs/);
+  const partial = cli(dir, "--out", out, "--engines", "do-nothing");
+  assert.match(partial.stderr, /leaves out gate-empty, gate-header, remove-every-word, presidio/);
+  fs.writeFileSync(path.join(out, `scored-${m.set_sha256.slice(0, 16)}.json`), "{}");
+  assert.match(cli(dir, "--out", out, "--engines", "do-nothing").stderr, /already scored/);
+  assert.equal(fs.readdirSync(out).length, 1, "a refused run writes nothing");
+
+  const later = cli(dir, "--out", out, "--engines", "do-nothing", "--regression-check");
+  assert.equal(later.status, 0, later.stderr);
+  const md = fs.readdirSync(out).find((f) => f.startsWith("regression-") && f.endsWith(".md"));
+  assert.match(fs.readFileSync(path.join(out, md), "utf8"), /^# Regression check \(development data\)/);
+
   const tampered = copyFixture();
   fs.appendFileSync(path.join(tampered, "labels.jsonl"), "\n");
-  const refused = spawnSync(process.execPath, [SCORE, tampered, "--out", out, "--engines", "do-nothing"], { encoding: "utf8" });
-  assert.equal(refused.status, 2);
-  assert.match(refused.stderr, /REFUSED: hash mismatch for labels\.jsonl/);
+  for (const r of [cli(tampered, "--check"), cli(tampered, "--out", out, "--engines", "do-nothing")]) {
+    assert.equal(r.status, 2);
+    assert.match(r.stderr, /REFUSED: hash mismatch for labels\.jsonl/);
+  }
+  assert.equal(cli(FIXTURE, "--out").status, 1, "a usage error is not a refusal");
 });

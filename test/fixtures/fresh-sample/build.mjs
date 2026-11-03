@@ -82,6 +82,11 @@ Patient lives in {ADDRESS|Akron}.
 PATIENT: Fine. My sister {RELATIVE|Philippa} reminds me every day.
 NURSE: Good. Your next visit is {DATE|November 20, 2026}.
 `],
+  // Accents, curly quotes and a no-break space: offsets in code points differ
+  // from UTF-8 bytes here, which the offset-unit check relies on.
+  ["msg-013", "portal-message", `Hi, this is {NAME|José Pérez-Ibáñez}. My wife {RELATIVE|Mónica} says the “refill” for {KEEP~|atorvastatin 20 mg} didn’t arrive.
+Please call me at {PHONE|(415) 555-0172}.\u00a0Gracias.
+`],
 ];
 
 function parse(template) {
