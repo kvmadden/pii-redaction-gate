@@ -8,8 +8,18 @@
 //
 // Hardening:
 //   - directory 0700, files 0600 (operator-only on a multi-user machine)
-//   - create-only writes: an existing path or symlink is never overwritten
-//   - the record ref is hashed in the file name
+//   - the quarantine root and the day directory must be real directories (not
+//     symlinks), owned by this user, with no group or other access. An existing
+//     directory that fails this is refused, never written into or repaired
+//   - the file is opened create-only with O_NOFOLLOW: an existing path or a
+//     planted symlink is never overwritten or followed
+//   - the record ref is hashed in the file name, and so is a source id that is
+//     not a registered one
+//   - errors are reported as a fixed code from a short list, never a message
+//     or a value from the input
+//   - remaining risk: a local user who controls the PARENT of the quarantine
+//     root can swap the root between the check and the write. Keep the root in
+//     a directory only the operator can write (the default is in the home)
 //   - not encrypted: anyone who can read the operator's files can read this.
 //     Encryption at rest and a retention limit are open work (README "Limits").
 //   - the quarantine directory MUST be gitignored and MUST be excluded from any
@@ -27,6 +37,7 @@ import fs from "node:fs";
 import path from "node:path";
 import os from "node:os";
 import crypto from "node:crypto";
+import { SOURCE_PROFILES } from "./profiles.js";
 
 export const QUARANTINE_VERSION = 1;
 
@@ -38,8 +49,36 @@ export function defaultQuarantineDir(env = process.env) {
   return path.join(os.homedir(), "_redaction-quarantine");
 }
 
-function safeSlug(s, max = 80) {
-  return String(s ?? "unknown").replace(/[^A-Za-z0-9._-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, max) || "unknown";
+const ERROR_CODES = new Set(["EACCES", "EPERM", "ENOENT", "EEXIST", "ENOSPC", "EROFS", "ENOTDIR", "EISDIR", "ELOOP", "EMFILE", "ENFILE", "EIO", "EDQUOT", "unsafe-directory"]);
+
+function hash(value, n) {
+  return crypto.createHash("sha256").update(String(value ?? "")).digest("hex").slice(0, n);
+}
+
+/** A registered source id is safe in a file name. Anything else is hashed. */
+function sourceSlug(source) {
+  return typeof source === "string" && Object.hasOwn(SOURCE_PROFILES, source) && /^[a-z0-9-]{1,40}$/.test(source) ? source : `source-${hash(source, 8)}`;
+}
+
+/** A real directory (not a symlink), owned by this user, with no group or other access. */
+function checkDirectory(dir) {
+  const st = fs.lstatSync(dir);
+  const uid = typeof process.getuid === "function" ? process.getuid() : null;
+  if (!st.isDirectory() || st.isSymbolicLink() || (st.mode & 0o077) !== 0 || (uid !== null && st.uid !== uid)) {
+    const e = new Error("unsafe quarantine directory");
+    e.code = "unsafe-directory";
+    throw e;
+  }
+}
+
+/** Create one directory level if missing, then check it. */
+function ensureDirectory(dir) {
+  try {
+    fs.mkdirSync(dir, { mode: 0o700 });
+  } catch (e) {
+    if (!e || e.code !== "EEXIST") throw e;
+  }
+  checkDirectory(dir);
 }
 
 /**
@@ -62,13 +101,12 @@ export function writeQuarantineSidecar({ source, ref, profile, hits = [], change
   if (!Array.isArray(changes) || changes.length === 0) return { path: null, error: null };
   try {
     const at = now instanceof Date && Number.isFinite(now.getTime()) ? now : new Date();
-    const root = dir || defaultQuarantineDir();
+    const root = path.resolve(dir || defaultQuarantineDir());
     const day = at.toISOString().slice(0, 10);
     const dayDir = path.join(root, day);
     // The record ref can itself be an identifier (an MRN): only a short hash of
     // it goes into the file name, and a random suffix prevents collisions.
-    const refHash = crypto.createHash("sha256").update(String(ref ?? "")).digest("hex").slice(0, 16);
-    const file = path.join(dayDir, `${safeSlug(source)}--${refHash}--${at.getTime()}-${crypto.randomBytes(4).toString("hex")}.json`);
+    const file = path.join(dayDir, `${sourceSlug(source)}--${hash(ref, 16)}--${at.getTime()}-${crypto.randomBytes(4).toString("hex")}.json`);
     const payload = {
       version: QUARANTINE_VERSION,
       at: at.toISOString(),
@@ -78,13 +116,21 @@ export function writeQuarantineSidecar({ source, ref, profile, hits = [], change
       hits,
       changes,
     };
-    fs.mkdirSync(dayDir, { recursive: true, mode: 0o700 });
-    // "wx": create only. An existing file or a planted symlink at that path fails
-    // instead of being overwritten or followed.
-    fs.writeFileSync(file, JSON.stringify(payload, null, 2) + "\n", { mode: 0o600, flag: "wx" });
+    fs.mkdirSync(path.dirname(root), { recursive: true, mode: 0o700 });
+    ensureDirectory(root);
+    ensureDirectory(dayDir);
+    // Create only, and never through a symlink at the final path.
+    const { O_WRONLY, O_CREAT, O_EXCL, O_NOFOLLOW = 0 } = fs.constants;
+    const fd = fs.openSync(file, O_WRONLY | O_CREAT | O_EXCL | O_NOFOLLOW, 0o600);
+    try {
+      fs.writeSync(fd, JSON.stringify(payload, null, 2) + "\n");
+    } finally {
+      fs.closeSync(fd);
+    }
     return { path: file, error: null };
   } catch (e) {
-    return { path: null, error: String((e && e.code) || (e && e.name) || "Error") };
+    const code = e && typeof e.code === "string" && ERROR_CODES.has(e.code) ? e.code : "write-failed";
+    return { path: null, error: code };
   }
 }
 
