@@ -56,12 +56,13 @@ export const INTRO_PHRASES = Object.freeze(["this is", "my name is", "i am", "i'
 export const PERSON_VERBS = set(`
   reports reported states stated says said denies denied endorses endorsed
   complains complained presents presented called calls agrees agreed declines
-  declined requests requested wants wanted notes noted admits arrived returned
-  underwent received takes took lives lived works worked feels felt opted
-  refused refuses verbalizes verbalized understands understood expresses
-  expressed prefers preferred tolerated tolerates confirmed confirms asked asks
-  stopped started continues continued remains remained appeared appears
+  declined requests requested wants wanted admits arrived underwent takes took
+  lives lived works worked feels felt opted refused refuses verbalizes
+  verbalized understands understood expresses expressed prefers preferred
+  confirmed confirms asked asks
 `);
+// Verbs that also take a drug or finding as subject ("noted", "started",
+// "continued", "returned", "tolerated") are left out on purpose.
 
 /** Head nouns that follow an eponym ("Bell palsy", "Wells score"). */
 export const EPONYM_HEADS = set(`

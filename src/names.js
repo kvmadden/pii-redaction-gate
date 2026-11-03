@@ -687,7 +687,15 @@ function classify(text, safe, nameTokens = new Set(["[name]"])) {
     // Facility types and service words are common nouns ("Pulmonology", "Clinic").
     if (HEAD_PHRASES.includes(inf.lower) || SERVICE_MODIFIERS.has(inf.lower)) continue;
     if (inf.shape === "lower") {
-      if (inf.cls === "nameStrong" && inf.letters >= 3 && /first/.test(nameLists(tok.text))) review(i, "lowercase word that is on the first-name list");
+      if (inf.cls === "nameStrong" && inf.letters >= 3 && /first/.test(nameLists(tok.text))) {
+        // "tanya called": a first name that is not an ordinary word, as the subject of a person verb.
+        if (personVerbAfter(toks, i)) mark(i, i, "name", "lowercase first name before a person verb");
+        else review(i, "lowercase word that is on the first-name list");
+      } else if (inf.cls === "nameWeak" && !AUXILIARIES.has(inf.lower) && /first/.test(nameLists(tok.text)) && personVerbAfter(toks, i) && boundaryBefore(toks, i) !== "mid") {
+        // "grace reported pain": an ordinary word that is also a first name,
+        // opening a clause as the subject of a person verb.
+        mark(i, i, "name", "lowercase first name before a person verb");
+      }
       continue;
     }
     if (inf.shape === "upper") {
@@ -736,12 +744,14 @@ function classify(text, safe, nameTokens = new Set(["[name]"])) {
       }
       case "nameStrong":
         if (number) review(i, "name-list word before a number");
+        else if (person) mark(i, i, "name", "person verb");
         else if (pos === "start" && !/first/.test(lists) && !lookup(inf.base).commonSurname) review(i, "rare surname at a sentence or field start");
         else mark(i, i, "name", "name list");
         break;
       default: // unknown
         if (inf.letters < 3) break;
         if (number) break; // a measurement name before its value ("Ferritin 12", "QTc 478")
+        else if (person) mark(i, i, "name", "person verb");
         else if (pos === "mid") mark(i, i, "name", "unrecognized capitalized word");
         else review(i, pos === "start" ? "unrecognized capitalized word at a sentence or field start" : "unrecognized capitalized word in a list");
     }
