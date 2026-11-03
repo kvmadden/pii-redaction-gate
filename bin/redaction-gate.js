@@ -9,7 +9,8 @@
 //   --people-map <path>     JSON people map ({ people: [...], safe: [...] }). Unreadable blocks.
 //   --reference-date <date> date used to judge birth years (ages over 89)
 //   --json                  print the whole result as JSON instead of the text
-//   --help
+//   --help                  usage on stderr, exit 1 (never exit 0 without a clean redaction)
+//   Options also take the --name=value form.
 //
 // Exit codes. Pipe the output onward only on 0:
 //   0  clean: the profile's checks ran over every character and found nothing
@@ -21,6 +22,7 @@
 //   1  usage error
 
 import fs from "node:fs";
+import { fileURLToPath } from "node:url";
 import { redactText, BLOCKED_TEXT } from "../src/engine.js";
 
 const EXIT = { clean: 0, usage: 1, blocked: 2, review: 3 };
@@ -33,12 +35,18 @@ export function parseArgs(argv) {
   const opts = { json: false, file: null };
   const takes = new Set(["--source", "--profile", "--people-map", "--reference-date"]);
   for (let i = 0; i < argv.length; i++) {
-    const a = argv[i];
+    let a = argv[i];
+    let inline;
+    const eq = a.startsWith("--") ? a.indexOf("=") : -1;
+    if (eq > 0) {
+      inline = a.slice(eq + 1);
+      a = a.slice(0, eq);
+    }
     if (a === "--help" || a === "-h") return { help: true };
-    if (a === "--json") opts.json = true;
+    if (a === "--json" && inline === undefined) opts.json = true;
     else if (takes.has(a)) {
-      const v = argv[++i];
-      if (v === undefined || v.startsWith("--")) return { error: `${a} needs a value` };
+      const v = inline !== undefined ? inline : argv[++i];
+      if (v === undefined || v === "" || (inline === undefined && v.startsWith("--"))) return { error: `${a} needs a value` };
       opts[a.slice(2)] = v;
     } else if (a.startsWith("--")) return { error: `unknown option ${a}` };
     else if (opts.file === null) opts.file = a;
@@ -54,7 +62,8 @@ function readInput(file) {
 /** Run the CLI. Returns { code, stdout, stderr } so it can be tested without a process. */
 export function run(argv, { readText = readInput } = {}) {
   const opts = parseArgs(argv);
-  if (opts.help) return { code: EXIT.clean, stdout: HELP + "\n", stderr: "" };
+  // Help is not a redaction, so it never exits 0 and never writes to stdout.
+  if (opts.help) return { code: EXIT.usage, stdout: "", stderr: HELP + "\n" };
   if (opts.error) return { code: EXIT.usage, stdout: "", stderr: `redaction-gate: ${opts.error}\n${HELP}\n` };
   const blocked = (why) => ({ code: EXIT.blocked, stdout: (opts.json ? JSON.stringify({ status: "blocked", blocked: true, text: BLOCKED_TEXT, error: { stage: why } }) : BLOCKED_TEXT) + "\n", stderr: `redaction-gate: BLOCKED (${why})\n` });
   let text;
@@ -94,7 +103,7 @@ export function run(argv, { readText = readInput } = {}) {
   return { code, stdout: r.text.endsWith("\n") ? r.text : r.text + "\n", stderr };
 }
 
-const isMain = process.argv[1] && fs.realpathSync(process.argv[1]) === fs.realpathSync(new URL(import.meta.url).pathname);
+const isMain = process.argv[1] && fs.realpathSync(process.argv[1]) === fs.realpathSync(fileURLToPath(import.meta.url));
 if (isMain) {
   const out = run(process.argv.slice(2));
   process.stdout.write(out.stdout);
