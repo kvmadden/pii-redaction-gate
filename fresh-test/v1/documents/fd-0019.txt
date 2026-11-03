@@ -1,0 +1,25 @@
+Date of Service: 10/18/2026
+Facility: Digestive Health Center
+Patient: Dao, Yer
+
+Message Thread: Prescription Coverage and Delivery
+
+From: craig miller
+Sent: October 19, 2026 at 4:12 PM
+To: Gastroenterology Triage
+Subject: Prior auth and mailing address for Mrs. Dao
+
+Hello, I am writing on behalf of my mother-in-law, Mrs. Yer Dao. Dr. Keith Campbell evaluated her earlier this week and recommended switching her daily acid suppression from omeprazole to pantoprazole 40 mg PO daily due to nocturnal regurgitation and mild dysphagia. Our mail-order pharmacy informed us this afternoon that they cannot dispense the medication without a prior authorization number. When reviewing her discharge paperwork from the clinic, I noticed an intake stamp in the top margin with the scanned identifier 8O1l-442. Could you verify if that reference number was transmitted to her prescription benefit plan? Additionally, please ensure that her upcoming shipment of sucralfate suspension 1 g PO QID is routed to our family mailing address at PO Box 842, Eau Claire, WI 54702 instead of her physical residence. She has taken three doses of the liquid medication so far and reports less burning discomfort, though she still experiences mild fullness after meals. Thank you, craig
+
+Reply From: Heather MacLeod, RN
+Sent: October 20, 2026 at 9:30 AM
+To: craig miller
+Subject: RE: Prior auth and mailing address for Mrs. Dao
+
+Good morning Mr. Miller,
+
+I reviewed the chart with the clinical team. The prior authorization for pantoprazole was submitted earlier this morning under authorization code 8O1l-442, and approval is currently pending review with her insurer. I also updated her dispensing profile so the sucralfate oral suspension will ship directly to PO Box 842, Eau Claire, WI 54702. Please continue sucralfate 1 g PO QID one hour before each meal and at bedtime. If she develops progressive dysphagia, persistent vomiting, or melena, please contact the triage line immediately or proceed to the nearest emergency department.
+
+Sincerely,
+Heather MacLeod, RN
+Digestive Health Center

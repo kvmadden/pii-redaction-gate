@@ -1,0 +1,31 @@
+Chart no. 7301948
+Patient: Albright, Arthur
+Encounter Date: 05/12/2026
+Email Contact: arthur.albright@example.org
+Subject: Prescription renewal request and follow-up consultation
+
+Message 1
+From: arthur
+Sent: 05/12/2026 08:45 AM
+To: Dr. Laura Hastings
+
+hello dr. hastings,
+i am writing to request a renewal for my maintenance eye drops and to ask about my recent facial weakness. as you know, back in August 2025 when i was first evaluated as a 62-year-old male with hypertension, we established my baseline care plan. recently my sister Clara Bell noticed that the right side of my mouth was slightly drooping when i smiled, and my right eyelid was not fully closing. she was concerned because our father had a history of stroke. however, i had no arm weakness, confusion, or difficulty speaking. when i saw the urgent care provider on 05/10/2026, he diagnosed idiopathic facial nerve paralysis, specifically Bell palsy, and started me on oral corticosteroids and valacyclovir.
+
+my prednisone taper is now complete, and the facial motor strength is gradually recovering. however, my right eye remains dry and irritated, especially in the wind. my current artificial tears prescription under Rx # 4820194 has run out of refills at the pharmacy. could you please submit an updated electronic renewal for carboxymethylcellulose 0.5% ophthalmic solution, instill 1 to 2 drops in the right eye four times daily PRN? my sister Clara Bell has been helping me with the drops and driving me to my appointments. my home vitals this morning were BP 128/82 mmHg and pulse 74 bpm. thank you for your help.
+
+Message 2
+From: Dr. Laura Hastings, MD
+Sent: 05/12/2026 11:20 AM
+To: Albright, Arthur
+
+Dear Mr. Albright,
+
+Thank you for reaching out through the portal. I reviewed the urgent care clinical notes from your visit on 05/10/2026. The presentation and rapid partial recovery are characteristic of Bell palsy, and I am glad that your sister Clara Bell promptly had you evaluated to exclude an acute cerebrovascular event.
+
+I have transmitted a renewed authorization for carboxymethylcellulose 0.5% ophthalmic drops under Rx # 4820194 to your designated pharmacy, with three refills authorized. Please continue to instill 1 to 2 drops in the right eye four times daily PRN, and remember to use lubricating ophthalmic ointment at bedtime with eye taping if nocturnal lagophthalmos persists to prevent corneal abrasion.
+
+For your records and insurance documentation, my supervising provider credentials are NPI: 1487029381. If you experience worsening facial asymmetry, hyperacusis, or vision changes, please email our clinical nursing pool at triage@example.org or notify us immediately through the portal. We will schedule a comprehensive follow-up examination in June 2026.
+
+Sincerely,
+Laura Hastings, MD

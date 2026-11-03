@@ -1,0 +1,69 @@
+PRIOR AUTHORIZATION & MEDICATION RECONCILIATION REVIEW
+TRANSCRIBED FROM SECURE FAX TRANSMISSION
+
+PATIENT NAME: Mateo
+Guerrero-Méndez
+DOB: 05-18-1935
+AGE: The patient is ninety-one years old.
+ACCOUNT NUMBER: Account #: AC-9948201
+RESIDENCE ADDRESS: 724 Willow Ridge Boulevard, Austin, TX 78704
+PRIMARY CAREGIVER: Margaret Jenkins (patient's adult stepdaughter)
+CONTACT PHONE: +1-512-555-0177
+ATTENDING CLINICIAN: Dr. Julian Fair, MD
+REVIEWING PHARMACIST: Tariq al-Mansoor, PharmD, BCACP
+PRIMARY DEVICE: Tandem t:slim X2 Insulin Pump, Serial SN-7749201
+
+CLINICAL BACKGROUND AND ENCOUNTER SUMMARY:
+Medication reconciliation and clinical prior authorization intake reivewed
+on 11-04-2026 by clinical specialist Tariq al-Mansoor. Dr. Fair's clinic
+referred this ninety-one years old male for assistance with ongoing
+coverage authorization of disposable infusion sets and rapid-acting
+insulin analog supplies. The patient has managed type 1 diabetes mellitus
+for over four decades and is currently maintained on automated insulin
+delivery using a Tandem t:slim X2 insulin pump, Serial SN-7749201.
+Recent point-of-care capillary blood glucose average over fourteen days
+is 142 mg/dL. Renal function remains preserved for age with a serum
+creatinine of 1.08 mg/dL and urinary albumin-to-creatinine ratio within
+baseline limits. No history of severe pump site infection or
+unexplained hyperglycemia.
+
+TELEPHONE CONSULTATION WITH CAREGIVER:
+A telephone reconciliation was conducted with Margaret Jenkins, who
+provides daily assistance with infusion site changes and device
+calibration. She reports that Mr. Guerrero-Méndez's continuous glucose
+monitor confirms a time in range of 74%, with minimal nocturnal
+hypoglycemia over the preceding 30 days. Margaret noted that the
+inital shipment of reservoir cartridges was delayed by the medical
+supplier, requiring a bridge refill authorization.
+
+CURRENT ACTIVE MEDICATIONS:
+1. Insulin lispro (Humalog) 100 units/mL subcutaneous continuous basal
+infusion via pump at 0.65 units/hour, with mealtime boluses of 1 unit per
+10 grams of carbohydrate PO TID before meals.
+2. Atorvastatin 20 mg PO once daily at bedtime for hyperlipidemia.
+3. Losartan potassium 50 mg PO daily for diabetic nephropathy and
+hypertension.
+4. Levothyroxine sodium 75 mcg PO daily in the morning on an empty stomach.
+5. Acetaminophen 650 mg PO q8h PRN for mild knee osteoarthritis pain.
+6. Polyethylene glycol 3350 17 g PO daily PRN constipation.
+
+CLINICAL JUSTIFICATION & PRIOR AUTHORIZATION:
+Prior authorization approval is requested under Account #: AC-9948201 for
+continued insulin cartridge and cannula supplies. Dr. Julian Fair
+submitted attestation confirming that Mateo Guerrero-Méndez demonstrates
+documented cognitive and manual dexterity with pump operation alongside his
+caregiver. Abrupt discontinuation of automated insulin delivery poses
+severe risk of diabetic ketoacidosis. The current pump dosgae parameters
+have achieved glycemic stability without severe hypoglycemic excursions.
+
+PHARMACY PLAN & NEXT ACTIONS:
+1. Prior authorization appeal forms and past three months of device upload
+logs transmitted to the patient's prescription benefit plan.
+2. Notified Dr. Fair of successful submission; copy placed in patient
+chart.
+3. Contacted medical supply vendor to release emergency 30-day supply of
+pump cartridges and infusion sets directly to 724 Willow Ridge Boulevard.
+4. Follow-up call with Margaret Jenkins scheduled within 72 hours.
+
+Tariq al-Mansoor, PharmD
+Clinical Pharmacy Ambulatory Services

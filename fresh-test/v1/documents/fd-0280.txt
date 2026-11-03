@@ -1,0 +1,92 @@
+Green Valley Health Center
+512 River Road, Suite 200
+Columbus, OH 43215
+Clinic Phone: (614) 555-0138
+Provider Email: marcus.fletcher@example.org
+Portal: https://mychart.example.com/patient/summary
+
+OUTPATIENT COMPREHENSIVE CLINICAL PROGRESS NOTE
+Date of Encounter: March 4, 2026
+Patient Identification: 4821-9932-07
+Patient Name: Gurdev Grewal
+DOB: August 14, 1934
+Age: 91 y.o.
+Attending: Marcus E. Fletcher, MD
+
+SUBJECTIVE:
+Mr. Gurdev Grewal is a 91 y.o. gentleman with a medical history of chronic
+systolic heart failure, essential hypertension, benign prostatic
+hyperplasia, and mild vascular cognitive impairment who presents today
+for routine outpatient chronic disease follow-up. The patient arrived
+at the clinic via specialized paratransit mobility transport, vehicle
+license plate 4KLT892. He is accompanied today by his son-in-law, Brian
+Miller, who assists with medication administration and manages his
+daily home schedule.
+
+Mr. Miller reports that the patient has experienced stable functional
+status over the past two months without acute syptoms of decompensation.
+There have been no episodes of paroxysmal nocturnal dyspnea, orthopnea,
+chest pressure, palpitations, or lightheadedness. Daily home weights
+have remained within a narrow range of 152 to 154 lbs. His appetite
+is reported as satisfactory, and he drinks adequate fluids. The patient
+uses a four-wheeled rolling walker for household amublation. His
+son-in-law confirms that all home prescriptions are taken faithfully
+and requests an evalution of his latest routine outpatient laboratory
+panels.
+
+CURRENT MEDICATIONS:
+1. Lisinopril 20 mg PO daily.
+2. Carvedilol 12.5 mg PO BID.
+3. Furosemide 20 mg PO daily in the morning.
+4. Tamsulosin 0.4 mg PO at bedtime.
+5. Atorvastatin 20 mg PO at bedtime.
+6. Aspirin 81 mg PO daily.
+
+PHYSICAL EXAMINATION:
+Vital Signs: Blood pressure 138/82 mmHg, heart rate 72 bpm regular,
+respiratory rate 16 breaths/min, body temperature 98.4 F, oxygen
+saturation 97% on ambient room air. Weight 69.4 kg (153 lbs).
+General: Pleasant, frail elderly male in no acute distress, resting
+comfortably in chair, alert and oriented to person and city.
+HEENT: Normocephalic, atraumatic. Pupils equal, round, reactive to
+light. Sclerae anicteric. Oral mucosa moist.
+Cardiovascular: Regular rate and rhythm, normal S1 and S2, soft 1/6
+systolic murmur at the apex, no gallops or pericardial friction rubs.
+Carotid pulses brisk bilaterally without bruits.
+Pulmonary: Lungs clear to auscultation bilaterally in all fields; no
+crackles, wheezing, or rhonchi.
+Abdomen: Soft, non-tender, non-distended, normoactive bowel sounds.
+Extremities: Trace non-pitting edema at bilateral ankles; no calf
+tenderness. Dorsalis pedis pulses 2+ bilaterally.
+Neurologic: Cranial nerves II-XII grossly intact. Sensation intact
+to light touch distally. Motor strength 5/5 upper extremities, 4+/5
+lower extremities symmetrically. Gait slow but steady with walker.
+
+LABORATORY REVIEW:
+Specimen drawn earlier this morning: Serum sodium 138 mEq/L, potassium
+4.5 mEq/L, chloride 101 mEq/L, bicarbonate 26 mEq/L, blood urea nitrogen
+24 mg/dL, serum creatinine 1.2 mg/dL (eGFR 58 mL/min/1.73m2). Fasting
+blood glucose 118 mg/dL, hemoglobin A1c 6.9%. Complete blood count:
+white blood cell count 6.4 x10^3/uL, hemoglobin 13.2 g/dL, hematocrit
+39.4%, platelet count 198 x10^3/uL.
+
+ASSESSMENT AND PLAN:
+Gurdev Grewal is a 91 y.o. male with well-compensated heart failure
+and hypertension, demonstrating clinical stability.
+1. Chronic Systolic Heart Failure:
+- Clinically euvolemic with stable weights and trace ankle edema.
+- Continue lisinopril 20 mg PO daily, carvedilol 12.5 mg PO BID, and
+  furosemide 20 mg PO daily.
+- Continue daily morning weight checks; contact office for 3 lb gain.
+2. Essential Hypertension:
+- Blood pressure acceptable at 138/82 mmHg. Regimen unchanged.
+3. Benign Prostatic Hyperplasia:
+- Continue tamsulosin 0.4 mg PO at bedtime without adverse effects.
+4. Preventative Health and Follow-up:
+- Return to clinic in four months for repeat metabolic panel and clinical
+  review. Brian Miller was provided a direct portal link to review
+  laboratory results: https://mychart.example.com/patient/summary.
+
+Provider Signature:
+Marcus E. Fletcher, MD
+Internal Medicine, Green Valley Health Center

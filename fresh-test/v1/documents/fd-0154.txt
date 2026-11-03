@@ -1,0 +1,69 @@
+OUTPATIENT CONSULTATION NOTE
+REASON FOR CONSULTATION: Evaluation of chronic bilateral lower extremity pain and suspected radiculopathy versus peripheral neuropathy.
+
+HISTORY OF PRESENT ILLNESS:
+The patient is a 64-year-old female who presents for comprehensive outpatient evaluation of worsening bilateral lower extremity burning discomfort, numbness, and paresthesias. Her symptoms initially began distally in both feet in 2018 and have gradually progressed proximally to mid-calf level over the intervening years. She describes the sensation as a persistent "fire-like" ache accompanied by intermittent sharp, electric shocks that intensify at night, significantly disrupting her sleep architecture. She was previously treated with gabapentin, which was discontinued due to excessive daytime sedation. In 2021, she was initiated on Lyrica 75 mg PO BID, which provided partial relief; however, over the past year her pain has escalated to an average severity of 7/10 on the visual analog scale.
+Records transferred from Outside Hospital document an emergency department encounter in 2023 for acute right lower extremity swelling, at which time a Wells score was calculated at 0 points (low probability), and bilateral venous duplex ultrasound ruled out deep vein thrombosis. An electromyogram and nerve conduction study performed at that facility demonstrated findings consistent with distal symmetric sensorimotor polyneuropathy. Additionally, the patient reports a history of recurrent right-sided facial weakness that occurred in 2019, which was diagnosed as idiopathic Bell palsy and resolved almost completely following an oral steroid taper.
+She denies bowel or bladder incontinence, saddle anesthesia, focal lower extremity weakness, fevers, chills, or unintentional weight loss. Her daughter accompanies the patient to the visit and confirms that balance has deteriorated mildly over the past six months, prompting the patient to utilize a single-point cane for prolonged ambulation.
+
+PAST MEDICAL HISTORY:
+1. Type 2 diabetes mellitus without acute complications, diagnosed in 2012.
+2. Distal symmetric sensorimotor polyneuropathy.
+3. Essential hypertension.
+4. Hyperlipidemia.
+5. History of right-sided Bell palsy in 2019, resolved.
+6. Mild osteoarthritis of bilateral knees.
+
+PAST SURGICAL HISTORY:
+1. Laparoscopic cholecystectomy in 2015.
+2. Right carpal tunnel release in 2017.
+
+CURRENT MEDICATIONS:
+1. Lyrica (pregabalin) 75 mg PO BID.
+2. Metformin 1000 mg PO BID.
+3. Glipizide 5 mg PO daily before breakfast.
+4. Lisinopril 20 mg PO daily.
+5. Atorvastatin 40 mg PO QHS.
+6. Allegra (fexofenadine) 180 mg PO daily PRN seasonal allergies.
+7. Prednisone 40/30/20/10 mg oral taper completed earlier this year for an inflammatory flare.
+8. Acetaminophen 650 mg PO q8h PRN musculoskeletal pain.
+
+ALLERGIES:
+Codeine (causes nausea and pruritus). No known food or environmental allergies.
+
+REVIEW OF SYSTEMS:
+Constitutional: Negative for fever, diaphoresis, fatigue, or anorexia.
+Cardiovascular: Negative for chest pain, orthopnea, or paroxysmal nocturnal dyspnea.
+Respiratory: Negative for shortness of breath, chronic cough, or wheezing.
+Gastrointestinal: Negative for abdominal pain, nausea, vomiting, melena, or hematochezia.
+Musculoskeletal: Positive for bilateral knee stiffness; negative for joint erythema or effusion.
+Neurological: Positive for distal bilateral lower extremity numbness, tingling, and burning; negative for tremors, syncope, or focal motor weakness.
+
+PHYSICAL EXAMINATION:
+Vitals: BP 134/82 mmHg, HR 72 bpm regular, RR 16 /min, SpO2 99% on room air, temperature 98.4 F (36.9 C), BMI 28.4 kg/m2.
+General: Well-nourished, comfortable, in no acute distress. Alert and oriented x 4.
+Cardiovascular: Regular rate and rhythm, normal S1 and S2, no murmurs, rubs, or gallops. Peripheral pulses (radial, dorsalis pedis, posterior tibial) 2+ bilaterally.
+Pulmonary: Lungs clear to auscultation bilaterally; no wheezes, rales, or rhonchi.
+Abdomen: Soft, non-tender, non-distended, normoactive bowel sounds.
+Musculoskeletal: Normal range of motion in hips and knees. No joint swelling. Minimal crepitus noted on bilateral knee palpattion.
+Neurologic: Cranial nerves II-XII intact, with trace residual right facial asymmetry from remote Bell palsy. Motor strength 5/5 throughout upper and lower extremities bilaterally. Deep tendon reflexes 2+ at biceps and patellae bilaterally, 0 at Achilles tendons bilaterally. Sensory exam reveals symmetric decreased sensation to light touch and pinprick in a stocking distribution extending to mid-calf bilaterally. Vibratory sensation diminished at great toes bilaterally. Proprioception intact at the ankles. Gait is mildly antalgic but stable with cane. Romberg test is negative.
+Integumentary: Warm, dry, intact. No plantar ulcerations. Mild erythmatous patch over the anterior right tibia without induration or warmth.
+
+DIAGNOSTIC DATA:
+Serum sodium 140 mEq/L, potassium 4.3 mEq/L, chloride 102 mEq/L, bicarbonate 24 mEq/L, BUN 18 mg/dL, serum creatinine 0.9 mg/dL, eGFR 78 mL/min/1.73m2, fasting glucose 142 mg/dL. Hemoglobin A1c 7.6%. Complete blood count: WBC 6.8 x10^3/uL, hemoglobin 13.4 g/dL, hematocrit 40.2%, platelets 245 x10^3/uL. Thyroid-stimulating hormone 2.1 mIU/L, vitamin B12 480 pg/mL, methylmalonic acid 0.18 umol/L (within normal limits).
+
+ASSESSMENT AND PLAN:
+The patient is a 64-year-old female with longstanding type 2 diabetes mellitus presenting with symptomatic progressive diabetic peripheral neuropathy, asesssed as inadequately controlled on current regimen.
+1. Neuropathic Pain:
+- Titrate Lyrica from 75 mg PO BID to 150 mg PO BID over the next two weeks. Advise patient regarding potential side effects including peripheral edema and somnolence.
+- Referral placed to Pain Clinic for multimodal pain assessment, physical therapy evaluation, and consideration of adjunctive topical compounded therapy.
+- Diabetic foot care education reinforced today, emphasizing daily self-inspection of feet and proper footwear.
+2. Diabetes Mellitus:
+- Glycemic control suboptimal with HbA1c 7.6%. Referral initiated to Diabetes Center for specialized diabetic education and medical nutrition therapy.
+- Continue metformin 1000 mg PO BID and glipizide 5 mg PO daily.
+3. Preventative & Follow-up:
+- Follow-up appointment scheduled in the clinic in 8 weeks to assess symptomatic response to dosage adjustment and review repeat renal profile.
+
+Author: Clinical Attending Physician
+Department of Internal Medicine
+Cosigner: Supervising Staff Physician

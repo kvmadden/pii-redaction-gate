@@ -1,0 +1,75 @@
+44918273
+St. Idris Medical Center
+Outpatient History and Physical
+Department of Geriatric Medicine
+
+Patient: Montecillo, Rosalía
+DOB: 17 February 1934
+Age: 92 y.o.
+Date of service: 2026-03-11
+Residence: 418 WILLOW TRACE DRIVE, GREYHOLLOW, OR 97302
+Mailing address: PO Box 188, Greyhollow, OR 97302
+Member number: WX4402918
+Author: Dr. Helen Wolf
+
+The faxed face sheet from the prior cardiology file is faint. Registration read the old chart as 22O91l4 and will confirm it before any records are released.
+
+Chief complaint
+Low-speed motor vehicle collision one week ago, chest wall pain, and a review of anticoagulation.
+
+History of present illness
+Rosalía Bautista Montecillo returns for follow-up after a parking-aisle collision. On March 4th she was the restrained front passenger in her son-in-law's sedan, plate 6TKM-219, when a slowly reversing van struck the passenger door. The speed was a walking pace. The airbag did not deploy. She did not strike her head, did not lose consciousness, and stepped out of the car with help. Paramedics were not called. Since that afternoon she has had a band of aching pain along the right chest wall, worse with a deep breath, a cough, or turning in bed. She has no dyspnea at rest, no hemoptysis, and no palpitations. A purple bruise appeared over the right breast and lateral ribs on the second day and is now yellow at the edges. She reports no dizziness, no melena, no hematuria, no epistaxis, and no new headache. Appetite is fair. She is anxious about another fall and has stayed inside unless someone is with her.
+
+She has heart failure with preserved ejection fraction, followed at the Heart and Vascular Center of Greyhollow, and she takes apixaban for atrial fibrillation. She missed no doses. Heart failure symptoms were stable from March 1 through March 5, with no change since: no new orthopnea beyond her usual single pillow, no nocturnal cough, and no rapid weight gain. Home health for this plan is assigned by ZIP 97306, and a nurse has been recording weights twice a week. Those weights have stayed within 0.5 kg of baseline.
+
+Past medical history
+Heart failure with preserved ejection fraction, last echocardiogram with an ejection fraction of 60 percent and grade 2 diastolic dysfunction. Persistent atrial fibrillation, rate controlled. Stage 3 chronic kidney disease. Hypothyroidism on a stable replacement dose. Osteoporosis, with a remote right distal radius fracture managed without surgery. Bilateral cataract extraction in the remote past. No diabetes. No prior gastrointestinal bleed. No stroke and no transient ischemic attack. No diagnosed dementia. She does get help filling a weekly pillbox.
+
+Medications, reviewed today and unchanged
+1. Apixaban 2.5 mg by mouth twice daily, reduced for age and body weight.
+2. Metoprolol succinate 50 mg by mouth daily.
+3. Furosemide 20 mg by mouth each morning. She was told this may also be called Lasix at the pharmacy window.
+4. Lisinopril 5 mg by mouth daily.
+5. Levothyroxine 88 mcg by mouth each morning, thirty minutes before breakfast.
+6. Cholecalciferol 2000 units by mouth daily.
+7. Acetaminophen 650 mg by mouth every eight hours as needed for pain, not to exceed 3 grams in a day.
+
+She was instructed again not to take ibuprofen, naproxen, or aspirin while on apixaban.
+
+Allergies
+Rash after sulfamethoxazole-trimethoprim as a younger adult. No latex allergy. No contrast reaction.
+
+Social history
+She lives with her daughter and does not drive. She never smoked. She does not drink alcohol. She walks in the house without a device and uses a cane outside. A neighbor helps with groceries. She is a retired seamstress and still mends clothes at the kitchen table.
+
+Family and staff present
+Mrs. Claire Keene, daughter
+Mr. Paul Keene, son-in-law
+Nora Pembroke, RN
+
+Her daughter can be reached at (503) 555-0133 during the workday. Her son-in-law's mobile is 503.555.0177 if the house line is busy. She asked that afternoon messages go to claire.keene at example dot com, because the telephone is hard to hear after supper.
+
+Review of systems
+No fever or chills. No syncope. No vision change beyond her known cataracts history. No neck pain, no arm numbness, no abdominal pain, no change in stool color, and no dysuria. Chronic knee ache is unchanged. Mood is worried but she is sleeping and she is not without hope. The remainder of a fourteen-system review is negative.
+
+Physical examination
+Blood pressure 148/76 mmHg, heart rate 88 beats per minute and irregularly irregular, respiratory rate 18 breaths per minute, temperature 97.8 F, oxygen saturation 96 percent on room air, weight 51.2 kg. That weight is 0.4 kg above the reading from last week. She is alert and oriented to person, place, and month, seated without distress, and able to give the history with her daughter adding only the dates. Speech is clear. There is a fading ecchymosis over the right lateral chest and the lateral right breast, tender to firm palpation, without crepitus, flail segment, open skin, or hematoma that is expanding. No seatbelt sign across the abdomen. Heart sounds are irregularly irregular, no new murmur, no rub. Lungs are clear without rales or wheeze. The abdomen is soft and nontender, with normal bowel sounds. No leg edema. Cranial nerves II through XII are intact. Strength is 5 out of 5 in the arms and 4+ out of 5 at the hips, which is her baseline. Sensation is symmetric. Gait with the cane is slow and steady, and Romberg is negative.
+
+Studies on the date of service
+Hemoglobin 11.8 g/dL, prior 12.0 g/dL two months ago. Platelets 188,000/microliter. White cells 7.4 x 10 to the 9 per liter. Sodium 136 mmol/L. Potassium 4.2 mmol/L. Chloride 102 mmol/L. Bicarbonate 24 mmol/L. BUN 22 mg/dL. Creatinine 1.32 mg/dL, baseline about 1.2 to 1.4 mg/dL. eGFR 41 mL/min/1.73 m2. Glucose 96 mg/dL. TSH 2.1 mIU/L. Troponin I 0.01 ng/mL, below the 99th percentile cutoff for this assay. A chest radiograph shows no rib fracture, no pneumothorax, no infiltrate, and no pulmonary edema. The electrocardiogram shows atrial fibrillation with a ventricular rate of 88 and no acute ST-segment shift.
+
+The outside comparison film is on the portal at https://results.example.com/rad/montecillo-4491.
+
+Assessment and plan
+1. Chest wall contusion after a low-speed passenger-side collision, on therapeutic anticoagulation. Pain is improving and there is no evidence of bleeding, pneumothorax, or cardiac injury. Continue acetaminophen. Ice for ten minutes at a time if it eases the ache. No rib belt. Return for worse pain, shortness of breath, fainting, black stools, vomiting blood, or a rapidly expanding bruise. Repeat the hemoglobin only if a bleeding symptom appears.
+2. Atrial fibrillation, rate controlled, on apixaban 2.5 mg twice daily. Continue without interruption. The reduced dose remains appropriate given age over 80 and weight under 60 kg. Counseled on bleeding precautions and on not adding an anti-inflammatory drug.
+3. Heart failure with preserved ejection fraction, clinically stable. Continue furosemide 20 mg daily, metoprolol succinate 50 mg daily, and lisinopril 5 mg daily. She will call if her weight rises more than 2 kg over three days or if she needs extra pillows.
+4. Stage 3 chronic kidney disease, stable creatinine. Recheck a chemistry panel with the next routine visit. Avoid dehydration while the bruise heals and she is less active.
+5. Hypothyroidism, euthyroid on the current levothyroxine dose. No change.
+6. Osteoporosis and fall risk. The cane is appropriate. Vitamin D will stay at the current dose. I did not start a new agent today. Physical therapy for balance was offered and accepted, and the referral was entered.
+7. Advance care planning was not reopened today. Her daughter already holds the healthcare proxy paperwork in the chart.
+
+She and her daughter repeated the bleeding precautions and the reasons to return. Questions were answered. Follow-up is planned in three weeks, sooner if needed.
+
+Electronically signed by Dr. Helen Wolf
+Geriatric Medicine

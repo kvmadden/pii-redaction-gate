@@ -1,0 +1,68 @@
+CALLOWAY REGIONAL HOSPITAL
+DEPARTMENT OF PHARMACY SERVICES
+AMBULATORY MEDICATION RECONCILIATION & PRIOR AUTHORIZATION REVIEW
+
+DOCUMENT REFERENCE: REF-88391-B
+TRANSCRIBED FROM FAX COVER AND INPATIENT DISCHARGE TRANSMISSION
+SUBMISSION DATE: 11-04-2026
+EFFECTIVE REFILL DATE: 14 November 2026
+ORIGINAL ADMISSION DATE: 10/28/26
+
+PATIENT DEMOGRAPHICS:
+NAME: HENDRIK VAN OUDSHOORN
+MRN: 9028314
+CLAIM NO: Claim # 77492015
+HOME ADDRESS:
+742 North Meadowbrook Drive
+Springfield, IL 62704
+PRIMARY CAREGIVER: Eleni Papas (patient's adult daughter and designated healthcare proxy)
+CAREGIVER CONTACT: (312) 555-0164 ext. 4182
+
+PRESCRIBER OF RECORD:
+Walter J. Henderson, MD
+Division of Cardiology, Calloway Regional Hospital
+Prescriber Contact: walter.henderson@example.org
+Direct Line: (312) 555-0164 ext. 3310
+Portal Auth URL: https://portal.example.org/records/pharmacy-auth
+
+REVIEWING PHARMACIST:
+Rachel M. Albright, PharmD, BCPS
+
+REASON FOR REVIEW & CLINICAL SUMMARY:
+Medication reconciliation requested following recent hospital discharge for acute decompensated heart failure with reduced ejection fraction (HFrEF, LVEF 30-35%) and poorly controlled type 2 diabetes mellitus. Transcribed fax documentation from Dr. Walter J. Henderson requests formulary prior authorization for empagliflozin (Jardiance) and sacubitril/valsartan (Entresto), which require health plan level-two exception criteria validation.
+
+VITAL SIGNS & OBJECTIVE LAB DATA:
+Vitals recorded at discharge on 11/4/26: BP 118/74 mmHg, HR 68 bpm (regular), RR 16 breaths/min, SpO2 97% on ambient air, Weight 84.5 kg, BMI 27.8 kg/m2.
+Pertinent laboratory panel:
+- Serum potassium: 4.6 mEq/L
+- Serum sodium: 138 mEq/L
+- Blood urea nitrogen (BUN): 24 mg/dL
+- Serum creatinine: 1.12 mg/dL (baseline 1.05 mg/dL)
+- Estimated GFR: 64 mL/min/1.73 m2
+- Hemoglobin A1c: 8.4%
+- B-type natriuretic peptide (BNP): 310 pg/mL (down from admission peak of 1,420 pg/mL)
+- Liver function tests (AST/ALT): 22/26 U/L, total bilirubin 0.6 mg/dL.
+
+MEDICATION RECONCILIATION & REGIMEN ASSESSMENT:
+Conducted comprehensive telephone reconciliation with the patient and his adult daughter, Eleni Papas. Ms. Papas confirms that Mr. van Oudshoorn understands the newly initiated heart failure medications and has discontinued his previous home angiotensin-converting enzyme inhibitor (lisinopril) to avoid angioedema risk prior to starting sacubitril/valsartan.
+
+Reconciled Discharge Regimen:
+1. Sacubitril/valsartan 24/26 mg PO BID with meals. Target maintenance titration to 49/51 mg PO BID in 2 to 4 weeks pending renal profile and tolerability.
+2. Empagliflozin 10 mg PO once daily each morning. Indicated for cardiovascular risk reduction and glycemic control in HFrEF.
+3. Carvedilol 6.25 mg PO BID; taken with food to reduce orthostatic effects.
+4. Furosemide 20 mg PO every morning; instructed to weigh daily and notify clinic if weight increases by more than 3 lbs in 24 hours.
+5. Metformin extended-release 500 mg PO daily with evening meal; reduced from 1,000 mg BID due to recent acute heart failure stabilization.
+6. Atorvastatin 40 mg PO at bedtime for secondary atherosclerotic prevention.
+
+PRIOR AUTHORIZATION JUSTIFICATION:
+Clinical rationale for coverage was submitted under Claim # 77492015. Patient meets clinical guideline criteria for guideline-directed medical therapy in chronic heart failure NYHA Class II-III. Prior trial and failure of lisinopril 20 mg PO daily documented due to chronic dry cough and suboptimal symptom control. Documentation of renal function (eGFR 64 mL/min/1.73 m2) satisfies coverage safety parameters for SGLT2 inhibitor initiation. Complete documentation and clinical discharge summaries have been uploaded to the health plan portal at https://portal.example.org/records/pharmacy-auth.
+
+PLAN & PHARMACY FOLLOW-UP:
+1. Prior authorization packet submitted electronically to the patient's commercial health plan by Rachel M. Albright, PharmD.
+2. Provided discharge counseling to Hendrik van Oudshoorn and Eleni Papas regarding symptoms of hypotension, volume depletion, and euglycemic ketoacidosis.
+3. Outpatient clinic follow-up scheduled with Dr. Henderson for repeat basic metabolic panel and vitals check on 14 November 2026.
+4. Urgent contact information provided for Calloway Regional Hospital Pharmacy triage line.
+
+Rachel M. Albright, PharmD, BCPS
+Clinical Pharmacy Specialist
+Calloway Regional Hospital

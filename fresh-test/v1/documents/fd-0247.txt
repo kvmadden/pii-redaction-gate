@@ -1,0 +1,136 @@
+BROAD STREET HEALTH CENTER
+INPATIENT CLINICAL SERVICES - DISCHARGE SUMMARY
+DISCHARGE DATE: 2026-07-22
+
+PATIENT DEMOGRAPHICS AND RECORD IDENTIFIERS:
+Patient Name: Winter M. Gebreselassie
+Age: 94
+DOB: 12/04/1931
+Gender: Female
+MRN: 7029144
+Health Plan Policy ID: HPL-8830194A
+Discharge Prescription: Rx: 6940182-01
+Residential Address:
+840 PARKVIEW TERRACE, BUILDING 4
+COLUMBUS, OH 43215
+Primary Telephone: (614) 555-0163
+Clinic Administration Fax: Fax: (614) 555-0185
+Attending Contact: april.siddiqui (at) example.net
+
+CARE TEAM AND ATTENDEES:
+Inpatient Multidisciplinary Team: Dr. April R. Siddiqui, Dr. Tariq Mahmood,
+Farhana Begum, RN, Mateo Castillo Gómez (Caregiver)
+
+ADMISSION AND DISCHARGE TIMELINE:
+Admission Date: July 15, 2026
+Discharge Date: 2026-07-22
+
+ADMISSION DIAGNOSES:
+1. Severe community-acquired pneumonia of the right lower lobe.
+2. Parapneumonic pleural effusion, right-sided.
+3. Acute exacerbation of chronic obstructive pulmonary disease.
+4. Hypoxemic respiratory failure, resolved.
+
+DISCHARGE DIAGNOSES:
+1. Resolving right lower lobe bacterial pneumonia.
+2. Exudative uncomplicated parapneumonic effusion, status post therapeutic and
+diagnostic thoracentesis.
+3. Chronic obstructive pulmonary disease, return to stable baseline.
+4. Essential hypertension, stable.
+
+CHIEF COMPLAINT:
+Shortness of breath, productive cough, right pleuritic chest pain, and fever.
+
+HOSPITAL COURSE SUMMARY:
+Ms. Winter M. Gebreselassie is a 94-year-old female with a history of moderate
+chronic obstructive pulmonary disease and hypertension who presented on July
+15, 2026 with a three-day history of escalating exertional dyspnea, chills, and
+cough productive of thick yellowish sputum. Her 42-year-old son-in-law, Mateo
+Castillo Gómez, noted that her mental clarity had declined and her oral intake
+was minimal over the forty-eight hours prior to presentation.
+
+Upon initial evaluation in the emergency triage unit, she was febrile with a
+temprature of 38.7 C, tachycardic at 108 bpm, tachypneic at 26 breaths/min, and
+hypoxemic with an oxygen saturation of 86% on ambient air, improving to 93% on
+4 liters nasal cannula. Initial chest radiography and computed tomography of the
+thorax revealed a dense consolidation within the right lower lobe accompanied by
+a moderate free-flowing right pleural effusion. Initial arterial blood gas
+demonstrated acute hypoxemic respiratory failure with pH 7.36, pCO2 46 mmHg, and
+pO2 58 mmHg. Empiric broad-spectrum antimicrobial therapy was initiated with
+intravenous ceftriaxone and azithromycin.
+
+Given the significant pleural fluid collection, pulmonary consultation was
+requested and performed promptly by Dr. Tariq
+Mahmood. On July 17, 2026, Dr. Mahmood performed an ultrasound-guided bedside
+thoracentesis, successfully removing 650 mL of amber, cloudy pleural fluid.
+Pleural fluid analysis was consistent with an exudative, non-purulent effusion:
+pleural protein 3.8 g/dL (serum 6.4 g/dL), pleural LDH 410 U/L (serum LDH 220
+U/L), pH 7.34, glucose 78 mg/dL, and negative Gram stain. Bronchoscopy with
+bronchoalveolar lavage was considered but deferred given rapid clinical
+improvement following thoracentesis and antibiotic administration. Sputum and
+pleural fluid cultures ultimately grew Streptococcus pneumoniae susceptible to
+ceftriaxone and amoxicillin-clavulanate.
+
+During the middle portion of the hospitalization, the patient received
+scheduled nebulized albuterol-ipratropium and a brief five-day course of oral
+prednisone 40 mg daily for her chronic obstructive pulmonary disease
+exacerbation, which was tapered to completion prior to discharge. Oxygen
+requirements decreased steadily, and by July 20th she was successfully weaned
+to room air with resting oxygen saturations remaining between 94% and 96%.
+
+On July 22nd, Dr. April R. Siddiqui performed the final discharge assessment.
+The patient was ambulating forty feet in the corridor with physical therapy
+assistance and a rolling walker. Mateo Castillo Gómez was present for all
+discharge teaching, including spacer technique for inhalers and warning signs of
+recurrent infection. The clinical team dicsussed the importance of hydration
+and completion of the oral antibiotic regimen. Farhana Begum, RN, verified
+that all discharge instructions and prescriptions were fully understood.
+
+DISCHARGE PHYSICAL EXAMINATION:
+Vital Signs: Temperature 98.4 F, pulse 74 bpm regular, blood pressure 124/76
+mmHg, respiratory rate 16 breaths/min, oxygen saturation 96% on room air.
+General: Frail but alert and pleasant elderly female sitting comfortably in
+bed in no acute respiratory distress.
+HEENT: Normocephalic, atraumatic, moist oral mucosa, no oropharyngeal lesions.
+Cardiovascular: Normal S1 and S2, regular rhythm, no murmurs, rubs, or gallops.
+Pulmonary: Lungs with coarse breath sounds at the right lung base, markedly
+improved from admission; no audible wheezing or crackles bilaterally.
+Abdomen: Soft, non-tender, non-distended, normoactive bowel sounds throughout.
+Extremities: Warm and dry, no peipheral edema, no calf tenderness, distal
+pulses intact.
+Neurologic: Alert, oriented to person, place, and date; non-focal motor and
+sensory examination.
+
+DISCHARGE LAB VALUES:
+WBC: 7.2 x 10^3/uL (normalized from 16.4 x 10^3/uL on admission)
+Hemoglobin: 11.8 g/dL
+Platelet count: 215 x 10^3/uL
+Sodium: 137 mEq/L
+Potassium: 4.1 mEq/L
+Chloride: 100 mEq/L
+CO2: 26 mEq/L
+BUN: 19 mg/dL
+Creatinine: 0.88 mg/dL
+Glucose: 106 mg/dL
+Repeat Chest Radiograph: Significant clearing of right lower lobe consolidation,
+minimal residual blunting of the right costophrenic sulcus.
+
+DISCHARGE MEDICATIONS:
+1. Amoxicillin-clavulanate 875-125 mg oral tablet twice daily for an additional
+   5 days (completing a 10-day total course; Rx: 6940182-01).
+2. Fluticasone-salmeterol 250/50 mcg diskus, 1 inhalation twice daily.
+3. Albuterol sulfate 90 mcg HFA inhaler, 2 puffs every 4 to 6 hours as needed
+   for wheezing or shortness of breath.
+4. Amlodipine besylate 5 mg oral tablet once daily in the morning.
+
+FOLLOW-UP APPOINTMENTS AND INSTRUCTIONS:
+1. Broad Street Health Center Pulmonary Clinic: Appointment with Dr. Tariq
+   Mahmood on August 12, 2026 at 10:00 AM for follow-up chest radiograph.
+2. Primary Care Follow-up: Clinic visit with Dr. April R. Siddiqui on August 5,
+   2026 at 2:30 PM.
+3. Caregiver Support: Son-in-law Mateo Castillo Gómez will oversee medication
+   administration and assist with daily meals and transportation.
+
+April R. Siddiqui, MD
+Broad Street Health Center, Internal Medicine
+Date: 2026-07-22

@@ -1,0 +1,75 @@
+Silver Maple Clinic
+Endocrine Laboratory
+
+Patient: Calloway, Nora
+DOB: July 22, 1967
+Age: 58 years
+MRN: 7304 2281 56
+Accession: THY-26-22840
+Collected: Mar. 4, 2026
+Ordering: Dr. Niall O'Rourke-McBride
+Phone: (207) 555-0155
+Email: n.calloway at example dot com
+Husband: Lewis Tabor
+
+CLINICAL INDICATION
+Woman with weight loss, heat intolerance, a resting tremor, and a
+diffuse goiter. The working diagnosis is Graves disease. Her husband,
+Lewis Tabor, confirms she has not missed doses of methimazole. Prior
+thyroid tests from last season are not in this file.
+
+CARE TEAM
+Names on the care-team line: Dr. Niall O'Rourke-McBride, Dr. Ellen Short,
+and Dr. Ada Victory.
+
+RESULTS
+TSH 0.08 mIU/L (reference 0.40 to 4.50). Free T4 2.4 ng/dL (reference
+0.8 to 1.8). Total T3 248 ng/dL (reference 80 to 200).
+Thyroid-stimulating immunoglobulin 3.8 IU/L (reference less than 1.3).
+Thyroglobulin antibody and thyroid peroxidase antibody were both
+negative.
+
+A complete blood count drawn on the same collection showed leukocytes
+6.4 K/uL, hemoglobin 12.8 g/dL, and platelets 231,000/uL. The
+absolute neutrophil count was 3.1 K/uL, which does not suggest
+agranulocytosis on this sample. Comprehensive metabolic panel: sodium
+139 mmol/L, potassium 4.0 mmol/L, creatinine 0.7 mg/dL, ALT 28 U/L,
+AST 24 U/L, alkaline phosphatase 96 U/L, and total bilirubin
+0.6 mg/dL.
+
+Current medicines recorded on the requisition: methimazole 10 mg PO
+TID, propranolol 20 mg PO TID, and a daily multivitamin. She was
+advised not to take biotin for two days before the draw, and the
+husband states she complied.
+
+HISTORY SUPPLEMENT
+Pulse on the requisition is 104 beats per minute and blood pressure
+is 138/74 mmHg. She describes gritty eyes without a clear loss of
+color vision. There is no reported neck pain and no fever. She is
+not pregnant. The goiter is recorded as diffuse and soft, without a
+dominant nodule that would have changed this blood order into a biopsy.
+
+METHOD
+TSH, free T4, and total T3 were run on the chemiluminescent
+immunoassay platform in this laboratory. Thyroid-stimulating
+immunoglobulin was a binding assay sent to the same building's
+reference bench, still under this accession. Hemoglobin and the
+leukocyte count were run on the hematology line. Specimens were serum
+and EDTA whole blood, both received labeled and not hemolyzed. The
+free T4 was repeated in duplicate because the first read sat well
+above the reference interval, and the duplicate agreed.
+
+The husband can be reached at the phone number in the header if a
+recollection is required. No add-on test was ordered after release of
+these values.
+
+INTERPRETATION
+The suppressed TSH with elevated free T4 and total T3, together with
+a high thyroid-stimulating immunoglobulin, is consistant with Graves
+disease in a patient already on a thionamide. Antibody negativity
+for TPO and thyroglobulin does not exclude that diagnosis. There is
+no signifcant cytopenia on the accompanying blood count. A seperate
+uptake and scan, if still desired, would be arranged by nuclear
+medicine and is not part of this accession. The numeric results above
+were verified by the endocrine laboratory director on duty. Questions
+about dosing should go back to the ordering clinician. End of report.

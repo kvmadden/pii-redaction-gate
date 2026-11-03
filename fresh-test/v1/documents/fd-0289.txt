@@ -1,0 +1,70 @@
+PHARMACY PRIOR AUTHORIZATION & RECONCILIATION DISPENSARY RECORD
+TRANSCRIBED FROM CLINICAL FAX - ONCOLOGY SUPPORT SERVICES
+
+PATIENT DEMOGRAPHICS & DISPENSARY DATA:
+PATIENT: Nasser
+al-Yousef
+DOB: 02-17-1935
+AGE / SEX: 91M
+CLAIM / ACCOUNT: Claim # CL-8840217
+PRESCRIPTION NUMBER: Rx # 6492018
+RESIDENTIAL ADDRESS: 842 Ala Moana Boulevard, Apt 14C, Honolulu, HI 96813
+CAREGIVER: Dimitra Vasilakis (patient's adult daughter and legal guardian)
+PHARMACY INTAKE PHONE: (808) 555-0134 ext. 502
+ORDERING ONCOLOGIST: Dr. Arthur Reed, MD
+CLINICAL PHARMACIST: Mele Tuipulotu, PharmD, BCOP
+INTAKE TECHNICIAN: Talia Cook, CPhT
+DATE OF ENTRY: 11-04-2026
+
+REFERRAL & CLINICAL INDICATION:
+Prior authorization appeal transmited from outpatient oncology following
+routine treatment review. The patient is a 91M with classical Hodgkin
+lymphoma diagnosed four months ago following lymph node biopsy
+demonstrating classic Reed-Sternberg cells with positive CD30 expression.
+In view of patient's advanced age and mild underlying cardiotoxicity,
+standard cytotoxic bleomycin was omitted from frontline therapy.
+The initial presentation included night sweats, generalized pruritus, and
+enlarging cervical adenopathy. Restaging PET-CT confirmed partial metabolic
+response after two treatment cycles. Dr. Reed's clinical plan recommended
+brentuximab vedotin maintenance alongside supportive antiemetic therapy.
+
+PHARMACY RECONCILIATION & CAREGIVER OUTREACH:
+Phone consultation conducted by Talia Cook with Dimitra Vasilakis to verify
+current home medication tolerances. Ms. Vasilakis stated that
+Mr. al-Yousef's appetite has improved and reported excellent tolerabilty
+following cycle 2. No evidence of peripheral sensory neuropathy,
+constipation, or mucosal ulcerations was noted during the preceding two
+weeks.
+
+ACTIVE RECONCILED REGIMEN:
+1. Brentuximab vedotin (Adcetris) 1.2 mg/kg IV infusion every 3 weeks. Prior
+authorization required under Rx # 6492018; appeal submitted.
+2. Ondansetron 8 mg PO q8h PRN nausea, 30 minutes prior to chemotherapy.
+3. Dexamethasone 4 mg PO daily on days 1 through 3 of each cycle.
+4. Sulfamethoxazole/trimethoprim 800/160 mg PO three times weekly for
+Pneumocystis jirovecii prophylaxis.
+5. Acyclovir 400 mg PO BID for antiviral prophylaxis during therapy.
+6. Senna 17.2 mg PO daily at bedtime PRN constipation.
+
+ASSESSMENT & PRIOR AUTHORIZATION JUSTIFICATION:
+Coverage denial was originally issued by the payer citing age parameters and
+requesting step therapy with conventional ABVD. Dr. Reed submitted an appeal
+letter emphasizing that omission of pulmonary toxic agents is standard of
+care for elderly individuals. Recent biopsy documentation verifying CD30+
+Reed-Sternberg cells and baseline cardiac ejection fraction (LVEF 55%)
+support targeted biologic use. Renal parameters remain acceptable with
+serum creatinine 1.15 mg/dL and eGFR 58 mL/min/1.73 m2. Complete blood counts
+from 11-04-2026 show absolute neutrophil count 2,400/uL, platelets
+175,000/uL, and hemoglobin 10.4 g/dL. Liver enzymes remain normal with
+AST 21 U/L and ALT 24 U/L.
+
+DISPENSARY ACTIONS & RESOLUTION:
+1. Complete clinical package under Claim # CL-8840217 resent to insurer by
+Mele Tuipulotu, PharmD.
+2. Talia Cook verified insurance receipt via portal triage queue.
+3. Delivery of cycle 3 supportive medications scheduld to 842 Ala Moana
+Boulevard, Apt 14C following authorization confirmation.
+4. Direct pharmacy escalation line provided to Dimitra Vasilakis.
+
+Mele Tuipulotu, PharmD, BCOP
+Specialty Clinical Pharmacist

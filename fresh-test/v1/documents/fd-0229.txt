@@ -1,0 +1,13 @@
+Message 1
+Sender: Patient
+Recipient: Care Team
+Subject: Follow-up question regarding facial numbness and pain medication
+
+hello, I am writing for the 52-year-old patient who was evaluated at the emergency department two days ago. We received the transfer summary and head CT imaging disk sent from Outside Hospital, which confirmed the diagnosis of Bell palsy and ruled out acute infarction. The emergency team started valacyclovir 1000 mg PO TID for seven days along with prednisone 60 mg PO daily with a scheduled taper. However, the sharp burning pain behind the left ear and along the jawline has become increasingly uncomfortable since yesterday evening. The discharge paperwork suggested asking whether adding Lyrica would help with this neuropathic facial pain, or if we should request an expedited referral to Pain Clinic. The patient took the morning steroid dose with breakfast. Recent vital signs checked at home showed BP 132/84 mmHg, HR 76 bpm, and temp 98.4 F. We also reviewed the basic metabolic panel from the transfer records, which reported serum potassium 4.1 mEq/L, sodium 140 mEq/L, and creatinine 0.88 mg/dL. Please let us know if an adjunctive medication can be called in to the local retail pharmacy.
+
+Message 2
+Sender: Care Team
+Recipient: Patient
+Subject: RE: Follow-up question regarding facial numbness and pain medication
+
+Thank you for reaching out. The covering physician reviewed the records forwarded from Outside Hospital and agrees with managing the acute neuropathic discomfort. We have submitted a prescription for Lyrica 75 mg PO BID to the pharmacy on file. Please continue valacyclovir 1000 mg PO TID to finish the full course, and follow the prednisone taper as directed. We also placed a formal referral to Pain Clinic for comprehensive evaluation if the neuropathic symptoms persist beyond the initial course. If the patient develops new extremity weakness, slurred speech, confusion, or difficulty closing the left eye completely, please contact the triage line or seek immediate emergency care.

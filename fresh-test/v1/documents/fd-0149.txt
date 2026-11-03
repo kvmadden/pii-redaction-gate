@@ -1,0 +1,86 @@
+Hearthstone Imaging
+Neuroradiology Report
+
+Patient: Kaveri Elangovan
+DOB: August 2, 1933
+Age/sex: 92F
+MRN: 9022441
+Accession: HCT-26-33091
+Plan member no.: 66291-44
+Exam: CT head without contrast
+Collected: 04.03.2026
+Ordering: Dr. Paul Redmond
+Device: pacemaker serial PM8-4419-KX2
+Phone: +1 603 555-0174
+Address: 418 Willow Mercer Lane, Bellwether, NH 03244
+Son and historian: Mr. Curtis Glasgow
+
+CLINICAL INDICATION
+Fall from standing at home, with impact to the occiput. Mr. Curtis Glasgow's
+account is that his mother reached for a cupboard, missed the shelf, and
+struck the back of her head on the counter edge. She did not lose
+consciousness. Glasgow Coma Scale on arrival to the scanner was 14
+(eyes 4, verbal 4, motor 6), with mild confusion about the date.
+She is anticoagulated for atrial fibrillation. The pacemaker was
+interrogated by the device clinic before transport and was functioning.
+Robin Moon, the CT technologist, confirmed the device card against the
+header before the scout image.
+
+TECHNIQUE
+Noncontrast helical CT of the head from the foramen magnum through the
+vertex, 2.5 mm reconstructions in bone and soft-tissue algorithms.
+Dose-reduction settings were used. No iodinated contrast.
+
+COMPARISON
+No comparision study is available in this archive.
+
+FINDINGS
+No acutue intracranial hemorrhage. No extra-axial collection. No midline
+shift. The ventricles are prominent, in keeping with volume loss, and
+there is periventricular hypoattenuation consistent with chronic
+small-vessel change. No territorial hypodensity. The basal cisterns are
+patent. The visualized orbits and mastoids are unremarkable. Calvarial
+cortical irregularity at the occiput has no depressed fragment and no
+pneumocephalus.
+
+Scout images include the upper chest. A left pectoral pacemaker
+generator is present, with two leads projecting toward the right atrium
+and right ventricle. A seperate note in the chart records that the
+generator serial is PM8-4419-KX2. No acute osseous abnormality is seen
+on the included spine.
+
+Laboratory values from the same visit: hemoglobin 11.4 g/dL, platelets
+188,000/uL, creatinine 0.9 mg/dL, sodium 138 mmol/L, and glucose
+126 mg/dL. Blood pressure in the department was 168/78 mmHg and the
+paced heart rate was 62 beats per minute.
+
+Medicines verified with the son: apixaban 5 mg PO BID, last dose held
+after the fall; metoprolol tartrate 25 mg PO BID; donepezil 10 mg PO
+QHS; acetaminophen 650 mg PO q6h PRN headache. No new contrast-related
+medicine was given.
+
+The scalp soft tissues show a small crescent of swelling over the
+occiput, measuring about 1.8 cm, without a foreign body. The paranasal
+sinuses and mastoid air cells are clear. Gray-white differentiation is
+preserved in the cerebral hemispheres and in the posterior fossa. No
+hyperdense artery sign is present in the proximal middle cerebral
+arteries. Dental artifact limits the anterior fossa floor but does not
+hide a sizable bleed.
+
+The study was discussed with the ordering clinician by telephone.
+Observation, a repeat neurologic check, and continued hold of the morning
+anticoagulant were advised from the imaging side, with final medical
+decisions left to the referring service. The son remained in the waiting
+room for the result. No additional imaging of the cervical spine was
+performed under this accession.
+
+IMPRESSION
+1. No acute intracranial hemorrhage, mass effect, or depressed skull
+fracture after a ground-level fall.
+2. Cerebral volume loss and chronic small-vessel ischemic change.
+3. Pacemaker generator and leads as described. Glasgow Coma Scale and
+the anticoagulation history were used only as clinical context for this
+dictation.
+
+Interpreted by Dr. Clara Smythe-Collins, neuroradiology.
+End of report.

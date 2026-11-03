@@ -1,0 +1,59 @@
+Calloway Regional Hospital
+Inpatient Discharge Summary
+
+PATIENT INFORMATION:
+Patient Name: WELLS, KENJI
+MRN: 492-108-72
+Billing Account Number: 8412-0941-63
+Admission Date: 10/12/2026
+Discharge Date: 10/17/2026
+Date of Birth: 03/19/1963
+Home Address: 1420 University Street, Apartment 6B, Seattle, WA 98101
+Telephone: (206) 555-0149 ext. 3307
+Online Portal: https://records.example.org/portal/discharge-summary
+Primary Caregiver / Next of Kin: Mrs. Margaret Wells (wife)
+Attending Physician: Dr. Arthur Free, MD (NPI: 1487629031, Email: afree@example.org)
+Consulting Specialist: Dr. Catherine Hayes, MD (Pulmonary Medicine)
+
+DISCHARGE DIAGNOSES:
+1. Acute pulmonary embolism of the right lower lobe segmental pulmonary arteries, hemodynamically stable.
+2. Acute exacerbation of moderate chronic obstructive pulmonary disease, stabilized.
+3. Community-acquired right lower lobe bacterial pneumonia, resolving.
+4. Essential hypertension.
+
+HISTORY OF PRESENT ILLNESS:
+The patient is a 63-year-old male with a history of tobacco use disorder and chronic obstructive pulmonary disease who presented to the emergency department at Calloway Regional Hospital on 10/12/2026 complaining of three days of acute pleuritic right chest pain, low-grade fever, and progressive breathlessness. He reported that his exercise tolerance had decreased from climbing two flights of stairs to experiencing dyspnea while walking across a room. He also noted mild asymmetric swelling and dull aching in his right calf over the preceding week following a prolonged automobile trip.
+
+In the emergency department, triage vital signs revealed a resting pulse of 108 bpm, respiratory rate 24 breaths per minute, blood pressure 138/84 mmHg, temperature 38.1 C, and ambient oxygen saturation 89%, improving to 94% on 3 L/min via nasal cannula. Physical examination revealed crackles over the right lung base and tenderness upon palpation of the right gastrocnemius. Given the presence of tachycardia, right calf swelling, and suspected venous thromboembolism, his clinical Wells score was calculated as 6.0 points, indicating high pre-test probability for acute pulmonary embolism.
+
+HOSPITAL COURSE:
+Diagnostic Workup and Initial Management:
+Urgent CT pulmonary angiography was performed, demonstrating an occlusive filling defect within the medial and posterior basal segmental branches of the right lower lobe pulmonary artery. The right ventricle to left ventricle diameter ratio was measured at 0.94, without evidence of frank right ventricular dilatation or septal flattening. The scan also identified a dense airspace consolidation in the superior and posterior segments of the right lower lobe with surrounding ground-glass opacities, consistent with concurrent post-obstructive bacterial pneumonia. Initial cardiac biomarkers showed high-sensitivity troponin I mildly elevated at 0.04 ng/mL and NT-proBNP at 420 pg/mL, establishing an intermediate-low risk clinical category. Serum lactate was normal at 1.1 mmol/L.
+
+Dr. Arthur Free admitted Mr. Wells to the intermediate care stepdown unit. Therapeutic anticoagulation was initiated immediately with a continuous unfractionated heparin infusion utilizing the hospital standard weight-based titration protocol, successfully reaching a therapeutic activated partial thromboplastin time of 68 to 82 seconds within ten hours. Intravenous antimicrobial therapy with ceftriaxone 1 g daily and azithromycin 500 mg daily was initiated for community-acquired pneumonia. Sputum Gram stain demonstrated gram-positive diplococci; blood cultures obtained prior to antibiotic administration demonstrated no bacterial growth after five days.
+
+Specialist Consultation and Floor Course:
+On hospital day two, Dr. Catherine Hayes from Pulmonary Medicine evaluated the patient. Dr. Hayes reviewed prior outpatient spirometry records from October 2026, which had demonstrated moderate airflow obstruction with an FEV1 of 62% predicted. In light of his acute chronic obstructive pulmonary disease exacerbation, nebulized ipratropium bromide-albuterol sulfate treatments every four hours were initiated, accompanied by a five-day course of systemic corticosteroids (intravenous methylprednisolone 40 mg daily). Transthoracic echocardiogram obtained on 10/15/2026 revealed normal left ventricular systolic function with an estimated left ventricular ejection fraction of 60%, normal right ventricular size with preserved systolic function (tricuspid annular plane systolic excursion 2.2 cm), and estimated pulmonary artery systolic pressure of 34 mmHg. Bilateral lower extremity venous duplex ultrasound confirmed an occlusive deep vein thrombosis within the right popliteal vein.
+
+By hospital day four, the patient demonstrated marked clinical improvement. He was successfully weaned off supplemental oxygen, maintaining 96% on ambient air while resting and 93% with gentle ambulation. Respiratory rate normalized to 16 breaths per minute and chest pain completely resolved. Intravenous heparin was bridged to oral apixaban 10 mg twice daily. Antibiotic therapy was converted to oral cefpodoxime 200 mg twice daily to complete a planned total seven-day course. Pre-discharge arterial blood gas on room air revealed pH 7.41, PaCO2 42 mmHg, and PaO2 76 mmHg. Complete blood count demonstrated a leukocytosis resolving from 14.8 K/uL to 7.4 K/uL, hemoglobin 13.9 g/dL, and platelet count 218 K/uL. Comprehensive metabolic panel revealed serum creatinine 0.94 mg/dL and normal liver enzymes.
+
+DISCHARGE COUNSELING AND EDUCATION:
+Extensive discharge education was conducted with Mr. Wells and his wife, Mrs. Margaret Wells. Mrs. Wells participated in medication reconciliation and agreed to assist her husband with medication adherence and monitoring. They were counseled on anticoagulant safety, recognizing signs of major bleeding, and red-flag symptoms such as sudden dyspnea, syncope, or hemoptysis. Mr. Wells confirmed access to his digital medical records through the patient portal at https://records.example.org/portal/discharge-summary.
+
+DISCHARGE MEDICATIONS:
+1. Apixaban 10 mg oral tablet, take 1 tablet PO BID through 10/26/2026, then transition to apixaban 5 mg PO BID for a minimum duration of 6 months.
+2. Cefpodoxime 200 mg oral tablet, take 1 tablet PO BID for 3 additional days to finish the antibiotic course.
+3. Fluticasone-umeclidinium-vilanterol 100/62.5/25 mcg inhaler, 1 inhalation once daily.
+4. Albuterol sulfate 90 mcg HFA inhaler, 2 puffs inhaled every 4 to 6 hours as needed for wheezing or acute dyspnea.
+5. Prednisone 20 mg oral tablet, 1 tablet PO daily for 2 days, then stop.
+
+FOLLOW-UP PLAN:
+1. Primary Care: Dr. Arthur Free, Internal Medicine Clinic, on Nov. 3, 2026, at 10:30 AM. For scheduling questions or concerns, call (206) 555-0149 ext. 3307 or contact afree@example.org.
+2. Pulmonary Medicine: Dr. Catherine Hayes, Pulmonary Clinic, in 4 weeks for repeat spirometry and functional assessment.
+3. Repeat lower extremity duplex ultrasound is recommended in 3 to 6 months to evaluate vein recanalization.
+
+DISPOSITION: Discharged home in stable condition in the care of his wife.
+
+Arthur Free, MD
+Department of Internal Medicine, Calloway Regional Hospital
+NPI: 1487629031

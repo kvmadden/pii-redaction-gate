@@ -1,0 +1,36 @@
+MRN: 8841206
+Patient: Kiriaki M. Famelis    DOB: 2 February 1934    Age: 92
+Health plan member 662190443    group 44188
+Orchard Street Pharmacy  refill line
+Pharmacy: Hi, um, this is Kavitha Nellaiappan at Orchard Street Pharmacy. I am calling about a refill and a dose change for Kiriaki M. Famelis. Am I speaking with her son-in-law?
+Caller: Yes, this is Seydou Traoré. She is in the chair beside me. Her English on the phone wanders, so, uh, so I will take the call. I am 58.
+Pharmacy: Thank you. I have a text from this morning with the address in lowercase, 22 birch avenue apt 3. Is that where the delivery should go?
+Caller: Yes, that is the apartment. Do not send it to the old house.
+Pharmacy: All right. Before the medicines, the portal shows a sign-in alert from 198.51.100.23 yesterday evening. That computer is not one we had stored for her. Did you log in?
+Caller: That was me, from the computer at my shop. The email line would not take the symbol, so my wife wrote it as kfamelis at example dot com.
+Pharmacy: That spelling matches what we have, with the words in place of the symbols. I can see the approval now. Her health plan cleared the empagliflozin, the Jardiance, so we can fill it. She did not recieve last month's bottle because the request was still open. It is open no longer.
+Caller: Good, because she was down to four tablets and I was getting nervous.
+Pharmacy: Let me, um, let me go through the whole box so the new bottle does not surprise you. The reason for the call is the swelling. You told the clerk she is up five pounds since last Friday and her ankles are leaving a dent. Anirban Ghatak sent a new order this morning. Furosemide, which some older bottles call Lasix, goes from 40 mg by mouth every morning to 40 mg by mouth twice a day. The second dose should be at midday, not at bedtime, or she will be up all night. Start that extra tablet tommorow. Keep the morning dose as it is.
+Caller: Tomorrow, midday, 40 mg, and the morning 40 mg stays. What if the midday one is still sitting there at dinner?
+Pharmacy: Give it if, wait, give it if dinner is still the same day. If you find it the next morning, skip it. Do not double onto the morning tablet. And please keep the morning pills seperate from the evening ones so the atorvastatin does not end up in the noon slot. The atorvastatin is 40 mg at bedtime, and that one does not change.
+Caller: She had a couple of ibuprofen yesterday for the knee. I know, I know, you are going to tell me to stop. Her knee was bad and she would not wait.
+Pharmacy: Yes. Please stop the ibuprofen, and do not use naproxen either. With heart failure and with chronic kidney disease stage 3a, those medicines hold salt and water and they can bump the creatinine. Her eGFR last month was 52, which is acceptable for what she is on, and I do not want ibuprofen pushing it the wrong way. For the knee, acetaminophen 650 mg is all right, up to three times a day, and I do not see a liver problem on her list. The right knee corticosteroid injection from the fall does not conflict with today's fill.
+Caller: The heart ultrasound was the recent one. They said the squeeze was normal and the filling was the problem.
+Pharmacy: Transthoracic echocardiogram on 18 February 2026. The report we have says the ejection fraction was 60 percent, with diastolic dysfunction, which fits heart failure with preserved ejection fraction. That diagnosis stays. So do type 2 diabetes mellitus, gout, and osteoarthritis of the right knee. Nobody added a new blood pressure pill. The swelling is being treated with the diuretic.
+Caller: Is the diabetes pill the one that needed the approval?
+Pharmacy: The empagliflozin is the one, 10 mg by mouth every morning, brand name Jardiance when the plan prints it that way. Metformin stays 500 mg by mouth twice a day with food. Allopurinol stays 100 mg by mouth daily for the gout. None of those three change today. If she is vomiting or not eating, hold the empagliflozin and the metformin and call us. Do not stop the furosemide unless she is dizzy or her weight is dropping fast. Allopurinol is not a pain pill, and she should not stop it on her own if the toe flares.
+Caller: Weights. She will fight me, but I can do the scale. What number makes you want a call?
+Pharmacy: A gain of three pounds in one day, or five pounds in a week, from her usual dry weight. She already met the week rule, which is why the dose is changing. Also call for shortness of breath at rest, needing extra pillows, or swelling that climbs above the ankles.
+Caller: The visit is soon. I have it on a card somewhere. The screen at your place probably has it cleaner than my card.
+Pharmacy: The schedule on my screen shows 2026-03-04. Out loud that is March fourth, twenty twenty-six, with the heart failure clinic in the morning. Bring the weight log and the pillbox.
+Caller: Who is actually allowed to change these if I call back and get someone else? She likes the names ahead of time.
+Pharmacy: The care team list I have is refill nurse Kavitha Nellaiappan, pharmacist Lakshmi V. Sripada, physician Anirban Ghatak, and technician Deepa Varadarajan. If you need something in writing, our fax line is on the delivery slip.
+Caller: Read me the fax and the street, please. I write slow.
+Pharmacy: Fax: (508) 555-0192. The building address is on two lines.
+140 Orchard Street
+Lowell, MA 01852
+If the driver cannot find you, the callback we have is (508) 555-0136. That is the number you left this morning.
+Caller: That is my phone, yes. Leave the bag with me if she is napping. And, uh, and thank you for not making her get on the phone.
+Pharmacy: She may have occassional calf cramps with the higher furosemide. Do not start a potassium pill unless someone orders it. Her potassium on the last lab was in range. The ibuprofen stays out of the bag. Say the midday dose back to me and we can hang up.
+Caller: Midday furosemide 40 mg starting tomorrow, morning dose unchanged, no ibuprofen, weights on the scale. I have it.
+Pharmacy: End of call. Dose change and delivery address confirmed with the son-in-law.

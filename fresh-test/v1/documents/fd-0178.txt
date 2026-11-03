@@ -1,0 +1,30 @@
+KAG-773184  Pine Hill Pharmacy nurse line  recorded 2026-11-02
+Patient: Basya R. Kaganoff    DOB: 15 January 1932    Age: 94
+Health plan member 448291776    group 220641
+Home phone (603) 555-0148    Email: bkaganoff@example.net
+Emergency contact: Faith N'Guessan, daughter
+Nurse: Hi, um, this is Shabnam Akhter on the nurse line at Pine Hill Pharmacy. I am calling back about Basya R. Kaganoff. Am I speaking with her daughter?
+Caller: Yes, this is Faith N'Guessan. She is right here, but her hearing on the phone is, uh, not great, so I am going to do the talking if that is all right.
+Nurse: That is fine. Before the medicines I should confirm where she is staying. The address she texted this morning, all in lowercase, was 14 cedar lane apt b. Is that your apartment?
+Caller: Yes. She moved in after the fall. I am 61, and I can fill a pillbox, but I need the change said out loud so I do not, uh, do not guess and give the old dose.
+Nurse: Good. One more thing before the warfarin. The patient portal flagged a sign-in from 203.0.113.48 overnight. We have not seen that computer on her account. Was that you?
+Caller: That was me, on a library computer. The password would not come and I did not finish. Sorry if it looked like a stranger.
+Nurse: I will note that it was you. Here is the reason for the call. This morning the INR was 3.4. For atrial fibrillation the aim has been 2.0 to 3.0, so 3.4 is a little high, and with the recent fall our pharmacist wants a cautious change rather than a tiny one. No warfarin tonight. Starting tomorrow, warfarin 3 mg by mouth once daily. She has been taking 4 mg by mouth daily except Saturday, when she takes 2 mg, and Saturday stays 2 mg. Do not use the 4 mg tablets to make the new dose. If the bottle is the 4 mg strength, give three quarters, wait, no, I am not going to have you split them. We will, um, we will send a fresh bottle of 3 mg tablets so nothing has to be cut.
+Caller: Hold tonight, then 3 mg a day, Saturday still 2 mg. What if tonight is already in the box?
+Nurse: Take it out. If she already swallowed it, do not skip extra days to catch up. From what you said, it is still in there. Good.
+Caller: What time should the new dose be? She has been taking it with the evening news, but some nights she dozes off and I am not sure if I should wake her.
+Nurse: Same time each evening is what matters, and waking her is reasonable. If she misses a dose and remembers the same night, she can take it. If she does not remember until the next day, skip it. Do not double. Large swings in spinach, kale, or collards can move the INR. She does not have to stop those foods, but the amount should stay steady, and tell us if her appetite falls off.
+Caller: She will ask who signed this. A new name makes her anxious. Who should I tell her?
+Nurse: The care team list on the chart is pharmacist Farhana S. Talukder, Shahana Parveen, Imran Kabir, and covering clinician Mark Barua. He is not her usual doctor. The other problems stay put. She has chronic kidney disease stage 3, essential hypertension, hypothyroidism, and osteoporosis. Lisinopril stays 10 mg by mouth daily. Levothyroxine stays 75 mcg every morning on an empty stomach, half an hour before food. Households sometimes still say Synthroid, but our bottle is generic levothyroxine. Alendronate stays 70 mg once a week on Sunday, with a full glass of water, and she stays upright for half an hour. On Sunday the alendronate is first and the levothyroxine waits. Do not give them together. If she missed last Sunday, give the usual 70 mg this Sunday and do not double it.
+Caller: She did miss it. Her stomach was sour. I will give it this Sunday. I keep thinking about the hip. After the fall they did a left hip hemiarthroplasty, and last week's x-ray showed no new break. There was also a colonoscopy. I forget the day.
+Nurse: Colonoscopy with polypectomy on 4 March 2026, two polyps, pathology benign. The hemiarthroplasty is on the surgical history. Neither one, by itself, accounts for an INR of 3.4. We will recheck this Friday. If it is still above 3.0, the covering clinician may hold a dose. Please watch for black stools, a sudden severe headache, bleeding that will not stop, or a fall with a hit to the head. Those are for the emergency department, not a next-day call.
+Caller: She has been lightheaded when she stands. I have been holding her elbow on the way to the bathroom. There is a walker in the hall but she hates it.
+Nurse: Keep the walker where she can reach it. The lisinopril, well, the blood pressure pill, can contribute to that lightheaded feeling, and so can being dry if she is not drinking. This warfarin change does not treat the dizziness. If she faints, or the lightheaded spell comes with chest pain, one-sided weakness, or trouble speaking, that is an emergency, the same as a head injury.
+Caller: And if she feels well and the number is only a little high?
+Nurse: Call us on the daytime number. After hours, use the clinic. I am going to read the clinic line as the digits are printed. Six zero three, five five five, zero one one eight. The medication list is going by fax to Willow Brook Clinic so they have the plan before Friday. The sheet says Fax: (603) 555-0177. The address is printed across two lines.
+410 Maple Street
+Hollis, NH 03049
+Caller: I will keep that with the pillbox note. Can you repeat just the warfarin part, slowly? She is getting tired.
+Nurse: Tonight, no warfarin. Tomorrow, warfarin 3 mg by mouth once daily. Saturday, warfarin 2 mg. Keep the new bottle away from the old 4 mg bottle. The chart number is the unlabeled one at the top of this recording, and the member number and group number under her name are for the health plan, not for the lab. Thank you for staying on.
+Caller: Thank you. I will take tonight's tablet out of the box now.
+Nurse: End of call. Hold and dose change reviewed with the daughter. Fax requested.

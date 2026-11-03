@@ -1,0 +1,63 @@
+CALLOWAY REGIONAL HOSPITAL
+DEPARTMENT OF DIAGNOSTIC RADIOLOGY
+ULTRASOUND EXAMINATION REPORT
+
+PATIENT: Warren Scott
+MRN: 88392104
+ACCESSION: ACC-7719402
+DOB: 08/19/1954
+DATE OF EXAM: July 12 2026
+ORDERING PHYSICIAN: Dr. Kenneth Albright
+SONOGRAPHER: T.G.
+READING RADIOLOGIST: Dr. Martin Vance
+PRIMARY CONTACT: Fisher (nephew)
+CAREGIVER: Ananya Sen
+DEPARTMENT TELEPHONE: (617) 555-0118 ext. 3307
+
+EXAMINATION:
+Ultrasound duplex scan of the right upper quadrant and biliary tree.
+
+CLINICAL HISTORY:
+The patient is a 71-year-old male with persistent right upper quadrant
+discomfort, postprandial nausea, and mild jaundice. He has a past medical
+history of hypertension and hyperlipidemia. Caregiver Ananya Sen noted
+intermittent postprandial emesis over the preceding week. Episodic biliary
+colic reportedly intensified around the 4th of July after an outdoor picnic.
+The patient lives in Greenfield and was referred by Dr. Kenneth Albright for
+diagnostic evaluation. Nephew Fisher assisted with transportation.
+
+TECHNIQUE:
+Real-time gray-scale, color, and spectral Doppler ultrasound imaging of the
+liver, gallbladder, bile ducts, pancreas, and right kidney was performed
+using curvilinear and phased-array transducers.
+
+FINDINGS:
+The liver measures 14.8 cm in craniocaudal dimension, demonstrating normal
+parenchymal echogenicity without focal mass or hepatic surface nodularity.
+Main portal vein is patent with hepatopetal flow at 22 cm/s.
+
+The gallbladder is distended with mild diffuse wall thickening measuring
+3.8 mm (normal less than 3 mm). Several mobile, shadowing, hyperechoic
+calculi are present in the gallbladder lumen, the largest measuring 1.4 cm
+in maximal dimension. A positive sonographic Murphy sign was elicited
+during direct probe palpation over the fundus. There is a small rim of
+pericholecystic fluid adjacent to the gallbladder wall.
+
+The common bile duct is mildly dilated, measuring 7.5 mm in diameter at the
+porta hepatis, but tapers smoothly toward the ampulla without demonstrable
+choledocholithiasis. Visualized portions of the pancreatic head and body
+appear unremarkable. Pancreatic duct is not dilated, measuring 1.6 mm.
+Right kidney demonstrates normal cortical thickness (11.2 cm length) without
+hydronephrosis or calculi. Spleen is normal in size, measuring 10.4 cm.
+
+IMPRESSION:
+1. Cholelithiasis with sonographic Murphy sign and mild gallbladder wall
+   thickening, indicative of acute calculous cholecystitis.
+2. Borderline common bile duct dilation without visible intraductal stone.
+3. Findings were phoned and discussed with ordering provider Dr. Kenneth
+   Albright at 14:15 on the exam date. Surgical consultation for
+   laparoscopic cholecystectomy is recommended.
+
+Reported by:
+Dr. Martin Vance, MD
+Staff Radiologist, Calloway Regional Hospital

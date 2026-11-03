@@ -1,0 +1,9 @@
+{
+ "clusters_agreed": 9973,
+ "keep_singletons": 1898,
+ "author_candidates": 0,
+ "disputes_conflict": 349,
+ "disputes_only-A": 19,
+ "disputes_only-B": 5,
+ "self_overlap_merged": 31
+}

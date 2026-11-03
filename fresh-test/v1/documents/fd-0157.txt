@@ -1,0 +1,46 @@
+DISCHARGE SUMMARY
+
+Principal diagnosis: acute pulmonary embolism involving segmental branches of the right lower lobe, without right heart strain.
+Additional diagnoses: left popliteal deep vein thrombosis, type 2 diabetes mellitus, chronic lumbar radiculopathy, obesity, and former tobacco use.
+Disposition: home with her daughter, with a referral to Pain Clinic for persistent radicular pain and a request that Diabetes Center review the insulin plan.
+
+History of present illness. The patient is a 64-year-old woman who came to the emergency department with two days of pleuritic chest pain and new dyspnea. She had been less active because of lumbar pain and had taken a long car ride to visit family earlier in the week. She denied hemoptysis, syncope, and leg swelling at first, though the left calf was tender on examination. Symptoms began gradually and then limited her to a few steps before she needed to stop. Her daughter, who is 41, stayed with her and confirmed that the patient had been skipping walks since the back pain flared. Her Wells score for pulmonary embolism was 6, from clinical signs of deep vein thrombosis and an alternative diagnosis less likely than embolism. Heart rate remained under 100 beats per minute. Given the score and the hypoxemia, CT pulmonary angiography was obtained rather than a D-dimer alone.
+
+Past history. Type 2 diabetes was diagnosed in 2019 and has been managed with metformin and, more recently, basal insulin. Lumbar radiculopathy has been present since 2021 after a lifting injury, with MRI at that time showing degenerative disc disease and foraminal narrowing at L4-L5. She has had no prior venous thromboembolism, no known cancer, and no recent surgery. Family history is notable for diabetes in her mother and for no early sudden death.
+
+Outside records. A disc of imaging was sent from Outside Hospital and showed the earlier lumbar MRI plus a chest radiograph from a respiratory illness that was read as clear. Those images were reviewed with radiology and did not change the plan. No further outside studies were pending at discharge.
+
+Medications before admission.
+Metformin 1000 mg PO BID.
+Insulin glargine 18 units subcutaneously at bedtime.
+Lyrica 75 mg PO BID for neuropathic pain, reconciled on admission to pregabalin 75 mg PO BID so that brand and generic would not be taken together.
+Acetaminophen 650 mg PO every 6 hours as needed.
+Ibuprofen had been used most days and was stopped on arrival because of the clot and the kidney risk.
+Atorvastatin 20 mg PO nightly.
+Lisinopril 10 mg PO daily.
+
+Allergies. She reports a rash with sulfamethoxazole and tolerates penicillins.
+
+Examination and data on arrival. Temperature 37.2 C, blood pressure 138/76 mmHg, heart rate 96 beats per minute, respiratory rate 22 breaths per minute, and oxygen saturation 91 percent on room air, improving to 96 percent on 2 liters by nasal cannula. Body mass index was 34 kg/m2. Lungs were clear. Heart sounds were regular without a murmur. The left calf was 2 cm larger than the right and tender along the popliteal fossa. Lumbar flexion was limited. Strength was intact in both legs and straight-leg raise reproduced the left-sided radicular pain.
+
+Labs. Hemoglobin 12.8 g/dL, white blood cell count 9.4 thousand per microliter, platelets 246 thousand per microliter. Sodium 138 mmol/L, potassium 4.1 mmol/L, chloride 102 mmol/L, bicarbonate 24 mmol/L, blood urea nitrogen 16 mg/dL, creatinine 0.9 mg/dL, and glucose 168 mg/dL. D-dimer was elevated at 2.4 mg/L FEU. Troponin I was 0.02 ng/mL and did not rise. NT-proBNP was 180 pg/mL. INR was 1.0. Hemoglobin A1c was 7.8 percent.
+
+Imaging and procedures. Lower extremity duplex ultrasound demonstrated an occlusive thrombus in the left popliteal vein. CT pulmonary angiography showed filling defects in segmental arteries of the right lower lobe. There was no saddle embolus and no right ventricular enlargement. A limited echocardiogram showed normal left ventricular systolic function and no large pericardial effusion.
+
+Hospital course. Unfractionated heparin was given as an intravenous bolus and infusion, then changed to apixaban once the hemoglobin was stable and she could swallow her medicines. Back pain limited walking at first, so physical therapy worked with her twice a day. Because she had been taking ibuprofen daily, a steroid taper was chosen for the radicular flare instead of another nonsteroidal anti-inflammatory drug. Prednisone was written as 40/30/20/10 mg PO daily, with each dose used for five days and taken in the morning. Pantoprazole 40 mg PO daily was added for the length of that taper. Fingerstick glucose rose into the low 200s mg/dL, and insulin glargine was increased from 18 units to 20 units at bedtime. The covering pharmacist reconciled Lyrica with pregabalin so the brand and the generic would not both be given. Oxygen was weaned to room air, with saturation 95 percent at rest and 93 percent during a short walk. Diabetes teaching covered hypoglycemia and what to do with insulin on a sick day. A referral to Pain Clinic was placed so that a lumbar epidural can be considered if the leg pain is still limiting after the taper. Diabetes Center was asked to see her in clinic to decide whether a GLP-1 receptor agonist should be added to metformin.
+
+Anticoagulation counseling. She will take apixaban 10 mg PO BID for the first seven days and then apixaban 5 mg PO BID. Bleeding precautions and the signs of a recurrent clot were reviewed with her and with her daughter. Treatment is planned for at least three months and will be reconsidered at the anticoagulation visit.
+
+Discharge medications.
+Apixaban 10 mg PO BID for seven days, then apixaban 5 mg PO BID.
+Prednisone 40/30/20/10 mg PO daily, each step for five days.
+Pantoprazole 40 mg PO daily during the prednisone taper, then stop.
+Pregabalin 75 mg PO BID. She should not also take Lyrica.
+Acetaminophen 650 mg PO every 6 hours as needed for pain.
+Metformin 1000 mg PO BID with meals.
+Insulin glargine 20 units subcutaneously at bedtime.
+Atorvastatin 20 mg PO nightly.
+Lisinopril 10 mg PO daily.
+Docusate 100 mg PO BID as needed for constipation while activity is limited.
+
+Follow-up and precautions. She should return for chest pain, worsening dyspnea, fainting, black stools, or new leg swelling. Glucose checks were requested twice daily during the prednisone taper. She may walk as tolerated and should stand and stretch during any car ride that lasts more than an hour. Her daughter will stay in the home for the first week. The instructions were read back by the patient, and the covering pharmacist checked the anticoagulant pack before discharge. Signed by the discharging hospitalist for the inpatient team.

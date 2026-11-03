@@ -1,0 +1,107 @@
+Willow Creek Pharmacy
+Medication Reconciliation Note
+Prepared: March 4, 2026
+
+Patient: Helen M. Bruckner
+DOB: November 18, 1933
+Age: 92 y.o.
+MRN: 7044-1183-26
+Home phone: (937) 555-0148
+Email: hbruckner@example.com
+Home address:
+418 Hickory Court
+Kettering, OH 45429
+
+Prescriber: Ellis Dowd, MD
+Caller: Ifeoma Nwosu, daughter-in-law of the patient
+
+Source. Reconciliation opened after a morning call to the refill
+line. The caller fills the weekly pill boxes and said a discharge
+packet arrived by fax from the prescriber's office. Two bottles in
+the cabinet no longer match that packet. We recieved the fax at the
+counter just after 09:40. The scan was light, so the new diuretic
+sig was read twice against the list she held to the phone.
+
+Reason for the call. Ninety-day supplies of warfarin, metoprolol
+succinate, lisinopril, and levothyroxine were due out today. A
+furosemide 40 mg tablet was added last week for fluid. She wanted
+the warfarin and the diuretic kept seperate from the morning slots until a
+pharmacist signed the list. She also asked that we speak with the patient Helen
+Bruckner before any bottle is mailed. There have been occassional
+nosebleeds, and the evening warfarin was skipped on those days.
+
+History used for the check. Atrial fibrillation, longstanding.
+Heart failure with preserved ejection fraction. Hypertension.
+Stage 3 chronic kidney disease. Hypothyroidism. The only allergy
+is a rash to a sulfa antibiotic years ago. Furosemide was continued
+with a rash check, since the prescriber had already accepted that
+risk. No statin. Fall risk is high and a walker is used indoors.
+Vitamin K intake has been steady. No new antibiotic or herbal
+product was reported.
+
+Medications after reconciliation.
+
+Warfarin 4 mg tablet by mouth once daily at 18:00. Goal INR 2.0 to
+3.0. Evening only. Do not add aspirin or any NSAID. Hold and call
+for black stool, a nosebleed that will not stop, or a fall with a
+blow to the head.
+
+Metoprolol succinate 50 mg tablet by mouth once daily. Do not
+crush. Hold for a heart rate under 50 or for new wheezing.
+
+Lisinopril 10 mg tablet by mouth once daily. Call for dizziness on
+standing, a new cough, or swelling of the tongue or lips.
+
+Furosemide 40 mg tablet by mouth each morning. New on the faxed
+packet. Weigh each morning. Call for a gain over 2 pounds in a day,
+for cramps, or for a weight that drops quickly.
+
+Levothyroxine 88 mcg tablet by mouth once daily on an empty stomach,
+thirty minutes before food. Keep it away from the fiber supplement,
+which was stopped last month and should stay stopped.
+
+Cholecalciferol 1000 units by mouth once daily. Family supplied, not
+dispensed from our stock today.
+
+Acetaminophen 500 mg tablet by mouth every six hours as needed for
+pain. Do not exceed 3 g from all sources in 24 hours.
+
+Stopped. Aspirin 81 mg daily was retired at the last visit because
+of nosebleeds on warfarin. An old bottle remains in a kitchen drawer
+and will be brought in for disposal. Ibuprofen stays off.
+
+Labs and vitals copied from the clinic note of February 26, 2026.
+
+    Test                 Result
+    INR                  2.6 (goal 2.0 to 3.0)
+    Creatinine           1.4 mg/dL
+    eGFR                 46 mL/min/1.73 m2
+    Potassium            4.1 mmol/L
+    TSH                  2.8 mIU/L
+    Hemoglobin           11.8 g/dL
+    Blood pressure       138/72 mmHg
+    Heart rate           64 beats per minute
+    Weight               61.2 kg
+    Temperature          36.7 C
+    Oxygen saturation    96 percent on room air
+    Respiratory rate     16 breaths per minute
+
+Assessment. Refill is acceptable once the evening warfarin time is
+confirmed with the patient. Furosemide 40 mg each morning matches
+the faxed sig. Lisinopril 10 mg is reasonable with potassium 4.1
+mmol/L and creatinine 1.4 mg/dL. Metoprolol succinate 50 mg fits a
+heart rate of 64 beats per minute. No interacting drug was added.
+
+Plan. Fill 90 days of warfarin 4 mg, metoprolol succinate 50 mg,
+lisinopril 10 mg, and levothyroxine 88 mcg. Fill furosemide 40 mg
+for 30 days, then review home weights. The caller read back the
+warfarin time, the morning diuretic, and the NSAID hold. The patient
+was sleepy and did not come to the phone. A second call is set for
+tomorrow morning before the courier leaves. A short note goes to the
+prescriber that the aspirin bottle is being retired. Mail to the
+home address on this form.
+Tracking will post at https://portal.example.org/medrec/status.
+
+Calvin R. Hensley, RPh
+Willow Creek Pharmacy
+End of medication reconciliation

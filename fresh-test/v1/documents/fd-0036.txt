@@ -1,0 +1,23 @@
+Cedar Lane Pharmacy
+Refill call note
+Date of Service: Sept. 12, 2026
+Patient: MAIMOUNA LOUM
+DOB: Apr. 3, 1987
+Rx: 6621904
+Plan ID: 3190 6621 44
+Phone: (504) 555-0118
+Email: maimouna.loum at example dot com
+
+Present for the call: Daisy Keene, technician; Chase Elwood, MD; Nadir al-Hashim, husband of the patient.
+
+The technician took a refill request for methimazole and propranolol and read the profile back to the husband, who had the bottles in hand at home. Maimouna Loum is a 39-year-old woman with Graves disease. She was at the market during the call and asked that the details be settled with her husband. He confirmed she has not missed more than an occasional tablet in the past month.
+
+Profile after the call. Methimazole 10 mg tablet by mouth once daily in the morning. This is the current step of a taper of 30/20/10 mg, and 10 mg is the dose the prescriber wants continued. Propranolol 10 mg tablet by mouth twice daily, morning and late afternoon, for residual tremor. A multivitamin once daily and calcium 500 mg by mouth twice daily with food are also on the shelf and do not need a new prescription today. No biotin was reported.
+
+Last values, from the clinic note filed with the profile. Free T4 1.3 ng/dL. TSH 0.18 mIU/L, still low, which is expected this early after the dose reduction. White blood cell count 6.4 K/uL with a normal neutrophil count. Pulse 78 beats per minute. Blood pressure 118/70 mmHg. Weight 64 kg. She has no fever, sore throat, mouth ulcers, or jaundice. Heart rate has stayed under 100 without palpitations that stop her work.
+
+Counseling on the call. Stop methimazole and seek a same-day blood count for fever, severe sore throat, or mouth ulcers. Do not restart it until a clinician says the count is safe. Take it at the same time each morning, with or without food. Propranolol should not be stopped abruptly. Take it with food if the stomach is uneasy, and call for wheezing or a pulse that feels too slow. The husband read those points back correctly.
+
+Refill plan. Dispense methimazole 10 mg, ninety tablets, one daily, with two refills remaining on the current prescription. Dispense propranolol 10 mg, one hundred eighty tablets, one twice daily, which covers the same ninety days. No early refill override was needed. The prescriber does not need a new signature for this fill. A follow-up thyroid panel is already scheduled, and the result should be on the profile before the next refill is released. If free T4 drifts high, hold further fills and send the profile back for a dose change rather than continuing 10 mg by habit.
+
+The husband will pick up both bottles this evening. He was asked to bring an identification card. The patient wants the pharmacy email used for ready notices, written as on this form so the message is not missed by a filter. No allergy to methimazole or to propranolol is on the profile. She does not take an iodine supplement. End of refill call note.

@@ -1,0 +1,51 @@
+TELEPHONE ENCOUNTER LOG - CEDAR GROVE CLINIC
+Date of Service: 10/14/2026
+Facility: Cedar Grove Clinic - Gastroenterology Specialty Pavilion
+Telephone: (503) 555-0164
+Fax: (503) 555-0178
+Patient Name: Roger M. Miller
+MRN: 7392015
+Account: Claim Number: CLM-4920815
+Subscriber ID: Policy ID: 8492 0184 73
+Patient Street Address:
+842 Meadow Lane
+Eugene, Oregon 97405
+Attending Care Team: Dr. Thomas Barrett, Dr. Laura Vance, Mark Becker, PA-C, Hannah Clark, RN
+
+HANNAH CLARK: Cedar Grove Clinic gastroenterology triage line, this is Hannah Clark, RN. How, um, how can I help you today?
+
+MATEO GÓMEZ-NAVARRO: Hello, yes, uh, good afternoon. My name is Mateo Gómez-Navarro. I am calling, um, calling on behalf of my father-in-law, Roger M. Miller. I am his primary caregiver and healthcare proxy. We, uh, we had a few urgent questions regarding his pathology results and his medication instructions following his upper endoscopy last week.
+
+HANNAH CLARK: Hello, Mr. Gómez-Navarro. I can certainly help you review those results and connect with the clinical team. Before we open the chart, I just need to verify a few patient identifiers for security. Could you please confirm his full legal name, his date of birth, and his residential address?
+
+MATEO GÓMEZ-NAVARRO: Sure, absolutely. His name is Roger M. Miller. His DOB: 05/17/1958, so he is currently a 68-year-old gentleman. And his address is 842 Meadow Lane, Eugene, Oregon 97405.
+
+HANNAH CLARK: Thank you very much. Let me locate his file in our electronic record system... Okay, I see him here. It looks like the intake clerk entered a quick triage note this morning with his name written just as roger miller without capitals, but the medical record number MRN: 7392015 matches completely. And I see your caregiver authorization on file. What specific concerns did you and Mr. Miller have today?
+
+MATEO GÓMEZ-NAVARRO: Well, um, the doctor who did the procedure, Dr. Thomas Barrett, spoke with us briefly in recovery, but my father-in-law was still quite groggy from the intravenous sedation. Then yesterday we received an automated portal notification stating that new pathology findings were posted from the specimen collected on October fourteenth, twenty twenty-six. When I opened the documnet, it mentioned something called Barrett esophagus with intestinal metaplasia. We got really scared that it meant cancer, so we wanted to speak with a nurse or doctor right away.
+
+HANNAH CLARK: I completely understand why seeing that terminology would cause anxiety, Mr. Gómez-Navarro. Let me reassure you right away: the pathology report specifically states that the biopsy specimens demonstrated specialized columnar epithelium with goblet cells, which is the definition of Barrett esophagus, but there is no dysplasia and no evidence of malignancy. In plain terms, that means chronic stomach acid exposure has caused the normal lining of the distal food pipe to adapt, but the cells are not cancerous. Dr. Barrett reviewed the histology slides this morning and confirmed that finding.
+
+MATEO GÓMEZ-NAVARRO: Oh, wow, that is such a huge relief. We were so worried all night. Dr. Barrett told us in recovery that his sedation went smoothly—I remember the discharge nurse noted his Glasgow Coma Scale was 15 before he walked out to the car—but we still were not sure what the biopsy would show.
+
+HANNAH CLARK: Yes, his post-anesthesia recovery was uneventful, and a Glasgow Coma Scale of 15 confirms he was fully oriented at discharge. Because the biopsy showed Barrett esophagus without dysplasia, the standard medical guideline is long-term acid suppression and surveillance upper endoscopy every three to five years to keep a close watch on the tissue. Dr. Barrett wants him to take omeprazole 40 mg PO BID, thirty to sixty minutes before breakfast and dinner, rather than once daily. If he experiences persistent breakthrough heartburn, he can also use sucralfate 1 g PO QID as an oral suspension one hour before meals and at bedtime.
+
+MATEO GÓMEZ-NAVARRO: Okay, I am writing this infromation down carefully. Omeprazole 40 mg twice a day, before meals. What about his routine blood pressure pills and his daily aspirin?
+
+HANNAH CLARK: He should resume all of his baseline chronic medications as previously prescribed. In addition, Dr. Barrett recommends standard lifestyle measures: elevating the head of his bed by six inches, avoiding eating within three hours of lying down, and limiting triggers like citrus, tomato sauce, caffeine, and peppermint.
+
+MATEO GÓMEZ-NAVARRO: Understood. Now, we also had a quick question about portal access. When I logged into the portal system from my home computer this morning to review the discharge summary, I got a security email alert saying someone accessed the account from IP address 203.0.113.52. I wanted to make sure his medical record had not been compromised.
+
+HANNAH CLARK: Thank you for checking on that. Our technical support logs show that IP address 203.0.113.52 corresponds to the secure public gateway for your local fiber internet provider in the Eugene area. Since that matches your sign-in timestamp at 08:32 AM, it was simply our automated system confirming an authorized caregiver login. There is no breach or unauthorized access.
+
+MATEO GÓMEZ-NAVARRO: That is reassuring, thank you. Lastly, Dr. Barrett's discharge paperwork mentioned that we should set up a routine follow-up consultation with the gastroenterology clinic to check his symptom response and review the long-term surveillance plan.
+
+HANNAH CLARK: Yes, exactly. Let me check our specialty clinic calendar right now. Dr. Barrett has an opening for a follow-up telehealth visit on 18 Nov 2026 at 10:30 AM. Would that date and time work for you and Mr. Miller?
+
+MATEO GÓMEZ-NAVARRO: Yes, 18 Nov 2026 at 10:30 AM works wonderfully for both of us. I will put it on our family calendar.
+
+HANNAH CLARK: Perfect. I have locked in that apointment for 18 Nov 2026 with Dr. Barrett. I am sending an electronic order for the increased omeprazole dosing to your pharmacy now, and I will route this telephone note to Dr. Barrett, Dr. Laura Vance, and Mark Becker, PA-C for their review. Please give us a call back if he experiences any persistent difficulty swallowing, chest pain, black tarry stools, or persistent vomiting.
+
+MATEO GÓMEZ-NAVARRO: Thank you so much for your patience, Nurse Clark. This was incredibly helpful.
+
+HANNAH CLARK: You are very welcome, Mr. Gómez-Navarro. Tell Mr. Miller we wish him the best, and have a good afternoon.

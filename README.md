@@ -113,6 +113,8 @@ Recall fell from 187 to 184 because ten facility names made of ordinary words ("
 
 The blind set will be scored once by `eval/fresh/score.mjs`, fixed before the set is locked. **No result exists yet.** Nothing in this section is a score.
 
+**Status:** locked on 2026-11-03, set hash `2d2011ff449da01bb3200b5f2832cb40faa70323cc85a5f97a79446dd4f71055`, scorer `047c193`, not yet scored. The set is in [fresh-test/v1](fresh-test/v1). Its [lock note](fresh-test/v1/LOCK-NOTE.md) says who wrote and labeled it and names the one deviation from the spec.
+
 | | |
 |---|---|
 | Scorer commit | `047c19326ad0fcd570c55bc480ccd6878c350829` |

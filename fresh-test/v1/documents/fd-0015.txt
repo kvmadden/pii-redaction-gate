@@ -1,0 +1,85 @@
+MEDICATION RECONCILIATION
+Plum Street Pharmacy
+Phone: (208) 555-0174
+Member: 6104-8831-29
+DOB: March 4, 1934
+
+Her daughter, Clara M. Bemis, called about a full reconciliation for Anežka
+Vávrová, a 92 y.o. woman, before the weekend fill.
+Dr. Thủy K. Lâm remains the prescriber. Ross Carter, clinical pharmacist,
+reviewed the interaction screen. Ellen Ward, pharmacy technician, read
+each bottle aloud. She can be reached at 208.555.0133 if a claim rejects.
+Please send any paper denial that may come later to 220 Plum Street
+Boise, ID 83702 rather than to the daughter.
+
+The home list was rebuilt from those bottles and from the prescriber's
+last note. Diagnoses that drive the list are nonvalvular atrial
+fibrillation, heart failure with preserved ejection fraction,
+hypothyroidism, and osteoarthritis of both knees. There is a remote
+history of stomach upset when a nonsteroidal drug was used, so none is on
+the list now. She lives alone and uses a cane outside the apartment. Her
+daughter fills the pill box on weekends and checks weights by phone.
+
+Current regimen, confirmed label by label:
+apixaban 2.5 mg PO BID
+metoprolol succinate 25 mg PO daily
+furosemide 20 mg PO every morning
+potassium chloride 10 mEq PO daily with breakfast
+levothyroxine 75 mcg PO daily on an empty stomach
+amlodipine 2.5 mg PO daily
+acetaminophen 650 mg PO TID with meals
+cholecalciferol 1000 units PO daily
+docusate sodium 100 mg PO BID
+senna 8.6 mg PO at bedtime PRN no stool for two days
+
+Apixaban is at the reduced strength on purpose. She meets two labeled
+reduction criteria by age and by a weight of 52 kg, so 2.5 mg twice daily
+is correct. Creatinine did not have to be high for that decision. She
+should not double a missed dose. No aspirin was added.
+
+Vitals at the last clinic check, which the daughter read from a pocket
+card:
+blood pressure seated 132/68 mmHg, standing 118/60 mmHg
+heart rate seated 62 beats per minute, standing 74 beats per minute
+weight 52 kg
+temperature 36.5 C
+oxygen saturation 95 percent on room air
+
+Laboratory results on that same card:
+sodium 138 mmol/L
+potassium 4.0 mmol/L
+chloride 104 mmol/L
+bicarbonate 25 mmol/L
+creatinine 1.2 mg/dL
+glucose 98 mg/dL
+hemoglobin 11.4 g/dL
+TSH 2.4 mIU/L
+
+The potassium and the modest furosemide dose can stay together.
+Levothyroxine is at goal by the TSH and should stay separated from
+calcium and from the morning antacid she used to take. That antacid and a
+bedtime diphenhydramine product were both stopped. Diphenhydramine is a
+poor sleep aid at this age because of confusion and falls, and
+acetaminophen alone covers the knee pain. The daughter was told to buy
+plain acetaminophen, not a combination night tablet.
+
+Counseling covered slow rising, a daily weight, and a call for a gain of
+three pounds, for new swelling, for black stools, or for a cough that
+wakes her. Breakfast should wait at least thirty minutes after
+levothyroxine, and apixaban can be taken with that meal or without it.
+Amlodipine is the medicine to revisit if seated systolic readings stay
+near the current number, because a beta blocker and a diuretic are already
+on board and the standing pressure is softer. No dose was changed on this
+call. The interaction screen found no further pair that had to be stopped.
+Fall precautions were reviewed, including night lighting and avoiding a
+rush to the bathroom after the evening senna. Constipation care stays with
+scheduled docusate and senna only after two days without a stool, so she
+is not taking a stimulant every night. Fluid advice was modest: she should
+not tank up, because of heart failure, and should not restrict so hard
+that the standing pressure falls further. The daughter will report
+dizziness, a new limp, or any vomit that looks like coffee grounds. Black
+stool teaching used plain language and she repeated it back. A thirty-day
+supply of each chronic medicine was queued. Inhalers are not part of this
+list, and no nebulizer was requested. The prescriber does not need a new
+prior authorization for these strengths. Refill status can be viewed at
+https://plumstreet.example.net/refill.

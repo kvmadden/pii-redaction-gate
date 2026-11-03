@@ -1,0 +1,20 @@
+CLINICAL CARE MANAGEMENT AND PRIOR AUTHORIZATION MEMORANDUM
+SERVICE COORDINATION AND PHARMACY REVIEW
+
+SUBJECT: INTERDISCIPLINARY CARE PLAN AND PHARMACY BENEFIT SUMMARY
+
+This administrative memorandum summarizes the continuing care coordination and clinical management pathway for the patient, a 67-year-old male with complex endocrine and cardiovascular disease. Historical clinical documentation indicates that hyperthyroidism secondary to Graves disease was originally identified in 2019, complicated by mild orbitopathy and persistent sinus tachycardia. Clinical summaries transferred from Outside Hospital confirm that radioactive iodine ablation was deferred in favor of medical management, with episodic clinical monitoring maintained through ambulatory endocrine consults.
+
+During the most recent clinical evaluation, baseline vital signs were documented as follows: blood pressure 134/82 mmHg, heart rate 88 bpm regular, respiratory rate 16 breaths/min, body temperature 98.6 F, and oxygen saturation 98% on ambient air. Concurrent laboratory testing revealed thyroid-stimulating hormone (TSH) suppressed at < 0.01 uIU/mL, free thyroxine (free T4) elevated at 2.6 ng/dL, and total triiodothyronine (total T3) at 198 ng/dL. Hepatic functional parameters remained stable with alanine aminotransferase 24 U/L, aspartate aminotransferase 21 U/L, adn total bilirubin 0.7 mg/dL. Complete blood count demonstrated an absolute neutrophil count of 3,400 /uL, reassuring against thionamide-induced agranulocytosis.
+
+Active multidisciplinary referrals have been processed to ensure integrated disease oversight. The patient has been scheduld for follow-up nutritional and metabolic consultation through Diabetes Center. A parallel referral to Cardiology was initiated to address rate control and assess left ventricular systolic function via transthoracic echocardiogram. An initial assessment through Pain Clinic was also requested for cervical radicular symptoms.
+
+The active outpatient medication regimen includes the following verified prescriptions:
+- methimazole 10 mg PO TID for thyrotoxicosis control
+- propranolol 20 mg PO TID for sympathetic symptom mitigation
+- Allegra 180 mg PO daily for chronic seasonal rhinitis
+- prednisone 40/30/20/10 mg daily taper administered over twenty days for acute thyroid eye discomfort
+
+The clinical care coordinator and covering clinical pharmacist have reviewed the medication profile to prevent adverse drug-drug interactions. Benefit coverage has been authorized by the health plan for ongoing diagnostic monitoring every 2/3 weeks until biochemical euthyroidism is achieved. For any administrative inquirey regarding this coordination summary, care coordinators may submit requests through the secure clinical communication exchange.
+
+DIVISION OF SPECIALTY CARE COORDINATION

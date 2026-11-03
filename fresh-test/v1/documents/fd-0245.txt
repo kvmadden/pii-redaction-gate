@@ -1,0 +1,52 @@
+Chest and Vascular Center
+CT Angiography Report
+
+Patient: Elspeth Grainger
+DOB: 11/02/1971
+Age: 54 years
+MRN: 4O8l-229O
+Accession: AVC-26-55184
+Exam: CT angiography of the chest
+Collected: 3/4/26
+Ordering: Dr. Mateus Cavalcanti
+Address: PO Box 2284, Briarwick, ME 04982
+
+CLINICAL INDICATION
+Outpatient evaluation for Marfan syndrome. The patient has an arm span
+greater than her height, mild scoliosis, and a maternal uncle who
+died suddenly of a reported aortic event. Her sister,
+Mrs. Rivka Marfan, gave the history by telephone. The sister
+has no connective-tissue diagnosis of her own, and the shared
+surname is not being treated as evidence of disease.
+
+TECHNIQUE
+Helical CT angiography was performed from the thoracic inlet through
+the upper abdomen after 100 mL of iohexol 350 mg I/mL injected at
+4 mL/sec. ECG-gated reconstructions of the aortic root were made
+at 0.6 mm. Heart rate during acquisition was 62 beats per minute.
+
+COMPARISON
+No earlier examination is stored in this archive.
+
+FINDINGS
+The aortic root measures 4.1 cm at the sinuses of Valsalva. The
+sinotubular junction measures 3.3 cm, and the mid ascending aorta
+measures 3.4 cm. No intimal flap, intramural hematoma, or
+penetrating ulcer is identified. The descending thoracic aorta
+measures 2.6 cm. The main pulmonary artery measures 2.7 cm. The
+lungs are clear. There is no pleural effusion and no pericardial
+effusion. A gentle thoracic scoliosis is present.
+
+Serum creatinine on the morning of the examination was 0.8 mg/dL,
+and the eGFR was 94 mL/min/1.73 m2. Medicines taken that morning
+were metoprolol succinate 50 mg PO daily and losartan 50 mg PO daily.
+
+IMPRESSION
+1. Mild aortic root dilatation, in keeping with the stated concern
+for Marfan syndrome. There is no acute aortic syndrome.
+2. Echocardiography and a genetics consultation are suggested.
+The doses listed above may continue unless the ordering
+clinician changes them.
+
+Interpreted by Dr. Inês Barroso, cardiovascular radiology.
+The report was signed on the date of collection. End of report.

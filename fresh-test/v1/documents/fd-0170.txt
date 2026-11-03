@@ -1,0 +1,78 @@
+CLEARWATER MEDICAL LABORATORIES
+SURGICAL PATHOLOGY REPORT
+
+PATIENT: YURTSEVER, CEMAL
+HOME ADDRESS: 842 Crestview Terrace, Bellevue, WA 98004
+TELEPHONE: (206) 555-0142
+MRN / MASTER ID: 7142 0839 51
+ACCESSION NUMBER: SP-2026-88341
+ORDERING PHYSICIAN: Dr. Alistair MacIntyre
+PATHOLOGIST: Dr. Bradley Keller
+EMERGENCY CONTACT: Dagmara Dvořáková (sister)
+Date of Service: Oct 14 2026
+Report Date: Oct 16 2026
+
+SPECIMEN SUBMITTED:
+Prostate needle core biopsies (12 cores, designated A through L).
+
+CLINICAL INDICATION:
+Elevated serum PSA of 7.8 ng/mL and abnormal digital rectal examination.
+Prior transrectal ultrasound noted hypoechoic nodule in left peripheral
+zone. Patient is a 65-year-old male presenting with urinary frequency.
+Serum PSA density was calculated at 0.16 ng/mL2 based on a prostate
+volume of 48 cc measured on recent pelvic MRI.
+
+GROSS DESCRIPTION:
+Specimen received in twelve formalin-filled containers, each labeled
+with patient identifiers and designated part letters A through L.
+Part A: Labeled "right apex", consists of two tan-white cylindrical
+tissue cores measuring 1.2 cm and 1.4 cm in length, entirely submitted.
+Part B through Part L: Each consists of one to three tan cylindrical
+cores measuring between 0.9 cm and 1.6 cm in length, processed in routine
+fashion without complication.
+
+MICROSCOPIC EXAMINATION:
+Sections of Mr. Yurtsever's prostate core biopsies were examined under
+standard light microscopy following hematoxylin and eosin staining.
+
+Parts A through E (Right lobe cores):
+Cores show benign prostatic glandular tissue and fibromuscular stroma.
+No acute or chronic prostatitis is identified. No atypia or malignancy.
+
+Part F (Left mid gland peripheral zone):
+Infiltrating small, crowded, distinct and well-formed neoplastic glands
+infiltrating between benign acini. The neoplastic cells display nuclear
+enlargement, prominent nucleoli, and absence of basal cell layer,
+confirmed by immunohistochemical cocktail (p63 and high-molecular-weight
+cytokeratin negative; AMACR/racemase positive). Appropriate positive and
+negative external controls reacted as expected.
+Gleason pattern: 3 + 4 = 7 (Grade Group 2).
+Tumor involves approximately 35% of the core length (5 mm of 14 mm).
+No perineural invasion is identified in this part.
+
+Part G (Left apex):
+Adenocarcinoma, acinar type.
+Gleason pattern: 3 + 3 = 6 (Grade Group 1).
+Tumor involves approximately 15% of the core length.
+
+Parts H through L (Remaining left base and lateral cores):
+Benign prostatic hypertrophy with focal stromal hyperplasia.
+No evidence of extraprostatic extension or lymphovascular invasion.
+
+FINAL DIAGNOSIS:
+Acinar adenocarcinoma of the prostate, involving left mid gland and
+left apex (2 of 12 cores positive).
+Primary Gleason score: Gleason score 3 + 4 = 7, Grade Group 2.
+Secondary Gleason pattern 4 comprises approximately 10% of tumor volume.
+Surgical margins cannot be assessed on needle core biopsy.
+
+COMMENT:
+The histology and immunohistochemistry results were reviewed with the
+ordering clinician, Dr. Alistair MacIntyre. Patient Cemal Yurtsever will
+be scheduled for consultation regarding active surveillance versus
+definitive treatment options. Multidisciplinary tumor board review is
+recommended prior to final management selection.
+
+Signed,
+Dr. Bradley Keller, MD, FCAP
+Clearwater Medical Laboratories

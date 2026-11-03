@@ -1,0 +1,49 @@
+Pellam Ridge Medical Center
+Outpatient Progress Note
+Department of Family Medicine
+
+Date of Service: 03-12-2026
+Patient: Calvin J. Nordhoff
+MRN: 4472186
+Account #: 8821-44019
+Author: Thalia Vlachos, MD
+
+Chief complaint
+Follow-up after a motor vehicle collision, including a suture check of a forehead laceration.
+
+History of present illness
+Calvin J. Nordhoff is a 54-year-old man who lives in Haysford and works as a cabinet finisher. He was the restrained driver of a 2014 pickup, plate 8RKW-441, when another vehicle turned across his lane on 4 March 2026 near the mill road. The airbag deployed. He was evaluted that evening in the emergency department, where a forehead laceration was irrigated and closed with six simple interrupted sutures and a noncontrast head CT was read as negative for acute intracranial bleed. He was discharged the same night to the care of his wife, Samira al-Hashimi. Today the headache has eased to a dull ache behind the eyes by late afternoon, rated 3 out of 10, without vomiting, visual change, or new weakness. Neck stiffness is worse when he checks a blind spot. Sleep remains broken. He has not driven since the crash because the truck is still at the tow yard. He denies chest pain, shortness of breath, abdominal pain, and hematuria.
+
+He takes lisinopril 20 mg by mouth each morning for hypertension and uses ibuprofen 600 mg by mouth every eight hours with food for neck pain. There is no known drug allergy. He does not smoke. Alcohol is two beers on a weekend evening.
+
+Past medical history
+Hypertension. Remote right inguinal hernia repair in 2011. No diabetes, no seizure disorder, and no earlier head injury.
+
+Medications
+1. Lisinopril 20 mg by mouth daily.
+2. Ibuprofen 600 mg by mouth every 8 hours with food as needed for pain.
+3. Acetaminophen 500 mg by mouth up to three times daily if the headache returns, staying under 3 grams a day.
+
+Allergies
+No known drug allergies.
+
+Social history
+He lives with his wife. Their adult son has been driving him to appointments. He hopes to return to the shop on light duty once he can turn his head without a sharp pull. A seperate work note was requested for the shop foreman, with lifting limited to fifteen pounds for one week.
+
+Review of systems
+Fatigue without fever. Mild photophobia that has cleared. Neck stiffness as above. No focal weakness, no syncope, and no vision loss. Remainder of the review is negative.
+
+Physical examination
+Blood pressure 138/84 mmHg, heart rate 76, respiratory rate 14, temperature 98.2 F, oxygen saturation 98 percent on room air, weight 198 lb. Alert and oriented, in no distress. A 3.5 cm linear laceration of the left forehead is well approximated, sutures intact, no erythema or fluctuance. No Battle sign and no hemotympanum. Neck supple with tenderness over the left trapezius and rotation limited to about 60 degrees each side. Heart regular, lungs clear, abdomen soft. Cranial nerves II through XII intact. Strength 5 out of 5 throughout. Gait steady.
+
+Assessment and plan
+1. Mild concussion, improving, after the collision described above. No red-flag symptoms today. Activity as tolerated with screen time in short blocks. Return sooner for vomiting, worsening headache, confusion, or weakness. Follow-up in two weeks.
+2. Forehead laceration, healing after repair with simple interrupted sutures. Sutures were removed today. Wound care: gentle washing, petrolatum, and no soaking for two more days. Call for spreading redness, drainage, or fever.
+3. Cervical strain. Continue ibuprofen with food, use heat, and begin gentle range of motion. Physical therapy if neck motion is not better in two weeks. I did recomend a short course only, not daily long-term use.
+4. Hypertension, acceptable today. Continue lisinopril 20 mg daily and recheck next visit.
+5. If the clinic cannot reach him at the shop, his wife can be reached at (541) 555-0164 or at samira.alhashimi@example.org. After-visit instructions were sent through the portal at https://records.example.org/visit/nordhoff-0312.
+
+He was told to stop ibuprofen if dark stools or stomach pain occured. He repeated the return precautions and will not drive until cleared.
+
+Electronically signed by Thalia Vlachos, MD
+Family Medicine

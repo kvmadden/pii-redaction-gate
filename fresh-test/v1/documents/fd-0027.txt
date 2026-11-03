@@ -1,0 +1,74 @@
+GERIATRIC EVALUATION AND REHABILITATION CENTER
+TRANSITIONAL DISCHARGE AND SUBACUTE TRANSFER SUMMARY
+
+PATIENT: DEMISSIE, KIDANE
+DOB: May 14 1935
+GENDER: Male
+ACCOUNT NUMBER: AC-5829104
+NATIONAL IDENTIFIER TRACKING: 4821 9932 07
+ADMISSION DATE: Sep 18 2026
+DISCHARGE DATE: Sep 24 2026
+ATTENDING PHYSICIAN: CRAIG CUNNINGHAM, MD
+CONSULTING GERIATRICIAN: E.V. Vance, MD
+CLINICAL NURSE SPECIALIST: Gordon Hayes, RN
+CAREGIVER: Min-ji Park-Choi (Daughter-in-law)
+PRIMARY RESIDENCE: 712 Cedar Avenue South, Minneapolis, MN 55454
+FACILITY FAX: Fax: (612) 555-0149
+PATIENT ELECTRONIC PORTAL: https://portal.example.org/records/view?id=99281
+
+MULTIDISCIPLINARY CARE TEAM:
+Dr. Craig Cunningham (Attending Orthopedic Surgeon), Dr. E.V. Vance (Geriatric Medicine), Gordon Hayes, RN (Case Coordinator), Min-ji Park-Choi (Primary Family Caregiver).
+
+REASON FOR TRANSFER:
+Transfer of care to subacute rehabilitation following surgical repair of a right subtrochanteric femur fracture.
+
+DIAGNOSES:
+1. Closed right subtrochanteric femur fracture secondary to mechanical ground-level fall, status post right cephalomedullary nail fixation.
+2. History of left total hip arthroplasty (performed in 2019), stable.
+3. Osteopenia and age-related senile gait instability.
+4. Essential hypertension, well-controlled.
+5. Mild chronic sensorineural hearing loss, bilateral.
+
+CLINICAL RESUME AND HOSPITAL COURSE:
+Mr. Kidane Demissie is a 91-year-old male who was admitted on Sep 18 2026 following a mechanical fall in his kitchen. While the patient maintains an apartment on Cedar Avenue in Minneapolis, he lives in Bloomington with his daughter-in-law, Mrs. Min-ji Park-Choi, and her family during the winter and autumn months. He lost his footing while reaching into a cupboard and landed heavily on his right hip. He experienced immediate right groin and thigh pain and was unable to bear weight. Radiographs obtained in the emergency room confirmed a displaced, closed right subtrochanteric femur fracture.
+
+On Sep 19 2026, Dr. Craig Cunningham performed successful orthopedic surgery: closed reduction and intramedullary fixation using a right trochanteric femoral nail with cephalomedullary lag screw insertion. The procedure was completed without intraoperative complication, with estimated blood loss of 150 mL. Postoperative radiographs demonstrated anatomical alignment and rigid internal fixation.
+
+Postoperative recovery was monitored closely by the inpatient geriatric co-management team led by Dr. E.V. Vance. Mr. Demissie was initiated on postoperative multimodal analgesia including scheduled acetaminophen and short-term oral oxycodone PRN, deliberately avoiding nonsteroidal anti-inflammatory agents to protect renal function. Deep venous thrombosis prophylaxis was administered with subcutaneous enoxaparin 30 mg once daily, adjusted for geriatric renal clearance. Physical therapy mobilized the patient on postoperative day 1; he was permitted weight-bearing as tolerated on the right lower extremity with a front-wheeled walker.
+
+Gordon Hayes, RN, completed functional discharge planning. At the time of transfer on Sep 24 2026, Mr. Demissie required minimal assistance for sit-to-stand transfers and ambulated 45 feet with a walker under contact guard assistance. Given his advanced age and the multi-step entryway at home, the multidisciplinary team recommended two weeks of intensive inpatient physical therapy at the transitional rehabilitation pavilion.
+
+PHYSICAL EXAMINATION ON DISCHARGE:
+Vital Signs: Temperature 98.1 F, blood pressure 128/76 mmHg, heart rate 70 bpm, respiratory rate 16 breaths/min, oxygen saturation 97% on ambient air.
+General: Alert, cooperative 91-year-old gentleman in no acute distress.
+Cardiovascular: Regular rhythm, normal S1 and S2, no peripheral edema.
+Pulmonary: Lungs clear to auscultation bilaterally.
+Surgical Site: Right lateral hip and proximal thigh incision clean, dry, and intact with staples in place; no erythema, warmth, or purulent drainage. Compartments soft. Distal pulses 2+ dorsalis pedis and posterior tibial. Sensation intact throughout the right foot and toes.
+
+DISCHARGE LAB VALUES:
+Hemoglobin: 10.4 g/dL (stable from postoperative nadir of 10.1 g/dL)
+Hematocrit: 31.8%
+White Blood Cell Count: 7.1 x 10^3/uL
+Platelets: 204 x 10^3/uL
+Sodium: 139 mEq/L
+Potassium: 4.2 mEq/L
+BUN: 17 mg/dL
+Creatinine: 0.92 mg/dL
+Glucose: 108 mg/dL
+
+DISCHARGE MEDICATIONS:
+1. Enoxaparin 30 mg subcutaneous injection once daily for 21 additional days for deep venous thrombosis prophylaxis.
+2. Acetaminophen 650 mg oral tablet every 8 hours scheduled for pain.
+3. Oxycodone 5 mg oral tablet every 6 hours as needed for severe breakthrough pain (maximum 15 mg in 24 hours).
+4. Senna-docusate 8.6-50 mg oral tablet once daily at bedtime for bowel regimen.
+5. Amlodipine 5 mg oral tablet once daily in the morning for hypertension.
+6. Calcium carbonate 600 mg with vitamin D 800 IU oral tablet once daily.
+
+REHABILITATION ORDERS AND FOLLOW-UP:
+1. Activity: Weight-bearing as tolerated on the right lower extremity using a front-wheeled walker. Daily physical and occupational therapy sessions.
+2. Incision care: Keep right thigh surgical incision clean and dry. Staple removal is scheduled for Oct 3 2026 by the orthopedic clinic.
+3. Follow-up appointments: Orthopedic re-evaluation and repeat radiographs with Dr. Craig Cunningham on Oct 8 2026 at 1:15 PM. Geriatric clinic visit with Dr. E.V. Vance in four weeks.
+
+Craig Cunningham, MD
+Geriatric Evaluation and Rehabilitation Center
+Date: Sep 24 2026

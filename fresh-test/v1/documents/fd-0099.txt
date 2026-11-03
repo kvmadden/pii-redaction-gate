@@ -1,0 +1,34 @@
+TRANSCRIPT LOG: INCOMING CLINICAL CALL
+Date of Call: 18.09.2026
+Facility: Pine Valley Medical Clinic
+Triage Station: East Wing Nurse Line
+
+NURSE BROOKS: Pine Valley Medical Clinic triage, this is Nurse Evelyn Brooks speaking. How can I, um, how can I help you today?
+
+CALLER: Hello, yes, uh, good morning. My name is Donald Yates. I'm calling, uh, calling about my mother, Kathleen Yates-O'Donnell. She's, um, she's having some trouble with her medicine, and also we got locked out of her online portal this morning.
+
+NURSE BROOKS: Okay, Mr. Yates, I can certainly help you with both of those things. Before we go into the clinical details, I just need to verify her information for her chart. Could you give me her date of birth and her current street address?
+
+CALLER: Yes, of course. Her DOB is 24.03.1932. She is ninety-four years old now. And her address is 418 Crestview Terrace, Spokane, Washington 99203.
+
+NURSE BROOKS: Perfect, thank you. And do you have her account number or billing reference handy from her statement?
+
+CALLER: Uh, yeah, let me pull up the paper. The account number is AC-739104.
+
+NURSE BROOKS: Got it. And what is the best contact phone number to reach you or her if the provider needs to call back?
+
+CALLER: Well, my mobile phone is +1-503-555-0182, but her primary home phone number is, uh, let me read it slowly, five five five, zero one four two.
+
+NURSE BROOKS: Thank you, five five five, zero one four two. Now, tell me what is going on with Mrs. Yates-O'Donnell's medications.
+
+CALLER: Well, um, her neurologist, Dr. Russell Wagner, started her on carbidopa-levodopa 25/100 mg three times a day for her Parkinson disease about two weeks ago. But yesterday evening and again this morning, she had, uh, she had noticeable resting tremor in her right hand and some stiffness when getting up from her chair. Her blood pressure was 134/78 mmHg and her heart rate was 72 beats per minute. We were trying to send a secure message to Dr. Wagner, but the portal kept throwing an authentication error.
+
+NURSE BROOKS: I see. Let me look at the system access logs right now. Ah, yes, I see the portal lockout. It looks like there was a flagged remote login attempt from IP address 198.51.100.68 at approximately 07:15. That triggered an automated security hold. I just reset the credentials and cleared that flag, so you should be able to log back in shortly.
+
+CALLER: Oh, thank goodness. That IP address was probably my tablet on my home Wi-Fi network.
+
+NURSE BROOKS: That makes sense. As for her Parkinson disease symptoms, I am documenting the increased rigidity and hand tremor in Mrs. Yates-O'Donnell's record right now. I will route an urgent clinical encounter message to Dr. Wagner's medical assistant. If she develops any swallowing difficulty, sudden falls, or severe freezing of gait, please take her to the nearest emergency room immediately. Otherwise, expect a return call from Dr. Wagner or his triage nurse before 3:00 PM today.
+
+CALLER: Okay, thank you so much, Nurse Brooks. We will keep a close eye on her.
+
+NURSE BROOKS: You are welcome, Mr. Yates. Take care.

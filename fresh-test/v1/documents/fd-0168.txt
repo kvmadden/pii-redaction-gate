@@ -1,0 +1,55 @@
+Bright Water Clinic
+Outpatient Progress Note
+
+Patient: Zong, Ntxawm
+MRN: 2294518
+Member ID HP610293384
+Date of Service: April 22, 2026
+
+Chief complaint
+Diabetes follow-up after a colonoscopy, with home glucose readings that have been runing high.
+
+History of present illness
+Ntxawm Zong's log shows fasting values mostly 150 to 180 mg/dL over the past two weeks, higher than the 120s she held in the winter. She has not had sweating, shaking, or confusion to suggest hypoglycemia, and she is not waking at night to urinate. Breakfast is rice porridge or toast, lunch is often soup, and supper is rice with vegetables and a small portion of meat. She feels well enough to cook and to walk the grocery aisles, and she denies thirst that wakes her, weight loss, chest pain, and foot ulcers. She walked thirty minutes on most days until the week of the procedure and has started again.
+
+A screening colonoscopy was done in March 2026. Two small polyps were removed by cold snare polypectomy, and the report called them tubular adenomas. Images are posted at https://portal.example.net/gi/zong-colon for her son-in-law to open with her. She had some gas pain for two days and then felt like herself. No rectal bleeding since the procedure.
+
+Her son-in-law, Chidera Nwankwo, came in with her today, wich has been the pattern since her daughter took a job out of state. On the drive to the clinic a truck clipped the passenger mirror. No one was hurt and they did not need an emergency department. He wrote down plate 6TRD204. He works in Stillwater and she lives in Maplewood, so the visit fits after his shift. He is the one who compares the glucose log with the pill box. She does not drink alcohol and stopped smoking in her thirties. A daughter calls on Sundays from another state, and there is no caregiver strain he wanted to raise today.
+
+Past medical history
+Type 2 diabetes mellitus diagnosed in her fifties. Essential hypertension. Chronic kidney disease stage 2, with a stable creatinine. Dyslipidemia. No coronary stent and no prior stroke. Right cataract extraction several years ago.
+
+Medications
+Metformin 1000 mg by mouth twice daily
+Glipizide 5 mg by mouth daily with breakfast
+Lisinopril 10 mg by mouth daily
+Atorvastatin 20 mg by mouth at bedtime
+Aspirin 81 mg by mouth daily
+She missed two evening metformin doses during teh colonoscopy bowel prep and then restarted.
+
+Allergies
+No known drug allergy.
+
+Examination
+Blood pressure 136/78 mmHg, pulse 74 beats per minute, weight 63.5 kg, BMI 26. She is a 67-year-old woman in no distress, alert, and neatly dressed. Lungs clear, heart regular, no new murmur. Abdomen soft and nontender, with no liver edge. Feet have intact skin, palpable dorsalis pedis pulses, and normal monofilament testing at all standard sites. Neck is supple and the clipped-mirror story did not leave a tender muscle or a bruise. Mood is good-humored and she answers questions herself, turning to her son-in-law only for dates. Dilated retinal examination was done by optometry last fall and showed no diabetic retinopathy.
+
+Labs
+Hemoglobin A1c today is 8.1 percent, up from 7.2 percent. Creatinine 0.92 mg/dL, eGFR 74 mL/min/1.73 m2, urine albumin-to-creatinine ratio 18 mg/g. LDL cholesterol 88 mg/dL on the current statin. Potassium 4.2 mmol/L.
+
+Assessment and plan
+1. Type 2 diabetes mellitus, above goal. The missed doses around colonoscopy do not explain an A1c of 8.1 percent. I will raise glipizide to 5 mg by mouth twice daily and keep metformin at 1000 mg by mouth twice daily. She knows the signs of a low and will keep glucose tablets in her purse. I asked her to write down any value under 80 mg/dL and to hold a glipizide dose if she is not eating. Metformin will be stopped if a future creatinine climbs or if she has vomiting that keeps her from fluids. Repeat hemoglobin A1c in three months. Continue foot checks at home and a yearly dilated eye exam.
+2. Tubular adenomas on screening colonoscopy with cold snare polypectomy. Surveillance colonoscopy in three years was the gastroenterologist's interval, and I agree. No anemia to suggest a missed lesion.
+3. Essential hypertension and stage 2 chronic kidney disease. Blood pressure and albumin excretion are acceptable on lisinopril. No change today.
+4. Prevention. Atorvastatin and aspirin stay as written. A shingles vaccine was offered and she will think it over with her daughter on the phone.
+
+Return sooner for chest pain, a glucose she cannot bring up, blood in the stool, or a foot wound. The plan was reviewed with Chidera Nwankwo, who will update the pill box tonight.
+
+Address on the registration line: 1280 Tamarack Avenue, Maplewood, MN 55109.
+Phone (651) 555-0192.
+Fax (651) 555-0140 for the colonoscopy office if they need a medication list.
+
+Electronically signed
+Olena Bondar-Hrytsenko, MD
+Internal Medicine
+
+Author: Olena Bondar-Hrytsenko, MD

@@ -1,0 +1,209 @@
+{
+ "docs": 132,
+ "identifier_mentions": 2577,
+ "min_identifier_mentions": 600,
+ "by_type_identifier": {
+  "NAME": 326,
+  "DATE": 339,
+  "PHONE": 118,
+  "AGE": 91,
+  "RELATIVE": 298,
+  "CLINICIAN": 595,
+  "DOB": 64,
+  "ID": 231,
+  "ADDRESS": 157,
+  "FACILITY": 212,
+  "FAX": 35,
+  "EMAIL": 38,
+  "URL": 33,
+  "IP": 11,
+  "DEVICE": 19,
+  "VEHICLE": 10
+ },
+ "by_type_policy": {
+  "KEEP/not-identifier": 9198,
+  "NAME/identifier": 326,
+  "DATE/identifier": 339,
+  "PHONE/identifier": 118,
+  "AGE/identifier": 91,
+  "RELATIVE/identifier": 298,
+  "CLINICIAN/identifier": 595,
+  "DOB/identifier": 64,
+  "ID/identifier": 231,
+  "ADDRESS/identifier": 157,
+  "AGE/not-identifier": 116,
+  "DATE/not-identifier": 82,
+  "FACILITY/identifier": 212,
+  "FAX/identifier": 35,
+  "EMAIL/identifier": 38,
+  "URL/identifier": 33,
+  "IP/identifier": 11,
+  "DEVICE/identifier": 19,
+  "VEHICLE/identifier": 10
+ },
+ "groups": {
+  "names": 1219,
+  "dates": 403,
+  "record_plan_numbers": 231,
+  "phone_fax": 153,
+  "addresses": 157
+ },
+ "group_minimums": {
+  "names": 60,
+  "dates": 60,
+  "record_plan_numbers": 60,
+  "phone_fax": 60,
+  "addresses": 60
+ },
+ "groups_ok": {
+  "names": true,
+  "dates": true,
+  "record_plan_numbers": true,
+  "phone_fax": true,
+  "addresses": true
+ },
+ "docs_without_identifier": 28,
+ "min_docs_without_identifier": 20,
+ "docs_by_kind": {
+  "pharmacy-note": 20,
+  "lab-imaging-pathology": 13,
+  "call-transcript": 20,
+  "portal-message": 20,
+  "email-admin-letter": 13,
+  "discharge-referral": 20,
+  "progress-note-hp": 26
+ },
+ "docs_by_author_and_kind": {
+  "grok/pharmacy-note": 10,
+  "gemini/pharmacy-note": 10,
+  "gemini/lab-imaging-pathology": 6,
+  "gemini/call-transcript": 10,
+  "grok/portal-message": 10,
+  "grok/lab-imaging-pathology": 7,
+  "gemini/portal-message": 10,
+  "gemini/email-admin-letter": 6,
+  "gemini/discharge-referral": 10,
+  "grok/discharge-referral": 10,
+  "grok/call-transcript": 10,
+  "grok/email-admin-letter": 7,
+  "grok/progress-note-hp": 13,
+  "gemini/progress-note-hp": 13
+ },
+ "coverage": {
+  "keep": {
+   "spans": 9198
+  },
+  "name": {
+   "mentions": 1219,
+   "ALL CAPS": 115,
+   "particle/hyphen/apostrophe/accent": 280,
+   "split across line break": 29,
+   "collision-word mentions": 314,
+   "initials": 15,
+   "LAST, FIRST": 42,
+   "middle initial": 78,
+   "lowercase": 40
+  },
+  "date": {
+   "dashes": 24,
+   "dots": 21,
+   "dob": 64,
+   "slashes": 93,
+   "month-name": 178,
+   "holiday-phrase": 15,
+   "ordinal": 44,
+   "spoken-words": 16,
+   "iso": 29,
+   "abbrev-period": 22,
+   "month-year-only": 22,
+   "abbrev-no-period": 32,
+   "day-first": 47,
+   "two-digit-year": 20
+  },
+  "phone": {
+   "international": 11,
+   "extension": 19,
+   "fax": 35,
+   "unicode-dash": 8,
+   "spoken": 7
+  },
+  "age_over89": {
+   "spelled-out": 16,
+   "y.o.": 19,
+   "shorthand": 16,
+   "hyphenated": 23,
+   "bare-number (labeled)": 14
+  },
+  "id": {
+   "labeled": 188,
+   "spaces": 15,
+   "dashes": 49,
+   "scan-error-like (O/l among digits)": 12,
+   "unlabeled": 43
+  },
+  "address": {
+   "Title/mixed case": 120,
+   "multi-line": 32,
+   "city-only (no digits)": 26,
+   "unit": 41,
+   "lowercase": 22,
+   "po box": 11,
+   "ALL CAPS": 15
+  },
+  "age": {
+   "under90": 116
+  },
+  "facility": {
+   "mentions": 212
+  },
+  "email": {
+   "obfuscated": 11,
+   "plain": 27
+  },
+  "url": {
+   "total": 33,
+   "at sentence end": 21
+  }
+ },
+ "no_identifier_doc_ids": [
+  "fd-0004",
+  "fd-0008",
+  "fd-0017",
+  "fd-0048",
+  "fd-0059",
+  "fd-0060",
+  "fd-0081",
+  "fd-0091",
+  "fd-0103",
+  "fd-0119",
+  "fd-0134",
+  "fd-0151",
+  "fd-0152",
+  "fd-0154",
+  "fd-0157",
+  "fd-0163",
+  "fd-0165",
+  "fd-0199",
+  "fd-0203",
+  "fd-0206",
+  "fd-0222",
+  "fd-0229",
+  "fd-0233",
+  "fd-0242",
+  "fd-0250",
+  "fd-0252",
+  "fd-0278",
+  "fd-0282"
+ ],
+ "non_anglo": {
+  "distinct_names": 628,
+  "mentions": 1219,
+  "mentions_non_anglo_both": 598,
+  "mentions_non_anglo_either": 614,
+  "share_both": 0.49056603773584906,
+  "share_either": 0.5036915504511895,
+  "share_gemini": 0.4995898277276456,
+  "share_grok": 0.4946677604593929,
+  "classifier_agreement_distinct": 0.982484076433121
+ }
+}

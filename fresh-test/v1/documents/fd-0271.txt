@@ -1,0 +1,29 @@
+Date of Service: April 9, 2026
+Patient Name: TADESSE-HAILE, BERHANE
+Plan Group Number: GRP-7710394
+Provider: Dr. Thomas Fletcher
+Subject: Follow-up on asthma maintenance therapy and spirometry paperwork
+
+Message 1
+From: berhane
+Sent: April 9, 2026 09:14 AM
+To: Dr. Thomas Fletcher
+
+dear dr. fletcher,
+i am writing to follow up on my persistent nocturnal cough and shortness of breath after completing the recent taper. i have been taking my Symbicort 160/4.5 mcg two inhalations BID consistently and using albuterol HFA 90 mcg two puffs every four to six hours as needed for wheezing. over the past four days, i needed the rescue inhaler twice each night, and my peak expiratory flow readings dropped to 380 L/min, down from my baseline of 520 L/min. my caregiver Nancy Wheeler noticed i was wheezing heavily while climbing stairs yesterday afternoon. my pulse oximetry at rest was 95% on room air and pulse was 84 bpm.
+
+i also need assistance with coordination for pulmonary function testing. i work in Tukwila now and the regional occupational health suite nearby agreed to perform the plethysmography and pre/post bronchodilator spirometry. they stated they can process the intake today if your office can transmit the order form, chart notes, and authorization directly to their reception desk at Fax: (206) 555-0162. please let me know if you would like me to start a burst of oral prednisone or adjust the controller dosage before the test. thank you for your help.
+
+Message 2
+From: Dr. Thomas Fletcher
+Sent: April 9, 2026 01:30 PM
+To: TADESSE-HAILE, BERHANE
+
+Dear Mr. Tadesse-Haile,
+
+Thank you for contacting our clinic with this update. Given the drop in your peak flow from 520 to 380 L/min and frequent nighttime rescue inhaler use, your asthma is currently not adequately controlled. We will initiate a short oral steroid taper: please take prednisone 40 mg PO daily for five days, then discontinue. Continue Symbicort 160/4.5 mcg two inhalations BID, rinsing your mouth thoroughly after each dose, and keep albuterol available for acute dyspnea.
+
+My medical assistant has sent the clinical records and spirometry orders to the testing suite at Fax: (206) 555-0162, including your coverage verification under Plan Group Number: GRP-7710394. Please have Nancy Wheeler contact our clinic or go to urgent care if your resting oxygen saturation falls below 92% or if your breathing does not improve within 48 hours of starting prednisone. We will review your spirometry curves during our scheduled video visit on April 23, 2026.
+
+Sincerely,
+Thomas Fletcher, MD

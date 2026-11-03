@@ -1,0 +1,205 @@
+77104928
+BANNISTER MEMORIAL HOSPITAL
+INPATIENT CARDIOLOGY CONSULTATION SERVICE
+FACILITY ADDRESS:
+824 WAIALAE AVENUE, HONOLULU, HI 96816
+MAILING ADDRESS:
+PO Box 3914, Honolulu, HI 96815
+TELEPHONE: (808) 555-0163
+CONSULTATION FAX: (808) 555-0197
+EMAIL INQUIRIES: campbell.team at example dot org
+
+PATIENT IDENTIFICATION AND REGISTRATION:
+Patient Name: Mr. Kelemete Luafutu
+Date of Birth: 05/22/1934
+Current Age: 92 y.o.
+Biological Sex: Male
+Social Security Number: 000-48-9124
+Insurance Plan Member ID: HPN-70491823-01
+Date of Consultation: October 14, 2026
+Date of Inpatient Admission: October 12th
+Date of Encounter Documentation: 10/14/26
+
+CARE TEAM AND ENCOUNTER ATTENDEES:
+- Harrison Campbell, MD (Attending Cardiologist)
+- Megan Crawford, MD (Cardiology Clinical Fellow)
+- Elena de la Cruz, MD (Cardiac Electrophysiology Consultant)
+- Brenda Miller, RN (Inpatient Telemetry Unit Coordinator)
+- R.J.C., RN (Primary Bedside Telemetry Nurse)
+- Grace Takahashi (Daughter-in-law and Healthcare Proxy)
+
+REASON FOR CONSULTATION:
+Inpatient cardiology consultation requested for medical management
+optimization and pacemaker interrogation in a 92 y.o. male admitted
+with acute decompensated heart failure with preserved ejection
+fraction (HFpEF) and volume overload.
+
+HISTORY OF PRESENT ILLNESS:
+Mr. Kelemete Luafutu is a 92 y.o. gentleman with a past medical history
+significant for heart failure with preserved ejection fraction (NYHA
+Class II at baseline), persistent atrial fibrillation on apixaban,
+dual-chamber permanent pacemaker placed three years prior for sick sinus
+syndrome, stage 3b chronic kidney disease, and primary hypertension.
+He was admitted through the emergency department on October 12th after
+experiencing four days of progressive exertional dyspnea, orthopnea
+requiring elevation with three pillows, and bilateral lower extremity
+pitting edema extending up to the mid-calves.
+
+Today, on hospital day 3 (10/14/26), the cardiology consultation team
+was requested to evaluate volume status, assist with diuretic transition,
+and verify permanent pacemaker parameters. The clinical fellow,
+Dr. Megan Crawford, and the attending physician, Dr. Harrison
+Campbell, conducted a bedside evaluation of his clinical progress.
+A detailed interval history and care plan were reviewed with Grace
+Takahashi, the patient's 54-year-old daughter-in-law and healthcare proxy,
+who was present at the bedside during rounds.
+
+Mr. Luafutu reports marked symptomatic relief following forty-eight hours
+of scheduled intravenous diuresis. Resting dyspnea has resolved completely,
+and he is now able to lie flat with a single pillow without cough or air
+hunger. He denies angina, chest tightness, palpitations, presyncope,
+nausea, or fever. He notes that the dependent swelling in both lower
+extremities has resolved significantly. Over the past 48 hours, his
+cumulative net fluid balance is negative 2,850 mL, with an associated
+weight reduction of 2.9 kg (down from 87.0 kg at admission to 84.1 kg).
+
+IMPLANTED CARDIAC DEVICE ASSESSMENT:
+Interrogation completed at bedside by Dr. Elena de la Cruz on
+October 14, 2026.
+Device Type: Dual-chamber permanent pacemaker
+Model: Medtronic Azure XT DR dual-chamber system
+Device Serial Number: PXR492018H
+Device Findings: Programmed mode DDDR, lower rate limit 60 bpm. Battery
+longevity remains robust at 7.4 years. Atrial and ventricular pacing
+thresholds, sensing amplitudes, and lead impedances are stable and within
+normal limits. Telemetry memory shows underlying atrial fibrillation
+with appropriate rate control and no sustained ventricular arrhythmias.
+
+PAST MEDICAL HISTORY:
+1. Heart failure with preserved ejection fraction (LVEF 55% to 60%).
+2. Persistent atrial fibrillation, CHA2DS2-VASc score of 4.
+3. Sick sinus syndrome status post dual-chamber pacemaker.
+4. Chronic kidney disease stage 3b (baseline creatinine 1.3-1.5 mg/dL).
+5. Essential hypertension, longstanding.
+6. Dyslipidemia.
+7. Bilateral primary knee osteoarthritis.
+
+PAST SURGICAL HISTORY:
+1. Dual-chamber permanent pacemaker implantation.
+2. Cataract extraction with intraocular lens implant, left eye.
+3. Remote appendectomy in youth, uncomplicated.
+
+CURRENT MEDICATIONS:
+1. Furosemide 40 mg IV twice daily (last intravenous dose at 06:00).
+2. Sacubitril/valsartan (Entresto) 24/26 mg PO twice daily.
+3. Carvedilol 6.25 mg PO twice daily with meals.
+4. Apixaban 2.5 mg PO twice daily (dose-adjusted for age and renal function).
+5. Atorvastatin 20 mg PO daily at bedtime.
+6. Potassium chloride 20 mEq PO daily (held if serum potassium > 4.5).
+
+ALLERGIES:
+Lisinopril (intractable dry cough; no history of angioedema).
+
+SOCIAL HISTORY:
+Mr. Luafutu resides in a multi-generational home with his son and his
+daughter-in-law, Grace. Never used tobacco products. Denies alcohol or
+illicit substance use. His family provides daily assistance with meal
+preparation and transportation. Prior to admission, he ambulated with
+a walker and was independent in personal activities of daily living.
+
+REVIEW OF SYSTEMS:
+Constitutional: Denies fever, chills, diaphoresis, or acute fatigue.
+Cardiovascular: Resolution of orthopnea; denies chest pressure or flutter.
+Respiratory: Denies cough, wheezing, hemoptysis, or resting dyspnea.
+Gastrointestinal: Appetite good; denies nausea, vomiting, or diarrhea.
+Genitourinary: Diuresing well; denies dysuria or gross hematuria.
+Musculoskeletal: Chronic bilateral knee stiffness without acute warmth.
+Neurological: Denies lightheadedness, syncope, focal weakness, or numbness.
+
+PHYSICAL EXAMINATION:
+Vital Signs (Recorded at 09:30 on 10/14/26):
+Temperature: 98.4 F (36.9 C), oral
+Blood Pressure: 124/76 mmHg, right arm, seated
+Heart Rate: 68 beats per minute, regular
+Respiratory Rate: 17 breaths per minute, unlabored
+Pulse Oximetry: 97% on ambient room air
+Current Inpatient Weight: 84.1 kg (admission weight 87.0 kg)
+
+General: Pleasant, alert 92 y.o. male resting comfortably in bed.
+Head and Neck: Normocephalic, atraumatic. Moist mucous membranes.
+Jugular venous pressure estimated at 6 cm H2O at 45 degrees, improved
+from 11 cm on admission. Carotid upstrokes symmetric without bruits.
+Cardiovascular: Pacemaker pocket in right prepectoral area clean and
+intact without erythema, tenderness, or fluctuance. Normal S1 and S2.
+Grade 2/6 soft systolic murmur at apex without axillary radiation. No S3,
+S4, or pericardial friction rub. Peripheral pulses 2+ bilaterally.
+Pulmonary: Good excursion. Lungs clear to auscultation bilaterally in
+anterior and mid zones, with faint end-inspiratory crackles at extreme
+bases, markedly improved from admission. No wheezing or rhonchi.
+Abdomen: Soft, non-tender, non-distended. Bowel sounds normoactive.
+Extremities: Trace pitting edema over bilateral medial malleoli; no calf
+tenderness, cords, or erythema. Capillary refill under 2 seconds.
+Neurological: Alert and oriented x4. Cranial nerves II-XII intact.
+Motor strength 5/5 upper extremities, 4+/5 lower extremities bilaterally.
+
+LABORATORY AND DIAGNOSTIC DATA:
+Serum Chemistry and Hematology (October 14, 2026):
+  Sodium: 138 mEq/L (reference 135-145)
+  Potassium: 4.2 mEq/L (reference 3.5-5.0)
+  Chloride: 102 mEq/L (reference 98-107)
+  Bicarbonate: 25 mEq/L (reference 22-29)
+  Blood Urea Nitrogen (BUN): 24 mg/dL (reference 7-20)
+  Serum Creatinine: 1.34 mg/dL (baseline 1.30-1.50; admission was 1.58)
+  Estimated GFR: 52 mL/min/1.73m2 (reference > 60)
+  Serum Glucose: 114 mg/dL (reference 70-99)
+  B-type Natriuretic Peptide (BNP): 195 pg/mL (admission 680 pg/mL)
+  Hemoglobin: 12.2 g/dL | Hematocrit: 36.8% | WBC: 6.6 K/uL
+  Platelet Count: 204 K/uL
+12-Lead ECG (10/14/26): Atrial paced rhythm at 68 bpm, narrow QRS
+duration (92 ms), non-specific ST-T changes, no acute ischemic shifts.
+
+ASSESSMENT AND CLINICAL IMPRESSION:
+Mr. Kelemete Luafutu is a 92 y.o. male with chronic HFpEF, persistent
+atrial fibrillation on oral anticoagulation, sick sinus syndrome with
+dual-chamber pacemaker, and chronic kidney disease stage 3b, who has
+demonstrated substantial clinical improvement following diuresis for
+acute decompensation. He is now euvolemic with normalized JVP, minimal
+trace ankle edema, stable renal function, and significant BNP reduction.
+
+DETAILED MANAGEMENT PLAN:
+1. Heart Failure with Preserved Ejection Fraction (HFpEF):
+   - Discontinue IV furosemide today following negative balance of 2,850 mL.
+   - Transition to oral furosemide 40 mg PO every morning.
+   - Continue sacubitril/valsartan 24/26 mg PO twice daily.
+   - Maintain 2000 mg daily sodium restriction and 2-liter fluid limit.
+2. Cardiac Rhythm and Device Management:
+   - Interrogation of Medtronic Azure pacemaker (SN: PXR492018H) confirms
+     normal lead parameters and sensing. Mode remains DDDR.
+   - Continue carvedilol 6.25 mg PO twice daily for rate control.
+   - Continue apixaban 2.5 mg PO twice daily for stroke prevention.
+3. Renal Function and Monitoring:
+   - Serum creatinine improved to 1.34 mg/dL with potassium 4.2 mEq/L.
+   - Repeat basic metabolic panel tomorrow morning.
+4. Post-Discharge Care Coordination:
+   - Anticipate hospital discharge within 24 to 48 hours.
+   - Referral placed to Cardiopulmonary Rehabilitation Center for monitored
+     outpatient conditioning and education.
+   - Outpatient medication delivery arranged through the regional pharmacy
+     depot servicing ZIP 96822.
+   - Plan reviewed with patient and daughter-in-law, Grace Takahashi.
+
+Care Team Signatures:
+Megan Crawford, MD
+Cardiology Clinical Fellow, PGY-5
+Bannister Memorial Hospital
+
+Attending Physician Attestation:
+I have evaluated Mr. Kelemete Luafutu on October 14, 2026, reviewed his
+device interrogation and laboratory data, and discussed the findings
+with Dr. Crawford and Grace Takahashi. I agree with the plan of care.
+
+Harrison Campbell, MD, FACC
+Attending Cardiologist, Division of Cardiology
+Bannister Memorial Hospital
+Contact: campbell.team at example dot org
+Authenticated: 10/14/26 13:40 HST

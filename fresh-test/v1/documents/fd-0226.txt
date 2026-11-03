@@ -1,0 +1,16 @@
+From: Nanami Peshimoto
+To: endocrine portal pool
+Subject: periods and the new pill
+
+hi, this is nanami peshimoto. i am 17. my older brother parkinson okonkwo is the one who usually calls when i freeze up, but i wanted to type this myself. periods have been every two or three months since June 2026, and the acne on the jaw is worse. i also have dark hair on the chin and i get cramps when a period finally comes. i am not pregnant. i do not smoke. Stonebridge Endocrine Clinic started metformin 500 mg PO BID and spironolactone 50 mg PO daily. i take both with food. i skipped the metformin twice last week because of stomach upset and then restarted. this week i weighed 58 kg and had a dull headache, no fevers. please look at Chart no. 7733104. the lab sheet that was scanned shows the account as Oll925, which looks like a misread. my email is nanami.peshimoto@example.net if the portal drops this. also a sign-in alert popped from 192.0.2.77 last night and that was my brother on his phone, not a stranger.
+
+From: Hillel Tanner, MD
+To: Nanami Peshimoto
+
+Thank you for writing it yourself. We will leave the portal sign-in as it is.
+
+Medications: continue metformin 500 mg PO BID with food, and spironolactone 50 mg PO daily. Do not double the metformin if a dose is missed. Please take metformin with the largest meal if the stomach upset returns, and you may ease the discomfort by keeping the dose at 500 mg PO BID rather than combining them. Expected effects are lighter acne over six to eight weeks and sometimes more regular cycles. Message us for severe dizziness, muscle weakness, or vomiting.
+
+Labs from that panel: LH 11.2 mIU/mL, FSH 5.4 mIU/mL, total testosterone 62 ng/dL, DHEA-S 280 mcg/dL, TSH 1.9 mIU/L, prolactin 14 ng/mL, hemoglobin 13.1 g/dL, potassium 4.0 mmol/L. Vitals in clinic: blood pressure 108/66 mmHg, pulse 72 beats per minute, temperature 36.6 C, respiratory rate 14 breaths per minute, oxygen saturation 99% on room air. The exam note lists Tanner stage 5 for breast and pubic hair, which is expected at your age and is not a new finding. Diagnosis we are treating: polycystic ovary syndrome. A pelvic ultrasound showed no large cyst. No surgery and no endometrial biopsy are planned.
+
+We checked that the spironolactone does not conflict with anything else on the list. A fasting lipid panel and a repeat potassium are reasonable at the next visit, and we can order those without another ultrasound. The scanned account string does not match our books, so we will ignore it and use the chart number you sent. Keep a simple cycle calendar in the portal so we can see the longest gap. Write back if cycles stretch past three months or if you start a new supplement.

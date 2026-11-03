@@ -1,0 +1,31 @@
+PACIFIC CREST PATHOLOGY ASSOCIATES
+CLINICAL AND SURGICAL PATHOLOGY REPORT
+
+PATIENT: VELMURUGAN, ANAND
+DOB: 10/12/1967
+AGE: 58-year-old
+HEALTH PLAN ID: HPM-49201844-01
+ACCESSION: ACC-2026-81043
+COLLECTION DATE: 2026-05-19
+DATE RECEIVED: 5/19/26
+ORDERING PHYSICIAN: Dr. Douglas Campbell-Ross
+REPORTING PATHOLOGIST: Dr. Wayne Miller
+CAREGIVER: Megan Vance (daughter-in-law)
+FACILITY FAX: Fax: (415) 555-0164
+
+Clinical History:
+The patient is a 58-year-old male with a history of recurrent right lower quadrant abdominal pain and low-grade fevers. Patient Anand Velmurugan was admitted through the emergency department following twelve hours of migratory periumbilical pain that localized to McBurney point. Preoperative laboratory testing demonstrated leukocytosis with a white blood cell count of 15.4 x10^3/uL and 84% neutrophils. An ultrasound and contrast-enhanced CT of the abdomen evaluted a thickened appendix measuring 1.2 cm in outer diameter with surrounding mesenteric fat stranding and appendicolith. The patient underwent an uneventful laparoscopic appendectomy performed by Dr. Douglas Campbell-Ross. The operative speciman was submitted for definitive histopathologic evaluation. Caregiver Megan Vance was designated for outpatient postoperative communication.
+
+Gross Description:
+Recieved in formalin labeled with the patient's name and accession ACC-2026-81043 is an oriented vermiform appendix measuring 6.5 cm in length and up to 1.3 cm in maximum diameter. The serosa is dull, hyperemic, and covered by a patchy fibrinous exudate. The mesoappendix contains multiple congested blood vessels and measures up to 0.8 cm in thickness. Sectioning reveals a dilated lumen containing a calcified fecalith measuring 0.6 cm and purulent luminal exudate. The wall is thickened and congested, measuring up to 0.3 cm. Representative sections submitted in cassettes A1 through A3.
+
+Microscopic Examination:
+Histologic sections demonstrate extensive mucosal ulceration with transmural infiltration of polymorphonuclear neutrophils extending through the muscularis propria into the subserosa and mesoappendiceal adipose tissue. Focal areas of mucosal necrosis and mucosal hemorrhage are identified. The appendiceal lumen contains abundant neutrophilic debris and cellular detritus. There is no evidence of granulomatous inflammation, viral inclusions, dysplasia, or neuroendocrine tumor (carcinoid). The surgical resection margin at the appendiceal base is free of active inflammation. The regional lymphoid follicles show reactive follicular hyperplasia. Adjacent periappendiceal fat demonstrates unremakable vascular architecture without evidence of vasculitis or thrombus.
+
+Final Pathologic Diagnosis:
+Appendix, laparoscopic appendectomy:
+Acute suppurative and gangrenous appendicitis with periappendicitis.
+Appendicolith identified.
+Proximal resection margin viable and clear.
+
+Reviewed and reported by Dr. Wayne Miller, Pacific Crest Pathology Associates.

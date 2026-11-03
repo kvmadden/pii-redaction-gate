@@ -1,0 +1,92 @@
+8830142
+Heart and Vascular Center of Linden
+Outpatient Progress Note
+
+Patient: Ifeoma
+Hunter
+Date of service: the 4th of March
+Author: Dr. Pascale de la Croix
+Fax: (312) 555-0140
+Address: 14 Magnolia Court, Apt 3, Linden, OH 43002
+
+The referral page was scanned at an angle. The prior record
+reads lO88321, and registration will confirm it before old
+notes are merged.
+
+Chief complaint
+Follow-up of type 2 diabetes and hypertension, plus a family question.
+
+History of present illness
+She is a 58-year-old woman seen for routine management of type 2
+diabetes and hypertension. Morning glucoses at home ran mostly
+from 140 to 180 mg/dL from March 1 through March 3, above her
+usual range near 110 mg/dL. She ran out of metformin for four
+days during that stretch and has restarted 1000 mg by mouth
+twice daily with meals. She denies chest pain, dyspnea,
+orthopnea, edema, and polyuria today. Toe numbness is stable
+and not painful. Her husband, Mr. Spyros Vlahakis, came with
+her and confirms the gap in the metformin.
+
+She asked whether a nephew's Hunter syndrome means she needs testing.
+She has no clinical features of Hunter syndrome, no
+developmental history suggesting a mucopolysaccharidosis,
+and the diagnosis belongs to the child, not to her. No carrier
+testing was ordered.
+
+Past medical history
+Type 2 diabetes mellitus for twelve years. Hypertension. Obesity.
+Dyslipidemia. No coronary disease, no stroke, and no known kidney disease.
+
+Medications
+1. Metformin 1000 mg by mouth twice daily.
+2. Lisinopril 20 mg by mouth daily.
+3. Atorvastatin 40 mg by mouth at bedtime.
+4. Aspirin 81 mg by mouth daily.
+
+Allergies
+No known drug allergies.
+
+Social history
+She works as a cafeteria supervisor and is on her feet much of the day.
+She does not smoke. Alcohol is a glass of wine on some weekends.
+She lives with her husband in the apartment listed above.
+She walks the parking lot at work after the lunch service
+when the weather allows.
+
+Review of systems
+No chest pain, no visual change, no foot ulcer, no dysuria,
+and no depression symptoms she wanted to discuss.
+The rest is negative.
+
+Physical examination
+Blood pressure 148/86 mmHg, heart rate 76, respiratory rate 14,
+temperature 98.0 F, oxygen saturation 99 percent on room air, weight 92 kg.
+She is comfortable. Lungs are clear, heart is regular without murmur, and there is no edema.
+Monofilament sensation is reduced at both great toes.
+Skin on the feet is intact. No carotid bruit.
+
+Laboratory results from this morning
+Hemoglobin A1c 8.1 percent. Creatinine 0.8 mg/dL.
+eGFR above 60 mL/min/1.73 m2. Potassium 4.1 mmol/L.
+LDL cholesterol 118 mg/dL. Urine albumin-to-creatinine ratio 18 mg/g.
+Fingerstick glucose in the office was 162 mg/dL.
+
+Assessment and plan
+1. Type 2 diabetes, above the A1c goal. Metformin has been restarted.
+Continue 1000 mg twice daily and add empagliflozin 10 mg by mouth
+each morning for heart and kidney benefit. Recheck the A1c in three months.
+We talked through a short walk after supper and smaller evening portions.
+Sick-day rules were reviewed: hold the new agent and the metformin
+if she cannot keep fluids down, and call for vomiting that
+lasts more than a day. Footwear at work should be closed-toe.
+2. Hypertension, above goal today. Continue lisinopril 20 mg daily.
+She will bring home readings to the next visit in four weeks.
+3. Dyslipidemia. Continue atorvastatin 40 mg.
+LDL remains above 100 mg/dL. We will recheck it once doses are
+steady before raising the statin.
+4. The nephew's Hunter syndrome does not change today's plan
+and is not her diagnosis.
+Lab results will be posted at https://portal.example.net/lab/hunter.
+
+Electronically signed by Dr. Pascale de la Croix
+Endocrinology

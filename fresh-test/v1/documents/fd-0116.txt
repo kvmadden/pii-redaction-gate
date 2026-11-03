@@ -1,0 +1,46 @@
+TRANSCRIPT OF CLINICAL TELEPHONE CALL
+Facility: Pulmonary and Allergy Center of Green Valley
+Reference Encounter: 4821-9932-07
+Date: 8 Sep 2026
+Care Team: Dr. Douglas McAllister, Hannah Weaver, RN, Dr. Craig Stewart
+Patient: Pearl al-Zuhair
+DOB: 15 Feb 1934
+Age: 92-year-old female
+Caller: Kerem Celik (son-in-law)
+Additional Contact: Clara Turner (daughter)
+
+[Recording Commenced]
+
+Hannah Weaver, RN: Pulmonary and Allergy Center of Green Valley, triage line, this is Hannah Weaver, registered nurse. How can I, uh, help you today?
+
+Kerem Celik: Hello, yes, uh, Nurse Hannah. My name is Kerem Celik. I am calling, um, on behalf of my mother-in-law, Pearl al-Zuhair. She had, uh, she had a bronchoscopy with transbronchial biopsy last week, and she is having some increased shortness of breath and coughing up some thick mucus today.
+
+Hannah Weaver, RN: Alright, let me pull up Pearl's chart here. Could you please confirm her date of birth and home address for me?
+
+Kerem Celik: Yes, her date of birth is February fifteenth, nineteen thirty-four—born on 15 Feb 1934. She is a 92-year-old woman, and she currently lives in Phoenix with my wife and me. Her address is 519 Crescent Summit Way, Suite 200, Phoenix, AZ 85032.
+
+Hannah Weaver, RN: Thank you, Mr. Celik. I see that her daughter, Clara Turner, also updated her profile on the online portal yesterday, and she entered the address in lowercase as 519 crescent summit way, suite 200. Does Mrs. al-Zuhair have any fever, chest pain, or frank blood in her sputum?
+
+Kerem Celik: No fever. Her temperature this morning was 98.4 F. Her oxygen saturation on room air dropped to 89%, so we put her on 2 liters per minute of nasal cannula oxygen, which brought her pulse oximetry up to 93%. Pulse was 82 beats per minute, blood pressure 126/74 mmHg. There is no bright red blood, just, you know, yellowish thick phlegm. But she feels very tired and her wheezing sounds louder.
+
+Hannah Weaver, RN: Okay. The hypoxemia is concerning given her chronic obstructive pulmonary disease exacerbation risk after the procedure. Let me review her medication list. Is she using her budesonide-formoterol 160/4.5 mcg 2 puffs BID regularly?
+
+Kerem Celik: Yes, she took that this morning at 8:00 AM. And she did a nebulizer treatment of albuterol-ipratropium 0.5 mg/3 mg about two hours ago. It helped a little bit, but her breathing still feels tight.
+
+Hannah Weaver, RN: Understood. Let me check the post-procedure notes from Dr. Douglas McAllister. He performed the bronchoscopy on 8 Sep 2026—wait, the procedure was last week, today is September eighth, twenty twenty-six. Dr. McAllister noted that her baseline forced expiratory volume in 1 second was 1.1 liters, and she had mild tracheal secretions. Also, in her family history notes, her daughter Clara Turner had asked previously about genetic screenings because a niece had Turner syndrome, but the note confirms Mrs. al-Zuhair has no genetic anomalies or Turner syndrome. Dr. McAllister's provider credentials are on file under Medical License: MD-492817.
+
+Kerem Celik: Right, exactly. We just wanted to make sure she doesn't need oral steroids or an antibiotic like azithromycin. Clara Turner, her daughter, is an occupational therapist and she thought Pearl might need a short burst of prednisone.
+
+Hannah Weaver, RN: Dr. McAllister is in clinic right now, and I just sent an urgent flag to his desktop with the initials P.Z. to review her oxygen levels. He wants us to start a 5-day course of prednisone 40 mg PO daily and send a prescription for azithromycin 250 mg PO daily for 5 days. Which pharmacy should we send those to?
+
+Kerem Celik: The local pharmacy on Desert Willow Road has them on file, but if you need to fax the orders, their direct clinical line is Fax: 602-555-0164.
+
+Hannah Weaver, RN: Perfect, I will transmit the electronic script and also send a confirmation to Fax: 602-555-0164 immediately. While waiting for the medication, please keep her on the 2 liters of supplemental oxygen. Continue the albuterol-ipratropium nebulizer every 4 to 6 hours as needed. If her oxygen saturation drops below 90% on oxygen, or if she develops blue lips, confusion, chest pressure, or hemoptysis, call 911 immediately.
+
+Kerem Celik: Okay, we will do that. We will pick up the prednisone and azithromycin as soon as the pharmacy alerts us. Thank you very much, Hannah.
+
+Hannah Weaver, RN: You're very welcome, Kerem. We will follow up by phone tomorrow afternoon. Take care.
+
+Kerem Celik: Thank you, goodbye.
+
+[Call Terminated]

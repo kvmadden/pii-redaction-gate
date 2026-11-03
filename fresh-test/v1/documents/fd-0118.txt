@@ -1,0 +1,71 @@
+Oak Street Clinic
+History and Physical
+
+Patient: PACITA GÁLVEZ
+Age: 93
+MRN: 7741-2208-19
+Date of Service: 04/09/2026
+Account number 6652109842
+
+Chief complaint
+Fatigue, a swollen ankle, and a check of her home CPAP.
+
+History of present illness
+Pacita Gálvez is brought by her daughter, Mrs. Nora Briggs, who stays overnight after work. Since early winter she has been more tired by midday and has dozed in the chair, which is new. The fall occured when she got up from the toilet on Christmas Eve, landing on the left hip without hitting her head. She did not black out, had no chest pain, and was helped back to bed by her daughter. The next morning she could walk with the walker, so they did not go to an emergency department. Pain is now a dull ache and is better with acetaminophen.
+
+CPAP use has been spotty since the fall because the mask felt like too much work. The machine serial on the back of the unit is Q19448210, and the daughter photographed it. She usually runs it for about five hours when she does wear it. She denies gasping arousals on the nights she uses it. Ankles swell by supper, right a little more than left, and the left one was bruised after the fall. She takes her anticoagulant and has not missed doses. No black stool, no prolonged bleeding from a cut, and no new headache.
+
+Mrs. Nora Briggs works in Bramble and lives with her mother for now. A prior tracing was read by Dr. Reed Tolliver on Sept. 18, 2025, and R.T. thought the rate was controlled.
+
+Past medical history
+Paroxysmal atrial fibrillation on anticoagulation. Obstructive sleep apnea treated with home CPAP. Hypertension. Stage 3 chronic kidney disease. Osteoarthritis of the knees. Hypothyroidism. Remote hysterectomy. No diabetes and no history of stroke or gastrointestinal bleed.
+
+Medications
+Apixaban 5 mg PO BID
+Metoprolol succinate 25 mg PO daily
+Furosemide 20 mg PO daily
+Lisinopril 5 mg PO daily
+Levothyroxine 88 mcg PO each morning
+Acetaminophen 650 mg PO TID PRN pain
+Atorvastatin 10 mg PO at bedtime
+
+Allergies
+Codeine, nausea. No angioedema with lisinopril.
+
+Family history
+Her parents died in old age, one of a stroke and one of heart failure, and the details are thin. Her daughter has hypertension.
+
+Social history
+She lives in a one-bedroom apartment with a walk-in shower. She retired from sewing alterations. No tobacco for decades and no alcohol. She uses a walker outside the apartment and furniture inside. Her daughter handles the pharmacy and the portal messages. She still cooks a simple breakfast and lets her daughter handle supper.
+
+Review of systems
+General: fatigue, no fever. Sleep: as above, with mask leak when she is congested. Cardiac: no chest pain and no rapid pounding this month. Respiratory: no cough with sputum. Gastrointestinal: no black stool and appetite is fair. Urinary: no burning, up once at night. Neurologic: no focal weakness, no resting tremor to suggest Parkinson disease. Mood: a little embarrassed by the fall, not depressed. Skin: resolving bruise on the left hip, no open skin. Hearing is fair if you face her, and she does not want a hearing aid discussed today.
+
+Examination
+Blood pressure 132/70 mmHg, pulse 76 beats per minute and irregularly irregular, respirations 16 per minute, oxygen saturation 96 percent on room air, temperature 98.0 F, weight 71.2 kg.
+She is comfortable, alert, and oriented to person, place, and month. Mood is appropriate. Face is symmetric without Bell palsy. Oral mucosa is moist. Neck veins are not elevated. Lungs are clear without wheeze or crackles. Heart is irregularly irregular with no new murmur. Abdomen is soft and nontender. Left hip bruise is yellow and nontender to palpation. Ankles have trace edema, right slightly more than left, and no calf cord. Gait with the walker is cautious but steady. CPAP mask fit was reviewed at the chair and the headgear is not frayed.
+
+Labs and studies
+Basic metabolic panel today: sodium 139 mmol/L, potassium 4.1 mmol/L, creatinine 1.18 mg/dL (baseline 1.1 mg/dL), blood urea nitrogen 22 mg/dL, glucose 102 mg/dL. Hemoglobin 12.8 g/dL. TSH 2.2 mIU/L. INR is not used for monitoring because she is on apixaban. Electrocardiogram today shows atrial fibrillation with a ventricular rate of 78 beats per minute and no acute ST change.
+
+Assessment and plan
+1. Fall on Christmas Eve without syncope or head injury. Exam now does not suggest fracture, and radiographs are not required untill pain worsens or she cannot bear weight. Acetaminophen 650 mg PO TID remains the pain plan, and a stool softener was discussed if the medicine binds her up.
+2. Obstructive sleep apnea with reduced CPAP use. That serial matches the unit she brought in the rolling bag. Goal is back to at least five hours a night, and her daughter will help with the mask during the overnight stays. If she refuses the mask for more than a few nights, we will revisit whether a different interface is worth a durable medical equipment visit.
+3. Paroxysmal atrial fibrillation, rate controlled, on apixaban 5 mg PO BID. Weight is above 60 kg and creatinine is under 1.5 mg/dL, so the standard dose stays despite her age. Metoprolol succinate 25 mg PO daily is keeping the resting rate acceptable, and I will not increase it after a fall that may have had an orthostatic piece. Orthostatic blood pressures today were 132/70 mmHg supine and 128/68 mmHg standing, so there is no large drop. R.T. can see her if the rhythm becomes persistent or the rate climbs. Continue apixaban and hold it for a head strike, black stool, or a bleed that will not stop.
+4. Swelling and kidney function. Trace edema without crackles does not earn a higher diuretic today. Creatinine is close to baseline. Lisinopril stays at 5 mg PO daily. Recheck the metabolic panel in one month, sooner if she is dizzy or drinking poorly.
+5. Hypothyroidism, euthyroid on the current dose. No change to levothyroxine.
+6. Prevention and home safety. Atorvastatin 10 mg PO at bedtime continues. Throw rugs were already removed. Her daughter will leave a night light on the way to the toilet, since that is where she fell. They reviewed thier plan for calling if she cannot get up.
+
+Immunizations were reviewed, and she is current for the vaccines we recommend at her age, including the most recent influenza and COVID doses given last fall. Advance care wishes were not reopened today because she was tired, and her daughter knows she wants a full conversation at the next visit rather than in a rushed slot. Return in one month for the lab, or sooner for chest pain, a black stool, confusion, or a fall she cannot explain.
+
+Contacts confirmed today:
+88 PINE COURT APT 4
+LINWOOD, CA 95499
+Phone (707) 555-0155
+Fax (707) 555-0124
+Email nora.briggs@example.org
+
+Electronically signed by Dr. Helen Gold
+Internal Medicine
+
+Author: Dr. Helen Gold

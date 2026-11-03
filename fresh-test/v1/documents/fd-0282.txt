@@ -1,0 +1,46 @@
+HOSPITAL DISCHARGE SUMMARY
+
+Service: Internal Medicine
+Admission Status: Inpatient
+Patient Demographics: 67-year-old female
+
+Principal Diagnosis:
+Acute exacerbation of chronic peripheral neuropathic pain and lumbar radiculopathy.
+
+Secondary Diagnoses:
+1. Type 2 diabetes mellitus, diagnosed in 2018.
+2. Essential hypertension, diagnosed in 2015.
+3. Lumbar spinal stenosis with L4-L5 degenerative spondylolisthesis.
+4. History of idiopathic peripheral facial nerve palsy (Bell palsy), resolved.
+
+History of Present Illness:
+The patient is a 67-year-old female admitted for severe, refractory burning pain and paresthesias in the lower extremities radiating along the L5 dermatome bilaterally. The symptoms began insidiously several years ago but worsened markedly over the past month. She experienced intermittant sharp pains that disrupted sleep and walking. Lumbar magnetic resonance imaging performed at an Outside Hospital demonstrated moderate central canal stenosis and bilateral neural foraminal narrowing at the L4-L5 level. On arrival, she was in distress due to neuropathic shooting pains rated 9/10 on the numeric rating scale.
+
+Hospital Course:
+During the hospital stay, the care team coordinated acute pain stabilization and medication optimization. Physical therapy and occupational therapy evaluated the patient for safe ambulation and transfers. She was noted to be ambualting with a rolling walker under supervision. Given the neuropathic character of her discomfort, she was initiated on pregabalin (Lyrica) 75 mg PO BID, which was titrated upwards with significant symptomatic relief. In addition, an anti-inflammatory oral corticosteroid taper was administered for acute radicular nerve root irritation. Baseline neurological examination demonstrated normal mental status, intact cranial nerves without residual deficits from her remote Bell palsy, 5/5 motor strength in the bilateral upper extremities, and 4/5 strength in bilateral ankle dorsiflexion.
+
+Laboratory and Diagnostic Studies:
+Complete metabolic panel and hematology results were reviewed:
+- Serum sodium: 138 mEq/L
+- Serum potassium: 4.2 mEq/L
+- Serum creatanine: 0.88 mg/dL
+- Blood urea nitrogen: 16 mg/dL
+- Fasting blood glucose: 134 mg/dL
+- Hemoglobin A1c: 7.2%
+- Hemoglobin: 13.1 g/dL
+- White blood cell count: 6.4 K/uL
+- Platelet count: 245 K/uL
+Vitals prior to discharge: Blood pressure 126/74 mmHg, resting pulse 70 bpm, respiratory rate 16 breaths per minute, body temperature 98.4 F, oxygen saturation 98% on room air.
+
+Discharge Medications:
+1. Lyrica (pregabalin) 75 mg PO BID for neuropathic pain.
+2. Prednisone oral taper: prednisone 40/30/20/10 mg PO daily for four days each step, then discontinue.
+3. Metformin 500 mg PO BID with meals.
+4. Lisinopril 20 mg PO daily.
+5. Acetaminophen 650 mg PO q8h PRN for breakthrough pain.
+
+Discharge Plan and Follow-up:
+The patient was discharged in improved condition with her daughter present for counseling. The daughter confirmed that she will assist the patient with daily living activities and medication oversight. Referrals have been submitted for comprehensive follow-up care:
+- Referral to Pain Clinic for evaluation of lumbar epidural steroid injection.
+- Referral to Diabetes Center for outpatient glycemic education and dietary review.
+- Physical therapy home exercise program to continue every 2/3 weeks as scheduled.

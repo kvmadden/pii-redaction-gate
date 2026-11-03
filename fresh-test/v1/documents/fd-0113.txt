@@ -1,0 +1,23 @@
+Red Oak Clinic nurse line
+Patient: Halina Frąckowiak    DOB: 12 January 1930
+Nurse: Hi, um, this is Clara Benson on the nurse line. I am returning a call about Halina Frąckowiak. Am I speaking with her daughter?
+Caller: Yes, this is Mrs. Rosaria D'Amico. I am, uh, I am the one who took her to the visit. She is ninety-six years old and I do not want to miss a dose.
+Nurse: You will not. The note from Dr. Helen Early says the facial droop is Bell palsy, not a stroke. The forehead was involved, and the Glasgow Coma Scale was 15. That part was explaned at the visit, but the prednisone directions on the bottle are easy to misread, so let me, wait, let me walk through them.
+Caller: Please. The droop has not worsend, but her left eye does not close all the way and it looks dry.
+Nurse: For the eye, artificial tears every two hours while she is awake, and a lubricating ointment at bedtime. She is suposed to tape the eyelid shut at night only if it is still open after the ointment. Do not tape it during the day. Call if the eye gets painful, or if the vision drops.
+Caller: She keeps rubbing it. I bought lubricating drops at the store. Is that the right kind?
+Nurse: Plain lubricating drops are the right kind. Do not use a redness-relief drop, and do not use a leftover antibiotic bottle unless it was prescribed for this eye. Have her blink on purpose when she is watching television.
+Caller: And the steroid?
+Nurse: Prednisone 60 mg by mouth every morning with food for five days, then 40 mg every morning for three days, then 20 mg every morning for two days, then stop. Do not stop in the middle of a step unless Dr. Early tells you to. Take it with breakfast so it sits better. If she becomes confused, very restless, or she is much more agitated than usual, call us the same day.
+Caller: Steroids make her sharp with me. Last time she was up at night rearranging a drawer. Should I hide the bottle?
+Nurse: Do not hide it, or a dose will be missed. Give it with breakfast, not at night. If she is pacing or seeing things, call the same day and we will ask her physician whether to cut the dose.
+Caller: The follow-up card has a dotted date and I cannot tell which number is the month.
+Nurse: The card reads 04.03.2026. On that form the day is the first number, so it is the fourth of March. Out loud, that visit is March fourth, twenty twenty-six, with her physician. Bring the bottle so she can see what is left.
+Caller: I tried the portal to read the visit and it warned me about a sign-in from 192.0.2.44. That was my laptop. I got nervous and closed it.
+Nurse: I will note that the sign-in was you. If the pharmacy questions which encounter covered the prednisone, the paperwork lists claim number 775320918. The after-hours line, the one printed with the country code, is +1 401 555 0155.
+Caller: And you have the right house? I do not want the eye ointment delivered somewhere old.
+Nurse: The address on the chart is 14 Lantern Hill Road, Providence, RI 02903. That is the one we will use.
+Caller: Yes, that house. Thank you. I think, um, I think that is all I needed.
+Nurse: If the droop is joined by arm weakness, trouble speaking, or a sudden severe headache, that is an emergency, not a nurse line question. Otherwise we will see her at that March visit. Thank you for calling.
+Caller: Thank you. I will set an alarm for the prednisone with breakfast.
+Nurse: End of call.

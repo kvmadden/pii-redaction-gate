@@ -1,0 +1,102 @@
+74019284
+Date of Service: 04.03.2026
+PATIENT: Yaroslav Wozniak
+DOB: 12.08.1933
+Demographics: 92M
+Account Number: AC-9938120
+ADDRESS: 842 NORTH HAMPTON ROAD, APT 4D, OAK BROOK, IL 60523
+Phone: (312) 555-0184
+Facility: Highland Creek Care Center
+Attending Physician: Arthur Campbell, MD
+Contact Email: arthur.campbell@example.org
+
+CLINICAL COMPREHENSIVE PROGRESS AND REHABILITATION ASSESSMENT
+
+CHIEF COMPLAINT AND REASON FOR ENCOUNTER:
+Evaluation of rehabilitation progress following acute hospitalization for subcapital femoral neck fracture, management of underlying cognitive decline, monitoring of obstructive sleep apnea therapy, and discharge planning.
+
+HISTORY OF PRESENT ILLNESS:
+Mr. Yaroslav Wozniak is a 92M retired metallurgical engineer who was admitted to Highland Creek Care Center on 18 Oct 2025 following an acute inpatient stay for an operative right hemiarthroplasty secondary to a mechanical fall at home. He currently lives in Oak Brook with his adult daughter, Mrs. Clara Cross, who serves as his primary caregiver and medical power of attorney. On the morning of today's evaluation, 04.03.2026, the patient was transported from the physical therapy suite via specialized medical wheelchair van, transport license plate 7XYZ912, for this comprehensive monthly interdisciplinary re-assessment.
+
+According to his daughter, Mrs. Clara Cross, who was contacted by telephone at (312) 555-0119 ext. 204 and via email at clara.cross@example.net, Mr. Wozniak has demonstrated steady, albeit slow, improvement in transfer capabilities and standing tolerance over the past month. However, Mrs. Cross noted intermittent periods of sundowning and nocturnal disorientation, particularly when awakening during the night. The patient utilizes a home CPAP machine nightly for severe obstructive sleep apnea; interrogation of his Respironics DreamStation device, serial number CP-9082341, demonstrates an average nightly usage of 5.8 hours over the preceding thirty consecutive days, with an 90th-percentile pressure of 11.2 cmH2O and a residual apnea-hypopnea index of 3.4 events per hour, confirming therapeutic adherence and efficacy.
+
+He denies active localized pain in the right hip, chest pressure, palpitations, dyspnea at rest, fevers, chills, or acute gastrointestinal distress. He reports occasional chronic bilateral knee aching rated 2/10, managed adequately with scheduled topical therapy. Review of his inpatient chart reveals that a formal geriatric psychiatry consultation was completed earlier this week on Mar 4 2026 by Dr. Andrew van der Beek, who recommended maintaining low-dose nighttime melatonin and continuing structured daytime orientation prompts while strictly avoiding sedating antihistamines or benzodiazepines.
+
+PAST MEDICAL HISTORY:
+1. Right subcapital femoral neck fracture status post right hip hemiarthroplasty (October 2025).
+2. Vascular dementia with mild behavioral disturbance.
+3. Obstructive sleep apnea, adherent to CPAP therapy.
+4. Essential hypertension, well controlled.
+5. Hyperlipidemia.
+6. Stage 3 chronic kidney disease (baseline creatinine 1.4 to 1.6 mg/dL).
+7. Benign prostatic hyperplasia with mild lower urinary tract symptoms.
+8. History of deep venous thrombosis in 2021, completed therapeutic course.
+
+PAST SURGICAL HISTORY:
+1. Right hip hemiarthroplasty (October 2025).
+2. Transurethral resection of the prostate (2018).
+3. Bilateral cataract extraction with intraocular lens implantation (2014, 2016).
+
+CURRENT MEDICATIONS:
+1. Lisinopril 10 mg PO daily.
+2. Amlodipine 5 mg PO daily.
+3. Atorvastatin 20 mg PO at bedtime.
+4. Tamsulosin 0.4 mg PO daily at bedtime.
+5. Donepezil 10 mg PO daily at bedtime.
+6. Melatonin 3 mg PO nightly at 21:00.
+7. Acetaminophen 650 mg PO TID PRN joint pain.
+8. Diclofenac 1% topical gel, 2 grams applied to bilateral knees TID PRN.
+9. Polyethylene glycol 17 g PO daily in water for constipation prophylaxis.
+10. Ergocalciferol (Vitamin D2) 50,000 units PO once weekly.
+
+REVIEW OF SYSTEMS:
+Constitutional: No fevers, diaphoresis, rigors, or unassisted weight changes.
+HEENT: Vision corrected with lenses. Hearing mildly impaired bilaterally; wears hearing aids. No dysphagia.
+Cardiovascular: No chest tightness, peripheral edema, or orthopnea.
+Respiratory: No cough, sputum production, wheezing, or shortness of breath.
+Gastrointestinal: Appetite good. Bowel movements regular every 1 to 2 days without straining.
+Genitourinary: Nocturia x 1-2. No dysuria, gross hematuria, or acute urinary retention.
+Musculoskeletal: Right hip incision healed without pain on passive mobilization. Mild crepitus in bilateral knees.
+Neurologic: Mild baseline expressive word-finding difficulty; no focal motor deficits, seizures, or tremors.
+Psychiatric: Mild nocturnal confusion noted by staff; no visual hallucinations or aggressive behaviors.
+
+PHYSICAL EXAMINATION:
+Vital Signs: Blood pressure 126/74 mmHg, pulse 68 bpm regular, respiratory rate 16 breaths/min, temperature 98.2 F (36.8 C), oxygen saturation 98% on room air.
+General: Frail elderly male, resting comfortably in a high-back wheelchair with footrests, well-groomed, pleasant, in no acute distress.
+Cognition: Alert. Oriented to person and partially to place (identifies facility as a recovery hospital); disoriented to exact date, estimating the year correctly. Montreal Cognitive Assessment (MoCA) completed last week scored 18/30.
+HEENT: Normocephalic, atraumatic. Pupils equal, round, reactive to light. Oropharynx clear with moist mucous membranes. Dentition intact with well-fitting lower partial denture.
+Cardiovascular: Regular rhythm, normal S1 and S2. Soft 1/6 systolic ejection murmur heard best at the right upper sternal border, non-radiating. No peripheral edema of the lower extremities. Radial and dorsalis pedis pulses 2+ bilaterally.
+Pulmonary: Lungs clear to auscultation bilaterally in anterior and posterior lung fields. Good air movement. No wheezing, rales, or rhonchi.
+Abdomen: Soft, non-tender, non-distended. Normal active bowel sounds present in all four quadrants. No organomegaly or palpable masses.
+Musculoskeletal / Surgical Site: Well-healed 12 cm linear surgical scar along the right lateral hip without erythema, warmth, dehiscence, or purulence. Range of motion of right hip reveals flexion to 95 degrees, abduction to 25 degrees, with no pain elicited on internal or external rotation. Upper extremity strength 5/5 bilaterally. Lower extremity strength 4+/5 on right hip flexion and knee extension, 5/5 on the left.
+Neurologic: Cranial nerves II through XII grossly intact. Deep tendon reflexes 1+ symmetrically at biceps, triceps, and patellae. Plantar reflexes flexor bilaterally. Sensation to light touch intact across all four extremities.
+Skin: Skin turgor normal for age. No sacral, trochanteric, or calcaneal pressure injuries. Mild senile purpura on bilateral dorsal forearms.
+
+FUNCTIONAL MOBILITY AND THERAPY SUMMARY:
+Review of physical and occupational therapy progress notes indicates Mr. Wozniak has achieved modified independence for bed mobility and transfers from sit-to-stand with standby assistance of one person. He ambulates up to 150 feet utilizing a front-wheeled walker with contact guard assistance. Activities of daily living (upper body dressing and hygiene) are performed with minimal assistance; lower body dressing requires moderate assistance due to hip precautions.
+
+LABORATORY VALUES (Collected 03.03.2026):
+Serum sodium 139 mEq/L, potassium 4.2 mEq/L, chloride 103 mEq/L, bicarbonate 25 mEq/L, blood urea nitrogen 22 mg/dL, serum creatinine 1.4 mg/dL (estimated GFR 49 mL/min/1.73m2, baseline), glucose 96 mg/dL. Complete blood count: white blood cell count 6.2 x10^3/uL, hemoglobin 12.1 g/dL, hematocrit 36.8%, platelet count 210 x10^3/uL. Urinalysis negative for nitrites, leukocyte esterase, or bacteria.
+
+ASSESSMENT AND CLINICAL IMPRESSION:
+Yaroslav Wozniak is a 92M who is making satisfactory functional recovery following surgical repair of a right subcapital femoral neck fracture, with stable comorbid vascular dementia and obstructive sleep apnea.
+1. Right Hip Arthroplasty Rehabilitation:
+- Surgical wound is fully healed. Functional ambulation progressing appropriately with walker. Continue skilled physical therapy 5 days per week targeting endurance and balance.
+- Maintain weight-bearing as tolerated with standard posterior hip precautions through the end of the month.
+2. Vascular Dementia and Sundowning:
+- Continue donepezil 10 mg PO at bedtime.
+- Non-pharmacologic interventions prioritized: sleep hygiene, routine daytime ambulation, natural lighting exposure in morning, calming environment at dusk. Continue melatonin 3 mg PO at 21:00. Dr. van der Beek to re-evaluate in four weeks.
+3. Obstructive Sleep Apnea:
+- Stable on CPAP device CP-9082341 at 11 cmH2O pressure. Continue current settings.
+4. Hypertension and Cardiovascular Risk:
+- Well controlled on lisinopril and amlodipine. Continue current dosing.
+5. Chronic Kidney Disease:
+- Stable renal function with creatinine 1.4 mg/dL. Avoid nephrotoxic agents including systemic nonsteroidal anti-inflammatory drugs.
+6. Discharge Planning:
+- Target discharge to his home in Oak Brook under the care of Mrs. Cross anticipated within three weeks. Home health physical therapy and occupational therapy referrals to be finalized prior to transition. Case management will arrange delivery of shower chair, raised toilet seat, and home CPAP supplies.
+
+Provider Signature:
+Arthur Campbell, MD
+Attending Geriatric Physician, Highland Creek Care Center
+Supervising Physician Cosignature:
+P.J. Abernathy, MD

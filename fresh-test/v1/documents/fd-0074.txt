@@ -1,0 +1,30 @@
+Patient Name: van Gelder, Jochem
+Date of Service: November 12, 2026
+Health Plan Member ID: HPN-7734019
+Facility: Lakeshore Urological Associates
+
+Message Thread: Prostate Biopsy Pathology Review and Prior Auth
+
+Message 1:
+From: claire albright
+Sent: November 14, 2026 10:15 AM
+To: Lakeshore Urological Associates Triage
+Subject: Pathology follow-up for Jochem van Gelder
+
+hello nurse megan, i am writing on behalf of my father jochem van gelder regarding his recent transrectal prostate needle biopsy performed by dr gleason. we reviewed the pathology report that was posted to the portal yesterday. the pathologist noted adenocarcinoma in three of twelve cores with a Gleason score of 3+4=7, corresponding to Grade Group 2. dr gleason had mentioned during our consultation that if the biopsy showed intermediate-risk disease, we would discuss staging pelvic MRI and active surveillance versus radiation therapy. my father is anxious to know what the next steps are and whether a referral to radiation oncology has been initiated. also, our health plan requires prior authorization for pelvic MRI under Plan Group Number GRP-884102. could your office submit that prior auth request? the imaging center requested that the clinical records and authorization approval be sent by Fax: (616) 555-0148. lastly, my father prefers to pick up his tamsulosin 0.4 mg PO daily refill at the pharmacy location in 49503 rather than the suburban outlet. thank you so much for your assistance, claire
+
+Message 2:
+From: Megan Bauer, RN
+Sent: November 14, 2026 02:40 PM
+To: claire albright
+Subject: RE: Pathology follow-up for Jochem van Gelder
+
+Hello Claire,
+
+I discussed the pathology findings with Dr. Wayne Gleason this afternoon. He confirmed that the biopsy demonstrates favorable intermediate-risk prostate cancer based on the Gleason score of 3+4=7 and his pre-biopsy PSA of 6.2 ng/mL. Dr. Gleason has ordered a multi-parametric prostate MRI to evaluate for extracapsular extension and has submitted the formal consultation request to Radiation Oncology.
+
+Our pre-authorization coordinator has submitted the imaging request to his insurer under Health Plan Member ID HPN-7734019 and Plan Group Number GRP-884102. Once the approval is secured, our office will transmit the clinical notes and authorization to the imaging facility via Fax: (616) 555-0148. In addition, I have routed his tamsulosin 0.4 mg capsule prescription to the pharmacy in 49503. Please have Mr. van Gelder continue tamsulosin 0.4 mg PO daily thirty minutes after the same meal each evening. Dr. Wayne Gleason would like to see him back in clinic for a comprehensive discussion once the MRI is completed. Please reach out if you have any questions in the interim.
+
+Warm regards,
+Megan Bauer, RN
+Lakeshore Urological Associates

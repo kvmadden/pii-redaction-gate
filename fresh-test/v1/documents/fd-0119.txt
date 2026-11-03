@@ -1,0 +1,44 @@
+TRANSCRIPT OF CLINICAL PHARMACY RECONCILIATION CALL
+SERVICE: Endocrinology
+REFERRAL DESTINATION: Diabetes Center
+SOURCE OF PREVIOUS RECORDS: Outside Hospital
+PATIENT AGE: 68-year-old male
+SPEAKERS: Clinical Pharmacist, Patient's Son
+
+[Call Audio Recording Commenced]
+
+Clinical Pharmacist: Ambulatory pharmacy consultation line, this is the clinical pharmacist speaking. Who am I speaking with today?
+
+Patient's Son: Hello, yes, uh, good afternoon. I am calling on behalf of my father. He is, uh, he is a 68-year-old patient following with your endocrine service. He had, uh, he had some blood work drawn earlier this week, and we received a notification that his thyroid levels were markedly abnormal. Also, the records transferred over from Outside Hospital indicated that his anti-thyroid regimen needed adjustment, so we wanted to review his current medications.
+
+Clinical Pharmacist: Certainly, I can help reconcile his medications and review those lab trends with you. Looking at his chart history, he was initially diagnosed with Graves disease in 2019, and he has had intermittent relapses of thyrotoxicosis. Can you tell me what symptoms he is currently experiencing at home?
+
+Patient's Son: Well, um, over the past week he has had noticeable palpitations, heat intolerance, and a fine tremor in his fingers. He also says he feels anxious and has trouble sleeping. We checked his vitals this morning: his blood pressure was 142/86 mmHg, heart rate was elevated at 104 bpm regular, respiratory rate was 18 breaths per minute, and his weight was down 2.4 kg compared to last month.
+
+Clinical Pharmacist: Those clinical signs are very consistent with excess circulating thyroid hormone. Looking at the laboratory values drawn two days ago, his thyroid stimulating hormone is suppressed at less than 0.01 uIU/mL, his free thyroxine, or free T4, is elevated at 2.8 ng/dL, and his free triiodothyronine is 6.2 pg/mL. He also had a radioactive iodine uptake scan documented from Outside Hospital which showed diffuse homogeneous uptake of 58% at 24 hours, confirming active Graves disease rather than destructive thyroiditis.
+
+Patient's Son: Yes, exactly. And what about his current prescriptions? He takes methimazole, but we were confused about the dose because of his recent allergic rash.
+
+Clinical Pharmacist: Let us review every medication he is currently taking. He was restarted on methimazole 10 mg PO daily, but then developed a diffuse pruritic maculopapular rash. To manage that allergic reaction, the covering clinician prescribed brand Allegra 180 mg PO daily alongside a rapid steroid taper using prednisone 40/30/20/10 mg PO daily, stepping down the dose every 3 days. Did he finish that prednisone taper?
+
+Patient's Son: Yes, he took the last 10 mg prednisone tablet three days ago. The hives cleared up completely with the Allegra, and he is still taking the Allegra 180 mg PO once every morning without any issues. But now that the steroid is done, his palpitations seem more prominent.
+
+Clinical Pharmacist: That makes clinical sense. The corticosteroids suppress peripheral conversion of T4 to T3, so stopping the taper unmasked his hyperadrenergic symptoms. For his tachycardia and tremor, the attending endocrinologist has placed an order for propranolol 20 mg PO TID PRN for heart rate greater than 90 bpm or bothersome tremors. Have you picked up that propranolol prescription yet?
+
+Patient's Son: Yes, we have the propranolol bottle here at home, but we were waiting to talk to someone before giving him the first pill.
+
+Clinical Pharmacist: You can go ahead and give him his first dose of propranolol 20 mg PO right now with water. It should help slow his pulse and relieve that internal shakiness within thirty to sixty minutes. In addition, because his glycemic parameters have fluctuated with the steroids—his fasting blood glucose was 158 mg/dL on the recent metabolic panel—we are placing a formal referral to the Diabetes Center for lifestyle education and blood glucose surveillance while his thyroid levels normalize.
+
+Patient's Son: That is very reassuring. Should he continue taking the methimazole 10 mg daily as well?
+
+Clinical Pharmacist: Yes, please continue methimazole 10 mg PO daily in the morning. If he develops any recurrence of severe rash, facial swelling, high fever, or a severe sore throat, stop the methimazole immediately and notify us, as those can be signs of agranulocytosis. We will repeat his complete blood count and liver function tests, along with free T4 and total T3, in four weeks.
+
+Patient's Son: Understood. Give the propranolol 20 mg PO now for the palpitations, keep taking methimazole 10 mg and Allegra 180 mg daily, watch for fever or throat pain, and attend the Diabetes Center appointment.
+
+Clinical Pharmacist: That is exactly right. If his heart rate stays over 110 bpm at rest despite the propranolol, or if he develops chest pain, shortness of breath, or confusion, seek emergency medical care immediately.
+
+Patient's Son: Thank you very much for explaining everything so clearly.
+
+Clinical Pharmacist: You are very welcome. Take good care.
+
+[Call Audio Recording Concluded]

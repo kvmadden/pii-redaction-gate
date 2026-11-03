@@ -1,0 +1,16 @@
+From: Mercy Golubeva
+To: the endocrine and pain care team
+Sent: afternoon
+
+hello, this is mercy golubeva. i am 54 and my husband grant alderson is typing part of this because my hands are stiff. since March 2026 the burning in both feet is worse at night and i have been waking up two or three times. Redcedar Pain Clinic started me on Lyrica 75 mg PO BID and i am not sure it is doing enough. i also take metformin 1000 mg PO BID and levothyroxine 88 mcg PO daily on an empty stomach. home glucose this week has been 140 to 180 mg/dL before supper and the cuff showed 136/84 mmHg with pulse 78 beats per minute. please tell me if i should go up on the Lyrica or if the metformin is the problem. my chart is MRN: 6291845. the scanner copy of the old auth page came through as Auth O81l4-22 and i do not know if that is the right number. you can reply to mercy.golubeva@example.com. also the portal said a sign-in was tried from 198.51.100.24 and that was not me, that was my husband on the kitchen tablet, so please do not lock the account.
+
+From: Siobhan O'Leary-Quinlan, PharmD
+To: Mercy Golubeva
+
+Mercy, thank you. I am the covering pharmacist and I read both parts of your note. A sign-in from a home tablet is fine if your husband was the one holding it, and we will not lock the portal. Please still change the password when you can.
+
+Your regimen can stay as written for now: Lyrica 75 mg PO BID, metformin 1000 mg PO BID, levothyroxine 88 mcg PO every morning. Do not increase the Lyrica on your own. Neuropathic pain often needs two to four weeks at a steady dose before we judge it. If the evening burning is still sharp after that, the next step we would discuss is Lyrica 100 mg PO BID, not a jump higher.
+
+Labs on file from that draw: hemoglobin A1c 7.6%, creatinine 0.8 mg/dL, eGFR 88 mL/min/1.73 m2, TSH 2.4 mIU/L, vitamin B12 410 pg/mL. Vitals in the room were temperature 36.7 C, respiratory rate 14 breaths per minute, oxygen saturation 98% on room air, weight 79 kg. Diagnosis list for this thread: type 2 diabetes mellitus with diabetic peripheral neuropathy, and hypothyroidism. No procedure is scheduled. We do not need a nerve conduction study yet.
+
+The scanned authorization string looks like a misread of a zero and a one. We will match it on our side from the labeled chart number rather than the scanned line. The pain practice can keep the pain plan, and we will send them a short note. Write back if you get drowsy, swollen legs, or glucose readings under 70 mg/dL.

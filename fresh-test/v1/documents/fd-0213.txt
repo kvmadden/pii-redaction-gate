@@ -1,0 +1,91 @@
+CALL LOG RECORDING - SPECIALTY CLINIC
+RECORDING ID: 7391 0482 19
+DATE: 18 Oct 2026
+FACILITY: Silver Lake Clinic
+COVERING PROVIDERS: Dr. Fox, Dr. Zhang Yong-Kang, Lin Wei-Chen, RN
+CALLER: Chen Xiao-Mei (daughter-in-law)
+PATIENT: Lương Văn Phát
+DOB: 12 Jan 1934
+AGE: 92-year-old male
+
+[Audio Recording Transcript]
+
+Lin Wei-Chen, RN: Silver Lake Clinic nursing line, this is Wei-Chen,
+how, um, how can I help you today?
+
+Chen Xiao-Mei: Hello, yes, uh, good morning. I'm calling about my
+father-in-law, Mr. Lương Văn Phát. He, uh, he had a transcatheter
+aortic valve replacement about two weeks ago, and we're looking at
+his home care schedulign sheet, but we're confused about his
+warfarin dosgae.
+
+Lin Wei-Chen, RN: Okay, let me bring up Mr. Phát's record. You said
+his name is Lương Văn Phát, DOB 12 Jan 1934?
+
+Chen Xiao-Mei: Yes, that is correct. He is a 92-year-old gentleman, and
+he lives in San Jose with my husband and me.
+
+Lin Wei-Chen, RN: Alright, I have his file right here. Can you verify
+his current home address for security?
+
+Chen Xiao-Mei: It is 620 Forest Ridge Drive, San Jose, CA 95129. I also
+sent it on the patient portal earlier in lowercase as 620 forest ridge
+drive just in case you needed to update it.
+
+Lin Wei-Chen, RN: Perfect, thank you. And what is your callback number?
+
+Chen Xiao-Mei: You can reach me on my cell phone. It is, uh, let me read
+it slowly: four one five, five five five, zero one three six.
+
+Lin Wei-Chen, RN: Thank you, let me read that back: four one five,
+five five five, zero one three six. I have it written in the intake
+form as 415–555–0136 with a direct tag to your profile. Now,
+regarding his warfarin, what did his discharge instructions say?
+
+Chen Xiao-Mei: Well, uh, his discharge summary said warfarin 2.5 mg PO
+daily in the evening, but then Dr. Fox, who covered for Dr. Zhang over
+the weekend, told us after his lab draw that his INR was 1.6, which
+was, uh, which was subtherapeutic. The target range was 2.0 to 3.0
+for his valve. Dr. Fox wrote an updated prescription under NPI:
+1942850192 for warfarin 5 mg PO on Mondays and Thursdays, and 2.5 mg
+on the other days. We just wanted to confirm if today, Monday, he
+should take the 5 mg."
+
+Lin Wei-Chen, RN: Let me check the care team communication note from
+this morning. Yes, Dr. Fox and Dr. Zhang Yong-Kang both reviewed his
+recent transthoracic echocardiogram and that INR result. Dr. Fox noted
+that Mr. Lương should indeed take warfarin 5 mg tonight, and then have
+a repeat prothrombin time and INR drawn on Wednesday. Also, his chart
+mentions that his primary cardiologist, Dr. Zhang, signed off on the
+tapered adjustment. The attending list here shows Dr. Fox, Dr. Zhang
+Yong-Kang, and our clinical pharmacist all agreed on the plan.
+
+Chen Xiao-Mei: Oh, that makes sense. We, we were just nervous because
+at 92 years old, any change in blood thinner makes us worry about
+bleeding or bruising. He had, uh, he had a tiny nosebleed yesterday,
+just a few drops, but it stopped right away when we pinched his nose.
+
+Lin Wei-Chen, RN: Good, I'm glad it stopped quickly. Did he have any
+dark stools, coughing up blood, or sudden weakness?
+
+Chen Xiao-Mei: No, nothing like that at all. His vitals this morning
+were blood pressure 134/78 mmHg, heart rate 72 bpm, oxygen saturation
+98% on room air, and weight 61.2 kg. His congestive heart failure
+symptoms seem stable; no shortness of breath when lying flat.
+
+Lin Wei-Chen, RN: Those vitals look very reassuring. For his
+follow-up, we have his next clinic appoitment scheduled with
+Dr. Zhang on Friday. Dr. Fox will also be covering the
+anticoagulation clinic that morning. In his chart, I've noted that
+caregiver C.X.M. called and confirmed the dose. If he has any active
+bleeding or dizziness, call us immediately or go to the nearest
+emergency room.
+
+Chen Xiao-Mei: Thank you so much, Wei-Chen. That clarifies
+everything. We will give him the 5 mg dose tonight. Have a wonderful
+day.
+
+Lin Wei-Chen, RN: You are very welcome, Mrs. Chen. Take care,
+goodbye.
+
+[End of Call]

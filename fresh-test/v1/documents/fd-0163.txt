@@ -1,0 +1,39 @@
+TRANSCRIPT OF CLINICAL NURSE TRIAGE CALL
+SERVICE: Neurology
+CROSS-REFERENCE: Outside Hospital records received
+PATIENT PROFILE: 74-year-old female
+CALL PARTICIPANTS: Triage Nurse, Patient's Daughter
+
+[Call Audio Recording Begins]
+
+Triage Nurse: Neurology triage line, this is the triage nurse. How can I help you today?
+
+Patient's Daughter: Hello, uh, yes, good morning. I'm calling about my mother. She is, uh, she is a 74-year-old patient seen in your movement disorder clinic, and I'm calling because her tremors and neuropathic pain have, uh, have gotten significantly worse over the past couple of weeks. We also received her consultation notes from Outside Hospital where she had an admission last year, and they suggested we contact her regular clinic to adjust her medicaiton.
+
+Triage Nurse: Okay, I have her electronic health record pulled up on my screen. I see she was diagnosed with Parkinson disease back in 2021, and she also has documented diabetic peripheral neuropathy and degenerative lumbar canal stenosis. Can you tell me what symptoms she is experiencing right now?
+
+Patient's Daughter: Well, um, her resting tremor in the right hand has become much more pronounced, and she describes a severe burning, shooting pain in both lower extremities, from the calves down into the feet. She says the pain is an 8 out of 10. She also had a recent flare of inflammatory radiculopathy. The covering physician at Outside Hospital started her on a steroid burst with prednisone 40/30/20/10 mg tapering down by 10 mg every four days. She completed that taper last week, but as soon as the prednisone finished, the neuropathic burning rebounded with a vengeance.
+
+Triage Nurse: I see the discharge summary from Outside Hospital in our document viewer. Let me reivew her current medication list. For her Parkinson disease, she is taking carbidopa-levodopa 25/100 mg PO TID. And for the peripheral neuropathy, she was on gabapentin 300 mg PO TID, but according to the outside note, they transitioned her to brand Lyrica 75 mg PO BID. Has she started the Lyrica yet?
+
+Patient's Daughter: Yes, she began taking the Lyrica 75 mg PO BID four days ago. It seems to take the edge off slightly, but she complains of marked grogginess in the morning, and her walking is unsteady. We checked her vital signs this morning using her automated home cuff. Her blood pressure was 118/72 mmHg, heart rate was 64 bpm, respiratory rate was 16 breaths per minute, and her fingerstick blood glucose was 142 mg/dL.
+
+Triage Nurse: Those vital signs are stable, but the somnolence and unsteady gait can increase her fall risk, especially given her underlying motor fluctuations. Did Outside Hospital obtain any updated neuroimaging or laboratory work during her stay?
+
+Patient's Daughter: Yes, they did a lumbar spine magnetic resonance imaging without contrast, which showed moderate L4-L5 spinal stenosis with facet arthropathy, but no acute cord compression. Her recent labs showed serum creatinine 1.1 mg/dL, blood urea nitrogen 18 mg/dL, serum potassium 4.2 mEq/L, and hemoglobin A1c 6.8%. Her hepatic function panel was completely within normal limits, with AST 22 U/L and ALT 19 U/L.
+
+Triage Nurse: That is very helpful. Because her neuropathic pain remains refractory and she had excessive sedation from titration, she may benefit from an interdisciplinary referral to Pain Clinic for targeted lumbar epidural steroid injection evaluation. Additionally, looking at her skin assessment from the home health report, she has a stage 2 sacral pressure injury that requires specialized dressing management, so I am submitting an urgent referral to Wound Care as well.
+
+Patient's Daughter: That would be wonderful. The home health nurse said the sacral area has minimal serosanguinous drainage and no cellulitis, but Wound Care would definitely know the best barrier dressings. What should we do about her morning grogginess and the Lyrica?
+
+Triage Nurse: I will send a clinical priority message to the attending neurologist. The plan will likely be to shift her dosing schedule so she takes Lyrica 75 mg PO at bedtime only for the next five days to allow her body to acclimate, rather than taking it twice daily. For her Parkinson disease motor symtpoms, the neurologist may evaluate whether adjusting the carbidopa-levodopa timing or adding an adjunct dopamine agonist is indicated. Please monitor her closely when she mobilizes, ensure her four-wheel walker is always within arm's reach, and assist her with transfers.
+
+Patient's Daughter: Understood. We will keep her walker right by her chair, assist with walking, and wait for the pharmacy update regarding shifting the Lyrica dose to nighttime.
+
+Triage Nurse: Excellent. If she experiences any acute worsening of weakness, inability to bear weight, bowel or bladder incontinence, or acute confusion, take her to the nearest emergency department right away. Otherwise, our clinical coordinator will call you back this afternoon once the neurologist reviews the chart.
+
+Patient's Daughter: Thank you so much for your thorough help.
+
+Triage Nurse: You are very welcome. Take care.
+
+[Call Audio Recording Concluded]
