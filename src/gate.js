@@ -182,7 +182,7 @@ export function describeGate(gate) {
   const parts = gate.hits.map((h) => `${h.type}×${h.count}`).join(", ");
   const head = masked ? `${masked} span(s) masked under ${gate.profile} profile (${parts})` : `no rule matched under ${gate.profile} profile`;
   if (gate.status === "review") return `redaction: REVIEW REQUIRED, ${gate.review.length} uncertain span(s). ${head}`;
-  return `redaction: ${head}. Residual scan found nothing to decide. Not proof that no identifier remains`;
+  return `redaction: ${head}. Residual scan found nothing to decide. Not proof that no identifier remains (see result.scan.knownGaps)`;
 }
 
 export default { gateParsedTranscript, gateSummary, gateBodyText, sendRedacted, assertSendable, redactionMetaForRow, quarantineGate, describeGate };

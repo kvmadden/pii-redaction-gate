@@ -65,8 +65,10 @@ export function scanResidual(text, { names = true, safe = new Set(), nameTokens,
     const digits = (s.match(/\d/g) || []).length;
     if (/[A-Za-z]/.test(s) && digits >= 3 && s.replace(/-/g, "").length >= 6) push(out, m, "code", "unlabeled letter-and-digit code");
   }
-  for (const m of text.matchAll(/(?<![\p{L}\p{N}])(?=[0-9OoIl]*[0-9])(?=[0-9OoIl]*[OoIl])[0-9OoIl]{2,}(?:[-./ ][0-9OoIl]{2,}){1,3}(?![\p{L}\p{N}])/gu)) {
-    if ((m[0].match(/\d/g) || []).length >= 4) push(out, m, "ocr-number", "number mixing digits with O, I or l (possible scan error)");
+  // The O, I or l may sit in any group ("212-555-O147"), so it is checked on the whole match.
+  for (const m of text.matchAll(/(?<![\p{L}\p{N}])[0-9OoIl]{2,}(?:[-./ ][0-9OoIl]{2,}){1,3}(?![\p{L}\p{N}])/gu)) {
+    const mixed = m[0].split(/[-./ ]/).some((g) => /\d/.test(g) && /[OoIl]/.test(g)); // "O147", not "lol"
+    if (mixed && (m[0].match(/\d/g) || []).length >= 4) push(out, m, "ocr-number", "number mixing digits with O, I or l (possible scan error)");
   }
   if (!referenceDate) {
     for (const m of text.matchAll(/\b(?:dob|d\.o\.b\.?|date of birth|born(?: in)?|birth ?year|yob)\s*:?\s*((?:18|19|20)\d{2})(?![\d/-]|\.\d)/gi)) {

@@ -23,6 +23,7 @@ export {
   redactionMeta,
   splitCodeSegments,
   profileChecks,
+  KNOWN_GAPS,
   REDACTION_VERSION,
   BLOCKED_TEXT,
   DEFAULT_MAX_LENGTH,

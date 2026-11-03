@@ -83,6 +83,20 @@ function errorName(err) {
 }
 
 /** Which checks a profile runs, and which identifier kinds it does not check. */
+/**
+ * What the checks cannot see even when they all run. A clean result means the
+ * checks found nothing left to decide, not that none of these is present.
+ */
+export const KNOWN_GAPS = Object.freeze([
+  "a lowercase name that is also an ordinary English word (grace, will), unless a title, relation word, greeting or person verb marks it",
+  "a facility named with a clinical word (Valley Hospital)",
+  "a name made of two English words joined together (Quellbrook), read as an ordinary word",
+  "ages under 90, which are kept on purpose",
+  "unlabeled numbers under 7 digits and unlabeled letter-digit codes under 6 characters",
+  "an identifier spelled out in words or split across lines",
+  "meaning: a description that identifies a person without naming them",
+]);
+
 export function profileChecks(profile) {
   const checks = ["email", "ssn", "dob", "card", "account", "phone", "coords", "address"];
   const notChecked = [];
@@ -142,7 +156,7 @@ export function redactText(text, opts = {}) {
   const profileName = profile.name;
   if (text === null || text === undefined || text === "") {
     const { checks, notChecked } = profileChecks(profile);
-    return seal({ text, redacted: false, blocked: false, status: "clean", hits: [], review: [], scan: { profile: profileName, characters: 0, read: 0, exempt: [], checks, notChecked }, profile: profileName });
+    return seal({ text, redacted: false, blocked: false, status: "clean", hits: [], review: [], scan: { profile: profileName, characters: 0, read: 0, exempt: [], checks, notChecked, knownGaps: KNOWN_GAPS }, profile: profileName });
   }
   if (typeof text !== "string") return blockedResult(profileName, "input", new TypeError("non-string input"));
   const maxLength = Number.isFinite(opts.maxLength) ? opts.maxLength : DEFAULT_MAX_LENGTH;
@@ -216,7 +230,7 @@ export function redactText(text, opts = {}) {
       status: review.length ? "review" : "clean",
       hits,
       review,
-      scan: { profile: profileName, characters: text.length, read: text.length - exemptChars, exempt, checks, notChecked },
+      scan: { profile: profileName, characters: text.length, read: text.length - exemptChars, exempt, checks, notChecked, knownGaps: KNOWN_GAPS },
       profile: profileName,
     });
   } catch (e) {
@@ -234,6 +248,8 @@ export function redactText(text, opts = {}) {
 // non-enumerable `changes` property, for the local quarantine.
 
 const MAX_DEPTH = 32;
+const TRANSCRIPT_FIELDS = new Set(["firstUserMsg", "lastAssistantMsg", "assistantTail", "operatorTurns", "turns"]);
+const SUMMARY_FIELDS = new Set(["summary", "topics", "operatorDirections"]);
 const NOT_TEXT = Object.freeze({ notText: true }); // a declared text field that is not a string
 
 function isPlainObject(v) {
@@ -299,7 +315,10 @@ function recordWalker(opts) {
     }
     return out;
   };
-  return { text, any, block, counts, changes, review, state };
+  // A key is read like any other string: one that the rules would change is an
+  // identifier used as a key, and the record blocks.
+  const keyOk = (key) => typeof key !== "string" || redactText(key, opts).text === key;
+  return { text, any, block, keyOk, counts, changes, review, state };
 }
 
 function recordResult(key, value, w, profileName) {
@@ -330,6 +349,11 @@ function transcriptFields(parsed, w) {
   const out = {};
   for (const key of Object.keys(parsed)) {
     const v = parsed[key];
+    // Declared field names are schema, not data. Any other key is read like text.
+    if (!TRANSCRIPT_FIELDS.has(key) && !w.keyOk(key)) {
+      w.block("(key)");
+      continue;
+    }
     if (key === "firstUserMsg" || key === "lastAssistantMsg") out[key] = w.text(v, key);
     else if (key === "assistantTail") {
       out[key] = v === undefined || v === null ? v : Array.isArray(v) ? v.map((t, i) => w.text(t, `assistantTail[${i}]`)) : w.text(NOT_TEXT, key);
@@ -395,6 +419,10 @@ export function redactSummaryFields(summary, opts = {}) {
       out = {};
       for (const key of Object.keys(summary)) {
         const v = summary[key];
+        if (!SUMMARY_FIELDS.has(key) && !w.keyOk(key)) {
+          w.block("(key)");
+          continue;
+        }
         if (key === "summary") out[key] = w.text(v, "summary");
         else if (key === "topics") out[key] = v == null ? v : Array.isArray(v) ? v.map((t, i) => w.text(t, `topics[${i}]`)) : w.text(NOT_TEXT, "topics");
         else if (key === "operatorDirections") {
