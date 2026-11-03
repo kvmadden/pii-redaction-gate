@@ -154,7 +154,7 @@ export const STATE_CODES = set(`
 `.toLowerCase());
 
 /** Dotted abbreviations that look like initials but are not names. */
-export const DOTTED_ABBREVIATIONS = set(`u.s. u.k. a.m. p.m. e.g. i.e. d.c. n.p.o. m.d. r.n. n.p. p.a. d.o. ph.d. e.d. o.r. i.v. p.o.`);
+export const DOTTED_ABBREVIATIONS = set(`u.s. u.s.a. u.k. a.m. p.m. e.g. i.e. d.c. n.p.o. m.d. r.n. n.p. p.a. d.o. ph.d. e.d. o.r. i.v. p.o.`);
 
 /** Public health-coverage program names: ordinary words in clinical text. */
 export const PROGRAM_WORDS = set(`medicare medicaid tricare champva chip medigap`);

@@ -155,3 +155,10 @@ test("names: names with a review flag never leave the classifier silently", () =
     ["Grace's daughter called.", "Grace"],
   ]) notSilent(text, value);
 });
+
+test("names: record headers with the surname in capitals, and a column gap after an initial", () => {
+  const r = gone("Patient: OKONKWO, Adaeze B.        MRN: 00-482-1173        DOB: 02/11/1948", ["OKONKWO", "Adaeze", "00-482-1173", "1948"]);
+  assert.match(r.text, /MRN: \[account\]/, "the MRN label is kept, not read as a surname");
+  gone("Name: SMITH, JOHN A.", ["SMITH", "JOHN"]);
+  kept("A. MRN: 12345678", ["MRN:"]);
+});

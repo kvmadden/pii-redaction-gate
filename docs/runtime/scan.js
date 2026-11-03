@@ -19,6 +19,8 @@
 //   invisible       zero-width or direction-control characters
 //   obfuscated-email  "name at domain dot com" and bracket forms
 //   name-label      a "Name:" field whose value was not redacted
+//   spelled-out     four or more capital letters spelled one at a time
+//                   ("D-E-L-G-A-D-O"), as callers spell a name
 
 import { nameReviewSpans } from "./names.js";
 
@@ -32,6 +34,7 @@ export const RESIDUAL_CHECKS = Object.freeze([
   "invisible",
   "obfuscated-email",
   "name-label",
+  "spelled-out",
 ]);
 
 const SCRIPTS = ["Han", "Hiragana", "Katakana", "Hangul", "Cyrillic", "Arabic", "Hebrew", "Devanagari", "Bengali", "Thai", "Tamil", "Gujarati", "Gurmukhi", "Ethiopic", "Armenian", "Georgian", "Khmer", "Lao", "Myanmar", "Sinhala", "Tibetan"];
@@ -89,6 +92,7 @@ export function scanResidual(text, { names = true, safe = new Set(), nameTokens,
       }
     }
   }
+  for (const m of text.matchAll(/(?<![\p{L}\p{N}])\p{Lu}(?:[-. ]\p{Lu}){3,}(?![\p{L}\p{N}])/gu)) push(out, m, "spelled-out", "letters spelled out one at a time (a spelled name or code)");
   const kept = out.filter((r) => !skip.some((s) => r.start >= s.start && r.end <= s.end) && r.end > r.start);
   kept.sort((a, b) => a.start - b.start || a.end - b.end);
   const dedup = [];

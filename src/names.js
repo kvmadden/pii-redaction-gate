@@ -328,7 +328,9 @@ function parseName(toks, k, mode, safe, { allowComma = false } = {}) {
     if (j > 0 && acceptable(toks, j, mode, false, safe)) {
       const firstInf = info(toks[j], safe);
       const lastInf = info(toks[k], safe);
-      if (lastInf.shape === firstInf.shape) {
+      // Same shape ("Thorn, Inez", "THORN, INEZ"), or the record-header form
+      // with the surname in capitals ("OKONKWO, Adaeze").
+      if (lastInf.shape === firstInf.shape || (lastInf.shape === "upper" && firstInf.shape === "title")) {
         let end = j;
         const m = nextWordAfterSpace(toks, j);
         if (m > 0 && isInitialAt(toks, m)) end = toks[m + 1]?.text === "." ? m + 1 : m;
@@ -577,12 +579,17 @@ function classify(text, safe, nameTokens = new Set(["[name]"])) {
     if (decided[i] || !isInitialAt(toks, i) || toks[i + 1]?.text !== ".") continue;
     let j = i;
     while (toks[j + 2]?.t === "sp" && isInitialAt(toks, j + 3) && toks[j + 4]?.text === ".") j += 3;
-    if (toks[j + 2]?.t !== "sp") continue;
+    // One ordinary space: "B.        MRN" across a column gap is not "J. Smith".
+    if (toks[j + 2]?.t !== "sp" || toks[j + 2].text.length > 2) continue;
     const k = j + 3;
     const t = toks[k];
     if (!t || t.t !== "word" || decided[k]) continue;
     const inf = info(t, safe);
     if (!isCapShape(inf) || inf.isFunction || inf.cls === "safe" || inf.cls === "clinical" || inf.cls === "english") continue;
+    // A short capitals word on no name list ("MRN", "DOB") or a word before a
+    // colon is a field label, not a surname.
+    if (inf.shape === "upper" && inf.letters <= 4 && !/surname/.test(nameLists(t.text))) continue;
+    if (nextSig(toks, k) >= 0 && toks[nextSig(toks, k)].text === ":") continue;
     if (eponymHeadAfter(toks, k, safe)) continue;
     const dotted = toks.slice(i, j + 2).map((x) => x.text).join("").toLowerCase();
     if (DOTTED_ABBREVIATIONS.has(dotted)) continue;
@@ -795,7 +802,7 @@ export function applyNames(text, { map, unknownNames = false } = {}) {
   return { text: out, hits };
 }
 
-const COMMON_DOTTED = new Set(["u.s.", "u.k.", "a.m.", "p.m.", "e.g.", "i.e.", "d.c.", "m.d.", "r.n.", "n.p.", "p.a.", "d.o.", "e.d.", "o.r.", "i.v.", "p.o."]);
+const COMMON_DOTTED = new Set(["u.s.", "u.s.a.", "u.k.", "a.m.", "p.m.", "e.g.", "i.e.", "d.c.", "m.d.", "r.n.", "n.p.", "p.a.", "d.o.", "e.d.", "o.r.", "i.v.", "p.o."]);
 
 /**
  * Words in already-redacted text that the unknown-name pass would still remove

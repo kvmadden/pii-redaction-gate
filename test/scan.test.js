@@ -67,3 +67,8 @@ test("scan: ordinary clinical text needs no review", () => {
   assert.equal(r.status, "clean");
   assert.deepEqual(r.review, []);
 });
+
+test("scan: a name spelled one letter at a time", () => {
+  flags("It's for my mom, D-E-L-G-A-D-O.", "spelled-out");
+  assert.equal(run("Moved to the U.S.A. in 1990.").status, "clean");
+});

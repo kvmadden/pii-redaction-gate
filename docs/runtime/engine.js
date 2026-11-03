@@ -93,7 +93,7 @@ export const KNOWN_GAPS = Object.freeze([
   "a name made of two English words joined together (Quellbrook), read as an ordinary word",
   "ages under 90, which are kept on purpose",
   "unlabeled numbers under 7 digits and unlabeled letter-digit codes under 6 characters",
-  "an identifier spelled out in words or split across lines",
+  "an identifier spelled out in words or split across lines (letters spelled one at a time go to review)",
   "meaning: a description that identifies a person without naming them",
 ]);
 
