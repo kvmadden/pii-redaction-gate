@@ -73,7 +73,7 @@ export const EPONYM_HEADS = set(`
   rule rules position block tube splint repair virus tumor tumour lymphoma
   sarcoma carcinoma encephalopathy thyroiditis esophagus oesophagus anomaly
   deformity contracture neuralgia neuroma aneurysm angina edema oedema dystrophy
-  ataxia chorea dementia arthritis cyst polyp hernia diverticulum disorder
+  ataxia chorea dementia cyst polyp hernia diverticulum disorder
   disorders formula equation method technique approach incision line point
   space ligament muscle nerve artery vein gland glands bundle canal valve
   phenomenon pattern law curve angle cast boot collar brace pouch shunt stent

@@ -21,7 +21,7 @@ A rule-based gate for clinical free text on its way to a model prompt or a recor
 
 No number on this page comes from a set that was written blind and locked before its first run. A fresh blind set is specified in [docs/fresh-test-spec.md](docs/fresh-test-spec.md). Until it is written, scored once and published, there is no headline accuracy figure.
 
-Earlier versions of this README and its case page reported **104 of 108 (96.3%)** on a "held-out" set. That set is the 27-template development check above. Its 108 rows are 27 templates written four times, and its own words (Jardiance, Rheumatoid, Portal, Telephone) were added to the name tier's protected list after it was frozen. The figure is withdrawn.
+Earlier versions of this README and its case page reported **104 of 108 (96.3%)** on a "held-out" set. That set is the 27-template development check above. Its 108 rows are 27 templates written four times, and its own words (Jardiance, Rheumatoid, Arthritis, Telephone, Portal and others) were added to the name tier's protected list after it was frozen. The figure is withdrawn.
 
 ## Try it
 
@@ -53,7 +53,7 @@ The text runs through up to three tiers, then a residual scan reads the output a
 3. **Topics** (standard and strict profiles only). Removes whole sentences about sensitive personal topics.
 4. **Residual scan.** Undecided or name-shaped words, unlabeled long numbers and letter-digit codes, digits mixed with O, I or l, birth years without a reference date, scripts the rules do not read, invisible characters, obfuscated email, and unredacted "Name:" fields. Each becomes a review item with offsets into the output.
 
-The name tier's vocabulary is not hand-picked. It is built by [scripts/build-lexicon.mjs](scripts/build-lexicon.mjs) from public-domain sources, each pinned by SHA-256 in [data/lexicon/manifest.json](data/lexicon/manifest.json): US Census 2010 surnames and 1990 first names, Drugs@FDA product names and ingredients, CMS ICD-10-CM 2025 descriptions, and Webster's Second International word list. A test checks that the words the old list took from the template set (Jardiance, Rheumatoid, Portal, Telephone) and the template names do not appear in the name-tier source, and that the public lists still classify those words.
+The name tier's vocabulary is not hand-picked. It is built by [scripts/build-lexicon.mjs](scripts/build-lexicon.mjs) from public-domain sources, each pinned by SHA-256 in [data/lexicon/manifest.json](data/lexicon/manifest.json): US Census 2010 surnames and 1990 first names, Drugs@FDA product names and ingredients, CMS ICD-10-CM 2025 descriptions, and Webster's Second International word list. A test checks that the words the old list took from the template set (Jardiance, Rheumatoid, Arthritis, Portal, Telephone) and the template names do not appear in the name-tier source, and that the public lists still classify those words.
 
 ## Profiles and sources
 

@@ -31,9 +31,10 @@ test("lexicon: words are classed by public lists, not by a hand list", () => {
 });
 
 test("lexicon: the name-tier source holds no fixture-only vocabulary", () => {
-  // dc528aa added these template-set words to a hand-picked protected list.
-  // The name tier must decide them from the public lists instead.
-  const fixtureWords = ["jardiance", "rheumatoid", "portal", "telephone", "fenwick", "calder", "emrys", "zora", "nola", "imaginary", "fictional"];
+  // dc528aa added these template-set words to a hand-picked protected list
+  // (with Device, Vehicle, City and ZIP, which stay as identifier field labels
+  // in the pattern rules). The name tier must decide them from the public lists.
+  const fixtureWords = ["jardiance", "rheumatoid", "arthritis", "portal", "telephone", "fenwick", "calder", "emrys", "zora", "nola", "imaginary", "fictional"];
   for (const file of ["src/names.js", "src/grammar.js", "src/lexicon.js", "src/scan.js", "src/clinical-patterns.js", "src/patterns.js"]) {
     const words = new Set(read(file).toString("utf8").toLowerCase().match(/[a-z]+/g));
     for (const w of fixtureWords) assert.ok(!words.has(w), `${file} contains the fixture word "${w}"`);
