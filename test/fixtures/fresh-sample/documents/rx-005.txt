@@ -1,0 +1,4 @@
+FAX / Prior authorization request
+Prescriber: Dr. Lena Moreau   Fax: 202-555-0196
+Patient: Ilse Varga   Plan ID: PUN 4154 9263
+Request: Jardiance 10 mg daily. Prior therapy: metformin.
