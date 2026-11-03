@@ -10,12 +10,26 @@ test('three clinical document fixtures preserve provenance and clinical context'
  }
 })
 test('metrics retain gold type recall and explicit grouped precision from canonical evaluation', () => {
- const rows = metricRows(comparison, 'original')
+ const current = comparison.sets.development.results.current
+ const rows = metricRows(comparison, 'development')
  const age = rows.find(r => r.type === 'AGE')
- assert.equal(age.recall, comparison.original.after.byType.AGE.recall)
- assert.equal(rows.find(r => r.type === 'DOB').precision, comparison.original.after.precisionByFamily.DATE.precision)
+ assert.equal(age.recall, current.byType.AGE.recall)
+ assert.equal(rows.find(r => r.type === 'DOB').precision, current.precisionByFamily.DATE.precision)
  assert.equal(rows.find(r => r.type === 'DOB').family, 'DATE')
- assert.equal(metricRows(comparison, 'heldout').length, Object.keys(comparison.heldout.after.byType).length)
+ assert.equal(metricRows(comparison, 'templates').length, Object.keys(comparison.sets.templates.results.current.byType).length)
+})
+
+test('both evaluation sets are labeled development data, never held out', () => {
+ for (const set of Object.values(comparison.sets)) assert.equal(set.data, 'development')
+ assert.match(comparison.sets.templates.label, /^27-template development check/)
+ assert.doesNotMatch(JSON.stringify(comparison).toLowerCase(), /held[- ]?out/)
+})
+
+test('the template check is reported per template, with its denominator', () => {
+ const t = comparison.sets.templates.results.current.templates
+ assert.equal(t.identifierTemplates, 27)
+ assert.equal(t.clinicalPhrases, 6)
+ assert.ok(t.identifierTemplatesRemovedInEveryCopy <= 27)
 })
 test('review log persists only metadata and rejects failed or stale inspection', () => {
  let value = null

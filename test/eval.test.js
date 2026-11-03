@@ -76,3 +76,13 @@ test("scorer: every profile's output aligns for every snippet", () => {
     assert.equal(agg.overall.entities, DATASET.reduce((n, e) => n + locate(e.text, e.pii).length, 0));
   }
 });
+
+test("comparison: the committed development comparison matches this tree's engine", async () => {
+  const fs = await import("node:fs");
+  const { compare } = await import("../eval/compare.js");
+  const committed = JSON.parse(fs.readFileSync(new URL("../eval/comparison.json", import.meta.url)));
+  const fresh = JSON.parse(JSON.stringify(await compare([])));
+  for (const key of Object.keys(fresh.sets)) {
+    assert.deepEqual(committed.sets[key].results.current, fresh.sets[key].results.current, `eval/comparison.json is stale for ${key}: run node eval/compare.js --write with the baseline engines`);
+  }
+});
