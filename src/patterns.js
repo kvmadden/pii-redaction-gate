@@ -121,7 +121,8 @@ export const PATTERN_RULES = freeze([
   // phone, bare 10-digit NANP run (area code and exchange both [2-9]xx).
   { type: "phone", re: /(?<![\d.-])[2-9]\d{2}[2-9]\d{2}\d{4}(?![\d.-])/g },
   // coordinates: decimal pair with 4+ decimals each, or degree notation.
-  { type: "coords", re: /(?<![\d.])-?\d{1,3}\.\d{4,}\s*,\s*-?\d{1,3}\.\d{4,}(?![\d.])/g },
+  // A sentence-final period may follow ("41.8781, -87.6298."), another decimal part may not.
+  { type: "coords", re: /(?<![\d.])-?\d{1,3}\.\d{4,}\s*,\s*-?\d{1,3}\.\d{4,}(?!\d|\.\d)/g },
   { type: "coords", re: /\b\d{1,3}\.\d+\s*°\s*[NS]\b\s*,?\s*\d{1,3}\.\d+\s*°\s*[EW]\b/gi },
   // street address, Title Case or ALL CAPS: number (221B too) + 1 to 3 words + suffix, optional unit and city/state/ZIP.
   {

@@ -26,8 +26,26 @@ export function ci(word) {
   return String(word).replace(/[A-Za-z]/g, (c) => `[${c.toUpperCase()}${c.toLowerCase()}]`);
 }
 
-/** Month names. "May" and "Mar" must be capitalized so the verb "may" never reads as a date. */
-export const MONTH = `(?:${ci("jan")}(?:${ci("uary")})?\\.?|${ci("feb")}(?:${ci("ruary")})?\\.?|Mar(?:ch)?\\.?|MAR(?:CH)?|${ci("apr")}(?:${ci("il")})?\\.?|May|MAY|${ci("jun")}[eE]?\\.?|${ci("jul")}[yY]?\\.?|${ci("aug")}(?:${ci("ust")})?\\.?|${ci("sep")}(?:${ci("t")}(?:${ci("ember")})?)?\\.?|${ci("oct")}(?:${ci("ober")})?\\.?|${ci("nov")}(?:${ci("ember")})?\\.?|${ci("dec")}(?:${ci("ember")})?\\.?)`;
+/**
+ * Month names. "May" and "Mar" must be capitalized so the verb "may" never
+ * reads as a date. A period is part of the match only after an abbreviation
+ * ("Sept."), so a sentence-final period after "July" stays in the text.
+ */
+const month = (full, ...abbrs) => [ci(full), ...abbrs.map((a) => `${ci(a)}\\.?`)].join("|");
+export const MONTH = `(?:${[
+  month("january", "jan"),
+  month("february", "feb"),
+  "March|MARCH|Mar\\.?|MAR",
+  month("april", "apr"),
+  "May|MAY",
+  month("june", "jun"),
+  month("july", "jul"),
+  month("august", "aug"),
+  month("september", "sept", "sep"),
+  month("october", "oct"),
+  month("november", "nov"),
+  month("december", "dec"),
+].join("|")})`;
 
 /** Ordinal suffix: st, nd, rd, th. */
 export const ORD = `(?:${ci("st")}|${ci("nd")}|${ci("rd")}|${ci("th")})`;

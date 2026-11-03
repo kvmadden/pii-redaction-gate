@@ -19,7 +19,7 @@ import { QUANTITY_WORDS } from "./grammar.js";
 const freeze = (rules) => Object.freeze(rules.map((r) => Object.freeze(r)));
 
 // ── network ──────────────────────────────────────────────────────────
-const TLDS = "com|org|net|edu|gov|mil|int|io|us|info|biz|co|health|care|me|app|ca|uk|au|de|fr|in|clinic|hospital|online|site|portal|ai";
+const TLDS = "com|org|net|edu|gov|mil|int|io|us|info|biz|co|health|care|me|app|ca|uk|au|de|fr|in|clinic|hospital|online|site|ai";
 
 function validIpv6(s) {
   if (!/^[0-9A-Fa-f:]+$/.test(s) || !s.includes(":")) return false;
@@ -105,7 +105,7 @@ const PERSON_SUBJECT = `(?:${ci("patient")}|${ci("pt")}|${ci("she")}|${ci("he")}
 export const CLINICAL_RULES = freeze([
   // URLs with a scheme or www.
   { type: "url", re: /\b(?:https?:\/\/|www\.)[^\s<>\[\]]{0,2000}[A-Za-z0-9/#=_~-]/gi },
-  // URLs written as a domain and a path ("portal.example.org/patient/88213").
+  // URLs written as a domain and a path ("chart.example.org/patient/88213").
   { type: "url", re: new RegExp(`\\b(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\\.){1,5}(?:${TLDS})\\/[^\\s<>\\[\\]]{0,2000}[A-Za-z0-9/#=_~-]`, "gi") },
   // MAC address (device identifier).
   { type: "device", re: /(?<![\w:-])(?:[0-9A-Fa-f]{2}[:-]){5}[0-9A-Fa-f]{2}(?![\w:-])/g },
