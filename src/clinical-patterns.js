@@ -13,13 +13,13 @@
 //   - ages over 89 in the common written forms, generalized to [age]
 //   - PO boxes and labeled city or ZIP fields
 
-import { DIG, DASH, SEP, NO_DIG_BEFORE, NO_DIG_AFTER, MONTH, ORD, ci, asciiDigits, plausibleMonthDay } from "./shapes.js";
+import { DIG, DASH, SEP, NO_DIG_BEFORE, NO_DIG_AFTER, MONTH, ORD, ci, asciiDigits, plausibleMonthDay, validDate, monthNumber } from "./shapes.js";
 import { QUANTITY_WORDS } from "./grammar.js";
 
 const freeze = (rules) => Object.freeze(rules.map((r) => Object.freeze(r)));
 
 // ── network ──────────────────────────────────────────────────────────
-const TLDS = "com|org|net|edu|gov|mil|int|io|us|info|biz|co|health|care|me|app|ca|uk|au|de|fr|in|clinic|hospital|online|site|ai";
+export const TLDS = "com|org|net|edu|gov|mil|int|io|us|info|biz|co|health|care|me|app|ca|uk|au|de|fr|in|clinic|hospital|online|site|ai";
 
 function validIpv6(s) {
   if (!/^[0-9A-Fa-f:]+$/.test(s) || !s.includes(":")) return false;
@@ -95,11 +95,39 @@ function notFollowedByQuantity(m, rest) {
   return !QUANTITY_WORDS.has(next);
 }
 
+/** The parts of a month-name date: "the 5th of March, 2026" -> month 3, day 5, year 2026. */
+function monthNameParts(m) {
+  const month = (m.match(/\p{L}{3,}/gu) || []).map(monthNumber).find((n) => n > 0) || 0;
+  const nums = (asciiDigits(m).match(/\d+/g) || []).map(Number);
+  const day = nums.find((n) => n <= 99);
+  const year = nums.find((n) => n >= 1000);
+  return { month, day, year };
+}
+
+/**
+ * A month-name date is a real calendar date and no quantity word follows it
+ * ("March 5 mg prednisone"). `next` is the word after the match, captured by
+ * NEXT_WORD.
+ */
+function monthNameDate(m, next) {
+  const { month, day, year } = monthNameParts(m);
+  if (!month || (day !== undefined && !validDate(month, day, year))) return false;
+  // Only a match that ends in its day can be a quantity ("March 5 mg"). After a
+  // year, or before "in" or "of", it is a date ("17th April 2026 in clinic").
+  if (year !== undefined) return true;
+  const w = String(next || "").trim().toLowerCase();
+  return w === "in" || w === "of" || notFollowedByQuantity(m, next);
+}
+
+// Captures the next word without consuming it, or "" at the end.
+const NEXT_WORD = "(?=(\\s+[A-Za-z%]+|))";
+
 // ── ages over 89 ─────────────────────────────────────────────────────
-const AGE_NUM = `(?:9[0-9]|1[01][0-9]|12[0-5])`;
+// 90 to 125, in ASCII or fullwidth digits.
+const AGE_NUM = `(?:[9\\uFF19]${DIG}|[1\\uFF11][01\\uFF10\\uFF11]${DIG}|[1\\uFF11][2\\uFF12][0-5\\uFF10-\\uFF15])`;
 const NUMBER_WORDS = "(?:one|two|three|four|five|six|seven|eight|nine)";
 const SPELLED_AGE = `(?:${ci("ninety")}(?:[-\\s]${NUMBER_WORDS})?|${ci("one")}[-\\s]${ci("hundred")}(?:[-\\s](?:${ci("and")}[-\\s])?(?:${NUMBER_WORDS}|${ci("ten")}|${ci("eleven")}|${ci("twelve")}|${ci("thirteen")}|${ci("fourteen")}|${ci("fifteen")}|${ci("sixteen")}|${ci("seventeen")}|${ci("eighteen")}|${ci("nineteen")}|${ci("twenty")}(?:[-\\s]${NUMBER_WORDS})?))?)`;
-const YEARS_OLD = `(?:\\s*-?\\s*(?:${ci("years")}|${ci("year")}|${ci("yrs")}|${ci("yr")}|${ci("y")})\\.?\\s*-?\\s*(?:${ci("old")}|${ci("of")}\\s+${ci("age")}))`;
+const YEARS_OLD = `(?:\\s*${DASH}?\\s*(?:${ci("years")}|${ci("year")}|${ci("yrs")}|${ci("yr")}|${ci("y")})\\.?\\s*${DASH}?\\s*(?:${ci("old")}|${ci("of")}\\s+${ci("age")}))`;
 const PERSON_SUBJECT = `(?:${ci("patient")}|${ci("pt")}|${ci("she")}|${ci("he")}|${ci("i")}|${ci("i am")}|${ci("i'm")}|${ci("who")}|${ci("mother")}|${ci("father")}|${ci("mom")}|${ci("dad")}|${ci("grandmother")}|${ci("grandfather")}|${ci("grandma")}|${ci("grandpa")}|${ci("husband")}|${ci("wife")}|${ci("sister")}|${ci("brother")}|${ci("aunt")}|${ci("uncle")})`;
 
 export const CLINICAL_RULES = freeze([
@@ -123,18 +151,18 @@ export const CLINICAL_RULES = freeze([
   {
     type: "date",
     re: new RegExp(`${NO_DIG_BEFORE}(?<![.])(${YEAR})([-./])(${DAY})\\2(${DAY})${NO_DIG_AFTER}(?![.-]\\d)`, "g"),
-    validate: (m, y, sep, mo, d) => plausibleMonthDay(mo, d) && Number(asciiDigits(mo)) <= 12,
+    validate: (m, y, sep, mo, d) => validDate(mo, d, y),
   },
   // Numeric month/day/year or day/month/year with one consistent separator.
   {
     type: "date",
     re: new RegExp(`${NO_DIG_BEFORE}(?<![./-])(${DAY})([/.\\-\\u2010-\\u2015])(${DAY})\\2(${DIG}{4}|${DIG}{2})${NO_DIG_AFTER}(?![/.\\-\\u2010-\\u2015][0-9])`, "g"),
-    validate: (m, a, sep, b) => plausibleMonthDay(a, b),
+    validate: (m, a, sep, b, y) => validDate(a, b, y) || validDate(b, a, y),
   },
   // Month name, with a day and an optional year: "Nov 14th", "September 19, 2026".
-  { type: "date", re: new RegExp(`(?<![A-Za-z])${MONTH}\\s+${DAY}${ORD}?(?:,?\\s+${YEAR})?${NO_DIG_AFTER}`, "g") },
+  { type: "date", re: new RegExp(`(?<![A-Za-z])${MONTH}\\s+${DAY}${ORD}?(?:,?\\s+${YEAR})?${NO_DIG_AFTER}${NEXT_WORD}`, "g"), validate: monthNameDate },
   // Day first: "17 August 2026", "17th April 2026", "the 4th of July, 2025".
-  { type: "date", re: new RegExp(`(?:\\b${ci("the")}\\s+)?${NO_DIG_BEFORE}${DAY}${ORD}?\\s+(?:${ci("of")}\\s+)?${MONTH}(?![A-Za-z])(?:,?\\s+${YEAR})?${NO_DIG_AFTER}`, "g") },
+  { type: "date", re: new RegExp(`(?:\\b${ci("the")}\\s+)?${NO_DIG_BEFORE}${DAY}${ORD}?\\s+(?:${ci("of")}\\s+)?${MONTH}(?![A-Za-z])(?:,?\\s+${YEAR})?${NO_DIG_AFTER}${NEXT_WORD}`, "g"), validate: monthNameDate },
   // Month and year: "August 2022", "Aug. 2022".
   { type: "date", re: new RegExp(`(?<![A-Za-z])${MONTH}(?![A-Za-z]),?\\s+${YEAR}${NO_DIG_AFTER}`, "g") },
   // Month/day or month/year after a date word, unless a quantity word follows ("3/4 strength", "2/3 weeks").
@@ -151,7 +179,7 @@ export const CLINICAL_RULES = freeze([
   // Ages over 89: "Age: 96", "aged 101".
   {
     type: "age",
-    re: new RegExp(`\\b(?:${ci("age")}[dD]?|${ci("aged")})\\s*:?\\s*(${AGE_NUM})${NO_DIG_AFTER}`, "g"),
+    re: new RegExp(`\\b(?:${ci("age")}[dD]?|${ci("aged")})\\s*[:=]?\\s*(${AGE_NUM})${NO_DIG_AFTER}`, "g"),
     replace: (m, v) => m.slice(0, m.length - v.length) + "[age]",
   },
   // "92-year-old", "94-yr-old", "92 y.o.", "101yo", "93 years of age".
@@ -192,16 +220,25 @@ export const CLINICAL_RULES = freeze([
  * reference date ("DOB: 1930", "born in 1931"). Without a reference date the
  * engine cannot judge the age, so the residual scan sends the year to review.
  */
+/**
+ * Birth words and a bare four-digit year after them, shared by the birth-year
+ * rule and the residual scan so the two can never disagree: "DOB: 1930",
+ * "born on 1930", "birthday: 1930", "Year of birth: 1930", "YOB=1930", in ASCII
+ * or fullwidth digits.
+ */
+const BIRTH_MARKER = `(?:${ci("dob")}|${ci("d.o.b")}\\.?|${ci("date")}\\s+${ci("of")}\\s+${ci("birth")}|${ci("birth")}\\s*${ci("date")}|${ci("birthday")}|${ci("born")}(?:\\s+(?:${ci("in")}|${ci("on")}))?|${ci("birth")}\\s*${ci("year")}|${ci("year")}\\s+${ci("of")}\\s+${ci("birth")}|${ci("yob")}|${ci("y.o.b")}\\.?)`;
+export const BIRTH_YEAR_SOURCE = `\\b(${BIRTH_MARKER}\\s*[:=]?\\s*)((?:[1\\uFF11][89\\uFF18\\uFF19]|[2\\uFF12][0\\uFF10])${DIG}{2})${NO_DIG_AFTER}(?![/.-]\\d)`;
+
 export function birthYearRule(referenceDate) {
   const ref = referenceDate instanceof Date ? referenceDate : new Date(String(referenceDate));
   const refYear = ref.getUTCFullYear();
   if (!Number.isFinite(refYear)) throw new RangeError("referenceDate is not a valid date");
   return Object.freeze({
     type: "dob",
-    re: new RegExp(`\\b((?:${ci("dob")}|${ci("d.o.b")}\\.?|${ci("date")}\\s+${ci("of")}\\s+${ci("birth")}|${ci("born")}(?:\\s+${ci("in")})?|${ci("birth")}\\s*${ci("year")}|${ci("yob")})\\s*:?\\s*)((?:18|19|20)${DIG}{2})${NO_DIG_AFTER}(?![/.-]\\d)`, "g"),
+    re: new RegExp(BIRTH_YEAR_SOURCE, "g"),
     validate: (m, prefix, year) => refYear - Number(asciiDigits(year)) >= 90,
     replace: (m, prefix) => prefix + "[dob]",
   });
 }
 
-export default { CLINICAL_RULES, birthYearRule };
+export default { CLINICAL_RULES, birthYearRule, BIRTH_YEAR_SOURCE, TLDS };

@@ -58,6 +58,29 @@ export const STREET_WORDS = [
   ["plaza", null], ["square", "sq"],
 ];
 
+/** Days in a month. A two-digit or missing year allows February 29. */
+export function daysInMonth(month, year) {
+  if (month === 2) {
+    if (!Number.isFinite(year) || year < 100) return 29;
+    return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ? 29 : 28;
+  }
+  return [4, 6, 9, 11].includes(month) ? 30 : 31;
+}
+
+/** True when the parts make a real calendar date (month 1 to 12, day within that month). */
+export function validDate(month, day, year) {
+  const m = Number(asciiDigits(month));
+  const d = Number(asciiDigits(day));
+  const y = year === undefined || year === null || year === "" ? NaN : Number(asciiDigits(year));
+  return m >= 1 && m <= 12 && d >= 1 && d <= daysInMonth(m, y);
+}
+
+/** Month number (1 to 12) from a month name or abbreviation, or 0. */
+export function monthNumber(name) {
+  const k = String(name).toLowerCase().slice(0, 3);
+  return ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"].indexOf(k) + 1;
+}
+
 /** True when month and day can be a calendar date, read either way round. */
 export function plausibleMonthDay(a, b) {
   const x = Number(asciiDigits(a));

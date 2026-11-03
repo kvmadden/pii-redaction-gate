@@ -62,7 +62,9 @@ const CITY_STOP = "(?:in|at|to|from|of|on|and|or|the|lives|lived|living|moved|re
 const CITY_WORD = (shape) => `(?!${CITY_STOP}\\b)(?!${ci("lives")}\\b|${ci("lived")}\\b|${ci("in")}\\b)${shape}`;
 const NOT_QUANTITY = "(?!(?:week|weeks|day|days|month|months|year|years|hour|hours|time|times|tablet|tablets|mg|units)\\b)";
 
-export const PATTERN_RULES = freeze([
+// Rules that run before the clinical rules: the shapes the clinical date and
+// ID rules would otherwise take first (an email, an SSN, a labeled date of birth).
+const HEAD_RULES = freeze([
   // email (bounded parts: linear time)
   {
     type: "email",
@@ -70,6 +72,16 @@ export const PATTERN_RULES = freeze([
   },
   // SSN, dashed shape (ddd-dd-dddd), any dash, never inside a longer run.
   { type: "ssn", re: new RegExp(`(?<![0-9\\uFF10-\\uFF19-])${DIG}{3}${DASH}${DIG}{2}${DASH}${DIG}{4}(?![0-9\\uFF10-\\uFF19-])`, "g") },
+  // SSN with spaces or dots and no label (123 45 6789, 123.45.6789): one
+  // separator used twice, and a valid area, group and serial.
+  {
+    type: "ssn",
+    re: new RegExp(`(?<![0-9\\uFF10-\\uFF19.,-])(${DIG}{3})([ .])(${DIG}{2})\\2(${DIG}{4})(?![0-9\\uFF10-\\uFF19]|[.,]${DIG})`, "g"),
+    validate: (m, area, sep, group, serial) => {
+      const a = Number(asciiDigits(area));
+      return a > 0 && a !== 666 && a < 900 && Number(asciiDigits(group)) > 0 && Number(asciiDigits(serial)) > 0;
+    },
+  },
   // SSN after a label, also "SSN is 123456789" and "social is ...".
   {
     type: "ssn",
@@ -86,6 +98,10 @@ export const PATTERN_RULES = freeze([
     ),
     replace: (m, date) => m.slice(0, m.length - date.length) + "[dob]",
   },
+]);
+
+// Rules that run after the clinical rules.
+const TAIL_RULES = freeze([
   // credit / debit card, Luhn-checked.
   {
     type: "card",
@@ -115,7 +131,7 @@ export const PATTERN_RULES = freeze([
   // phone, local seven digits after a calling word: "call 555-0142".
   {
     type: "phone",
-    re: new RegExp(`\\b((?:${ci("call")}|${ci("phone")}|${ci("tel")}|${ci("cell")}|${ci("mobile")}|${ci("fax")}|${ci("callback")}|${ci("reach")}(?:\\s+${ci("me")})?\\s+${ci("at")}|${ci("at")})\\.?:?\\s*)(${DIG}{3}${DASH}${DIG}{4})${NO_DIG_AFTER}`, "g"),
+    re: new RegExp(`\\b((?:${ci("call")}|${ci("phone")}|${ci("tel")}|${ci("cell")}|${ci("mobile")}|${ci("fax")}|${ci("callback")}|${ci("number")}(?:\\s+${ci("is")})?|${ci("reach")}(?:\\s+${ci("me")})?\\s+${ci("at")}|${ci("at")})\\.?:?\\s*)(${DIG}{3}${DASH}${DIG}{4})${NO_DIG_AFTER}`, "g"),
     replace: (m, prefix) => prefix + "[phone]",
   },
   // phone, bare 10-digit NANP run (area code and exchange both [2-9]xx).
@@ -141,6 +157,9 @@ export const PATTERN_RULES = freeze([
   },
 ]);
 
+/** Every core rule, in the order they run without the clinical rules. */
+export const PATTERN_RULES = Object.freeze([...HEAD_RULES, ...TAIL_RULES]);
+
 /** The typed tokens this tier can emit (UI and report vocabulary). */
 export const PATTERN_TOKEN_TYPES = Object.freeze([
   "email",
@@ -161,10 +180,10 @@ export const PATTERN_TOKEN_TYPES = Object.freeze([
 /** Rule order: core identity shapes, then clinical shapes, then the rest. */
 export function rulesFor({ clinical = false, referenceDate = null } = {}) {
   if (!clinical) return PATTERN_RULES;
-  const head = PATTERN_RULES.slice(0, 4); // email, ssn, ssn label, dob
-  const tail = PATTERN_RULES.slice(4);
+  // Named groups, not positions: adding a rule cannot move the date of birth
+  // rule behind the clinical date rules.
   const extra = referenceDate ? [birthYearRule(referenceDate)] : [];
-  return [...head, ...CLINICAL_RULES, ...extra, ...tail];
+  return [...HEAD_RULES, ...CLINICAL_RULES, ...extra, ...TAIL_RULES];
 }
 
 /**
