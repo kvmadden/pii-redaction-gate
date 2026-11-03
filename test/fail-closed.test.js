@@ -167,11 +167,12 @@ test("fail-closed: at the writer surfaces nothing leaks and assertSendable refus
   // A people map that fails while it is being read makes every field fail.
   const poisoned = { get people() { throw new Error("map store unavailable"); } };
   const gate = gateParsedTranscript({ parsed, source: "clinical-note", body: PII, peopleMap: poisoned });
-  const summary = gateSummary({ summary: PII, topics: [], operatorDirections: [] }, gate, "clinical-note", poisoned);
+  const summaryGate = gateSummary({ summary: PII, topics: [], operatorDirections: [] }, gate, "clinical-note", poisoned);
   assert.equal(gate.blocked, true);
   assert.equal(gate.body, BLOCKED_TEXT);
+  assert.equal(summaryGate.blocked, true);
   const prompt = buildSummaryInput(gate.parsed);
-  const row = buildTranscriptRow({ recordId: "r1", parsed: gate.parsed, summary, body: gate.body, source: "clinical-note" });
+  const row = buildTranscriptRow({ recordId: "r1", parsed: gate.parsed, summary: summaryGate.summary, body: gate.body, source: "clinical-note" });
   assertNoLeak(prompt, "prompt");
   assertNoLeak(row, "row");
   assert.throws(() => assertSendable(gate), { name: "RedactionBlockedError" });

@@ -24,10 +24,9 @@
 // context, and the topic tier swallows whole sentences last.
 
 import { applyPatterns } from "./patterns.js";
-import { applyNames, normalizePeopleMap, nameTokensFor } from "./names.js";
+import { applyNames, normalizePeopleMap, nameTokensFor, tokenNamesFor } from "./names.js";
 import { applyTopics } from "./topics.js";
 import { scanResidual, RESIDUAL_CHECKS } from "./scan.js";
-import { seal } from "./seal.js";
 import { resolveProfile, profileForSource, PROFILES, DEFAULT_PROFILE, SOURCE_PROFILES } from "./profiles.js";
 
 export { profileForSource, PROFILES, DEFAULT_PROFILE, SOURCE_PROFILES, normalizePeopleMap };
@@ -44,6 +43,40 @@ export const DEFAULT_MAX_LENGTH = 2_000_000;
 // Error class names that may appear in a blocked result. Anything else becomes
 // "Error", so a thrown object cannot carry input text out through error.name.
 const ERROR_NAMES = new Set(["Error", "TypeError", "RangeError", "SyntaxError", "ReferenceError", "RedactionConfigError", "RedactionInputError"]);
+
+// ── sealing ──────────────────────────────────────────────────────────
+// Results are sealed here and nowhere else, and the sealing function is not
+// exported. Sealing deep-freezes the result, so what assertSendable checks is
+// exactly what a sink receives: text, status, review items and record
+// payloads cannot change after the check. isSealed() only reads the seal.
+const SEALED = new WeakSet();
+
+function deepFreeze(value, seen = new Set()) {
+  if (value === null || typeof value !== "object" || seen.has(value)) return value;
+  seen.add(value);
+  Object.freeze(value);
+  for (const key of Reflect.ownKeys(value)) {
+    const d = Object.getOwnPropertyDescriptor(value, key);
+    if (d && "value" in d) deepFreeze(d.value, seen);
+  }
+  return value;
+}
+
+function seal(result) {
+  deepFreeze(result);
+  SEALED.add(result);
+  return result;
+}
+
+/** True only for a result this library built and sealed (and therefore froze). */
+export function isSealed(value) {
+  return value !== null && typeof value === "object" && SEALED.has(value);
+}
+
+/** The longest input a caller may allow. A caller can lower the cap, not raise it. */
+function clampLength(maxLength) {
+  return Number.isFinite(maxLength) && maxLength > 0 ? Math.min(maxLength, DEFAULT_MAX_LENGTH) : DEFAULT_MAX_LENGTH;
+}
 
 // ── code-span segmentation (light profile) ───────────────────────────
 const CODE_SPAN_RE = /```[\s\S]*?```|`[^`\n]{1,2000}`/g;
@@ -89,6 +122,8 @@ function errorName(err) {
  */
 export const KNOWN_GAPS = Object.freeze([
   "a lowercase name that is also an ordinary English word (grace, will), unless a title, relation word, greeting or person verb marks it",
+  "a lowercase name on no list or with a rare surname (nurlanovna), unless a person verb follows it",
+  "a short all-capitals name of five letters or fewer that is on no name list, read as an acronym (CBC, COPD)",
   "a facility named with a clinical word (Valley Hospital)",
   "a name made of two English words joined together (Quellbrook), read as an ordinary word",
   "ages under 90, which are kept on purpose",
@@ -107,6 +142,7 @@ export function profileChecks(profile) {
   if (profile.unknownNames) checks.push("unknown-names");
   else notChecked.push("unknown-names");
   if (profile.tiers.includes("topic")) checks.push("topics");
+  else notChecked.push("topics");
   if (profile.residualScan) checks.push(...RESIDUAL_CHECKS.map((c) => `residual:${c}`));
   else notChecked.push("residual-scan");
   return { checks, notChecked };
@@ -159,8 +195,7 @@ export function redactText(text, opts = {}) {
     return seal({ text, redacted: false, blocked: false, status: "clean", hits: [], review: [], scan: { profile: profileName, characters: 0, read: 0, exempt: [], checks, notChecked, knownGaps: KNOWN_GAPS }, profile: profileName });
   }
   if (typeof text !== "string") return blockedResult(profileName, "input", new TypeError("non-string input"));
-  const maxLength = Number.isFinite(opts.maxLength) ? opts.maxLength : DEFAULT_MAX_LENGTH;
-  if (text.length > maxLength) return blockedResult(profileName, "input", new RangeError("input too long"));
+  if (text.length > clampLength(opts.maxLength)) return blockedResult(profileName, "input", new RangeError("input too long"));
 
   let stage = "people-map";
   try {
@@ -173,6 +208,10 @@ export function redactText(text, opts = {}) {
     }
     const tiers = new Set(profile.tiers);
     const counts = new Map();
+    // The token names this run can write. Bracketed words in the input that
+    // are not among them are read as text, never trusted as redactions.
+    const extraTypes = [opts.topicCategories, opts.extraPatternRules].flatMap((list) => (Array.isArray(list) ? list.map((x) => x && x.type) : []));
+    const tokenNames = tokenNamesFor(map, extraTypes);
     const extraRules = Array.isArray(opts.extraPatternRules) ? opts.extraPatternRules : [];
     const fault = (name) => {
       if (opts.injectFault === name) throw new Error(`injected fault at ${name}`);
@@ -203,7 +242,7 @@ export function redactText(text, opts = {}) {
       if (tiers.has("name")) {
         stage = "name";
         fault("name");
-        const r = applyNames(t, { map, unknownNames: profile.unknownNames });
+        const r = applyNames(t, { map, unknownNames: profile.unknownNames, tokenNames });
         t = r.text;
         mergeHits(counts, r.hits);
       }
@@ -219,7 +258,7 @@ export function redactText(text, opts = {}) {
     }
     stage = "scan";
     fault("scan");
-    const review = profile.residualScan ? scanResidual(out, { names: profile.unknownNames, safe: map.safe, nameTokens: nameTokensFor(map), referenceDate, skip: exempt }) : [];
+    const review = profile.residualScan ? scanResidual(out, { names: profile.unknownNames, safe: map.safe, nameTokens: nameTokensFor(map), tokenNames, referenceDate, skip: exempt }) : [];
     const { checks, notChecked } = profileChecks(profile);
     const hits = hitsFromMap(counts);
     const exemptChars = exempt.reduce((n, e) => n + (e.end - e.start), 0);
@@ -239,27 +278,52 @@ export function redactText(text, opts = {}) {
 }
 
 // ── structured records ───────────────────────────────────────────────
-// Every string in a record is redacted, wherever it sits. The fields declared
-// as text (firstUserMsg, lastAssistantMsg, operatorTurns[].text,
+// Every string and every number in a record is read, wherever it sits. The
+// fields declared as text (firstUserMsg, lastAssistantMsg, operatorTurns[].text,
 // assistantTail[], turns[].text, and the summary fields) must be strings when
-// present. Any value this code cannot read (a Date, a Buffer, a class instance,
-// a function, a cycle, nesting deeper than 32) blocks the record, and so does
-// an identifier inside an object key. Originals are kept only on the
-// non-enumerable `changes` property, for the local quarantine.
+// present. A record blocks when it holds:
+//   - a value this code cannot read: a Date, a Buffer, a typed array, a class
+//     instance, a function, an array or Map or Set with its own methods or a
+//     changed prototype, or a Map key that is an object
+//   - a cycle, nesting deeper than 32, more than 200,000 values, an array
+//     longer than 100,000, or more text in total than maxLength
+//   - a key that the rules would change or could not decide ({ "4471023": 1 })
+//   - a number that reads as an identifier with its key as a label
+//     ({ mrn: 4471023 }, { age: 96 }, { phone: 2125550147 })
+// Output is built from fresh objects and arrays, never input references. A
+// Map comes back as an array of [key, value] pairs and a Set as an array, so
+// the sealed result can be frozen (a frozen Map can still be changed).
+// Originals are kept only on the non-enumerable `changes` list, for the local
+// quarantine. Results are sealed and frozen like text results.
 
 const MAX_DEPTH = 32;
+const MAX_NODES = 200_000;
+const MAX_ARRAY = 100_000;
 const TRANSCRIPT_FIELDS = new Set(["firstUserMsg", "lastAssistantMsg", "assistantTail", "operatorTurns", "turns"]);
 const SUMMARY_FIELDS = new Set(["summary", "topics", "operatorDirections"]);
 const NOT_TEXT = Object.freeze({ notText: true }); // a declared text field that is not a string
+const INDEX_KEY = /^(?:0|[1-9]\d*)$/;
 
 function isPlainObject(v) {
-  if (v === null || typeof v !== "object") return false;
+  if (v === null || typeof v !== "object" || Array.isArray(v)) return false;
   const proto = Object.getPrototypeOf(v);
   return proto === Object.prototype || proto === null;
 }
 
+/** An ordinary array: Array.prototype, a bounded length, and only index keys (no own "map"). */
+function isPlainArray(v) {
+  if (!Array.isArray(v) || Object.getPrototypeOf(v) !== Array.prototype || v.length > MAX_ARRAY) return false;
+  for (const k of Reflect.ownKeys(v)) if (k !== "length" && (typeof k !== "string" || !INDEX_KEY.test(k))) return false;
+  return true;
+}
+
+/** An own data property, even for "__proto__". */
+function defineOwn(obj, key, value) {
+  Object.defineProperty(obj, key, { value, enumerable: true, writable: true, configurable: true });
+}
+
 function attachChanges(result, changes) {
-  Object.defineProperty(result, "changes", { value: changes, enumerable: false, writable: true, configurable: true });
+  Object.defineProperty(result, "changes", { value: changes, enumerable: false, writable: false, configurable: false });
   return result;
 }
 
@@ -268,62 +332,111 @@ function worst(a, b) {
   return rank[b] > rank[a] ? b : a;
 }
 
+/** "mrn" -> "mrn", "phoneNumber" -> "phone Number", "member_id" -> "member id". */
+function keyLabel(key) {
+  if (typeof key !== "string" || !/^[A-Za-z][A-Za-z0-9_ -]{0,40}$/.test(key)) return "value";
+  return key.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/[_-]+/g, " ");
+}
+
 function recordWalker(opts) {
   const counts = new Map();
   const changes = [];
   const review = [];
-  const seen = new WeakSet();
-  const state = { status: "clean", blockedFields: [] };
+  const exempt = [];
+  const ancestors = new Set();
+  const maxChars = clampLength(opts.maxLength);
+  const state = { status: "clean", blockedFields: [], nodes: 0, characters: 0, read: 0, fields: 0 };
   const block = (field) => {
     state.status = "blocked";
-    state.blockedFields.push(field);
+    if (state.blockedFields.length < 20) state.blockedFields.push(field);
     return BLOCKED_TEXT;
   };
   const text = (value, field) => {
     if (value === null || value === undefined || value === "") return value;
     if (typeof value !== "string") return block(field);
+    state.characters += value.length;
+    if (state.characters > maxChars) return block(field);
     const r = redactText(value, opts);
+    state.fields++;
+    if (r.scan) {
+      state.read += r.scan.read;
+      for (const e of r.scan.exempt) exempt.push({ field, ...e });
+    }
     mergeHits(counts, r.hits);
     state.status = worst(state.status, r.status);
-    if (r.blocked) state.blockedFields.push(field);
+    if (r.blocked && state.blockedFields.length < 20) state.blockedFields.push(field);
     for (const item of r.review) review.push({ field, ...item });
     if (r.text !== value) changes.push({ field, before: value, after: r.text });
     return r.text;
   };
-  const any = (value, field, depth = 0) => {
-    if (value === null || value === undefined) return value;
-    const t = typeof value;
-    if (t === "string") return text(value, field);
-    if (t === "number" || t === "boolean" || t === "bigint") return value;
-    if (t !== "object" || depth > MAX_DEPTH || seen.has(value)) return block(field);
-    seen.add(value);
-    if (Array.isArray(value)) return value.map((v, i) => any(v, `${field}[${i}]`, depth + 1));
-    if (value instanceof Map) {
-      const out = new Map();
-      for (const [k, v] of value) {
-        if (typeof k === "string" && redactText(k, opts).text !== k) return block(`${field} (key)`);
-        out.set(k, any(v, `${field}.get(${typeof k === "string" ? k.slice(0, 40) : typeof k})`, depth + 1));
-      }
-      return out;
-    }
-    if (value instanceof Set) return new Set([...value].map((v, i) => any(v, `${field}{${i}}`, depth + 1)));
-    if (!isPlainObject(value)) return block(field);
-    const out = {};
-    for (const key of Object.keys(value)) {
-      if (redactText(key, opts).text !== key) return block(`${field} (key)`);
-      out[key] = any(value[key], field ? `${field}.${key}` : key, depth + 1);
-    }
+  // A key is read like text. A key the rules would change, or could not
+  // decide, is an identifier used as a key: the record blocks, and the key
+  // never appears in a field path.
+  const keyOk = (key) => {
+    if (typeof key !== "string") return false;
+    if (key === "") return true;
+    const r = redactText(key, opts);
+    return r.status === "clean" && r.text === key;
+  };
+  // A number is read with its key as a label, so { mrn: 4471023 } reads as
+  // "mrn: 4471023". If the rules would change it or flag it, the record blocks.
+  const numberOk = (value, key) => {
+    const line = `${keyLabel(key)}: ${typeof value === "bigint" ? value.toString() : String(value)}`;
+    const r = redactText(line, opts);
+    return r.status === "clean" && r.text === line;
+  };
+  const array = (value, field, fn) => {
+    if (!isPlainArray(value)) return block(field);
+    const out = [];
+    for (let i = 0; i < value.length; i++) out.push(fn(value[i], i));
     return out;
   };
-  // A key is read like any other string: one that the rules would change is an
-  // identifier used as a key, and the record blocks.
-  const keyOk = (key) => typeof key !== "string" || redactText(key, opts).text === key;
-  return { text, any, block, keyOk, counts, changes, review, state };
+  const any = (value, field, depth = 0, key = undefined) => {
+    if (value === null || value === undefined) return value;
+    if (++state.nodes > MAX_NODES) return block(field);
+    const t = typeof value;
+    if (t === "string") return text(value, field);
+    if (t === "boolean") return value;
+    if (t === "number" || t === "bigint") return numberOk(value, key) ? value : block(field);
+    if (t !== "object" || depth > MAX_DEPTH || ancestors.has(value)) return block(field);
+    ancestors.add(value);
+    try {
+      if (Array.isArray(value)) return array(value, field, (v, i) => any(v, `${field}[${i}]`, depth + 1, key));
+      if (value instanceof Map || value instanceof Set) {
+        const isMap = value instanceof Map;
+        if (Object.getPrototypeOf(value) !== (isMap ? Map.prototype : Set.prototype) || Reflect.ownKeys(value).length || value.size > MAX_ARRAY) return block(field);
+        const out = [];
+        // The intrinsic iterators, so a method planted on the instance is never called.
+        for (const entry of isMap ? Map.prototype.entries.call(value) : Set.prototype.values.call(value)) {
+          if (!isMap) {
+            out.push(any(entry, `${field}[${out.length}]`, depth + 1, key));
+            continue;
+          }
+          const [k, v] = entry;
+          const kt = typeof k;
+          if (kt === "string" ? !keyOk(k) : kt === "number" || kt === "bigint" ? !numberOk(k, "key") : kt !== "boolean") return block(`${field} (key)`);
+          out.push([k, any(v, `${field}[${out.length}]`, depth + 1, kt === "string" ? k : undefined)]);
+        }
+        return out;
+      }
+      if (!isPlainObject(value)) return block(field);
+      const out = {};
+      for (const k of Object.keys(value)) {
+        if (!keyOk(k)) return block(`${field || "(record)"} (key)`);
+        defineOwn(out, k, any(value[k], field ? `${field}.${k}` : k, depth + 1, k));
+      }
+      return out;
+    } finally {
+      ancestors.delete(value);
+    }
+  };
+  return { text, any, array, block, keyOk, counts, changes, review, exempt, state };
 }
 
-function recordResult(key, value, w, profileName) {
+function recordResult(key, value, w, profile) {
   const hits = hitsFromMap(w.counts);
   const blocked = w.state.status === "blocked";
+  const { checks, notChecked } = profileChecks(profile);
   const result = {
     [key]: value,
     redacted: hits.length > 0 || blocked,
@@ -331,15 +444,34 @@ function recordResult(key, value, w, profileName) {
     status: w.state.status,
     hits,
     review: w.review,
-    profile: profileName,
+    scan: blocked
+      ? null
+      : { profile: profile.name, characters: w.state.characters, read: w.state.read, exempt: w.exempt, checks, notChecked, knownGaps: KNOWN_GAPS, fields: w.state.fields },
+    profile: profile.name,
   };
   if (blocked) result.error = { stage: "record", fields: w.state.blockedFields.slice(0, 20) };
   return seal(attachChanges(result, w.changes));
 }
 
-function safeProfileName(opts) {
+function blockedRecordResult(key, profileName, stage) {
+  return seal(attachChanges({
+    [key]: null,
+    redacted: true,
+    blocked: true,
+    status: "blocked",
+    hits: [{ tier: "engine", type: "blocked", count: 1 }],
+    review: [],
+    scan: null,
+    profile: profileName,
+    error: { stage },
+  }, []));
+}
+
+/** Resolve the profile before any field is read. An unknown source blocks the whole record. */
+function recordProfile(opts) {
   try {
-    return resolveProfile(opts).name;
+    const p = resolveProfile(opts);
+    return p && Array.isArray(p.tiers) ? p : null;
   } catch {
     return null;
   }
@@ -348,95 +480,191 @@ function safeProfileName(opts) {
 function transcriptFields(parsed, w) {
   const out = {};
   for (const key of Object.keys(parsed)) {
-    const v = parsed[key];
     // Declared field names are schema, not data. Any other key is read like text.
     if (!TRANSCRIPT_FIELDS.has(key) && !w.keyOk(key)) {
       w.block("(key)");
       continue;
     }
-    if (key === "firstUserMsg" || key === "lastAssistantMsg") out[key] = w.text(v, key);
+    const v = parsed[key];
+    let value;
+    if (key === "firstUserMsg" || key === "lastAssistantMsg") value = w.text(v, key);
     else if (key === "assistantTail") {
-      out[key] = v === undefined || v === null ? v : Array.isArray(v) ? v.map((t, i) => w.text(t, `assistantTail[${i}]`)) : w.text(NOT_TEXT, key);
+      value = v === undefined || v === null ? v : Array.isArray(v) ? w.array(v, key, (t, i) => w.text(t, `assistantTail[${i}]`)) : w.text(NOT_TEXT, key);
     } else if (key === "operatorTurns" || key === "turns") {
-      if (v === undefined || v === null) out[key] = v;
-      else if (!Array.isArray(v)) out[key] = w.text(NOT_TEXT, key);
+      if (v === undefined || v === null) value = v;
+      else if (!Array.isArray(v)) value = w.text(NOT_TEXT, key);
       else {
-        out[key] = v.map((turn, i) => {
+        value = w.array(v, key, (turn, i) => {
           if (!isPlainObject(turn)) return w.text(NOT_TEXT, `${key}[${i}]`);
-          const { text, ...rest } = turn;
-          return { ...w.any(rest, `${key}[${i}]`), text: w.text(text, `${key}[${i}].text`) };
+          const rest = {};
+          for (const k of Object.keys(turn)) if (k !== "text") defineOwn(rest, k, turn[k]);
+          const walked = w.any(rest, `${key}[${i}]`, 1);
+          if (typeof walked !== "object" || walked === null) return walked;
+          defineOwn(walked, "text", w.text(turn.text, `${key}[${i}].text`));
+          return walked;
         });
       }
-    } else out[key] = w.any(v, key);
+    } else value = w.any(v, key, 0, key);
+    defineOwn(out, key, value);
   }
   return out;
 }
 
 /**
  * Redact a parsed transcript record in a copy (input untouched). A record that
- * is not a plain object is blocked.
+ * is not a plain object, or any failure while reading it, blocks.
  *
  * @param {object} parsed   { firstUserMsg, lastAssistantMsg, operatorTurns[], assistantTail[], turns[], … }
  * @param {object} [opts]   same options as redactText
  */
 export function redactParsedTranscript(parsed, opts = {}) {
-  const profileName = safeProfileName(opts);
+  if (!opts || typeof opts !== "object") opts = {};
+  const profile = recordProfile(opts);
+  if (!profile) return blockedRecordResult("parsed", null, "profile");
   const w = recordWalker(opts);
-  if (parsed === null || parsed === undefined) return recordResult("parsed", parsed, w, profileName);
-  if (!isPlainObject(parsed)) {
-    w.block("(record)");
-    return recordResult("parsed", null, w, profileName);
-  }
-  let out;
+  let out = null;
   try {
-    out = transcriptFields(parsed, w);
+    if (parsed === null || parsed === undefined) out = parsed;
+    else if (!isPlainObject(parsed)) w.block("(record)");
+    else out = transcriptFields(parsed, w);
   } catch {
     w.block("(record)");
     out = null;
   }
-  return recordResult("parsed", out, w, profileName);
+  return recordResult("parsed", out, w, profile);
 }
 
 /**
  * Redact model output before it is stored or sent. Accepts a plain string or a
- * summary object ({ summary, topics, operatorDirections, … }). Every string in
- * it is redacted. Anything else is blocked.
+ * summary object ({ summary, topics, operatorDirections, … }). Every string and
+ * number in it is read. Anything else is blocked.
  *
  * @param {string|object|null} summary
  * @param {object} [opts]  same options as redactText
  */
 export function redactSummaryFields(summary, opts = {}) {
-  const profileName = safeProfileName(opts);
+  if (!opts || typeof opts !== "object") opts = {};
+  const profile = recordProfile(opts);
+  if (!profile) return blockedRecordResult("summary", null, "profile");
   const w = recordWalker(opts);
-  if (summary === null || summary === undefined) return recordResult("summary", summary, w, profileName);
-  let out;
+  let out = null;
   try {
-    if (typeof summary === "string") out = w.text(summary, "summary");
-    else if (!isPlainObject(summary)) {
-      w.block("(summary)");
-      out = null;
-    } else {
+    if (summary === null || summary === undefined) out = summary;
+    else if (typeof summary === "string") out = w.text(summary, "summary");
+    else if (!isPlainObject(summary)) w.block("(summary)");
+    else {
       out = {};
       for (const key of Object.keys(summary)) {
-        const v = summary[key];
         if (!SUMMARY_FIELDS.has(key) && !w.keyOk(key)) {
           w.block("(key)");
           continue;
         }
-        if (key === "summary") out[key] = w.text(v, "summary");
-        else if (key === "topics") out[key] = v == null ? v : Array.isArray(v) ? v.map((t, i) => w.text(t, `topics[${i}]`)) : w.text(NOT_TEXT, "topics");
+        const v = summary[key];
+        let value;
+        if (key === "summary") value = w.text(v, "summary");
+        else if (key === "topics") value = v == null ? v : Array.isArray(v) ? w.array(v, "topics", (t, i) => w.text(t, `topics[${i}]`)) : w.text(NOT_TEXT, "topics");
         else if (key === "operatorDirections") {
-          out[key] = v == null ? v : Array.isArray(v)
-            ? v.map((q, i) => (isPlainObject(q) ? w.any(q, `operatorDirections[${i}]`) : w.text(NOT_TEXT, `operatorDirections[${i}]`)))
+          value = v == null ? v : Array.isArray(v)
+            ? w.array(v, "operatorDirections", (q, i) => (isPlainObject(q) ? w.any(q, `operatorDirections[${i}]`, 1) : w.text(NOT_TEXT, `operatorDirections[${i}]`)))
             : w.text(NOT_TEXT, "operatorDirections");
-        } else out[key] = w.any(v, key);
+        } else value = w.any(v, key, 0, key);
+        defineOwn(out, key, value);
       }
     }
   } catch {
     w.block("(summary)");
     out = null;
   }
-  return recordResult("summary", out, w, profileName);
+  return recordResult("summary", out, w, profile);
+}
+
+// ── record gates ─────────────────────────────────────────────────────
+// A gate is one decision over a whole record: the parsed transcript, an
+// optional raw body and an optional model summary. Gates are built here from
+// sealed parts only, so ./gate.js never holds the sealing function.
+
+function prefixed(items, prefix) {
+  return items.map((x) => ({ ...x, field: x.field ? `${prefix}${x.field}` : prefix.replace(/\.$/, "") }));
+}
+
+/** A sealed, blocked gate. Nothing in it can be sent. */
+export function blockedGate(profileName, stage) {
+  return seal(attachChanges({
+    parsed: null,
+    body: null,
+    summary: null,
+    profile: profileName ?? null,
+    redacted: true,
+    blocked: true,
+    status: "blocked",
+    hits: [{ tier: "engine", type: "blocked", count: 1 }],
+    review: [],
+    scan: null,
+    error: { stage },
+  }, []));
+}
+
+/**
+ * Combine sealed parts into a new sealed gate. `base` is an earlier gate (or
+ * null). `parsed` is a redactParsedTranscript result, `body` a redactText
+ * result (with `bodyOriginal` for the quarantine), `summary` a
+ * redactSummaryFields result. Any part that this library did not seal blocks.
+ */
+export function combineGate(base, { parsed = null, body = null, bodyOriginal = null, summary = null } = {}) {
+  const isGate = (g) => isSealed(g) && "parsed" in g && "body" in g && "summary" in g;
+  if (base !== null && base !== undefined && !isGate(base)) return blockedGate(null, "gate");
+  for (const part of [parsed, body, summary]) if (part !== null && !isSealed(part)) return blockedGate(base?.profile ?? null, "gate");
+  const parts = [base, parsed, body, summary].filter((p) => p !== null && p !== undefined);
+  const profiles = new Set(parts.map((p) => p.profile).filter((p) => p !== null && p !== undefined));
+  if (profiles.size > 1) return blockedGate(null, "gate");
+  const profileName = profiles.size ? [...profiles][0] : null;
+  let status = "clean";
+  const counts = new Map();
+  for (const p of parts) {
+    status = worst(status, p.status);
+    mergeHits(counts, p.hits);
+  }
+  const review = [
+    ...(base ? base.review : []),
+    ...(parsed ? parsed.review : []),
+    ...(body ? prefixed(body.review, "body") : []),
+    ...(summary ? prefixed(summary.review, "summary.") : []),
+  ];
+  const changes = [
+    ...(base ? base.changes : []),
+    ...(parsed ? parsed.changes : []),
+    ...(body && typeof bodyOriginal === "string" && body.text !== bodyOriginal ? [{ field: "body", before: bodyOriginal, after: body.text }] : []),
+    ...(summary ? prefixed(summary.changes, "summary.") : []),
+  ];
+  const blocked = status === "blocked";
+  const scans = parts.map((p) => p.scan).filter(Boolean);
+  const profile = profileName && PROFILES[profileName];
+  const { checks, notChecked } = profile ? profileChecks(profile) : { checks: [], notChecked: [] };
+  const gate = {
+    parsed: parsed ? parsed.parsed : base ? base.parsed : null,
+    body: body ? body.text : base ? base.body : null,
+    summary: summary ? summary.summary : base ? base.summary : null,
+    profile: profileName,
+    redacted: parts.some((p) => p.redacted),
+    blocked,
+    status,
+    hits: hitsFromMap(counts),
+    review,
+    scan: blocked
+      ? null
+      : {
+          profile: profileName,
+          characters: scans.reduce((n, x) => n + x.characters, 0),
+          read: scans.reduce((n, x) => n + x.read, 0),
+          exempt: scans.flatMap((x) => x.exempt),
+          checks,
+          notChecked,
+          knownGaps: KNOWN_GAPS,
+        },
+  };
+  const error = parts.map((p) => p.error).find(Boolean);
+  if (error) gate.error = error;
+  return seal(attachChanges(gate, changes));
 }
 
 /**
@@ -456,6 +684,9 @@ export function redactionMeta({ profile, hits, status = undefined, now = undefin
 }
 
 export default {
+  isSealed,
+  combineGate,
+  blockedGate,
   redactText,
   redactParsedTranscript,
   redactSummaryFields,

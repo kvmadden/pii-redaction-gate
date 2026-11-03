@@ -173,7 +173,7 @@ for (const { source, profile } of WRITER_CASES) {
 
     // Simulate the model echoing its (already-redacted) input PLUS a raw
     // PII string it could only confabulate — the output gate must catch it.
-    const summary = gateSummary(
+    const summaryGate = gateSummary(
       {
         summary: `You handled ${fixtures.length} items. ${fixtures[0].text}`,
         topics: ["wiring", fixtures[1].text.slice(0, 50)],
@@ -188,14 +188,18 @@ for (const { source, profile } of WRITER_CASES) {
       TEST_MAP,
     );
 
+    // The summary gate covers the record and the summary in one sealed decision.
+    assert.equal(summaryGate.profile, profile);
+    assert.deepEqual(summaryGate.parsed, gate.parsed);
+
     // LLM egress surface
-    const llmInput = buildSummaryInput(gate.parsed);
+    const llmInput = buildSummaryInput(summaryGate.parsed);
     // Row egress surfaces
     const row = buildTranscriptRow({
       recordId: "rec-tripwire",
-      parsed: gate.parsed,
-      summary,
-      body: gate.body,
+      parsed: summaryGate.parsed,
+      summary: summaryGate.summary,
+      body: summaryGate.body,
       source,
     });
     const patch = transcriptPatchBody(row);

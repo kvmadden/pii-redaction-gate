@@ -36,7 +36,7 @@ test("contract: a clean result reports what was read, which checks ran, and its 
   assert.deepEqual(r.scan.exempt, []);
   assert.ok(r.scan.checks.includes("unknown-names"));
   assert.ok(r.scan.checks.includes("residual:names"));
-  assert.deepEqual(r.scan.notChecked, []);
+  assert.deepEqual(r.scan.notChecked, ["topics"], "the identifiers profile does not run the topic tier, and says so");
   assert.deepEqual(r.scan.knownGaps, KNOWN_GAPS);
   assert.ok(KNOWN_GAPS.length > 0);
 });
@@ -164,10 +164,17 @@ test("contract: originals live only on the non-enumerable changes list", () => {
   assert.equal(g.changes[0].before, "SSN 123-45-6789");
 });
 
-test("contract: the summary gate accepts a string or an object and blocks anything else", () => {
+test("contract: the summary gate returns a new sealed gate for a string or an object, and blocks anything else", () => {
   const g = gateParsedTranscript({ parsed: { firstUserMsg: "hi" }, source: "clinical-note", peopleMap: EMPTY });
-  assert.equal(gateSummary("Email ana@example.org", g, "clinical-note", EMPTY), "Email [email]");
-  assert.deepEqual(gateSummary({ summary: "Call 212-555-0147", topics: ["ana@example.org"] }, g, "clinical-note", EMPTY), { summary: "Call [phone]", topics: ["[email]"] });
+  const s1 = gateSummary("Email ana@example.org", g, "clinical-note", EMPTY);
+  assert.equal(s1.summary, "Email [email]");
+  assert.equal(s1.parsed.firstUserMsg, "hi");
+  assert.equal(assertSendable(s1), s1);
+  const s2 = gateSummary({ summary: "Call 212-555-0147", topics: ["ana@example.org"] }, g, "clinical-note", EMPTY);
+  assert.deepEqual(s2.summary, { summary: "Call [phone]", topics: ["[email]"] });
+  assert.equal(g.summary, null, "the earlier gate is not changed");
+  assert.equal(gateSummary(42, g, "clinical-note", EMPTY).status, "blocked");
+  assert.equal(gateSummary("x", { status: "clean", parsed: {}, review: [], hits: [] }, "clinical-note", EMPTY).status, "blocked", "a hand-built gate blocks");
   assert.equal(redactSummaryFields(42, { source: "clinical-note", peopleMap: EMPTY }).status, "blocked");
 });
 

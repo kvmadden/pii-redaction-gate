@@ -4,7 +4,7 @@ import fs from 'node:fs'
 import crypto from 'node:crypto'
 import { assertSendable } from '../src/send-guard.js'
 import { redactText } from '../src/engine.js'
-for (const name of ['engine','patterns','clinical-patterns','names','topics','profiles','send-guard','seal','scan','shapes','grammar','lexicon','lexicon-data','text-fold']) test(`demo runtime is identical: ${name}`,()=>{
+for (const name of ['engine','patterns','clinical-patterns','names','topics','profiles','send-guard','scan','shapes','grammar','lexicon','lexicon-data','text-fold']) test(`demo runtime is identical: ${name}`,()=>{
  assert.equal(fs.readFileSync(new URL(`../docs/runtime/${name}.js`,import.meta.url),'utf8'),fs.readFileSync(new URL(`../src/${name}.js`,import.meta.url),'utf8'))
 })
 test('shared browser send guard rejects missing, blocked, hand-built and unreviewed results',()=>{

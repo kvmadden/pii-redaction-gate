@@ -457,18 +457,19 @@ test("gate: body text is gated and merged into the same sidecar payload", () => 
   assert.ok(gate.changes.some((c) => c.field === "body"));
 });
 
-test("gate: gateSummary re-gates model output and accumulates into the gate", () => {
+test("gate: gateSummary re-gates model output into a new gate that covers both", () => {
   const gate = gateParsedTranscript({ parsed: fixtureParsed(), source: "source-code", peopleMap: TEST_MAP });
-  const before = gate.changes.length;
-  const summary = gateSummary(
+  const withSummary = gateSummary(
     { summary: "You emailed jane.doe@example.com twice.", topics: ["email"], operatorDirections: [] },
     gate,
     "source-code",
     TEST_MAP,
   );
-  assert.ok(!summary.summary.includes("jane.doe@example.com"));
-  assert.ok(gate.changes.length > before);
-  assert.ok(gate.changes.some((c) => c.field.startsWith("summary.")));
+  assert.ok(!withSummary.summary.summary.includes("jane.doe@example.com"));
+  assert.ok(withSummary.changes.length > gate.changes.length);
+  assert.ok(withSummary.changes.some((c) => c.field.startsWith("summary.")));
+  assert.equal(gate.summary, null, "the earlier gate is unchanged");
+  assert.deepEqual(withSummary.parsed, gate.parsed);
 });
 
 test("gate: redactionMetaForRow stamps every gated row, including rows where nothing matched", () => {

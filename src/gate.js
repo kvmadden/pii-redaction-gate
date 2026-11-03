@@ -4,22 +4,25 @@
 //
 // CONTRACT
 //   1. gateParsedTranscript() runs before any model call or record build.
-//   2. gateSummary() re-gates model output (a string or an object) before it
-//      lands in the record.
-//   3. Every gate result is sealed and has a status: clean, review or blocked.
-//      assertSendable() refuses blocked results, refuses review results unless
-//      the caller says a person reviewed them, and refuses anything that did
-//      not come from this library.
+//   2. gateSummary() and gateBodyText() re-gate model output or a raw body.
+//      Each returns a NEW sealed gate that covers everything the earlier gate
+//      covered plus the new part. Nothing is changed in place.
+//   3. Every gate is sealed and frozen and has a status: clean, review or
+//      blocked. assertSendable() refuses blocked gates, refuses review gates
+//      unless the caller says a person reviewed them, and refuses anything
+//      this library did not build. Because a gate is frozen, what was checked
+//      is what is sent.
 //   4. sendRedacted() wraps the whole sequence: redact, check, then call the
-//      sink. A blocked or unreviewed record never reaches the sink.
+//      sink with the frozen, checked payload. A blocked or unreviewed record
+//      never reaches the sink.
 //   5. redactionMetaForRow() stamps provenance on every gated row (types and
 //      counts only). quarantineGate() writes the local-only sidecar with the
 //      originals. A sidecar failure does not block the already-redacted write.
 //
-// Profiles come from profiles.js. An unregistered source id blocks.
+// Profiles come from profiles.js. An unregistered source id blocks. A people
+// map that cannot be read blocks when the caller requires one.
 
 import { assertSendable } from "./send-guard.js";
-import { seal } from "./seal.js";
 import {
   redactParsedTranscript,
   redactSummaryFields,
@@ -28,23 +31,12 @@ import {
   profileForSource,
   loadPeopleMap,
   writeQuarantineSidecar,
-  BLOCKED_TEXT,
+  combineGate,
+  blockedGate,
+  isSealed,
 } from "./index.js";
 
 export { assertSendable };
-
-function mergeInto(gate, r, fieldPrefix = "") {
-  for (const h of r.hits) {
-    const existing = gate.hits.find((x) => x.tier === h.tier && x.type === h.type);
-    if (existing) existing.count += h.count;
-    else gate.hits.push({ ...h });
-  }
-  for (const item of r.review || []) gate.review.push({ ...item, field: `${fieldPrefix}${item.field || ""}` || undefined });
-  const rank = { clean: 0, review: 1, blocked: 2 };
-  if (rank[r.status] > rank[gate.status]) gate.status = r.status;
-  if (r.blocked) gate.blocked = true;
-  if (r.redacted) gate.redacted = true;
-}
 
 function resolveMap(peopleMap, requirePeopleMap) {
   if (peopleMap !== undefined && peopleMap !== null) return { map: peopleMap };
@@ -55,16 +47,9 @@ function resolveMap(peopleMap, requirePeopleMap) {
   }
 }
 
-/** A blocked gate result, for failures before any field was read. */
-function blockedGate(profile, stage) {
-  const gate = seal({ parsed: null, body: null, profile, redacted: true, blocked: true, status: "blocked", hits: [], review: [], error: { stage } });
-  Object.defineProperty(gate, "changes", { value: [], enumerable: false, writable: true });
-  return gate;
-}
-
 /**
  * Gate a parsed transcript record (and an optional raw body text) before any
- * model call or record build.
+ * model call or record build. Returns a sealed, frozen gate.
  *
  * @param {object} args
  * @param {object} args.parsed      parsed record ({ firstUserMsg, operatorTurns[], … })
@@ -75,74 +60,50 @@ function blockedGate(profile, stage) {
  * @param {string|Date} [args.referenceDate] date used to judge birth years
  */
 export function gateParsedTranscript({ parsed, source, body = null, peopleMap, requirePeopleMap = false, referenceDate } = {}) {
-  const profile = profileForSource(source);
   const { map, error } = resolveMap(peopleMap, requirePeopleMap);
-  if (error) return blockedGate(profile, "people-map");
+  if (error) return blockedGate(profileForSource(source), "people-map");
   const opts = { source, peopleMap: map, referenceDate };
   const r = redactParsedTranscript(parsed, opts);
-  const gate = {
-    parsed: r.parsed,
-    body,
-    profile: r.profile,
-    redacted: r.redacted,
-    blocked: r.blocked,
-    status: r.status,
-    hits: r.hits.map((h) => ({ ...h })),
-    review: [...r.review],
-    ...(r.error ? { error: r.error } : {}),
-  };
-  const changes = [...(r.changes || [])];
-  if (body !== null && body !== undefined && body !== "") {
-    const b = redactText(body, opts);
-    gate.body = b.text;
-    mergeInto(gate, { ...b, review: b.review.map((x) => ({ ...x, field: "body" })) });
-    if (b.text !== body) changes.push({ field: "body", before: body, after: b.text });
-  }
-  Object.defineProperty(gate, "changes", { value: changes, enumerable: false, writable: true });
-  return seal(gate);
+  const hasBody = body !== null && body !== undefined && body !== "";
+  return combineGate(null, { parsed: r, body: hasBody ? redactText(body, opts) : null, bodyOriginal: hasBody ? body : null });
 }
 
 /**
- * Gate the model's output under the same profile. Accepts a string or an
- * object. Merges hits, review spans and status into the record gate so one
- * decision and one sidecar cover the record. Returns the redacted summary.
+ * Gate the model's output (a string or an object) under the same profile.
+ * Returns a NEW sealed gate covering the earlier gate plus the summary
+ * (gate.summary holds the redacted summary). A gate this library did not
+ * build, or a people map that cannot be read when one is required, blocks.
  */
-export function gateSummary(summary, gate, source, peopleMap) {
-  if (summary === null || summary === undefined) return summary;
-  const { map } = resolveMap(peopleMap, false);
-  const r = redactSummaryFields(summary, { source, peopleMap: map });
-  if (gate && typeof gate === "object") {
-    mergeInto(gate, r, "summary.");
-    if (Array.isArray(gate.changes)) for (const c of r.changes || []) gate.changes.push({ ...c, field: `summary.${c.field}` });
-  }
-  return r.blocked && typeof summary === "string" ? BLOCKED_TEXT : r.summary;
+export function gateSummary(summary, gate, source, peopleMap, { requirePeopleMap = false, referenceDate } = {}) {
+  if (!isSealed(gate)) return blockedGate(profileForSource(source), "gate");
+  const { map, error } = resolveMap(peopleMap, requirePeopleMap);
+  if (error) return blockedGate(gate.profile, "people-map");
+  return combineGate(gate, { summary: redactSummaryFields(summary, { source, peopleMap: map, referenceDate }) });
 }
 
-/** Gate a standalone body text under the same profile, merged into the record gate. */
-export function gateBodyText(body, gate, source, peopleMap) {
-  if (body === null || body === undefined || body === "") return body;
-  const { map } = resolveMap(peopleMap, false);
-  const r = redactText(body, { source, peopleMap: map });
-  if (gate && typeof gate === "object") {
-    mergeInto(gate, { ...r, review: r.review.map((x) => ({ ...x, field: "body" })) });
-    if (r.text !== body && Array.isArray(gate.changes)) gate.changes.push({ field: "body", before: body, after: r.text });
-  }
-  return r.text;
+/** Gate a standalone body text under the same profile. Returns a NEW sealed gate (gate.body). */
+export function gateBodyText(body, gate, source, peopleMap, { requirePeopleMap = false, referenceDate } = {}) {
+  if (!isSealed(gate)) return blockedGate(profileForSource(source), "gate");
+  const { map, error } = resolveMap(peopleMap, requirePeopleMap);
+  if (error) return blockedGate(gate.profile, "people-map");
+  if (body === null || body === undefined || body === "") return gate;
+  return combineGate(gate, { body: redactText(body, { source, peopleMap: map, referenceDate }), bodyOriginal: typeof body === "string" ? body : null });
 }
 
 /**
  * Redact, check, then send. The sink is called only when the gate is clean, or
- * under review with acceptReview. It receives the redacted record, never the
- * input. Returns the sink's result.
+ * under review with acceptReview. It receives the frozen, checked payload,
+ * never the input. Returns the sink's result.
  *
  * @param {{ parsed: object, source: string, body?: string, peopleMap?: object,
- *           sink: (payload: {parsed, body, meta}) => any, acceptReview?: boolean }} args
+ *           sink: (payload: {parsed, body, meta}) => any, acceptReview?: boolean,
+ *           requirePeopleMap?: boolean, referenceDate?: string|Date }} args
  */
-export function sendRedacted({ parsed, source, body = null, peopleMap, sink, acceptReview = false, referenceDate } = {}) {
+export function sendRedacted({ parsed, source, body = null, peopleMap, sink, acceptReview = false, requirePeopleMap = false, referenceDate } = {}) {
   if (typeof sink !== "function") throw new TypeError("sendRedacted needs a sink function");
-  const gate = gateParsedTranscript({ parsed, source, body, peopleMap, referenceDate });
+  const gate = gateParsedTranscript({ parsed, source, body, peopleMap, requirePeopleMap, referenceDate });
   assertSendable(gate, { acceptReview });
-  return sink({ parsed: gate.parsed, body: gate.body, meta: redactionMetaForRow(gate) });
+  return sink(Object.freeze({ parsed: gate.parsed, body: gate.body, meta: Object.freeze(redactionMetaForRow(gate)) }));
 }
 
 /**
@@ -161,7 +122,7 @@ export function redactionMetaForRow(gate, { now } = {}) {
  * @returns {string|null} sidecar path, or null when nothing was redacted
  */
 export function quarantineGate(gate, { source, ref, dir } = {}) {
-  if (!gate || !Array.isArray(gate.changes) || gate.changes.length === 0) return null;
+  if (!isSealed(gate) || !Array.isArray(gate.changes) || gate.changes.length === 0) return null;
   const { path: sidecarPath, error } = writeQuarantineSidecar({
     source,
     ref,
