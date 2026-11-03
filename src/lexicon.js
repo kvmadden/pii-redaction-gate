@@ -61,6 +61,9 @@ function hasAny(set, keys) {
 }
 
 const cache = new Map();
+// No entry in any list is longer than this. Longer keys skip the lookups, so a
+// single huge token costs linear time, not a slice for every split point.
+const MAX_KEY = 40;
 
 /**
  * Lookup flags for one word (any case, any diacritics).
@@ -70,6 +73,7 @@ export function lookup(word) {
   const key = foldKey(word);
   const hit = cache.get(key);
   if (hit) return hit;
+  if (key.length > MAX_KEY) return { key, english: false, first: false, surname: false, commonSurname: false, drug: false, icd: false, demonym: false };
   const s = load();
   const forms = stems(key);
   const flags = {
@@ -108,7 +112,7 @@ export function wordClass(word) {
   if (name && !f.english) return "nameStrong";
   if (name && f.english) return "nameWeak";
   if (f.english || f.demonym) return "english";
-  if (f.key.length >= 8 && englishCompound(f.key)) return "english";
+  if (f.key.length >= 8 && f.key.length <= MAX_KEY && englishCompound(f.key)) return "english";
   return "unknown";
 }
 
