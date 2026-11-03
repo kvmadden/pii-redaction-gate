@@ -40,7 +40,9 @@ export function accentPattern(name) {
     const base = odd[lower] || lower;
     if (SAME_BASE[base]) out += `[${SAME_BASE[base]}]\\p{M}*`;
     else if (/\s/.test(ch)) out += "\\s+";
-    else out += ch.replace(/[.*+?^${}()|[\]\\/-]/g, "\\$&");
+    // Escape regular-expression syntax characters only: in a "u" pattern an
+    // escaped hyphen outside a class is a syntax error ("Vega-Henriquez").
+    else out += ch.replace(/[.*+?^${}()|[\]\\/]/g, "\\$&");
   }
   return out;
 }

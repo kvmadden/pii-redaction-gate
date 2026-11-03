@@ -213,6 +213,16 @@ test("R2 K27: people-map names match with or without accents", () => {
   assert.equal(rt("josé called. Then SOREN NG called.", { peopleMap: map }).text, "[patient] called. Then [family] called.");
 });
 
+test("R2 K27 follow-up: a hyphen or apostrophe in a people-map name never blocks", () => {
+  // The accent pattern escaped "-", which is a syntax error in a "u" pattern,
+  // so any hyphenated known name blocked the whole document (found by the
+  // blind-set scorer's header-map configuration).
+  const map = { people: [{ name: "Marisol Vega-Henríquez", role: "clinician", aliases: ["Vega-Henriquez"] }, { name: "Siobhan O'Brien", role: "patient" }], safe: [] };
+  const r = rt("Seen by Marisol Vega-Henriquez and Siobhan O'Brien today.", { peopleMap: map });
+  assert.equal(r.status, "clean");
+  assert.equal(r.text, "Seen by [clinician] and [patient] today.");
+});
+
 test("R2: pronouns are never names (found while checking G7)", () => {
   for (const t of ["He reports chest pain.", "You called yesterday.", "He said it hurt."]) assert.equal(rt(t).text, t);
 });
