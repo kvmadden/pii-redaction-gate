@@ -26,6 +26,8 @@ Workflow value is unmeasured. Before expanding scope, measure reviewer time, mis
 
 ## What changed and how it was tested
 
+**Correction, November 3, 2026:** the held-out set described below was not kept apart from the rules. The engine changes in `dc528aa` added words that appear only in its fixtures (Jardiance, Rheumatoid, Arthritis, Telephone, Portal, Device, Vehicle, City and ZIP) to the protected word list in `src/names.js`. So its scores are development results, not a held-out test, and the current version has no held-out score. A clean score needs a new set written and frozen after the rules are final. A review of the portfolio repos found this, and the site and brief no longer quote these scores.
+
 The [original published evaluation](eval/results.md) remains unchanged: **70.5% recall, 146 of 207 identifiers**, on 182 synthetic snippets. The original dataset is unchanged too. It now serves as development evidence, not an unseen test.
 
 Before changing detection rules, a [seeded generator](eval/generate-heldout.js) and its [held-out fixtures](eval/heldout.json) were committed in `d05d144`. The engine changes were committed in `dc528aa` before the held-out set was scored. No detection changes followed that scoring. The held-out set has 114 snippets, 108 identifiers, and 114 labeled clinical negatives. It uses four variants of each of 27 identifier templates plus six clinical-only notes. Its repeated grammar and single author limit its independence and diversity.
@@ -35,7 +37,7 @@ Both engines were scored with an empty people map, the `identifiers` profile, th
 | Dataset | Identifier recall before → after | Span precision before → after | Clinical negatives preserved before → after |
 |---|---|---|---|
 | Original, 207 identifiers | 70.5% → **90.3%** (187/207) | 82.6% → **97.0%** | 88.1% → **98.2%** (223/227) |
-| Held out, 108 identifiers | 25.9% → **96.3%** (104/108) | 66.7% → **96.4%** | 84.2% → **100%** (114/114) |
+| Second set, 108 identifiers (not held out, see the correction) | 25.9% → **96.3%** (104/108) | 66.7% → **96.4%** | 84.2% → **100%** (114/114) |
 
 [Before and after tables](eval/comparison.md) report every identifier type's recall, precision by compatible type family, and every remaining miss and false-positive span. [Raw results](eval/comparison.json) also include damaged clinical spans and character precision. Precision uses emitted spans overlapping gold, rather than exact entity boundaries. Names, relatives and facilities share a prediction family, as do labeled account and record IDs. These grouping choices are explicit in the report. They do not establish regulatory performance.
 
