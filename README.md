@@ -12,7 +12,7 @@ A rule-based gate for clinical free text on its way to a model prompt or a recor
 
 ## Where the evidence stands
 
-**No score is quoted for this gate.** No set below was written blind and locked before its first run. The project page quotes no number until the blind set specified in [docs/fresh-test-spec.md](docs/fresh-test-spec.md) is written by other model families, locked by checksum and scored once. The tables on this page are development results, kept so the work can be checked, not results to cite.
+**No score is quoted for this gate.** No set below was written blind and locked before its first run. The project page quotes no number until the blind set specified in [docs/fresh-test-spec.md](docs/fresh-test-spec.md) is written by other model families, locked by checksum and scored once, by the scorer under [Blind-set scorer](#blind-set-scorer). The tables on this page are development results, kept so the work can be checked, not results to cite.
 
 | Test set | What it is | Development result | Why it is not a quoted result |
 |---|---|---|---|
@@ -109,20 +109,49 @@ Recall fell from 187 to 184 because ten facility names made of ordinary words ("
 
 **Speed.** Linear in input length on every shape the performance test covers (realistic notes, repeated "a.", "a@", "1-", "Dr. ", "Aa ", "1/", "x", "A. ", "A.B. ", "d-e-" and "[x]"). About 4 seconds per megabyte of realistic note text on an Apple M-series laptop, and the old 17-second email case on 100 KB takes about one second. `test/perf.test.js` fails if eight times the input takes more than twenty times as long. A chain of initials with no surname ("A. A. A.") was quadratic until the second review round. Other shapes are not proven linear.
 
+## Blind-set scorer
+
+The blind set will be scored once by `eval/fresh/score.mjs`, fixed before the set is locked. **No result exists yet.** Nothing in this section is a score.
+
+| | |
+|---|---|
+| Scorer commit | `047c19326ad0fcd570c55bc480ccd6878c350829` |
+| Scorer content hash | `ddd1cfa5d2e8714c87ec25d8f6ac5add2ada974079f6a633f29af767d9218815`, SHA-256 over `eval/fresh/*.mjs` and `*.py`, recorded in [eval/fresh/scorer-lock.json](eval/fresh/scorer-lock.json) |
+| Header-block rule | `eval/fresh/header-map.mjs` version 1, SHA-256 `5f54134d682a690966cefa749fc6e78d4b6ddc0c33fd6204f6431f6e3ff2116e`, frozen by a test |
+| External baseline | presidio-analyzer 2.2.360, presidio-anonymizer 2.2.360, spaCy 3.8.7, en_core_web_lg 3.8.0, Python 3.9.6 |
+
+It runs five engines on the same documents and scores them on the same measures:
+
+- **gate-empty**: this gate, identifiers profile, empty people map.
+- **gate-header**: this gate, identifiers profile, with a people map built from each document's header block (the lines before the first blank line, person fields only).
+- **do-nothing** and **remove-every-word**: the two ends of the trade. One sends the text unchanged, the other replaces every word.
+- **presidio**: Microsoft Presidio with its default English recognizers and no score threshold, run offline.
+
+Each measure is a count of a denominator with a Wilson 95% interval, overall, by identifier type and by document kind: silent leaks (identifier mentions left in documents marked clean, and the share of clean documents that still hold one), full removal (every letter and digit gone), mentions left in documents marked review, the share of documents sent to review and the share of those with nothing left to find, clinical spans kept intact, documents blocked, and letters and digits removed outside identifier spans. The report lists every measure where a gate configuration is below another engine.
+
+It refuses a document whose SHA-256 differs from `labels.jsonl` or the manifest, a set hash that does not match, an unlisted document, a span out of bounds or of an unknown type, and span offsets that look counted in another unit or on different text. It refuses a scored run that could not stand as the one result: a second scored run, a run without every engine or without Presidio, a scorer that does not match the lock, or uncommitted changes in `src` or `eval/fresh`.
+
+```bash
+node eval/fresh/score.mjs <set> --check     # verify the set and print counts, runs no engine
+node eval/fresh/score.mjs <set> --out <dir> --presidio-python ~/dev/toolchains/presidio/venv/bin/python
+```
+
+Presidio is installed outside this repository from [eval/fresh/presidio-requirements.txt](eval/fresh/presidio-requirements.txt) and runs under macOS `sandbox-exec` with all network access denied. Its email recognizer uses the public-suffix list bundled with tldextract instead of fetching one. The scorer is tested on a 13-document synthetic fixture with known answers ([test/fixtures/fresh-sample](test/fixtures/fresh-sample), [test/fresh-score.test.js](test/fresh-score.test.js)). A run on a fixture is labeled a sample, never a result.
+
 ## Limits
 
 - Rules, not a model. English and US formats. Transcribed text only: no OCR, images, PDFs or attachments.
 - Known gaps, listed in every clean or review result as `scan.knownGaps`: a lowercase name that is also an ordinary word ("grace", "will") unless a title, relation word, greeting or person verb marks it, a lowercase name on no list or with a rare surname unless a person verb follows it, a short all-capitals name of five letters or fewer on no name list (read as an acronym), a facility named with a clinical word, a name made of two English words joined together, ages under 90 (kept on purpose), unlabeled numbers under 7 digits and codes under 6 characters, identifiers spelled out in words or split across lines, and descriptions that identify a person without naming them.
 - The English list is from 1934, so modern words such as "fax" and "email" are unknown words. At a sentence start they go to review.
 - Review volume is real: 18 of 182 development snippets and 5 of 9 real documents needed review. Known causes: facility names made of ordinary words, words missing from the 1934 list at a sentence start, a capitalized ordinary-word surname mid-sentence ("The White count"), an eponym with no head noun ("History of Parkinson."), a common surname in lowercase ("foley in place"), and a longer lab name before a bare number ("Ferritin 12"). It has not been measured on real clinical workloads, and neither has reviewer time.
-- No external baseline (Presidio, Philter, the PhysioNet deid tool) has been run on the same sets. The fresh-test spec includes one.
+- No external baseline has been run on the development sets above. The blind-set scorer runs Microsoft Presidio next to the gate, and the blind set has not been scored.
 - Structure is lost: tokens replace values, with no consistent surrogates and no date shifting.
 - The quarantine sidecar holds originals in plain text.
 
 ## Development
 
 ```bash
-npm test                      # 246 tests, about 15 seconds
+npm test                      # 270 tests, about 15 seconds
 npm run check                 # committed comparison matches the engine, lexicon matches its hash
 node eval/compare.js          # print the development comparison for this tree
 node eval/run.js              # print per-profile results on the development snippets

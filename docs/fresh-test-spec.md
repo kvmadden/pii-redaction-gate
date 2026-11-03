@@ -41,7 +41,7 @@ This set will give the gate its first headline number. Every number published so
 
 ## 3. Labels
 
-Each document gets a JSON line: `{ id, kind, text_sha256, spans: [{ start, end, type, policy }] }`, with character offsets into the UTF-8 text.
+Each document gets a JSON line: `{ id, kind, text_sha256, spans: [{ start, end, type, policy }] }`, with character offsets into the UTF-8 text. A character is a Unicode code point, so an emoji counts as one (Python string indices work as written). `text_sha256` is the SHA-256 of the document file's bytes. `id` is the file name without `.txt`, using letters, digits, dots, hyphens and underscores. A manifest may declare `"offset_unit": "utf16"` or `"byte"` instead of code points. The scorer reads every span in all three units and refuses a set whose spans fit another unit better than the declared one, or whose spans split a word or a character too often to be right (more than a tenth of them, and at least five).
 
 - `type`: NAME, RELATIVE, CLINICIAN, FACILITY, DATE, DOB, AGE, PHONE, FAX, EMAIL, ADDRESS, ID, URL, IP, DEVICE, VEHICLE, or KEEP for clinical content that must survive.
 - `policy`: `identifier` or `not-identifier`. The policy is fixed here, once, for every document:
@@ -57,10 +57,11 @@ Labels are never edited after the lock. Errors found after scoring go into an er
 
 ## 4. Lock
 
-1. Layout: `fresh-test/v1/documents/<id>.txt`, `fresh-test/v1/labels.jsonl`, `fresh-test/v1/manifest.json`. The manifest lists each file's SHA-256, a SHA-256 over the sorted list of file hashes, the authoring families, the labeling families, dates, and the prompts used to write and label.
-2. The scorer is fixed before the lock: `eval/score.js` plus the status-aware counts in `eval/compare.js` at a named commit, recorded in the manifest.
+1. Layout: `fresh-test/v1/documents/<id>.txt`, `fresh-test/v1/labels.jsonl`, `fresh-test/v1/manifest.json`. The manifest lists each file's SHA-256, a SHA-256 over the sorted list of file hashes, the authoring families, the labeling families, dates, and the prompts used to write and label. The scorer reads `files` (an object of relative path to SHA-256, covering `labels.jsonl` and every document) and `set_sha256` (the SHA-256 of the sorted lowercase file hashes joined by newlines). `node eval/fresh/make-manifest.mjs <set-dir>` writes exactly this shape. Before the lock, `node eval/fresh/score.mjs <set-dir> --check` verifies the hashes, the labels and the offsets, prints counts by kind, type and policy, and runs no engine.
+2. The scorer is fixed before the lock: `eval/fresh/score.mjs` and the files beside it, at scorer commit `047c19326ad0fcd570c55bc480ccd6878c350829`, content hash `ddd1cfa5d2e8714c87ec25d8f6ac5add2ada974079f6a633f29af767d9218815` (recorded in `eval/fresh/scorer-lock.json`). Record both in the manifest. Every report states whether the scorer that ran matches this content hash.
 3. Commit the set and manifest, and publish the set hash in that commit's message and in the README, before any gate run.
-4. Run the gate once in each of two configurations declared here in advance, at a named commit: the identifiers profile with an empty people map, and the identifiers profile with a people map built from each document's header block. Publish both outputs, whatever they are.
+4. Run the gate once in each of two configurations declared here in advance, at a named commit: the identifiers profile with an empty people map, and the identifiers profile with a people map built from each document's header block. The header-block rule is `eval/fresh/header-map.mjs`, version 1, SHA-256 `5f54134d682a690966cefa749fc6e78d4b6ddc0c33fd6204f6431f6e3ff2116e`, frozen by a test. Publish both outputs, whatever they are.
+5. The command for the single scored run: `node eval/fresh/score.mjs fresh-test/v1 --out <dir> --presidio-python ~/dev/toolchains/presidio/venv/bin/python`. It refuses a set whose hashes, labels or offsets do not check out. It refuses a scored run that could not stand as the one result: a second scored run of the set in the same output folder, a run that leaves out an engine or has no Presidio outputs, a scorer whose content hash differs from the lock, or uncommitted changes in `src` or `eval/fresh`. A later run must say `--regression-check`, and its report calls it development data.
 
 ## 5. Scoring, run once
 
@@ -74,6 +75,10 @@ Report each of these with counts, denominators and Wilson 95% intervals, overall
 - **Blocked**: documents the gate blocked.
 
 Run the same set, with the same scorer, through a do-nothing gate, a remove-every-word gate, and at least one external tool run offline (Microsoft Presidio with its default English recognizers, Philter, or the PhysioNet deid tool). Publish all of them side by side, including any result where this gate is below a baseline.
+
+The external tool is Microsoft Presidio: presidio-analyzer 2.2.360 and presidio-anonymizer 2.2.360 with spaCy 3.8.7 and en_core_web_lg 3.8.0 on Python 3.9.6, default English recognizers, no score threshold. It is installed outside the repository (`eval/fresh/presidio-requirements.txt`) and runs with all network access denied. Its email check uses the public-suffix list bundled with tldextract instead of fetching one. Engines with no status (Presidio and the two bounds) count as `clean`, since what they return is what would be sent.
+
+Every mention rate counts the mentions in documents that were sent. Mentions in blocked documents are reported as withheld, counted as neither removed nor left. The scorer also reports letters and digits removed outside identifier spans. An output that cannot be aligned to its input is scored by text search after folding case, width and accents: a span is missed when its text is still in the output, partial when any word of it is, and removed only when neither is true. The number of documents scored that way is in the report.
 
 ## 6. What the result may be called
 

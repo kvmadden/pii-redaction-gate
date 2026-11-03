@@ -30,6 +30,7 @@ Changed after the second outside review (3 November 2026):
 Evaluation:
 
 - Both synthetic sets are development data. The set called held out in 1.x is a 27-template development check, reported per template. See the README.
+- The blind-set scorer (`eval/fresh/`), fixed before the blind set is locked at scorer commit `047c193`: two pre-declared gate configurations, a do-nothing and a remove-every-word bound, and Microsoft Presidio run offline, scored side by side with Wilson 95% intervals. It refuses a set whose hashes, labels or offsets do not check out, and a scored run that could not stand as the one result. No result yet.
 
 ## 1.0.0 (October 2026)
 
