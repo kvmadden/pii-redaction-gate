@@ -10,16 +10,15 @@ A rule-based gate for clinical free text on its way to a model prompt or a recor
 
 **This is not validated de-identification.** It is a public demonstration built and tested on synthetic text and on public case reports with fictional identifiers planted in them. No real patient data was used. Do not use it as the only control for protected health information.
 
-## Honest headline
+## Where the evidence stands
 
-| Test set | What it is | Result | Status of the set |
+**No score is quoted for this gate.** No set below was written blind and locked before its first run. The project page quotes no number until the blind set specified in [docs/fresh-test-spec.md](docs/fresh-test-spec.md) is written by other model families, locked by checksum and scored once. The tables on this page are development results, kept so the work can be checked, not results to cite.
+
+| Test set | What it is | Development result | Why it is not a quoted result |
 |---|---|---|---|
-| Real public case reports, 9 documents, 38 planted fictional identifiers ([PR 4](https://github.com/kvmadden/pii-redaction-gate/pull/4)) | Open-access case reports with identifiers planted by a program | Untuned gate (main before this work): **20 of 38 removed (52.6%)**, an identifier left in **9 of 9** documents | The honest current measure for main |
-| Same 9 documents | | This branch: 35 of 38 removed, an identifier left in 2 of 9 documents, both marked for review | Development data. Its failure list was public and its misses were read while rules changed |
-| 182 synthetic snippets, 207 labeled identifiers | Written with the first release | This branch: 184 of 207 (88.9%). 184 of 195 (94.4%) without the 12 ages under 90 the policy keeps | Development data |
-| 27-template development check | 27 identifier templates written 4 times each, plus 6 clinical sentences | This branch: 26 of 27 templates. The one miss is the title in "Dr. Emrys Calder", which is kept on purpose | Development data. Not held out: its vocabulary was added to a protected word list after it was committed |
-
-No number on this page comes from a set that was written blind and locked before its first run. A fresh blind set is specified in [docs/fresh-test-spec.md](docs/fresh-test-spec.md). Until it is written, scored once and published, there is no headline accuracy figure.
+| Real public case reports, 9 documents, 38 planted fictional identifiers ([PR 4](https://github.com/kvmadden/pii-redaction-gate/pull/4)) | Open-access case reports with identifiers planted by a program | main before this work: 20 of 38 removed, an identifier left in 9 of 9 documents. This branch: 35 of 38 removed, an identifier left in 2 of 9 documents, both marked for review | The planted values and the failure list are public, and this branch's rules were changed while its misses were read |
+| 182 synthetic snippets, 207 labeled identifiers | Written with the first release | This branch: 184 of 207. 184 of 195 without the 12 ages under 90 the policy keeps | Rules were changed while looking at it |
+| 27-template development check | 27 identifier templates written 4 times each, plus 6 clinical sentences | This branch: 26 of 27 templates. The one miss is the title in "Dr. Emrys Calder", which is kept on purpose | Its vocabulary was added to a protected word list after it was committed, so it was never held out |
 
 Earlier versions of this README and its case page reported **104 of 108 (96.3%)** on a "held-out" set. That set is the 27-template development check above. Its 108 rows are 27 templates written four times, and its own words (Jardiance, Rheumatoid, Arthritis, Telephone, Portal and others) were added to the name tier's protected list after it was frozen. The figure is withdrawn.
 
@@ -48,10 +47,10 @@ In the demo, pick a fictional note, compare the original spans with the redacted
 
 The text runs through up to three tiers, then a residual scan reads the output again.
 
-1. **Patterns.** Email, SSN, dates of birth, Luhn-checked cards, phones (including international and Unicode dash forms), street addresses, city with state and ZIP, coordinates. Under the clinical profiles also URLs, validated IPv4 and IPv6, MAC addresses, labeled record and plan numbers, dates in numeric, ISO, month-name and ordinal forms, and ages over 89. Dates are validated, so "2/3 weeks", "3/4 strength" and a prednisone taper stay. Every rule runs in linear time, and inputs over 2,000,000 characters block.
-2. **Names.** Known names from an optional people map become role tokens (`[patient]`). Then a token classifier decides each capitalized word from evidence: titles, labels, relation words, greetings and sign-offs, facility types, initials, eponyms before a clinical head noun ("Bell palsy"), first plus last name pairs, heading runs, and finally the word's class and position. A title outranks every word list. When the evidence conflicts, the word goes to review.
+1. **Patterns.** Email, SSN (dashed, spaced, dotted or labeled), dates of birth, Luhn-checked cards, phones (including international and Unicode dash forms), street addresses, city with state and ZIP, coordinates. Under the clinical profiles also URLs, validated IPv4 and IPv6, MAC addresses, labeled record and plan numbers, dates in numeric, ISO, month-name and ordinal forms, and ages over 89. Dates must be real calendar dates, so "2026-02-31" and "March 99" stay, and "2/3 weeks", "3/4 strength", "March 5 mg" and a prednisone taper stay. ASCII and fullwidth digits are read. Other digit scripts go to review. Inputs over 2,000,000 characters block, and a caller can lower that cap but not raise it.
+2. **Names.** Known names from an optional people map become role tokens (`[patient]`), matched with or without accents. Then a token classifier decides each word from evidence: titles, person labels ("Patient:", "Name:"), relation words, greetings and sign-offs, facility types, initials, eponyms before a clinical head noun ("Bell palsy"), first plus last name pairs, heading runs, and finally the word's class, case and position. A title or a person label outranks every word list: a word after "Dr." that the lists call clinical goes to review instead of being cleared. Bracketed words in the input are read as text, never trusted as redactions. When the evidence conflicts, the word goes to review.
 3. **Topics** (standard and strict profiles only). Removes whole sentences about sensitive personal topics.
-4. **Residual scan.** Undecided or name-shaped words, unlabeled long numbers and letter-digit codes, digits mixed with O, I or l, birth years without a reference date, scripts the rules do not read, invisible characters, obfuscated email, unredacted "Name:" fields, and names spelled one letter at a time ("D-E-L-G-A-D-O"). Each becomes a review item with offsets into the output.
+4. **Residual scan.** Undecided or name-shaped words, unlabeled long numbers and letter-digit codes, digits mixed with O, I or l, birth years without a reference date, scripts and digits the rules do not read, Greek words, invisible format characters, obfuscated email, person fields not fully redacted, names spelled one letter at a time ("D-E-L-G-A-D-O"), card-shaped numbers that failed the card check, local phone numbers with no calling word, ages over 89 the rules missed, tokens that run into more characters ("[url]aaaa"), and bracketed words that look like tokens. Each becomes a review item with offsets into the output.
 
 The name tier's vocabulary is not hand-picked. It is built by [scripts/build-lexicon.mjs](scripts/build-lexicon.mjs) from public-domain sources, each pinned by SHA-256 in [data/lexicon/manifest.json](data/lexicon/manifest.json): US Census 2010 surnames and 1990 first names, Drugs@FDA product names and ingredients, CMS ICD-10-CM 2025 descriptions, and Webster's Second International word list. A test checks that the words the old list took from the template set (Jardiance, Rheumatoid, Arthritis, Portal, Telephone) and the template names do not appear in the name-tier source, and that the public lists still classify those words.
 
@@ -69,20 +68,21 @@ A source id that is not registered in `src/profiles.js` blocks. A typo such as `
 ## Using it in a pipeline
 
 ```js
-import { gateParsedTranscript, sendRedacted, describeGate, assertSendable } from './src/gate.js'
+import { gateParsedTranscript, gateSummary, sendRedacted, describeGate, assertSendable } from './src/gate.js'
 
-// One call: redact, check, then call your sink with the redacted record only.
+// One call: redact, check, then call your sink with the frozen, checked record only.
 sendRedacted({ parsed: record, source: 'clinical-note', sink: (payload) => writeRow(payload) })
 
-// Or step by step
+// Or step by step. Each helper returns a NEW sealed gate.
 const gate = gateParsedTranscript({ parsed: record, source: 'clinical-note' })
-console.log(describeGate(gate))     // says what was checked, never just "clean"
-assertSendable(gate)                // throws on blocked, and on review unless { acceptReview: true }
+const withSummary = gateSummary(modelOutput, gate, 'clinical-note')
+console.log(describeGate(withSummary))  // says what was checked, never just "clean"
+assertSendable(withSummary)             // throws on blocked, and on review unless { acceptReview: true }
 ```
 
-- `assertSendable` accepts only results this library sealed. A hand-built `{ blocked: false }`, a spread copy, or the raw record is refused.
-- Every string in a record is redacted, wherever it sits. A declared text field of the wrong type, a value the code cannot read (a Date, a Buffer, a class instance), a cycle, nesting deeper than 32 or an identifier used as a key blocks the record.
-- Originals are kept only on the non-enumerable `changes` list, for the optional local quarantine sidecar. That file is plain JSON with mode 0600. It is not encrypted and has no retention limit.
+- Results are sealed and frozen inside the engine, which does not export its sealing function. `assertSendable` accepts only those results, so a hand-built `{ blocked: false }`, a spread copy, or the raw record is refused, and nothing in a result can change after the check. `gateSummary` and `gateBodyText` return a new gate instead of changing the old one.
+- Every string and every number in a record is read, wherever it sits. A number is read with its key as a label, so `{ mrn: 4471023 }` and `{ age: 96 }` block. A Map comes back as an array of `[key, value]` pairs and a Set as an array. A declared text field of the wrong type, a value the code cannot read (a Date, a Buffer, a class instance, an array with its own methods), a cycle, nesting deeper than 32, more than 200,000 values, an array longer than 100,000, an object used as a Map key, or a key the rules would change or flag blocks the record. Record and gate results carry the same scan report as text results.
+- Originals are kept only on the non-enumerable `changes` list, for the optional local quarantine sidecar. That file is plain JSON with mode 0600, written only into real directories (not symlinks) that the operator owns with no group or other access. It is not encrypted and has no retention limit.
 - Put your own facility, clinician and patient names in the people map (`REDACTION_PEOPLE_PATH`). That is how a "needs review" facility becomes a deterministic removal next time. Use `loadPeopleMap({ required: true })` or `requirePeopleMap: true` to block when the map cannot be read.
 - Pass `referenceDate` so birth years can be judged against the 89-year limit. Without it a birth year goes to review.
 
@@ -105,16 +105,16 @@ Recall fell from 187 to 184 because ten facility names made of ordinary words ("
 
 **27-template development check** (`eval/heldout.json`, a historical file name): 7 of 27 templates for the first release, 26 of 27 for main, 26 of 27 for this branch. All 6 clinical sentences are kept by this branch. The labels count the unlabeled ZIP in one template as a false positive and the title "Dr." as part of a name. Neither label was changed.
 
-**Real public text** (PR 4, not merged here): the honest current measure is PR 4's result for the untuned gate, 20 of 38 planted identifiers in its 9 held-back documents, with at least one left in every document. This branch removes 35 of 38 there and leaves an identifier in 2 of 9 documents, both marked for review. That is development data for this branch. PR 4's own rule changes (its version 2) are not merged, because they made names inferred from one sentence safe across the whole document ("morphine (Alice)" kept Alice everywhere, "internal medicine (Kaplan)" kept "Mr. Kaplan").
+**Real public text** (PR 4, not merged here): PR 4's result for the untuned gate is 20 of 38 planted identifiers in its 9 held-back documents, with at least one left in every document. This branch removes 35 of 38 there and leaves an identifier in 2 of 9 documents, both marked for review. Both are development results: the planted values and the failure list are public. PR 4's own rule changes (its version 2) are not merged, because they made names inferred from one sentence safe across the whole document ("morphine (Alice)" kept Alice everywhere, "internal medicine (Kaplan)" kept "Mr. Kaplan").
 
-**Speed.** Linear in input length. About 4 seconds per megabyte of realistic note text on an Apple M-series laptop, and the old 17-second email case on 100 KB now takes about one second. `test/perf.test.js` fails if doubling a hostile input comes near quadrupling the time.
+**Speed.** Linear in input length on every shape the performance test covers (realistic notes, repeated "a.", "a@", "1-", "Dr. ", "Aa ", "1/", "x", "A. ", "A.B. ", "d-e-" and "[x]"). About 4 seconds per megabyte of realistic note text on an Apple M-series laptop, and the old 17-second email case on 100 KB takes about one second. `test/perf.test.js` fails if eight times the input takes more than twenty times as long. A chain of initials with no surname ("A. A. A.") was quadratic until the second review round. Other shapes are not proven linear.
 
 ## Limits
 
 - Rules, not a model. English and US formats. Transcribed text only: no OCR, images, PDFs or attachments.
-- Known gaps, listed in every result as `scan.knownGaps`: a lowercase name that is also an ordinary word ("grace", "will") unless a title, relation word, greeting or person verb marks it, a facility named with a clinical word, a name made of two English words joined together, ages under 90 (kept on purpose), unlabeled numbers under 7 digits and codes under 6 characters, identifiers spelled out in words or split across lines, and descriptions that identify a person without naming them.
+- Known gaps, listed in every clean or review result as `scan.knownGaps`: a lowercase name that is also an ordinary word ("grace", "will") unless a title, relation word, greeting or person verb marks it, a lowercase name on no list or with a rare surname unless a person verb follows it, a short all-capitals name of five letters or fewer on no name list (read as an acronym), a facility named with a clinical word, a name made of two English words joined together, ages under 90 (kept on purpose), unlabeled numbers under 7 digits and codes under 6 characters, identifiers spelled out in words or split across lines, and descriptions that identify a person without naming them.
 - The English list is from 1934, so modern words such as "fax" and "email" are unknown words. At a sentence start they go to review.
-- Review volume is real: 17 of 182 development snippets and 5 of 9 real documents needed review. It has not been measured on real clinical workloads, and neither has reviewer time.
+- Review volume is real: 18 of 182 development snippets and 5 of 9 real documents needed review. Known causes: facility names made of ordinary words, words missing from the 1934 list at a sentence start, a capitalized ordinary-word surname mid-sentence ("The White count"), an eponym with no head noun ("History of Parkinson."), a common surname in lowercase ("foley in place"), and a longer lab name before a bare number ("Ferritin 12"). It has not been measured on real clinical workloads, and neither has reviewer time.
 - No external baseline (Presidio, Philter, the PhysioNet deid tool) has been run on the same sets. The fresh-test spec includes one.
 - Structure is lost: tokens replace values, with no consistent surrogates and no date shifting.
 - The quarantine sidecar holds originals in plain text.
@@ -122,7 +122,7 @@ Recall fell from 187 to 184 because ten facility names made of ordinary words ("
 ## Development
 
 ```bash
-npm test                      # 206 tests, about 15 seconds
+npm test                      # 246 tests, about 15 seconds
 npm run check                 # committed comparison matches the engine, lexicon matches its hash
 node eval/compare.js          # print the development comparison for this tree
 node eval/run.js              # print per-profile results on the development snippets

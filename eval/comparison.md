@@ -20,7 +20,7 @@ Written with the first release. Every later rule change was made while looking a
 | Snippets with an identifier left | 55/118 | 19/118 | 23/118 |
 | Of those, marked for review | no status reported | no status reported | 10/23 |
 | Of those, marked clean | no status reported | no status reported | 13/23 |
-| All snippets marked for review | no status reported | no status reported | 17/182 |
+| All snippets marked for review | no status reported | no status reported | 18/182 |
 
 ### Every miss in this tree
 
