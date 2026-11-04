@@ -44,6 +44,7 @@ function invalidate(message = 'Note changed. Inspect again before sending.') {
  $('review-spans').replaceChildren()
  $('send-status').textContent = 'Send gate: blocked until the current note is inspected.'
  document.querySelector('.workspace').dataset.state = 'idle'
+ document.querySelector('.workspace').dataset.status = 'idle'
 }
 // What the engine read and what it could not decide, in plain words.
 function showScan(result) {
@@ -80,6 +81,8 @@ async function run() {
   $('flagged').disabled = blocked
   $('review-status').textContent = blocked ? 'Review unavailable because the engine failed.' : 'Compare source and output, then record your review or flag a missed identifier.'
   document.querySelector('.workspace').dataset.state = blocked ? 'blocked' : 'ready'
+  // Styling only: clean, review or blocked, so the label can match the result.
+  document.querySelector('.workspace').dataset.status = blocked ? 'blocked' : current.status
   const review = current.status === 'review'
   $('status').textContent = blocked ? 'BLOCKED / Engine failure. No payload can pass.' : review ? 'Inspection complete / Spans need review before sending' : 'Inspection complete / Nothing left to decide, compare before use'
   $('result-badge').textContent = blocked ? 'BLOCKED' : review ? 'NEEDS REVIEW' : 'CHECKS PASSED'
@@ -106,10 +109,10 @@ async function run() {
     const mark = document.createElement('mark')
     mark.className = 'removed'
     mark.textContent = input.slice(span.start, span.end)
+    // The token label sits after the marked span, outside its box.
     const label = document.createElement('small')
     label.textContent = span.token
-    mark.append(label)
-    $('original').append(mark)
+    $('original').append(mark, label)
     const li = document.createElement('li')
     li.textContent = `${input.slice(span.start, span.end)} → [${span.token}]`
     $('removed').append(li)
@@ -123,12 +126,13 @@ async function run() {
    $('counts').append(item)
   }
   if (!$('counts').children.length) $('counts').textContent = blocked ? 'Withheld on failure' : 'No rules matched'
-  $('kept').textContent = blocked ? 'No content is available for sending.' : `${current.kept.length} clinical word${current.kept.length === 1 ? '' : 's'} from the public drug and diagnosis lists kept. Green marks show words retained, not a completeness score.`
+  $('kept').textContent = blocked ? 'No content is available for sending.' : `${current.kept.length} clinical word${current.kept.length === 1 ? '' : 's'} from the public drug and diagnosis lists kept. Underlines show words retained, not a completeness score.`
   showScan(current.result)
   $('send-status').textContent = blocked ? 'Send gate: BLOCKED. No payload available.' : review ? 'Send gate: refused until a reviewer marks the flagged spans reviewed.' : 'Send gate: ready for a local simulated attempt.'
  } catch {
   invalidate('BLOCKED / Inspector error. No payload can pass.')
   document.querySelector('.workspace').dataset.state = 'blocked'
+  document.querySelector('.workspace').dataset.status = 'blocked'
   $('result-badge').textContent = 'BLOCKED'
   $('output').textContent = '[redaction-blocked]'
  } finally {
