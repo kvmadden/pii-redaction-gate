@@ -385,6 +385,35 @@ function recordWalker(opts) {
     const r = redactText(line, opts);
     return r.status === "clean" && r.text === line;
   };
+  // Strings in structured records need the same label context as numbers.
+  // Analyze a labeled view, but keep the original value as the only stored
+  // input. Any contextual detection or uncertainty fails closed on the field,
+  // so synthetic-label offsets can never escape as offsets into the value.
+  const stringOk = (value, key) => {
+    if (key === undefined || key === null || key === "") return true;
+    const line = `${keyLabel(key)}: ${value}`;
+    const r = redactText(line, opts);
+    if (r.status !== "clean" || r.text !== line) {
+      // If the value already has a direct, concrete replacement, let the
+      // normal value-only path apply it with correct value-relative offsets.
+      const valueResult = redactText(value, opts);
+      if (valueResult.text !== value) {
+        const sanitizedLine = `${keyLabel(key)}: ${valueResult.text}`;
+        const sanitizedContext = redactText(sanitizedLine, opts);
+        const residualNumbers = valueResult.text.match(/\b\d+(?:[ -]\d+)*\b/g) || [];
+        if (
+          sanitizedContext.status === "clean" &&
+          sanitizedContext.text === sanitizedLine &&
+          residualNumbers.every((number) => numberOk(number, key))
+        ) return true;
+        mergeHits(counts, sanitizedContext.hits);
+        return false;
+      }
+      mergeHits(counts, r.hits);
+      return false;
+    }
+    return true;
+  };
   const array = (value, field, fn) => {
     if (!isPlainArray(value)) return block(field);
     const out = [];
@@ -395,7 +424,7 @@ function recordWalker(opts) {
     if (value === null || value === undefined) return value;
     if (++state.nodes > MAX_NODES) return block(field);
     const t = typeof value;
-    if (t === "string") return text(value, field);
+    if (t === "string") return stringOk(value, key) ? text(value, field) : block(field);
     if (t === "boolean") return value;
     if (t === "number" || t === "bigint") return numberOk(value, key) ? value : block(field);
     if (t !== "object" || depth > MAX_DEPTH || ancestors.has(value)) return block(field);
