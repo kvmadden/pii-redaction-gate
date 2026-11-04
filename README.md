@@ -12,7 +12,7 @@ A rule-based gate for clinical free text on its way to a model prompt or a recor
 
 ## Where the evidence stands
 
-**Held-out result, 3 November 2026.** On a blind set of 132 synthetic clinical documents written and labeled by other model families, the gate left 12 of 2,577 identifier mentions (0.5%) in documents it marked clean. Microsoft Presidio, run offline on the same documents with its default English recognizers, left 701 (27.2%) in the text it returned. The gate gets there by asking for a person: it sent 120 of the 132 documents (91%) to review, including 26 of the 28 documents with no identifier at all, and 29 of those 120 reviews had nothing left to find. Clean is not a guarantee either: 8 of the 12 documents it marked clean still held an identifier.
+**Held-out result, 3 November 2026.** On a blind set of 132 synthetic clinical documents written and labeled by other model families, the gate marked 12 documents clean, and 8 of those 12 still held an identifier: 12 of the 2,577 identifier mentions (0.5%) were left in them. It sent the other 120 documents (91%) to a person for review, including 26 of the 28 documents with no identifier at all, and 29 of those 120 reviews had nothing left to find. So the low count depends on the review step: the 528 mentions left in those 120 documents do not count as leaks, because a person reads each one first. Microsoft Presidio, run offline on the same documents with its default English recognizers, has no review step, so all 701 mentions (27.2%) it left in the text it returned count as sent. The two counts measure different things. On removal alone, the gate fully removed 2,037 of 2,577 mentions (79.0%) and Presidio 1,876 (72.8%).
 
 Set hash `2d2011ff449da01bb3200b5f2832cb40faa70323cc85a5f97a79446dd4f71055`, gate commit `30b6061` (its `src/` is unchanged since `e328c73`), scorer commit `047c193`. Identifiers profile, run once. The full report, with every engine and every type, is [fresh-test/v1/results/scored-2d2011ff449da01b.md](fresh-test/v1/results/scored-2d2011ff449da01b.md).
 
@@ -28,7 +28,7 @@ Set hash `2d2011ff449da01bb3200b5f2832cb40faa70323cc85a5f97a79446dd4f71055`, gat
 | Review documents with nothing left to find | 29 of 120 | 29 of 120 | |
 | Documents blocked | 0 of 132 | 0 of 132 | 0 of 132 |
 
-Ranges are Wilson 95% intervals. Presidio has no review status, so everything it returns counts as sent.
+Ranges are Wilson 95% intervals. Presidio has no review status, so everything it returns counts as sent. The scored report also runs two bounds the same way: sending every document unchanged leaves all 2,577 mentions, and removing every word leaves none but keeps none of the 9,198 clinical spans.
 
 Where the gate falls short:
 
