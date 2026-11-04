@@ -2,7 +2,7 @@ import http from 'node:http'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 const root = path.resolve(new URL('../docs', import.meta.url).pathname)
-const types = {'.html':'text/html', '.js':'text/javascript', '.css':'text/css', '.png':'image/png', '.gif':'image/gif', '.md':'text/plain'}
+const types = {'.html':'text/html', '.js':'text/javascript', '.css':'text/css', '.png':'image/png', '.gif':'image/gif', '.md':'text/plain', '.woff2':'font/woff2'}
 const server = http.createServer(async (req, res) => {
  try {
   const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname)
