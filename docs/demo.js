@@ -41,8 +41,11 @@ async function run() {
  invalidate('Inspecting with the local engine…')
  const ticket = version
  const input = $('note').value
- if (!input.trim()) { $('status').textContent = 'Empty note. Pick an example or paste synthetic text.'
- return }
+ if (!input.trim()) {
+  document.querySelector('.workspace').dataset.state = 'empty'
+  $('status').textContent = 'Nothing to inspect. Choose a synthetic example or enter fictional text.'
+  return
+ }
  $('run').disabled = true
  document.querySelector('.workspace').setAttribute('aria-busy', 'true')
  try {
@@ -93,7 +96,7 @@ async function run() {
    $('counts').append(item)
   }
   if (!$('counts').children.length) $('counts').textContent = blocked ? 'Withheld on failure' : 'No rules matched'
-  $('kept').textContent = blocked ? 'No content is available for sending.' : `${current.kept.length} recognized clinical phrases preserved. Green marks show exact phrases retained, not a completeness score.`
+  $('kept').textContent = blocked ? 'No content is available for sending.' : `${current.kept.length} clinical phrases preserved. Green marks are examples, not a completeness check.`
   $('send-status').textContent = blocked ? 'Send gate: BLOCKED. No payload available.' : 'Send gate: ready for a local simulated attempt.'
  } catch {
   invalidate('BLOCKED / Inspector error. No payload can pass.')
