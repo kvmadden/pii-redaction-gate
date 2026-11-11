@@ -5,3 +5,14 @@
 @media(max-width:760px){main{padding:0 16px}nav{height:68px}.brand{font-size:14px}.brand-muted{display:none}header{padding:26px 0}h1{font-size:34px}aside{display:none}.intro{font-size:12px}.toolbar{padding:16px;flex-wrap:wrap;gap:12px}.toolbar>div{flex-basis:100%}#run{width:100%}.statusbar{padding:12px 16px}.statusbar .small{display:none}.results{grid-template-columns:1fr}.pane{padding:16px}.pane+.pane{border-left:0;border-top:1px solid var(--line)}.output{min-height:170px}.summary{padding:16px;align-items:start;flex-direction:column;gap:12px}.gate{padding:16px;align-items:start;flex-direction:column}.gate-actions{width:100%;flex-wrap:wrap;gap:6px}.gate-actions button{width:100%}footer{flex-direction:column;gap:8px}.text-view{font-size:12px}details{padding:0 16px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
 @media(min-width:761px){nav{height:72px}header{padding:24px 0}h1{font-size:44px}.intro{font-size:13px}textarea{height:105px}.output{min-height:250px}.pane{padding-top:16px;padding-bottom:16px}.text-view{line-height:1.9}}
+
+/* Give the actual clickable controls a full finger-sized hit area without
+   enlarging the checkbox glyph or changing the inspector's visual identity. */
+.brand{display:inline-flex;align-items:center;min-width:44px;min-height:44px}
+#theme{white-space:nowrap}
+.toggle input[type="checkbox"]{appearance:none;width:44px;height:44px;flex:none;margin:0;display:grid;place-items:center;background:transparent;border:0;cursor:pointer}
+.toggle input[type="checkbox"]::before{content:"";display:grid;place-items:center;width:20px;height:20px;border:2px solid var(--muted);border-radius:4px;background:var(--surface);box-sizing:border-box}
+.toggle input[type="checkbox"]:checked::before{content:"✓";background:var(--accent);border-color:var(--accent);color:var(--surface);font:700 14px/1 system-ui}
+.gate h2{text-wrap:balance}
+#kept{text-wrap:pretty}
+.workspace[data-state="empty"] .statusbar{background:var(--remove);color:var(--remove-ink);font-weight:650}
