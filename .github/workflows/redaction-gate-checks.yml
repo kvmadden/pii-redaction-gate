@@ -31,4 +31,6 @@ jobs:
           npm start > inspector-start.log 2>&1 &
           inspector_pid=$!
           trap 'kill "$inspector_pid" 2>/dev/null || true' EXIT
-          curl --fail --silent --show-error --retry 10 --retry-connrefused --retry-delay 1 http://127.0.0.1:8769/ --output /dev/null
+          curl --fail --silent --show-error --retry 10 --retry-connrefused --retry-delay 1 http://127.0.0.1:3000/ --output inspector-index.html
+          grep -q 'Redaction inspector' inspector-index.html
+          curl --fail --silent --show-error http://127.0.0.1:3000/demo.js --output /dev/null
