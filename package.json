@@ -10,7 +10,8 @@
   "scripts": {
     "test": "node --test 'test/**/*.test.js'",
     "eval": "node eval/run.js",
-    "demo": "node scripts/serve-demo.js"
+    "demo": "node scripts/serve-demo.js",
+    "start": "node scripts/serve-demo.js"
   },
   "keywords": [
     "pii",
