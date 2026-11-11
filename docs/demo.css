@@ -16,3 +16,6 @@
 .gate h2{text-wrap:balance}
 #kept{text-wrap:pretty}
 .workspace[data-state="empty"] .statusbar{background:var(--remove);color:var(--remove-ink);font-weight:650}
+
+/* The evaluation link is a primary next step on touch-capable tablets. */
+aside a[href="comparison.md"]{display:inline-flex;align-items:center;min-height:44px;padding:10px 0;text-underline-offset:3px}
