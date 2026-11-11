@@ -1,0 +1,34 @@
+name: Redaction gate checks
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out full history for frozen evaluation provenance
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run privacy and regression tests
+        run: npm test
+      - name: Reproduce the public-text evaluation without changing results
+        run: node eval/public-run.js --check
+      - name: Check the local inspector is reachable
+        shell: bash
+        run: |
+          npm start > inspector-start.log 2>&1 &
+          inspector_pid=$!
+          trap 'kill "$inspector_pid" 2>/dev/null || true' EXIT
+          curl --fail --silent --show-error --retry 10 --retry-connrefused --retry-delay 1 http://127.0.0.1:8769/ --output /dev/null
