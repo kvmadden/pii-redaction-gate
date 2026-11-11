@@ -1,0 +1,41 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      matrix:
+        node: [22, 24]
+    steps:
+      - name: Checkout with frozen evaluation history
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Use Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Privacy and regression tests
+        run: npm test
+      - name: Verify committed evaluation without rewriting results
+        shell: bash
+        run: |
+          if node -e "process.exit(Object.hasOwn(JSON.parse(require('node:fs').readFileSync('package.json', 'utf8')).scripts, 'check') ? 0 : 1)"; then
+            npm run check
+          else
+            # Older development branch: verify the pinned public-text benchmark.
+            node eval/public-run.js --check
+          fi
+      - name: Verify demo runtime copies
+        run: node scripts/build-demo.js && git diff --exit-code -- docs/runtime
