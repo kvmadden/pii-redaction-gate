@@ -6,6 +6,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { redactText } from "../src/engine.js";
 import { scanResidual, RESIDUAL_CHECKS } from "../src/scan.js";
+import { gateParsedTranscript, assertSendable, sendRedacted } from "../src/gate.js";
 
 const run = (text, extra = {}) => redactText(text, { profile: "identifiers", peopleMap: { people: [], safe: [] }, ...extra });
 
@@ -28,6 +29,48 @@ test("scan: an undecided capitalized word", () => {
 test("scan: an unlabeled long number and an unlabeled letter-digit code", () => {
   flags("Reference 12345678 noted.", "long-number");
   flags("Order #A-99812 shipped.", "code");
+});
+
+test("scan: grouped numeric identifiers require review before clinical text is sent", () => {
+  const peopleMap = { people: [], safe: [] };
+  for (const [source, text] of [
+    ["call-transcript", "Caller quoted reference 58 17 29 44."],
+    ["clinical-note", "Unlabeled number 58-17-29-44 was copied."],
+    ["patient-message", "The note shows 58\n17\n29\n44."],
+    ["clinical-note", "The number was 1234 5678."],
+    ["clinical-note", "Tracking: 482 17-2944."],
+  ]) {
+    const gate = gateParsedTranscript({
+      parsed: { firstUserMsg: text, operatorTurns: [], assistantTail: [] },
+      source,
+      peopleMap,
+    });
+    assert.equal(gate.status, "review", source + ": " + text);
+    assert.ok(gate.review.some((item) => item.check === "grouped-number"), source + ": " + JSON.stringify(gate.review));
+    assert.throws(() => assertSendable(gate), { name: "RedactionReviewRequiredError" });
+    let sent = false;
+    assert.throws(() => sendRedacted({
+      parsed: { firstUserMsg: text, operatorTurns: [], assistantTail: [] },
+      source,
+      peopleMap,
+      sink: () => { sent = true; },
+    }), { name: "RedactionReviewRequiredError" });
+    assert.equal(sent, false, "default send guard must refuse an unreviewed grouped number");
+  }
+});
+
+test("scan: clinical measurements, dates and dose schedules are not grouped IDs", () => {
+  for (const text of [
+    "BP 120/80. A1c 7.4%. Take metformin 500 mg BID.",
+    "Continue a 10-10-20 mg dose schedule.",
+    "2026-11-13 and 11-13-2026 are dates. 2025-2026 is a year range.",
+    "Visit 2026 11 13 09:30. BP 138/84.",
+    "The dose is 200-100-200-100 mg daily.",
+    "The count is 1250000 copies/mL.",
+  ]) {
+    const r = run(text);
+    assert.equal(r.review.filter((item) => item.check === "grouped-number").length, 0, text);
+  }
 });
 
 test("scan: a number that mixes digits with O, I or l (a scan error)", () => {
