@@ -39,6 +39,8 @@ test("scan: grouped numeric identifiers require review before clinical text is s
     ["patient-message", "The note shows 58\n17\n29\n44."],
     ["clinical-note", "The number was 1234 5678."],
     ["clinical-note", "Tracking: 482 17-2944."],
+    ["clinical-note", "Pasted reference 58\u00A017\u00A029\u00A044."],
+    ["patient-message", "Reference 58\u202F17\u202F29\u202F44 in the message."],
   ]) {
     const gate = gateParsedTranscript({
       parsed: { firstUserMsg: text, operatorTurns: [], assistantTail: [] },
@@ -67,6 +69,7 @@ test("scan: clinical measurements, dates and dose schedules are not grouped IDs"
     "Visit 2026 11 13 09:30. BP 138/84.",
     "The dose is 200-100-200-100 mg daily.",
     "The count is 1250000 copies/mL.",
+    "Visit date 2026\u202F11\u202F13. Dose 200\u00A0100\u00A0200\u00A0100 mg.",
   ]) {
     const r = run(text);
     assert.equal(r.review.filter((item) => item.check === "grouped-number").length, 0, text);

@@ -29,7 +29,8 @@
     "eval": "node eval/run.js",
     "compare": "node eval/compare.js",
     "check": "node eval/compare.js --check && node scripts/build-lexicon.mjs --check",
-    "demo": "node scripts/serve-demo.js"
+    "demo": "node scripts/serve-demo.js",
+    "start": "node scripts/serve-demo.js"
   },
   "keywords": [
     "pii",
