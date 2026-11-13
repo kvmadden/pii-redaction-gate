@@ -9,6 +9,7 @@
 //   names           words the name classifier could not decide, initials, and
 //                   name-shaped words still present
 //   long-number     a run of 7 or more digits with no label and no unit after it
+//   grouped-number  eight or more digits split into groups, without a clinical unit
 //   code            a letter-and-digit code with 3 or more digits and 6 or more
 //                   characters, with no label (not a TNM stage or an ICD code)
 //   ocr-number      a number that mixes digits with O, o, I or l
@@ -37,6 +38,7 @@ import { wordClass } from "./lexicon.js";
 export const RESIDUAL_CHECKS = Object.freeze([
   "names",
   "long-number",
+  "grouped-number",
   "code",
   "ocr-number",
   "birth-year",
@@ -81,6 +83,16 @@ function push(out, m, check, reason) {
   out.push({ start: m.index, end: m.index + m[0].length, check, reason });
 }
 
+function looksLikeDateGroups(parts) {
+  const year = (s) => s.length === 4 && Number(s) >= 1900 && Number(s) <= 2100;
+  const month = (s) => Number(s) >= 1 && Number(s) <= 12;
+  const day = (s) => Number(s) >= 1 && Number(s) <= 31;
+  if (parts.length !== 3) return false;
+  const [a, b, c] = parts;
+  return (year(a) && month(b) && day(c)) ||
+    (year(c) && ((month(a) && day(b)) || (day(a) && month(b))));
+}
+
 function luhnOk(digits) {
   let sum = 0;
   for (let i = 0; i < digits.length; i++) {
@@ -115,6 +127,19 @@ export function scanResidual(text, { names = true, safe = new Set(), nameTokens,
   for (const m of text.matchAll(/(?<!\p{N})(?<!\p{N}[.,])\p{N}{7,}(?!\p{N})/gu)) {
     if (UNIT_AFTER.test(text.slice(m.index + m[0].length, m.index + m[0].length + 12))) continue; // "1250000 copies/mL"
     push(out, m, "long-number", "unlabeled number with 7 or more digits");
+  }
+  // A number can look harmless if every digit group is short. Keep unresolved
+  // groups visible to a reviewer, rather than marking the text clean. Do not
+  // confuse calendar dates, year ranges or quantities with record identifiers.
+  for (const m of text.matchAll(/(?<![\p{L}\p{N}_./-])\d{2,4}(?:(?:[ \t]*-[ \t]*|[ \t]+|[ \t]*\r?\n[ \t]*)\d{2,4}){1,5}(?![\p{L}\p{N}_]|[./-]\d)/gu)) {
+    const groups = m[0].trim().split(/[ \t\r\n]*-[ \t\r\n]*|[ \t\r\n]+/);
+    const digits = groups.reduce((n, group) => n + group.length, 0);
+    if (digits < 8) continue;
+    if (groups.length === 2 && groups.every((group) => group.length === 4 && Number(group) >= 1900 && Number(group) <= 2100)) continue;
+    if (looksLikeDateGroups(groups) ||
+        (groups.length === 4 && looksLikeDateGroups(groups.slice(0, 3)) && Number(groups[3]) <= 23)) continue;
+    if (UNIT_AFTER.test(text.slice(m.index + m[0].length, m.index + m[0].length + 12))) continue;
+    push(out, m, "grouped-number", "number split into groups (possible identifier)");
   }
   for (const m of text.matchAll(/(?<![\p{L}\p{N}_-])[\p{L}\p{Nd}]+(?:[-_][\p{L}\p{Nd}]+)*(?![\p{L}\p{N}_])/gu)) {
     const s = m[0];
