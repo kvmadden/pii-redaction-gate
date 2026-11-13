@@ -194,7 +194,7 @@ export function scanResidual(text, { names = true, safe = new Set(), nameTokens,
   // groups visible to a reviewer, rather than marking the text clean. Do not
   // confuse calendar dates, year ranges or quantities with record identifiers.
   for (const m of text.matchAll(/(?<![\p{L}\p{N}_./-])\d{2,4}(?:(?:[ \t\p{Zs}]*-[ \t\p{Zs}]*|[ \t\p{Zs}]+|[ \t\p{Zs}]*\r?\n[ \t\p{Zs}]*)\d{2,4}){1,5}(?![\p{L}\p{N}_]|[./-]\d)/gu)) {
-    const groups = m[0].trim().split(/[ \t\r\n\p{Zs}]*-[ \t\r\n\p{Zs}]*|[ \t\r\n\p{Zs}]+/);
+    const groups = m[0].trim().split(/[ \t\r\n\p{Zs}]*-[ \t\r\n\p{Zs}]*|[ \t\r\n\p{Zs}]+/u);
     const digits = groups.reduce((n, group) => n + group.length, 0);
     if (digits < 8) continue;
     if (groups.length === 2 && groups.every((group) => group.length === 4 && Number(group) >= 1900 && Number(group) <= 2100)) continue;
