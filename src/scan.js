@@ -128,19 +128,6 @@ export function scanResidual(text, { names = true, safe = new Set(), nameTokens,
     if (UNIT_AFTER.test(text.slice(m.index + m[0].length, m.index + m[0].length + 12))) continue; // "1250000 copies/mL"
     push(out, m, "long-number", "unlabeled number with 7 or more digits");
   }
-  // A number can look harmless if every digit group is short. Keep unresolved
-  // groups visible to a reviewer, rather than marking the text clean. Do not
-  // confuse calendar dates, year ranges or quantities with record identifiers.
-  for (const m of text.matchAll(/(?<![\p{L}\p{N}_./-])\d{2,4}(?:(?:[ \t]*-[ \t]*|[ \t]+|[ \t]*\r?\n[ \t]*)\d{2,4}){1,5}(?![\p{L}\p{N}_]|[./-]\d)/gu)) {
-    const groups = m[0].trim().split(/[ \t\r\n]*-[ \t\r\n]*|[ \t\r\n]+/);
-    const digits = groups.reduce((n, group) => n + group.length, 0);
-    if (digits < 8) continue;
-    if (groups.length === 2 && groups.every((group) => group.length === 4 && Number(group) >= 1900 && Number(group) <= 2100)) continue;
-    if (looksLikeDateGroups(groups) ||
-        (groups.length === 4 && looksLikeDateGroups(groups.slice(0, 3)) && Number(groups[3]) <= 23)) continue;
-    if (UNIT_AFTER.test(text.slice(m.index + m[0].length, m.index + m[0].length + 12))) continue;
-    push(out, m, "grouped-number", "number split into groups (possible identifier)");
-  }
   for (const m of text.matchAll(/(?<![\p{L}\p{N}_-])[\p{L}\p{Nd}]+(?:[-_][\p{L}\p{Nd}]+)*(?![\p{L}\p{N}_])/gu)) {
     const s = m[0];
     const digits = (s.match(/\p{Nd}/gu) || []).length;
@@ -201,6 +188,19 @@ export function scanResidual(text, { names = true, safe = new Set(), nameTokens,
   for (const m of text.matchAll(/(?<![\d-])(?:\d[ -]?){12,18}\d(?![\d-])/g)) {
     const digits = m[0].replace(/\D/g, "");
     if (/[ -]/.test(m[0]) && !luhnOk(digits)) push(out, m, "card", "card-shaped number that failed the card check");
+  }
+  // A number can look harmless if every digit group is short. Keep unresolved
+  // groups visible to a reviewer, rather than marking the text clean. Do not
+  // confuse calendar dates, year ranges or quantities with record identifiers.
+  for (const m of text.matchAll(/(?<![\p{L}\p{N}_./-])\d{2,4}(?:(?:[ \t]*-[ \t]*|[ \t]+|[ \t]*\r?\n[ \t]*)\d{2,4}){1,5}(?![\p{L}\p{N}_]|[./-]\d)/gu)) {
+    const groups = m[0].trim().split(/[ \t\r\n]*-[ \t\r\n]*|[ \t\r\n]+/);
+    const digits = groups.reduce((n, group) => n + group.length, 0);
+    if (digits < 8) continue;
+    if (groups.length === 2 && groups.every((group) => group.length === 4 && Number(group) >= 1900 && Number(group) <= 2100)) continue;
+    if (looksLikeDateGroups(groups) ||
+        (groups.length === 4 && looksLikeDateGroups(groups.slice(0, 3)) && Number(groups[3]) <= 23)) continue;
+    if (UNIT_AFTER.test(text.slice(m.index + m[0].length, m.index + m[0].length + 12))) continue;
+    push(out, m, "grouped-number", "number split into groups (possible identifier)");
   }
   for (const m of text.matchAll(/(?<![\p{N}\-./$])[2-9]\d{2}[-.]\d{4}(?![\p{N}\-./])/gu)) {
     if (UNIT_AFTER.test(text.slice(m.index + m[0].length, m.index + m[0].length + 12))) continue; // "250-1000 mg"
