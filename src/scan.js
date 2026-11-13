@@ -189,12 +189,12 @@ export function scanResidual(text, { names = true, safe = new Set(), nameTokens,
     const digits = m[0].replace(/\D/g, "");
     if (/[ -]/.test(m[0]) && !luhnOk(digits)) push(out, m, "card", "card-shaped number that failed the card check");
   }
-  // Nonbreaking spaces from copied documents are also number-group separators.
+  // Unicode spaces from copied documents are also number-group separators.
   // A number can look harmless if every digit group is short. Keep unresolved
   // groups visible to a reviewer, rather than marking the text clean. Do not
   // confuse calendar dates, year ranges or quantities with record identifiers.
-  for (const m of text.matchAll(/(?<![\p{L}\p{N}_./-])\d{2,4}(?:(?:[ \t\u00A0\u202F]*-[ \t\u00A0\u202F]*|[ \t\u00A0\u202F]+|[ \t\u00A0\u202F]*\r?\n[ \t\u00A0\u202F]*)\d{2,4}){1,5}(?![\p{L}\p{N}_]|[./-]\d)/gu)) {
-    const groups = m[0].trim().split(/[ \t\r\n\u00A0\u202F]*-[ \t\r\n\u00A0\u202F]*|[ \t\r\n\u00A0\u202F]+/);
+  for (const m of text.matchAll(/(?<![\p{L}\p{N}_./-])\d{2,4}(?:(?:[ \t\p{Zs}]*-[ \t\p{Zs}]*|[ \t\p{Zs}]+|[ \t\p{Zs}]*\r?\n[ \t\p{Zs}]*)\d{2,4}){1,5}(?![\p{L}\p{N}_]|[./-]\d)/gu)) {
+    const groups = m[0].trim().split(/[ \t\r\n\p{Zs}]*-[ \t\r\n\p{Zs}]*|[ \t\r\n\p{Zs}]+/);
     const digits = groups.reduce((n, group) => n + group.length, 0);
     if (digits < 8) continue;
     if (groups.length === 2 && groups.every((group) => group.length === 4 && Number(group) >= 1900 && Number(group) <= 2100)) continue;
