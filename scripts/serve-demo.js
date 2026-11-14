@@ -3,7 +3,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const root = fileURLToPath(new URL('../docs/', import.meta.url))
+const root = path.resolve(fileURLToPath(new URL('../docs/', import.meta.url)))
 const types = {'.html':'text/html', '.js':'text/javascript', '.css':'text/css', '.png':'image/png', '.gif':'image/gif', '.md':'text/plain', '.woff2':'font/woff2'}
 const port = process.env.PORT === undefined ? 8769 : Number(process.env.PORT)
 if (!Number.isInteger(port) || port < 0 || port > 65535) throw new Error('PORT must be an integer from 0 to 65535')
