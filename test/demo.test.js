@@ -4,6 +4,7 @@ import fs from 'node:fs'
 import crypto from 'node:crypto'
 import { assertSendable } from '../src/send-guard.js'
 import { redactText } from '../src/engine.js'
+import { createMissedIdentifierGuard } from '../docs/workspace.js'
 for (const name of ['engine','patterns','clinical-patterns','names','topics','profiles','send-guard','scan','shapes','grammar','lexicon','lexicon-data','text-fold']) test(`demo runtime is identical: ${name}`,()=>{
  assert.equal(fs.readFileSync(new URL(`../docs/runtime/${name}.js`,import.meta.url),'utf8'),fs.readFileSync(new URL(`../src/${name}.js`,import.meta.url),'utf8'))
 })
@@ -29,4 +30,17 @@ test('27-template development check stays byte-identical to its committed file',
 
 test('inspector alignment is identical to the evaluation scorer', () => {
  assert.equal(fs.readFileSync(new URL('../docs/runtime/score.js', import.meta.url), 'utf8'), fs.readFileSync(new URL('../eval/score.js', import.meta.url), 'utf8'))
+})
+
+test('a flagged note stays refused after edit-revert or reselecting its synthetic example', () => {
+ const guard = createMissedIdentifierGuard()
+ const flagged = 'Patient Inez Thorn. Continue metformin 500 mg BID.'
+ assert.equal(guard.refuses(flagged), false)
+ guard.flag(flagged)
+ assert.equal(guard.refuses(flagged), true)
+ assert.equal(guard.refuses('Corrected synthetic note.'), false)
+ // Switching examples or temporarily editing cannot clear the reported miss.
+ assert.equal(guard.refuses(flagged), true)
+ guard.flag('Corrected synthetic note.')
+ assert.equal(guard.refuses('Corrected synthetic note.'), true)
 })
