@@ -45,13 +45,13 @@ This is one run on one synthetic set. Any later run on it is a regression check 
 
 ### Development results (not quoted)
 
-No set in this table was written blind and locked before its first run. They are kept so the work can be checked, not as results to cite.
+These are historical development snapshots, not fresh measurements of today's engine. No set in this table was written blind and locked before its first run. They are kept so the work can be checked, not as results to cite.
 
 | Test set | What it is | Development result | Why it is not a quoted result |
 |---|---|---|---|
-| Real public case reports, 9 documents, 38 planted fictional identifiers ([PR 4](https://github.com/kvmadden/pii-redaction-gate/pull/4)) | Open-access case reports with identifiers planted by a program | main before this work: 20 of 38 removed, an identifier left in 9 of 9 documents. This branch: 35 of 38 removed, an identifier left in 2 of 9 documents, both marked for review | The planted values and the failure list are public, and this branch's rules were changed while its misses were read |
-| 182 synthetic snippets, 207 labeled identifiers | Written with the first release | This branch: 184 of 207. 184 of 195 without the 12 ages under 90 the policy keeps | Rules were changed while looking at it |
-| 27-template development check | 27 identifier templates written 4 times each, plus 6 clinical sentences | This branch: 26 of 27 templates. The one miss is the title in "Dr. Emrys Calder", which is kept on purpose | Its vocabulary was added to a protected word list after it was committed, so it was never held out |
+| Real public case reports, 9 documents, 38 planted fictional identifiers ([PR 4](https://github.com/kvmadden/pii-redaction-gate/pull/4)) | Open-access case reports with identifiers planted by a program | Earlier baseline (`facae00`): 20 of 38 removed, an identifier left in 9 of 9 documents. V2 development snapshot: 35 of 38 removed, an identifier left in 2 of 9 documents, both marked for review | The planted values and the failure list are public, and the v2 development rules were changed while its misses were read |
+| 182 synthetic snippets, 207 labeled identifiers | Written with the first release | V2 development snapshot: 184 of 207. 184 of 195 without the 12 ages under 90 the policy keeps | Rules were changed while looking at it |
+| 27-template development check | 27 identifier templates written 4 times each, plus 6 clinical sentences | V2 development snapshot: 26 of 27 templates. The one miss is the title in "Dr. Emrys Calder", which is kept on purpose | Its vocabulary was added to a protected word list after it was committed, so it was never held out |
 
 Earlier versions of this README and its case page reported **104 of 108 (96.3%)** on a "held-out" set. That set is the 27-template development check above. Its 108 rows are 27 templates written four times, and its own words (Jardiance, Rheumatoid, Arthritis, Telephone, Portal and others) were added to the name tier's protected list after it was frozen. The figure is withdrawn.
 
@@ -125,7 +125,7 @@ Development data, not quoted results. All engines run with the identifiers profi
 
 **182 development snippets** (85 clinical, 35 message, 22 general, 40 negative), 207 labeled identifiers and 227 labeled clinical phrases:
 
-| Measure | First release `91c4e16` | main before this branch `facae00` | This branch |
+| Measure | First release `91c4e16` | Earlier baseline `facae00` | V2 development snapshot |
 |---|---|---|---|
 | Identifiers fully removed | 146 of 207 (70.5%) | 187 of 207 (90.3%) | 184 of 207 (88.9%) |
 | Clinical phrases kept intact | 200 of 227 (88.1%) | 223 of 227 (98.2%) | 226 of 227 (99.6%) |
@@ -136,9 +136,9 @@ Development data, not quoted results. All engines run with the identifiers profi
 
 Recall fell from 187 to 184 because ten facility names made of ordinary words ("Lakeside Clinic", "Valley Birth Center") now go to review instead of being removed. That trade is deliberate. The rule that removed them also turned "Past Medical History" into "[name] History" and "Outside Hospital" into "[name]", which this set never tested.
 
-**27-template development check** (`eval/heldout.json`, a historical file name): 7 of 27 templates for the first release, 26 of 27 for main, 26 of 27 for this branch. All 6 clinical sentences are kept by this branch. The labels count the unlabeled ZIP in one template as a false positive and the title "Dr." as part of a name. Neither label was changed.
+**27-template development check** (`eval/heldout.json`, a historical file name): 7 of 27 templates for the first release, 26 of 27 for the earlier `facae00` baseline, and 26 of 27 for the v2 development snapshot. All 6 clinical sentences are kept by the v2 development snapshot. The labels count the unlabeled ZIP in one template as a false positive and the title "Dr." as part of a name. Neither label was changed.
 
-**Real public text** (PR 4, not merged here): PR 4's result for the untuned gate is 20 of 38 planted identifiers in its 9 held-back documents, with at least one left in every document. This branch removes 35 of 38 there and leaves an identifier in 2 of 9 documents, both marked for review. Both are development results: the planted values and the failure list are public. PR 4's own rule changes (its version 2) are not merged, because they made names inferred from one sentence safe across the whole document ("morphine (Alice)" kept Alice everywhere, "internal medicine (Kaplan)" kept "Mr. Kaplan").
+**Real public text** (PR 4, not merged here): PR 4's result for the untuned gate is 20 of 38 planted identifiers in its 9 held-back documents, with at least one left in every document. The v2 development snapshot removed 35 of 38 there and leaves an identifier in 2 of 9 documents, both marked for review. Both are development results: the planted values and the failure list are public. PR 4's own rule changes (its version 2) are not merged, because they made names inferred from one sentence safe across the whole document ("morphine (Alice)" kept Alice everywhere, "internal medicine (Kaplan)" kept "Mr. Kaplan").
 
 **Speed.** Linear in input length on every shape the performance test covers (realistic notes, repeated "a.", "a@", "1-", "Dr. ", "Aa ", "1/", "x", "A. ", "A.B. ", "d-e-" and "[x]"). About 4 seconds per megabyte of realistic note text on an Apple M-series laptop, and the old 17-second email case on 100 KB takes about one second. `test/perf.test.js` fails if eight times the input takes more than twenty times as long. A chain of initials with no surname ("A. A. A.") was quadratic until the second review round. Other shapes are not proven linear.
 

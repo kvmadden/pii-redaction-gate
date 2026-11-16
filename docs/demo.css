@@ -208,8 +208,23 @@ td:first-child, td:nth-child(3) { font: 500 13px/1.4 var(--mono); letter-spacing
 .gate h2 { color: var(--bar-ink); font: 300 30px/1.15 var(--sans); letter-spacing: -.015em; }
 .gate p:not(.eyebrow) { color: var(--bar-ink); font-size: 15px; margin: 12px 0 0; }
 .gate-actions { display: flex; align-items: center; gap: 24px; flex-shrink: 0; }
-.toggle { display: flex; align-items: center; gap: 12px; min-height: 44px; cursor: pointer; font-size: 15px; }
-.gate input[type=checkbox] { accent-color: var(--bar-ink); }
+.toggle { position: relative; display: flex; align-items: center; gap: 12px; min-height: 44px; cursor: pointer; font-size: 15px; }
+.toggle input[type=checkbox] {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  margin: 0; opacity: 0; cursor: pointer;
+}
+.toggle-mark {
+  display: grid; place-items: center; flex: 0 0 20px;
+  width: 20px; height: 20px; border: 2px solid var(--bar-ink);
+  border-radius: 2px; pointer-events: none;
+}
+.toggle input:checked + .toggle-mark { background: var(--bar-ink); }
+.toggle input:checked + .toggle-mark::after {
+  content: ''; width: 10px; height: 5px;
+  border-left: 2px solid var(--bar); border-bottom: 2px solid var(--bar);
+  transform: translateY(-1px) rotate(-45deg);
+}
+.toggle input:focus-visible + .toggle-mark { outline: 3px solid var(--bar-ink); outline-offset: 4px; }
 .gate button.quiet { color: var(--bar-ink); border-color: var(--bar-soft); }
 .gate button.quiet:hover:not(:disabled) { background: rgba(127, 127, 132, .18); border-color: var(--bar-ink); }
 .gate :focus-visible { outline-color: var(--bar-ink); }
