@@ -13,6 +13,9 @@ const examples = {
 let current = null
 let version = 0
 let reviewedRevision = -1
+// A reported miss blocks this draft even when the engine says it is clean.
+// Only editing the draft or choosing a different synthetic note clears the flag.
+let flaggedDraft = false
 function keptText(container, text, terms) {
  const positions = terms.flatMap(term => [...text.matchAll(new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'))].map(m => ({start:m.index,end:m.index+term.length}))).sort((a,b) => a.start-b.start)
  let cursor = 0
@@ -42,7 +45,7 @@ function invalidate(message = 'Note changed. Inspect again before sending.') {
  $('kept').textContent = ''
  $('scan-report').textContent = ''
  $('review-spans').replaceChildren()
- $('send-status').textContent = 'Send gate: blocked until the current note is inspected.'
+ $('send-status').textContent = flaggedDraft ? 'Send gate: refused. Correct the flagged identifier and inspect again.' : 'Send gate: blocked until the current note is inspected.'
  document.querySelector('.workspace').dataset.state = 'idle'
  document.querySelector('.workspace').dataset.status = 'idle'
 }
@@ -68,6 +71,8 @@ async function run() {
  invalidate('Inspecting with the local engine…')
  const ticket = version
  const input = $('note').value
+ if (flaggedDraft) { $('status').textContent = 'Missed identifier flagged. Edit the note before inspecting again.'
+ return }
  if (!input.trim()) { $('status').textContent = 'Empty note. Pick an example or paste synthetic text.'
  return }
  $('run').disabled = true
@@ -140,13 +145,17 @@ async function run() {
   document.querySelector('.workspace').removeAttribute('aria-busy')
  }
 }
-$('example').addEventListener('change', () => { $('note').value = examples[$('example').value]
+$('example').addEventListener('change', () => { flaggedDraft = false
+ $('note').value = examples[$('example').value]
  run() })
 $('profile').addEventListener('change', () => invalidate('Profile changed. Inspect again before sending.'))
 $('failure').addEventListener('change', run)
-$('note').addEventListener('input', () => invalidate())
+$('note').addEventListener('input', () => { flaggedDraft = false
+ invalidate() })
 $('run').addEventListener('click', run)
 $('send').addEventListener('click', () => {
+ if (flaggedDraft) { $('send-status').textContent = 'Send refused: a missed identifier was flagged. Correct the note and inspect again.'
+ return }
  // The guard accepts only the sealed engine result. A review result passes
  // only after "Mark as reviewed" for this exact revision.
  const acceptReview = reviewedRevision === version
@@ -167,12 +176,20 @@ function provenance() {
 $('example').addEventListener('change', provenance)
 $('note').addEventListener('input', () => { $('provenance').textContent = 'Custom synthetic draft. Source text and dates are not verified.' })
 for (const action of ['reviewed','flagged']) $(action).addEventListener('click', () => {
+ // A missed identifier must block immediately, even if local log storage fails.
+ if (action === 'flagged') {
+  flaggedDraft = true
+  reviewedRevision = -1
+  $('reviewed').disabled = true
+  $('flagged').disabled = true
+  $('send-status').textContent = 'Send gate: refused until the flagged identifier is corrected and the note reinspected.'
+ }
  try {
   recordReview(localStorage, action, {ready:!!current, blocked:current?.blocked, document:$('note').value === examples[$('example').value] ? $('example').value : 'custom-synthetic-draft', profile:$('profile').value, revision:version})
-  reviewedRevision = action === 'reviewed' ? version : -1
+  if (action === 'reviewed') reviewedRevision = version
   $('review-status').textContent = action === 'flagged' ? 'Missed identifier flagged locally. Correct the draft and inspect again. No escalation was sent.' : 'Review recorded locally. This does not certify the output or release a payload.'
   showLog()
- } catch { $('review-status').textContent = 'Review was not saved. Inspect again or check browser storage availability.' }
+ } catch { $('review-status').textContent = action === 'flagged' ? 'Missed identifier flagged. The local log was unavailable, but sending remains refused until the draft is corrected.' : 'Review was not saved. Inspect again or check browser storage availability.' }
 })
 function showLog() {
  try {
