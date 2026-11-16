@@ -74,7 +74,7 @@ npm run demo   # then open the local address it prints
 
 No install step and no dependencies with Node 22 or later. Nothing is sent over the network.
 
-In the demo, pick a fictional note, compare the original spans with the redacted text, and read the scan report under the output: characters read, checks run, checks this profile skips, and each span that needs review with its reason. The simulated send passes a clean result, refuses a review result until "Mark as reviewed" is pressed for that exact revision, and refuses a blocked one. The failure toggle makes the engine fail at the pattern stage to show the blocked path.
+In the demo, pick a fictional note, compare the original spans with the redacted text, and read the scan report under the output: characters read, checks run, checks this profile skips, and each span that needs review with its reason. The simulated send passes a clean result, refuses a review result until "Mark as reviewed" is pressed for that exact revision, and refuses a blocked one. After a missed identifier is flagged, the exact flagged note remains blocked for the browser session. A changed note must be inspected and explicitly marked reviewed, even if the engine reports clean. That acknowledgment is not proof of de-identification. The failure toggle makes the engine fail at the pattern stage to show the blocked path.
 
 ## How it decides
 
