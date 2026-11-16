@@ -87,6 +87,14 @@ async function main() {
   assert.match(await page.locator('#status').textContent(), /Edit the note before inspecting again/)
   await page.locator('#send').click()
   assert.match(await page.locator('#send-status').textContent(), /refused/)
+  // Editing and then reverting to the exact flagged draft must not bypass the refusal.
+  const flaggedText = await page.locator('#note').inputValue()
+  await page.locator('#note').fill('Temporary synthetic change')
+  await page.locator('#note').fill(flaggedText)
+  await page.locator('#run').click()
+  assert.match(await page.locator('#status').textContent(), /Edit the note before inspecting again/)
+  await page.locator('#send').click()
+  assert.match(await page.locator('#send-status').textContent(), /refused/)
   // A changed draft requires a fresh inspection before the simulated send reopens.
   await page.locator('#note').fill('Continue metformin 500 mg BID.')
   await page.locator('#send').click()
