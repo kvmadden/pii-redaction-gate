@@ -13,8 +13,8 @@ const examples = {
 let current = null
 let version = 0
 let reviewedRevision = -1
-// A reported miss blocks this draft even when the engine says it is clean.
-// Only editing the draft or choosing a different synthetic note clears the flag.
+// A reported miss blocks that exact draft and requires fresh human review
+// of any changed synthetic note, even when the engine reports clean.
 const missedIdentifiers = createMissedIdentifierGuard()
 function keptText(container, text, terms) {
  const positions = terms.flatMap(term => [...text.matchAll(new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'))].map(m => ({start:m.index,end:m.index+term.length}))).sort((a,b) => a.start-b.start)
