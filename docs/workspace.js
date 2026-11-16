@@ -31,6 +31,9 @@ export function createMissedIdentifierGuard() {
  const flaggedNotes = new Set()
  return {
   flag(note) { flaggedNotes.add(note) },
-  refuses(note) { return flaggedNotes.has(note) }
+  refuses(note) { return flaggedNotes.has(note) },
+  // Once a miss is reported, every changed synthetic draft needs explicit
+  // re-review after inspection. Editing unrelated text is not clearance.
+  requiresFreshReview() { return flaggedNotes.size > 0 }
  }
 }
