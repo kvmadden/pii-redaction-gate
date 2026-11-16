@@ -24,3 +24,13 @@ export function recordReview(storage, action, context, at = new Date().toISOStri
  storage.setItem(reviewKey, JSON.stringify([...entries, entry]))
  return entry
 }
+
+// Session-only: a reported missed identifier stays blocked even if someone
+// reverts their edits or returns to the same synthetic example. No log or network write.
+export function createMissedIdentifierGuard() {
+ const flaggedNotes = new Set()
+ return {
+  flag(note) { flaggedNotes.add(note) },
+  refuses(note) { return flaggedNotes.has(note) }
+ }
+}
