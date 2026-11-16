@@ -89,6 +89,7 @@ async function run() {
   // Styling only: clean, review or blocked, so the label can match the result.
   document.querySelector('.workspace').dataset.status = blocked ? 'blocked' : current.status
   const review = current.status === 'review'
+  const freshReviewNeeded = missedIdentifiers.requiresFreshReview()
   $('status').textContent = blocked ? 'BLOCKED / Engine failure. No payload can pass.' : review ? 'Inspection complete / Spans need review before sending' : 'Inspection complete / Nothing left to decide, compare before use'
   $('result-badge').textContent = blocked ? 'BLOCKED' : review ? 'NEEDS REVIEW' : 'CHECKS PASSED'
   $('output').replaceChildren()
@@ -133,7 +134,7 @@ async function run() {
   if (!$('counts').children.length) $('counts').textContent = blocked ? 'Withheld on failure' : 'No rules matched'
   $('kept').textContent = blocked ? 'No content is available for sending.' : `${current.kept.length} clinical word${current.kept.length === 1 ? '' : 's'} from the public drug and diagnosis lists kept. Underlines show words retained, not a completeness score.`
   showScan(current.result)
-  $('send-status').textContent = blocked ? 'Send gate: BLOCKED. No payload available.' : review ? 'Send gate: refused until a reviewer marks the flagged spans reviewed.' : 'Send gate: ready for a local simulated attempt.'
+  $('send-status').textContent = blocked ? 'Send gate: BLOCKED. No payload available.' : freshReviewNeeded ? 'Send gate: refused until a person reviews this new inspection after the reported miss.' : review ? 'Send gate: refused until a reviewer marks the flagged spans reviewed.' : 'Send gate: ready for a local simulated attempt.'
  } catch {
   invalidate('BLOCKED / Inspector error. No payload can pass.')
   document.querySelector('.workspace').dataset.state = 'blocked'
@@ -155,6 +156,8 @@ $('note').addEventListener('input', () => {
 $('run').addEventListener('click', run)
 $('send').addEventListener('click', () => {
  if (missedIdentifiers.refuses($('note').value)) { $('send-status').textContent = 'Send refused: a missed identifier was flagged. Correct the note and inspect again.'
+ return }
+ if (missedIdentifiers.requiresFreshReview() && reviewedRevision !== version) { $('send-status').textContent = 'Send refused: a fresh review is required after a missed identifier was flagged.'
  return }
  // The guard accepts only the sealed engine result. A review result passes
  // only after "Mark as reviewed" for this exact revision.
