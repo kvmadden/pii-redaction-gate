@@ -36,9 +36,12 @@ test('a flagged note stays refused after edit-revert or reselecting its syntheti
  const guard = createMissedIdentifierGuard()
  const flagged = 'Patient Inez Thorn. Continue metformin 500 mg BID.'
  assert.equal(guard.refuses(flagged), false)
+ assert.equal(guard.requiresFreshReview(), false)
  guard.flag(flagged)
  assert.equal(guard.refuses(flagged), true)
  assert.equal(guard.refuses('Corrected synthetic note.'), false)
+ // Changing only unrelated text must still require a person to re-review.
+ assert.equal(guard.requiresFreshReview(), true)
  // Switching examples or temporarily editing cannot clear the reported miss.
  assert.equal(guard.refuses(flagged), true)
  guard.flag('Corrected synthetic note.')

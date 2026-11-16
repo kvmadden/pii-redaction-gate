@@ -101,6 +101,11 @@ async function main() {
   assert.match(await page.locator('#send-status').textContent(), /blocked/)
   await page.locator('#run').click()
   await page.waitForFunction(() => document.querySelector('#status').textContent.includes('Inspection complete'))
+  // Even a clean inspection of changed text requires a human re-review
+  // after a miss. Adding harmless text must not re-open sending by itself.
+  await page.locator('#send').click()
+  assert.match(await page.locator('#send-status').textContent(), /fresh review is required/)
+  await page.locator('#reviewed').click()
   await page.locator('#send').click()
   assert.match(await page.locator('#send-status').textContent(), /allowed/)
   // If the browser refuses to write a review log, flagging still blocks sends.
@@ -110,7 +115,7 @@ async function main() {
   await page.locator('#send').click()
   assert.match(await page.locator('#send-status').textContent(), /refused/)
   const stored = await page.evaluate(() => localStorage.getItem('redaction-inspector-reviews-v1'))
-  assert.equal(JSON.parse(stored).length, 2)
+  assert.equal(JSON.parse(stored).length, 3)
   assert.ok(!stored.includes('Inez'))
   await page.reload()
   await page.waitForFunction(() => document.querySelector('#status').textContent.includes('Inspection complete'))
