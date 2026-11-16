@@ -95,6 +95,12 @@ async function main() {
   await page.waitForFunction(() => document.querySelector('#status').textContent.includes('Inspection complete'))
   await page.locator('#send').click()
   assert.match(await page.locator('#send-status').textContent(), /allowed/)
+  // If the browser refuses to write a review log, flagging still blocks sends.
+  await page.evaluate(() => { Storage.prototype.setItem = () => { throw Error('Storage denied') } })
+  await page.locator('#flagged').click()
+  assert.match(await page.locator('#review-status').textContent(), /log was unavailable/)
+  await page.locator('#send').click()
+  assert.match(await page.locator('#send-status').textContent(), /refused/)
   const stored = await page.evaluate(() => localStorage.getItem('redaction-inspector-reviews-v1'))
   assert.equal(JSON.parse(stored).length, 2)
   assert.ok(!stored.includes('Inez'))
