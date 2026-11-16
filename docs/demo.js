@@ -176,18 +176,20 @@ function provenance() {
 $('example').addEventListener('change', provenance)
 $('note').addEventListener('input', () => { $('provenance').textContent = 'Custom synthetic draft. Source text and dates are not verified.' })
 for (const action of ['reviewed','flagged']) $(action).addEventListener('click', () => {
+ // A missed identifier must block immediately, even if local log storage fails.
+ if (action === 'flagged') {
+  flaggedDraft = true
+  reviewedRevision = -1
+  $('reviewed').disabled = true
+  $('flagged').disabled = true
+  $('send-status').textContent = 'Send gate: refused until the flagged identifier is corrected and the note reinspected.'
+ }
  try {
   recordReview(localStorage, action, {ready:!!current, blocked:current?.blocked, document:$('note').value === examples[$('example').value] ? $('example').value : 'custom-synthetic-draft', profile:$('profile').value, revision:version})
-  if (action === 'flagged') {
-   flaggedDraft = true
-   reviewedRevision = -1
-   $('reviewed').disabled = true
-   $('flagged').disabled = true
-   $('send-status').textContent = 'Send gate: refused until the flagged identifier is corrected and the note reinspected.'
-  } else reviewedRevision = version
+  if (action === 'reviewed') reviewedRevision = version
   $('review-status').textContent = action === 'flagged' ? 'Missed identifier flagged locally. Correct the draft and inspect again. No escalation was sent.' : 'Review recorded locally. This does not certify the output or release a payload.'
   showLog()
- } catch { $('review-status').textContent = 'Review was not saved. Inspect again or check browser storage availability.' }
+ } catch { $('review-status').textContent = action === 'flagged' ? 'Missed identifier flagged. The local log was unavailable, but sending remains refused until the draft is corrected.' : 'Review was not saved. Inspect again or check browser storage availability.' }
 })
 function showLog() {
  try {
