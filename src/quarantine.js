@@ -11,8 +11,10 @@
 //   - the quarantine root and the day directory must be real directories (not
 //     symlinks), owned by this user, with no group or other access. An existing
 //     directory that fails this is refused, never written into or repaired
-//   - the file is opened create-only with O_NOFOLLOW: an existing path or a
-//     planted symlink is never overwritten or followed
+//   - a private staging file is opened create-only with O_NOFOLLOW
+//   - the completed file is published with a create-only link, so a partial
+//     write never appears under the final JSON name
+//   - a process crash or failed cleanup can leave a private .pending file
 //   - the record ref is hashed in the file name, and so is a source id that is
 //     not a registered one
 //   - errors are reported as a fixed code from a short list, never a message
@@ -116,16 +118,28 @@ export function writeQuarantineSidecar({ source, ref, profile, hits = [], change
       hits,
       changes,
     };
+    // Serialization may run user code. Complete it before checking the
+    // destination so that no serialization hook runs after validation.
+    const json = Buffer.from(JSON.stringify(payload, null, 2) + "\n", "utf8");
     fs.mkdirSync(path.dirname(root), { recursive: true, mode: 0o700 });
     ensureDirectory(root);
     ensureDirectory(dayDir);
-    // Create only, and never through a symlink at the final path.
+    const temporary = path.join(dayDir, `.${path.basename(file)}.pending`);
     const { O_WRONLY, O_CREAT, O_EXCL, O_NOFOLLOW = 0 } = fs.constants;
-    const fd = fs.openSync(file, O_WRONLY | O_CREAT | O_EXCL | O_NOFOLLOW, 0o600);
+    const fd = fs.openSync(temporary, O_WRONLY | O_CREAT | O_EXCL | O_NOFOLLOW, 0o600);
     try {
-      fs.writeSync(fd, JSON.stringify(payload, null, 2) + "\n");
+      try {
+        fs.writeFileSync(fd, json);
+        fs.fsyncSync(fd);
+      } finally {
+        fs.closeSync(fd);
+      }
+      // Unlike rename, a hard link refuses to replace an occupied path.
+      fs.linkSync(temporary, file);
     } finally {
-      fs.closeSync(fd);
+      // A cleanup error must not hide the write error or invalidate a file
+      // that was already published.
+      try { fs.unlinkSync(temporary); } catch {}
     }
     return { path: file, error: null };
   } catch (e) {
