@@ -27,7 +27,8 @@ jobs:
         run: node scripts/build-demo.js && git diff --exit-code -- docs/runtime
 
   browser-send-flow:
-    runs-on: ubuntu-latest
+    # Playwright 1.56's Chromium installer does not support the ubuntu-26.04 runner image.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
