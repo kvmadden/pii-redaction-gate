@@ -17,7 +17,7 @@
 //   node eval/compare.js                       print a summary for this tree's engine
 //   node eval/compare.js --engine id=commit=/path/to/src/engine.js ...
 //                                              add engines exported from other commits
-//   node eval/compare.js --write ...           also write eval/comparison.{json,md}
+//   node eval/compare.js --write ...           write comparisons after reproducing recorded baselines
 //                                              and the docs/ copies
 //   node eval/compare.js --check               fail if this tree's engine no longer
 //                                              matches the committed comparison.json
@@ -26,11 +26,14 @@
 
 import fs from "node:fs";
 import { pathToFileURL } from "node:url";
+import { isDeepStrictEqual } from "node:util";
 import { DATASET } from "./dataset.js";
 import { aggregate, scoreSnippet, align, locate } from "./score.js";
 import { redactText, REDACTION_VERSION } from "../src/engine.js";
 
 const root = new URL("../", import.meta.url);
+const comparisonFile = new URL("eval/comparison.json", root);
+const comparisonDirectories = ["eval", "docs"];
 const TEMPLATES = JSON.parse(fs.readFileSync(new URL("./heldout.json", import.meta.url))).entries;
 
 export const SETS = {
@@ -135,14 +138,47 @@ function countTemplates(scores) {
 
 function parseEngines(argv) {
   const out = [];
+  const ids = new Set();
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] !== "--engine") continue;
     const [id, commit, ...rest] = String(argv[i + 1] || "").split("=");
     const path = rest.join("=");
     if (!id || !commit || !path) throw new Error("--engine needs id=commit=/path/to/src/engine.js");
+    if (id === "current") throw new Error("reserved engine id current");
+    if (ids.has(id)) throw new Error(`duplicate engine id ${id}`);
+    ids.add(id);
     out.push({ id, commit, path });
   }
   return out;
+}
+
+function checkBaselineSpecs(baselines, specs) {
+  const commits = new Map(specs.map(({ id, commit }) => [id, commit]));
+  for (const { id, commit } of baselines) {
+    if (!commits.has(id)) throw new Error(`missing baseline ${id}: supply --engine ${id}=${commit}=/path/to/src/engine.js`);
+    if (commits.get(id) !== commit) throw new Error(`baseline ${id} requires commit ${commit}`);
+  }
+}
+
+function readComparisonForWrite() {
+  if (fs.existsSync(comparisonFile)) return JSON.parse(fs.readFileSync(comparisonFile));
+  const hasExistingReport = comparisonDirectories.some((dir) =>
+    ["json", "md"].some((ext) => fs.existsSync(new URL(`${dir}/comparison.${ext}`, root)))
+  );
+  if (hasExistingReport) throw new Error("restore eval/comparison.json before regenerating an existing comparison");
+  return null;
+}
+
+function checkBaselineResults(recorded, regenerated, baselines) {
+  for (const [key, set] of Object.entries(recorded.sets)) {
+    for (const { id } of baselines) {
+      const previous = set.results[id];
+      const next = regenerated.sets[key]?.results[id];
+      if (!previous || !isDeepStrictEqual(previous, next)) {
+        throw new Error(`baseline ${id} differs for set ${key}: verify the baseline engine and evaluation inputs before writing`);
+      }
+    }
+  }
 }
 
 const LABELS = {
@@ -212,10 +248,9 @@ export function markdown(c) {
 }
 
 const isMain = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
-if (isMain) {
-  const argv = process.argv.slice(2);
+async function main(argv) {
   if (argv.includes("--check")) {
-    const committed = JSON.parse(fs.readFileSync(new URL("eval/comparison.json", root)));
+    const committed = JSON.parse(fs.readFileSync(comparisonFile));
     const fresh = await compare([]);
     let ok = true;
     for (const key of Object.keys(SETS)) {
@@ -223,21 +258,36 @@ if (isMain) {
       const b = JSON.stringify(JSON.parse(JSON.stringify(fresh.sets[key].results.current)));
       if (a !== b) {
         ok = false;
-        console.error(`eval/comparison.json is stale for set "${key}": regenerate with --write`);
+        console.error(`eval/comparison.json is stale for set "${key}": regenerate with --write and the recorded baseline engines`);
       }
     }
     if (!ok) process.exit(1);
     console.log("eval/comparison.json matches this tree's engine");
   } else {
-    const c = await compare(parseEngines(argv));
+    const specs = parseEngines(argv);
+    const writing = argv.includes("--write");
+    const recorded = writing ? readComparisonForWrite() : null;
+    const baselines = recorded?.engines.filter(({ id }) => id !== "current") ?? [];
+    checkBaselineSpecs(baselines, specs);
+    const c = await compare(specs);
+    if (!writing) {
+      process.stdout.write(markdown(c));
+      return;
+    }
+    const json = JSON.stringify(c, null, 2) + "\n";
+    if (recorded) checkBaselineResults(recorded, JSON.parse(json), baselines);
     const md = markdown(c);
-    if (argv.includes("--write")) {
-      const json = JSON.stringify(c, null, 2) + "\n";
-      for (const dir of ["eval", "docs"]) {
-        fs.writeFileSync(new URL(`${dir}/comparison.json`, root), json);
-        fs.writeFileSync(new URL(`${dir}/comparison.md`, root), md);
-      }
-      console.log("wrote eval/comparison.{json,md} and docs/comparison.{json,md}");
-    } else process.stdout.write(md);
+    for (const dir of comparisonDirectories) {
+      fs.writeFileSync(new URL(`${dir}/comparison.json`, root), json);
+      fs.writeFileSync(new URL(`${dir}/comparison.md`, root), md);
+    }
+    console.log("wrote eval/comparison.{json,md} and docs/comparison.{json,md}");
   }
+}
+
+if (isMain) {
+  await main(process.argv.slice(2)).catch((error) => {
+    console.error(error.message);
+    process.exitCode = 1;
+  });
 }
