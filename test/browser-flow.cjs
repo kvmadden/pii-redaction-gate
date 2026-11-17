@@ -84,6 +84,7 @@ async function main() {
     assert.match(await page.locator('#send-status').textContent(), /allowed/)
 
     // Erasing the record also revokes the current acknowledgment, not the flagged-note block.
+    await page.getByText('Local review log', { exact: true }).click()
     await page.locator('#clear-reviews').click()
     await page.locator('#send').click()
     assert.match(await page.locator('#send-status').textContent(), /refused/)
