@@ -203,8 +203,15 @@ function showLog() {
 }
 $('clear-reviews').addEventListener('click', () => {
  try { localStorage.removeItem(reviewKey)
- showLog()
- $('review-status').textContent = 'Local review log cleared.' } catch { $('review-status').textContent = 'Unable to clear browser storage.' }
+  // Clearing a review record also revokes the in-memory permission for this revision.
+  // A previously reported miss still stays blocked for the current browser session.
+  reviewedRevision = -1
+  showLog()
+  $('review-status').textContent = 'Local review log cleared. Review this revision again before sending.'
+  if (current && !current.blocked && (current.status === 'review' || missedIdentifiers.requiresFreshReview())) {
+   $('send-status').textContent = 'Send gate: refused until the current inspection is reviewed again.'
+  }
+ } catch { $('review-status').textContent = 'Unable to clear browser storage.' }
 })
 let evaluation
 function renderMetrics() {
