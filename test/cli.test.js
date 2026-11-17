@@ -62,6 +62,40 @@ test("cli: a people map file and stdin through a real process", () => {
   fs.rmSync(dir, { recursive: true, force: true });
 });
 
+test("cli: malformed people map fields block without printing source or config", (t) => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "cli-people-map-"));
+  t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
+  const file = path.join(dir, "people.json");
+  for (const [field, map] of [
+    ["people", { people: { name: "Avery Sample", role: "patient" } }],
+    ["safe", { people: [], safe: "Avery Sample" }],
+  ]) {
+    fs.writeFileSync(file, JSON.stringify(map));
+    const result = cli(["--profile", "standard", "--people-map", file, "--json"], "Avery Sample called.");
+    assert.equal(result.code, 2, field);
+    assert.deepEqual(JSON.parse(result.stdout), {
+      status: "blocked", blocked: true, text: "[redaction-blocked]", error: { stage: "people-map" },
+    });
+    assert.equal(result.stderr, "redaction-gate: BLOCKED (people-map)\n");
+  }
+});
+
+test("cli: an explicit people map is read again on each invocation", (t) => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "cli-people-map-reload-"));
+  t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
+  const file = path.join(dir, "people.json");
+  const args = ["--profile", "standard", "--people-map", file];
+  fs.writeFileSync(file, JSON.stringify({ people: [{ name: "Avery Sample", role: "patient" }] }));
+  const accepted = cli(args, "Avery Sample called.");
+  assert.equal(accepted.code, 0);
+  assert.equal(accepted.stdout, "[patient] called.\n");
+
+  fs.writeFileSync(file, JSON.stringify({ people: "invalid" }));
+  const refused = cli(args, "Avery Sample called.");
+  assert.equal(refused.code, 2);
+  assert.equal(refused.stdout, "[redaction-blocked]\n");
+});
+
 test("cli: oversized stdin blocks before the writer closes the pipe", async (t) => {
   const child = spawn(process.execPath, [BIN, "--json", "-"]);
   t.after(() => {
