@@ -6,7 +6,7 @@
 // Options:
 //   --source <id>           registered source id (selects the profile). Unknown ids block.
 //   --profile <name>        light, standard, identifiers or strict (wins over --source)
-//   --people-map <path>     JSON people map ({ people: [...], safe: [...] }). Unreadable blocks.
+//   --people-map <path>     JSON people map ({ people: [...], safe: [...] }). Invalid maps block.
 //   --reference-date <date> date used to judge birth years (ages over 89)
 //   --json                  print the whole result as JSON instead of the text
 //   --help                  usage on stderr, exit 1 (never exit 0 without a clean redaction)
@@ -24,7 +24,7 @@
 import fs from "node:fs";
 import { StringDecoder } from "node:string_decoder";
 import { fileURLToPath } from "node:url";
-import { redactText, BLOCKED_TEXT, DEFAULT_MAX_LENGTH } from "../src/engine.js";
+import { loadPeopleMap, redactText, BLOCKED_TEXT, DEFAULT_MAX_LENGTH } from "../src/index.js";
 
 const EXIT = { clean: 0, usage: 1, blocked: 2, review: 3 };
 
@@ -92,8 +92,7 @@ export function run(argv, { readText = readInput } = {}) {
   let peopleMap = { people: [], safe: [] };
   if (opts["people-map"]) {
     try {
-      peopleMap = JSON.parse(fs.readFileSync(opts["people-map"], "utf8"));
-      if (!peopleMap || typeof peopleMap !== "object" || Array.isArray(peopleMap)) throw new TypeError("not an object");
+      peopleMap = loadPeopleMap({ mapPath: opts["people-map"], required: true, force: true });
     } catch {
       return blocked("people-map");
     }
