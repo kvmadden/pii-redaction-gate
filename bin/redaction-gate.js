@@ -22,8 +22,9 @@
 //   1  usage error
 
 import fs from "node:fs";
+import { StringDecoder } from "node:string_decoder";
 import { fileURLToPath } from "node:url";
-import { redactText, BLOCKED_TEXT } from "../src/engine.js";
+import { redactText, BLOCKED_TEXT, DEFAULT_MAX_LENGTH } from "../src/engine.js";
 
 const EXIT = { clean: 0, usage: 1, blocked: 2, review: 3 };
 
@@ -56,7 +57,23 @@ export function parseArgs(argv) {
 }
 
 function readInput(file) {
-  return file === null || file === "-" ? fs.readFileSync(0, "utf8") : fs.readFileSync(file, "utf8");
+  const fromStdin = file === null || file === "-";
+  const fd = fromStdin ? 0 : fs.openSync(file, "r");
+  try {
+    const decoder = new StringDecoder("utf8");
+    const buffer = Buffer.allocUnsafe(64 * 1024);
+    let text = "";
+    let bytesRead;
+    do {
+      bytesRead = fs.readSync(fd, buffer, 0, buffer.length, null);
+      text += bytesRead === 0 ? decoder.end() : decoder.write(buffer.subarray(0, bytesRead));
+      // Match the engine's UTF-16 limit, including when a read splits UTF-8.
+      if (text.length > DEFAULT_MAX_LENGTH) throw new RangeError("input too long");
+    } while (bytesRead !== 0);
+    return text;
+  } finally {
+    if (!fromStdin) fs.closeSync(fd);
+  }
 }
 
 /** Run the CLI. Returns { code, stdout, stderr } so it can be tested without a process. */
