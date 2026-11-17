@@ -2,12 +2,14 @@
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { spawnSync } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
+import { once } from "node:events";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { run, parseArgs } from "../bin/redaction-gate.js";
+import { DEFAULT_MAX_LENGTH } from "../src/engine.js";
 
 const BIN = fileURLToPath(new URL("../bin/redaction-gate.js", import.meta.url));
 const cli = (argv, input) => run(argv, { readText: () => input });
@@ -58,4 +60,55 @@ test("cli: a people map file and stdin through a real process", () => {
   assert.equal(p.status, 0);
   assert.equal(p.stdout, "[patient] called.\n");
   fs.rmSync(dir, { recursive: true, force: true });
+});
+
+test("cli: oversized stdin blocks before the writer closes the pipe", async (t) => {
+  const child = spawn(process.execPath, [BIN, "--json", "-"]);
+  t.after(() => {
+    child.stdin.destroy();
+    child.kill();
+  });
+  let stdout = "";
+  let stderr = "";
+  const inputErrors = [];
+  child.stdout.setEncoding("utf8").on("data", (part) => { stdout += part; });
+  child.stderr.setEncoding("utf8").on("data", (part) => { stderr += part; });
+  child.stdin.on("error", (error) => inputErrors.push(error.code));
+  // Leave stdin open. The reader must stop as soon as the input is too long.
+  child.stdin.write(Buffer.alloc(DEFAULT_MAX_LENGTH + 1, 0x61));
+  const [code] = await once(child, "close", { signal: AbortSignal.timeout(5000) });
+  assert.equal(code, 2);
+  assert.deepEqual(JSON.parse(stdout), {
+    status: "blocked", blocked: true, text: "[redaction-blocked]", error: { stage: "input" },
+  });
+  assert.equal(stderr, "redaction-gate: BLOCKED (input)\n");
+  assert.ok(inputErrors.every((code) => code === "EPIPE"));
+});
+
+test("cli: file decoding preserves UTF-8 characters split across reads", (t) => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "cli-utf8-"));
+  t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
+  const file = path.join(dir, "fictional.txt");
+  const input = Buffer.concat([Buffer.from("\uFEFFFictional café 🧪"), Buffer.from([0xe2, 0x82])]);
+  fs.writeFileSync(file, input);
+  const read = fs.readSync;
+  t.mock.method(fs, "readSync", (fd, buffer, offset, length, position) =>
+    read(fd, buffer, offset, Math.min(length, 2), position));
+  const result = run(["--profile", "light", file]);
+  assert.equal(result.code, 0);
+  assert.equal(result.stdout, input.toString("utf8") + "\n");
+});
+
+test("cli: the input limit counts UTF-16 units rather than encoded bytes", () => {
+  const text = "é".repeat(DEFAULT_MAX_LENGTH);
+  const accepted = spawnSync(process.execPath, [BIN, "--profile", "light"], {
+    input: text, encoding: "utf8", maxBuffer: Buffer.byteLength(text) + 1024, timeout: 5000,
+  });
+  assert.equal(accepted.status, 0, accepted.stderr);
+  assert.ok(accepted.stdout === text + "\n");
+  const refused = spawnSync(process.execPath, [BIN, "--profile", "light"], {
+    input: text + "é", encoding: "utf8", timeout: 5000,
+  });
+  assert.equal(refused.status, 2);
+  assert.equal(refused.stdout, "[redaction-blocked]\n");
 });
