@@ -22,7 +22,7 @@ import {
   BLOCKED_TEXT,
   REDACTION_VERSION,
 } from "../src/index.js";
-import { gateParsedTranscript, gateSummary, sendRedacted, redactionMetaForRow, describeGate } from "../src/gate.js";
+import { gateParsedTranscript, gateSummary, gateBodyText, sendRedacted, redactionMetaForRow, describeGate } from "../src/gate.js";
 
 const EMPTY = { people: [], safe: [] };
 const ID = { profile: "identifiers", peopleMap: EMPTY };
@@ -229,6 +229,62 @@ test("contract: a people map that fails to load is not cached, and required mode
     else process.env.REDACTION_PEOPLE_PATH = before;
   }
   fs.rmSync(dir, { recursive: true, force: true });
+});
+
+test("contract: a required map read checks the current file even after a successful load", (t) => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "required-map-"));
+  t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
+  const mapPath = path.join(dir, "map.json");
+  const first = { people: [{ name: "Avery Sample", role: "patient" }] };
+  const updated = { people: [{ name: "Ellis Example", role: "patient" }] };
+
+  fs.writeFileSync(mapPath, JSON.stringify(first));
+  assert.deepEqual(loadPeopleMap({ mapPath }), first);
+  fs.writeFileSync(mapPath, JSON.stringify(updated));
+  assert.deepEqual(loadPeopleMap({ mapPath }), first, "optional reads still use the cache");
+  assert.deepEqual(loadPeopleMap({ mapPath, required: true }), updated);
+
+  fs.writeFileSync(mapPath, JSON.stringify({ people: "invalid" }));
+  assert.throws(() => loadPeopleMap({ mapPath, required: true }), { name: "RedactionConfigError" });
+});
+
+test("contract: losing a cached required map blocks every gate before sending", (t) => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "required-map-gate-"));
+  const mapPath = path.join(dir, "map.json");
+  const previous = process.env.REDACTION_PEOPLE_PATH;
+  process.env.REDACTION_PEOPLE_PATH = mapPath;
+  t.after(() => {
+    if (previous === undefined) delete process.env.REDACTION_PEOPLE_PATH;
+    else process.env.REDACTION_PEOPLE_PATH = previous;
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
+
+  fs.writeFileSync(mapPath, JSON.stringify({ people: [{ name: "Avery Sample", role: "patient" }] }));
+  const source = "clinical-note";
+  const parsed = { firstUserMsg: "Avery Sample called." };
+  const required = { requirePeopleMap: true };
+  const gate = gateParsedTranscript({ parsed, source, ...required });
+  assert.equal(gate.status, "clean");
+  assert.equal(gate.parsed.firstUserMsg, "[patient] called.");
+  fs.unlinkSync(mapPath);
+
+  for (const result of [
+    gateParsedTranscript({ parsed, source, ...required }),
+    gateSummary(parsed.firstUserMsg, gate, source, undefined, required),
+    gateBodyText(parsed.firstUserMsg, gate, source, undefined, required),
+  ]) {
+    assert.equal(result.status, "blocked");
+    assert.deepEqual(result.error, { stage: "people-map" });
+    assert.equal(result.parsed, null);
+    assert.equal(result.summary, null);
+    assert.equal(result.body, null);
+  }
+  const sink = t.mock.fn();
+  assert.throws(
+    () => sendRedacted({ parsed, source, sink, acceptReview: true, ...required }),
+    { name: "RedactionBlockedError" },
+  );
+  assert.equal(sink.mock.callCount(), 0);
 });
 
 test("contract: known names map to role tokens and a nearby name part is caught", () => {

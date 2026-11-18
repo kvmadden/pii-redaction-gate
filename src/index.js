@@ -58,8 +58,8 @@ function validMapShape(map) {
  *   2. env REDACTION_PEOPLE_PATH (a local-only map that is never committed)
  *   3. data/redaction-people.json (committed default: empty)
  *
- * Only a successful read is cached, so a map that becomes readable later is
- * picked up on the next call.
+ * Only a successful read is cached. Required reads always check the current
+ * file, so a cached copy cannot hide a missing or malformed map.
  *
  * A missing, unreadable or malformed map:
  *   - required: true  throws RedactionConfigError. The gate turns that into a
@@ -73,7 +73,7 @@ function validMapShape(map) {
  */
 export function loadPeopleMap({ mapPath, env = process.env, force = false, required = false } = {}) {
   const p = mapPath || (env.REDACTION_PEOPLE_PATH && env.REDACTION_PEOPLE_PATH.trim()) || DEFAULT_PEOPLE_PATH;
-  if (!force && peopleCache.has(p)) return peopleCache.get(p);
+  if (!required && !force && peopleCache.has(p)) return peopleCache.get(p);
   let map;
   let problem = null;
   try {
