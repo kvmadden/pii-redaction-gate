@@ -1,5 +1,11 @@
 # Clinical text redaction gate
 
+This library and command-line tool help developers screen clinical-style text for identifiers before it reaches a model or data store.
+
+Try the [public redaction exhibit](https://kvmadden.com/projects/pii-redaction-gate/#try), which runs the first release on a fictional note.
+
+For the current local demo, run `npm run demo` with Node 22 or later and open the address printed in the terminal. Use fictional text only.
+
 A rule-based gate for clinical free text on its way to a model prompt or a record store. It removes identifiers, keeps the clinical content (drugs, doses, labs, diagnoses), and tells you what it could not decide. Every result is one of three things:
 
 - **clean**: every check this profile runs read the whole input and found nothing left to decide. This is not proof that no identifier remains: on the blind set, 8 of the 12 documents marked clean still held one. The result lists what was read, which checks ran, and the known gaps no check can see.
