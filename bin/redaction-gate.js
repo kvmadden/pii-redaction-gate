@@ -92,7 +92,7 @@ export function run(argv, { readText = readInput } = {}) {
   let peopleMap = { people: [], safe: [] };
   if (opts["people-map"]) {
     try {
-      peopleMap = loadPeopleMap({ mapPath: opts["people-map"], required: true, force: true });
+      peopleMap = loadPeopleMap({ mapPath: opts["people-map"], required: true });
     } catch {
       return blocked("people-map");
     }
