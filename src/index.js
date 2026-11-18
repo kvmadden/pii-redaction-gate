@@ -52,6 +52,16 @@ function validMapShape(map) {
     (map.people === undefined || Array.isArray(map.people)) && (map.safe === undefined || Array.isArray(map.safe));
 }
 
+const nonblank = (value) => typeof value === "string" && value.trim().length > 0;
+
+function validRequiredEntries(map) {
+  return (map.people ?? []).every((entry) =>
+    entry && nonblank(entry.name) &&
+    (entry.role === undefined || typeof entry.role === "string") &&
+    (entry.aliases === undefined || (Array.isArray(entry.aliases) && entry.aliases.every(nonblank)))
+  ) && (map.safe ?? []).every(nonblank);
+}
+
 /**
  * Load the people map. Resolution order:
  *   1. explicit `mapPath` argument
@@ -80,6 +90,7 @@ export function loadPeopleMap({ mapPath, env = process.env, force = false, requi
     const decoder = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true });
     map = JSON.parse(decoder.decode(fs.readFileSync(p)));
     if (!validMapShape(map)) problem = "people and safe must be arrays";
+    else if (required && !validRequiredEntries(map)) problem = "has invalid entries";
   } catch (e) {
     problem = e instanceof SyntaxError ? "not valid JSON" : "cannot be read";
   }
