@@ -9,7 +9,7 @@
 // independent cases. Report it per template ("26 of 27"), never as a rate over
 // 108. It is development data. The committed JSON is kept byte-identical (a
 // test checks its hash), so the limitation text it carries is unchanged.
-import fs from 'node:fs'
+// Run `node eval/generate-heldout.js` to reproduce the bytes on stdout.
 export const SEED = 20261031
 let state = SEED
 const next = () => (state = (Math.imul(state, 1664525) + 1013904223) >>> 0)
@@ -58,4 +58,4 @@ for (let round = 0; round < 4; round++) {
   }
 }
 for (const [category, kept] of clinical) entries.push({id: `h${entries.length + 1}`, kind: 'negative', text: `${kept}.`, pii: [], keep: [[category, kept]]})
-fs.writeFileSync(new URL('./heldout.json', import.meta.url), JSON.stringify({seed: SEED, limitation: 'Single-author grammar corpus with repeated templates. Not independently authored or real-world validation.', entries}, null, 2) + '\n')
+process.stdout.write(JSON.stringify({seed: SEED, limitation: 'Single-author grammar corpus with repeated templates. Not independently authored or real-world validation.', entries}, null, 2) + '\n')
