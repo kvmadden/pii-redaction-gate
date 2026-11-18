@@ -156,7 +156,7 @@ test("cli: file decoding preserves UTF-8 characters split across reads", (t) => 
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "cli-utf8-"));
   t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
   const file = path.join(dir, "fictional.txt");
-  const input = Buffer.concat([Buffer.from("\uFEFFFictional café 🧪"), Buffer.from([0xe2, 0x82])]);
+  const input = Buffer.from("\uFEFFFictional café 🧪 \uFFFD");
   fs.writeFileSync(file, input);
   const read = fs.readSync;
   t.mock.method(fs, "readSync", (fd, buffer, offset, length, position) =>
@@ -164,6 +164,27 @@ test("cli: file decoding preserves UTF-8 characters split across reads", (t) => 
   const result = run(["--profile", "light", file]);
   assert.equal(result.code, 0);
   assert.equal(result.stdout, input.toString("utf8") + "\n");
+});
+
+test("cli: malformed UTF-8 blocks files and stdin without printing input", (t) => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "cli-invalid-input-"));
+  t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
+  const file = path.join(dir, "fictional.txt");
+  const invalid = Buffer.concat([Buffer.from("Fictional text. "), Buffer.from([0xff])]);
+  const truncated = Buffer.concat([Buffer.from("Fictional text. "), Buffer.from([0xe2, 0x82])]);
+  for (const bytes of [invalid, truncated]) {
+    fs.writeFileSync(file, bytes);
+    for (const result of [
+      spawnSync(process.execPath, [BIN, "--profile", "light", "--json", file], { encoding: "utf8" }),
+      spawnSync(process.execPath, [BIN, "--profile", "light", "--json", "-"], { input: bytes, encoding: "utf8" }),
+    ]) {
+      assert.equal(result.status, 2);
+      assert.deepEqual(JSON.parse(result.stdout), {
+        status: "blocked", blocked: true, text: "[redaction-blocked]", error: { stage: "input" },
+      });
+      assert.equal(result.stderr, "redaction-gate: BLOCKED (input)\n");
+    }
+  }
 });
 
 test("cli: the input limit counts UTF-16 units rather than encoded bytes", () => {

@@ -22,7 +22,6 @@
 //   1  usage error
 
 import fs from "node:fs";
-import { StringDecoder } from "node:string_decoder";
 import { fileURLToPath } from "node:url";
 import { loadPeopleMap, redactText, BLOCKED_TEXT, DEFAULT_MAX_LENGTH } from "../src/index.js";
 
@@ -30,6 +29,7 @@ const EXIT = { clean: 0, usage: 1, blocked: 2, review: 3 };
 
 const HELP = `usage: redaction-gate [--source id | --profile name] [--people-map path]
                       [--reference-date YYYY-MM-DD] [--json] [file | -]
+input files and stdin must be valid UTF-8
 exit codes: 0 clean, 3 needs review, 2 blocked, 1 usage error`;
 
 export function parseArgs(argv) {
@@ -60,13 +60,13 @@ function readInput(file) {
   const fromStdin = file === null || file === "-";
   const fd = fromStdin ? 0 : fs.openSync(file, "r");
   try {
-    const decoder = new StringDecoder("utf8");
+    const decoder = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true });
     const buffer = Buffer.allocUnsafe(64 * 1024);
     let text = "";
     let bytesRead;
     do {
       bytesRead = fs.readSync(fd, buffer, 0, buffer.length, null);
-      text += bytesRead === 0 ? decoder.end() : decoder.write(buffer.subarray(0, bytesRead));
+      text += bytesRead === 0 ? decoder.decode() : decoder.decode(buffer.subarray(0, bytesRead), { stream: true });
       // Match the engine's UTF-16 limit, including when a read splits UTF-8.
       if (text.length > DEFAULT_MAX_LENGTH) throw new RangeError("input too long");
     } while (bytesRead !== 0);
