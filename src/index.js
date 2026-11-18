@@ -41,6 +41,7 @@ export { assertSendable } from "./send-guard.js";
 export { writeQuarantineSidecar, defaultQuarantineDir, QUARANTINE_VERSION } from "./quarantine.js";
 
 import { RedactionConfigError as ConfigError } from "./profiles.js";
+import { MIN_KNOWN_NAME } from "./names.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const DEFAULT_PEOPLE_PATH = path.resolve(__dirname, "../data/redaction-people.json");
@@ -53,12 +54,13 @@ function validMapShape(map) {
 }
 
 const nonblank = (value) => typeof value === "string" && value.trim().length > 0;
+const matchableName = (value) => typeof value === "string" && value.trim().length >= MIN_KNOWN_NAME;
 
 function validRequiredEntries(map) {
   return (map.people ?? []).every((entry) =>
-    entry && nonblank(entry.name) &&
+    entry && matchableName(entry.name) &&
     (entry.role === undefined || typeof entry.role === "string") &&
-    (entry.aliases === undefined || (Array.isArray(entry.aliases) && entry.aliases.every(nonblank)))
+    (entry.aliases === undefined || (Array.isArray(entry.aliases) && entry.aliases.every(matchableName)))
   ) && (map.safe ?? []).every(nonblank);
 }
 

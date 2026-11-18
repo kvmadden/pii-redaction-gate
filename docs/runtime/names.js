@@ -58,7 +58,7 @@ import {
   UNIT_WORDS,
 } from "./grammar.js";
 
-const MIN_KNOWN_NAME = 2;
+export const MIN_KNOWN_NAME = 2;
 
 /** Normalize an injected people map; tolerate missing/partial shapes. */
 export function normalizePeopleMap(peopleMap) {
