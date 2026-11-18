@@ -1,10 +1,33 @@
 # Clinical text redaction gate
 
-This library and command-line tool help developers screen clinical-style text for identifiers before it reaches a model or data store.
+A library and command-line tool for developers who need to screen clinical-style text for identifiers before sending it to a model or data store.
 
-Try the [public redaction exhibit](https://kvmadden.com/projects/pii-redaction-gate/#try), which runs the first release on a fictional note.
+It replaces detected identifiers, preserves clinical wording where its rules allow, and returns a result that can pass, needs human review, or is blocked. A clean result can still contain an identifier. **This is a research prototype, not validated de-identification. Use fictional text only.**
 
-For the current local demo, run `npm run demo` with Node 22 or later and open the address printed in the terminal. Use fictional text only.
+## Try it
+
+Open the [public redaction exhibit](https://kvmadden.com/projects/pii-redaction-gate/#try) for a fictional example of the first release. To try the current engine locally, clone this repository and run:
+
+```sh
+# Node 22 or later. No dependencies or API key required.
+npm run demo
+```
+
+Open the local address printed in the terminal. The local demo processes text in your browser.
+
+## How it was tested
+
+Automated tests cover identifier removal, clinical wording, malformed inputs, review decisions and the send guard. Browser tests exercise review and simulated sending. A frozen synthetic evaluation compares removal, missed identifiers and review workload with a baseline. Its scores describe the archived revision, not later safeguards. Neither the tests nor the evaluation establish safety on real patient data.
+
+```sh
+npm test
+npm run check
+```
+
+See the [blind evaluation report](fresh-test/v1/results/scored-2d2011ff449da01b.md) for the measured failures and limits.
+
+<details>
+<summary>Technical guide, historical results and limitations</summary>
 
 A rule-based gate for clinical free text on its way to a model prompt or a record store. It removes identifiers, keeps the clinical content (drugs, doses, labs, diagnoses), and tells you what it could not decide. Every result is one of three things:
 
@@ -211,3 +234,5 @@ Rebuilding the lexicon needs the six source files listed in the manifest. The sc
 Built in June 2026 as a privacy gate for a private knowledge system and published in October as a standalone snapshot. The [first release README](docs/published-readme.md) and the [verification records](docs/evidence/) are kept as records, with corrections at the top where their claims no longer hold. This version replaces the hand-picked clinical word list with public vocabularies, adds the review status, the scan report, the sealed send guard and the command line, and relabels both synthetic sets as development data.
 
 MIT. Copyright 2026 Kevin Madden. All fixtures are fictional or synthetic.
+
+</details>
