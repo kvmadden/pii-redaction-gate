@@ -80,6 +80,27 @@ test("cli: malformed people map fields block without printing source or config",
   }
 });
 
+test("cli: malformed UTF-8 in a people map blocks without echoing bytes", (t) => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "cli-utf8-"));
+  t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
+  const file = path.join(dir, "people.json");
+  fs.writeFileSync(file, Buffer.concat([
+    Buffer.from('{"people":[{"name":"Avery '), Buffer.from([0xff]),
+    Buffer.from('Sample","role":"patient"}]}'),
+  ]));
+  const args = [BIN, "--people-map", file];
+  const result = spawnSync(process.execPath, [...args, "--json"], { input: "Avery Sample called.", encoding: "utf8" });
+  assert.equal(result.status, 2);
+  assert.deepEqual(JSON.parse(result.stdout), {
+    status: "blocked", blocked: true, text: "[redaction-blocked]", error: { stage: "people-map" },
+  });
+  assert.equal(result.stderr, "redaction-gate: BLOCKED (people-map)\n");
+  fs.writeFileSync(file, JSON.stringify({ people: [{ name: "Évelyne Sample", role: "patient" }] }));
+  const accepted = spawnSync(process.execPath, args, { input: "Évelyne Sample called.", encoding: "utf8" });
+  assert.equal(accepted.status, 0);
+  assert.equal(accepted.stdout, "[patient] called.\n");
+});
+
 test("cli: an explicit people map is read again on each invocation", (t) => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "cli-people-map-reload-"));
   t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
