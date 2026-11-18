@@ -118,7 +118,7 @@ assertSendable(withSummary)             // throws on blocked, and on review unle
 - Results are sealed and frozen inside the engine, which does not export its sealing function. `assertSendable` accepts only those results, so a hand-built `{ blocked: false }`, a spread copy, or the raw record is refused, and nothing in a result can change after the check. `gateSummary` and `gateBodyText` return a new gate instead of changing the old one.
 - Every string and every number in a record is read, wherever it sits. A number is read with its key as a label, so `{ mrn: 4471023 }` and `{ age: 96 }` block. A Map comes back as an array of `[key, value]` pairs and a Set as an array. A declared text field of the wrong type, a value the code cannot read (a Date, a Buffer, a class instance, an array with its own methods), a cycle, nesting deeper than 32, more than 200,000 values, an array longer than 100,000, an object used as a Map key, or a key the rules would change or flag blocks the record. Record and gate results carry the same scan report as text results.
 - Originals are kept only on the non-enumerable `changes` list, for the optional local quarantine sidecar. That file is plain JSON with mode 0600, written only into real directories (not symlinks) that the operator owns with no group or other access. It is not encrypted and has no retention limit.
-- Put your own facility, clinician and patient names in the people map (`REDACTION_PEOPLE_PATH`). That is how a "needs review" facility becomes a deterministic removal next time. Use `loadPeopleMap({ required: true })` or `requirePeopleMap: true` to block when the map cannot be read.
+- For a demonstration, put fictional facility, clinician and patient names in a local people map (`REDACTION_PEOPLE_PATH`). Profiles that run the name tier use this map for deterministic matching. Use `loadPeopleMap({ required: true })` or pass `requirePeopleMap: true` to a gate. Required reads check the current file on every call. A missing or malformed required map blocks the gate.
 - Pass `referenceDate` so birth years can be judged against the 89-year limit. Without it a birth year goes to review.
 
 ## Development evidence in detail
@@ -189,7 +189,7 @@ Presidio is installed outside this repository, in a virtual environment written 
 ## Development
 
 ```bash
-npm test                      # 272 tests, about 15 seconds
+npm test                      # run the test suite
 npm run check                 # committed comparison matches the engine, lexicon matches its hash
 node eval/compare.js          # print the development comparison for this tree
 node eval/run.js              # print per-profile results on the development snippets
