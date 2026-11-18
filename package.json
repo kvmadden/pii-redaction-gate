@@ -25,7 +25,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "node --test 'test/**/*.test.js'",
+    "test": "node --test --test-concurrency=1 'test/**/*.test.js'",
     "eval": "node eval/run.js",
     "compare": "node eval/compare.js",
     "check": "node eval/compare.js --check && node scripts/build-lexicon.mjs --check",

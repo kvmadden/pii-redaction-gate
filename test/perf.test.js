@@ -5,6 +5,8 @@
 // eight times as long when linear and sixty-four times when quadratic. The test
 // fails above twenty, with only a 30 ms floor for timer noise, so a quadratic
 // path fails even when the small input is fast (review round 2, K22).
+// The npm test command runs files serially to keep unrelated tests from
+// competing for CPU while these measurements run.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
