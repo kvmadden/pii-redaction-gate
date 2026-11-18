@@ -27,16 +27,23 @@ jobs:
         run: node scripts/build-demo.js && git diff --exit-code -- docs/runtime
 
   browser-send-flow:
-    # Playwright 1.56's Chromium installer does not support the ubuntu-26.04 runner image.
+    name: browser-send-flow
     runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    # The matching image supplies Chromium and its system libraries.
+    container:
+      image: &playwright_image mcr.microsoft.com/playwright:v1.56.1-noble
+      options: --init --shm-size=1g
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
           node-version: 22
       - name: Install pinned browser test driver (not an app dependency)
-        run: npm install --no-save --package-lock=false --ignore-scripts playwright@1.56.1
-      - name: Install headless Chromium and system libraries
-        run: npx playwright install --with-deps chromium
+        env:
+          PLAYWRIGHT_IMAGE: *playwright_image
+        run: |
+          image_tag=${PLAYWRIGHT_IMAGE##*:v}
+          npm install --no-save --package-lock=false --ignore-scripts "playwright@${image_tag%-noble}"
       - name: Verify synthetic review, refusal and simulated-send flows
         run: node test/browser-flow.cjs
