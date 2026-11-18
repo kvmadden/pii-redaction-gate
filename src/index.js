@@ -77,7 +77,8 @@ export function loadPeopleMap({ mapPath, env = process.env, force = false, requi
   let map;
   let problem = null;
   try {
-    map = JSON.parse(fs.readFileSync(p, "utf8"));
+    const decoder = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true });
+    map = JSON.parse(decoder.decode(fs.readFileSync(p)));
     if (!validMapShape(map)) problem = "people and safe must be arrays";
   } catch (e) {
     problem = e instanceof SyntaxError ? "not valid JSON" : "cannot be read";
