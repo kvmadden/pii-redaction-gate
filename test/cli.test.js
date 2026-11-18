@@ -69,6 +69,14 @@ test("cli: malformed people map fields block without printing source or config",
   for (const [field, map] of [
     ["people", { people: { name: "Avery Sample", role: "patient" } }],
     ["safe", { people: [], safe: "Avery Sample" }],
+    ["person name", { people: [{ name: 42, role: "patient" }] }],
+    ["blank person name", { people: [{ name: " " }] }],
+    ["unmatchable person name", { people: [{ name: " Q " }] }],
+    ["alias type", { people: [{ name: "Avery Sample", aliases: ["A. Sample", null] }] }],
+    ["aliases list", { people: [{ name: "Avery Sample", aliases: "A. Sample" }] }],
+    ["unmatchable alias", { people: [{ name: "Avery Sample", aliases: [" Q "] }] }],
+    ["role type", { people: [{ name: "Avery Sample", role: 42 }] }],
+    ["safe entry", { safe: [false] }],
   ]) {
     fs.writeFileSync(file, JSON.stringify(map));
     const result = cli(["--profile", "standard", "--people-map", file, "--json"], "Avery Sample called.");
@@ -78,6 +86,10 @@ test("cli: malformed people map fields block without printing source or config",
     });
     assert.equal(result.stderr, "redaction-gate: BLOCKED (people-map)\n");
   }
+  fs.writeFileSync(file, JSON.stringify({ people: [{ name: "Avery Sample", aliases: ["A. Sample"] }], safe: ["metformin"] }));
+  const accepted = cli(["--people-map", file, "--profile", "standard"], "A. Sample called.");
+  assert.equal(accepted.code, 0);
+  assert.equal(accepted.stdout, "[name] called.\n");
 });
 
 test("cli: malformed UTF-8 in a people map blocks without echoing bytes", (t) => {

@@ -41,6 +41,7 @@ export { assertSendable } from "./send-guard.js";
 export { writeQuarantineSidecar, defaultQuarantineDir, QUARANTINE_VERSION } from "./quarantine.js";
 
 import { RedactionConfigError as ConfigError } from "./profiles.js";
+import { MIN_KNOWN_NAME } from "./names.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const DEFAULT_PEOPLE_PATH = path.resolve(__dirname, "../data/redaction-people.json");
@@ -50,6 +51,17 @@ const peopleCache = new Map();
 function validMapShape(map) {
   return map && typeof map === "object" && !Array.isArray(map) &&
     (map.people === undefined || Array.isArray(map.people)) && (map.safe === undefined || Array.isArray(map.safe));
+}
+
+const nonblank = (value) => typeof value === "string" && value.trim().length > 0;
+const matchableName = (value) => typeof value === "string" && value.trim().length >= MIN_KNOWN_NAME;
+
+function validRequiredEntries(map) {
+  return (map.people ?? []).every((entry) =>
+    entry && matchableName(entry.name) &&
+    (entry.role === undefined || typeof entry.role === "string") &&
+    (entry.aliases === undefined || (Array.isArray(entry.aliases) && entry.aliases.every(matchableName)))
+  ) && (map.safe ?? []).every(nonblank);
 }
 
 /**
@@ -80,6 +92,7 @@ export function loadPeopleMap({ mapPath, env = process.env, force = false, requi
     const decoder = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true });
     map = JSON.parse(decoder.decode(fs.readFileSync(p)));
     if (!validMapShape(map)) problem = "people and safe must be arrays";
+    else if (required && !validRequiredEntries(map)) problem = "has invalid entries";
   } catch (e) {
     problem = e instanceof SyntaxError ? "not valid JSON" : "cannot be read";
   }
