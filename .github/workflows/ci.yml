@@ -30,12 +30,9 @@ jobs:
     name: browser-send-flow
     runs-on: ubuntu-24.04
     timeout-minutes: 10
-    strategy:
-      matrix:
-        playwright: [1.56.1]
     # The matching image supplies Chromium and its system libraries.
     container:
-      image: mcr.microsoft.com/playwright:v${{ matrix.playwright }}-noble
+      image: &playwright_image mcr.microsoft.com/playwright:v1.56.1-noble
       options: --init --shm-size=1g
     steps:
       - uses: actions/checkout@v5
@@ -44,7 +41,9 @@ jobs:
           node-version: 22
       - name: Install pinned browser test driver (not an app dependency)
         env:
-          PLAYWRIGHT_VERSION: ${{ matrix.playwright }}
-        run: npm install --no-save --package-lock=false --ignore-scripts "playwright@$PLAYWRIGHT_VERSION"
+          PLAYWRIGHT_IMAGE: *playwright_image
+        run: |
+          image_tag=${PLAYWRIGHT_IMAGE##*:v}
+          npm install --no-save --package-lock=false --ignore-scripts "playwright@${image_tag%-noble}"
       - name: Verify synthetic review, refusal and simulated-send flows
         run: node test/browser-flow.cjs
