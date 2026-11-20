@@ -202,16 +202,20 @@ function showLog() {
  } catch { $('review-log').textContent = 'Local log unavailable. Clear it to start again.' }
 }
 $('clear-reviews').addEventListener('click', () => {
- try { localStorage.removeItem(reviewKey)
-  // Clearing a review record also revokes the in-memory permission for this revision.
-  // A previously reported miss still stays blocked for the current browser session.
-  reviewedRevision = -1
+ // Revoke the in-memory permission before touching browser storage. A storage
+ // failure cannot leave this revision approved for a simulated send.
+ // A previously reported miss stays blocked for the current browser session.
+ reviewedRevision = -1
+ if (current && !current.blocked && (current.status === 'review' || missedIdentifiers.requiresFreshReview())) {
+  $('send-status').textContent = 'Send gate: refused until the current inspection is reviewed again.'
+ }
+ try {
+  localStorage.removeItem(reviewKey)
   showLog()
   $('review-status').textContent = 'Local review log cleared. Review this revision again before sending.'
-  if (current && !current.blocked && (current.status === 'review' || missedIdentifiers.requiresFreshReview())) {
-   $('send-status').textContent = 'Send gate: refused until the current inspection is reviewed again.'
-  }
- } catch { $('review-status').textContent = 'Unable to clear browser storage.' }
+ } catch {
+  $('review-status').textContent = 'Unable to clear browser storage. Current acknowledgment revoked; saved entries may remain.'
+ }
 })
 let evaluation
 function renderMetrics() {

@@ -112,6 +112,27 @@ async function main() {
     await storagePage.locator('#send').click()
     assert.match(await storagePage.locator('#send-status').textContent(), /refused/)
 
+    // A failing clear must revoke in-memory permission even if the saved log remains.
+    const failedClearPage = await browser.newPage()
+    failedClearPage.on('pageerror', error => pageErrors.push(error.message))
+    await failedClearPage.goto(server.url)
+    await inspected(failedClearPage)
+    await failedClearPage.locator('#example').selectOption('limits')
+    await inspected(failedClearPage)
+    assert.equal(await failedClearPage.locator('#result-badge').textContent(), 'NEEDS REVIEW')
+    await failedClearPage.locator('#reviewed').click()
+    await failedClearPage.locator('#send').click()
+    assert.match(await failedClearPage.locator('#send-status').textContent(), /allowed/)
+    await failedClearPage.evaluate(() => {
+      Storage.prototype.removeItem = () => { throw Error('Synthetic clear denial') }
+    })
+    await failedClearPage.getByText('Local review log', { exact: true }).click()
+    await failedClearPage.locator('#clear-reviews').click()
+    assert.match(await failedClearPage.locator('#review-status').textContent(), /Unable to clear browser storage/)
+    assert.ok(await failedClearPage.evaluate(() => localStorage.getItem('redaction-inspector-reviews-v1')))
+    await failedClearPage.locator('#send').click()
+    assert.match(await failedClearPage.locator('#send-status').textContent(), /refused/)
+
     // Actual touch events exercise the same refusal-and-review sequence on a narrow viewport.
     const touch = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true })
     const phone = await touch.newPage()
@@ -133,8 +154,9 @@ async function main() {
     assert.deepEqual(pageErrors, [])
     await touch.close()
     await storagePage.close()
+    await failedClearPage.close()
     await page.close()
-    console.log('Synthetic keyboard, touch, edit/revert, local storage denial and acknowledgment-reset flows passed.')
+    console.log('Synthetic keyboard, touch, edit/revert, local storage denial and fail-closed acknowledgment-reset flows passed.')
   } finally {
     if (browser) await browser.close()
     if (server) server.child.kill()
