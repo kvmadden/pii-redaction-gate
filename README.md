@@ -19,6 +19,8 @@ Open the local address printed in the terminal. The local demo processes text in
 
 Automated tests cover identifier removal, clinical wording, malformed inputs, review decisions and the send guard. Browser tests exercise review and simulated sending. A frozen synthetic evaluation compares removal, missed identifiers and review workload with a baseline. Its scores describe the archived revision, not later safeguards. Neither the tests nor the evaluation establish safety on real patient data.
 
+For independent phone-sized touch and desktop verification of denied review-log deletion, follow the [fictional-data replay checklist](docs/review-log-failure-replay.md). It documents what to observe when browser storage fails; it is not a patient-data safety approval.
+
 ```sh
 npm test
 npm run check
