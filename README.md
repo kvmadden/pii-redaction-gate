@@ -15,6 +15,10 @@ npm run demo
 
 Open the local address printed in the terminal. The local demo processes text in your browser.
 
+![The redaction inspector with a synthetic visit note: identifiers replaced by typed tokens, clinical words kept, and the scan report under the output](docs/media/demo-1440.png)
+
+*Current-engine screenshot with a fictional example. The [public exhibit](https://kvmadden.com/projects/pii-redaction-gate/#try) is a separate first-release snapshot; it should not be used to verify later safeguards.*
+
 ## How it was tested
 
 Automated tests cover identifier removal, clinical wording, malformed inputs, review decisions and the send guard. Browser tests exercise review and simulated sending. A frozen synthetic evaluation compares removal, missed identifiers and review workload with a baseline. Its scores describe the archived revision, not later safeguards. Neither the tests nor the evaluation establish safety on real patient data.
@@ -36,8 +40,6 @@ A rule-based gate for clinical free text on its way to a model prompt or a recor
 - **clean**: every check this profile runs read the whole input and found nothing left to decide. This is not proof that no identifier remains: on the blind set, 8 of the 12 documents marked clean still held one. The result lists what was read, which checks ran, and the known gaps no check can see.
 - **review**: some spans could not be decided (a word that could be a name or a term, a number that looks like a scan error, a script the rules do not read). The send guard refuses the result until a person has looked.
 - **blocked**: something failed or could not be read. The output is `[redaction-blocked]` and nothing is sent.
-
-![The redaction inspector with a synthetic visit note: identifiers replaced by typed tokens, clinical words kept, and the scan report under the output](docs/media/demo-1440.png)
 
 **This is not validated de-identification.** It is a public demonstration built and tested on synthetic text and on public case reports with fictional identifiers planted in them. No real patient data was used. Do not use it as the only control for protected health information.
 
