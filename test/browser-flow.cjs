@@ -151,6 +151,18 @@ async function main() {
     await phone.locator('#send').tap()
     assert.match(await phone.locator('#send-status').textContent(), /allowed/)
 
+    // Clearing review history must also fail closed on a touch-only phone.
+    // A denied storage delete leaves the log intact but revokes permission.
+    await phone.evaluate(() => {
+      Storage.prototype.removeItem = () => { throw Error('Synthetic mobile clear denial') }
+    })
+    await phone.getByText('Local review log', { exact: true }).tap()
+    await phone.locator('#clear-reviews').tap()
+    assert.match(await phone.locator('#review-status').textContent(), /Unable to clear browser storage/)
+    assert.ok(await phone.evaluate(() => localStorage.getItem('redaction-inspector-reviews-v1')))
+    await phone.locator('#send').tap()
+    assert.match(await phone.locator('#send-status').textContent(), /refused/)
+
     assert.deepEqual(pageErrors, [])
     await touch.close()
     await storagePage.close()
