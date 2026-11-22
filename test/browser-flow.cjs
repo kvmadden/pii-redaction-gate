@@ -112,6 +112,27 @@ async function main() {
     await storagePage.locator('#send').click()
     assert.match(await storagePage.locator('#send-status').textContent(), /refused/)
 
+    // Refusing browser-storage reads must never create a review acknowledgment.
+    // A later reported miss still blocks the exact fictional note in this session.
+    const deniedReadPage = await browser.newPage()
+    deniedReadPage.on('pageerror', error => pageErrors.push(error.message))
+    await deniedReadPage.goto(server.url)
+    await inspected(deniedReadPage)
+    await deniedReadPage.locator('#example').selectOption('limits')
+    await inspected(deniedReadPage)
+    assert.equal(await deniedReadPage.locator('#result-badge').textContent(), 'NEEDS REVIEW')
+    await deniedReadPage.evaluate(() => {
+      Storage.prototype.getItem = () => { throw Error('Synthetic read denial') }
+    })
+    await deniedReadPage.locator('#reviewed').click()
+    assert.match(await deniedReadPage.locator('#review-status').textContent(), /not saved/)
+    await deniedReadPage.locator('#send').click()
+    assert.match(await deniedReadPage.locator('#send-status').textContent(), /refused/)
+    await deniedReadPage.locator('#flagged').click()
+    assert.match(await deniedReadPage.locator('#review-status').textContent(), /Missed identifier flagged/)
+    await deniedReadPage.locator('#send').click()
+    assert.match(await deniedReadPage.locator('#send-status').textContent(), /refused/)
+
     // A failing clear must revoke in-memory permission even if the saved log remains.
     const failedClearPage = await browser.newPage()
     failedClearPage.on('pageerror', error => pageErrors.push(error.message))
@@ -166,6 +187,7 @@ async function main() {
     assert.deepEqual(pageErrors, [])
     await touch.close()
     await storagePage.close()
+    await deniedReadPage.close()
     await failedClearPage.close()
     await page.close()
     console.log('Synthetic keyboard, touch, edit/revert, local storage denial and fail-closed acknowledgment-reset flows passed.')
