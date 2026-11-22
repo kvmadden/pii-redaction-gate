@@ -90,7 +90,7 @@ async function run() {
   document.querySelector('.workspace').dataset.status = blocked ? 'blocked' : current.status
   const review = current.status === 'review'
   const freshReviewNeeded = missedIdentifiers.requiresFreshReview()
-  $('status').textContent = blocked ? 'BLOCKED / Engine failure. No payload can pass.' : review ? 'Inspection complete / Spans need review before sending' : 'Inspection complete / Nothing left to decide, compare before use'
+  $('status').textContent = blocked ? 'BLOCKED / Engine failure. No payload can pass.' : review ? 'Automated scan complete / Flagged spans need human review before sending' : 'Automated scan complete / No unresolved spans under selected checks; compare before use'
   $('result-badge').textContent = blocked ? 'BLOCKED' : review ? 'NEEDS REVIEW' : 'CHECKS PASSED'
   $('output').replaceChildren()
   if (blocked) $('output').textContent = current.text
