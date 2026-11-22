@@ -36,7 +36,7 @@ async function inspected(page) {
   await page.waitForFunction(() => {
     const workspace = document.querySelector('.workspace')
     return workspace?.dataset.state === 'ready' &&
-      document.querySelector('#status')?.textContent.includes('Inspection complete')
+      document.querySelector('#status')?.textContent.includes('Automated scan complete')
   })
 }
 
@@ -51,6 +51,9 @@ async function main() {
     page.on('pageerror', error => pageErrors.push(error.message))
     await page.goto(server.url)
     await inspected(page)
+    // Automatic scanning is not a completed human review of the fictional note.
+    assert.match(await page.locator('#status').textContent(), /Automated scan complete/)
+    assert.match(await page.locator('#review-status').textContent(), /Compare source and output/)
 
     // A keyboard-reported miss refuses the original note, even after edit and revert.
     await page.locator('#example').selectOption('refill')
