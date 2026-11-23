@@ -4,6 +4,14 @@ A library and command-line tool for developers who need to screen clinical-style
 
 It replaces detected identifiers, preserves clinical wording where its rules allow, and returns a result that can pass, needs human review, or is blocked. A clean result can still contain an identifier. **This is a research prototype, not validated de-identification. Use fictional text only.**
 
+## What the status means
+
+- **Clean:** The selected checks found nothing else to review. This is not a safety clearance: in the locked synthetic test, 8 of 12 documents marked clean still contained an identifier.
+- **Review:** The default send guard refuses sending. The library permits an explicit override (`acceptReview: true`), and the browser allows a simulated send after **Mark as reviewed** for that revision. Neither acknowledgment proves the whole document was examined. Review **every part of the document**; highlighted spans are clues, not a complete checklist. In that test, 234 of 528 identifiers left in review documents had no review span attached.
+- **Blocked:** An input or check could not be processed safely. Sending is refused.
+
+The browser's **Try simulated send** checks these rules locally. It does not transmit the text or establish that it is de-identified. See [safe reporting and data handling](SECURITY.md).
+
 ## Try it
 
 Open the [public redaction exhibit](https://kvmadden.com/projects/pii-redaction-gate/#try) for a fictional example of the first release. To try the current engine locally, clone this repository and run:
