@@ -1,7 +1,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { spawnSync } from 'node:child_process'
-import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
+import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, realpathSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -15,7 +15,7 @@ const EXTRA_COPIES = [
 ]
 
 function sandbox(t) {
-  const root = mkdtempSync(path.join(os.tmpdir(), 'redaction demo builder '))
+  const root = realpathSync(mkdtempSync(path.join(os.tmpdir(), 'redaction demo builder ')))
   t.after(() => rmSync(root, { recursive: true, force: true }))
   mkdirSync(path.join(root, 'scripts'))
   copyFileSync(BUILDER, path.join(root, 'scripts/build-demo.js'))
