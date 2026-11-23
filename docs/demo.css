@@ -140,7 +140,7 @@ mark.kept { text-decoration: underline; text-decoration-thickness: 1px; text-und
 #original small { font: 500 12px/1 var(--mono); letter-spacing: .04em; color: var(--slate); margin-left: .3em; vertical-align: .5em; }
 .output {
   min-height: 340px; padding: 34px 48px 40px; background: var(--page); border: 1px solid var(--edge); border-radius: 2px;
-  font-size: 21px; line-height: 1.75;
+  /* Match the source note's type scale so the same text reads consistently. */
 }
 .output mark.removed {
   background: var(--bar); color: var(--bar-ink); font: 500 .8em/1 var(--mono); letter-spacing: .01em;
@@ -258,7 +258,7 @@ footer p { max-width: 640px; margin: 0; font-size: 14px; text-align: right; }
   .statusbar .small { display: none; }
   .results { grid-template-columns: minmax(0, 1fr); gap: 36px; padding: 24px 0 28px; }
   .text-view { font-size: 17px; }
-  .output { min-height: 0; padding: 24px 20px 28px; font-size: 19px; line-height: 1.7; }
+  .output { min-height: 0; padding: 24px 20px 28px; }
   [data-state=blocked] .output { min-height: 160px; }
   .summary { grid-template-columns: minmax(0, 1fr); padding: 20px 0; }
   .review-panel, .evaluation, .limits-panel { grid-template-columns: minmax(0, 1fr); padding: 26px 0 30px; }
